@@ -1,0 +1,6 @@
+Parsing challenge export for 269 registered targets.
+Challenge parsed: 47029 declarations.
+Solution parsed: 1029606 declarations.
+Comparator accepts all registered statements and reachable definitions.
+Comparator accepts axiom dependencies.
+Running Lean default kernel on solution.

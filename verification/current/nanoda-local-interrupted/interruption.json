@@ -1,0 +1,10 @@
+{
+  "reason": "Stopped this duplicate two-worker run after prolonged swapping on the same two declarations; cloud independent checks continue",
+  "requested_utc": "2026-10-05T11:15:45.364085+00:00",
+  "signal": "SIGTERM",
+  "last_declaration_indices": [
+    570241,
+    570476
+  ],
+  "completed": false
+}

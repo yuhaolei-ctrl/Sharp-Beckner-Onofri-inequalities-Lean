@@ -1,0 +1,10 @@
+{
+  "comparator_revision": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+  "dependencies": {
+    "lean4export": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    "Lean4Checker": "b7398199245524275543dec6113229c9bb4902e5"
+  },
+  "challenge_export_sha256": "9a64bdde552e8a986bf892961d6207dac1ab6a5ab4008f62076f87a97e0464d1",
+  "solution_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+  "registered_targets": 269
+}

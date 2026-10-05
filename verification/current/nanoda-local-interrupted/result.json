@@ -1,0 +1,8 @@
+{
+  "exit_code": 1,
+  "target_count": 269,
+  "started_utc": "2026-10-05T09:58:40.668952+00:00",
+  "finished_utc": "2026-10-05T11:15:45.979174+00:00",
+  "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+  "mode": "full independent Nanoda replay; macOS arm64; two 1 GiB workers"
+}

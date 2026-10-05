@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T11:08:56.898752+00:00",
+  "updated_utc": "2026-10-05T11:18:01.418071+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -143,13 +143,15 @@
   ],
   "historical_paper2_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
   "comparator_export_replay": {
-    "status": "running",
+    "status": "timed_out",
     "scope": 269,
     "driver": "verification/tools/ReplayExports.lean",
     "upstream_algorithms_unchanged": true,
     "run_id": 37267009000,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000",
-    "workflow_commit": "716345b"
+    "workflow_commit": "716345b",
+    "reason": "GitHub job exceeded maximum execution time of 6h0m0s",
+    "evidence_directory": "current/comparator-hosted-timeout"
   },
   "nanoda_parallel_run": {
     "run_id": 37269653434,
@@ -215,9 +217,9 @@
     "axiom_dependencies": "passed",
     "solution_declarations": 1029606,
     "challenge_declarations": 47029,
-    "source": "Live GitHub log observed in authenticated browser; final artifact pending",
+    "source": "Completed workflow log and artifact: current/comparator-hosted-timeout",
     "run_id": 37267009000,
-    "official_kernel_replay": "still_running"
+    "official_kernel_replay": "hosted timed out; complete local replay separately passed"
   },
   "nanoda_swap_retry": {
     "status": "terminated",
@@ -236,13 +238,17 @@
     "proof_rejection_diagnostic": false
   },
   "nanoda_local_final": {
-    "status": "running",
+    "status": "interrupted",
     "scope": 269,
     "worker_threads": 2,
     "worker_stack_bytes": 1073741824,
     "platform": "macOS arm64",
     "started_utc": "2026-10-05T09:58:40.668952+00:00",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+    "reason": "Stopped duplicate two-worker run after prolonged swapping; cloud checks continue",
+    "wrapper_exit_code": 1,
+    "requested_signal": "SIGTERM",
+    "evidence_directory": "current/nanoda-local-interrupted"
   },
   "lean4lean": {
     "status": "deterministic_timeout",
@@ -262,6 +268,20 @@
     "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
     "mode": "verified",
     "source_patch": null,
+    "scope": 269,
+    "controls": "passed",
+    "run_stage": "full verified check"
+  },
+  "lean4lean_retry": {
+    "status": "running",
+    "run_id": 37301154501,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37301154501",
+    "controls": "passed",
+    "fuel": {
+      "whnf": 10000000,
+      "whnfEager": 100000000,
+      "lazyDelta": 1000000
+    },
     "scope": 269
   }
 }

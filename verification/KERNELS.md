@@ -171,6 +171,14 @@ The final receipt validator accepts `--local-nanoda DIR` for a complete local
 independent replay, with the actual exit record, acceptance message, checker
 configuration, exact export identity and all registered target names resolved.
 The same acceptance conditions apply to local and hosted kernels.
+The attempted local two-worker Nanoda run was deliberately interrupted at
+11:15:45 UTC after prolonged swapping on declarations 570241 and 570476;
+the requested signal and actual wrapper result are retained in
+`current/nanoda-local-interrupted/`. It did not pass. The redundant hosted
+Comparator replay separately hit GitHub's six-hour limit after accepting
+formal statements, reachable definitions and axioms. Its final workflow log
+and partial artifact are in `current/comparator-hosted-timeout/`; full official
+acceptance comes from the successful local upstream CLI run above.
 
 `current/solution-inventory.json` inventories the actual raw export: 1,029,606
 declarations, including dependencies. Reproduce it with
