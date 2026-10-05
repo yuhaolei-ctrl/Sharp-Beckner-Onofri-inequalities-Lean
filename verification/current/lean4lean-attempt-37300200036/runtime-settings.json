@@ -1,0 +1,12 @@
+{
+  "checker_revision": "bce3448115f7819fc12d647fadd3bb090666637e",
+  "checker_runtime": "Lean 4.33.0-rc2",
+  "certificate_source_toolchain": "Lean 4.32.0",
+  "source_patch": null,
+  "arguments": [
+    "--import",
+    "--verbose"
+  ],
+  "implementation_relationship": "Derived directly from the official C++ kernel; not independently designed",
+  "certificate_recompiled": false
+}

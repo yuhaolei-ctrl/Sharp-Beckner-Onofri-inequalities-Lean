@@ -46,7 +46,8 @@ jobs:
               'checker_runtime': 'Lean 4.33.0-rc2',
               'certificate_source_toolchain': 'Lean 4.32.0',
               'source_patch': None,
-              'arguments': ['--import', '--verbose'],
+              'arguments': ['--import', '--verbose', '--config:whnf=10000000', '--config:whnfEager=100000000', '--config:lazyDelta=1000000'],
+              'fuel_override_scope': 'larger finite reduction limits; checker rules unchanged',
               'implementation_relationship': 'Derived directly from the official C++ kernel; not independently designed',
               'certificate_recompiled': False
           }, indent=2) + '\n')
@@ -62,7 +63,7 @@ jobs:
           for name in ['valid', 'invalid']:
               path = out / (name + '.ndjson')
               path.write_bytes(gzip.decompress(Path('tests/kernel_controls/' + name + '.ndjson.gz').read_bytes()))
-              run = subprocess.run([binary, '--import', str(path)], capture_output=True, text=True)
+              run = subprocess.run([binary, '--import', '--config:whnf=10000000', '--config:whnfEager=100000000', '--config:lazyDelta=1000000', str(path)], capture_output=True, text=True)
               text = run.stdout + run.stderr
               results.append({'control': name, 'exit_code': run.returncode, 'output': text})
               (out / 'controls.json').write_text(json.dumps(results, indent=2) + '\n')
@@ -70,7 +71,7 @@ jobs:
               if name == 'valid':
                   assert run.returncode == 0 and re.search(r'^checked [0-9]+ declarations$', text, re.M)
               else:
-                  assert run.returncode != 0
+                  assert run.returncode == 1 and '(kernel) declaration type mismatch' in text
           PY
       - name: Replay the entire exact certificate with Lean4Lean
         run: |
@@ -82,7 +83,7 @@ jobs:
           done) &
           monitor_pid=$!
           trap 'kill "$monitor_pid" 2>/dev/null || true' EXIT
-          /usr/bin/time -v .tools/lean4lean/.lake/build/bin/lean4lean --import --verbose external-check/solution.ndjson > external-check/lean4lean.log 2>&1
+          /usr/bin/time -v .tools/lean4lean/.lake/build/bin/lean4lean --import --verbose --config:whnf=10000000 --config:whnfEager=100000000 --config:lazyDelta=1000000 external-check/solution.ndjson > external-check/lean4lean.log 2>&1
           tail -n 30 external-check/lean4lean.log
           python3 - <<'PY'
           import re

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T10:56:29.483251+00:00",
+  "updated_utc": "2026-10-05T11:08:56.898752+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -243,5 +243,25 @@
     "platform": "macOS arm64",
     "started_utc": "2026-10-05T09:58:40.668952+00:00",
     "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+  },
+  "lean4lean": {
+    "status": "deterministic_timeout",
+    "run_id": 37300200036,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300200036",
+    "checker_revision": "bce3448115f7819fc12d647fadd3bb090666637e",
+    "independent_design": false,
+    "controls": "valid accepted; damaged proof rejected with declaration type mismatch and pretty-printer diagnostics",
+    "scope": 269,
+    "evidence_directory": "current/lean4lean-attempt-37300200036",
+    "failed_declaration": "BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0177.e060903"
+  },
+  "con_ron": {
+    "status": "running",
+    "run_id": 37300905046,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046",
+    "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
+    "mode": "verified",
+    "source_patch": null,
+    "scope": 269
   }
 }

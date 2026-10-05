@@ -197,6 +197,13 @@ cross-version incompatibility or unfinished replay is recorded as such, never
 as acceptance. The upstream import driver recreates quotient primitives,
 regenerates inductive constructors/recursors and checks their exported forms;
 its reported count is a replay-operation count, not the raw declaration count.
+The first full attempt (37300200036) hit the checker's deterministic reduction
+limit at `HeatCertificate.Panels0177.e060903`; its compact actual evidence is
+preserved. Controls accepted the valid proof and reported a declaration type
+mismatch for the damaged proof, with extra pretty-printer diagnostics.
+The retry increases the documented finite `whnf`, `whnfEager` and `lazyDelta`
+fuel limits to 10,000,000, 100,000,000 and 1,000,000. These runtime limits do not
+change checking rules. They are recorded alongside the exact invocation.
 
 ## Independent con-ron verified mode
 
