@@ -180,3 +180,20 @@ Nanoda acceptance count to equal the complete export count; it rejects messages
 that report skipped axioms. When compressed worker traces are present, it also
 requires every index exactly once and the exact exported declaration-name set.
 Trace entries alone never establish acceptance because they precede checking.
+
+## Additional Lean4Lean replay
+
+The optional `lean4lean.yml` workflow uses the unmodified
+[Arena-pinned Lean4Lean](https://github.com/digama0/lean4lean/tree/bce3448115f7819fc12d647fadd3bb090666637e)
+revision `bce3448115f7819fc12d647fadd3bb090666637e`. As its authors and Arena
+explain, this implementation is derived directly from the official C++ kernel;
+it is not an independently designed kernel. It is therefore recorded separately
+from Nanoda and eink0rn, and is not accepted by the independent-evidence validator.
+
+The checker builds with its own pinned Lean 4.33.0-rc2 runtime; it reads the exact
+existing Lean 4.32.0 export without recompiling the manuscript. The workflow
+first accepts the valid control and rejects the damaged proof control. Any
+cross-version incompatibility or unfinished replay is recorded as such, never
+as acceptance. The upstream import driver recreates quotient primitives,
+regenerates inductive constructors/recursors and checks their exported forms;
+its reported count is a replay-operation count, not the raw declaration count.
