@@ -157,6 +157,10 @@ A separately recorded two-worker retry can add 8 GiB of swap on its disposable
 GitHub runner. This supplies memory headroom without changing any proof or
 checking rule. The workflow preserves the host memory/swap settings. The prior
 exit-143 cause remains unspecified; this resource variant is not a diagnosis.
+That retry, run 37284776024, also ended with exit 143 at 10:37:17 UTC. GitHub
+again skipped all artifact steps and reported no further cause. Its complete
+workflow log and annotations are in `current/nanoda-attempt-37284776024/`.
+It did not complete independent verification.
 
 The full 269-target upstream Comparator CLI completed successfully on macOS at
 2026-10-05 09:49:48 UTC. `current/comparator-local/` preserves its actual result,
