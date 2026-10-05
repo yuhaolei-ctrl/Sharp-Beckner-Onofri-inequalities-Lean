@@ -1,0 +1,1897 @@
+BecknerOnofri.Target.density_endpoint (d : ℕ) (hd : 12 ≤ d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) : BecknerOnofri.HighDim.spectralEnergy ρ ≤ ENNReal.ofReal (2 * BecknerOnofri.HighDim.entropy ρ)
+BecknerOnofri.Target.density_rigidity (d : ℕ) (hd : 12 ≤ d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.spectralEnergy ρ = ENNReal.ofReal (2 * BecknerOnofri.HighDim.entropy ρ) ↔
+    ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => 1
+BecknerOnofri.Target.potential_endpoint (d : ℕ) (hd : 12 ≤ d) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  MeasureTheory.Integrable (fun x => Real.exp (BecknerOnofri.HighDim.centered u x))
+      (BecknerOnofri.HighDim.torusMeasure d) ∧
+    BecknerOnofri.HighDim.logPartition u ≤
+      ↑(BecknerOnofri.HighDim.spectralCoefficient d * BecknerOnofri.HighDim.potentialEnergy u)
+BecknerOnofri.Target.potential_rigidity (d : ℕ) (hd : 12 ≤ d) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  BecknerOnofri.HighDim.logPartition u =
+      ↑(BecknerOnofri.HighDim.spectralCoefficient d * BecknerOnofri.HighDim.potentialEnergy u) ↔
+    ∃ c, u =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => c
+BecknerOnofri.Target.pressure_threshold (d : ℕ) (hd : 12 ≤ d) :
+  IsGreatest {β | 0 ≤ β ∧ BecknerOnofri.HighDim.pressure d β = 0} (BecknerOnofri.HighDim.spectralThreshold d)
+BecknerOnofri.Target.coefficient_threshold (d : ℕ) (hd : 12 ≤ d) :
+  IsLeast {A | 0 < A ∧ BecknerOnofri.HighDim.coefficientDefect d A = 0} (BecknerOnofri.HighDim.spectralCoefficient d)
+BecknerOnofri.Target.kappa_positive (d : ℕ) (hd : 12 ≤ d) : 0 < BecknerOnofri.HighDim.kappa d
+BecknerOnofri.Target.full_branch_onset (d : ℕ) (hd : 12 ≤ d) : BecknerOnofri.HighDim.FullBranchOnset d
+BecknerOnofri.Target.pressure_onset (d : ℕ) (hd : 12 ≤ d) :
+  ∃ ε C,
+    0 < ε ∧
+      0 ≤ C ∧
+        ∀ (β : ℝ),
+          BecknerOnofri.HighDim.spectralThreshold d < β →
+            β < BecknerOnofri.HighDim.spectralThreshold d + ε →
+              ∃ p,
+                BecknerOnofri.HighDim.pressure d β = ↑p ∧
+                  |p -
+                        ↑d / (2 * BecknerOnofri.HighDim.kappa d) *
+                          (1 - BecknerOnofri.HighDim.spectralThreshold d / β) ^ 2| ≤
+                    C * (β - BecknerOnofri.HighDim.spectralThreshold d) ^ 3
+BecknerOnofri.Target.coefficient_onset (d : ℕ) (hd : 12 ≤ d) :
+  ∃ ε C,
+    0 < ε ∧
+      ε < BecknerOnofri.HighDim.spectralCoefficient d ∧
+        0 ≤ C ∧
+          ∀ (A : ℝ),
+            BecknerOnofri.HighDim.spectralCoefficient d - ε < A →
+              A < BecknerOnofri.HighDim.spectralCoefficient d →
+                ∃ c,
+                  BecknerOnofri.HighDim.coefficientDefect d A = ↑c ∧
+                    |c -
+                          ↑d / (2 * BecknerOnofri.HighDim.kappa d) *
+                            (1 - A / BecknerOnofri.HighDim.spectralCoefficient d) ^ 2| ≤
+                      C * (1 - A / BecknerOnofri.HighDim.spectralCoefficient d) ^ 3
+BecknerOnofri.Target.entropy_zero (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.entropy ρ = 0 ↔ ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => 1
+BecknerOnofri.Target.spectral_subcriticality (d : ℕ) (hd : 12 ≤ d) : BecknerOnofri.HighDim.spectralThreshold d < 2 * ↑d
+BecknerOnofri.Target.uniform_equality (d : ℕ) :
+  (BecknerOnofri.HighDim.uniformDensity d).FiniteEntropy ∧
+    BecknerOnofri.HighDim.spectralEnergy (BecknerOnofri.HighDim.uniformDensity d) =
+      ENNReal.ofReal (2 * BecknerOnofri.HighDim.entropy (BecknerOnofri.HighDim.uniformDensity d))
+BecknerOnofri.Target.local_exit_conditions :
+  Real.exp (6 / 49) < 8 / 7 ∧
+    Real.exp (187 / 105) < 6 ∧
+      0 < 1 - Real.exp (187 / 105) / 64 ∧ 12 / 64 * Real.exp (6 / 49) / (1 - Real.exp (187 / 105) / 64) < 6 / 25
+BecknerOnofri.Target.initial_norm_arithmetic : 24000 ^ 5 < 300000 ^ 4
+BecknerOnofri.Target.critical_exponential_integrability (d : ℕ) (hd : 0 < d) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) (p : ℝ) (hp : 0 < p) :
+  MeasureTheory.Integrable (fun x => Real.exp (p * BecknerOnofri.HighDim.centered u x))
+    (BecknerOnofri.HighDim.torusMeasure d)
+BecknerOnofri.Target.log_partition_regular (d : ℕ) (hd : 0 < d) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  0 ≤ BecknerOnofri.HighDim.logPartition u ∧ BecknerOnofri.HighDim.logPartition u ≠ ⊤
+BecknerOnofri.Target.three_symbol_count (d : ℕ) :
+  ∑ j ∈ Finset.range (d + 1) with 2 * d < 3 * j, 2 ^ j * ↑(d.choose j) ≤ 2 / 3 * 3 ^ d
+BecknerOnofri.Target.bessel_series_quartic (t : ℝ) (ht : 0 ≤ t) (ht' : t ≤ 1 / 5) :
+  Real.log (∑' (n : ℕ), t ^ (2 * n) / ↑n.factorial ^ 2) ≤ t ^ 2 - 6 / 25 * t ^ 4
+BecknerOnofri.Target.centered_exponential_bound.{u_1} {Ω : Type u_1} [MeasurableSpace Ω] (μ : MeasureTheory.Measure Ω)
+  [MeasureTheory.IsProbabilityMeasure μ] (w : Ω → ℝ) (B : ℝ) (hw : MeasureTheory.AEStronglyMeasurable w μ) (hB : 0 ≤ B)
+  (hbound : ∀ᵐ (x : Ω) ∂μ, |w x| ≤ B) :
+  Real.log (∫ (x : Ω), Real.exp (w x) ∂μ) ≤ ∫ (x : Ω), w x ∂μ + Real.exp (2 * B) / 2 * ProbabilityTheory.variance w μ
+BecknerOnofri.Target.subcritical_dual_attainment (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β) (hβd : β < 2 * ↑d) :
+  ∃ u,
+    BecknerOnofri.HighDim.InCriticalSobolev u ∧
+      BecknerOnofri.HighDim.MeanZero u ∧
+        0 ≤ BecknerOnofri.HighDim.dualFunctional β u ∧
+          ∀ (v : BecknerOnofri.HighDim.Torus d → ℝ),
+            BecknerOnofri.HighDim.InCriticalSobolev v →
+              BecknerOnofri.HighDim.dualFunctional β v ≤ BecknerOnofri.HighDim.dualFunctional β u
+BecknerOnofri.Target.circle_partition_quartic (t : ℝ) (ht : 0 ≤ t) (ht' : t ≤ 1 / 5) :
+  Real.log (∫ (x : UnitAddCircle), Real.exp (2 * t * ((fourier 1) x).re) ∂AddCircle.haarAddCircle) ≤
+    t ^ 2 - 6 / 25 * t ^ 4
+BecknerOnofri.Target.spectral_slice (p a : ℝ) (hp : 12 ≤ p) (ha : √2 ≤ a) :
+  a ^ (p - 1) * ∑' (n : ℤ), (a ^ 2 + ↑n ^ 2) ^ (-p / 2) ≤ 311141 / 342144
+BecknerOnofri.Target.rectangular_lattice (d : ℕ) (hd : 12 ≤ d) (R : Fin d → ℕ) :
+  BecknerOnofri.RectangleLattice.latticeSum (↑d) R ≤
+    1 / (↑d - 1) * ∑ i, BecknerOnofri.RectangleLattice.latticeSum (↑d - 1) (Function.update R i 0)
+BecknerOnofri.Target.coefficient_sharpness (d : ℕ) (hd : 0 < d) (A : ℝ)
+  (hA : A < BecknerOnofri.HighDim.spectralCoefficient d) : 0 < BecknerOnofri.HighDim.coefficientDefect d A
+BecknerOnofri.Target.finite_entropy_energy (d : ℕ) (hd : 0 < d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) : BecknerOnofri.HighDim.spectralEnergy ρ ≠ ⊤
+BecknerOnofri.Target.pressure_duality (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β) :
+  BecknerOnofri.HighDim.pressure d β =
+    BecknerOnofri.HighDim.coefficientDefect d (BecknerOnofri.HighDim.spectralThreshold d / (2 * β * (2 * Real.pi) ^ d))
+BecknerOnofri.Target.subcritical_pressure_finite (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 ≤ β) (hβd : β < 2 * ↑d) :
+  BecknerOnofri.HighDim.pressure d β ≠ ⊥ ∧ BecknerOnofri.HighDim.pressure d β ≠ ⊤
+BecknerOnofri.Target.pressure_sharpness (d : ℕ) (hd : 0 < d) (β : ℝ)
+  (hβ : BecknerOnofri.HighDim.spectralThreshold d < β) : 0 < BecknerOnofri.HighDim.pressure d β
+BecknerOnofri.Target.entropy_shearer (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : Continuous ρ.value)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < ρ.value x) :
+  ∑ i,
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        (∫ (y : UnitAddCircle), ρ.value (Function.update x i y) ∂AddCircle.haarAddCircle) *
+          Real.log
+            (∫ (y : UnitAddCircle),
+              ρ.value (Function.update x i y) ∂AddCircle.haarAddCircle) ∂BecknerOnofri.HighDim.torusMeasure d ≤
+    (↑d - 1) * BecknerOnofri.HighDim.entropy ρ
+BecknerOnofri.Target.first_shell_moments (d : ℕ) (t : Fin d → ℝ) :
+  have v := fun x => ∑ i, 2 * t i * ((fourier 1) (x i)).re;
+  ∫ (x : BecknerOnofri.HighDim.Torus d), v x ^ 3 ∂BecknerOnofri.HighDim.torusMeasure d = 0 ∧
+    1 / 24 * ∫ (x : BecknerOnofri.HighDim.Torus d), v x ^ 4 ∂BecknerOnofri.HighDim.torusMeasure d -
+        1 / 8 * (∫ (x : BecknerOnofri.HighDim.Torus d), v x ^ 2 ∂BecknerOnofri.HighDim.torusMeasure d) ^ 2 =
+      -(1 / 4) * ∑ i, t i ^ 4
+BecknerOnofri.Target.spin_vertex_bound (i j k : BecknerOnofri.HighDim.Spin.Count) :
+  1 ≤ ↑i →
+    i < j →
+      j < k →
+        BecknerOnofri.HighDim.Spin.quadraticQ (BecknerOnofri.HighDim.Spin.vertexQ i j k) ≤
+          3187261891510618067287 / 3722907769367296702500
+BecknerOnofri.Target.spin_vertex_maximizer :
+  BecknerOnofri.HighDim.Spin.quadraticQ (BecknerOnofri.HighDim.Spin.vertexQ 1 9 12) =
+    3187261891510618067287 / 3722907769367296702500
+BecknerOnofri.Target.spin_correcting_bounds :
+  BecknerOnofri.HighDim.Spin.quadraticQ BecknerOnofri.HighDim.Spin.correctionVQ < 4 ∧
+    BecknerOnofri.HighDim.Spin.quadraticQ BecknerOnofri.HighDim.Spin.correctionZQ < 16
+BecknerOnofri.Target.spin_matrix_positive (q : BecknerOnofri.HighDim.Spin.Count → ℝ) :
+  0 ≤ BecknerOnofri.HighDim.Spin.quadratic q
+BecknerOnofri.Target.spin_small_mean_arithmetic :
+  5 * BecknerOnofri.HighDim.Spin.smallMeanQ ^ 2 * BecknerOnofri.HighDim.Spin.oscillationConstantQ < 191 / 1000 ∧
+    1 / 50 ≤ BecknerOnofri.HighDim.Spin.smallMarginQ
+BecknerOnofri.Target.spin_exchangeable_entropy (ν : BecknerOnofri.HighDim.Spin.Configuration → ℝ) :
+  BecknerOnofri.HighDim.Spin.Exchangeable ν →
+    ∑ σ, ν σ * Real.log (ν σ / (1 / 4096)) =
+      BecknerOnofri.HighDim.Spin.relativeEntropy (BecknerOnofri.HighDim.Spin.countLaw ν)
+        BecknerOnofri.HighDim.Spin.reference
+BecknerOnofri.Target.spin_channel_probability (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12) :
+  (∀ (σ : BecknerOnofri.HighDim.Spin.Configuration), 0 ≤ BecknerOnofri.HighDim.Spin.channelLaw ρ σ) ∧
+    ∑ σ, BecknerOnofri.HighDim.Spin.channelLaw ρ σ = 1
+BecknerOnofri.Target.spin_channel_joint_moment (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12) (S : Finset (Fin 12)) :
+  ∑ σ, BecknerOnofri.HighDim.Spin.channelLaw ρ σ * BecknerOnofri.HighDim.Spin.jointSpin S σ =
+    ∫ (x : BecknerOnofri.HighDim.Torus 12),
+      ρ.value x * ∏ i ∈ S, ((fourier 1) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure 12
+BecknerOnofri.Target.spin_exchangeable_energy (ν : BecknerOnofri.HighDim.Spin.Configuration → ℝ) :
+  BecknerOnofri.HighDim.Spin.Exchangeable ν →
+    ∑ s,
+        BecknerOnofri.HighDim.Spin.weight s *
+          (∑ σ, ν σ * BecknerOnofri.HighDim.Spin.jointSpin (BecknerOnofri.HighDim.Spin.firstCoordinates s) σ) ^ 2 =
+      BecknerOnofri.HighDim.Spin.quadratic (BecknerOnofri.HighDim.Spin.countLaw ν)
+BecknerOnofri.Target.spin_fixed_mean_curvature (p q : BecknerOnofri.HighDim.Spin.Count → ℝ)
+  (hp : BecknerOnofri.HighDim.Spin.Feasible p) (hpos : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j)
+  (hmass : ∑ j, q j = 0) (hmean : BecknerOnofri.HighDim.Spin.mean q = 0) :
+  BecknerOnofri.HighDim.Spin.quadratic q ≤ 9 / 10 * ∑ j, q j ^ 2 / p j
+BecknerOnofri.Target.spin_all_mean_curvature (p q : BecknerOnofri.HighDim.Spin.Count → ℝ)
+  (hp : BecknerOnofri.HighDim.Spin.Feasible p) (hpos : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j)
+  (hmass : ∑ j, q j = 0) :
+  BecknerOnofri.HighDim.Spin.quadratic q ≤ 19 / 20 * ∑ j, q j ^ 2 / p j + 350 * BecknerOnofri.HighDim.Spin.mean q ^ 2
+BecknerOnofri.Target.spin_supporting_parabola (p q : BecknerOnofri.HighDim.Spin.Count → ℝ) (s t δ ell η : ℝ)
+  (hp : BecknerOnofri.HighDim.Spin.FeasibleAt s p) (hpos : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j)
+  (hq : BecknerOnofri.HighDim.Spin.FeasibleAt t q)
+  (hδ :
+    ∀ (j : BecknerOnofri.HighDim.Spin.Count),
+      |BecknerOnofri.HighDim.Spin.gradient p j - ell - η * BecknerOnofri.HighDim.Spin.meanCoordinate j| ≤ δ) :
+  BecknerOnofri.HighDim.Spin.functional p + η * (t - s) - 350 * (t - s) ^ 2 - 5 * δ ^ 2 ≤
+    BecknerOnofri.HighDim.Spin.functional q
+BecknerOnofri.Target.spin_fixed_mean_entropy_convexity (p q : BecknerOnofri.HighDim.Spin.Count → ℝ)
+  (hp : BecknerOnofri.HighDim.Spin.Feasible p) (hpos : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j)
+  (hq : BecknerOnofri.HighDim.Spin.Feasible q)
+  (hmean : BecknerOnofri.HighDim.Spin.mean p = BecknerOnofri.HighDim.Spin.mean q) :
+  BecknerOnofri.HighDim.Spin.functional p + ∑ j, BecknerOnofri.HighDim.Spin.gradient p j * (q j - p j) +
+      BecknerOnofri.HighDim.Spin.relativeEntropy q p / 5 ≤
+    BecknerOnofri.HighDim.Spin.functional q
+BecknerOnofri.Target.spin_finite_gibbs (p q H : BecknerOnofri.HighDim.Spin.Count → ℝ)
+  (hp : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j) (hq : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 ≤ q j)
+  (hmass : ∑ j, q j = 1) :
+  ∑ j, q j * H j - BecknerOnofri.HighDim.Spin.relativeEntropy q p ≤ Real.log (∑ j, p j * Real.exp (H j))
+BecknerOnofri.Target.spin_centered_log_mgf (p H : BecknerOnofri.HighDim.Spin.Count → ℝ) (B : ℝ)
+  (hp : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j) (hmass : ∑ j, p j = 1) (hcenter : ∑ j, p j * H j = 0)
+  (hB : 0 ≤ B) (hsmall : 5 * B < 1) (hbound : ∀ (j : BecknerOnofri.HighDim.Spin.Count), |H j| ≤ B) :
+  1 / 5 * Real.log (∑ j, p j * Real.exp (5 * H j)) ≤ 5 / 2 / (1 - 5 * B) * ∑ j, p j * H j ^ 2
+BecknerOnofri.Target.spin_binary_cost_quartic (t : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1) :
+  t ^ 2 / 2 + t ^ 4 / 12 ≤ BecknerOnofri.HighDim.Spin.binaryCost t
+BecknerOnofri.Target.spin_product_feasible (t : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1) :
+  BecknerOnofri.HighDim.Spin.FeasibleAt t (BecknerOnofri.HighDim.Spin.productProbability t)
+BecknerOnofri.Target.spin_product_entropy_energy (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  BecknerOnofri.HighDim.Spin.relativeEntropy (BecknerOnofri.HighDim.Spin.productProbability t)
+        BecknerOnofri.HighDim.Spin.reference =
+      12 * BecknerOnofri.HighDim.Spin.binaryCost t ∧
+    BecknerOnofri.HighDim.Spin.quadratic (BecknerOnofri.HighDim.Spin.productProbability t) =
+      ∑ s, BecknerOnofri.HighDim.Spin.weight s * t ^ (2 * (↑s + 1))
+BecknerOnofri.Target.spin_product_quartic_baseline (t : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16) :
+  (2 - ∑ s, if 2 ≤ ↑s + 1 then BecknerOnofri.HighDim.Spin.weight s * (1 / 16) ^ (2 * (↑s + 1) - 4) else 0) * t ^ 4 ≤
+    BecknerOnofri.HighDim.Spin.functional (BecknerOnofri.HighDim.Spin.productProbability t)
+BecknerOnofri.Target.spin_small_mean (t : ℝ) (q : BecknerOnofri.HighDim.Spin.Count → ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16)
+  (hq : BecknerOnofri.HighDim.Spin.FeasibleAt t q) :
+  t ^ 4 / 50 ≤ BecknerOnofri.HighDim.Spin.functional q + 12 * (3 / 40 * t ^ 4)
+BecknerOnofri.Target.spin_product_gradient_bounds (t : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16) :
+  (∀ (i j : BecknerOnofri.HighDim.Spin.Count),
+      |BecknerOnofri.HighDim.Spin.productGradientCorrection t i -
+            BecknerOnofri.HighDim.Spin.productGradientCorrection t j| ≤
+        ↑BecknerOnofri.HighDim.Spin.oscillationConstantQ * t ^ 2) ∧
+    ∑ j,
+        BecknerOnofri.HighDim.Spin.productProbability t j *
+          BecknerOnofri.HighDim.Spin.productGradientCorrection t j ^ 2 ≤
+      ↑BecknerOnofri.HighDim.Spin.varianceConstantQ * t ^ 4
+BecknerOnofri.Target.spin_large_mean_ingredients (a t : ℝ) (q : BecknerOnofri.HighDim.Spin.Count → ℝ) (ha : 0 ≤ a)
+  (ha1 : a < 1) (hat : a ≤ t) (hq : BecknerOnofri.HighDim.Spin.FeasibleAt t q) :
+  12 * BecknerOnofri.HighDim.Spin.binaryCost a ≤
+      BecknerOnofri.HighDim.Spin.relativeEntropy q BecknerOnofri.HighDim.Spin.reference ∧
+    BecknerOnofri.HighDim.Spin.quadratic q ≤ ∑ s, BecknerOnofri.HighDim.Spin.weight s
+BecknerOnofri.Target.spin_interval_certificate (p q : BecknerOnofri.HighDim.Spin.Count → ℝ) (a b s t δ ell η α β κ : ℝ)
+  (hp : BecknerOnofri.HighDim.Spin.FeasibleAt s p) (hpos : ∀ (j : BecknerOnofri.HighDim.Spin.Count), 0 < p j)
+  (hq : BecknerOnofri.HighDim.Spin.FeasibleAt t q)
+  (hδ :
+    ∀ (j : BecknerOnofri.HighDim.Spin.Count),
+      |BecknerOnofri.HighDim.Spin.gradient p j - ell - η * BecknerOnofri.HighDim.Spin.meanCoordinate j| ≤ δ)
+  (ha0 : 0 ≤ a) (ha : a ≤ t) (hb : t ≤ b) (hκ : 0 ≤ κ)
+  (hleft :
+    κ * b ^ 4 ≤
+      BecknerOnofri.HighDim.Spin.functional p + η * (a - s) - 350 * (a - s) ^ 2 - 5 * δ ^ 2 + 12 * (α * a + β))
+  (hright :
+    κ * b ^ 4 ≤
+      BecknerOnofri.HighDim.Spin.functional p + η * (b - s) - 350 * (b - s) ^ 2 - 5 * δ ^ 2 + 12 * (α * b + β)) :
+  κ * t ^ 4 ≤ BecknerOnofri.HighDim.Spin.functional q + 12 * (α * t + β)
+BecknerOnofri.Target.spin_binary_cost_upper (a : ℝ) (ha : 0 ≤ a) (ha1 : a < 1) :
+  2 * BecknerOnofri.HighDim.Spin.binaryCost a ≤ a ^ 2 + a ^ 4 / (6 * (1 - a ^ 2))
+BecknerOnofri.Target.circle_scalar_minimum (A B C D L r m : ℝ) (hA : 0 < A) (hB : 0 ≤ B) (hC : 0 ≤ C) (hD : 0 < D) :
+  (∀ (x : ℝ),
+      m ≤ x →
+        BecknerOnofri.HighDim.CircleScalar.candidateMinimum A B C D L r m ≤
+          BecknerOnofri.HighDim.CircleScalar.cost A B C D L r x) ∧
+    ∃ x,
+      m ≤ x ∧
+        BecknerOnofri.HighDim.CircleScalar.cost A B C D L r x =
+          BecknerOnofri.HighDim.CircleScalar.candidateMinimum A B C D L r m
+BecknerOnofri.Target.circle_small_mean_algebra (t I B C D L m : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16)
+  (hI : t ^ 2 + t ^ 4 / 4 ≤ I) (hB : 27 / 80 ≤ B) (hC : 0 ≤ C) :
+  3 / 40 * t ^ 4 ≤
+    13 / 40 * I + 27 / 40 * t ^ 2 - 2 * BecknerOnofri.HighDim.Spin.binaryCost t +
+      BecknerOnofri.HighDim.CircleScalar.candidateMinimum (633 / 2000) B C D L (t ^ 2) m
+BecknerOnofri.Target.circle_weight_enclosure (n N : ℕ) (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  ∑ j ∈ Finset.range N, t ^ (2 * j) / (↑n + ↑j + 1) ≤ BecknerOnofri.HighDim.CircleScalar.weight n t ∧
+    BecknerOnofri.HighDim.CircleScalar.weight n t ≤
+      ∑ j ∈ Finset.range N, t ^ (2 * j) / (↑n + ↑j + 1) + t ^ (2 * N) / ((↑n + ↑N + 1) * (1 - t ^ 2))
+BecknerOnofri.Target.circle_small_mean_weighted (t I m₂ m₃ : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16)
+  (hI : t ^ 2 + t ^ 4 / 4 ≤ I) :
+  3 / 40 * t ^ 4 ≤
+    13 / 40 * I + 27 / 40 * t ^ 2 - 2 * BecknerOnofri.HighDim.Spin.binaryCost t +
+      BecknerOnofri.HighDim.CircleScalar.candidateMinimum (633 / 2000)
+        (27 / 40 * BecknerOnofri.HighDim.CircleScalar.weight 1 t)
+        (27 / 40 * BecknerOnofri.HighDim.CircleScalar.weight 2 t) (6 - t) (6 * m₂ - m₃) (t ^ 2) m₂
+BecknerOnofri.Target.circle_bessel_derivative (n : ℕ) (hn : 1 ≤ n) (h : ℝ) :
+  HasDerivAt (BecknerOnofri.HighDim.CircleScalar.besselMoment n)
+    (BecknerOnofri.HighDim.CircleScalar.besselMoment (n - 1) h +
+        BecknerOnofri.HighDim.CircleScalar.besselMoment (n + 1) h -
+      2 * BecknerOnofri.HighDim.CircleScalar.besselMoment n h * BecknerOnofri.HighDim.CircleScalar.besselMoment 1 h)
+    h
+BecknerOnofri.Target.circle_bessel_monotonicity :
+  (∀ (n : ℕ), MonotoneOn (BecknerOnofri.HighDim.CircleScalar.besselMoment n) (Set.Ici 0)) ∧
+    StrictMono (BecknerOnofri.HighDim.CircleScalar.besselMoment 1)
+BecknerOnofri.Target.circle_bessel_riccati (h : ℝ) (hh : h ≠ 0) :
+  deriv (BecknerOnofri.HighDim.CircleScalar.besselMoment 1) h +
+        BecknerOnofri.HighDim.CircleScalar.besselMoment 1 h / h +
+      2 * BecknerOnofri.HighDim.CircleScalar.besselMoment 1 h ^ 2 =
+    2
+BecknerOnofri.Target.circle_bessel_supersolution (h : ℝ) (hh : 0 ≤ h) :
+  BecknerOnofri.HighDim.CircleScalar.besselMoment 1 h ≤ h / √(1 + h ^ 2)
+BecknerOnofri.Target.circle_parameter_bounds (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  BecknerOnofri.HighDim.CircleScalar.besselMoment 1 (BecknerOnofri.HighDim.CircleScalar.parameter t) = t ∧
+    0 ≤ BecknerOnofri.HighDim.CircleScalar.parameter t ∧
+      t / (2 * (1 - t ^ 2)) ≤ BecknerOnofri.HighDim.CircleScalar.parameter t
+BecknerOnofri.Target.circle_rate_quartic (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  t ^ 2 + t ^ 4 / 4 ≤ BecknerOnofri.HighDim.CircleScalar.rate t
+BecknerOnofri.Target.circle_gamma_minimum (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  IsLeast
+    ((fun a =>
+        13 / 40 * BecknerOnofri.HighDim.CircleScalar.rate t + 27 / 40 * t ^ 2 -
+            2 * BecknerOnofri.HighDim.Spin.binaryCost t +
+          BecknerOnofri.HighDim.CircleScalar.cost (633 / 2000) (27 / 40 * BecknerOnofri.HighDim.CircleScalar.weight 1 t)
+            (27 / 40 * BecknerOnofri.HighDim.CircleScalar.weight 2 t) (6 - t)
+            (6 * BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t) -
+              BecknerOnofri.HighDim.CircleScalar.besselMoment 3 (BecknerOnofri.HighDim.CircleScalar.parameter t))
+            (t ^ 2) a) ''
+      Set.Ici (BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t)))
+    (BecknerOnofri.HighDim.CircleScalar.gamma t)
+BecknerOnofri.Target.circle_gamma_small (t : ℝ) (ht : 0 ≤ t) (ht1 : t ≤ 1 / 16) :
+  3 / 40 * t ^ 4 ≤ BecknerOnofri.HighDim.CircleScalar.gamma t
+BecknerOnofri.Target.spin_mixture_feasible (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12) (w : ℕ → ℝ)
+  (N : ℕ → Fin 12 → ℕ) (hw : ∀ (n : ℕ), 0 ≤ w n) (hm : HasSum w 1)
+  (hSup : Summable fun n => w n * ∏ i, 4 ^ N n i / ↑((2 * N n i).choose (N n i)))
+  (hρ :
+    ∀ (x : BecknerOnofri.HighDim.Torus 12),
+      ρ.value x =
+        ∑' (n : ℕ), w n * ∏ i, Complex.normSq (1 + (fourier 1) (x i)) ^ N n i / ↑((2 * N n i).choose (N n i))) :
+  BecknerOnofri.HighDim.Spin.Feasible (BecknerOnofri.HighDim.Spin.countLaw (BecknerOnofri.HighDim.Spin.channelLaw ρ))
+BecknerOnofri.Target.spin_channel_symmetry (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hρ :
+    ∀ (π : Equiv.Perm (Fin 12)) (x : BecknerOnofri.HighDim.Torus 12),
+      (ρ.value fun i => x ((Equiv.symm π) i)) = ρ.value x) :
+  BecknerOnofri.HighDim.Spin.Exchangeable (BecknerOnofri.HighDim.Spin.channelLaw ρ)
+BecknerOnofri.Target.spin_channel_mean (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hρ : BecknerOnofri.HighDim.Spin.Exchangeable (BecknerOnofri.HighDim.Spin.channelLaw ρ)) :
+  BecknerOnofri.HighDim.Spin.mean (BecknerOnofri.HighDim.Spin.countLaw (BecknerOnofri.HighDim.Spin.channelLaw ρ)) =
+    ∫ (x : BecknerOnofri.HighDim.Torus 12), ρ.value x * ((fourier 1) (x 0)).re ∂BecknerOnofri.HighDim.torusMeasure 12
+BecknerOnofri.Target.spin_small_mean_gamma (t : ℝ) (q : BecknerOnofri.HighDim.Spin.Count → ℝ) (ht : 0 ≤ t)
+  (ht1 : t ≤ 1 / 16) (hq : BecknerOnofri.HighDim.Spin.FeasibleAt t q) :
+  t ^ 4 / 50 ≤ BecknerOnofri.HighDim.Spin.functional q + 12 * BecknerOnofri.HighDim.CircleScalar.gamma t
+BecknerOnofri.Target.circle_gamma_final_range :
+  MonotoneOn BecknerOnofri.HighDim.CircleScalar.tailBase (Set.Ico (999 / 1000) 1) ∧
+    ∀ (t : ℝ),
+      999 / 1000 ≤ t →
+        t < 1 → BecknerOnofri.HighDim.CircleScalar.tailBase (999 / 1000) ≤ BecknerOnofri.HighDim.CircleScalar.gamma t
+BecknerOnofri.Target.circle_bessel_enclosure (n N : ℕ) (h q : ℝ) (hh : 0 ≤ h) (hq : 0 ≤ q) (hq1 : q < 1)
+  (hbound : h ^ 2 ≤ q * (↑N + 1) * (↑N + ↑n + 1)) :
+  BecknerOnofri.HighDim.CircleScalar.besselPartial n N h ≤ BecknerOnofri.HighDim.CircleScalar.bessel n h ∧
+    BecknerOnofri.HighDim.CircleScalar.bessel n h ≤
+      BecknerOnofri.HighDim.CircleScalar.besselPartial n N h +
+        BecknerOnofri.HighDim.CircleScalar.besselTerm n h N / (1 - q)
+BecknerOnofri.Target.circle_bessel_ratio_enclosure (n N : ℕ) (h q : ℝ) (hh : 0 ≤ h) (hN : 1 ≤ N) (hq : 0 ≤ q)
+  (hq1 : q < 1) (hbound : h ^ 2 ≤ q * (↑N + 1) ^ 2) :
+  BecknerOnofri.HighDim.CircleScalar.besselPartial n N h /
+        (BecknerOnofri.HighDim.CircleScalar.besselPartial 0 N h +
+          BecknerOnofri.HighDim.CircleScalar.besselTerm 0 h N / (1 - q)) ≤
+      BecknerOnofri.HighDim.CircleScalar.besselMoment n h ∧
+    BecknerOnofri.HighDim.CircleScalar.besselMoment n h ≤
+      (BecknerOnofri.HighDim.CircleScalar.besselPartial n N h +
+          BecknerOnofri.HighDim.CircleScalar.besselTerm n h N / (1 - q)) /
+        BecknerOnofri.HighDim.CircleScalar.besselPartial 0 N h
+BecknerOnofri.Target.circle_parameter_bracket (t l u : ℝ) (ht : 0 ≤ t) (ht1 : t < 1)
+  (hl : BecknerOnofri.HighDim.CircleScalar.besselMoment 1 l ≤ t)
+  (hu : t ≤ BecknerOnofri.HighDim.CircleScalar.besselMoment 1 u) :
+  l ≤ BecknerOnofri.HighDim.CircleScalar.parameter t ∧ BecknerOnofri.HighDim.CircleScalar.parameter t ≤ u
+BecknerOnofri.Target.circle_weight_closed_form (n : ℕ) (t : ℝ) (ht : 0 < t) (ht1 : t < 1) :
+  BecknerOnofri.HighDim.CircleScalar.weight n t =
+    (-Real.log (1 - t ^ 2) - ∑ j ∈ Finset.range n, t ^ (2 * (j + 1)) / (↑j + 1)) / t ^ (2 * n + 2)
+BecknerOnofri.Target.circle_logconvex_comparison (F : ℝ → ℝ) (t : ℝ) (hcF : ContinuousOn F (Set.Icc (-1) 1))
+  (hF : ConvexOn ℝ (Set.Icc (-1) 1) F) (hinc : MonotoneOn F (Set.Icc (-1) 1))
+  (hmass : ∫ (x : UnitAddCircle), Real.exp (F ((fourier 1) x).re) ∂AddCircle.haarAddCircle = 1)
+  (hm : ∫ (x : UnitAddCircle), Real.exp (F ((fourier 1) x).re) * ((fourier 1) x).re ∂AddCircle.haarAddCircle = t) :
+  0 ≤ t ∧
+    t < 1 ∧
+      BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t) ≤
+          ∫ (x : UnitAddCircle), Real.exp (F ((fourier 1) x).re) * ((fourier 2) x).re ∂AddCircle.haarAddCircle ∧
+        |∫ (x : UnitAddCircle), Real.exp (F ((fourier 1) x).re) * ((fourier 3) x).re ∂AddCircle.haarAddCircle -
+                BecknerOnofri.HighDim.CircleScalar.besselMoment 3 (BecknerOnofri.HighDim.CircleScalar.parameter t)| ≤
+            6 *
+              (∫ (x : UnitAddCircle), Real.exp (F ((fourier 1) x).re) * ((fourier 2) x).re ∂AddCircle.haarAddCircle -
+                BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t)) ∧
+          BecknerOnofri.HighDim.CircleScalar.rate t ≤
+            ∫ (x : UnitAddCircle),
+              Real.exp (F ((fourier 1) x).re) * Real.log (Real.exp (F ((fourier 1) x).re)) ∂AddCircle.haarAddCircle
+BecknerOnofri.Target.circle_entropy_rate_lower (p : UnitAddCircle → ℝ) (t : ℝ)
+  (hp : ∀ᵐ (x : UnitAddCircle) ∂AddCircle.haarAddCircle, 0 ≤ p x)
+  (hmass : ∫ (x : AddCircle 1), p x ∂AddCircle.haarAddCircle = 1)
+  (hi : MeasureTheory.Integrable p AddCircle.haarAddCircle)
+  (hent : MeasureTheory.Integrable (fun x => p x * Real.log (p x)) AddCircle.haarAddCircle)
+  (hm : ∫ (x : AddCircle 1), p x * ((fourier 1) x).re ∂AddCircle.haarAddCircle = t) :
+  BecknerOnofri.HighDim.CircleScalar.rate t ≤ ∫ (x : AddCircle 1), p x * Real.log (p x) ∂AddCircle.haarAddCircle
+BecknerOnofri.Target.circle_weight_integral (n : ℕ) (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  BecknerOnofri.HighDim.CircleScalar.weight n t = ∫ (s : ℝ) in 0..1, s ^ n / (1 - t ^ 2 * s)
+BecknerOnofri.Target.circle_gamma_entropy_reduction (t a b E T : ℝ) (ht : 0 ≤ t) (ht1 : t < 1)
+  (hI : BecknerOnofri.HighDim.CircleScalar.rate t ≤ E)
+  (hrem :
+    t ^ 2 + a ^ 2 / 2 + T + BecknerOnofri.HighDim.CircleScalar.weight 1 t * (a - t ^ 2) ^ 2 +
+        BecknerOnofri.HighDim.CircleScalar.weight 2 t * (b - t * a) ^ 2 ≤
+      E)
+  (ha : BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t) ≤ a)
+  (hb :
+    |b - BecknerOnofri.HighDim.CircleScalar.besselMoment 3 (BecknerOnofri.HighDim.CircleScalar.parameter t)| ≤
+      6 * (a - BecknerOnofri.HighDim.CircleScalar.besselMoment 2 (BecknerOnofri.HighDim.CircleScalar.parameter t))) :
+  2 * BecknerOnofri.HighDim.Spin.binaryCost t + BecknerOnofri.HighDim.CircleScalar.gamma t + 21 / 1000 * a ^ 2 +
+      27 / 40 * T ≤
+    E
+BecknerOnofri.Target.circle_hardy_fisher_bound (f : ↥BecknerOnofri.HighDim.CircleHardy.Space) (hf : ‖f‖ = 1)
+  (hE : Summable fun m => ↑m * ↑f m ^ 2) :
+  2 / (1 - BecknerOnofri.HighDim.CircleHardy.moment f 1 ^ 2) *
+      ∑' (n : ℕ),
+        (BecknerOnofri.HighDim.CircleHardy.moment f (n + 2) -
+            BecknerOnofri.HighDim.CircleHardy.moment f 1 * BecknerOnofri.HighDim.CircleHardy.moment f (n + 1)) ^
+          2 ≤
+    2 * (∑' (m : ℕ), ↑m * ↑f m ^ 2 - ∑' (n : ℕ), BecknerOnofri.HighDim.CircleHardy.moment f (n + 1) ^ 2)
+BecknerOnofri.Target.circle_poisson_kernel (q : ℝ) (hq : 0 ≤ q) (hq1 : q < 1) :
+  (∀ (x : UnitAddCircle), 0 < BecknerOnofri.HighDim.CirclePoisson.kernel q x) ∧
+    ∫ (x : UnitAddCircle), BecknerOnofri.HighDim.CirclePoisson.kernel q x ∂AddCircle.haarAddCircle = 1 ∧
+      ∀ (x : UnitAddCircle),
+        BecknerOnofri.HighDim.CirclePoisson.kernel q x = 2 * ∑' (n : ℕ), q ^ n * ((fourier ↑n) x).re - 1
+BecknerOnofri.Target.circle_poisson_bounds (q : ℝ) (hq : 0 ≤ q) (hq1 : q < 1) (p : UnitAddCircle → ℝ)
+  (hp : Continuous p) (a b : ℝ) (hlo : ∀ (x : UnitAddCircle), a ≤ p x) (hhi : ∀ (x : UnitAddCircle), p x ≤ b)
+  (x : UnitAddCircle) :
+  a ≤ BecknerOnofri.HighDim.CirclePoisson.smoothing q p x ∧ BecknerOnofri.HighDim.CirclePoisson.smoothing q p x ≤ b
+BecknerOnofri.Target.circle_poisson_deviation (q : ℝ) (hq : 0 ≤ q) (hq1 : q ≤ 1 / 2) (p : UnitAddCircle → ℝ)
+  (hp : Continuous p) (hn : ∀ (x : UnitAddCircle), 0 ≤ p x) (hm : ∫ (x : AddCircle 1), p x ∂AddCircle.haarAddCircle = 1)
+  (x : UnitAddCircle) : |BecknerOnofri.HighDim.CirclePoisson.smoothing q p x - 1| ≤ 12 * q
+BecknerOnofri.Target.circle_poisson_weight_integral (n : ℕ) (t : ℝ) (ht : 0 ≤ t) (ht1 : t < 1) :
+  BecknerOnofri.HighDim.CircleScalar.weight n t =
+    ∫ (s : ℝ) in Set.Ioi 0, 2 * Real.exp (-2 * (↑n + 1) * s) / (1 - t ^ 2 * Real.exp (-2 * s))
+BecknerOnofri.Target.circle_outer_factorization (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hlog :
+    Summable fun k =>
+      BecknerOnofri.HighDim.CircleOuter.linearWeight k * ‖UnitAddTorus.mFourierCoeff (fun x => ↑(Real.log (p x))) k‖) :
+  ∃ f u,
+    (∀ (x : BecknerOnofri.HighDim.Torus 1), Complex.normSq (f x) = p x) ∧
+      ‖u‖ = 1 ∧
+        (Summable fun n => ↑n * ↑u n ^ 2) ∧
+          (Summable fun k => ‖UnitAddTorus.mFourierCoeff (⇑f) k‖) ∧
+            (∀ (n : ℕ), ↑(↑u n) = UnitAddTorus.mFourierCoeff ⇑f fun x => ↑n) ∧
+              (∀ (k : Fin 1 → ℤ), k 0 < 0 → UnitAddTorus.mFourierCoeff (⇑f) k = 0) ∧
+                ∀ (n : ℕ),
+                  BecknerOnofri.HighDim.CircleHardy.moment u n =
+                    (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re
+BecknerOnofri.Target.circle_outer_autocorrelation (f : C(BecknerOnofri.HighDim.Torus 1, ℂ))
+  (u : ↥BecknerOnofri.HighDim.CircleHardy.Space) (hc : ∀ (m : ℕ), ↑(↑u m) = UnitAddTorus.mFourierCoeff ⇑f fun x => ↑m)
+  (hn : ∀ (k : Fin 1 → ℤ), k 0 < 0 → UnitAddTorus.mFourierCoeff (⇑f) k = 0) (n : ℕ) :
+  BecknerOnofri.HighDim.CircleHardy.moment u n =
+    (UnitAddTorus.mFourierCoeff (fun x => ↑(Complex.normSq (f x))) fun x => ↑n).re
+BecknerOnofri.Target.circle_smooth_outer_factorization (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  ∃ f u,
+    (∀ (x : BecknerOnofri.HighDim.Torus 1), Complex.normSq (f x) = p x) ∧
+      ‖u‖ = 1 ∧
+        (Summable fun n => ↑n * ↑u n ^ 2) ∧
+          (Summable fun k => ‖UnitAddTorus.mFourierCoeff (⇑f) k‖) ∧
+            (∀ (n : ℕ), ↑(↑u n) = UnitAddTorus.mFourierCoeff ⇑f fun x => ↑n) ∧
+              (∀ (k : Fin 1 → ℤ), k 0 < 0 → UnitAddTorus.mFourierCoeff (⇑f) k = 0) ∧
+                ∀ (n : ℕ),
+                  BecknerOnofri.HighDim.CircleHardy.moment u n =
+                    (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re
+BecknerOnofri.Target.circle_smooth_fourier_summability (f : BecknerOnofri.HighDim.Torus 1 → ℂ)
+  (hf : ContDiff ℝ 3 fun x => f fun x_1 => ↑x) :
+  Summable fun k => BecknerOnofri.HighDim.CircleOuter.linearWeight k * ‖UnitAddTorus.mFourierCoeff f k‖
+BecknerOnofri.Target.circle_density_hardy_bound (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  have r := fun n => (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re;
+  ∃ u,
+    ‖u‖ = 1 ∧
+      (Summable fun n => ↑n * ↑u n ^ 2) ∧
+        (∀ (n : ℕ), BecknerOnofri.HighDim.CircleHardy.moment u n = r n) ∧
+          r 1 ^ 2 < 1 ∧
+            2 / (1 - r 1 ^ 2) * ∑' (n : ℕ), (r (n + 2) - r 1 * r (n + 1)) ^ 2 ≤
+              2 * ∑' (m : ℕ), ↑m * ↑u m ^ 2 -
+                (∫ (x : BecknerOnofri.HighDim.Torus 1), p x ^ 2 ∂BecknerOnofri.HighDim.torusMeasure 1 - 1)
+BecknerOnofri.Target.circle_poisson_multiplier (q : ℝ) (hq : 0 ≤ q) (hq1 : q < 1) (p : UnitAddCircle → ℝ)
+  (hp : Continuous p) (n : ℤ) :
+  fourierCoeff (fun x => ↑(BecknerOnofri.HighDim.CirclePoisson.smoothing q p x)) n =
+    ↑(q ^ n.natAbs) * fourierCoeff (fun x => ↑(p x)) n
+BecknerOnofri.Target.circle_poisson_flow (s : ℝ) (hs : 0 < s) (p : UnitAddCircle → ℝ) (hp : Continuous p) :
+  Continuous (BecknerOnofri.HighDim.CirclePoisson.smoothing (Real.exp (-s)) p) ∧
+    ∫ (x : AddCircle 1), BecknerOnofri.HighDim.CirclePoisson.smoothing (Real.exp (-s)) p x ∂AddCircle.haarAddCircle =
+        ∫ (x : AddCircle 1), p x ∂AddCircle.haarAddCircle ∧
+      ∀ (n : ℤ),
+        fourierCoeff (fun x => ↑(BecknerOnofri.HighDim.CirclePoisson.smoothing (Real.exp (-s)) p x)) n =
+          ↑(Real.exp (-(↑n.natAbs * s))) * fourierCoeff (fun x => ↑(p x)) n
+BecknerOnofri.Target.circle_fisher_representation (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  ∃ u,
+    ‖u‖ = 1 ∧
+      (Summable fun n => ↑n * ↑u n ^ 2) ∧
+        (∀ (n : ℕ),
+            BecknerOnofri.HighDim.CircleHardy.moment u n =
+              (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re) ∧
+          ∫ (x : BecknerOnofri.HighDim.Torus 1),
+              p x *
+                BecknerOnofri.HighDim.CircleFisher.lambda (fun y => Real.log (p y))
+                  x ∂BecknerOnofri.HighDim.torusMeasure 1 =
+            2 * ∑' (n : ℕ), ↑n * ↑u n ^ 2
+BecknerOnofri.Target.circle_fisher_dissipation (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  have r := fun n => (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re;
+  r 1 ^ 2 < 1 ∧
+    2 / (1 - r 1 ^ 2) * ∑' (n : ℕ), (r (n + 2) - r 1 * r (n + 1)) ^ 2 ≤
+      ∫ (x : BecknerOnofri.HighDim.Torus 1),
+          p x *
+            BecknerOnofri.HighDim.CircleFisher.lambda (fun y => Real.log (p y))
+              x ∂BecknerOnofri.HighDim.torusMeasure 1 -
+        (∫ (x : BecknerOnofri.HighDim.Torus 1), p x ^ 2 ∂BecknerOnofri.HighDim.torusMeasure 1 - 1)
+BecknerOnofri.Target.circle_lambda_self_adjoint (p g : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hg : Continuous g)
+  (hpw :
+    Summable fun k =>
+      BecknerOnofri.HighDim.CircleOuter.linearWeight k * ‖UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) k‖)
+  (hgw :
+    Summable fun k =>
+      BecknerOnofri.HighDim.CircleOuter.linearWeight k * ‖UnitAddTorus.mFourierCoeff (fun x => ↑(g x)) k‖) :
+  ∫ (x : BecknerOnofri.HighDim.Torus 1),
+      p x * BecknerOnofri.HighDim.CircleFisher.lambda g x ∂BecknerOnofri.HighDim.torusMeasure 1 =
+    ∫ (x : BecknerOnofri.HighDim.Torus 1),
+      BecknerOnofri.HighDim.CircleFisher.lambda p x * g x ∂BecknerOnofri.HighDim.torusMeasure 1
+BecknerOnofri.Target.circle_poisson_generator (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) (s : ℝ) (hs : 0 < s) (x : BecknerOnofri.HighDim.Torus 1) :
+  HasDerivAt (fun t => BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x)
+    (-BecknerOnofri.HighDim.CircleFisher.lambda (BecknerOnofri.HighDim.CirclePoisson.torusFlow s p) x) s
+BecknerOnofri.Target.circle_poisson_entropy_derivative (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) (s : ℝ)
+  (hs : 0 < s) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : BecknerOnofri.HighDim.Torus 1),
+        BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x *
+          Real.log (BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x) ∂BecknerOnofri.HighDim.torusMeasure 1)
+    (-∫ (x : BecknerOnofri.HighDim.Torus 1),
+        Real.log (BecknerOnofri.HighDim.CirclePoisson.torusFlow s p x) *
+          BecknerOnofri.HighDim.CircleFisher.lambda (BecknerOnofri.HighDim.CirclePoisson.torusFlow s p)
+            x ∂BecknerOnofri.HighDim.torusMeasure 1)
+    s
+BecknerOnofri.Target.circle_poisson_deficit_dissipation (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) (s : ℝ) (hs : 0 < s) :
+  have r := fun n => (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re;
+  have R := fun n => Real.exp (-↑n * s) * r n;
+  have D := fun t =>
+    ∫ (x : BecknerOnofri.HighDim.Torus 1),
+        BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x *
+          Real.log (BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x) ∂BecknerOnofri.HighDim.torusMeasure 1 -
+      ∑' (n : ℕ), Real.exp (-2 * (↑n + 1) * t) * r (n + 1) ^ 2 / (↑n + 1);
+  HasDerivAt D
+      (-∫ (x : BecknerOnofri.HighDim.Torus 1),
+            BecknerOnofri.HighDim.CirclePoisson.torusFlow s p x *
+              BecknerOnofri.HighDim.CircleFisher.lambda
+                (fun y => Real.log (BecknerOnofri.HighDim.CirclePoisson.torusFlow s p y))
+                x ∂BecknerOnofri.HighDim.torusMeasure 1 +
+        (∫ (x : BecknerOnofri.HighDim.Torus 1),
+            BecknerOnofri.HighDim.CirclePoisson.torusFlow s p x ^ 2 ∂BecknerOnofri.HighDim.torusMeasure 1 -
+          1))
+      s ∧
+    R 1 ^ 2 < 1 ∧ 2 / (1 - R 1 ^ 2) * ∑' (n : ℕ), (R (n + 2) - R 1 * R (n + 1)) ^ 2 ≤ -deriv D s
+BecknerOnofri.Target.circle_poisson_deficit_control (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  have r := fun n => (UnitAddTorus.mFourierCoeff (fun x => ↑(p x)) fun x => ↑n).re;
+  have D := fun t =>
+    ∫ (x : BecknerOnofri.HighDim.Torus 1),
+        BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x *
+          Real.log (BecknerOnofri.HighDim.CirclePoisson.torusFlow t p x) ∂BecknerOnofri.HighDim.torusMeasure 1 -
+      ∑' (n : ℕ), Real.exp (-2 * (↑n + 1) * t) * r (n + 1) ^ 2 / (↑n + 1);
+  AntitoneOn D (Set.Ioi 0) ∧ (∀ (s : ℝ), 0 < s → 0 ≤ D s) ∧ Filter.Tendsto D Filter.atTop (nhds 0)
+BecknerOnofri.Target.circle_poisson_initial_continuity (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  ContinuousWithinAt (BecknerOnofri.HighDim.CirclePoisson.deficit p) (Set.Ici 0) 0
+BecknerOnofri.Target.circle_poisson_integrated_dissipation (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  MeasureTheory.IntegrableOn (fun s => -deriv (BecknerOnofri.HighDim.CirclePoisson.deficit p) s) (Set.Ioi 0)
+      MeasureTheory.MeasureSpace.volume ∧
+    ∫ (s : ℝ) in Set.Ioi 0, -deriv (BecknerOnofri.HighDim.CirclePoisson.deficit p) s =
+      BecknerOnofri.HighDim.CirclePoisson.deficit p 0
+BecknerOnofri.Target.circle_entropy_remainder (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 1), 0 < p x) (he : ∀ (x : BecknerOnofri.HighDim.Torus 1), p (-x) = p x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) :
+  (Summable fun n =>
+      BecknerOnofri.HighDim.CircleScalar.weight (n + 1) (BecknerOnofri.HighDim.CirclePoisson.moment p 1) *
+        (BecknerOnofri.HighDim.CirclePoisson.moment p (n + 2) -
+            BecknerOnofri.HighDim.CirclePoisson.moment p 1 * BecknerOnofri.HighDim.CirclePoisson.moment p (n + 1)) ^
+          2) ∧
+    ∑' (n : ℕ),
+        BecknerOnofri.HighDim.CircleScalar.weight (n + 1) (BecknerOnofri.HighDim.CirclePoisson.moment p 1) *
+          (BecknerOnofri.HighDim.CirclePoisson.moment p (n + 2) -
+              BecknerOnofri.HighDim.CirclePoisson.moment p 1 * BecknerOnofri.HighDim.CirclePoisson.moment p (n + 1)) ^
+            2 ≤
+      ∫ (x : BecknerOnofri.HighDim.Torus 1), p x * Real.log (p x) ∂BecknerOnofri.HighDim.torusMeasure 1 -
+        ∑' (n : ℕ), BecknerOnofri.HighDim.CirclePoisson.moment p (n + 1) ^ 2 / (↑n + 1)
+BecknerOnofri.Target.circle_gamma_actual_density (p : BecknerOnofri.HighDim.Torus 1 → ℝ) (hp : Continuous p)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus 1), p x ∂BecknerOnofri.HighDim.torusMeasure 1 = 1)
+  (hsmooth : ContDiff ℝ 3 fun x => p fun x_1 => ↑x) (F : ℝ → ℝ) (hcF : ContinuousOn F (Set.Icc (-1) 1))
+  (hF : ConvexOn ℝ (Set.Icc (-1) 1) F) (hinc : MonotoneOn F (Set.Icc (-1) 1))
+  (hprofile : ∀ (x : BecknerOnofri.HighDim.Torus 1), p x = Real.exp (F ((fourier 1) (x 0)).re)) :
+  2 * BecknerOnofri.HighDim.Spin.binaryCost (BecknerOnofri.HighDim.CirclePoisson.moment p 1) +
+          BecknerOnofri.HighDim.CircleScalar.gamma (BecknerOnofri.HighDim.CirclePoisson.moment p 1) +
+        21 / 1000 * BecknerOnofri.HighDim.CirclePoisson.moment p 2 ^ 2 +
+      27 / 40 * ∑' (n : ℕ), BecknerOnofri.HighDim.CirclePoisson.moment p (n + 3) ^ 2 / (↑n + 3) ≤
+    ∫ (x : BecknerOnofri.HighDim.Torus 1), p x * Real.log (p x) ∂BecknerOnofri.HighDim.torusMeasure 1
+BecknerOnofri.Target.conditional_circle_probability (d : ℕ) (f : BecknerOnofri.HighDim.Torus d → ℝ) (hf : Continuous f)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < f x) (i : Fin d) (x : BecknerOnofri.HighDim.Torus d) :
+  (∀ (z : UnitAddCircle), 0 < BecknerOnofri.HighDim.ConditionalEntropy.conditionalDensity f i x z) ∧
+    ∫ (z : AddCircle 1), BecknerOnofri.HighDim.ConditionalEntropy.conditionalDensity f i x z ∂AddCircle.haarAddCircle =
+        1 ∧
+      ∀ (n : ℕ), |BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i n x| ≤ 1
+BecknerOnofri.Target.conditional_entropy_chain (d : ℕ) (f : BecknerOnofri.HighDim.Torus d → ℝ) (hf : Continuous f)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < f x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus d), f x ∂BecknerOnofri.HighDim.torusMeasure d = 1) :
+  ∫ (x : BecknerOnofri.HighDim.Torus d), f x * Real.log (f x) ∂BecknerOnofri.HighDim.torusMeasure d =
+    ∑ i,
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        f x * BecknerOnofri.HighDim.ConditionalEntropy.conditionalEntropy f i x ∂BecknerOnofri.HighDim.torusMeasure d
+BecknerOnofri.Target.conditional_cosine_moments (d : ℕ) (f : BecknerOnofri.HighDim.Torus d → ℝ) (hf : Continuous f)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < f x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus d), f x ∂BecknerOnofri.HighDim.torusMeasure d = 1) (i : Fin d) (n : ℕ) :
+  ∫ (x : BecknerOnofri.HighDim.Torus d),
+        f x *
+          BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i n
+            x ∂BecknerOnofri.HighDim.torusMeasure d =
+      ∫ (x : BecknerOnofri.HighDim.Torus d), f x * ((fourier ↑n) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure d ∧
+    (∫ (x : BecknerOnofri.HighDim.Torus d), f x * ((fourier ↑n) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure d) ^ 2 ≤
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        f x *
+          BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i n x ^
+            2 ∂BecknerOnofri.HighDim.torusMeasure d
+BecknerOnofri.Target.conditional_convex_jensen (d : ℕ) (f : BecknerOnofri.HighDim.Torus d → ℝ) (hf : Continuous f)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < f x)
+  (hm : ∫ (x : BecknerOnofri.HighDim.Torus d), f x ∂BecknerOnofri.HighDim.torusMeasure d = 1) (i : Fin d) (n : ℕ)
+  (a b : ℝ)
+  (hr :
+    ∀ (x : BecknerOnofri.HighDim.Torus d),
+      BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i n x ∈ Set.Icc a b)
+  (ψ : ℝ → ℝ) (hc : ContinuousOn ψ (Set.Icc a b)) (hψ : ConvexOn ℝ (Set.Icc a b) ψ) :
+  ψ (∫ (x : BecknerOnofri.HighDim.Torus d), f x * ((fourier ↑n) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure d) ≤
+    ∫ (x : BecknerOnofri.HighDim.Torus d),
+      f x *
+        ψ
+          (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i n
+            x) ∂BecknerOnofri.HighDim.torusMeasure d
+BecknerOnofri.Target.logarithmic_marginal_shape.{u_1} {X : Type u_1} [MeasurableSpace X] (μ : MeasureTheory.Measure X)
+  [NeZero μ] (V : ℝ → X → ℝ) (hconv : ∀ (y : X), ConvexOn ℝ (Set.Icc (-1) 1) fun t => V t y)
+  (hmono : ∀ (y : X), MonotoneOn (fun t => V t y) (Set.Icc (-1) 1))
+  (hI : ∀ t ∈ Set.Icc (-1) 1, MeasureTheory.Integrable (fun y => Real.exp (V t y)) μ) :
+  (ConvexOn ℝ (Set.Icc (-1) 1) fun t => Real.log (∫ (y : X), Real.exp (V t y) ∂μ)) ∧
+    MonotoneOn (fun t => Real.log (∫ (y : X), Real.exp (V t y) ∂μ)) (Set.Icc (-1) 1)
+BecknerOnofri.Target.spin_posterior_entropy (f : BecknerOnofri.HighDim.Torus 12 → ℝ) (hf : Continuous f)
+  (hpos : ∀ (x : BecknerOnofri.HighDim.Torus 12), 0 < f x) (i : Fin 12) (σ : BecknerOnofri.HighDim.Spin.Configuration) :
+  have m :=
+    ∫ (x : BecknerOnofri.HighDim.Torus 12),
+      f x * BecknerOnofri.HighDim.Spin.prefixLikelihood (↑i) σ x ∂BecknerOnofri.HighDim.torusMeasure 12;
+  0 < m ∧
+    m *
+        BecknerOnofri.HighDim.Spin.binaryCost
+          ((∫ (x : BecknerOnofri.HighDim.Torus 12),
+              f x *
+                (BecknerOnofri.HighDim.Spin.prefixLikelihood (↑i) σ x *
+                  BecknerOnofri.HighDim.Spin.torusCosines x i) ∂BecknerOnofri.HighDim.torusMeasure 12) /
+            m) ≤
+      ∫ (x : BecknerOnofri.HighDim.Torus 12),
+        f x *
+          (BecknerOnofri.HighDim.Spin.prefixLikelihood (↑i) σ x *
+            BecknerOnofri.HighDim.Spin.binaryCost
+              (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i 1
+                x)) ∂BecknerOnofri.HighDim.torusMeasure 12
+BecknerOnofri.Target.spin_channel_conditional_entropy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hc : Continuous ρ.value) (hp : ∀ (x : BecknerOnofri.HighDim.Torus 12), 0 < ρ.value x) :
+  ∑ σ, BecknerOnofri.HighDim.Spin.channelLaw ρ σ * Real.log (BecknerOnofri.HighDim.Spin.channelLaw ρ σ / (1 / 4096)) ≤
+    ∑ i,
+      ∫ (x : BecknerOnofri.HighDim.Torus 12),
+        ρ.value x *
+          BecknerOnofri.HighDim.Spin.binaryCost
+            (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment ρ.value i 1
+              x) ∂BecknerOnofri.HighDim.torusMeasure 12
+BecknerOnofri.Target.spin_count_conditional_entropy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hc : Continuous ρ.value) (hp : ∀ (x : BecknerOnofri.HighDim.Torus 12), 0 < ρ.value x)
+  (hsym : BecknerOnofri.HighDim.Spin.Exchangeable (BecknerOnofri.HighDim.Spin.channelLaw ρ)) :
+  BecknerOnofri.HighDim.Spin.relativeEntropy
+      (BecknerOnofri.HighDim.Spin.countLaw (BecknerOnofri.HighDim.Spin.channelLaw ρ))
+      BecknerOnofri.HighDim.Spin.reference ≤
+    ∑ i,
+      ∫ (x : BecknerOnofri.HighDim.Torus 12),
+        ρ.value x *
+          BecknerOnofri.HighDim.Spin.binaryCost
+            (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment ρ.value i 1
+              x) ∂BecknerOnofri.HighDim.torusMeasure 12
+BecknerOnofri.Target.conditional_logarithmic_profile {d : ℕ} (V : (Fin d → ℝ) → ℝ)
+  (hc : ContinuousOn V (BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d))
+  (hconv :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d,
+      ∀ (i : Fin d), ConvexOn ℝ (Set.Icc (-1) 1) fun t => V (Function.update v i t))
+  (hmono :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d,
+      ∀ (i : Fin d), MonotoneOn (fun t => V (Function.update v i t)) (Set.Icc (-1) 1))
+  (f : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hrep :
+    ∀ (x : BecknerOnofri.HighDim.Torus d), f x = Real.exp (V (BecknerOnofri.HighDim.ConditionalEntropy.cosineVector x)))
+  (i : Fin d) (x : BecknerOnofri.HighDim.Torus d) :
+  ∃ F,
+    ContinuousOn F (Set.Icc (-1) 1) ∧
+      ConvexOn ℝ (Set.Icc (-1) 1) F ∧
+        MonotoneOn F (Set.Icc (-1) 1) ∧
+          ∀ (z : UnitAddCircle),
+            BecknerOnofri.HighDim.ConditionalEntropy.conditionalDensity f i x z = Real.exp (F ((fourier 1) z).re)
+BecknerOnofri.Target.conditional_fourier_smoothness (d : ℕ) (a : BecknerOnofri.HighDim.Frequency d → ℂ)
+  (ha : ∀ (m : ℕ), Summable fun k => (1 + BecknerOnofri.HighDim.frequencyLength k) ^ m * ‖a k‖)
+  (f : BecknerOnofri.HighDim.Torus d → ℝ)
+  (he :
+    ∀ (x : BecknerOnofri.HighDim.Torus d),
+      ↑(f x) = ∑' (k : BecknerOnofri.HighDim.Frequency d), a k * (UnitAddTorus.mFourier k) x)
+  (i : Fin d) (x : BecknerOnofri.HighDim.Torus d) :
+  ContDiff ℝ ↑⊤ fun t => BecknerOnofri.HighDim.ConditionalEntropy.conditionalDensity f i x ↑t
+BecknerOnofri.Target.conditional_circle_gamma {d : ℕ} (V : (Fin d → ℝ) → ℝ)
+  (hc : ContinuousOn V (BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d))
+  (hconv :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d,
+      ∀ (i : Fin d), ConvexOn ℝ (Set.Icc (-1) 1) fun t => V (Function.update v i t))
+  (hmono :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube d,
+      ∀ (i : Fin d), MonotoneOn (fun t => V (Function.update v i t)) (Set.Icc (-1) 1))
+  (f : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hrep :
+    ∀ (x : BecknerOnofri.HighDim.Torus d), f x = Real.exp (V (BecknerOnofri.HighDim.ConditionalEntropy.cosineVector x)))
+  (a : BecknerOnofri.HighDim.Frequency d → ℂ)
+  (ha : ∀ (m : ℕ), Summable fun k => (1 + BecknerOnofri.HighDim.frequencyLength k) ^ m * ‖a k‖)
+  (he :
+    ∀ (x : BecknerOnofri.HighDim.Torus d),
+      ↑(f x) = ∑' (k : BecknerOnofri.HighDim.Frequency d), a k * (UnitAddTorus.mFourier k) x)
+  (i : Fin d) (x : BecknerOnofri.HighDim.Torus d) :
+  2 * BecknerOnofri.HighDim.Spin.binaryCost (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i 1 x) +
+          BecknerOnofri.HighDim.CircleScalar.gamma
+            (BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i 1 x) +
+        21 / 1000 * BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i 2 x ^ 2 +
+      27 / 40 *
+        ∑' (n : ℕ), BecknerOnofri.HighDim.ConditionalEntropy.conditionalCosineMoment f i (n + 3) x ^ 2 / (↑n + 3) ≤
+    BecknerOnofri.HighDim.ConditionalEntropy.conditionalEntropy f i x
+BecknerOnofri.Target.spin_channel_gamma_entropy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12) (V : (Fin 12 → ℝ) → ℝ)
+  (hcV : ContinuousOn V (BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12))
+  (hconv :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+      ∀ (i : Fin 12), ConvexOn ℝ (Set.Icc (-1) 1) fun t => V (Function.update v i t))
+  (hmono :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+      ∀ (i : Fin 12), MonotoneOn (fun t => V (Function.update v i t)) (Set.Icc (-1) 1))
+  (hrep :
+    ∀ (x : BecknerOnofri.HighDim.Torus 12),
+      ρ.value x = Real.exp (V (BecknerOnofri.HighDim.ConditionalEntropy.cosineVector x)))
+  (a : BecknerOnofri.HighDim.Frequency 12 → ℂ)
+  (ha : ∀ (m : ℕ), Summable fun k => (1 + BecknerOnofri.HighDim.frequencyLength k) ^ m * ‖a k‖)
+  (he :
+    ∀ (x : BecknerOnofri.HighDim.Torus 12),
+      ↑(ρ.value x) = ∑' (k : BecknerOnofri.HighDim.Frequency 12), a k * (UnitAddTorus.mFourier k) x)
+  (ψ : ℝ → ℝ) (hc : ContinuousOn ψ (Set.Icc 0 1)) (hcv : ConvexOn ℝ (Set.Icc 0 1) ψ)
+  (hminor : ∀ t ∈ Set.Ico 0 1, ψ t ≤ BecknerOnofri.HighDim.CircleScalar.gamma t) :
+  (∀ (i : Fin 12),
+      Summable fun n =>
+        (∫ (x : BecknerOnofri.HighDim.Torus 12),
+              ρ.value x * ((fourier (↑n + 3)) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure 12) ^
+            2 /
+          (↑n + 3)) ∧
+    2 *
+              ∑ σ,
+                BecknerOnofri.HighDim.Spin.channelLaw ρ σ *
+                  Real.log (BecknerOnofri.HighDim.Spin.channelLaw ρ σ / (1 / 4096)) +
+            ∑ i,
+              ψ
+                (∫ (x : BecknerOnofri.HighDim.Torus 12),
+                  ρ.value x * ((fourier 1) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure 12) +
+          21 / 1000 *
+            ∑ i,
+              (∫ (x : BecknerOnofri.HighDim.Torus 12),
+                  ρ.value x * ((fourier 2) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure 12) ^
+                2 +
+        27 / 40 *
+          ∑ i,
+            ∑' (n : ℕ),
+              (∫ (x : BecknerOnofri.HighDim.Torus 12),
+                    ρ.value x * ((fourier (↑n + 3)) (x i)).re ∂BecknerOnofri.HighDim.torusMeasure 12) ^
+                  2 /
+                (↑n + 3) ≤
+      BecknerOnofri.HighDim.entropy ρ
+BecknerOnofri.Target.scalar_tail_small :
+  BecknerOnofri.HighDim.EntropyTail.scalarTail 2 < 41963 / 500000 ∧
+    ∀ n ≤ 2, BecknerOnofri.HighDim.EntropyTail.scalarTail n ≤ BecknerOnofri.HighDim.EntropyTail.scalarBudget n
+BecknerOnofri.Target.scalar_tail_monotonicity :
+  Monotone BecknerOnofri.HighDim.EntropyTail.scalarBudget ∧
+    AntitoneOn BecknerOnofri.HighDim.EntropyTail.heatIntegral (Set.Ioi 0) ∧
+      AntitoneOn BecknerOnofri.HighDim.EntropyTail.heatComplement (Set.Ioi 0) ∧
+        ∀ (n : ℕ),
+          BecknerOnofri.HighDim.EntropyTail.scalarBudget (n + 1) - BecknerOnofri.HighDim.EntropyTail.scalarBudget n =
+            12 * ↑n * (27 / 40 * (↑n - 1) + 4 * (21 / 500)) / ((↑n + 1) * (↑n + 2) * (↑n + 3))
+BecknerOnofri.Target.scalar_tail_heat_reduction :
+  (∀ (n : ℕ),
+      0 < n →
+        BecknerOnofri.HighDim.EntropyTail.scalarTail n ≤
+          BecknerOnofri.HighDim.EntropyTail.heatIntegral (1 / (↑n + 1 / 2))) ∧
+    ∀ (η : ℝ),
+      0 < η →
+        (Summable fun k => BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k * Real.exp (-η * ∑ i, ↑(k i) ^ 2)) ∧
+          MeasureTheory.IntegrableOn (fun s => (s - η) ^ 5 * BecknerOnofri.HighDim.EntropyTail.heatComplement s)
+              (Set.Ioi η) MeasureTheory.MeasureSpace.volume ∧
+            BecknerOnofri.HighDim.EntropyTail.heatIntegral η = BecknerOnofri.HighDim.EntropyTail.gaussianTail η
+BecknerOnofri.Target.scalar_heat_series (s : ℝ) (hs : 0 < s) :
+  (Summable fun k => if BecknerOnofri.HighDim.EntropyTail.outsideCube k then Real.exp (-s * ∑ i, ↑(k i) ^ 2) else 0) ∧
+    (BecknerOnofri.HighDim.EntropyTail.heatComplement s =
+        ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+          if BecknerOnofri.HighDim.EntropyTail.outsideCube k then Real.exp (-s * ∑ i, ↑(k i) ^ 2) else 0) ∧
+      0 ≤ BecknerOnofri.HighDim.EntropyTail.heatComplement s
+BecknerOnofri.Target.scalar_heat_large_bounds :
+  (∀ (s : ℝ),
+      1 ≤ s →
+        BecknerOnofri.HighDim.EntropyTail.heatComplement s ≤
+          12 * (1007 / 500) * Real.exp (-4 * s) * (1 + 2101 / 1000 * Real.exp (-s)) ^ 11) ∧
+    ∀ (s : ℝ), 20 ≤ s → BecknerOnofri.HighDim.EntropyTail.heatComplement s < 26 * Real.exp (-4 * s)
+BecknerOnofri.Target.scalar_heat_global_bound (s : ℝ) (hs : 0 < s) :
+  0 ≤ BecknerOnofri.HighDim.EntropyTail.heatComplement s ∧
+    BecknerOnofri.HighDim.EntropyTail.heatComplement s ≤ Real.pi ^ 6 / s ^ 6
+BecknerOnofri.Target.scalar_heat_panel (v w η : ℝ) (hv : 0 < v) (hvw : v ≤ w) :
+  1 / 120 * ∫ (s : ℝ) in v..w, Max.max (s - η) 0 ^ 5 * BecknerOnofri.HighDim.EntropyTail.heatComplement s ≤
+    BecknerOnofri.HighDim.EntropyTail.heatComplement v / 720 * (Max.max (w - η) 0 ^ 6 - Max.max (v - η) 0 ^ 6)
+BecknerOnofri.Target.scalar_heat_infinite_tail (η : ℝ) (hη : 0 < η) (hη20 : η ≤ 20) :
+  1 / 120 * ∫ (s : ℝ) in Set.Ioi 20, (s - η) ^ 5 * BecknerOnofri.HighDim.EntropyTail.heatComplement s <
+    667 / (2 * 10 ^ 32)
+BecknerOnofri.Target.scalar_heat_derivative (η : ℝ) (hη : 0 < η) :
+  HasDerivAt BecknerOnofri.HighDim.EntropyTail.heatIntegral
+      (-∑' (k : BecknerOnofri.HighDim.Frequency 12),
+          (BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k * ∑ i, ↑(k i) ^ 2) * Real.exp (-η * ∑ i, ↑(k i) ^ 2))
+      η ∧
+    η *
+        ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+          (BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k * ∑ i, ↑(k i) ^ 2) * Real.exp (-η * ∑ i, ↑(k i) ^ 2) ≤
+      Real.pi ^ 6 / 120
+BecknerOnofri.Target.scalar_heat_log_growth (η ξ : ℝ) (hη : 0 < η) (hηξ : η ≤ ξ) :
+  BecknerOnofri.HighDim.EntropyTail.heatIntegral η ≤
+    BecknerOnofri.HighDim.EntropyTail.heatIntegral ξ + Real.pi ^ 6 / 120 * Real.log (ξ / η)
+BecknerOnofri.Target.scalar_unequal_indices (L : Fin 12 → ℕ) :
+  ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+      BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k *
+        ∏ i, BecknerOnofri.HighDim.EntropyTail.scalarCoefficient (L i) (k i).natAbs ≤
+    1 / 12 * ∑ i, BecknerOnofri.HighDim.EntropyTail.scalarTail (L i)
+BecknerOnofri.Target.scalar_harmonic_tail (n : ℕ) :
+  ↑(harmonic n) - 2 * BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n 1 -
+      BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n 2 =
+    2 * ∑' (j : ℕ), BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n (j + 3) / (↑j + 3)
+BecknerOnofri.Target.scalar_to_countable_mixture
+  (hscalar :
+    ∀ (n : ℕ), BecknerOnofri.HighDim.EntropyTail.scalarTail n ≤ BecknerOnofri.HighDim.EntropyTail.scalarBudget n)
+  (w : ℕ → ℝ) (N : ℕ → Fin 12 → ℕ) (hw : ∀ (n : ℕ), 0 ≤ w n) (hs : Summable w)
+  (hSup : Summable fun n => w n * BecknerOnofri.HighDim.EntropyTail.cosineTensor (N n) 0) :
+  1 / 2 *
+      ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+        BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k *
+          ‖BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.EntropyTail.countableCosineMixture w N) k‖ ^ 2 ≤
+    ∑ i,
+      (21 / 1000 *
+          ‖BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.EntropyTail.countableCosineMixture w N)
+                (Pi.single i 2)‖ ^
+            2 +
+        27 / 40 *
+          ∑' (j : ℕ),
+            ‖BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.EntropyTail.countableCosineMixture w N)
+                    (Pi.single i (↑j + 3))‖ ^
+                2 /
+              (↑j + 3))
+BecknerOnofri.Target.entropy_route_density_endpoint
+  (hscalar :
+    ∀ (n : ℕ), BecknerOnofri.HighDim.EntropyTail.scalarTail n ≤ BecknerOnofri.HighDim.EntropyTail.scalarBudget n)
+  (ψ : ℝ → ℝ) (hc : ContinuousOn ψ (Set.Icc 0 1)) (hcv : ConvexOn ℝ (Set.Icc 0 1) ψ)
+  (hminor : ∀ t ∈ Set.Ico 0 1, ψ t ≤ BecknerOnofri.HighDim.CircleScalar.gamma t)
+  (hspin :
+    ∀ (q : BecknerOnofri.HighDim.Spin.Count → ℝ),
+      BecknerOnofri.HighDim.Spin.Feasible q →
+        BecknerOnofri.HighDim.Spin.mean q ∈ Set.Icc 0 1 →
+          BecknerOnofri.HighDim.Spin.mean q ^ 4 / 250 ≤
+            BecknerOnofri.HighDim.Spin.functional q + 12 * ψ (BecknerOnofri.HighDim.Spin.mean q))
+  (d : ℕ) (hd : 12 ≤ d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.spectralEnergy ρ ≤ ENNReal.ofReal (2 * BecknerOnofri.HighDim.entropy ρ)
+BecknerOnofri.Target.scalar_tail_all (n : ℕ) :
+  BecknerOnofri.HighDim.EntropyTail.scalarTail n ≤ BecknerOnofri.HighDim.EntropyTail.scalarBudget n
+BecknerOnofri.Target.entropy_route_endpoint_from_spin (ψ : ℝ → ℝ) (hc : ContinuousOn ψ (Set.Icc 0 1))
+  (hcv : ConvexOn ℝ (Set.Icc 0 1) ψ) (hminor : ∀ t ∈ Set.Ico 0 1, ψ t ≤ BecknerOnofri.HighDim.CircleScalar.gamma t)
+  (hspin :
+    ∀ (q : BecknerOnofri.HighDim.Spin.Count → ℝ),
+      BecknerOnofri.HighDim.Spin.Feasible q →
+        BecknerOnofri.HighDim.Spin.mean q ∈ Set.Icc 0 1 →
+          BecknerOnofri.HighDim.Spin.mean q ^ 4 / 250 ≤
+            BecknerOnofri.HighDim.Spin.functional q + 12 * ψ (BecknerOnofri.HighDim.Spin.mean q))
+  (d : ℕ) (hd : 12 ≤ d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.spectralEnergy ρ ≤ ENNReal.ofReal (2 * BecknerOnofri.HighDim.entropy ρ)
+BecknerOnofri.Target.eleven_profile_regular :
+  ∃ ρ,
+    ρ.value = BecknerOnofri.HighDim.Eleven.periodizedProfile ∧
+      ρ.FiniteEntropy ∧
+        BecknerOnofri.HighDim.SmoothOnTorus ρ.value ∧ ∀ (x : BecknerOnofri.HighDim.Torus 11), 0 < ρ.value x
+BecknerOnofri.Target.eleven_competitor_entropy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 11)
+  (hρ : ρ.value = BecknerOnofri.HighDim.Eleven.periodizedProfile) : BecknerOnofri.HighDim.entropy ρ < 8653 / 600
+BecknerOnofri.Target.eleven_competitor_energy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 11)
+  (hρ : ρ.value = BecknerOnofri.HighDim.Eleven.periodizedProfile) :
+  ENNReal.ofReal (2 * (14475384292906 / 10 ^ 12)) < BecknerOnofri.HighDim.spectralEnergy ρ
+BecknerOnofri.Target.eleven_spectral_pressure :
+  1 / 30 < BecknerOnofri.HighDim.pressure 11 (BecknerOnofri.HighDim.spectralThreshold 11) ∧
+    BecknerOnofri.HighDim.coefficientDefect 11 (BecknerOnofri.HighDim.spectralCoefficient 11) =
+      BecknerOnofri.HighDim.pressure 11 (BecknerOnofri.HighDim.spectralThreshold 11)
+BecknerOnofri.Target.eleven_transition_interval :
+  3543 / 200 < BecknerOnofri.HighDim.Eleven.globalTransition ∧
+    BecknerOnofri.HighDim.Eleven.globalTransition < 2063 / 100 ∧
+      2063 / 100 < BecknerOnofri.HighDim.spectralThreshold 11 ∧ BecknerOnofri.HighDim.spectralThreshold 11 < 22
+BecknerOnofri.Target.eleven_uniform_unique (β : ℝ) (hβ : 0 ≤ β) (hβ₀ : β ≤ 3543 / 200)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity 11) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.IsGlobalMinimizer β ρ ↔ ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure 11] fun x => 1
+BecknerOnofri.Target.eleven_coexistence :
+  BecknerOnofri.HighDim.IsGlobalMinimizer BecknerOnofri.HighDim.Eleven.globalTransition
+      (BecknerOnofri.HighDim.uniformDensity 11) ∧
+    ∃ ρ,
+      BecknerOnofri.HighDim.IsGlobalMinimizer BecknerOnofri.HighDim.Eleven.globalTransition ρ ∧
+        BecknerOnofri.HighDim.SmoothOnTorus ρ.value ∧
+          (∀ (x : BecknerOnofri.HighDim.Torus 11), 0 < ρ.value x) ∧
+            ¬ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure 11] fun x => 1
+BecknerOnofri.Target.eleven_uniform_hessian :
+  0 < 1 - BecknerOnofri.HighDim.Eleven.globalTransition / BecknerOnofri.HighDim.spectralThreshold 11 ∧
+    ∀ (h : BecknerOnofri.HighDim.Torus 11 → ℝ),
+      BecknerOnofri.HighDim.SmoothOnTorus h →
+        BecknerOnofri.HighDim.MeanZero h →
+          (1 - BecknerOnofri.HighDim.Eleven.globalTransition / BecknerOnofri.HighDim.spectralThreshold 11) *
+              ∫ (x : BecknerOnofri.HighDim.Torus 11), h x ^ 2 ∂BecknerOnofri.HighDim.torusMeasure 11 ≤
+            BecknerOnofri.HighDim.Eleven.uniformHessian BecknerOnofri.HighDim.Eleven.globalTransition h
+BecknerOnofri.Target.eleven_pressure_corner :
+  (∀ (β : ℝ), 0 < β → β < 22 → BecknerOnofri.HighDim.pressure 11 β = ↑(BecknerOnofri.HighDim.Eleven.pressureReal β)) ∧
+    ¬DifferentiableAt ℝ BecknerOnofri.HighDim.Eleven.pressureReal BecknerOnofri.HighDim.Eleven.globalTransition
+BecknerOnofri.Target.eleven_defect_corner :
+  (∃ ε,
+      0 < ε ∧
+        ε < BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient ∧
+          ∀ (A : ℝ),
+            |A - BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient| < ε →
+              BecknerOnofri.HighDim.coefficientDefect 11 A = ↑(BecknerOnofri.HighDim.Eleven.defectReal A)) ∧
+    ¬DifferentiableAt ℝ BecknerOnofri.HighDim.Eleven.defectReal BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient
+BecknerOnofri.Target.eleven_spectral_constants :
+  BecknerOnofri.HighDim.spectralThreshold 11 = 64 * Real.pi ^ 5 / 945 ∧
+    2063 / 100 < BecknerOnofri.HighDim.spectralThreshold 11 ∧ BecknerOnofri.HighDim.spectralThreshold 11 < 22
+BecknerOnofri.Target.low_density_endpoint (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  ↑(↑d / BecknerOnofri.HighDim.spectralThreshold d) * ↑(BecknerOnofri.HighDim.spectralEnergy ρ) ≤
+    ↑(BecknerOnofri.HighDim.entropy ρ)
+BecknerOnofri.Target.low_potential_endpoint (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  MeasureTheory.Integrable (fun x => Real.exp (BecknerOnofri.HighDim.centered u x))
+      (BecknerOnofri.HighDim.torusMeasure d) ∧
+    BecknerOnofri.HighDim.logPartition u ≤
+      ↑(BecknerOnofri.HighDim.collapseCoefficient d * BecknerOnofri.HighDim.potentialEnergy u)
+BecknerOnofri.Target.low_density_rigidity (d : ℕ) (hd : 2 ≤ d) (hd10 : d ≤ 10)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  ↑(↑d / BecknerOnofri.HighDim.spectralThreshold d) * ↑(BecknerOnofri.HighDim.spectralEnergy ρ) =
+      ↑(BecknerOnofri.HighDim.entropy ρ) ↔
+    ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => 1
+BecknerOnofri.Target.low_potential_rigidity (d : ℕ) (hd : 2 ≤ d) (hd10 : d ≤ 10) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  BecknerOnofri.HighDim.logPartition u =
+      ↑(BecknerOnofri.HighDim.collapseCoefficient d * BecknerOnofri.HighDim.potentialEnergy u) ↔
+    ∃ c, u =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => c
+BecknerOnofri.Target.low_circle_potential (u : BecknerOnofri.HighDim.Torus 1 → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) :
+  BecknerOnofri.HighDim.logPartition u =
+      ↑(BecknerOnofri.HighDim.collapseCoefficient 1 * BecknerOnofri.HighDim.potentialEnergy u) ↔
+    ∃ a,
+      ‖a‖ < 1 ∧
+        ∃ c,
+          u =ᵐ[BecknerOnofri.HighDim.torusMeasure 1] fun x =>
+            -2 * Real.log ‖1 - (starRingEnd ℂ) a * (fourier 1) (x 0)‖ + c
+BecknerOnofri.Target.low_circle_density (ρ : BecknerOnofri.HighDim.ProbabilityDensity 1) (hρ : ρ.FiniteEntropy) :
+  ↑(1 / BecknerOnofri.HighDim.spectralThreshold 1) * ↑(BecknerOnofri.HighDim.spectralEnergy ρ) =
+      ↑(BecknerOnofri.HighDim.entropy ρ) ↔
+    ∃ a, ‖a‖ < 1 ∧ ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure 1] fun x => (1 - ‖a‖ ^ 2) / ‖(fourier 1) (x 0) - a‖ ^ 2
+BecknerOnofri.Target.low_coefficient_sharp (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) :
+  IsLeast
+    {A |
+      ∀ (u : BecknerOnofri.HighDim.Torus d → ℝ),
+        BecknerOnofri.HighDim.InCriticalSobolev u →
+          BecknerOnofri.HighDim.logPartition u ≤ ↑(A * BecknerOnofri.HighDim.potentialEnergy u)}
+    (BecknerOnofri.HighDim.collapseCoefficient d)
+BecknerOnofri.Target.low_pressure_formula (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) (β : ℝ) :
+  BecknerOnofri.HighDim.pressure d β = if β ≤ 2 * ↑d then 0 else ⊤
+BecknerOnofri.Target.low_coefficient_formula (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) (A : ℝ) :
+  BecknerOnofri.HighDim.coefficientDefect d A = if BecknerOnofri.HighDim.collapseCoefficient d ≤ A then 0 else ⊤
+BecknerOnofri.Target.low_physical_density_endpoint (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  MeasureTheory.Integrable
+      (fun z => Legacy.TorusEndpoint.GreenKernelReal.realGreen d (z.1 - z.2) * ρ.value z.1 * ρ.value z.2)
+      ((BecknerOnofri.HighDim.torusMeasure d).prod (BecknerOnofri.HighDim.torusMeasure d)) ∧
+    ↑d *
+        ∫ (x : BecknerOnofri.HighDim.Torus d),
+          ∫ (y : BecknerOnofri.HighDim.Torus d),
+            Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) * ρ.value x *
+              ρ.value y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d ≤
+      BecknerOnofri.HighDim.entropy ρ
+BecknerOnofri.Target.eleven_scalar_finite (n : ℕ) (hn : 1 ≤ n) (hn21 : n ≤ 21) :
+  1 / 2000 <
+    11 * ↑(harmonic n) -
+      3543 / 200 / BecknerOnofri.HighDim.spectralThreshold 11 * BecknerOnofri.HighDim.Eleven.scalarEnergy n
+BecknerOnofri.Target.eleven_scalar_all (n : ℕ) (hn : 1 ≤ n) :
+  1 / 2000 <
+    11 * ↑(harmonic n) -
+      3543 / 200 / BecknerOnofri.HighDim.spectralThreshold 11 * BecknerOnofri.HighDim.Eleven.scalarEnergy n
+BecknerOnofri.Target.eleven_theta_integral :
+  MeasureTheory.IntegrableOn
+      (Legacy.BecknerOnofri.ThetaDomination.thetaIntegrand Legacy.BecknerOnofri.ThetaDomination.realTheta 11)
+      (Set.Ici 1) MeasureTheory.MeasureSpace.volume ∧
+    Legacy.BecknerOnofri.ThetaDomination.thetaIntegral Legacy.BecknerOnofri.ThetaDomination.realTheta 11 < 5 / 2
+BecknerOnofri.Target.student_beta_integral (d : ℕ) (a c : ℝ) (ha : ↑d / 2 < a) (hc : 0 < c) :
+  ∫ (x : Fin d → ℝ), (1 + c * ∑ i, x i ^ 2) ^ (-a) = (Real.pi / c) ^ (↑d / 2) * Real.Gamma (a - ↑d / 2) / Real.Gamma a
+BecknerOnofri.Target.eleven_profile_mass :
+  (∀ (x : BecknerOnofri.HighDim.Torus 11), 0 < BecknerOnofri.HighDim.Eleven.periodizedProfile x) ∧
+    MeasureTheory.Integrable BecknerOnofri.HighDim.Eleven.periodizedProfile (BecknerOnofri.HighDim.torusMeasure 11) ∧
+      ∫ (x : BecknerOnofri.HighDim.Torus 11),
+          BecknerOnofri.HighDim.Eleven.periodizedProfile x ∂BecknerOnofri.HighDim.torusMeasure 11 =
+        1
+BecknerOnofri.Target.eleven_euclidean_entropy :
+  MeasureTheory.Integrable
+      (fun x =>
+        BecknerOnofri.HighDim.Eleven.euclideanProfile x * Real.log (BecknerOnofri.HighDim.Eleven.euclideanProfile x))
+      MeasureTheory.MeasureSpace.volume ∧
+    ∫ (x : Fin 11 → ℝ),
+          BecknerOnofri.HighDim.Eleven.euclideanProfile x * Real.log (BecknerOnofri.HighDim.Eleven.euclideanProfile x) =
+        Real.log (3 * 5 ^ 12 / (2 ^ 9 * Real.pi ^ 6)) + 17897 / 2520 ∧
+      ∫ (x : Fin 11 → ℝ),
+          BecknerOnofri.HighDim.Eleven.euclideanProfile x * Real.log (BecknerOnofri.HighDim.Eleven.euclideanProfile x) <
+        721 / 50
+BecknerOnofri.Target.eleven_coordinate_marginal (t : ℝ) :
+  ∫ (x : Fin 10 → ℝ), BecknerOnofri.HighDim.Eleven.euclideanProfile (Fin.cons t x) =
+    1280 / (63 * Real.pi) * (1 + 25 * t ^ 2) ^ (-6)
+BecknerOnofri.Target.eleven_entropy_chain :
+  (∀ y ∈ BecknerOnofri.HighDim.Eleven.labelCube,
+      ∑' (n : BecknerOnofri.HighDim.Frequency 11), BecknerOnofri.HighDim.Eleven.conditionalLabel y n = 1) ∧
+    MeasureTheory.IntegrableOn
+        (fun y =>
+          (BecknerOnofri.HighDim.Eleven.periodizedProfile fun i => ↑(y i)) *
+            ∑' (n : BecknerOnofri.HighDim.Frequency 11),
+              BecknerOnofri.HighDim.Eleven.conditionalLabel y n *
+                Real.log (BecknerOnofri.HighDim.Eleven.conditionalLabel y n))
+        BecknerOnofri.HighDim.Eleven.labelCube MeasureTheory.MeasureSpace.volume ∧
+      ∫ (y : BecknerOnofri.HighDim.Torus 11),
+          BecknerOnofri.HighDim.Eleven.periodizedProfile y *
+            Real.log (BecknerOnofri.HighDim.Eleven.periodizedProfile y) ∂BecknerOnofri.HighDim.torusMeasure 11 =
+        (∫ (x : Fin 11 → ℝ),
+            BecknerOnofri.HighDim.Eleven.euclideanProfile x *
+              Real.log (BecknerOnofri.HighDim.Eleven.euclideanProfile x)) +
+          BecknerOnofri.HighDim.Eleven.conditionalLabelEntropy
+BecknerOnofri.Target.eleven_label_moment :
+  HasSum BecknerOnofri.HighDim.Eleven.coordinateLabelProbability 1 ∧
+    (Summable fun n => BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n * ↑n.natAbs) ∧
+      BecknerOnofri.HighDim.Eleven.coordinateLabelMoment < 83927 / 8121093750
+BecknerOnofri.Target.eleven_coordinate_label_entropy :
+  (Summable fun n =>
+      BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n *
+        Real.log (BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n)) ∧
+    11 *
+        -∑' (n : ℤ),
+            BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n *
+              Real.log (BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n) <
+      1 / 600
+BecknerOnofri.Target.eleven_label_entropy_chain :
+  HasSum BecknerOnofri.HighDim.Eleven.labelProbability 1 ∧
+    (Summable fun n =>
+        BecknerOnofri.HighDim.Eleven.labelProbability n * Real.log (BecknerOnofri.HighDim.Eleven.labelProbability n)) ∧
+      BecknerOnofri.HighDim.Eleven.conditionalLabelEntropy ≤ BecknerOnofri.HighDim.Eleven.labelEntropy ∧
+        BecknerOnofri.HighDim.Eleven.labelEntropy ≤
+            11 *
+              -∑' (n : ℤ),
+                  BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n *
+                    Real.log (BecknerOnofri.HighDim.Eleven.coordinateLabelProbability n) ∧
+          BecknerOnofri.HighDim.Eleven.conditionalLabelEntropy < 1 / 600
+BecknerOnofri.Target.eleven_competitor_entropy_fine (ρ : BecknerOnofri.HighDim.ProbabilityDensity 11)
+  (hρ : ρ.value = BecknerOnofri.HighDim.Eleven.periodizedProfile) :
+  BecknerOnofri.HighDim.entropy ρ < 7305164 / 10 ^ 6 + 17897 / 2520 + 1 / 600
+BecknerOnofri.Target.eleven_half_integer_laplace (z : ℝ) (hz : 0 ≤ z) :
+  ∫ (t : ℝ) in Set.Ioi 0, t ^ (9 / 2) * Real.exp (-t - z ^ 2 / (4 * t)) =
+    √Real.pi * Real.exp (-z) * BecknerOnofri.HighDim.Eleven.fourierPolynomial z / 32
+BecknerOnofri.Target.eleven_euclidean_fourier (w : EuclideanSpace ℝ (Fin 11)) :
+  ∫ (x : EuclideanSpace ℝ (Fin 11)),
+      Complex.exp (-↑(2 * Real.pi * Inner.inner ℝ w x) * Complex.I) *
+        ↑(BecknerOnofri.HighDim.Eleven.euclideanProfile fun i => x.ofLp i) =
+    ↑(BecknerOnofri.HighDim.Eleven.fourierProfile (2 * Real.pi * ‖w‖ / 5))
+BecknerOnofri.Target.eleven_periodized_fourier (k : BecknerOnofri.HighDim.Frequency 11) :
+  BecknerOnofri.HighDim.fourierCoeff BecknerOnofri.HighDim.Eleven.periodizedProfile k =
+      ↑(BecknerOnofri.HighDim.Eleven.fourierProfile (2 * Real.pi * BecknerOnofri.HighDim.frequencyLength k / 5)) ∧
+    0 < (BecknerOnofri.HighDim.fourierCoeff BecknerOnofri.HighDim.Eleven.periodizedProfile k).re
+BecknerOnofri.Target.eleven_curve_convexity :
+  ConvexOn ℝ (Set.Ioo 0 22) BecknerOnofri.HighDim.Eleven.pressureReal ∧
+    ∃ ε,
+      0 < ε ∧
+        ConvexOn ℝ
+          (Set.Ioo (BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient - ε)
+            (BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient + ε))
+          BecknerOnofri.HighDim.Eleven.defectReal
+BecknerOnofri.Target.eleven_pressure_derivative_jump :
+  ∃ p,
+    0 < p ∧
+      HasDerivWithinAt BecknerOnofri.HighDim.Eleven.pressureReal 0
+          (Set.Iio BecknerOnofri.HighDim.Eleven.globalTransition) BecknerOnofri.HighDim.Eleven.globalTransition ∧
+        HasDerivWithinAt BecknerOnofri.HighDim.Eleven.pressureReal p
+          (Set.Ioi BecknerOnofri.HighDim.Eleven.globalTransition) BecknerOnofri.HighDim.Eleven.globalTransition
+BecknerOnofri.Target.eleven_defect_derivative_jump :
+  ∃ q < 0,
+    HasDerivWithinAt BecknerOnofri.HighDim.Eleven.defectReal q
+        (Set.Iio BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient)
+        BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient ∧
+      HasDerivWithinAt BecknerOnofri.HighDim.Eleven.defectReal 0
+        (Set.Ioi BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient) BecknerOnofri.HighDim.Eleven.zeroDefectCoefficient
+BecknerOnofri.Target.finite_entropy_physical_bound (d : ℕ) (hd : 0 < d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) (a : ℝ) (ha : 0 < a) (had : a < ↑d) :
+  MeasureTheory.Integrable
+      (fun z => Legacy.TorusEndpoint.GreenKernelReal.realGreen d (z.1 - z.2) * ρ.value z.1 * ρ.value z.2)
+      ((BecknerOnofri.HighDim.torusMeasure d).prod (BecknerOnofri.HighDim.torusMeasure d)) ∧
+    0 ≤
+        ∫ (x : BecknerOnofri.HighDim.Torus d),
+          ∫ (y : BecknerOnofri.HighDim.Torus d),
+            Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) * ρ.value x *
+              ρ.value y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d ∧
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+          ∫ (y : BecknerOnofri.HighDim.Torus d),
+            Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) * ρ.value x *
+              ρ.value y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d ≤
+        2 / a * BecknerOnofri.HighDim.entropy ρ +
+          1 / a *
+            Real.log
+              (∫ (x : BecknerOnofri.HighDim.Torus d),
+                ∫ (y : BecknerOnofri.HighDim.Torus d),
+                  Real.exp
+                    (a *
+                      Legacy.TorusEndpoint.GreenKernelReal.realGreen d
+                        (x - y)) ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d)
+BecknerOnofri.Target.heat_regularization_smooth (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (t : ℝ)
+  (ht : 0 < t) :
+  ∃ η,
+    η.value = BecknerOnofri.HighDim.heatRegularization ρ t ∧
+      η.FiniteEntropy ∧
+        BecknerOnofri.HighDim.SmoothOnTorus η.value ∧ ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < η.value x
+BecknerOnofri.Target.heat_interaction_limit (d : ℕ) (hd : 0 < d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) (t : ℕ → ℝ) (ht : ∀ (n : ℕ), 0 < t n) (ht0 : Filter.Tendsto t Filter.atTop (nhds 0)) :
+  Filter.Tendsto
+    (fun n =>
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        ∫ (y : BecknerOnofri.HighDim.Torus d),
+          Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) *
+              BecknerOnofri.HighDim.heatRegularization ρ (t n) x *
+            BecknerOnofri.HighDim.heatRegularization ρ (t n)
+              y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d)
+    Filter.atTop
+    (nhds
+      (∫ (x : BecknerOnofri.HighDim.Torus d),
+        ∫ (y : BecknerOnofri.HighDim.Torus d),
+          Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) * ρ.value x *
+            ρ.value y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d))
+BecknerOnofri.Target.eleven_local_uniqueness (β₀ : ℝ) (hβ : 0 < β₀)
+  (hβσ : β₀ < BecknerOnofri.HighDim.spectralThreshold 11) :
+  ∃ ε,
+    0 < ε ∧
+      ∀ (β : ℝ) (u : BecknerOnofri.HighDim.Torus 11 → ℝ),
+        |β - β₀| < ε →
+          BecknerOnofri.HighDim.InSobolev 11 u →
+            BecknerOnofri.HighDim.MeanZero u →
+              BecknerOnofri.HighDim.sobolevNorm 11 u < ε →
+                (u =ᵐ[BecknerOnofri.HighDim.torusMeasure 11] fun x =>
+                    β *
+                      ∫ (y : BecknerOnofri.HighDim.Torus 11),
+                        Legacy.TorusEndpoint.GreenKernelReal.realGreen 11 y *
+                          (BecknerOnofri.HighDim.normalizedGibbs u (x - y) -
+                            1) ∂BecknerOnofri.HighDim.torusMeasure 11) →
+                  u =ᵐ[BecknerOnofri.HighDim.torusMeasure 11] fun x => 0
+BecknerOnofri.Target.closed_cube_positive_taylor (d : ℕ) (f : BecknerOnofri.HighDim.ClosedCubeTaylor.Space d → ℝ)
+  (hf : ContDiffOn ℝ (↑⊤) f (Set.Icc 0 1)) (hpos : BecknerOnofri.HighDim.ClosedCubeTaylor.nonnegativePartials f) :
+  (∀ (a : BecknerOnofri.HighDim.ClosedCubeTaylor.Index d), 0 ≤ BecknerOnofri.HighDim.ClosedCubeTaylor.coefficient f a) ∧
+    HasSum (BecknerOnofri.HighDim.ClosedCubeTaylor.coefficient f) (f 1) ∧
+      (∀ (y : BecknerOnofri.HighDim.ClosedCubeTaylor.Cube d),
+          HasSum
+            (fun a =>
+              BecknerOnofri.HighDim.ClosedCubeTaylor.coefficient f a *
+                BecknerOnofri.HighDim.ClosedCubeTaylor.monomial a y)
+            (f fun i => ↑(y i))) ∧
+        TendstoUniformly
+          (fun s y =>
+            ∑ a ∈ s,
+              BecknerOnofri.HighDim.ClosedCubeTaylor.coefficient f a *
+                BecknerOnofri.HighDim.ClosedCubeTaylor.monomial a y)
+          (fun y => f fun i => ↑(y i)) Filter.atTop
+BecknerOnofri.Target.pressure_smooth_sup (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β) :
+  BecknerOnofri.HighDim.pressure d β =
+    ⨆ ρ,
+      ⨆ (_ : ρ.FiniteEntropy),
+        ⨆ (_ : BecknerOnofri.HighDim.SmoothOnTorus ρ.value),
+          ⨆ (_ : ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < ρ.value x),
+            ↑(β / (2 * BecknerOnofri.HighDim.spectralThreshold d)) * ↑(BecknerOnofri.HighDim.spectralEnergy ρ) -
+              ↑(BecknerOnofri.HighDim.entropy ρ)
+BecknerOnofri.Target.heat_entropy_limit (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy)
+  (t : ℕ → ℝ) (ht : ∀ (n : ℕ), 0 < t n) (ht0 : Filter.Tendsto t Filter.atTop (nhds 0)) :
+  Filter.Tendsto
+    (fun n =>
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        BecknerOnofri.HighDim.heatRegularization ρ (t n) x *
+          Real.log (BecknerOnofri.HighDim.heatRegularization ρ (t n) x) ∂BecknerOnofri.HighDim.torusMeasure d)
+    Filter.atTop (nhds (BecknerOnofri.HighDim.entropy ρ))
+BecknerOnofri.Target.heat_l1_limit (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (t : ℕ → ℝ)
+  (ht : ∀ (n : ℕ), 0 < t n) (ht0 : Filter.Tendsto t Filter.atTop (nhds 0)) :
+  Filter.Tendsto
+    (fun n =>
+      ∫ (x : BecknerOnofri.HighDim.Torus d),
+        ‖BecknerOnofri.HighDim.heatRegularization ρ (t n) x - ρ.value x‖ ∂BecknerOnofri.HighDim.torusMeasure d)
+    Filter.atTop (nhds 0)
+BecknerOnofri.Target.low_scalar_gap (d n : ℕ) (hd2 : 2 ≤ d) (hd10 : d ≤ 10) (hn : 1 ≤ n) :
+  3 / 1100 <
+    ↑d * ↑(harmonic n) - 2 * ↑d / BecknerOnofri.HighDim.spectralThreshold d * BecknerOnofri.HighDim.LowScalar.energy d n
+BecknerOnofri.Target.low_hypergeometric_identity (n m : ℕ) :
+  (∀ (l : ℕ), 0 ≤ BecknerOnofri.HighDim.LowScalar.mixingWeight n m l) ∧
+    ∑ l ∈ Finset.range (n + 1), BecknerOnofri.HighDim.LowScalar.mixingWeight n m l = 1 ∧
+      (∀ (l : ℕ), Min.min n m < l → BecknerOnofri.HighDim.LowScalar.mixingWeight n m l = 0) ∧
+        ∀ (j : ℤ),
+          BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n j.natAbs *
+              BecknerOnofri.HighDim.EntropyTail.scalarCoefficient m j.natAbs =
+            ∑ l ∈ Finset.range (n + 1),
+              BecknerOnofri.HighDim.LowScalar.mixingWeight n m l *
+                BecknerOnofri.HighDim.EntropyTail.scalarCoefficient l j.natAbs
+BecknerOnofri.Target.low_harmonic_identity (n : ℕ) :
+  HasSum (fun j => BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n (j + 1) / (↑j + 1)) (↑(harmonic n) / 2)
+BecknerOnofri.Target.low_theta_integral : BecknerOnofri.HighDim.LowScalar.thetaIntegral 10 < 41 / 25
+BecknerOnofri.Target.low_theta_dimension_bound (d : ℕ) (hd : 0 < d) (hd10 : d ≤ 10) :
+  BecknerOnofri.HighDim.LowScalar.thetaIntegral d < ↑d / 10 * (41 / 25)
+BecknerOnofri.Target.first_shell_order_parameter (d : ℕ) (f : BecknerOnofri.HighDim.Torus d → ℝ) :
+  BecknerOnofri.HighDim.firstShellOrderParameter f ^ 2 =
+    ∑' (k : BecknerOnofri.HighDim.Frequency d),
+      if BecknerOnofri.HighDim.frequencyLength k = 1 then ‖BecknerOnofri.HighDim.fourierCoeff f k‖ ^ 2 else 0
+BecknerOnofri.Target.order_parameter_onset (d : ℕ) (hd : 12 ≤ d) :
+  ∃ C,
+    0 < C ∧
+      ∀ᶠ (β : ℝ) in
+        nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d) (Set.Ioi (BecknerOnofri.HighDim.spectralThreshold d)),
+        ∀ (ρ : BecknerOnofri.HighDim.ProbabilityDensity d),
+          BecknerOnofri.HighDim.IsGlobalMinimizer β ρ →
+            |BecknerOnofri.HighDim.firstShellOrderParameter ρ.value -
+                  √(2 * ↑d / BecknerOnofri.HighDim.kappa d) * √(BecknerOnofri.HighDim.onsetDelta d β)| ≤
+              C * BecknerOnofri.HighDim.onsetDelta d β
+BecknerOnofri.Target.pressure_derivative_at_threshold (d : ℕ) (hd : 12 ≤ d) :
+  HasDerivAt (fun β => (BecknerOnofri.HighDim.pressure d β).toReal) 0 (BecknerOnofri.HighDim.spectralThreshold d)
+BecknerOnofri.Target.finite_entropy_green_potential (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.InCriticalSobolev (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value) ∧
+    BecknerOnofri.HighDim.MeanZero (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value)
+BecknerOnofri.Target.primal_gap_identity (d : ℕ) (hd : 0 < d) (A : ℝ) (hA : 0 < A)
+  (u : BecknerOnofri.HighDim.Torus d → ℝ) (hu : BecknerOnofri.HighDim.InCriticalSobolev u)
+  (hm : BecknerOnofri.HighDim.MeanZero u) :
+  Real.log (∫ (x : BecknerOnofri.HighDim.Torus d), Real.exp (u x) ∂BecknerOnofri.HighDim.torusMeasure d) -
+      A * BecknerOnofri.HighDim.potentialEnergy u =
+    BecknerOnofri.HighDim.Gap.densityValue (BecknerOnofri.HighDim.Gap.coefficient d A)
+        (BecknerOnofri.HighDim.normalizedGibbs u) -
+      A *
+        BecknerOnofri.HighDim.potentialEnergy
+          (u -
+            BecknerOnofri.HighDim.Gap.densityPotential (BecknerOnofri.HighDim.Gap.coefficient d A)
+              (BecknerOnofri.HighDim.normalizedGibbs u))
+BecknerOnofri.Target.dual_gap_identity (d : ℕ) (hd : 0 < d) (A : ℝ) (hA : 0 < A)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.Gap.densityValue (BecknerOnofri.HighDim.Gap.coefficient d A) ρ.value =
+    Real.log
+          (∫ (x : BecknerOnofri.HighDim.Torus d),
+            Real.exp
+              (BecknerOnofri.HighDim.Gap.densityPotential (BecknerOnofri.HighDim.Gap.coefficient d A) ρ.value
+                x) ∂BecknerOnofri.HighDim.torusMeasure d) -
+        A *
+          BecknerOnofri.HighDim.potentialEnergy
+            (BecknerOnofri.HighDim.Gap.densityPotential (BecknerOnofri.HighDim.Gap.coefficient d A) ρ.value) -
+      BecknerOnofri.HighDim.Gap.relativeEntropy ρ.value
+        (BecknerOnofri.HighDim.normalizedGibbs
+          (BecknerOnofri.HighDim.Gap.densityPotential (BecknerOnofri.HighDim.Gap.coefficient d A) ρ.value))
+BecknerOnofri.Target.local_quartic_signs (d : ℕ) (hd : 11 ≤ d) :
+  0 < BecknerOnofri.HighDim.kappa d ∧
+    BecknerOnofri.HighDim.quarticA d < 0 ∧
+      0 < BecknerOnofri.HighDim.quarticB d ∧
+        ∀ (n : ℕ),
+          0 < n → n ≤ d → (BecknerOnofri.HighDim.quarticA d + BecknerOnofri.HighDim.quarticB d / 2 * (↑n - 1)) / ↑n < 0
+BecknerOnofri.Target.local_quartic_pressure_order (d m n : ℕ) (hd : 11 ≤ d) (hm : 0 < m) (hmn : m < n) (hnd : n ≤ d) :
+  -1 / (4 * ((BecknerOnofri.HighDim.quarticA d + BecknerOnofri.HighDim.quarticB d / 2 * (↑m - 1)) / ↑m)) <
+    -1 / (4 * ((BecknerOnofri.HighDim.quarticA d + BecknerOnofri.HighDim.quarticB d / 2 * (↑n - 1)) / ↑n))
+BecknerOnofri.Target.pressure_first_derivative_limits (d : ℕ) (hd : 12 ≤ d) :
+  Filter.Tendsto (deriv fun β => (BecknerOnofri.HighDim.pressure d β).toReal)
+      (nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d) (Set.Iio (BecknerOnofri.HighDim.spectralThreshold d)))
+      (nhds 0) ∧
+    Filter.Tendsto (deriv fun β => (BecknerOnofri.HighDim.pressure d β).toReal)
+      (nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d) (Set.Ioi (BecknerOnofri.HighDim.spectralThreshold d)))
+      (nhds 0)
+BecknerOnofri.Target.pressure_second_derivative_limits (d : ℕ) (hd : 12 ≤ d) :
+  Filter.Tendsto (deriv (deriv fun β => (BecknerOnofri.HighDim.pressure d β).toReal))
+      (nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d) (Set.Iio (BecknerOnofri.HighDim.spectralThreshold d)))
+      (nhds 0) ∧
+    Filter.Tendsto (deriv (deriv fun β => (BecknerOnofri.HighDim.pressure d β).toReal))
+        (nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d) (Set.Ioi (BecknerOnofri.HighDim.spectralThreshold d)))
+        (nhds (↑d / (BecknerOnofri.HighDim.kappa d * BecknerOnofri.HighDim.spectralThreshold d ^ 2))) ∧
+      0 < ↑d / (BecknerOnofri.HighDim.kappa d * BecknerOnofri.HighDim.spectralThreshold d ^ 2)
+BecknerOnofri.Target.pressure_first_derivative_expansion (d : ℕ) (hd : 12 ≤ d) :
+  (fun β =>
+      deriv (fun γ => (BecknerOnofri.HighDim.pressure d γ).toReal) β -
+        ↑d / (BecknerOnofri.HighDim.kappa d * BecknerOnofri.HighDim.spectralThreshold d) *
+          BecknerOnofri.HighDim.onsetDelta d
+            β) =O[nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d)
+      (Set.Ioi (BecknerOnofri.HighDim.spectralThreshold d))]
+    fun β => BecknerOnofri.HighDim.onsetDelta d β ^ 2
+BecknerOnofri.Target.pressure_second_derivative_expansion (d : ℕ) (hd : 12 ≤ d) :
+  (fun β =>
+      deriv (deriv fun γ => (BecknerOnofri.HighDim.pressure d γ).toReal) β -
+        ↑d /
+          (BecknerOnofri.HighDim.kappa d *
+            BecknerOnofri.HighDim.spectralThreshold d ^
+              2)) =O[nhdsWithin (BecknerOnofri.HighDim.spectralThreshold d)
+      (Set.Ioi (BecknerOnofri.HighDim.spectralThreshold d))]
+    BecknerOnofri.HighDim.onsetDelta d
+BecknerOnofri.Target.pressure_concentration_divergence (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 2 * ↑d < β) :
+  BecknerOnofri.HighDim.pressure d β = ⊤
+BecknerOnofri.Target.coefficient_concentration_divergence (d : ℕ) (hd : 0 < d) (A : ℝ)
+  (hA : A < BecknerOnofri.HighDim.collapseCoefficient d) : BecknerOnofri.HighDim.coefficientDefect d A = ⊤
+BecknerOnofri.Target.general_pressure_geometry (d : ℕ) (hd : 0 < d) :
+  MonotoneOn (BecknerOnofri.HighDim.pressure d) (Set.Icc 0 (2 * ↑d)) ∧
+    (∀ β ∈ Set.Icc 0 (2 * ↑d), 0 ≤ BecknerOnofri.HighDim.pressure d β) ∧
+      ∀ β ∈ Set.Icc 0 (2 * ↑d),
+        ∀ γ ∈ Set.Icc 0 (2 * ↑d),
+          ∀ (a b : ℝ),
+            0 ≤ a →
+              0 ≤ b →
+                a + b = 1 →
+                  BecknerOnofri.HighDim.pressure d (a * β + b * γ) ≤
+                    ↑a * BecknerOnofri.HighDim.pressure d β + ↑b * BecknerOnofri.HighDim.pressure d γ
+BecknerOnofri.Target.general_coefficient_geometry (d : ℕ) (hd : 0 < d) :
+  AntitoneOn (BecknerOnofri.HighDim.coefficientDefect d) (Set.Ioi 0) ∧
+    (∀ A ∈ Set.Ioi 0, 0 ≤ BecknerOnofri.HighDim.coefficientDefect d A) ∧
+      ∀ A ∈ Set.Ioi 0,
+        ∀ B ∈ Set.Ioi 0,
+          ∀ (a b : ℝ),
+            0 ≤ a →
+              0 ≤ b →
+                a + b = 1 →
+                  BecknerOnofri.HighDim.coefficientDefect d (a * A + b * B) ≤
+                    ↑a * BecknerOnofri.HighDim.coefficientDefect d A + ↑b * BecknerOnofri.HighDim.coefficientDefect d B
+BecknerOnofri.Target.interaction_physical_positive (d : ℕ) (hd : 0 < d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.VariationalCurves.interaction ρ =
+      1 / 2 *
+        ∫ (x : BecknerOnofri.HighDim.Torus d),
+          ∫ (y : BecknerOnofri.HighDim.Torus d),
+            Legacy.TorusEndpoint.GreenKernelReal.realGreen d (x - y) * ρ.value x *
+              ρ.value y ∂BecknerOnofri.HighDim.torusMeasure d ∂BecknerOnofri.HighDim.torusMeasure d ∧
+    (0 < BecknerOnofri.HighDim.VariationalCurves.interaction ρ ↔
+      ¬ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] fun x => 1)
+BecknerOnofri.Target.general_transition_quotient (d : ℕ) (hd : 0 < d) :
+  BecknerOnofri.HighDim.VariationalCurves.globalTransition d =
+    InfSet.sInf (BecknerOnofri.HighDim.VariationalCurves.entropyInteractionQuotients d)
+BecknerOnofri.Target.general_pressure_zero_set (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 ≤ β) :
+  BecknerOnofri.HighDim.pressure d β = 0 ↔ β ≤ BecknerOnofri.HighDim.VariationalCurves.globalTransition d
+BecknerOnofri.Target.general_coefficient_zero_set (d : ℕ) (hd : 0 < d) (A : ℝ) (hA : 0 < A) :
+  BecknerOnofri.HighDim.coefficientDefect d A = 0 ↔ BecknerOnofri.HighDim.VariationalCurves.zeroDefectCoefficient d ≤ A
+BecknerOnofri.Target.general_threshold_bounds (d : ℕ) (hd : 0 < d) :
+  0 < BecknerOnofri.HighDim.VariationalCurves.globalTransition d ∧
+    BecknerOnofri.HighDim.VariationalCurves.globalTransition d ≤
+        Min.min (2 * ↑d) (BecknerOnofri.HighDim.spectralThreshold d) ∧
+      Max.max (BecknerOnofri.HighDim.collapseCoefficient d) (BecknerOnofri.HighDim.spectralCoefficient d) ≤
+        BecknerOnofri.HighDim.VariationalCurves.zeroDefectCoefficient d
+BecknerOnofri.Target.eleven_unscaled_fourier (w : EuclideanSpace ℝ (Fin 11)) :
+  ∫ (x : EuclideanSpace ℝ (Fin 11)),
+      Complex.exp (-↑(2 * Real.pi * Inner.inner ℝ w x) * Complex.I) * ↑(122880 / Real.pi ^ 6 * (1 + ‖x‖ ^ 2) ^ (-11)) =
+    ↑(BecknerOnofri.HighDim.Eleven.fourierProfile (2 * Real.pi * ‖w‖))
+BecknerOnofri.Target.coordinate_marginal_entropy (d : ℕ) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d)
+  (hρ : ρ.FiniteEntropy) (I : Finset (Fin d)) :
+  MeasureTheory.Integrable
+      (fun x =>
+        BecknerOnofri.HighDim.coordinateMarginal ρ I x * Real.log (BecknerOnofri.HighDim.coordinateMarginal ρ I x))
+      (BecknerOnofri.HighDim.torusMeasure d) ∧
+    BecknerOnofri.HighDim.coordinateMarginalEntropy ρ I ≤ BecknerOnofri.HighDim.entropy ρ
+BecknerOnofri.Target.entropy_shearer_all_subsets (d r : ℕ) (hr : 1 ≤ r) (hrd : r ≤ d)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  ↑d / (↑r * ↑(d.choose r)) *
+      ∑ I ∈ Finset.powersetCard r Finset.univ, BecknerOnofri.HighDim.coordinateMarginalEntropy ρ I ≤
+    BecknerOnofri.HighDim.entropy ρ
+BecknerOnofri.Target.circle_entropy_full_domain (ρ : BecknerOnofri.HighDim.ProbabilityDensity 1) :
+  (ρ.FiniteEntropy → BecknerOnofri.HighDim.extendedEntropy ρ = ↑(BecknerOnofri.HighDim.entropy ρ)) ∧
+    (¬ρ.FiniteEntropy → BecknerOnofri.HighDim.extendedEntropy ρ = ⊤) ∧
+      ↑(BecknerOnofri.HighDim.circlePositiveEnergy ρ) ≤ BecknerOnofri.HighDim.extendedEntropy ρ
+BecknerOnofri.Target.cosine_mixture_deletion_energy (d : ℕ) (hd : 12 ≤ d)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : BecknerOnofri.HighDim.IsCountableCosineMixture ρ) :
+  BecknerOnofri.HighDim.spectralEnergy ρ ≤
+    ENNReal.ofReal (1 / (↑d - 1)) *
+      ∑ i,
+        BecknerOnofri.HighDim.inversePowerEnergy (d - 1)
+          (BecknerOnofri.HighDim.coordinateMarginal ρ (Finset.univ.erase i))
+BecknerOnofri.Target.cosine_mixture_subset_energy (d r : ℕ) (hr : 12 ≤ r) (hrd : r ≤ d)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : BecknerOnofri.HighDim.IsCountableCosineMixture ρ) :
+  BecknerOnofri.HighDim.spectralEnergy ρ ≤
+    ENNReal.ofReal (↑d / (↑r * ↑(d.choose r))) *
+      ∑ I ∈ Finset.powersetCard r Finset.univ,
+        BecknerOnofri.HighDim.inversePowerEnergy r (BecknerOnofri.HighDim.coordinateMarginal ρ I)
+BecknerOnofri.Target.primal_extremizer_correspondence (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β)
+  (u : BecknerOnofri.HighDim.Torus d → ℝ) (hu : BecknerOnofri.HighDim.InCriticalSobolev u)
+  (hm : BecknerOnofri.HighDim.MeanZero u) :
+  (∀ (v : BecknerOnofri.HighDim.Torus d → ℝ),
+      BecknerOnofri.HighDim.InCriticalSobolev v →
+        BecknerOnofri.HighDim.dualFunctional β v ≤ BecknerOnofri.HighDim.dualFunctional β u) ↔
+    (∃ ρ,
+        ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] BecknerOnofri.HighDim.normalizedGibbs u ∧
+          BecknerOnofri.HighDim.IsGlobalMinimizer β ρ) ∧
+      u =ᵐ[BecknerOnofri.HighDim.torusMeasure d]
+        BecknerOnofri.HighDim.Gap.densityPotential β (BecknerOnofri.HighDim.normalizedGibbs u)
+BecknerOnofri.Target.dual_extremizer_correspondence (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
+  BecknerOnofri.HighDim.IsGlobalMinimizer β ρ ↔
+    (∀ (v : BecknerOnofri.HighDim.Torus d → ℝ),
+        BecknerOnofri.HighDim.InCriticalSobolev v →
+          BecknerOnofri.HighDim.dualFunctional β v ≤
+            BecknerOnofri.HighDim.dualFunctional β (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value)) ∧
+      ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d]
+        BecknerOnofri.HighDim.normalizedGibbs (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value)
+BecknerOnofri.Target.optimizer_euler_equation (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β)
+  (u : BecknerOnofri.HighDim.Torus d → ℝ) (hu : BecknerOnofri.HighDim.InCriticalSobolev u)
+  (hm : BecknerOnofri.HighDim.MeanZero u)
+  (hmax :
+    ∀ (v : BecknerOnofri.HighDim.Torus d → ℝ),
+      BecknerOnofri.HighDim.InCriticalSobolev v →
+        BecknerOnofri.HighDim.dualFunctional β v ≤ BecknerOnofri.HighDim.dualFunctional β u)
+  (k : BecknerOnofri.HighDim.NonzeroFrequency d) :
+  ↑(BecknerOnofri.HighDim.frequencyLength ↑k) ^ d * BecknerOnofri.HighDim.fourierCoeff u ↑k =
+    ↑(β / BecknerOnofri.HighDim.spectralThreshold d) *
+      BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.normalizedGibbs u) ↑k
+BecknerOnofri.Target.optimizer_smooth_kirkwood (d : ℕ) (hd : 0 < d) (β : ℝ) (hβ : 0 < β)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) (hρ : BecknerOnofri.HighDim.IsGlobalMinimizer β ρ) :
+  (∃ q,
+      ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d] q ∧
+        BecknerOnofri.HighDim.SmoothOnTorus q ∧ ∀ (x : BecknerOnofri.HighDim.Torus d), 0 < q x) ∧
+    ρ.value =ᵐ[BecknerOnofri.HighDim.torusMeasure d]
+        BecknerOnofri.HighDim.normalizedGibbs (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value) ∧
+      ∀ (k : BecknerOnofri.HighDim.NonzeroFrequency d),
+        ↑(BecknerOnofri.HighDim.frequencyLength ↑k) ^ d *
+            BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.Gap.densityPotential β ρ.value) ↑k =
+          ↑(β / BecknerOnofri.HighDim.spectralThreshold d) * BecknerOnofri.HighDim.fourierCoeff ρ.value ↑k
+BecknerOnofri.Target.all_optimizer_cubic_symmetry (d : ℕ) (hd : 0 < d) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.InCriticalSobolev u) (hm : BecknerOnofri.HighDim.MeanZero u)
+  (hs : BecknerOnofri.HighDim.SmoothOnTorus u)
+  (hN :
+    ∀ (k : BecknerOnofri.HighDim.Frequency d),
+      (BecknerOnofri.HighDim.fourierCoeff u k).im = 0 ∧ 0 ≤ (BecknerOnofri.HighDim.fourierCoeff u k).re)
+  (hmax :
+    ∀ (v : BecknerOnofri.HighDim.Torus d → ℝ),
+      BecknerOnofri.HighDim.InCriticalSobolev v →
+        BecknerOnofri.HighDim.dualFunctional (BecknerOnofri.HighDim.spectralThreshold d) v ≤
+          BecknerOnofri.HighDim.dualFunctional (BecknerOnofri.HighDim.spectralThreshold d) u)
+  (σ : Equiv.Perm (Fin d)) (ε : Fin d → ℤ) (hε : ∀ (i : Fin d), ε i = 1 ∨ ε i = -1)
+  (x : BecknerOnofri.HighDim.Torus d) : (u fun i => ε i • x (σ i)) = u x
+BecknerOnofri.Target.smooth_mixture_singular_tail (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hs : BecknerOnofri.HighDim.SmoothOnTorus ρ.value) (hρ : BecknerOnofri.HighDim.IsCountableCosineMixture ρ) :
+  1 / 2 *
+      ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+        BecknerOnofri.HighDim.EntropyTail.scalarTailWeight k * ‖BecknerOnofri.HighDim.fourierCoeff ρ.value k‖ ^ 2 ≤
+    ∑ i,
+      (21 / 1000 * ‖BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single i 2)‖ ^ 2 +
+        27 / 40 * ∑' (j : ℕ), ‖BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single i (↑j + 3))‖ ^ 2 / (↑j + 3))
+BecknerOnofri.Target.global_shape_entropy (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12)
+  (hs : BecknerOnofri.HighDim.SmoothOnTorus ρ.value) (hp : ∀ (x : BecknerOnofri.HighDim.Torus 12), 0 < ρ.value x)
+  (hperm : ∀ (π : Equiv.Perm (Fin 12)) (x : BecknerOnofri.HighDim.Torus 12), (ρ.value fun i => x (π i)) = ρ.value x)
+  (hmix : BecknerOnofri.HighDim.IsCountableCosineMixture ρ) (V : (Fin 12 → ℝ) → ℝ)
+  (hV : ContDiffOn ℝ (↑⊤) V (BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12))
+  (hlog :
+    ∀ (x : BecknerOnofri.HighDim.Torus 12),
+      Real.log (ρ.value x) = V (BecknerOnofri.HighDim.ConditionalEntropy.cosineVector x))
+  (h1 :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+      ∀ (i : Fin 12), 0 ≤ BecknerOnofri.HighDim.cosinePartial i V v)
+  (h2 :
+    ∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+      ∀ (i : Fin 12), 0 ≤ BecknerOnofri.HighDim.cosinePartial i (BecknerOnofri.HighDim.cosinePartial i V) v) :
+  (BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single 0 1)).im = 0 ∧
+    0 ≤ (BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single 0 1)).re ∧
+      (BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single 0 1)).re ^ 4 / 250 ≤
+          BecknerOnofri.HighDim.entropy ρ -
+            1 / 2 *
+              ∑' (k : BecknerOnofri.HighDim.Frequency 12),
+                (BecknerOnofri.HighDim.frequencyLength k ^ 12)⁻¹ * ‖BecknerOnofri.HighDim.fourierCoeff ρ.value k‖ ^ 2 ∧
+        ((BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single 0 1)).re = 0 → ρ.value = fun x => 1)
+BecknerOnofri.Target.global_spin_entropy :
+  ∃ ψ,
+    ContinuousOn ψ (Set.Icc 0 1) ∧
+      ConvexOn ℝ (Set.Icc 0 1) ψ ∧
+        MonotoneOn ψ (Set.Icc 0 1) ∧
+          (∀ t ∈ Set.Icc 0 1, 0 ≤ ψ t) ∧
+            (∀ t ∈ Set.Icc 0 (1 / 16), ψ t = 3 / 40 * t ^ 4) ∧
+              (∀ (ρ : BecknerOnofri.HighDim.ProbabilityDensity 12),
+                  BecknerOnofri.HighDim.SmoothOnTorus ρ.value →
+                    (∀ (x : BecknerOnofri.HighDim.Torus 12), 0 < ρ.value x) →
+                      (∀ (π : Equiv.Perm (Fin 12)) (x : BecknerOnofri.HighDim.Torus 12),
+                          (ρ.value fun i => x (π i)) = ρ.value x) →
+                        BecknerOnofri.HighDim.IsCountableCosineMixture ρ →
+                          ∀ (V : (Fin 12 → ℝ) → ℝ),
+                            ContDiffOn ℝ (↑⊤) V (BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12) →
+                              (∀ (x : BecknerOnofri.HighDim.Torus 12),
+                                  Real.log (ρ.value x) = V (BecknerOnofri.HighDim.ConditionalEntropy.cosineVector x)) →
+                                (∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+                                    ∀ (i : Fin 12), 0 ≤ BecknerOnofri.HighDim.cosinePartial i V v) →
+                                  (∀ v ∈ BecknerOnofri.HighDim.ConditionalEntropy.cosineCube 12,
+                                      ∀ (i : Fin 12),
+                                        0 ≤
+                                          BecknerOnofri.HighDim.cosinePartial i
+                                            (BecknerOnofri.HighDim.cosinePartial i V) v) →
+                                    (∀ (σ : BecknerOnofri.HighDim.Spin.Configuration),
+                                        0 ≤ BecknerOnofri.HighDim.Spin.channelLaw ρ σ) ∧
+                                      ∑ σ, BecknerOnofri.HighDim.Spin.channelLaw ρ σ = 1 ∧
+                                        BecknerOnofri.HighDim.Spin.Exchangeable
+                                            (BecknerOnofri.HighDim.Spin.channelLaw ρ) ∧
+                                          (∀ (i : Fin 12),
+                                              ∑ σ,
+                                                  BecknerOnofri.HighDim.Spin.channelLaw ρ σ *
+                                                    BecknerOnofri.HighDim.Spin.jointSpin {i} σ =
+                                                (BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single 0 1)).re) ∧
+                                            BecknerOnofri.HighDim.Spin.channelLaw ρ ∅ ≤ 1 / 4096 ∧
+                                              2 *
+                                                      ∑ σ,
+                                                        BecknerOnofri.HighDim.Spin.channelLaw ρ σ *
+                                                          Real.log
+                                                            (BecknerOnofri.HighDim.Spin.channelLaw ρ σ / (1 / 4096)) +
+                                                    12 *
+                                                      ψ
+                                                        (BecknerOnofri.HighDim.fourierCoeff ρ.value
+                                                            (Pi.single 0 1)).re +
+                                                  ∑ i,
+                                                    (21 / 1000 *
+                                                        ‖BecknerOnofri.HighDim.fourierCoeff ρ.value (Pi.single i 2)‖ ^
+                                                          2 +
+                                                      27 / 40 *
+                                                        ∑' (n : ℕ),
+                                                          ‖BecknerOnofri.HighDim.fourierCoeff ρ.value
+                                                                  (Pi.single i (↑n + 3))‖ ^
+                                                              2 /
+                                                            (↑n + 3)) ≤
+                                                BecknerOnofri.HighDim.entropy ρ) ∧
+                ∀ (ν : BecknerOnofri.HighDim.Spin.Configuration → ℝ),
+                  (∀ (σ : BecknerOnofri.HighDim.Spin.Configuration), 0 ≤ ν σ) →
+                    ∑ σ, ν σ = 1 →
+                      BecknerOnofri.HighDim.Spin.Exchangeable ν →
+                        ν ∅ ≤ 1 / 4096 →
+                          ∀ t ∈ Set.Icc 0 1,
+                            (∀ (i : Fin 12), ∑ σ, ν σ * BecknerOnofri.HighDim.Spin.jointSpin {i} σ = t) →
+                              t ^ 4 / 250 ≤
+                                2 * ∑ σ, ν σ * Real.log (ν σ / (1 / 4096)) -
+                                    ∑ s,
+                                      BecknerOnofri.HighDim.Spin.weight s *
+                                        (∑ σ,
+                                            ν σ *
+                                              BecknerOnofri.HighDim.Spin.jointSpin
+                                                (BecknerOnofri.HighDim.Spin.firstCoordinates s) σ) ^
+                                          2 +
+                                  12 * ψ t
+BecknerOnofri.Target.circle_rearrangement (f g : Legacy.TorusEndpoint.Torus 1 → ℝ)
+  (hf : MeasureTheory.Integrable f (Legacy.TorusEndpoint.torusMeasure 1))
+  (hg : MeasureTheory.Integrable g (Legacy.TorusEndpoint.torusMeasure 1))
+  (hf0 : ∀ᵐ (x : Legacy.TorusEndpoint.Torus 1) ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ f x)
+  (hg0 : ∀ᵐ (x : Legacy.TorusEndpoint.Torus 1) ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ g x) (q : UnitAddCircle → ℝ)
+  {C : ℝ} (hq0 : ∀ (z : UnitAddCircle), 0 ≤ q z) (hqC : ∀ (z : UnitAddCircle), q z ≤ C)
+  (hq : ∀ (x y : UnitAddCircle), ‖x‖ ≤ ‖y‖ → q y ≤ q x) :
+  (∀ᵐ (x : Legacy.TorusEndpoint.Torus 1) ∂Legacy.TorusEndpoint.torusMeasure 1, BecknerOnofri.Circle.rearrange f x ≠ ⊤) ∧
+    (∀ᵐ (x : Legacy.TorusEndpoint.Torus 1) ∂Legacy.TorusEndpoint.torusMeasure 1,
+        BecknerOnofri.Circle.rearrange g x ≠ ⊤) ∧
+      MeasureTheory.Integrable (BecknerOnofri.Circle.realRearrange f) (Legacy.TorusEndpoint.torusMeasure 1) ∧
+        MeasureTheory.Integrable (BecknerOnofri.Circle.realRearrange g) (Legacy.TorusEndpoint.torusMeasure 1) ∧
+          ProbabilityTheory.IdentDistrib (BecknerOnofri.Circle.realRearrange f) f (Legacy.TorusEndpoint.torusMeasure 1)
+              (Legacy.TorusEndpoint.torusMeasure 1) ∧
+            ProbabilityTheory.IdentDistrib (BecknerOnofri.Circle.realRearrange g) g
+                (Legacy.TorusEndpoint.torusMeasure 1) (Legacy.TorusEndpoint.torusMeasure 1) ∧
+              (∀ (x y : Legacy.TorusEndpoint.Torus 1),
+                  ‖x 0‖ ≤ ‖y 0‖ → BecknerOnofri.Circle.rearrange f y ≤ BecknerOnofri.Circle.rearrange f x) ∧
+                (∀ (x y : Legacy.TorusEndpoint.Torus 1),
+                    ‖x 0‖ ≤ ‖y 0‖ → BecknerOnofri.Circle.rearrange g y ≤ BecknerOnofri.Circle.rearrange g x) ∧
+                  BecknerOnofri.Circle.interaction q f g ≤
+                      BecknerOnofri.Circle.interaction q (BecknerOnofri.Circle.realRearrange f)
+                        (BecknerOnofri.Circle.realRearrange g) ∧
+                    ∫ (x : Legacy.TorusEndpoint.Torus 1),
+                          |BecknerOnofri.Circle.realRearrange f x -
+                              BecknerOnofri.Circle.realRearrange g x| ∂Legacy.TorusEndpoint.torusMeasure 1 ≤
+                        ∫ (x : Legacy.TorusEndpoint.Torus 1), |f x - g x| ∂Legacy.TorusEndpoint.torusMeasure 1 ∧
+                      ((∀ (x : Legacy.TorusEndpoint.Torus 1), f x ≤ g x) →
+                        ∀ (x : Legacy.TorusEndpoint.Torus 1),
+                          BecknerOnofri.Circle.rearrange f x ≤ BecknerOnofri.Circle.rearrange g x)
+BecknerOnofri.Target.critical_adams_bound (d : ℕ) (hd : 0 < d) :
+  ∃ B,
+    ∀ (u : BecknerOnofri.HighDim.Torus d → ℝ),
+      BecknerOnofri.HighDim.InCriticalSobolev u →
+        BecknerOnofri.HighDim.logPartition u ≤
+          ↑(BecknerOnofri.HighDim.collapseCoefficient d * BecknerOnofri.HighDim.potentialEnergy u + B)
+BecknerOnofri.Target.pressure_at_collapse_finite (d : ℕ) (hd : 0 < d) :
+  0 ≤ BecknerOnofri.HighDim.pressure d (2 * ↑d) ∧ BecknerOnofri.HighDim.pressure d (2 * ↑d) < ⊤
+BecknerOnofri.Target.coefficient_at_collapse_finite (d : ℕ) (hd : 0 < d) :
+  0 ≤ BecknerOnofri.HighDim.coefficientDefect d (BecknerOnofri.HighDim.collapseCoefficient d) ∧
+    BecknerOnofri.HighDim.coefficientDefect d (BecknerOnofri.HighDim.collapseCoefficient d) < ⊤
+BecknerOnofri.Target.smooth_fourier_moments (d : ℕ) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.SmoothOnTorus u) (m : ℕ) :
+  Summable fun k => (1 + BecknerOnofri.HighDim.frequencyLength k) ^ m * ‖BecknerOnofri.HighDim.fourierCoeff u k‖
+BecknerOnofri.Target.smooth_sobolev_domain (d : ℕ) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.SmoothOnTorus u) :
+  (∀ (s : ℝ), BecknerOnofri.HighDim.InSobolev s u) ∧ BecknerOnofri.HighDim.InCriticalSobolev u
+BecknerOnofri.Target.local_continuous_quartic_reduction (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.GraphQuarticReduction d
+BecknerOnofri.Target.local_fullmode_stationary_hessian (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.FullModeStationaryBranch d
+BecknerOnofri.Target.smooth_angular_power (d : ℕ) (u : BecknerOnofri.HighDim.Torus d → ℝ)
+  (hu : BecknerOnofri.HighDim.SmoothOnTorus u) (s : ℝ) (hs : 0 ≤ s) :
+  ∃ v,
+    BecknerOnofri.HighDim.SmoothOnTorus v ∧
+      ∀ (k : BecknerOnofri.HighDim.Frequency d),
+        BecknerOnofri.HighDim.fourierCoeff v k =
+          ↑(BecknerOnofri.HighDim.frequencyLength k ^ (2 * s)) * BecknerOnofri.HighDim.fourierCoeff u k
+BecknerOnofri.Target.local_supported_stationary_branch (d : ℕ) (hd : 11 ≤ d) (I : Finset (Fin d)) (hI : I.Nonempty) :
+  BecknerOnofri.HighDim.LocalReductionStatement.SupportedStationaryBranch d I
+BecknerOnofri.Target.local_supported_energy_family (d n : ℕ) (hd : 11 ≤ d) (hn : 0 < n) (hnd : n ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.SupportedEnergyFamily d n
+BecknerOnofri.Target.local_equal_active_fourier_modes (d : ℕ) (hd : 11 ≤ d) :
+  ∀ᶠ (x : ℝ × BecknerOnofri.HighDim.ContinuousGibbs.Space d) in nhds (1, 0),
+    BecknerOnofri.HighDim.MeanZero ⇑x.2 →
+      (∀ (k : BecknerOnofri.HighDim.NonzeroFrequency d),
+          ↑(BecknerOnofri.HighDim.frequencyLength ↑k ^ d) * BecknerOnofri.HighDim.fourierCoeff ⇑x.2 ↑k =
+            ↑x.1 * BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.normalizedGibbs ⇑x.2) ↑k) →
+        ∀ (i j : Fin d),
+          BecknerOnofri.HighDim.fourierCoeff (⇑x.2) (BecknerOnofri.HighDim.axisFrequency i) ≠ 0 →
+            BecknerOnofri.HighDim.fourierCoeff (⇑x.2) (BecknerOnofri.HighDim.axisFrequency j) ≠ 0 →
+              ‖BecknerOnofri.HighDim.fourierCoeff (⇑x.2) (BecknerOnofri.HighDim.axisFrequency i)‖ ^ 2 =
+                ‖BecknerOnofri.HighDim.fourierCoeff (⇑x.2) (BecknerOnofri.HighDim.axisFrequency j)‖ ^ 2
+BecknerOnofri.Target.local_supported_classification (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.SupportedClassification d
+BecknerOnofri.Target.local_proper_support_saddle (d : ℕ) (hd : 11 ≤ d) :
+  ∀ᶠ (x : ℝ × BecknerOnofri.HighDim.ContinuousGibbs.Space d) in nhds (1, 0),
+    BecknerOnofri.HighDim.MeanZero ⇑x.2 →
+      (∀ (k : BecknerOnofri.HighDim.NonzeroFrequency d),
+          ↑(BecknerOnofri.HighDim.frequencyLength ↑k ^ d) * BecknerOnofri.HighDim.fourierCoeff ⇑x.2 ↑k =
+            ↑x.1 * BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.HighDim.normalizedGibbs ⇑x.2) ↑k) →
+        x.2 ≠ 0 →
+          (∃ j, BecknerOnofri.HighDim.fourierCoeff (⇑x.2) (BecknerOnofri.HighDim.axisFrequency j) = 0) →
+            ∃ v q,
+              BecknerOnofri.HighDim.InCriticalSobolev ⇑v ∧
+                BecknerOnofri.HighDim.MeanZero ⇑v ∧
+                  BecknerOnofri.HighDim.InCriticalSobolev ⇑q ∧
+                    BecknerOnofri.HighDim.MeanZero ⇑q ∧
+                      0 <
+                          BecknerOnofri.HighDim.secondVariation (x.1 * BecknerOnofri.HighDim.spectralThreshold d) ⇑x.2
+                            ⇑v ∧
+                        BecknerOnofri.HighDim.secondVariation (x.1 * BecknerOnofri.HighDim.spectralThreshold d) ⇑x.2
+                            ⇑q <
+                          0
+BecknerOnofri.Target.local_fullmode_morse_bott (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.FullModeLocalBranch d
+BecknerOnofri.Target.local_stable_supported_classification (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.StableSupportedClassification d
+BecknerOnofri.Target.local_sobolev_quadratic_slaving (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.SobolevQuadraticReduction d
+BecknerOnofri.Target.local_sobolev_analytic_graph (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.SobolevAnalyticComplementGraph d
+BecknerOnofri.Target.local_active_squared_hessian (d : ℕ) (hd : 11 ≤ d) :
+  BecknerOnofri.HighDim.LocalReductionStatement.ActiveSquaredHessian.Family d
+BecknerOnofri.Target.prescribed_equimeasurable_selection (d : ℕ) (hd : 0 < d) :
+  BecknerOnofri.HighDim.PrescribedSelection.EquimeasurableSelection d
+BecknerOnofri.Target.prescribed_canonical_selection (d : ℕ) (hd : 0 < d) :
+  BecknerOnofri.HighDim.PrescribedSelection.CanonicalSelection d
+BecknerOnofri.Target.smooth_monotone_euler_cosine (d : ℕ) (hd : 0 < d) :
+  BecknerOnofri.HighDim.SmoothEulerStatement.CosineRepresentation d
+BecknerOnofri.Target.spatial_form_closability (m : ℕ) :
+  Set.InjOn (fun v => v.1) (BecknerOnofri.Friedrichs.SpatialForm.formClosure m)
+BecknerOnofri.Target.angular_closed_form_conjugation (m : ℕ) (hm : 0 < m) :
+  BecknerOnofri.Friedrichs.SpatialForm.AngularClosedFormConjugation m
+BecknerOnofri.Target.spatial_jacobi_spectral_identification (m : ℕ) (hm : 0 < m)
+  (f g : ↥BecknerOnofri.Friedrichs.SpatialForm.H) :
+  BecknerOnofri.Friedrichs.SpatialForm.operatorGraph m f g ↔
+    ∀ (n : ℕ),
+      Inner.inner ℝ g (Legacy.BecknerOnofri.JacobiEigenfunctions.normalizedVector m n) =
+        Legacy.BecknerOnofri.JacobiEigenfunctions.eigenvalue m n *
+          Inner.inner ℝ f (Legacy.BecknerOnofri.JacobiEigenfunctions.normalizedVector m n)
+BecknerOnofri.Target.spatial_jacobi_selfadjoint (m : ℕ) (hm : 0 < m) (h k : ↥BecknerOnofri.Friedrichs.SpatialForm.H) :
+  BecknerOnofri.Friedrichs.SpatialForm.operatorGraph m h k ↔
+    ∀ (f g : ↥BecknerOnofri.Friedrichs.SpatialForm.H),
+      BecknerOnofri.Friedrichs.SpatialForm.operatorGraph m f g → Inner.inner ℝ g h = Inner.inner ℝ f k
+BecknerOnofri.Target.mixed_tensor_spatial_form_domain (d : ℕ) : BecknerOnofri.Friedrichs.MixedSpatial.TensorFormDomain d
+BecknerOnofri.Target.mixed_tensor_spatial_operator (d : ℕ) :
+  BecknerOnofri.Friedrichs.MixedSpatial.TensorOperatorConjugation d
+BecknerOnofri.Target.mixed_chebyshev_spatial_eigenvectors (d : ℕ) :
+  BecknerOnofri.Friedrichs.MixedSpatial.ChebyshevSpatialEigenvectors d
+BecknerOnofri.Target.mixed_spatial_form_closability (d : ℕ) (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) :
+  Set.InjOn (fun v => v.1) (BecknerOnofri.Friedrichs.MixedSpatial.formClosure α)
+BecknerOnofri.Target.mixed_spatial_operator_closed (d : ℕ) (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) :
+  IsClosed {p | BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph α p.1 p.2}
+BecknerOnofri.Target.active_spatial_spectral_identification (d : ℕ)
+  (a : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H fun i => a i + 1)) :
+  BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph (fun i => a i + 1) f g ↔
+    ∀ (n : Legacy.BecknerOnofri.JacobiTensor.Index d),
+      Inner.inner ℝ g (Legacy.BecknerOnofri.JacobiTensor.tensorVector (fun i => a i + 1) n) =
+        Legacy.BecknerOnofri.JacobiTensor.tensorEigenvalue (fun i => a i + 1) n *
+          Inner.inner ℝ f (Legacy.BecknerOnofri.JacobiTensor.tensorVector (fun i => a i + 1) n)
+BecknerOnofri.Target.active_spatial_selfadjoint (d : ℕ) (a : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H fun i => a i + 1)) :
+  BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph (fun i => a i + 1) f g ↔
+    ∀ (u v : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H fun i => a i + 1)),
+      BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph (fun i => a i + 1) u v → Inner.inner ℝ v f = Inner.inner ℝ u g
+BecknerOnofri.Target.mixed_full_spatial_eigenvectors (d : ℕ) :
+  BecknerOnofri.Friedrichs.MixedSpatial.FullSpatialEigenvectors d
+BecknerOnofri.Target.mixed_coordinate_spectral_totality : BecknerOnofri.Friedrichs.MixedSpatial.FullCoordinateTotality
+BecknerOnofri.Target.periodic_full_hilbert_basis : BecknerOnofri.Friedrichs.MixedSpatial.FullPeriodicHilbertBasis
+BecknerOnofri.Target.mixed_spatial_spectral_identification (d : ℕ)
+  (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α)) :
+  BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph α f g ↔
+    ∀ (n : Fin d → ℕ),
+      Inner.inner ℝ g (BecknerOnofri.Friedrichs.MixedSpatial.basisTensorVector α n) =
+        BecknerOnofri.Friedrichs.MixedSpatial.mixedEigenvalue α n *
+          Inner.inner ℝ f (BecknerOnofri.Friedrichs.MixedSpatial.basisTensorVector α n)
+BecknerOnofri.Target.mixed_spatial_selfadjoint (d : ℕ) (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α)) :
+  BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph α f g ↔
+    ∀ (u v : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α)),
+      BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph α u v → Inner.inner ℝ v f = Inner.inner ℝ u g
+BecknerOnofri.Target.fractional_intertwining (d : ℕ) : BecknerOnofri.Friedrichs.MixedSpatial.FractionalIntertwining d
+BecknerOnofri.Paper2.negativeSobolevEnergy_normalization {d : ℕ} (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) :
+  ENNReal.ofReal ((2 * Real.pi) ^ d) * BecknerOnofri.Paper2.negativeSobolevEnergy ρ =
+    BecknerOnofri.HighDim.spectralEnergy ρ
+BecknerOnofri.Paper2.negativeSobolevEnergy_fourier {d : ℕ} (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) :
+  BecknerOnofri.Paper2.negativeSobolevEnergy ρ = BecknerOnofri.Paper2.negativeSobolevFourierSeries ρ
+BecknerOnofri.Paper2.low_density_extended (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
+  (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) :
+  ↑(↑d / BecknerOnofri.HighDim.spectralThreshold d) *
+      ↑(ENNReal.ofReal ((2 * Real.pi) ^ d) * BecknerOnofri.Paper2.negativeSobolevEnergy ρ) ≤
+    BecknerOnofri.HighDim.extendedEntropy ρ
+BecknerOnofri.Paper2.high_density_extended (d : ℕ) (hd : 12 ≤ d) (ρ : BecknerOnofri.HighDim.ProbabilityDensity d) :
+  ↑(1 / 2) * ↑(ENNReal.ofReal ((2 * Real.pi) ^ d) * BecknerOnofri.Paper2.negativeSobolevEnergy ρ) ≤
+    BecknerOnofri.HighDim.extendedEntropy ρ
+BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling {d : ℕ} (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (s : ℝ) (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α))
+  (h : BecknerOnofri.Friedrichs.MixedSpatial.SpectralPowerGraph α s f g) :
+  BecknerOnofri.Paper2.physicalSpectralPowerGraph α s f (((2 * Real.pi) ^ 2) ^ s • g)
+BecknerOnofri.Paper2.periodization_derivatives_locally_uniform (is : List (Fin 11)) :
+  TendstoLocallyUniformly
+    (fun S x =>
+      ∑ n ∈ S,
+        BecknerOnofri.Paper2.Periodization.mixed is
+          (fun y => BecknerOnofri.HighDim.Eleven.euclideanProfile fun j => y j + ↑(n j)) x)
+    (fun x =>
+      ∑' (n : BecknerOnofri.HighDim.Frequency 11),
+        BecknerOnofri.Paper2.Periodization.mixed is
+          (fun y => BecknerOnofri.HighDim.Eleven.euclideanProfile fun j => y j + ↑(n j)) x)
+    Filter.atTop
+BecknerOnofri.Paper2.physical_fractional_intertwining (d : ℕ) : BecknerOnofri.Paper2.Physical.FractionalIntertwining d
+BecknerOnofri.Paper2.physical_operatorGraph_transport {d : ℕ} (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (f g : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α)) :
+  BecknerOnofri.Paper2.Physical.operatorGraph α ((BecknerOnofri.Paper2.Physical.coordinateLpEquiv α) f)
+      (BecknerOnofri.Paper2.Physical.scale ^ 2 • (BecknerOnofri.Paper2.Physical.coordinateLpEquiv α) g) ↔
+    BecknerOnofri.Friedrichs.MixedSpatial.operatorGraph α f g
+BecknerOnofri.Paper2.physical_spectralPower_domain {d : ℕ} (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d)
+  (s : ℝ) (f : ↥(BecknerOnofri.Friedrichs.MixedSpatial.H α)) :
+  (∃ g,
+      BecknerOnofri.Paper2.Physical.SpectralPowerGraph α s ((BecknerOnofri.Paper2.Physical.coordinateLpEquiv α) f) g) ↔
+    ∃ g, BecknerOnofri.Friedrichs.MixedSpatial.SpectralPowerGraph α s f g
+BecknerOnofri.Paper2.physical_measure_transport {d : ℕ} (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) :
+  MeasureTheory.Measure.map BecknerOnofri.Paper2.Physical.down
+      (BecknerOnofri.Friedrichs.MixedSpatial.spatialMeasure α) =
+    ENNReal.ofReal (BecknerOnofri.Paper2.Physical.scale ^ d) • BecknerOnofri.Paper2.Physical.spatialMeasure α
+BecknerOnofri.Paper2.physical_form_transport {d : ℕ} (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) :
+  ⇑(BecknerOnofri.Paper2.Physical.energyEquiv α) '' BecknerOnofri.Friedrichs.MixedSpatial.formClosure α =
+    BecknerOnofri.Paper2.Physical.formClosure α
+BecknerOnofri.Paper2.physical_potential (m : ℕ) (x : ℝ) :
+  BecknerOnofri.Paper2.Physical.potentialFactor m x ^ 2 =
+    (2 * Real.pi) ^ 2 * (↑m * (↑m - 1)) / Real.sin (2 * Real.pi * x) ^ 2
+structure BecknerOnofri.HighDim.ProbabilityDensity (d : ℕ) : Type
+number of parameters: 1
+fields:
+  BecknerOnofri.HighDim.ProbabilityDensity.value : BecknerOnofri.HighDim.Torus d → ℝ
+  BecknerOnofri.HighDim.ProbabilityDensity.nonneg : ∀ᵐ (x :
+      BecknerOnofri.HighDim.Torus d) ∂BecknerOnofri.HighDim.torusMeasure d, 0 ≤ self.value x
+  BecknerOnofri.HighDim.ProbabilityDensity.integrable : MeasureTheory.Integrable self.value
+      (BecknerOnofri.HighDim.torusMeasure d)
+  BecknerOnofri.HighDim.ProbabilityDensity.mass : ∫ (x : BecknerOnofri.HighDim.Torus d),
+        self.value x ∂BecknerOnofri.HighDim.torusMeasure d =
+      1
+constructor:
+  BecknerOnofri.HighDim.ProbabilityDensity.mk {d : ℕ} (value : BecknerOnofri.HighDim.Torus d → ℝ)
+    (nonneg : ∀ᵐ (x : BecknerOnofri.HighDim.Torus d) ∂BecknerOnofri.HighDim.torusMeasure d, 0 ≤ value x)
+    (integrable : MeasureTheory.Integrable value (BecknerOnofri.HighDim.torusMeasure d))
+    (mass : ∫ (x : BecknerOnofri.HighDim.Torus d), value x ∂BecknerOnofri.HighDim.torusMeasure d = 1) :
+    BecknerOnofri.HighDim.ProbabilityDensity d
+def BecknerOnofri.HighDim.ProbabilityDensity.FiniteEntropy : {d : ℕ} →
+  BecknerOnofri.HighDim.ProbabilityDensity d → Prop :=
+fun {d} ρ => MeasureTheory.Integrable (fun x => ρ.value x * Real.log (ρ.value x)) (BecknerOnofri.HighDim.torusMeasure d)
+def BecknerOnofri.HighDim.entropy : {d : ℕ} → BecknerOnofri.HighDim.ProbabilityDensity d → ℝ :=
+fun {d} ρ =>
+  ∫ (x : BecknerOnofri.HighDim.Torus d), ρ.value x * Real.log (ρ.value x) ∂BecknerOnofri.HighDim.torusMeasure d
+def BecknerOnofri.HighDim.extendedEntropy : {d : ℕ} → BecknerOnofri.HighDim.ProbabilityDensity d → EReal :=
+fun {d} ρ =>
+  ↑(∫⁻ (x : BecknerOnofri.HighDim.Torus d),
+        ENNReal.ofReal (ρ.value x * Real.log (ρ.value x) + 1) ∂BecknerOnofri.HighDim.torusMeasure d) -
+    1
+def BecknerOnofri.HighDim.spectralEnergy : {d : ℕ} → BecknerOnofri.HighDim.ProbabilityDensity d → ENNReal :=
+fun {d} ρ => ∑' (k : BecknerOnofri.HighDim.NonzeroFrequency d), ENNReal.ofReal (BecknerOnofri.HighDim.spectralTerm ρ k)
+def BecknerOnofri.HighDim.InCriticalSobolev : {d : ℕ} → (BecknerOnofri.HighDim.Torus d → ℝ) → Prop :=
+fun {d} u =>
+  MeasureTheory.MemLp u 2 (BecknerOnofri.HighDim.torusMeasure d) ∧ Summable (BecknerOnofri.HighDim.potentialTerm u)
+def BecknerOnofri.HighDim.potentialEnergy : {d : ℕ} → (BecknerOnofri.HighDim.Torus d → ℝ) → ℝ :=
+fun {d} u => ∑' (k : BecknerOnofri.HighDim.NonzeroFrequency d), BecknerOnofri.HighDim.potentialTerm u k
+def BecknerOnofri.Paper2.negativeSobolevEnergy : {d : ℕ} → BecknerOnofri.HighDim.ProbabilityDensity d → ENNReal :=
+fun {d} ρ => (ENNReal.ofReal ((2 * Real.pi) ^ d))⁻¹ * BecknerOnofri.HighDim.spectralEnergy ρ
+def BecknerOnofri.Paper2.negativeSobolevFourierSeries : {d : ℕ} →
+  BecknerOnofri.HighDim.ProbabilityDensity d → ENNReal :=
+fun {d} ρ =>
+  ∑' (k : BecknerOnofri.HighDim.NonzeroFrequency d),
+    ENNReal.ofReal ((2 * Real.pi * BecknerOnofri.HighDim.frequencyLength ↑k) ^ d)⁻¹ *
+      ENNReal.ofReal (‖BecknerOnofri.HighDim.fourierCoeff ρ.value ↑k‖ ^ 2)
+def BecknerOnofri.Paper2.Periodization.coordinatePartial : Fin 11 →
+  (BecknerOnofri.Paper2.Periodization.E → ℝ) → BecknerOnofri.Paper2.Periodization.E → ℝ :=
+fun i f x => deriv (fun t => f (BecknerOnofri.Paper2.Periodization.line x i t)) 0
+def BecknerOnofri.Paper2.Periodization.mixed : List (Fin 11) →
+  (BecknerOnofri.Paper2.Periodization.E → ℝ) → BecknerOnofri.Paper2.Periodization.E → ℝ :=
+fun x x_1 =>
+  List.brecOn (motive := fun x => (BecknerOnofri.Paper2.Periodization.E → ℝ) → BecknerOnofri.Paper2.Periodization.E → ℝ)
+    x BecknerOnofri.Paper2.Periodization.mixed._f x_1
+def BecknerOnofri.Paper2.Physical.coordinateMeasure : ℕ → MeasureTheory.Measure ℝ :=
+fun m =>
+  if m = 0 then MeasureTheory.MeasureSpace.volume.restrict (Set.Ioc 0 1)
+  else MeasureTheory.MeasureSpace.volume.restrict (Set.Ioo 0 (1 / 2))
+def BecknerOnofri.Paper2.Physical.spatialMeasure : {d : ℕ} →
+  BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d →
+    MeasureTheory.Measure (BecknerOnofri.Friedrichs.MixedSpatial.Space d) :=
+fun {d} α => MeasureTheory.Measure.pi fun i => BecknerOnofri.Paper2.Physical.coordinateMeasure (α i)
+def BecknerOnofri.Paper2.Physical.smoothCoreProfile : {d : ℕ} →
+  BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d → (BecknerOnofri.Friedrichs.MixedSpatial.Space d → ℝ) → Prop :=
+fun {d} α F =>
+  ContDiff ℝ (↑⊤) F ∧
+    BecknerOnofri.Paper2.Physical.inactivePeriodic α F ∧ BecknerOnofri.Paper2.Physical.interiorSupport α F
+def BecknerOnofri.Paper2.Physical.core : {d : ℕ} →
+  (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) → Set (BecknerOnofri.Paper2.Physical.EnergySpace α) :=
+fun {d} α =>
+  {v |
+    ∃ F,
+      BecknerOnofri.Paper2.Physical.smoothCoreProfile α F ∧
+        ↑↑v.1 =ᵐ[BecknerOnofri.Paper2.Physical.spatialMeasure α] F ∧
+          (∀ (i : Fin d),
+              ↑↑(v.2.1 i) =ᵐ[BecknerOnofri.Paper2.Physical.spatialMeasure α]
+                BecknerOnofri.Friedrichs.MixedSpatial.partialDerivative i F) ∧
+            ∀ (i : Fin d),
+              ↑↑(v.2.2 i) =ᵐ[BecknerOnofri.Paper2.Physical.spatialMeasure α] fun x =>
+                BecknerOnofri.Paper2.Physical.potentialFactor (α i) (x i) * F x}
+def BecknerOnofri.Paper2.Physical.formClosure : {d : ℕ} →
+  (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) → Set (BecknerOnofri.Paper2.Physical.EnergySpace α) :=
+fun {d} α => closure (BecknerOnofri.Paper2.Physical.core α)
+def BecknerOnofri.Paper2.Physical.formPairing : {d : ℕ} →
+  {α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d} →
+    BecknerOnofri.Paper2.Physical.EnergySpace α → BecknerOnofri.Paper2.Physical.EnergySpace α → ℝ :=
+fun {d} {α} v w => ∑ i, (Inner.inner ℝ (v.2.1 i) (w.2.1 i) + Inner.inner ℝ (v.2.2 i) (w.2.2 i))
+def BecknerOnofri.Paper2.Physical.operatorGraph : {d : ℕ} →
+  (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) →
+    ↥(BecknerOnofri.Paper2.Physical.H α) → ↥(BecknerOnofri.Paper2.Physical.H α) → Prop :=
+fun {d} α f g =>
+  ∃ v,
+    v.1 = f ∧
+      v ∈ BecknerOnofri.Paper2.Physical.formClosure α ∧
+        ∀ w ∈ BecknerOnofri.Paper2.Physical.formClosure α,
+          BecknerOnofri.Paper2.Physical.formPairing v w = Inner.inner ℝ g w.1
+def BecknerOnofri.Paper2.Physical.SpectralPowerGraph : {d : ℕ} →
+  (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d) →
+    ℝ → ↥(BecknerOnofri.Paper2.Physical.H α) → ↥(BecknerOnofri.Paper2.Physical.H α) → Prop :=
+fun {d} α s f g =>
+  ∀ (n : Fin d → ℕ),
+    Inner.inner ℝ g
+        ((BecknerOnofri.Paper2.Physical.coordinateLpEquiv α)
+          (BecknerOnofri.Friedrichs.MixedSpatial.basisTensorVector α n)) =
+      (BecknerOnofri.Paper2.Physical.scale ^ 2 * BecknerOnofri.Friedrichs.MixedSpatial.mixedEigenvalue α n) ^ s *
+        Inner.inner ℝ f
+          ((BecknerOnofri.Paper2.Physical.coordinateLpEquiv α)
+            (BecknerOnofri.Friedrichs.MixedSpatial.basisTensorVector α n))
+def BecknerOnofri.Paper2.Physical.torusPower : {d : ℕ} →
+  ℝ → (BecknerOnofri.HighDim.Torus d → ℝ) → BecknerOnofri.HighDim.Torus d → ℝ :=
+fun {d} s u x => (BecknerOnofri.Paper2.Physical.scale ^ 2) ^ s * BecknerOnofri.SmoothTorus.angularPower s u x
+def BecknerOnofri.Paper2.Physical.FractionalIntertwining : ℕ → Prop :=
+fun d =>
+  ∀ (U : (Fin d → ℝ) → ℝ),
+    ContDiffOn ℝ (↑⊤) U (BecknerOnofri.HighDim.SmoothEulerStatement.cosineCube d) →
+      ∀ (α : BecknerOnofri.Friedrichs.MixedSpatial.MultiIndex d),
+        α ≠ 0 →
+          ∀ (s : ℝ),
+            0 < s →
+              ∃ Us,
+                ContDiffOn ℝ (↑⊤) Us (BecknerOnofri.HighDim.SmoothEulerStatement.cosineCube d) ∧
+                  (∀ (x : Fin d → ℝ),
+                      (BecknerOnofri.Paper2.Physical.torusPower s (BecknerOnofri.Friedrichs.MixedSpatial.cosineLift U)
+                          fun i => ↑(x i)) =
+                        Us fun i => Real.cos (BecknerOnofri.Paper2.Physical.scale * x i)) ∧
+                    (∀ (k : BecknerOnofri.HighDim.Frequency d),
+                        BecknerOnofri.HighDim.fourierCoeff
+                            (BecknerOnofri.Paper2.Physical.torusPower s
+                              (BecknerOnofri.Friedrichs.MixedSpatial.cosineLift U))
+                            k =
+                          ↑((BecknerOnofri.Paper2.Physical.scale * BecknerOnofri.HighDim.frequencyLength k) ^ (2 * s)) *
+                            BecknerOnofri.HighDim.fourierCoeff (BecknerOnofri.Friedrichs.MixedSpatial.cosineLift U) k) ∧
+                      ∃ f g,
+                        (↑↑f =ᵐ[BecknerOnofri.Paper2.Physical.spatialMeasure α] fun x =>
+                            (∏ i, Real.sin (BecknerOnofri.Paper2.Physical.scale * x i) ^ α i) *
+                              BecknerOnofri.HighDim.SmoothEulerStatement.mixedPartial
+                                (BecknerOnofri.Friedrichs.MixedSpatial.derivativeList α) U fun i =>
+                                Real.cos (BecknerOnofri.Paper2.Physical.scale * x i)) ∧
+                          (↑↑g =ᵐ[BecknerOnofri.Paper2.Physical.spatialMeasure α] fun x =>
+                              (∏ i, Real.sin (BecknerOnofri.Paper2.Physical.scale * x i) ^ α i) *
+                                BecknerOnofri.HighDim.SmoothEulerStatement.mixedPartial
+                                  (BecknerOnofri.Friedrichs.MixedSpatial.derivativeList α) Us fun i =>
+                                  Real.cos (BecknerOnofri.Paper2.Physical.scale * x i)) ∧
+                            BecknerOnofri.Paper2.Physical.SpectralPowerGraph α s f g

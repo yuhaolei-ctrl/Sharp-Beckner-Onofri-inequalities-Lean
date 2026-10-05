@@ -103,9 +103,12 @@
   ],
   "historical_paper2_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
   "comparator_export_replay": {
-    "status": "preparing",
+    "status": "running",
     "scope": 269,
     "driver": "verification/tools/ReplayExports.lean",
-    "upstream_algorithms_unchanged": true
+    "upstream_algorithms_unchanged": true,
+    "run_id": 37267009000,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000",
+    "workflow_commit": "716345b"
   }
 }

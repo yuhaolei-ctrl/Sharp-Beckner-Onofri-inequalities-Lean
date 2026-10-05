@@ -4,6 +4,11 @@ Review the exact Git commit, `SOURCE_MANIFEST.json`, the paper SHA-256, and
 `audit/paper2_statement_map.json`. Record reviewer identity, date, reviewed
 commit, inspected definitions, clause-level conclusions, and unresolved items.
 No independent review is represented as completed by merely distributing this packet.
+`python3 scripts/print_statements.py` queries the actual elaborated types of all
+registered targets and the bodies of key analytic definitions. Its output is
+a reading aid; named predicates must still be expanded against source. The
+[current output](verification/current/statements269.txt) and its
+[query identity](verification/current/statement-query.json) are retained.
 
 For every mapped result, compare the natural statement with the expanded Lean
 type, including all imported predicates. Check quantifier order, parameter
