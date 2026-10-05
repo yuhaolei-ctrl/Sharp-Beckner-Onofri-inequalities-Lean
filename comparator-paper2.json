@@ -263,7 +263,14 @@
     "BecknerOnofri.Paper2.negativeSobolevEnergy_fourier",
     "BecknerOnofri.Paper2.low_density_extended",
     "BecknerOnofri.Paper2.high_density_extended",
-    "BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling"
+    "BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling",
+    "BecknerOnofri.Paper2.periodization_derivatives_locally_uniform",
+    "BecknerOnofri.Paper2.physical_fractional_intertwining",
+    "BecknerOnofri.Paper2.physical_operatorGraph_transport",
+    "BecknerOnofri.Paper2.physical_spectralPower_domain",
+    "BecknerOnofri.Paper2.physical_measure_transport",
+    "BecknerOnofri.Paper2.physical_form_transport",
+    "BecknerOnofri.Paper2.physical_potential"
   ],
   "permitted_axioms": [
     "propext",

@@ -1,0 +1,62 @@
+name: Independent kernel certificate
+on:
+  workflow_dispatch:
+    inputs:
+      certificate_release:
+        description: Release containing solution.ndjson.gz and certificate-export.json
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  nanoda:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Download and validate the exact proof export
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CERT_RELEASE: ${{ inputs.certificate_release }}
+        run: |
+          mkdir -p external-check
+          gh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check
+          python3 scripts/prepare_external_check.py | tee external-check/identity.log
+      - name: Build pinned independent kernel
+        run: |
+          git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
+          git -C .tools/nanoda checkout --detach 4c544ed4099c8227f07d5de77ad1e69fb0740a27
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('.tools/nanoda/src/lib.rs')
+          s = p.read_text()
+          assert s.count('STACK_SIZE: usize = 16_777_216;') == 1
+          p.write_text(s.replace('STACK_SIZE: usize = 16_777_216;', 'STACK_SIZE: usize = 268_435_456;'))
+          PY
+          rustup toolchain install 1.90.0 --profile minimal
+          cargo +1.90.0 build --release --locked --manifest-path .tools/nanoda/Cargo.toml
+          sha256sum .tools/nanoda/target/release/nanoda_bin > external-check/checker-binary.sha256
+          git -C .tools/nanoda diff > external-check/checker.patch
+      - name: Check all exported declarations and resolve all registered targets
+        run: |
+          set -o pipefail
+          /usr/bin/time -v .tools/nanoda/target/release/nanoda_bin external-check/nanoda-config.json < external-check/solution.ndjson 2>&1 | tee external-check/nanoda.log
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          text = Path('external-check/nanoda.log').read_text()
+          assert re.search(r'Checked [0-9]+ declarations with no errors', text)
+          assert Path('external-check/checked-targets.txt').stat().st_size > 0
+          PY
+      - name: Preserve independent checker evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: independent-kernel-evidence
+          path: |
+            external-check/*.log
+            external-check/*.json
+            external-check/*.txt
+            external-check/*.sha256
+            external-check/*.patch

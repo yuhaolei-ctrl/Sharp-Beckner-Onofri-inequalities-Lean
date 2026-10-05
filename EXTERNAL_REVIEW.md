@@ -16,10 +16,20 @@ must agree with the actual entropy integral; the infinite case must use top,
 and a divergent Fourier sum must not become a default real zero. Verify
 `negativeSobolevEnergy_fourier` against the paper's explicit Fourier convention.
 
-For the mixed Friedrichs lemma, the current audit marks a missing unit-period
-coordinate/form/domain transport. Do not approve that exact statement based
-only on `physicalSpectralPowerGraph_scaling` or the historical angular target.
-Retain the separate periodization, counterexample and cutoff-rate limitations.
+For the mixed Friedrichs lemma, inspect the actual unit-period spaces in
+`Paper2PhysicalMeasure`, both core transports in `Paper2PhysicalCore`, the
+closure and operator graph equivalences, the unitary in `Paper2PhysicalLp`,
+and the final `Physical.FractionalIntertwining` definition. The preserved
+`physicalSpectralPowerGraph_scaling` helper alone is not the literal statement.
+Check that inactive coordinates keep both periodic parity sectors and that
+physical spectral powers act on the actual physical L² space.
+
+For periodization inspect `Paper2PeriodizationDefinitions` and
+`Paper2Periodization`: coordinate-line derivatives are iterated over every
+finite list, translation is proved to commute, and the majorant is uniform
+on each compact set. The sum consists of the original rational profile's
+translated derivatives. Counterexample and cutoff-rate statements outside
+the 51-result scope remain separately disclosed in `AUDIT_ZH.md`.
 
 For dimensions 1–10 inspect `LowDimensionRaw`, `LowDimensionConsequences`,
 `Legacy/BecknerOnofri/LowDimensionComplete.lean`, and the relevant rational

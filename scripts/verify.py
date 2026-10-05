@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Run the selected checks and preserve actual exit codes and source identities.
-Pass --comparator for the full, potentially long, 262-target kernel replay.
+Pass --comparator for the full, potentially long, 269-target kernel replay.
 """
 import argparse
 import datetime

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T03:49:55.870976+00:00",
+  "updated_utc": "2026-10-05T04:46:50.333085+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -23,21 +23,22 @@
     "mode": "development; official kernel replay; no Linux isolation; Nanoda disabled"
   },
   "nanoda_baseline": {
-    "status": "running",
+    "status": "interrupted",
     "scope": 257,
-    "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27"
+    "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27",
+    "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
   },
   "paper2_build": {
     "status": "passed",
+    "scope": 269,
     "exit_code": 0,
-    "scope": 262,
-    "jobs": 8559,
-    "log": "current/paper2-build.log",
+    "jobs": 8568,
+    "log": "current/paper2-build269.log",
     "cache_reused": true
   },
   "paper2_comparator": {
     "status": "not_run",
-    "scope": 262
+    "scope": 269
   },
   "controls": {
     "status": "passed",
@@ -49,28 +50,27 @@
     ]
   },
   "open_obligations": [
-    "physical mixed-spatial coordinate/form/power transport for Lemma 2.9",
-    "literal derivative-series locally uniform convergence in Lemma 4.2",
-    "Remark 5.6 counterexample, outside the 51 formal result environments",
-    "displayed quantitative cutoff rate in the proof, if literal every-proof-claim coverage is desired"
+    "Final 269-target Comparator replay",
+    "Final independent-kernel replay",
+    "Independent external semantic reviewer approval is not claimed"
   ],
   "paper2_axioms": {
     "status": "passed",
-    "scope": 262,
-    "exit_code": 0,
-    "exact_target_set_verified": true,
-    "actual_axioms": [
+    "scope": 269,
+    "exact_target_names_verified": true,
+    "allowed_axioms": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "log": "current/axioms262.log"
+    "log": "current/axioms269.log"
   },
   "paper2_increment_comparator": {
-    "status": "running",
+    "status": "interrupted",
     "scope": 5,
     "configuration": "comparator-paper2-increment.json",
-    "mode": "development; official kernel; no Linux isolation"
+    "mode": "development; official kernel; no Linux isolation",
+    "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
   },
   "paper2_headers": {
     "status": "passed",
@@ -78,5 +78,11 @@
     "method": "literal declaration-header comparison; not Comparator"
   },
   "source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
-  "source_manifest_sha256": "ddd7b14db80bfc345b76b26a02e532def82ecda610996c1a49cfc0ad5b7c4d41"
+  "source_manifest_sha256": "ddd7b14db80bfc345b76b26a02e532def82ecda610996c1a49cfc0ad5b7c4d41",
+  "final_registered_targets": 269,
+  "continued_formalization": "Both known formal-result gaps implemented and compiled; full external verification pending.",
+  "nanoda_final": {
+    "status": "not_run",
+    "scope": 269
+  }
 }

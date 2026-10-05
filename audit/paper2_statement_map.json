@@ -229,15 +229,22 @@
       "source_number": "2.9",
       "paper2_line": 1177,
       "text_changed": true,
-      "category": "open_physical_coordinate_transport",
-      "assessment": "Existing FractionalIntertwining uses angular mixed Lebesgue intervals (0,pi), inactive (0,2*pi], angular eigenvalues |n|^2 and |k|^(2s). Paper 2 requires (0,1/2), inactive unit circle, physical eigenvalues (2*pi)^2|n|^2 and (2*pi|k|)^(2s). An eigenvalue scaling lemma alone is insufficient: prove the coordinate pullback, Jacobian/isometry normalization, form closure, operator graph and power-domain transport, and register a literal physical-coordinate intertwining target.",
+      "category": "physical_coordinate_transport_implemented",
+      "assessment": "Actual unit-period mixed Lebesgue measure; Jacobian and unitary L2 coordinate map; smooth core, periodic conditions and boundary support in both directions; closure and Friedrichs operator graph conjugacy; physical potential and spectral power domains; arbitrary smooth closed-cube U and all positive real powers. See Paper2PhysicalMeasure/Lp/Core/Form/Operator/Fractional.lean. The new literal target uses the actual physical L2 space, not just eigenvalue renaming.",
       "old_statement_tex": "\\label{lem:fractional}\n\nLet $u(\\theta)=U(\\cos\\theta_1,\\ldots,\\cos\\theta_\\d)$ with $U\\in C^\\infty([-1,1]^\\d)$. For a nonzero multi-index $\\alpha$, set\n\n\\begin{equation}\n S_\\alpha=\\{i:\\alpha_i>0\\},\\quad\n \\Omega_\\alpha=(0,\\pi)^{S_\\alpha}\\times(\\R/2\\pi\\Z)^{S_\\alpha^c},\\quad\n w_\\alpha=\\prod_{i\\in S_\\alpha}\\sin^{\\alpha_i}\\theta_i.\n\\end{equation}\n\nThus the superscripts in the Cartesian product record the original coordinate labels: $\\theta_i\\in(0,\\pi)$ when $i\\in S_\\alpha$, and $\\theta_i\\in\\R/2\\pi\\Z$ when $i\\in S_\\alpha^c$.\n\nAll restricted operators use Lebesgue measure, with the same normalization before and after restriction. Let $B_\\alpha$ be the Friedrichs operator\\footnote{This is the self-adjoint operator associated with the closure of the indicated nonnegative quadratic form; see \\cite[Section~2.3, Theorems~2.13--2.14]{Teschl2014}.}\n\n\\begin{equation}\n B_\\alpha=P_{D_{S_\\alpha}}+V_\\alpha,\\qquad\n V_\\alpha=\\sum_{i:\\alpha_i>0}\\alpha_i(\\alpha_i-1)\\csc^2\\theta_i.\n \\label{eq:restricted-jacobi-operator}\n\\end{equation}\n\nHere $P_{D_{S_\\alpha}}$ is the second-order Laplacian $-\\Delta_\\theta$ on $\\Omega_\\alpha$, with zero Dirichlet values at $\\theta_i=0,\\pi$ when $\\alpha_i>0$, and periodic conditions when $\\alpha_i=0$. By contrast, $P=-\\Delta_\\theta$ acts on the full angular torus, and $P^s$ denotes its spectral power:\n\n\\begin{equation}\n \\widehat{P^su}(k)=|k|^{2s}\\widehat u(k),\\qquad k\\in\\Z^\\d.\n \\label{eq:angular-periodic-power}\n\\end{equation}\n\nFor every $s>0$, $w_\\alpha\\partial_z^\\alpha U\\in\\Dom(B_\\alpha^s)$, and\n\n\\begin{equation}\n B_\\alpha^s(w_\\alpha\\partial_z^\\alpha U)\n  =w_\\alpha\\partial_z^\\alpha(P^su).\n \\label{eq:fractional-intertwining}\n\\end{equation}\n\nThe derivative on the right is taken after expressing the smooth even function $P^su$ in the cosine variables.",
       "paper2_statement_tex": "\\label{lem:fractional}\n\nLet $u(x)=U(\\cos(2\\pi x_1),\\ldots,\\cos(2\\pi x_\\d))$ with $U\\in C^\\infty([-1,1]^\\d)$. For a nonzero multi-index $\\alpha$, set\n\n\\begin{equation}\n S_\\alpha=\\{i:\\alpha_i>0\\},\\quad\n \\Omega_\\alpha=(0,1/2)^{S_\\alpha}\\times(\\R/\\Z)^{S_\\alpha^c},\\quad\n w_\\alpha=\\prod_{i\\in S_\\alpha}\\sin^{\\alpha_i}(2\\pi x_i).\n\\end{equation}\n\nThus the superscripts in the Cartesian product record the original coordinate labels: $x_i\\in(0,1/2)$ when $i\\in S_\\alpha$, and $x_i\\in\\R/\\Z$ when $i\\in S_\\alpha^c$.\n\nAll restricted operators use Lebesgue measure, with the same normalization before and after restriction. Let $B_\\alpha$ be the Friedrichs operator\\footnote{This is the self-adjoint operator associated with the closure of the indicated nonnegative quadratic form; see \\cite[Section~2.3, Theorems~2.13--2.14]{Teschl2014}.}\n\n\\begin{equation}\n B_\\alpha=P_{D_{S_\\alpha}}+V_\\alpha,\\qquad\n V_\\alpha=(2\\pi)^2\\sum_{i:\\alpha_i>0}\\alpha_i(\\alpha_i-1)\\csc^2(2\\pi x_i).\n \\label{eq:restricted-jacobi-operator}\n\\end{equation}\n\nHere $P_{D_{S_\\alpha}}$ is the second-order Laplacian $-\\Delta$ on $\\Omega_\\alpha$, with zero Dirichlet values at $x_i=0,1/2$ when $\\alpha_i>0$, and periodic conditions when $\\alpha_i=0$. By contrast, $|\\nabla|^2=-\\Delta$ acts on the full unit-period torus, and its spectral powers satisfy\n\n\\begin{equation}\n \\widehat{|\\nabla|^{2s}u}(k)=(2\\pi|k|)^{2s}\\widehat u(k),\\qquad k\\in\\Z^\\d.\n \\label{eq:angular-periodic-power}\n\\end{equation}\n\nFor every $s>0$, $w_\\alpha\\partial_z^\\alpha U\\in\\Dom(B_\\alpha^s)$, and\n\n\\begin{equation}\n B_\\alpha^s(w_\\alpha\\partial_z^\\alpha U)\n  =w_\\alpha\\partial_z^\\alpha(|\\nabla|^{2s}u).\n \\label{eq:fractional-intertwining}\n\\end{equation}\n\nThe derivative on the right is taken after expressing the smooth even function $|\\nabla|^{2s}u$ in the cosine variables.",
       "lean_targets": [
-        "BecknerOnofri.Target.fractional_intertwining"
+        "BecknerOnofri.Target.fractional_intertwining",
+        "BecknerOnofri.Paper2.physical_fractional_intertwining",
+        "BecknerOnofri.Paper2.physical_operatorGraph_transport",
+        "BecknerOnofri.Paper2.physical_spectralPower_domain",
+        "BecknerOnofri.Paper2.physical_measure_transport",
+        "BecknerOnofri.Paper2.physical_form_transport",
+        "BecknerOnofri.Paper2.physical_potential"
       ],
       "previous_clause_coverage": "complete",
-      "review_kind": "same-assistant source delta review; not independent external semantic certification"
+      "review_kind": "same-assistant source delta review; not independent external semantic certification",
+      "current_clause_coverage": "implemented; final checks pending"
     },
     {
       "source_label": "lem:positive-bernstein",
@@ -388,17 +395,19 @@
       "source_number": "4.2",
       "paper2_line": 2219,
       "text_changed": false,
-      "category": "inherited_partial",
-      "assessment": "Unchanged statement retains the earlier uncovered assertion that the original differentiated periodization series converges locally uniformly. Existing code proves the same density smooth by Fourier decay; that is not a proof of the literal series assertion.",
+      "category": "derivative_series_implemented",
+      "assessment": "Every finite ordered coordinate derivative of the literal rational Euclidean profile admits a summable majorant on each compact set. The Weierstrass M-test proves locally uniform convergence of the original derivative series. Uses ordinary coordinate-line derivatives, with translation commutation proved. The earlier smoothness/positivity/mass and conditional entropy targets remain unchanged.",
       "old_statement_tex": "\\label{lem:section4-periodization-entropy-identity}\nThe series in \\eqref{eq:section4-rho-star}, together with all of its derivatives, converges locally uniformly.  In particular, \\(\\rho_*\\) is a smooth, strictly positive probability density on \\(\\T^{11}\\).\n\nLet $X$ be a random vector in $\\R^{11}$ with density $\\eta_{1/5}$ and write\n\\begin{equation}\n X=Y+N,\n \\qquad\n Y\\in[-1/2,1/2)^{11},\n \\qquad\n N\\in\\Z^{11},\n \\label{eq:section4-lattice-label-decomposition}\n\\end{equation}\nwhere \\(Y\\) is the representative of \\(X\\) modulo \\(\\Z^{11}\\).  Then \\(Y\\) has density \\(\\rho_*\\), and\n\\begin{equation}\n \\Ent(\\rho_*)\n =\\Ent_{\\R^{11}}(\\eta_{1/5})+\\mathrm H_{\\mathrm{Sh}}(N\\mid Y),\n \\label{eq:section4-periodization-entropy-identity}\n\\end{equation}\nwhere\n\\begin{equation}\n \\Ent_{\\R^{11}}(f):=\\int_{\\R^{11}}f\\log f\\,\\dd x\n \\label{eq:section4-euclidean-entropy-definition}\n\\end{equation}\nand \\(\\mathrm H_{\\mathrm{Sh}}(N\\mid Y)\\) is the conditional Shannon entropy of the lattice label.",
       "paper2_statement_tex": "\\label{lem:section4-periodization-entropy-identity}\nThe series in \\eqref{eq:section4-rho-star}, together with all of its derivatives, converges locally uniformly.  In particular, \\(\\rho_*\\) is a smooth, strictly positive probability density on \\(\\T^{11}\\).\n\nLet $X$ be a random vector in $\\R^{11}$ with density $\\eta_{1/5}$ and write\n\\begin{equation}\n X=Y+N,\n \\qquad\n Y\\in[-1/2,1/2)^{11},\n \\qquad\n N\\in\\Z^{11},\n \\label{eq:section4-lattice-label-decomposition}\n\\end{equation}\nwhere \\(Y\\) is the representative of \\(X\\) modulo \\(\\Z^{11}\\).  Then \\(Y\\) has density \\(\\rho_*\\), and\n\\begin{equation}\n \\Ent(\\rho_*)\n =\\Ent_{\\R^{11}}(\\eta_{1/5})+\\mathrm H_{\\mathrm{Sh}}(N\\mid Y),\n \\label{eq:section4-periodization-entropy-identity}\n\\end{equation}\nwhere\n\\begin{equation}\n \\Ent_{\\R^{11}}(f):=\\int_{\\R^{11}}f\\log f\\,\\dd x\n \\label{eq:section4-euclidean-entropy-definition}\n\\end{equation}\nand \\(\\mathrm H_{\\mathrm{Sh}}(N\\mid Y)\\) is the conditional Shannon entropy of the lattice label.",
       "lean_targets": [
         "BecknerOnofri.Target.eleven_profile_mass",
         "BecknerOnofri.Target.eleven_entropy_chain",
-        "BecknerOnofri.Target.eleven_profile_regular"
+        "BecknerOnofri.Target.eleven_profile_regular",
+        "BecknerOnofri.Paper2.periodization_derivatives_locally_uniform"
       ],
       "previous_clause_coverage": "partial",
-      "review_kind": "same-assistant source delta review; not independent external semantic certification"
+      "review_kind": "same-assistant source delta review; not independent external semantic certification",
+      "current_clause_coverage": "implemented; final checks pending"
     },
     {
       "source_label": "lem:section4-euclidean-entropy",
@@ -889,10 +898,13 @@
   ],
   "complete_paper2_formalization": false,
   "open_obligations": [
-    "physical mixed-spatial coordinate/form/power transport for Lemma 2.9",
-    "literal derivative-series locally uniform convergence in Lemma 4.2",
-    "Remark 5.6 counterexample, outside the 51 formal result environments",
-    "displayed quantitative cutoff rate in the proof, if literal every-proof-claim coverage is desired"
+    "final Comparator replay for the 269 registered targets",
+    "independent-kernel check of the final theorem closure",
+    "independent external semantic reviewer approval is not claimed"
   ],
-  "independent_semantic_review_completed": false
+  "independent_semantic_review_completed": false,
+  "outside_51_result_scope": [
+    "Remark 5.6 counterexample is not separately formalized",
+    "The displayed quantitative cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence"
+  ]
 }

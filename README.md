@@ -4,18 +4,21 @@ Lean **4.32.0**, mathlib revision `81a5d257c8e410db227a6665ed08f64fea08e997`.
 
 This repository preserves the 257-target September 27 certificate and adds a
 separate adaptation layer for the October 3 manuscript (“paper 2”).
-**It does not yet certify every assertion of paper 2.** In particular, the
-physical-coordinate Friedrichs/intertwining statement still needs its full
-coordinate and measure transport. See [the remaining obligations](AUDIT_ZH.md)
-and [the 51-result statement map](audit/PAPER2_STATEMENT_MAP.md).
+The adaptation now includes the literal physical-coordinate Friedrichs
+intertwining and local uniform convergence of every derivative of the original
+periodization series. The 51 formal result environments are the declared
+coverage scope; proof-route estimates and remarks outside that set are listed
+separately. Final checker outcomes are recorded in [STATUS.json](verification/STATUS.json).
+See [the Chinese audit](AUDIT_ZH.md) and [the 51-result statement map](audit/PAPER2_STATEMENT_MAP.md).
 
 ## Challenge → Solution → Comparator
 
 | Scope | Trusted statements | Proofs | Configuration |
 |---|---|---|---|
 | Original 257 targets | `Challenge.lean` | `Solution.lean` and imported modules | `comparator.json` |
-| Original targets plus 5 paper-2 bridges | `Paper2Challenge.lean` | `Paper2Solution.lean`, `Paper2Proofs.lean` | `comparator-paper2.json` |
-| Only the 5 additions | same | same | `comparator-paper2-increment.json` |
+| Original targets plus 12 paper-2 targets | `Paper2Challenge.lean` | `Paper2Solution.lean`, `Paper2Proofs.lean` | `comparator-paper2.json` |
+| Only the 12 additions | same | same | `comparator-paper2-increment.json` |
+| Seven new analysis/coordinate targets | same | same | `comparator-paper2-analysis.json` |
 
 The `sorry` terms in the trusted challenges are statement placeholders.
 Solutions do not import challenges. Transitive proof axioms must be confined
@@ -65,7 +68,7 @@ does not perform the external kernel replay.
 Read [verification/STATUS.json](verification/STATUS.json) for actual outcomes,
 including unsuccessful or unfinished runs. Historical whole-257 Comparator
 acceptance is preserved separately from current checks. An increment passing
-is not described as a new whole-262 run.
+is not described as a new whole-269 run.
 
 The manuscript source is identified by SHA-256
 `c65fcf8972bb53f49c34350cfd28975d757f67733d74ec7c3e9886eec0adcdc9`.
@@ -80,7 +83,7 @@ The source delta review is an implementing-assistant review, **not independent
 external semantic certification**. Comparator compares Lean with Lean; neither
 it nor a second kernel decides whether natural-language mathematics was
 encoded correctly. [EXTERNAL_REVIEW.md](EXTERNAL_REVIEW.md) supplies a review
-packet with explicit unresolved items.
+packet with source/definition crosswalks and reviewer questions.
 
 Independent-kernel instructions and version pins are in
 [verification/KERNELS.md](verification/KERNELS.md). The Lean Kernel Arena is a

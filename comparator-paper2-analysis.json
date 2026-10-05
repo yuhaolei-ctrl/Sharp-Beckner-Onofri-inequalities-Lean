@@ -2,11 +2,6 @@
   "challenge_module": "Paper2Challenge",
   "solution_module": "Paper2Solution",
   "theorem_names": [
-    "BecknerOnofri.Paper2.negativeSobolevEnergy_normalization",
-    "BecknerOnofri.Paper2.negativeSobolevEnergy_fourier",
-    "BecknerOnofri.Paper2.low_density_extended",
-    "BecknerOnofri.Paper2.high_density_extended",
-    "BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling",
     "BecknerOnofri.Paper2.periodization_derivatives_locally_uniform",
     "BecknerOnofri.Paper2.physical_fractional_intertwining",
     "BecknerOnofri.Paper2.physical_operatorGraph_transport",

@@ -1,3 +1,6 @@
+import Paper2PhysicalFractionalDefinitions
+import Paper2PeriodizationDefinitions
+import Mathlib.Analysis.Normed.Group.FunctionSeries
 import BecknerOnofri.ExtendedEntropyDefinitions
 import BecknerOnofri.Friedrichs.MixedSpectralPowers
 

@@ -62,3 +62,29 @@ name = "Paper2Challenge"
 [[lean_lib]]
 name = "Paper2Solution"
 
+[[lean_lib]]
+name = "Paper2Periodization"
+
+[[lean_lib]]
+name = "Paper2PhysicalMeasure"
+
+[[lean_lib]]
+name = "Paper2PhysicalLp"
+
+[[lean_lib]]
+name = "Paper2PeriodizationDefinitions"
+
+[[lean_lib]]
+name = "Paper2PhysicalCore"
+
+[[lean_lib]]
+name = "Paper2PhysicalForm"
+
+[[lean_lib]]
+name = "Paper2PhysicalOperator"
+
+[[lean_lib]]
+name = "Paper2PhysicalFractionalDefinitions"
+
+[[lean_lib]]
+name = "Paper2PhysicalFractional"

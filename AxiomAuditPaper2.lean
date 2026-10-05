@@ -262,3 +262,11 @@ import Paper2Solution
 #print axioms BecknerOnofri.Paper2.low_density_extended
 #print axioms BecknerOnofri.Paper2.high_density_extended
 #print axioms BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling
+
+#print axioms BecknerOnofri.Paper2.periodization_derivatives_locally_uniform
+#print axioms BecknerOnofri.Paper2.physical_fractional_intertwining
+#print axioms BecknerOnofri.Paper2.physical_operatorGraph_transport
+#print axioms BecknerOnofri.Paper2.physical_spectralPower_domain
+#print axioms BecknerOnofri.Paper2.physical_measure_transport
+#print axioms BecknerOnofri.Paper2.physical_form_transport
+#print axioms BecknerOnofri.Paper2.physical_potential

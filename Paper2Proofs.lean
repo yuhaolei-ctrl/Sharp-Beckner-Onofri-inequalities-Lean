@@ -1,3 +1,5 @@
+import Paper2PhysicalFractional
+import Paper2Periodization
 import Paper2Definitions
 import BecknerOnofri.ExtendedEntropy
 import BecknerOnofri.EntropyMainTheorems
@@ -71,5 +73,46 @@ theorem physicalSpectralPowerGraph_scaling {d : ℕ}
     unfold Friedrichs.MixedSpatial.mixedEigenvalue
     positivity)]
   ring
+
+theorem periodization_derivatives_locally_uniform (is : List (Fin 11)) :
+    TendstoLocallyUniformly
+      (fun S : Finset (Frequency 11) => fun x : Periodization.E =>
+        ∑ n ∈ S, Periodization.mixed is
+          (fun y => Eleven.euclideanProfile (fun j => y j+(n j:ℝ))) x)
+      (fun x : Periodization.E => ∑' n : Frequency 11,
+        Periodization.mixed is
+          (fun y => Eleven.euclideanProfile (fun j => y j+(n j:ℝ))) x) Filter.atTop := by
+  exact Periodization.derivatives_locally_uniform is
+
+theorem physical_fractional_intertwining (d : ℕ) :
+    Physical.FractionalIntertwining d := by
+  exact Physical.fractional_intertwining d
+
+theorem physical_operatorGraph_transport {d : ℕ} (α : Friedrichs.MixedSpatial.MultiIndex d)
+    (f g : Friedrichs.MixedSpatial.H α) :
+    Physical.operatorGraph α (Physical.coordinateLpEquiv α f)
+      (Physical.scale^2 • Physical.coordinateLpEquiv α g) ↔
+      Friedrichs.MixedSpatial.operatorGraph α f g := by
+  exact Physical.operatorGraph_transport α f g
+
+theorem physical_spectralPower_domain {d : ℕ} (α : Friedrichs.MixedSpatial.MultiIndex d)
+    (s : ℝ) (f : Friedrichs.MixedSpatial.H α) :
+    (∃ g : Physical.H α, Physical.SpectralPowerGraph α s (Physical.coordinateLpEquiv α f) g) ↔
+      ∃ g : Friedrichs.MixedSpatial.H α, Friedrichs.MixedSpatial.SpectralPowerGraph α s f g := by
+  exact Physical.spectralPowerGraph_domain α s f
+
+theorem physical_measure_transport {d : ℕ} (α : Friedrichs.MixedSpatial.MultiIndex d) :
+    (Friedrichs.MixedSpatial.spatialMeasure α).map Physical.down =
+      ENNReal.ofReal (Physical.scale^d) • Physical.spatialMeasure α := by
+  exact Physical.map_spatial α
+
+theorem physical_form_transport {d : ℕ} (α : Friedrichs.MixedSpatial.MultiIndex d) :
+    Physical.energyEquiv α '' Friedrichs.MixedSpatial.formClosure α = Physical.formClosure α := by
+  exact Physical.energyEquiv_closure_image α
+
+theorem physical_potential (m : ℕ) (x : ℝ) :
+    Physical.potentialFactor m x ^ 2 =
+      (2*Real.pi)^2 * ((m:ℝ)*((m:ℝ)-1)) / Real.sin (2*Real.pi*x)^2 := by
+  exact Physical.potentialFactor_sq m x
 
 end BecknerOnofri.Paper2
