@@ -5,6 +5,7 @@ on:
       certificate_release:
         description: Release containing the exact solution export
         required: true
+        default: verified-20261005
         type: string
 permissions:
   contents: read
@@ -83,8 +84,10 @@ jobs:
           done) &
           monitor_pid=$!
           trap 'kill "$monitor_pid" 2>/dev/null || true' EXIT
-          /usr/bin/time -v .tools/lean4lean/.lake/build/bin/lean4lean --import --verbose --config:whnf=10000000 --config:whnfEager=100000000 --config:lazyDelta=1000000 external-check/solution.ndjson > external-check/lean4lean.log 2>&1
+          checker_status=0
+          /usr/bin/time -v .tools/lean4lean/.lake/build/bin/lean4lean --import --verbose --config:whnf=10000000 --config:whnfEager=100000000 --config:lazyDelta=1000000 external-check/solution.ndjson > external-check/lean4lean.log 2>&1 || checker_status=$?
           tail -n 30 external-check/lean4lean.log
+          test "$checker_status" -eq 0
           python3 - <<'PY'
           import re
           from pathlib import Path

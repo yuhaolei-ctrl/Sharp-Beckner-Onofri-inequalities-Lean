@@ -358,5 +358,27 @@
     "frozen_replay_receipts_revalidated": "current/source-layout/frozen-evidence-validation.json",
     "independent_replay_of_new_module_paths": false,
     "internal_theorem_identifiers_preserved": true
+  },
+  "lean4lean_old_revision_rerun": {
+    "run_id": 37300200036,
+    "attempt": 2,
+    "status": "deterministic_timeout",
+    "evidence_directory": "current/lean4lean-old-revision-attempt2",
+    "reason": "Re-run jobs used the original revision with default fuel, not the corrected main workflow."
+  },
+  "lean4lean_current_retry": {
+    "run_id": 37356177464,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37356177464",
+    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da",
+    "certificate_release": "verified-20261005",
+    "status": "in_progress",
+    "completed_prerequisites": [
+      "exact export identity",
+      "checker build",
+      "valid-proof acceptance",
+      "damaged-proof rejection"
+    ],
+    "full_replay_passed": false,
+    "note": "Full-corpus replay is running; no acceptance is claimed until actual success."
   }
 }

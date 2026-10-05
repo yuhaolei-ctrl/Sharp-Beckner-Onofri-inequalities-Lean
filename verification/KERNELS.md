@@ -300,3 +300,26 @@ Replay preparation and receipt validation therefore use
 `Challenge`/`Solution` modules and `comparator.json`.
 Run `python3 scripts/source_layout.py` to verify the exact allowed reorganization;
 see [SOURCE_LAYOUT.md](SOURCE_LAYOUT.md) for the separate verification scopes.
+
+## Restarting Lean4Lean after a failed old run
+
+GitHub's **Re-run jobs** uses the original run's commit. Re-running commit
+`0edcab2` therefore still uses the default reduction limits, even though `main`
+has the larger finite limits. Its second attempt on October 5 again stopped
+at `BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0177.e060903`
+with `(kernel) deterministic timeout`; that is a resource-limit failure,
+not a reported declaration type mismatch.
+
+To use the correction, open **Actions → Additional Lean4Lean certificate
+replay → Run workflow**, choose `main`, and select certificate release
+`verified-20261005`. Equivalently:
+
+```sh
+gh workflow run lean4lean.yml --ref main -f certificate_release=verified-20261005
+```
+
+The checker still checks the entire exact export, with unchanged logical rules
+and valid/damaged proof controls. Only an exit code of zero plus the checker's
+final acceptance message counts as success. The workflow now prints the
+checker log tail on failure as well, so the error is visible in the Actions log.
+Historical failed attempts remain recorded.
