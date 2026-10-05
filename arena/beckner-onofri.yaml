@@ -1,10 +1,10 @@
 {
-  "description": "Beckner\u2013Onofri: 257 baseline targets and 12 paper-2 targets. Formal proof corpus; independent natural-language review is a separate task.",
+  "description": "Beckner\u2013Onofri: 257 baseline targets and 12 additional targets. Formal proof corpus; independent natural-language review is a separate task.",
   "url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean",
   "ref": "main",
-  "rev": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+  "rev": "67ba4e6406230f02c33bb913053973b9804f8c15",
   "pre-build": "python3 scripts/setup_dependencies.py",
-  "module": "Paper2Solution",
+  "module": "Solution",
   "export-decls": [
     "BecknerOnofri.Target.density_endpoint",
     "BecknerOnofri.Target.density_rigidity",
