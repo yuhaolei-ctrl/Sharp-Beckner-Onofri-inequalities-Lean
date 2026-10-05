@@ -6,24 +6,29 @@ itself an independent kernel. The historical configuration disables Nanoda.
 
 The current checker source is pinned to Nanoda
 `4c544ed4099c8227f07d5de77ad1e69fb0740a27`, built with Rust 1.90.0.
-The one source patch raises `STACK_SIZE` from 16,777,216 to 268,435,456 bytes,
-as in the Arena recipe. Our local configuration uses two worker threads; the public workflow also
-supports four workers. Both use a strict
-axiom allow-list, instead of Arena's permissive all-axioms setting.
+The first runtime patch followed Arena's 256 MiB worker-stack recipe. The full
+certificate exceeded that stack: run 37266167712 aborted with a stack overflow,
+exit 134, after 1:07:44; its peak resident memory was 13,158,032 KiB. This was a
+runtime failure, not a successful check or a proof-rejection diagnostic.
+The four-worker run using the same limit was cancelled before replacement.
+
+`scripts/patch_nanoda_runtime.py` now raises worker stacks to **1 GiB** and adds
+optional per-worker declaration-name traces. The upstream declaration checker,
+inference, equality and axiom rules remain unchanged. The complete source diff
+and checker binary digest are included in each artifact. Trace files are written
+only when `NANODA_TRACE_DIR` is set; they make a later runtime failure locatable.
+The valid/invalid proof controls and exact-once trace inventory are recorded in
+`current/nanoda-runtime-control/`. They do not replace the full-corpus check.
+
+The default remains two workers to limit memory use. Both worker choices use a
+strict three-axiom allow-list.
 `unpermitted_axiom_hard_error=false` only skips unused exported axioms; a proof
 referring to one still fails. `unsafe_permit_all_axioms` remains false.
 
 ```sh
 git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
 git -C .tools/nanoda checkout 4c544ed4099c8227f07d5de77ad1e69fb0740a27
-python3 - <<'PY'
-from pathlib import Path
-p = Path('.tools/nanoda/src/lib.rs')
-s = p.read_text()
-assert 'STACK_SIZE: usize = 16_777_216;' in s
-p.write_text(s.replace('STACK_SIZE: usize = 16_777_216;',
-                       'STACK_SIZE: usize = 268_435_456;'))
-PY
+python3 scripts/patch_nanoda_runtime.py .tools/nanoda
 cargo build --release --locked --manifest-path .tools/nanoda/Cargo.toml
 python3 scripts/check_nanoda.py --binary .tools/nanoda/target/release/nanoda_bin
 ```

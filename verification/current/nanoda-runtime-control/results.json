@@ -1,0 +1,10 @@
+{
+  "valid_export_exit_code": 0,
+  "valid_declarations": 536,
+  "trace_indices_exactly_once": true,
+  "invalid_export_exit_code": 101,
+  "invalid_mutation": "Only the fixture theorem proof value is replaced with its proposition; real certificate untouched",
+  "worker_stack_bytes": 1073741824,
+  "worker_threads": 2,
+  "checker_binary_sha256": "4fdfe7e536a27534190314ccfa188006bc7dd30b48d6ae29fb5077de514b58c2"
+}

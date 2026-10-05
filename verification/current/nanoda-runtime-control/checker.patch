@@ -1,0 +1,51 @@
+diff --git a/src/lib.rs b/src/lib.rs
+index f7ca1d9..e3b1af7 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -20,4 +20,4 @@ mod tests;
+ pub mod unique_hasher;
+ pub mod util;
+ 
+-pub(crate) const STACK_SIZE: usize = 16_777_216;
++pub(crate) const STACK_SIZE: usize = 1_073_741_824;
+diff --git a/src/tc.rs b/src/tc.rs
+index 27eaaac..4be8780 100644
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -154,16 +154,30 @@ impl<'p> ExportFile<'p> {
+         thread::scope(|sco| {
+             let mut handles = Vec::new();
+             for i in 0..num_threads {
++                let task_num = &task_num;
+                 handles.push(
+                     thread::Builder::new()
+                         .name(format!("thread_{}", i))
+                         .stack_size(crate::STACK_SIZE)
+-                        .spawn_scoped(sco, || loop {
+-                            let idx = task_num.fetch_add(1, Relaxed);
+-                            if let Some((_, declar)) = self.declars.get_index(idx) {
+-                                self.check_declar(declar);
+-                            } else {
+-                                break
++                        .spawn_scoped(sco, move || {
++                            use std::io::Write;
++                            let mut trace = std::env::var_os("NANODA_TRACE_DIR").map(|dir| {
++                                let path = std::path::PathBuf::from(dir)
++                                    .join(format!("nanoda-thread-{}.trace", i));
++                                std::fs::File::create(path).expect("create diagnostic trace")
++                            });
++                            loop {
++                                let idx = task_num.fetch_add(1, Relaxed);
++                                if let Some((_, declar)) = self.declars.get_index(idx) {
++                                    if let Some(file) = trace.as_mut() {
++                                        let entry = self.with_ctx(|ctx| format!("{} {:?}\n", idx,
++                                            ctx.debug_print(declar.info().name)));
++                                        file.write_all(entry.as_bytes()).expect("write diagnostic trace");
++                                    }
++                                    self.check_declar(declar);
++                                } else {
++                                    break
++                                }
+                             }
+                         })
+                         .unwrap(),

@@ -44,20 +44,25 @@ jobs:
         run: |
           git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
           git -C .tools/nanoda checkout --detach 4c544ed4099c8227f07d5de77ad1e69fb0740a27
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('.tools/nanoda/src/lib.rs')
-          s = p.read_text()
-          assert s.count('STACK_SIZE: usize = 16_777_216;') == 1
-          p.write_text(s.replace('STACK_SIZE: usize = 16_777_216;', 'STACK_SIZE: usize = 268_435_456;'))
-          PY
+          python3 scripts/patch_nanoda_runtime.py .tools/nanoda
           rustup toolchain install 1.90.0 --profile minimal
           cargo +1.90.0 build --release --locked --manifest-path .tools/nanoda/Cargo.toml
           sha256sum .tools/nanoda/target/release/nanoda_bin > external-check/checker-binary.sha256
           git -C .tools/nanoda diff > external-check/checker.patch
       - name: Check all exported declarations and resolve all registered targets
+        env:
+          NANODA_TRACE_DIR: ${{ github.workspace }}/external-check
         run: |
           set -o pipefail
+          ulimit -c 0
+          (while sleep 60; do
+            date -u
+            for trace in external-check/*.trace; do
+              test ! -f "$trace" || tail -n 1 "$trace"
+            done
+          done) &
+          monitor_pid=$!
+          trap 'kill "$monitor_pid" 2>/dev/null || true' EXIT
           /usr/bin/time -v .tools/nanoda/target/release/nanoda_bin external-check/nanoda-config.json < external-check/solution.ndjson 2>&1 | tee external-check/nanoda.log
           python3 - <<'PY'
           import re
@@ -65,6 +70,23 @@ jobs:
           text = Path('external-check/nanoda.log').read_text()
           assert re.search(r'Checked [0-9]+ declarations with no errors', text)
           assert Path('external-check/checked-targets.txt').stat().st_size > 0
+          PY
+      - name: Preserve compact declaration traces
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import gzip, json, shutil
+          from pathlib import Path
+          out = Path('external-check')
+          for p in out.glob('*.trace'):
+              with p.open('rb') as src, gzip.open(str(p) + '.gz', 'wb') as dst:
+                  shutil.copyfileobj(src, dst)
+          settings = json.loads((out / 'nanoda-config.json').read_text())
+          (out / 'runtime-settings.json').write_text(json.dumps({
+              'worker_stack_bytes': 1073741824,
+              'num_threads': settings['num_threads'],
+              'patch_scope': 'stack allocation and optional diagnostic name traces; logical checker unchanged'
+          }, indent=2) + '\n')
           PY
       - name: Preserve independent checker evidence
         if: always()
@@ -77,3 +99,4 @@ jobs:
             external-check/*.txt
             external-check/*.sha256
             external-check/*.patch
+            external-check/*.trace.gz

@@ -50,8 +50,11 @@ assert (args.nanoda / 'checked-targets.txt').stat().st_size > 0
 text = (args.nanoda / 'nanoda.log').read_text()
 match = re.search(r'Checked ([0-9]+) declarations with no errors', text)
 assert match, 'Missing independent-kernel acceptance'
+nanoda['worker_threads'] = settings['num_threads']
 nanoda['checked_declarations'] = int(match[1])
 assert nanoda['checked_declarations'] >= len(config['theorem_names'])
+if (args.nanoda / 'runtime-settings.json').exists():
+    nanoda['runtime_settings'] = json.loads((args.nanoda / 'runtime-settings.json').read_text())
 nanoda['checker_revision'] = '4c544ed4099c8227f07d5de77ad1e69fb0740a27'
 
 comparator = base(args.comparator)
