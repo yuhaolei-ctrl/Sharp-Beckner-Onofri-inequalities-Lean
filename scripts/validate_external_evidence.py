@@ -4,6 +4,7 @@ Hosted artifacts need run.json from gh run view. A local Comparator receipt
 needs its actual result.json, comparator.log, and the captured export records.
 """
 import argparse
+import gzip
 import hashlib
 import json
 import re
@@ -25,6 +26,10 @@ config = json.loads((root / 'comparator-paper2.json').read_text())
 manifest_hash = hashlib.sha256((root / 'SOURCE_MANIFEST.json').read_bytes()).hexdigest()
 expected_proof = json.loads((root / 'verification/current/certificate-export.json').read_text())
 expected_challenge = json.loads((root / 'verification/current/challenge-export.json').read_text())
+inventory = json.loads((root / 'verification/current/solution-inventory.json').read_text())
+assert inventory['export_sha256'] == expected_proof['export_sha256']
+assert inventory['bytes'] == expected_proof['bytes']
+assert set(inventory['axioms']) == set(config['permitted_axioms'])
 
 
 def digest(path):
@@ -66,13 +71,32 @@ if nanoda_path:
     assert set(settings['permitted_axioms']) == set(config['permitted_axioms'])
     assert (nanoda_path / 'checked-targets.txt').stat().st_size > 0
     text = (nanoda_path / 'nanoda.log').read_text()
-    match = re.search(r'Checked ([0-9]+) declarations with no errors', text)
+    match = re.search(r'^Checked ([0-9]+) declarations with no errors\s*$', text, re.M)
     assert match, 'Missing independent-kernel acceptance'
     record['worker_threads'] = settings['num_threads']
     record['checked_declarations'] = int(match[1])
-    assert record['checked_declarations'] >= len(config['theorem_names'])
+    assert record['checked_declarations'] == inventory['declaration_count']
     if (nanoda_path / 'runtime-settings.json').exists():
         record['runtime_settings'] = json.loads((nanoda_path / 'runtime-settings.json').read_text())
+        if 'source_revision' in record['runtime_settings']:
+            assert record['runtime_settings']['source_revision'] == '4c544ed4099c8227f07d5de77ad1e69fb0740a27'
+    traces = sorted(nanoda_path.glob('nanoda-thread-*.trace.gz'))
+    if traces:
+        assert len(traces) == settings['num_threads']
+        indices = bytearray(inventory['declaration_count'])
+        names = set()
+        for trace in traces:
+            with gzip.open(trace, 'rt') as stream:
+                for line in stream:
+                    idx, name = line.rstrip('\n').split(' ', 1)
+                    idx = int(idx)
+                    assert 0 <= idx < len(indices) and not indices[idx]
+                    indices[idx] = 1
+                    names.add(name)
+        assert all(indices) and len(names) == len(indices)
+        names_hash = hashlib.sha256(''.join(n + '\n' for n in sorted(names)).encode()).hexdigest()
+        assert names_hash == inventory['declaration_names_sha256']
+        record['trace_inventory'] = 'every exported declaration exactly once; acceptance requires process success'
     record['checker_revision'] = '4c544ed4099c8227f07d5de77ad1e69fb0740a27'
     independent['nanoda'] = record
 
@@ -104,7 +128,7 @@ if args.comparator:
                    'Comparator accepts axiom dependencies.'):
         assert marker in text, marker
     match = re.search(r'Solution parsed: ([0-9]+) declarations\.', text)
-    assert match and int(match[1]) >= len(config['theorem_names'])
+    assert match and int(match[1]) == inventory['declaration_count']
     comparator['parsed_declarations'] = int(match[1])
     comparator['driver'] = 'verification/tools/ReplayExports.lean'
 else:

@@ -167,3 +167,12 @@ The final receipt validator accepts `--local-nanoda DIR` for a complete local
 independent replay, with the actual exit record, acceptance message, checker
 configuration, exact export identity and all registered target names resolved.
 The same acceptance conditions apply to local and hosted kernels.
+
+`current/solution-inventory.json` inventories the actual raw export: 1,029,606
+declarations, including dependencies. Reproduce it with
+`python3 scripts/audit_export_inventory.py external-check/solution.ndjson`.
+This inventory script does not check proofs. The final validator requires the
+Nanoda acceptance count to equal the complete export count; it rejects messages
+that report skipped axioms. When compressed worker traces are present, it also
+requires every index exactly once and the exact exported declaration-name set.
+Trace entries alone never establish acceptance because they precede checking.
