@@ -140,5 +140,14 @@
     "invalid_proof_rejected": true,
     "worker_stack_bytes": 1073741824,
     "evidence": "current/nanoda-runtime-control"
+  },
+  "nanoda_large_stack": {
+    "status": "running",
+    "run_id": 37271984661,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37271984661",
+    "scope": 269,
+    "worker_stack_bytes": 1073741824,
+    "num_threads": 2,
+    "workflow_commit": "a030913"
   }
 }

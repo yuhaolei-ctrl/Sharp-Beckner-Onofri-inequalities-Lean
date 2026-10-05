@@ -1,0 +1,19 @@
+{
+  "valid": {
+    "raw_sha256": "3679ae303e752779ee633151d3711311204b9a1ca48dbb8cf98d6c6118a70bd1",
+    "gzip_sha256": "78a89bd04b541d14d31f1dd6b027dc124359d5709f642e356ca78f12b8d0a6f7",
+    "raw_bytes": 924588
+  },
+  "invalid": {
+    "raw_sha256": "b7248fec011654e400e9d1c5596404085d9eef7718b608b1bd5c0a9da83f8f3d",
+    "gzip_sha256": "39e09964b3c06cf8003c330098dc1b292cdc0b34030acb0204b2b4e25612add6",
+    "raw_bytes": 924633
+  },
+  "origin": {
+    "lean": "4.32.0",
+    "exporter_revision": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    "theorem": "certificateControl : (2 : Nat) + 2 = 4",
+    "valid_source": "tests/comparator_controls/Solution.lean",
+    "invalid_mutation": "The exported theorem value is replaced by its own proposition expression; all other records retain their values."
+  }
+}

@@ -1,0 +1,84 @@
+name: Eink0rn independent kernel
+on:
+  workflow_dispatch:
+    inputs:
+      certificate_release:
+        description: Release containing solution.ndjson.gz and certificate-export.json
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  eink0rn:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Validate exact export, registered roots, and all axioms
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CERT_RELEASE: ${{ inputs.certificate_release }}
+        run: |
+          set -o pipefail
+          mkdir -p external-check
+          gh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check
+          python3 scripts/prepare_external_check.py | tee external-check/identity.log
+      - name: Build pinned independent Haskell kernel
+        run: |
+          set -o pipefail
+          git clone https://github.com/Timeroot/eink0rn .tools/eink0rn
+          git -C .tools/eink0rn checkout --detach 31a9e3a1347d0544e8362fabea0ac669b41afbbb
+          (cd .tools/eink0rn && bash tools/arena-build.sh) 2>&1 | tee external-check/eink0rn-build.log
+          sha256sum .tools/eink0rn/arena/eink0rn > external-check/checker-binary.sha256
+          test -z "$(git -C .tools/eink0rn status --porcelain --untracked-files=no)"
+      - name: Check valid and deliberately damaged proof controls
+        run: |
+          python3 - <<'PY'
+          import gzip, hashlib, json, subprocess
+          from pathlib import Path
+          root = Path('tests/kernel_controls')
+          manifest = json.loads((root / 'manifest.json').read_text())
+          records = []
+          for name, expected in [('valid', 0), ('invalid', 1)]:
+              blob = (root / (name + '.ndjson.gz')).read_bytes()
+              assert hashlib.sha256(blob).hexdigest() == manifest[name]['gzip_sha256']
+              data = gzip.decompress(blob)
+              assert hashlib.sha256(data).hexdigest() == manifest[name]['raw_sha256']
+              p = Path('external-check') / (name + '.ndjson')
+              p.write_bytes(data)
+              result = subprocess.run(['.tools/eink0rn/arena/eink0rn', '--enforce-mutual-univ',
+                  '--pin-std=error', '--nat-accel=canonical', str(p)], capture_output=True, text=True)
+              output = result.stdout + result.stderr
+              (p.with_suffix('.log')).write_text(output)
+              records.append({'control': name, 'exit_code': result.returncode, 'output': output})
+              assert result.returncode == expected, output
+              assert ('ACCEPT' if expected == 0 else 'REJECT') in output, output
+          Path('external-check/controls.json').write_text(json.dumps(records, indent=2) + '\n')
+          PY
+      - name: Check the complete certificate
+        run: |
+          set -o pipefail
+          ulimit -c 0
+          /usr/bin/time -v .tools/eink0rn/arena/eink0rn --enforce-mutual-univ --pin-std=error --nat-accel=canonical --progress=60 --mem=4000 -j4 external-check/solution.ndjson +RTS -A32m -M13g -K1g -RTS 2>&1 | tee external-check/eink0rn.log
+          python3 - <<'PY'
+          import re, json
+          from pathlib import Path
+          text = Path('external-check/eink0rn.log').read_text()
+          assert re.search(r'^ACCEPT\s*$', text, re.M), text[-2000:]
+          Path('external-check/runtime-settings.json').write_text(json.dumps({
+              'checker_revision': '31a9e3a1347d0544e8362fabea0ac669b41afbbb',
+              'source_patch': None, 'worker_threads': 4, 'enforce_mutual_univ': True,
+              'pin_std': 'error', 'nat_accel': 'canonical', 'heap_limit': '13g',
+              'stack_limit': '1g', 'mem_budget': 4000
+          }, indent=2) + '\n')
+          PY
+      - name: Preserve independent kernel evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: eink0rn-evidence
+          path: |
+            external-check/*.log
+            external-check/*.json
+            external-check/*.sha256

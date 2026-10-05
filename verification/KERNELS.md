@@ -117,3 +117,22 @@ directory must also contain `run.json`, obtained with `gh run view RUN_ID
 --json databaseId,url,headSha,status,conclusion,jobs`. The validator requires
 completed successful runs, acceptance messages, exact source/export identities,
 and the registered declaration inventory. It does not certify prose semantics.
+
+## Additional independent Haskell implementation
+
+The optional `eink0rn.yml` workflow checks the same raw export with
+[eink0rn](https://github.com/Timeroot/eink0rn), revision
+`31a9e3a1347d0544e8362fabea0ac669b41afbbb`, the revision named by its
+[Arena recipe](https://github.com/leanprover/lean-kernel-arena/blob/master/checkers/eink0rn.yaml).
+It builds the unmodified checker from source and preserves compiler/build output
+and the binary digest. `--enforce-mutual-univ`, `--pin-std=error`, and
+`--nat-accel=canonical` are explicit; the deliberately unsound `always`
+arithmetic mode is never used. All exported axiom names must be exactly the
+three registered standard axioms. The workflow checks a valid fixture and a
+fixture with a deliberately damaged proof before checking the complete export.
+
+This is an additional implementation with its own documented theory and
+compatibility choices; see its `SPEC.md`. It is not represented as the official
+Lean kernel, nor is its source review a new metatheoretic soundness proof.
+An `ACCEPT` is recorded only after the complete run returns successfully;
+resource limits, checker faults and rejections remain distinguished.

@@ -31,6 +31,7 @@ assert size == record['bytes']
 # the recorded command requested it. The full expression graph is checked by Nanoda.
 names = {0: ''}
 declared = set()
+declared_axioms = set()
 with (out / 'solution.ndjson').open('rb') as src:
     for line in src:
         if b'"ie":' in line or b'"il":' in line:
@@ -48,7 +49,11 @@ with (out / 'solution.ndjson').open('rb') as src:
             for kind in ('def', 'thm', 'axiom', 'opaque', 'quot'):
                 if kind in row:
                     declared.add(names[row[kind]['name']])
+                    if kind == 'axiom':
+                        declared_axioms.add(names[row[kind]['name']])
 assert set(config['theorem_names']) <= declared
+assert declared_axioms == set(config['permitted_axioms']), sorted(declared_axioms)
+(out / 'declared-axioms.json').write_text(json.dumps(sorted(declared_axioms), indent=2) + '\n')
 # This pinned Nanoda version uses String.ofList (see its NameCache), not String.mk.
 required_primitives = {'Nat', 'String', 'String.ofList', 'Char', 'Char.ofNat', 'List',
                        'Quot', 'Quot.mk', 'Quot.lift', 'Quot.ind'}
