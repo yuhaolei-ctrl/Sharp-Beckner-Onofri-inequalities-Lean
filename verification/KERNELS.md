@@ -157,3 +157,13 @@ A separately recorded two-worker retry can add 8 GiB of swap on its disposable
 GitHub runner. This supplies memory headroom without changing any proof or
 checking rule. The workflow preserves the host memory/swap settings. The prior
 exit-143 cause remains unspecified; this resource variant is not a diagnosis.
+
+The full 269-target upstream Comparator CLI completed successfully on macOS at
+2026-10-05 09:49:48 UTC. `current/comparator-local/` preserves its actual result,
+complete log, both export identities and capture provenance. This is a full
+official-kernel replay in development mode; it does not claim Linux isolation.
+
+The final receipt validator accepts `--local-nanoda DIR` for a complete local
+independent replay, with the actual exit record, acceptance message, checker
+configuration, exact export identity and all registered target names resolved.
+The same acceptance conditions apply to local and hosted kernels.

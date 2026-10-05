@@ -11,13 +11,15 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
-parser.add_argument('--nanoda', type=Path)
+nanoda_input = parser.add_mutually_exclusive_group()
+nanoda_input.add_argument('--nanoda', type=Path)
+nanoda_input.add_argument('--local-nanoda', type=Path)
 parser.add_argument('--eink0rn', type=Path)
 official = parser.add_mutually_exclusive_group(required=True)
 official.add_argument('--comparator', type=Path)
 official.add_argument('--local-comparator', type=Path)
 args = parser.parse_args()
-if not (args.nanoda or args.eink0rn):
+if not (args.nanoda or args.local_nanoda or args.eink0rn):
     parser.error('At least one completed independent-kernel receipt is required.')
 config = json.loads((root / 'comparator-paper2.json').read_text())
 manifest_hash = hashlib.sha256((root / 'SOURCE_MANIFEST.json').read_bytes()).hexdigest()
@@ -54,22 +56,23 @@ def base(path, hosted=True):
 
 
 independent = {}
-if args.nanoda:
-    record = base(args.nanoda)
-    settings = json.loads((args.nanoda / 'nanoda-config.json').read_text())
+nanoda_path = args.nanoda or args.local_nanoda
+if nanoda_path:
+    record = base(nanoda_path, hosted=bool(args.nanoda))
+    settings = json.loads((nanoda_path / 'nanoda-config.json').read_text())
     assert settings['pp_declars'] == config['theorem_names']
     assert settings['unknown_pp_declar_hard_error'] is True
     assert settings['unsafe_permit_all_axioms'] is False
     assert set(settings['permitted_axioms']) == set(config['permitted_axioms'])
-    assert (args.nanoda / 'checked-targets.txt').stat().st_size > 0
-    text = (args.nanoda / 'nanoda.log').read_text()
+    assert (nanoda_path / 'checked-targets.txt').stat().st_size > 0
+    text = (nanoda_path / 'nanoda.log').read_text()
     match = re.search(r'Checked ([0-9]+) declarations with no errors', text)
     assert match, 'Missing independent-kernel acceptance'
     record['worker_threads'] = settings['num_threads']
     record['checked_declarations'] = int(match[1])
     assert record['checked_declarations'] >= len(config['theorem_names'])
-    if (args.nanoda / 'runtime-settings.json').exists():
-        record['runtime_settings'] = json.loads((args.nanoda / 'runtime-settings.json').read_text())
+    if (nanoda_path / 'runtime-settings.json').exists():
+        record['runtime_settings'] = json.loads((nanoda_path / 'runtime-settings.json').read_text())
     record['checker_revision'] = '4c544ed4099c8227f07d5de77ad1e69fb0740a27'
     independent['nanoda'] = record
 

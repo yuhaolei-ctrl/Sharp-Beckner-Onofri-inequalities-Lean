@@ -34,7 +34,7 @@ proved semantic bridges; Python search output is not admitted as an axiom.
 ## Reproduce
 
 Install the toolchain specified by `lean-toolchain`, or set
-`LEAN_RUNTIME_BIN` to the `bin` directory of Lean 4.32.0. Python 3, Git and
+`LEAN_RUNTIME_BIN` to the `bin` directory of Lean 4.32.0. Python 3.11 or newer, Git and
 a C toolchain are needed. Cold compilation is substantial; the local check
 reuses existing build caches and is not a fresh-machine rebuild claim.
 
@@ -66,7 +66,7 @@ does not perform the external kernel replay.
 ## Evidence and scope
 
 The [downloadable certificate](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980) contains the exact Challenge and Solution exports with SHA-256 provenance.
-The public [Nanoda retry](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37281025130), [eink0rn check](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155), and [Comparator replay](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000) provide machine logs. The Comparator and eink0rn full checks are still in progress. Nanoda attempts encountered a 256 MiB stack overflow and a later termination with exit 143; the available failure evidence remains recorded. A single-worker retry is running to reduce concurrent memory demand. Final outcomes must be read from the runs and status record.
+The public [Nanoda retry](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37281025130), [eink0rn check](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155), and [Comparator replay](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000) provide machine logs. The [full 269-target upstream Comparator replay](verification/current/comparator-local/result.json) passed the official Lean kernel on October 5; its [complete log](verification/current/comparator-local/comparator.log) is preserved. The additional hosted Comparator replay and independent checks are still in progress. Nanoda attempts encountered a 256 MiB stack overflow and a later termination with exit 143; the available failure evidence remains recorded. A single-worker retry is running to reduce concurrent memory demand. Final outcomes must be read from the runs and status record.
 See [the replay instructions](verification/KERNELS.md#replaying-published-exports-without-rebuilding-the-manuscript) to check the exports without recompiling the whole manuscript.
 
 Read [verification/STATUS.json](verification/STATUS.json) for actual outcomes,

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T08:39:47.947922+00:00",
+  "updated_utc": "2026-10-05T09:59:25.717004+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -37,10 +37,14 @@
     "cache_reused": true
   },
   "paper2_comparator": {
-    "status": "running",
+    "status": "passed",
     "scope": 269,
     "mode": "development; official kernel, statement and definition matching; no Linux isolation",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T09:49:48.926554+00:00",
+    "evidence_directory": "current/comparator-local",
+    "log": "current/comparator-local/comparator.log"
   },
   "controls": {
     "status": "passed",
@@ -52,7 +56,6 @@
     ]
   },
   "open_obligations": [
-    "Final 269-target Comparator replay",
     "Final independent-kernel replay",
     "Independent external semantic reviewer approval is not claimed"
   ],
@@ -214,5 +217,14 @@
     "scope": 269,
     "workflow_commit": "78ac701",
     "resource_setup": "passed"
+  },
+  "nanoda_local_final": {
+    "status": "running",
+    "scope": 269,
+    "worker_threads": 2,
+    "worker_stack_bytes": 1073741824,
+    "platform": "macOS arm64",
+    "started_utc": "2026-10-05T09:58:40.668952+00:00",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
   }
 }

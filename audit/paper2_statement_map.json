@@ -898,7 +898,6 @@
   ],
   "complete_paper2_formalization": false,
   "open_obligations": [
-    "final Comparator replay for the 269 registered targets",
     "independent-kernel check of the final theorem closure",
     "independent external semantic reviewer approval is not claimed"
   ],
@@ -906,5 +905,6 @@
   "outside_51_result_scope": [
     "Remark 5.6 counterexample is not separately formalized",
     "The displayed quantitative cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence"
-  ]
+  ],
+  "official_full_replay": "passed for all 269 targets, 2026-10-05 09:49:48 UTC"
 }
