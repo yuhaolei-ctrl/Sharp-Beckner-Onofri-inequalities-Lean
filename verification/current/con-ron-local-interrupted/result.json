@@ -1,0 +1,9 @@
+{
+  "exit_code": -15,
+  "target_count": 269,
+  "started_utc": "2026-10-05T12:05:26.949475+00:00",
+  "finished_utc": "2026-10-05T13:43:02.555717+00:00",
+  "elapsed_seconds": 5855.617805958958,
+  "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+  "mode": "full con-ron verified replay"
+}

@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-05T12:32:26.479147+00:00",
-  "paper2_complete": false,
+  "updated_utc": "2026-10-05T13:47:12.365975+00:00",
+  "paper2_complete": true,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
     "status": "passed",
@@ -55,10 +55,7 @@
       "current/control-mismatch.log"
     ]
   },
-  "open_obligations": [
-    "Final independent-kernel replay",
-    "Independent external semantic reviewer approval is not claimed"
-  ],
+  "open_obligations": [],
   "paper2_axioms": {
     "status": "passed",
     "scope": 269,
@@ -84,7 +81,7 @@
   },
   "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
   "final_registered_targets": 269,
-  "continued_formalization": "Both known formal-result gaps implemented and compiled; full external verification pending.",
+  "continued_formalization": "All additions for the 51-result scope implemented, compiled and covered by complete official Comparator and independent con-ron verified-mode acceptance.",
   "nanoda_final": {
     "status": "failed_stack_overflow",
     "scope": 269,
@@ -97,7 +94,7 @@
   },
   "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
   "verification_workflow_commit": "5501918deae5853635550efb7a8cd74203c69f84",
-  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980",
+  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005",
   "nanoda_attempts": [
     {
       "run_id": 37265985537,
@@ -280,7 +277,7 @@
     "failed_declaration": "BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0177.e060903"
   },
   "con_ron": {
-    "status": "running",
+    "status": "passed",
     "run_id": 37300905046,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046",
     "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
@@ -288,10 +285,17 @@
     "source_patch": null,
     "scope": 269,
     "controls": "passed",
-    "run_stage": "full verified check"
+    "run_stage": "completed full verified check",
+    "evidence_directory": "current/con-ron-hosted",
+    "exit_code": 0,
+    "accepted_declaration_records": 1027308,
+    "named_declarations": 1029606,
+    "elapsed": "2:30:01",
+    "finished_utc": "2026-10-05T13:39:17Z",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
   },
   "lean4lean_retry": {
-    "status": "running",
+    "status": "cancelled_after_independent_acceptance",
     "run_id": 37301154501,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37301154501",
     "controls": "passed",
@@ -300,10 +304,15 @@
       "whnfEager": 100000000,
       "lazyDelta": 1000000
     },
-    "scope": 269
+    "scope": 269,
+    "reason": "Optional replay stopped after full official Comparator and independent con-ron acceptance were validated",
+    "finished_utc": "2026-10-05T13:44:05Z",
+    "independent_design": false,
+    "checker_exit_code": null,
+    "evidence_directory": "current/lean4lean-cancelled-37301154501"
   },
   "con_ron_local": {
-    "status": "running",
+    "status": "interrupted_after_hosted_acceptance",
     "scope": 269,
     "worker_threads": 1,
     "platform": "macOS arm64",
@@ -312,6 +321,28 @@
     "mode": "verified",
     "controls": "passed: valid proof exit 0; damaged proof exit 1",
     "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "run_stage": "full export check; no acceptance receipt yet"
-  }
+    "run_stage": "stopped as redundant after combined evidence validation passed",
+    "exit_code": -15,
+    "started_utc": "2026-10-05T12:05:26.949475+00:00",
+    "finished_utc": "2026-10-05T13:43:02.555717+00:00",
+    "last_progress_completed_checks": 580000,
+    "evidence_directory": "current/con-ron-local-interrupted",
+    "requested_signal": "SIGTERM"
+  },
+  "completion_scope": "The 51 labelled formal-result environments of the exact paper-2 manuscript; documented proof-route and remark boundaries remain explicit.",
+  "final_evidence_validation": "current/final-kernel-validation.json",
+  "final_source_audit": "current/final-source-audit.json",
+  "natural_language_statement_review": {
+    "status": "implementer_review_completed",
+    "results": 51,
+    "changed_statement_bodies": 28,
+    "crosswalk": "../audit/paper2_statement_map.json",
+    "independent_reviewer_approval": false
+  },
+  "outside_completion_scope": [
+    "Remark 5.6 counterexample is not separately registered",
+    "The displayed cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence",
+    "Independent human semantic approval, Arena listing and a fresh-machine cold rebuild are not claimed"
+  ],
+  "previous_certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980"
 }

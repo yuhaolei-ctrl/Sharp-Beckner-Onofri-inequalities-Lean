@@ -1,0 +1,7 @@
+{
+  "requested_utc": "2026-10-05T13:43:02.411776+00:00",
+  "signal": "SIGTERM",
+  "pid": 21070,
+  "reason": "Redundant local replay stopped after full hosted con-ron verified acceptance and successful combined final evidence validation",
+  "accepted_run_id": 37300905046
+}

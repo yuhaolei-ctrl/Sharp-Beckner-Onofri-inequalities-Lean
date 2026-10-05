@@ -1,0 +1,14 @@
+{
+  "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
+  "rust_toolchain": "1.90.0",
+  "source_patch": null,
+  "mode": "verified",
+  "num_threads": 4,
+  "arguments": [
+    "--verified",
+    "--jobs=4",
+    "--progress=10000"
+  ],
+  "pins": "checker-embedded defaults",
+  "certificate_recompiled": false
+}

@@ -5,6 +5,12 @@
 28 条陈述文本有变化。逐条原文、新文、标签、位置、目标与审查理由见
 `audit/paper2_statement_map.json`。本次是同一实施助手的源码审查，不是独立审稿人认证。
 
+**51 条正式结果范围内的适配与机器验证现已完成。** 269 个注册目标通过完整的
+官方 Comparator 检查；独立 con-ron 在 `--verified` 模式下接受全部 1,027,308 条
+声明记录（对应 1,029,606 个命名声明，含依赖），退出码为 0。
+最终证据核验见 [final-kernel-validation.json](verification/current/final-kernel-validation.json)，
+完成版证书见 [GitHub release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005)。
+
 28 条文字变化分为：13 条能量归一化记号，5 条说明或排版，3 条已使用单位周期的对象，
 2 条密度端点定义域扩大，2 条 Haar 测度记号，以及物理坐标传输、已使用的物理参数、
 参数恒等式各 1 条。除这些变化外，还补齐了文字未变的引理 4.2 的导数级数收敛缺口。
@@ -63,8 +69,10 @@
 已有概率质量、严格正性、光滑性和条件熵恒等式目标继续使用。
 
 这些新目标在 `Paper2Challenge.lean` 与 `Paper2Proofs.lean` 中具有相同类型，
-合并配置登记 269 个目标。编译、公理扫描和外部重放的实际进度分别记录；
-完成源码证明不等于外部检查已完成。
+合并配置登记 269 个目标。编译、公理扫描、完整官方重放及独立内核检查均已通过；
+传递公理仅有 `Classical.choice`、`Quot.sound`、`propext`。最终源码审查再次核对了
+4,808 个证明文件、论文的实际字节、51 条结果及 28 条文字变化。
+此前未完成的 Nanoda、eink0rn 和附加重放另有真实记录，不计作通过。
 
 ## 51 条正式结果以外的范围
 

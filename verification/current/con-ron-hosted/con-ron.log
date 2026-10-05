@@ -1,0 +1,233 @@
+con-ron: parse done: 1027308 fold records — the file's 1027308, 0 built-in prelude records synthesised; store 30321498 expression, 3213 level, 1503793 name nodes t=14.069s (parse 14.069s)
+con-ron: install 0/1027308 inductive Eq t=14.091s
+con-ron: install 10000/1027308 theorem abs_le' t=14.590s
+con-ron: install 20000/1027308 def _private.Mathlib.Tactic.NormNum.Result.0.Mathlib.Meta.NormNum.IsInt.to_isNat.match_1_1 t=14.911s
+con-ron: install 30000/1027308 theorem _private.Mathlib.Topology.UniformSpace.LocallyUniformConvergence.0.tendstoLocallyUniformlyOn_iff_forall_tendsto._simp_1_2 t=15.389s
+con-ron: install 40000/1027308 theorem MulOpposite.instDistrib._proof_2 t=15.856s
+con-ron: install 50000/1027308 theorem _private.Mathlib.MeasureTheory.Covering.Besicovitch.0.Besicovitch.exist_disjoint_covering_families._simp_1_1 t=16.408s
+con-ron: install 60000/1027308 theorem forall_self_imp._simp_1 t=16.903s
+con-ron: install 70000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0007.e001889 t=17.042s
+con-ron: install 80000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0017.e004553 t=17.117s
+con-ron: install 90000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0026.e006711 t=17.190s
+con-ron: install 100000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0036.e009361 t=17.270s
+con-ron: install 110000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0046.e012027 t=17.361s
+con-ron: install 120000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0055.e014169 t=17.435s
+con-ron: install 130000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0065.e016833 t=17.515s
+con-ron: install 140000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0074.e018991 t=17.595s
+con-ron: install 150000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0084.e021641 t=17.678s
+con-ron: install 160000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0094.e024307 t=17.762s
+con-ron: install 170000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0103.e026449 t=17.841s
+con-ron: install 180000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0113.e029113 t=17.922s
+con-ron: install 190000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0122.e031271 t=18.000s
+con-ron: install 200000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0132.e033921 t=18.086s
+con-ron: install 210000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0142.e036587 t=18.166s
+con-ron: install 220000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0148.e038146._proof_3 t=18.239s
+con-ron: install 230000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0152.e041821._proof_3 t=18.312s
+con-ron: install 240000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0155.e043965 t=18.383s
+con-ron: install 250000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0158.e046111._proof_1 t=18.451s
+con-ron: install 260000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0161.e048205._proof_2 t=18.525s
+con-ron: install 270000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0165.e051882._proof_2 t=18.600s
+con-ron: install 280000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0168.e054024._proof_3 t=18.671s
+con-ron: install 290000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0171.e056121 t=18.741s
+con-ron: install 300000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0174.e058266._proof_1 t=18.812s
+con-ron: install 310000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0177.e060409._proof_1 t=18.881s
+con-ron: install 320000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0181.e064086._proof_2 t=18.953s
+con-ron: install 330000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0184.e066180._proof_3 t=19.024s
+con-ron: install 340000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0187.e068324 t=19.095s
+con-ron: install 350000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0190.e070470._proof_1 t=19.163s
+con-ron: install 360000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0194.e074097._proof_1 t=19.236s
+con-ron: install 370000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0197.e076241._proof_2 t=19.306s
+con-ron: install 380000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0200.e078384._proof_3 t=19.376s
+con-ron: install 390000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0203.e080480 t=19.446s
+con-ron: install 400000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0207.e084157 t=19.525s
+con-ron: install 410000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0210.e086301._proof_1 t=19.592s
+con-ron: install 420000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0213.e088445._proof_2 t=19.661s
+con-ron: install 430000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0216.e090539._proof_3 t=19.729s
+con-ron: install 440000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0219.e092684 t=19.794s
+con-ron: install 450000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0223.e096361 t=19.862s
+con-ron: install 460000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0226.e098456._proof_1 t=19.930s
+con-ron: install 470000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0229.e100600._proof_2 t=19.996s
+con-ron: install 480000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0232.e102743._proof_3 t=20.060s
+con-ron: install 490000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0236.e106420._proof_3 t=20.127s
+con-ron: install 500000/1027308 def BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0239.e108516 t=20.192s
+con-ron: install 510000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0242.e110660._proof_1 t=20.254s
+con-ron: install 520000/1027308 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Segments002.Row10.b0018._proof_1 t=20.310s
+con-ron: install 530000/1027308 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0102.accepted1632._proof_1_1 t=20.476s
+con-ron: install 540000/1027308 theorem BecknerOnofri.HighDim.Spin.IntervalBatch0075.cell1209._proof_2 t=20.623s
+con-ron: install 550000/1027308 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0048.candidate0770._proof_7 t=20.769s
+con-ron: install 560000/1027308 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0021.candidate0338._proof_8 t=20.911s
+con-ron: install 570000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel3083.wholeW1 t=21.050s
+con-ron: install 580000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel3049.pointW1upper._proof_1 t=21.117s
+con-ron: install 590000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2928.whole_zu t=21.184s
+con-ron: install 600000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2902.pointZ._proof_1 t=21.250s
+con-ron: install 610000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0179.hi2878._proof_1 t=21.318s
+con-ron: install 620000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2755.wholeBase._proof_2 t=21.386s
+con-ron: install 630000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2721.pointMinus._proof_1 t=21.454s
+con-ron: install 640000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2592.leftAccepted t=21.519s
+con-ron: install 650000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2566.midBessels._proof_3 t=21.586s
+con-ron: install 660000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2444.certificate t=21.653s
+con-ron: install 670000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2419.whole_pl._proof_1 t=21.720s
+con-ron: install 680000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2289.point_pu t=21.787s
+con-ron: install 690000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0141.accepted2257._proof_1_1 t=21.853s
+con-ron: install 700000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2230.wholeW2 t=21.919s
+con-ron: install 710000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2108.pointW2lower t=21.987s
+con-ron: install 720000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2083.rightPoint t=22.054s
+con-ron: install 730000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1961.midPoint t=22.122s
+con-ron: install 740000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0120.hi1929b1 t=22.187s
+con-ron: install 750000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1894.wholeW1lower t=22.254s
+con-ron: install 760000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1772.pointMinus t=22.326s
+con-ron: install 770000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1747.rightBessels._proof_2 t=22.392s
+con-ron: install 780000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1625.wholeW2 t=22.460s
+con-ron: install 790000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.MinorantBatch0199.accepted1599._proof_1_1 t=22.545s
+con-ron: install 800000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1462.wholePlus._proof_1 t=22.611s
+con-ron: install 810000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1436.point_pl t=22.677s
+con-ron: install 820000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0082.accepted1316._proof_1_1 t=22.742s
+con-ron: install 830000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1289.wholeW1lower t=22.808s
+con-ron: install 840000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0073.lo1168._proof_2 t=22.872s
+con-ron: install 850000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1134.wholeH t=22.938s
+con-ron: install 860000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1100.pointH t=23.004s
+con-ron: install 870000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0061.lo0980b1._proof_1 t=23.070s
+con-ron: install 880000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0953.wholePlus._proof_1 t=23.136s
+con-ron: install 890000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0831.point_wl t=23.201s
+con-ron: install 900000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0806.leftPoint t=23.267s
+con-ron: install 910000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0772.midBessels._proof_3 t=23.333s
+con-ron: install 920000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0642.pointData t=23.399s
+con-ron: install 930000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0617.wholeZ._proof_1 t=23.464s
+con-ron: install 940000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0495.point_mu._proof_1 t=23.528s
+con-ron: install 950000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0029.accepted0471 t=23.595s
+con-ron: install 960000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0348.whole_wu._proof_1 t=23.661s
+con-ron: install 970000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0322.point_wu._proof_1 t=23.728s
+con-ron: install 980000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0201.rightBessels._proof_3 t=23.794s
+con-ron: install 990000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0175.point_zu._proof_1 t=23.858s
+con-ron: install 1000000/1027308 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0003.lo0055._proof_1 t=23.924s
+con-ron: install 1010000/1027308 def BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0028.wholeMinus t=23.990s
+con-ron: install 1020000/1027308 theorem Legacy.BecknerOnofri.FiniteScalar.Case15.checked08._proof_1_1 t=24.323s
+con-ron: install done: 1027308/1027308 declarations installed, 1026192 checks pending; store 31228414 expression (31228414 persistent), 4332 level, 1505857 name nodes t=24.973s (install 10.904s)
+con-ron: check 10000/1026192 definition _private.Mathlib.Algebra.Order.Archimedean.Defs.0.exists_lt_nsmul.match_1_1 t=25.815s
+con-ron: check 20000/1026192 definition AddGroupNorm.toNormedAddGroup t=26.800s
+con-ron: check 30000/1026192 theorem nhdsGT_neBot t=28.592s
+con-ron: check 40000/1026192 theorem Finset.piecewise_eq_of_notMem t=31.133s
+con-ron: check 50000/1026192 theorem MeasurableSet.image_of_continuousOn_injOn t=33.901s
+con-ron: check 60000/1026192 theorem _private.Mathlib.Analysis.Analytic.Composition.0.Composition.sigma_pi_composition_eq_iff._simp_1_1 t=40.090s
+con-ron: check 70000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0008.e002157 t=99.587s
+con-ron: check 80000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0018.e004808._proof_1 t=155.212s
+con-ron: check 90000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0027.e006965._proof_3 t=208.655s
+con-ron: check 100000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0037.e009631 t=263.068s
+con-ron: check 110000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0047.e012282._proof_1 t=318.559s
+con-ron: check 120000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0056.e014437 t=373.779s
+con-ron: check 130000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0066.e017088._proof_1 t=429.898s
+con-ron: check 140000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0075.e019245._proof_3 t=485.384s
+con-ron: check 150000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0085.e021911 t=544.136s
+con-ron: check 160000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0095.e024562._proof_1 t=600.737s
+con-ron: check 170000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0104.e026717 t=657.385s
+con-ron: check 180000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0114.e029368._proof_1 t=715.044s
+con-ron: check 190000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0123.e031525 t=767.674s
+con-ron: check 200000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0133.e034176._proof_1 t=822.809s
+con-ron: check 210000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0143.e036842._proof_1 t=877.084s
+con-ron: check 220000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0149.e039456._proof_2 t=926.527s
+con-ron: check 230000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0152.e041598._proof_3 t=974.129s
+con-ron: check 240000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0155.e043695._proof_1 t=1021.679s
+con-ron: check 250000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0158.e045840._proof_1 t=1067.815s
+con-ron: check 260000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0162.e049515._proof_1 t=1117.477s
+con-ron: check 270000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0165.e051611._proof_2 t=1164.549s
+con-ron: check 280000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0168.e053753 t=1211.326s
+con-ron: check 290000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0171.e055898._proof_3 t=1260.093s
+con-ron: check 300000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0175.e059528._proof_1 t=1308.441s
+con-ron: check 310000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0178.e061670._proof_1 t=1355.268s
+con-ron: check 320000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0181.e063815._proof_2 t=1401.990s
+con-ron: check 330000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0184.e065957._proof_2 t=1449.414s
+con-ron: check 340000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0188.e069586 t=1496.975s
+con-ron: check 350000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0191.e071731._proof_3 t=1544.204s
+con-ron: check 360000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0194.e073873 t=1590.213s
+con-ron: check 370000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0197.e075970._proof_2 t=1637.909s
+con-ron: check 380000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0200.e078113 t=1685.822s
+con-ron: check 390000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0204.e081790._proof_3 t=1734.628s
+con-ron: check 400000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0207.e083935._proof_1 t=1780.791s
+con-ron: check 410000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0210.e086030._proof_1 t=1827.475s
+con-ron: check 420000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0213.e088174._proof_2 t=1875.155s
+con-ron: check 430000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0217.e091849._proof_2 t=1923.304s
+con-ron: check 440000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0220.e093945._proof_3 t=1968.389s
+con-ron: check 450000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0223.e096090 t=2013.815s
+con-ron: check 460000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0226.e098232 t=2060.817s
+con-ron: check 470000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0229.e100330._proof_2 t=2106.290s
+con-ron: check 480000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0233.e104005._proof_2 t=2153.168s
+con-ron: check 490000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0236.e106149._proof_3 t=2197.940s
+con-ron: check 500000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0239.e108294._proof_1 t=2243.140s
+con-ron: check 510000/1026192 theorem BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0242.e110389._proof_1 t=2287.891s
+con-ron: check 520000/1026192 definition BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Segments016.Row11.ζ t=2315.402s
+con-ron: check 530000/1026192 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0093.candidate1501._proof_6 t=2696.323s
+con-ron: check 540000/1026192 definition BecknerOnofri.HighDim.Spin.IntervalBatch0070.cell1125 t=3112.617s
+con-ron: check 550000/1026192 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0043.candidate0688._proof_10 t=3517.400s
+con-ron: check 560000/1026192 theorem BecknerOnofri.HighDim.Spin.CandidateBatch0015.accepted0254 t=3938.459s
+con-ron: check 570000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel3090.pointW2 t=4312.982s
+con-ron: check 580000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel3057.whole_zu t=4557.315s
+con-ron: check 590000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2935.wholeDataAccepted._proof_1_1 t=4760.978s
+con-ron: check 600000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0181.hi2911._proof_2 t=4941.312s
+con-ron: check 610000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2788.wholeW1upper._proof_1 t=5097.920s
+con-ron: check 620000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2762.pointW1lower t=5249.317s
+con-ron: check 630000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2729.rightBessels._proof_2 t=5384.641s
+con-ron: check 640000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2599.midAccepted._proof_1_1 t=5506.104s
+con-ron: check 650000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0160.lo2575b0 t=5618.624s
+con-ron: check 660000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2452.whole_ml t=5726.187s
+con-ron: check 670000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2426.pointPlus._proof_1 t=5832.490s
+con-ron: check 680000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0143.accepted2298._proof_1_1 t=5931.232s
+con-ron: check 690000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2263.wholeGamma t=6027.884s
+con-ron: check 700000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2237.certificate t=6122.634s
+con-ron: check 710000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2116.rightAccepted._proof_1_1 t=6219.374s
+con-ron: check 720000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel2090.pointZ._proof_1 t=6313.164s
+con-ron: check 730000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0123.hi1970b1 t=6406.491s
+con-ron: check 740000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1935.wholeW1upper t=6500.489s
+con-ron: check 750000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1805.point_wu._proof_1 t=6595.034s
+con-ron: check 760000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1780.rightBessels._proof_3 t=6690.448s
+con-ron: check 770000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1658.midBessels._proof_3 t=6781.152s
+con-ron: check 780000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1632.pointGamma t=6873.770s
+con-ron: check 790000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1607.wholeDataAccepted t=6965.331s
+con-ron: check 800000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1469.pointMinus t=7058.130s
+con-ron: check 810000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1444.leftBessels._proof_1 t=7150.099s
+con-ron: check 820000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1322.wholeW2lower t=7240.975s
+con-ron: check 830000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1296.pointW1upper t=7330.780s
+con-ron: check 840000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1175.whole_pl t=7421.098s
+con-ron: check 850000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1141.midAccepted._proof_1_1 t=7513.495s
+con-ron: check 860000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0069.hi1109._proof_2 t=7602.176s
+con-ron: check 870000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0986.wholeBase t=7693.656s
+con-ron: check 880000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0960.pointMinus t=7784.178s
+con-ron: check 890000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0839.rightAccepted._proof_1_1 t=7873.180s
+con-ron: check 900000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0813.midBessels._proof_4 t=7962.088s
+con-ron: check 910000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0042.lo0677b1._proof_1 t=8048.034s
+con-ron: check 920000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0650.wholePlus._proof_1 t=8133.831s
+con-ron: check 930000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0528.point_pl t=8219.866s
+con-ron: check 940000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0503.leftBessels t=8306.993s
+con-ron: check 950000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0477.wholeData t=8391.031s
+con-ron: check 960000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0355.pointW2upper t=8475.863s
+con-ron: check 970000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0330.whole_zl t=8560.944s
+con-ron: check 980000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0208.midAccepted._proof_1_1 t=8648.023s
+con-ron: check 990000/1026192 theorem BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0011.hi0184._proof_3 t=8732.115s
+con-ron: check 1000000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0061.whole_wl t=8816.811s
+con-ron: check 1010000/1026192 definition BecknerOnofri.HighDim.ScalarCertificate.GammaPanel0035.point_wl t=8898.656s
+con-ron: check 1020000/1026192 theorem BecknerOnofri.HighDim.DiagonalScalarBranch.branchPotential_analytic t=8995.288s
+con-ron: check done: 1026192/1026192 t=9001.355s (check 8976.382s)
+con-ron: done: parse 14.069s, install 10.904s, check 8976.382s, 4 workers t=9001.355s
+con-ron: accepted 1027308 declarations (--verified)
+	Command being timed: ".tools/con-ron/target/release/con-ron --verified --jobs=4 --progress=10000 external-check/solution.ndjson"
+	User time (seconds): 35426.51
+	System time (seconds): 376.61
+	Percent of CPU this job got: 397%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:30:01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9594252
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 48461707
+	Voluntary context switches: 65
+	Involuntary context switches: 5681011
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

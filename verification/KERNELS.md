@@ -1,5 +1,34 @@
 # Kernel validation
 
+## Completed certificate
+
+The full official Comparator CLI replay passed for all 269 targets. The
+independent, unmodified con-ron checker then accepted the same exact export in
+`--verified` mode: **1,027,308 records**, exit 0, 2:30:01 elapsed, hosted run
+[37300905046](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046).
+The raw source/export identities and actual positive/negative controls match.
+The preparation step checks that every registered root occurs in the raw
+export and that its complete axiom inventory is the three permitted names.
+The artifact's empty `checked-targets.txt` is an unused Nanoda pretty-printer
+placeholder from the shared preparation helper; con-ron acceptance is the
+complete record check in `con-ron.log`, not that placeholder.
+The [combined validation result](current/final-kernel-validation.json) is
+reproduced by:
+
+```sh
+python3 scripts/validate_external_evidence.py \
+  --con-ron verification/current/con-ron-hosted \
+  --local-comparator verification/current/comparator-local
+```
+
+The proof source is frozen at `d561980e2b10e1c431e1a1656a025bd41e7270dd`;
+later commits add documentation, checker tooling and evidence. The local
+duplicate con-ron run was stopped only after the hosted full acceptance and
+combined validation passed. Its actual signal/exit receipt is preserved in
+`current/con-ron-local-interrupted/`; it is not a second acceptance.
+The following sections retain the complete attempt history and reproduction
+instructions. No independent human semantic approval or Arena listing is claimed.
+
 The official Lean kernel and Nanoda are different implementations. Comparator's
 default-kernel replay is an additional replay by the **official** kernel, not
 itself an independent kernel. The historical configuration disables Nanoda.
@@ -223,6 +252,10 @@ mismatch for the damaged proof, with extra pretty-printer diagnostics.
 The retry increases the documented finite `whnf`, `whnfEager` and `lazyDelta`
 fuel limits to 10,000,000, 100,000,000 and 1,000,000. These runtime limits do not
 change checking rules. They are recorded alongside the exact invocation.
+That optional retry (37301154501) was deliberately cancelled after the complete
+independent con-ron acceptance and combined evidence validation passed. It is
+not a Lean4Lean acceptance. Its actual run state, controls and unfinished log
+are preserved in `current/lean4lean-cancelled-37301154501/`.
 
 ## Independent con-ron verified mode
 

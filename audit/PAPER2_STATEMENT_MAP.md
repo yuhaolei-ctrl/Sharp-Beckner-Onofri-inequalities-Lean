@@ -2,6 +2,11 @@
 
 51 formal results; 28 changed statement bodies. Source hashes and literal statements are in `paper2_statement_map.json`. Implementer source review; not independent reviewer approval.
 
+All 269 registered targets now have full official Comparator and independent
+con-ron verified-mode acceptance; see `verification/current/final-kernel-validation.json`.
+This completes the declared formal-result scope, with the separately disclosed
+remark/proof-estimate boundaries and no claim of independent semantic approval.
+
 | No. | Label | Changed | Assessment |
 |---|---|---|---|
 | 1.1 | `thm:intro-low-dimensional` | yes | The manuscript now quantifies over all absolutely continuous probability densities. Existing low_density_endpoint assumes FiniteEntropy. HighDim.low_density_extended already proves the extension but was not a registered endpoint. Register Paper2.low_density_extended and the negative-Sobolev normalization; retain finite-entropy hypotheses on equality. |

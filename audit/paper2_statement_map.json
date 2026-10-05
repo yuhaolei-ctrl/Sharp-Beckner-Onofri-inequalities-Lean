@@ -244,7 +244,7 @@
       ],
       "previous_clause_coverage": "complete",
       "review_kind": "same-assistant source delta review; not independent external semantic certification",
-      "current_clause_coverage": "implemented; final checks pending"
+      "current_clause_coverage": "implemented; complete official Comparator and independent con-ron verified replay passed"
     },
     {
       "source_label": "lem:positive-bernstein",
@@ -407,7 +407,7 @@
       ],
       "previous_clause_coverage": "partial",
       "review_kind": "same-assistant source delta review; not independent external semantic certification",
-      "current_clause_coverage": "implemented; final checks pending"
+      "current_clause_coverage": "implemented; complete official Comparator and independent con-ron verified replay passed"
     },
     {
       "source_label": "lem:section4-euclidean-entropy",
@@ -896,15 +896,15 @@
       "review_kind": "same-assistant source delta review; not independent external semantic certification"
     }
   ],
-  "complete_paper2_formalization": false,
-  "open_obligations": [
-    "independent-kernel check of the final theorem closure",
-    "independent external semantic reviewer approval is not claimed"
-  ],
+  "complete_paper2_formalization": true,
+  "open_obligations": [],
   "independent_semantic_review_completed": false,
   "outside_51_result_scope": [
     "Remark 5.6 counterexample is not separately formalized",
     "The displayed quantitative cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence"
   ],
-  "official_full_replay": "passed for all 269 targets, 2026-10-05 09:49:48 UTC"
+  "official_full_replay": "passed for all 269 targets, 2026-10-05 09:49:48 UTC",
+  "completion_scope": "51 formal results; outside_51_result_scope and independent_semantic_review_completed remain explicit",
+  "independent_full_replay": "passed: con-ron --verified, all 1027308 records; run 37300905046",
+  "machine_evidence": "../verification/current/final-kernel-validation.json"
 }

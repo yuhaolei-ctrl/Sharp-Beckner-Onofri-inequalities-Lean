@@ -11,6 +11,11 @@ coverage scope; proof-route estimates and remarks outside that set are listed
 separately. Final checker outcomes are recorded in [STATUS.json](verification/STATUS.json).
 See [the Chinese audit](AUDIT_ZH.md) and [the 51-result statement map](audit/PAPER2_STATEMENT_MAP.md).
 
+**Completed within this 51-result scope:** all 269 registered targets pass the
+full upstream Comparator replay and an independent con-ron `--verified` replay.
+The [combined evidence validation](verification/current/final-kernel-validation.json)
+binds both results to the same source manifest and exact proof export.
+
 ## Challenge → Solution → Comparator
 
 | Scope | Trusted statements | Proofs | Configuration |
@@ -65,8 +70,12 @@ does not perform the external kernel replay.
 
 ## Evidence and scope
 
-The [downloadable certificate](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980) contains the exact Challenge and Solution exports with SHA-256 provenance.
-The [full 269-target upstream Comparator replay](verification/current/comparator-local/result.json) passed the official Lean kernel on October 5; its [complete log](verification/current/comparator-local/comparator.log) is preserved. The additional hosted replay passed statement, definition and axiom matching, then reached GitHub's six-hour limit. Independent complete acceptance is still pending. The [con-ron verified-mode check](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046) passed its valid/damaged proof controls and is checking the exact full export. Nanoda and eink0rn attempts, runtime failures, interruptions and optional Lean4Lean replays are recorded separately in [STATUS.json](verification/STATUS.json).
+The [completed certificate release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005) contains the exact Challenge and Solution exports, verification evidence and SHA-256 checksums.
+The [full 269-target upstream Comparator replay](verification/current/comparator-local/result.json) passed the official Lean kernel on October 5; its [complete log](verification/current/comparator-local/comparator.log) is preserved. The [independent con-ron run](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046) then accepted all **1,027,308 declaration records** in verified mode, with exit status 0, after 2:30:01. These records represent 1,029,606 named declarations, including the complete dependencies of all 269 roots. Its [actual receipt and log](verification/current/con-ron-hosted) include the pinned unmodified checker, exact export identity, valid-proof acceptance and damaged-proof rejection.
+
+Failed, timed-out and deliberately retired redundant checks remain separately
+recorded in [STATUS.json](verification/STATUS.json). In particular, Nanoda and
+eink0rn did not complete independent acceptance; they are not presented as passes.
 See [the replay instructions](verification/KERNELS.md#replaying-published-exports-without-rebuilding-the-manuscript) to check the exports without recompiling the whole manuscript.
 
 Read [verification/STATUS.json](verification/STATUS.json) for actual outcomes,

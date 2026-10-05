@@ -1,0 +1,124 @@
+usage: con-ron [--verified|--trusted] [--jobs=<n>] [--no-mark-persistent]
+               [--progress[=<stride>]] [--pins FILE|--no-pins]
+               FILE.ndjson
+       con-ron --help
+
+  (C), the Rust arena checker of con-ron's DESIGN.md section 8: con-leche's
+  pure checker over an append-only DAG of per-constructor handle arrays, with
+  con-leche's command line and con-leche's exit codes, so that
+  scripts/diff-e2e.sh can run the same 383 fixtures against this binary and
+  the Lean twin `con-ron-lean` alike.  A term is a u32 handle into a Vec: on
+  the checking path there is no Arc, no tagged pointer and no reference count
+  at all.  (The PINNED DATA the checker compares against is still
+  con-leche's own constants as Expr values, interned into the persistent tier
+  once at startup -- crates/con-ron-core/src/lib.rs says why.)
+
+  --verified        the default, and the mode the main theorem is about: every
+                    environment the fold accepts in this mode has a model in
+                    every set theory (ConLeche.model_exists), so a stream
+                    declaring a theorem of type False is never accepted.  The
+                    same two statements are PROVED about this program's
+                    pipeline (ConRon.Capstone.model_exists and
+                    no_False_declaration, on the Aeneas model of the Rust),
+                    using only the axioms propext, Classical.choice and
+                    Quot.sound.  What they still assume are hypotheses, not
+                    axioms: that the driver runs the extracted stages in the
+                    order it does on the file's bytes.  They hold at every pin
+                    text and every prelude.  OVERVIEW.md section 3.1 lists
+                    them.
+  --trusted         the unverified mode: the SAME checker bodies at the mode
+                    with the certification-only work switched off.  An accept
+                    in this mode is outside the theorem.
+  --jobs=<n>        the check phase runs on <n> worker threads sharing the
+                    persistent tier and the installed index by reference
+                    (DESIGN.md section 8.3): each worker owns a scratch tier,
+                    its own caches and a copy of the pin handles, and the
+                    results are merged by record index and walked in record
+                    order, so the verdict and the record a rejection names are
+                    the same at every <n>.  Default: one per hardware thread,
+                    capped at 16.  A worker reserves 1 GiB of stack, which a
+                    `ulimit -v` must allow for.  0 or a non-numeral is a usage
+                    error, as in con-leche.
+  --no-mark-persistent
+                    ACCEPTED AND A NO-OP, for a stronger reason than the
+                    `con-ron` binary's: the mark it turns off is a
+                    Lean-runtime reference-counting device
+                    (Runtime.markPersistent), and this checker has no
+                    reference counts at all -- a term is a u32 handle into a
+                    Vec and the persistent tier is immutable in phase B.  A
+                    run that passes it says so on stderr.
+  --progress[=<stride>]
+                    opt-in progress heartbeat on STDERR, one line shape per
+                    phase:
+                      con-ron: parse done: <N> fold records ... t=<s>s
+                      con-ron: install <i>/<N> <decl> t=<s>s
+                      con-ron: install done: <N>/<N> ..., <M> pending
+                      con-ron: check <done>/<M> <kind> <name> t=<s>s
+                      con-ron: check done: <M>/<M> t=<s>s
+                      con-ron: done: parse <p>s, install <i>s, check <c>s
+                    An install line is printed BEFORE every <stride>-th
+                    declaration is installed, so a run that dies in the
+                    install phase names the declaration it died in on its last
+                    line; a check line is printed AFTER every <stride>-th
+                    COMPLETED check.  On a failure the phase's closing line
+                    says so and the summary still prints.  Bare --progress is
+                    stride 1; a stride that is not a decimal numeral, or 0, is
+                    a usage error.
+  --pins FILE       con-ron's own, FOR TESTING: read the pin list from a
+                    `con-ron-pins/1` dump instead of the core's own embedded
+                    text (task #43), through the UNVERIFIED reader.  The pins
+                    are interned into the persistent tier at startup, before
+                    the fold (DESIGN.md section 8.6 P2d).
+  --no-pins         con-ron's own, FOR TESTING: the empty pin list, the pin
+                    loop's `[]` arm, under which a Nat.div/Nat.mod stream
+                    declines.  Neither flag is needed for a normal run: the
+                    pins are con-leche's `natOpPinSets`, embedded in the
+                    verified core and decoded by it.  A run with either
+                    flag is outside the proved theorems.
+  --help            print this text on STDOUT and exit 0, in any argument
+                    position; no input is read.  Its last line names the
+                    global allocator THIS binary was built with (below), so a
+                    measurement can be reproduced.
+
+build-time selection (cargo features, not command-line flags): the global
+allocator is `con-ron-dump`'s `#[global_allocator]`, chosen on this crate's
+dependency edge -- `cargo build --release` is mimalloc, `--no-default-features`
+is glibc `malloc`, and `--no-default-features --features jemalloc` is jemalloc.
+It is the same edge `crates/con-ron` has, so the two checkers are measured on
+the same allocator unless a build says otherwise.
+
+Any other option is a usage error: the run reports it, prints this text and
+exits 3 without reading its input.
+
+exit codes: 0 accepted, 1 rejected, 2 declined, 3 usage/malformed/internal.
+An out-of-memory condition is NEITHER: this program aborts the way Rust aborts
+on a failed allocation ('memory allocation of <n> bytes failed', SIGABRT,
+which a shell reports as 134).  A panic is exit 3.
+
+THE VERDICT LINE'S COUNT.  It counts the FILE's accepted declaration RECORDS:
+one per def/theorem/opaque/axiom/inductive/quot record the file declares.  The
+built-in prelude's own records are not counted; a stream record that declares
+a prelude declaration IS counted.  That count is a property of the INPUT; the
+number of environment CONSTANTS is not.
+
+THE BUILT-IN PRELUDE.  Every run installs, first and unconditionally, the
+checker's own little prelude -- the five pinned basis blocks (Eq, Nat, Empty,
+False, Quot) and the toolchain's Bool and And blocks, embedded at build
+time -- so the pin-certified Nat operations find their ground whatever order
+the export chose.  It is parsed into the SAME store as the stream, which is
+what the persistent tier is for: the prelude's nodes and the stream's are
+hash-consed together.
+
+NO PREPROCESSOR, NO MODELS.  The input is a RAW lean4export stream: there is no
+external tool, no dependency and no spawn.  Every inductive block --
+structures, sums, indexed families, recursive, reflexive, mutual and nested
+blocks -- is installed by the ONE uniform installer: it checks the type formers
+and constructors, runs the positivity check, and GENERATES the block's
+recursors; the stream's recursor records supply only their types, compared with
+the generated ones up to definitional equality, and their classes -- the rule
+bodies the stream carries are ignored.  No model is ever read from the input: a
+stream record whose name carries a `_model` component is an ordinary
+declaration with no effect on any block.  A block whose shape the installer
+does not recognise declines (exit 2), naming it.  The binary reads no
+environment variable.
+this build's global allocator: mimalloc

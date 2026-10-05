@@ -1,0 +1,12 @@
+[
+  {
+    "control": "valid",
+    "exit_code": 0,
+    "output": "con-ron: accepted 436 declarations (--verified)\n"
+  },
+  {
+    "control": "invalid",
+    "exit_code": 1,
+    "output": "con-ron: rejected: type mismatch in theorem [at theorem certificateControl, fold position 64] (--verified) t=0.286s\n"
+  }
+]
