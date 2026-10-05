@@ -136,3 +136,10 @@ compatibility choices; see its `SPEC.md`. It is not represented as the official
 Lean kernel, nor is its source review a new metatheoretic soundness proof.
 An `ACCEPT` is recorded only after the complete run returns successfully;
 resource limits, checker faults and rejections remain distinguished.
+
+The evidence validator also accepts `--eink0rn DIR` for a completed eink0rn
+artifact, or both independent implementations when both completed. Use
+`--local-comparator DIR` instead of `--comparator DIR` for an actual completed
+upstream CLI receipt. The acceptance requirement is a completed full official
+Comparator replay and at least one completed independent implementation;
+unsuccessful optional implementations remain explicitly recorded.

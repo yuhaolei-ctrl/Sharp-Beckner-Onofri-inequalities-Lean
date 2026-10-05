@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T06:18:34.768117+00:00",
+  "updated_utc": "2026-10-05T06:38:16.346212+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -149,5 +149,15 @@
     "worker_stack_bytes": 1073741824,
     "num_threads": 2,
     "workflow_commit": "a030913"
+  },
+  "eink0rn": {
+    "status": "running",
+    "run_id": 37272652155,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155",
+    "scope": 269,
+    "checker_revision": "31a9e3a1347d0544e8362fabea0ac669b41afbbb",
+    "source_patch": null,
+    "controls": "passed: accepts valid proof; rejects altered proof",
+    "run_stage": "full certificate check"
   }
 }

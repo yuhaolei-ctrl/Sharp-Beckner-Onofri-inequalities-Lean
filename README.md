@@ -66,7 +66,7 @@ does not perform the external kernel replay.
 ## Evidence and scope
 
 The [downloadable certificate](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980) contains the exact Challenge and Solution exports with SHA-256 provenance.
-The public [Nanoda run](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37266167712) and [Comparator replay](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000) provide machine logs. Their final outcomes must be read from the runs and status record.
+The public [Nanoda retry](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37271984661), [eink0rn check](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155), and [Comparator replay](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000) provide machine logs. Full checks are still in progress. A prior Nanoda run exhausted its 256 MiB worker stack; its failure evidence remains recorded. Final outcomes must be read from the runs and status record.
 See [the replay instructions](verification/KERNELS.md#replaying-published-exports-without-rebuilding-the-manuscript) to check the exports without recompiling the whole manuscript.
 
 Read [verification/STATUS.json](verification/STATUS.json) for actual outcomes,
