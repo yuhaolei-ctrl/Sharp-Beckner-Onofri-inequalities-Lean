@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser()
 p.add_argument('--binary', required=True, type=Path)
-p.add_argument('--configuration', default='comparator-paper2.json')
+p.add_argument('--configuration', default='comparator.json')
 args = p.parse_args()
 config = json.loads((ROOT / args.configuration).read_text())
 stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')

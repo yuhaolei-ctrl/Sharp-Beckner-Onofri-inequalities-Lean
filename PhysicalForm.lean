@@ -1,4 +1,4 @@
-import Paper2PhysicalCore
+import PhysicalCore
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

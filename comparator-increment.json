@@ -1,6 +1,6 @@
 {
-  "challenge_module": "Paper2Challenge",
-  "solution_module": "Paper2Solution",
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
   "theorem_names": [
     "BecknerOnofri.Paper2.negativeSobolevEnergy_normalization",
     "BecknerOnofri.Paper2.negativeSobolevEnergy_fourier",

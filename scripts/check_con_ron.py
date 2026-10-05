@@ -38,10 +38,10 @@ def save(name, value):
 proof = root / 'external-check/solution.ndjson'
 record = json.loads((root / 'verification/current/certificate-export.json').read_text())
 inventory = json.loads((root / 'verification/current/solution-inventory.json').read_text())
-config = json.loads((root / 'comparator-paper2.json').read_text())
+config = json.loads((root / 'verification/certified-comparator.json').read_text())
 assert digest(proof) == record['export_sha256'] == inventory['export_sha256']
 assert proof.stat().st_size == record['bytes'] == inventory['bytes']
-assert digest(root / 'SOURCE_MANIFEST.json') == record['source_manifest_sha256']
+assert digest(root / 'verification/certified-source-manifest.json') == record['source_manifest_sha256']
 assert set(inventory['axioms']) == set(config['permitted_axioms'])
 out = args.evidence.resolve()
 out.mkdir(parents=True, exist_ok=False)

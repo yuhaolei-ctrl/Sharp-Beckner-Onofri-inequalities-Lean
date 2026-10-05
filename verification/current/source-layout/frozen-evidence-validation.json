@@ -1,0 +1,71 @@
+{
+  "external_machine_checks": "passed",
+  "registered_targets": 269,
+  "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+  "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
+  "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+  "challenge_export_sha256": "9a64bdde552e8a986bf892961d6207dac1ab6a5ab4008f62076f87a97e0464d1",
+  "independent_kernels": {
+    "con-ron": {
+      "run_id": 37300905046,
+      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046",
+      "workflow_commit": "13a2156511d0f8f4f7dc8c6282baed9554af5986",
+      "conclusion": "success",
+      "evidence_sha256": {
+        "artifacts.json": "86506d6703989cf0c01297c036072c4082d0d60b34541a30fda1513e3a0973cd",
+        "build.log": "434dc436ee345a4bbbbfd85367ae997517067791863932c08f4c38085046ca80",
+        "certificate-export.json": "4893aa36f063c3d7f44f2906c82ac9ffac36c1950524b1301e47063d0697380c",
+        "checked-targets.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "checker-binary.sha256": "4d3f2be3ebec434691c3a4678fcb0c7455520ddac49651aa84417172c8f0dd2f",
+        "checker-help.txt": "dc58aad1807fd0c397061057d7c954fbe3a96125f10d5f39bf66dc1c70fef701",
+        "con-ron.log": "17524f88a7dd3327bdd32bce0e8a9524ad93d16285bc9017034f4a07f8b8ef95",
+        "controls.json": "f4c9c2eb5d26fef2b74371b683a1a312af386ca83a6d7959fe5046968e9dc101",
+        "declared-axioms.json": "2c64741633ed04330647c4bd8d7cdfca9884f266489b9668fb029face796db12",
+        "declared-targets.json": "1c2eabe5ba2f73c056899a045b9cf84450f684a7ef4a9cb73356c2ddf2341e09",
+        "identity.log": "c1a8c892cc0391325744ce5a54a34eebc32bd110be6d2e602a43c24d6158015e",
+        "nanoda-config.json": "22d7a59bfc709d7300d9f147dd3e6013495ff64b85ffbab81c55935cf90894c2",
+        "run.json": "4aea0e594abede6124e3ab64217d50c716e139f97c5e42886fb988095379744b",
+        "runtime-settings.json": "b8ee52ba0c3a3a80e1c5781f1e08d4c5e6f3e7b715544c7481f0f0a80d3fe787",
+        "solution-inventory.json": "c4a1c4dd9892608318fe25b8f0ec12cd73145fe21797c1e6c832bb9c4760c158",
+        "workflow.log": "d8c796d7a40d978c37c3e613b38b3eb833aece3c95ea5890581a5fbaba8f742f"
+      },
+      "runtime_settings": {
+        "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
+        "rust_toolchain": "1.90.0",
+        "source_patch": null,
+        "mode": "verified",
+        "num_threads": 4,
+        "arguments": [
+          "--verified",
+          "--jobs=4",
+          "--progress=10000"
+        ],
+        "pins": "checker-embedded defaults",
+        "certificate_recompiled": false
+      },
+      "checked_declaration_records": 1027308
+    }
+  },
+  "comparator": {
+    "local_result": {
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T09:49:48.926554+00:00",
+      "target_count": 269,
+      "mode": "development; official kernel and formal statement matching"
+    },
+    "conclusion": "success",
+    "evidence_sha256": {
+      "certificate-export.json": "4893aa36f063c3d7f44f2906c82ac9ffac36c1950524b1301e47063d0697380c",
+      "challenge-capture.json": "cc4263853fbc8c327de3151435ff15fd0d8151623e212c09adc6ef7807833390",
+      "challenge-export.json": "45152e58391e868f0b5906f484e8c3cc7284e6d77b853fa9885d10e46e1950f5",
+      "comparator.log": "6c0a15e992fc0e9acb5c65d3cbe9e168d3b803faf72ebdc548efae4e95040024",
+      "declared-axioms.json": "2c64741633ed04330647c4bd8d7cdfca9884f266489b9668fb029face796db12",
+      "declared-targets.json": "1c2eabe5ba2f73c056899a045b9cf84450f684a7ef4a9cb73356c2ddf2341e09",
+      "result.json": "452a7a271e96e5f829fc92e00eabf73396774281567af0888d8d8f83dce083e7",
+      "solution-capture.json": "9819be1a4e690367f10d827d542a963d412783f756f611d9f1e215e161061c58"
+    },
+    "driver": "unmodified upstream Comparator CLI; development adapter",
+    "checker_revision": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f"
+  },
+  "independent_natural_language_review": false
+}

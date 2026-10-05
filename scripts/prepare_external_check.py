@@ -8,10 +8,10 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 out = root / 'external-check'
 record = json.loads((out / 'certificate-export.json').read_text())
-config = json.loads((root / 'comparator-paper2.json').read_text())
+config = json.loads((root / 'verification/certified-comparator.json').read_text())
 assert record['module'] == 'Paper2Solution'
 assert record['exit_code'] == 0
-assert record['source_manifest_sha256'] == hashlib.sha256((root / 'SOURCE_MANIFEST.json').read_bytes()).hexdigest()
+assert record['source_manifest_sha256'] == hashlib.sha256((root / 'verification/certified-source-manifest.json').read_bytes()).hexdigest()
 args = record['arguments']
 assert args[:2] == ['Paper2Solution', '--']
 assert set(config['theorem_names']) <= set(args[2:])

@@ -1,4 +1,4 @@
-import Paper2PhysicalLp
+import PhysicalLp
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
 noncomputable section

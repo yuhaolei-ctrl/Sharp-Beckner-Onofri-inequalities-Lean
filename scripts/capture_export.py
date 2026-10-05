@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 exe = ROOT / 'vendor/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export'
 stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
 module = sys.argv[1] if len(sys.argv) > 1 else 'unknown'
-assert module in {'Paper2Challenge', 'Paper2Solution', 'Challenge', 'Solution'}
+assert module in {'Challenge', 'Solution'}
 out = ROOT / 'verification/runs' / ('export-' + stamp)
 out.mkdir(parents=True)
 record = {'module': module, 'arguments': sys.argv[1:],

@@ -1,4 +1,4 @@
-import Paper2PhysicalMeasure
+import PhysicalMeasure
 import Mathlib.Dynamics.Ergodic.MeasurePreserving
 
 noncomputable section

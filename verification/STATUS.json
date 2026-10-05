@@ -1,6 +1,6 @@
 {
   "updated_utc": "2026-10-05T13:47:12.365975+00:00",
-  "paper2_complete": true,
+  "manuscript_complete": true,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
     "status": "passed",
@@ -28,15 +28,15 @@
     "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27",
     "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
   },
-  "paper2_build": {
+  "manuscript_build": {
     "status": "passed",
     "scope": 269,
     "exit_code": 0,
     "jobs": 8568,
-    "log": "current/paper2-build269.log",
+    "log": "current/build269.log",
     "cache_reused": true
   },
-  "paper2_comparator": {
+  "manuscript_comparator": {
     "status": "passed",
     "scope": 269,
     "mode": "development; official kernel, statement and definition matching; no Linux isolation",
@@ -56,7 +56,7 @@
     ]
   },
   "open_obligations": [],
-  "paper2_axioms": {
+  "manuscript_axioms": {
     "status": "passed",
     "scope": 269,
     "exact_target_names_verified": true,
@@ -67,14 +67,14 @@
     ],
     "log": "current/axioms269.log"
   },
-  "paper2_increment_comparator": {
+  "manuscript_increment_comparator": {
     "status": "interrupted",
     "scope": 5,
-    "configuration": "comparator-paper2-increment.json",
+    "configuration": "comparator-increment.json",
     "mode": "development; official kernel; no Linux isolation",
     "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
   },
-  "paper2_headers": {
+  "manuscript_headers": {
     "status": "passed",
     "scope": 12,
     "kind": "literal declaration headers plus compiled types; does not replace Comparator replay"
@@ -94,7 +94,7 @@
   },
   "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
   "verification_workflow_commit": "5501918deae5853635550efb7a8cd74203c69f84",
-  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005",
+  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005",
   "nanoda_attempts": [
     {
       "run_id": 37265985537,
@@ -146,7 +146,7 @@
       "evidence_directory": "current/nanoda-attempt-37281025130"
     }
   ],
-  "historical_paper2_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
+  "historical_manuscript_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
   "comparator_export_replay": {
     "status": "timed_out",
     "scope": 269,
@@ -329,14 +329,14 @@
     "evidence_directory": "current/con-ron-local-interrupted",
     "requested_signal": "SIGTERM"
   },
-  "completion_scope": "The 51 labelled formal-result environments of the exact paper-2 manuscript; documented proof-route and remark boundaries remain explicit.",
+  "completion_scope": "The 51 labelled formal-result environments of the exact manuscript; documented proof-route and remark boundaries remain explicit.",
   "final_evidence_validation": "current/final-kernel-validation.json",
   "final_source_audit": "current/final-source-audit.json",
   "natural_language_statement_review": {
     "status": "implementer_review_completed",
     "results": 51,
     "changed_statement_bodies": 28,
-    "crosswalk": "../audit/paper2_statement_map.json",
+    "crosswalk": "../audit/statement_map.json",
     "independent_reviewer_approval": false
   },
   "outside_completion_scope": [
@@ -344,5 +344,19 @@
     "The displayed cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence",
     "Independent human semantic approval, Arena listing and a fresh-machine cold rebuild are not claimed"
   ],
-  "previous_certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980"
+  "previous_certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980",
+  "current_source_layout": {
+    "status": "passed",
+    "entrypoints": [
+      "Challenge.lean",
+      "Solution.lean"
+    ],
+    "registered_targets": 269,
+    "source_manifest_sha256": "8007f2430dfbeaa3801da85a9579a4946cebe107680c88e9fee8fed9d1c805b1",
+    "source_equivalence": "current/source-layout/layout-validation.json",
+    "build_and_axioms": "current/source-layout/results.json",
+    "frozen_replay_receipts_revalidated": "current/source-layout/frozen-evidence-validation.json",
+    "independent_replay_of_new_module_paths": false,
+    "internal_theorem_identifiers_preserved": true
+  }
 }

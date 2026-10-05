@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-config = json.loads((root / 'comparator-paper2.json').read_text())
+config = json.loads((root / 'comparator.json').read_text())
 out = root / 'verification/runs/statement-query'
 out.mkdir(parents=True, exist_ok=True)
 definitions = [
@@ -35,7 +35,7 @@ definitions = [
     'BecknerOnofri.Paper2.Physical.torusPower',
     'BecknerOnofri.Paper2.Physical.FractionalIntertwining',
 ]
-source = ('import Paper2Solution\nset_option format.width 100\nset_option pp.fullNames true\n'
+source = ('import Solution\nset_option format.width 100\nset_option pp.fullNames true\n'
           + '\n'.join('#check ' + n for n in config['theorem_names']) + '\n'
           + '\n'.join('#print ' + n for n in definitions) + '\n')
 p = out / 'PrintStatements.lean'

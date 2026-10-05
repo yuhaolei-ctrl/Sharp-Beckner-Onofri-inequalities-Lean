@@ -1,0 +1,8 @@
+{
+  "source_layout": "passed",
+  "current_source_files": 4817,
+  "certified_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
+  "change_scope": "module filenames/imports, entrypoint merge, comparator module fields, library names",
+  "public_theorem_identifiers_preserved": true,
+  "independent_replay_scope": "original frozen exports; current layout checked separately"
+}

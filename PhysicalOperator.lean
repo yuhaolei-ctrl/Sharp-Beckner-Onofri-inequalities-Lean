@@ -1,4 +1,4 @@
-import Paper2PhysicalForm
+import PhysicalForm
 import BecknerOnofri.Friedrichs.MixedSpectralPowers
 
 noncomputable section

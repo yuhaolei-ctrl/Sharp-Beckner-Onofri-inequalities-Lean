@@ -48,11 +48,11 @@ s += '\n[[lean_exe]]\nname = "replay-exports"\nroot = "ReplayExports"\n'
 out = root / 'external-check'
 record = json.loads((out / 'challenge-export.json').read_text())
 solution = json.loads((out / 'certificate-export.json').read_text())
-config = json.loads((root / 'comparator-paper2.json').read_text())
+config = json.loads((root / 'verification/certified-comparator.json').read_text())
 assert record['module'] == 'Paper2Challenge' and record['exit_code'] == 0
 assert record['source_commit'] == solution['source_commit']
 assert record['source_manifest_sha256'] == solution['source_manifest_sha256']
-assert record['source_manifest_sha256'] == hashlib.sha256((root / 'SOURCE_MANIFEST.json').read_bytes()).hexdigest()
+assert record['source_manifest_sha256'] == hashlib.sha256((root / 'verification/certified-source-manifest.json').read_bytes()).hexdigest()
 assert record['arguments'][:2] == ['Paper2Challenge', '--']
 assert set(config['theorem_names']) <= set(record['arguments'][2:])
 with (out / 'challenge.ndjson.gz').open('rb') as f:

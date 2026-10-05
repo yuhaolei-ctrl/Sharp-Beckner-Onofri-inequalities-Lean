@@ -1,0 +1,10 @@
+{
+  "structural_audit": "passed",
+  "proof_files_scanned": 4809,
+  "registered_targets": 269,
+  "manuscript_results": 51,
+  "source_layout": "passed",
+  "changed_statement_bodies": 28,
+  "paper_bytes_verified": false,
+  "independent_semantic_certification": false
+}

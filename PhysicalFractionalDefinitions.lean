@@ -1,4 +1,4 @@
-import Paper2PhysicalOperator
+import PhysicalOperator
 import BecknerOnofri.Friedrichs.MixedFractionalStatementDefinitions
 
 noncomputable section

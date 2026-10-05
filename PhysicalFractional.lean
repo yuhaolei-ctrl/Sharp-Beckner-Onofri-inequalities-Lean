@@ -1,4 +1,4 @@
-import Paper2PhysicalFractionalDefinitions
+import PhysicalFractionalDefinitions
 import BecknerOnofri.Friedrichs.MixedFractionalPaper
 
 noncomputable section

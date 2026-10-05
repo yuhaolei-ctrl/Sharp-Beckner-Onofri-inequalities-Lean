@@ -86,7 +86,7 @@ attempt and later outcomes remain visible in `STATUS.json` and Actions.
 The proof export is large. The script records source configuration, exact target
 list, exporter result, binary digest, export digest and checker exit code.
 The current `STATUS.json` distinguishes the actual baseline check from any
-unexecuted full paper-2 check. Never replace an uncompleted run by this recipe.
+unexecuted full manuscript check. Never replace an uncompleted run by this recipe.
 
 Alternatively set `enable_nanoda` to true in a separately named Comparator
 configuration and set `COMPARATOR_NANODA` to the absolute binary path. This
@@ -145,7 +145,7 @@ After downloading the four release assets to `external-check/`, with Lean
 python3 scripts/prepare_external_check.py
 python3 scripts/prepare_comparator_replay.py
 lake -d .tools/replay build replay-exports
-.tools/replay/.lake/build/bin/replay-exports comparator-paper2.json \
+.tools/replay/.lake/build/bin/replay-exports verification/certified-comparator.json \
   external-check/challenge.ndjson external-check/solution.ndjson
 ```
 
@@ -290,3 +290,13 @@ is `external-check/solution.ndjson`, prepared as above. The final validator's
 the same full verified-mode acceptance conditions; it also permits the
 four-worker invocation. An ongoing local run has no final receipt and cannot
 pass validation.
+
+## Current source layout and frozen replay evidence
+
+Published export receipts retain their original module names and source digest.
+Replay preparation and receipt validation therefore use
+`verification/certified-source-manifest.json` and
+`verification/certified-comparator.json`. Fresh exports use the unified
+`Challenge`/`Solution` modules and `comparator.json`.
+Run `python3 scripts/source_layout.py` to verify the exact allowed reorganization;
+see [SOURCE_LAYOUT.md](SOURCE_LAYOUT.md) for the separate verification scopes.

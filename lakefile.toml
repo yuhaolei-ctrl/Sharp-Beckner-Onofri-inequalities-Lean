@@ -51,40 +51,34 @@ name = "BecknerOnofri"
 name = "Legacy"
 
 [[lean_lib]]
-name = "Paper2Definitions"
+name = "Definitions"
 
 [[lean_lib]]
-name = "Paper2Proofs"
+name = "Proofs"
 
 [[lean_lib]]
-name = "Paper2Challenge"
+name = "Periodization"
 
 [[lean_lib]]
-name = "Paper2Solution"
+name = "PhysicalMeasure"
 
 [[lean_lib]]
-name = "Paper2Periodization"
+name = "PhysicalLp"
 
 [[lean_lib]]
-name = "Paper2PhysicalMeasure"
+name = "PeriodizationDefinitions"
 
 [[lean_lib]]
-name = "Paper2PhysicalLp"
+name = "PhysicalCore"
 
 [[lean_lib]]
-name = "Paper2PeriodizationDefinitions"
+name = "PhysicalForm"
 
 [[lean_lib]]
-name = "Paper2PhysicalCore"
+name = "PhysicalOperator"
 
 [[lean_lib]]
-name = "Paper2PhysicalForm"
+name = "PhysicalFractionalDefinitions"
 
 [[lean_lib]]
-name = "Paper2PhysicalOperator"
-
-[[lean_lib]]
-name = "Paper2PhysicalFractionalDefinitions"
-
-[[lean_lib]]
-name = "Paper2PhysicalFractional"
+name = "PhysicalFractional"

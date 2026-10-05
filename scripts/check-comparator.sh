@@ -11,4 +11,4 @@ elif [ "$(uname -s)" != Linux ]; then
 fi
 export COMPARATOR_LEAN4EXPORT="${COMPARATOR_LEAN4EXPORT:-$PROJECT_DIR/vendor/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export}"
 cd "$PROJECT_DIR"
-exec ./scripts/lake env "$PROJECT_DIR/vendor/comparator/.lake/build/bin/comparator" "${1:-comparator-paper2.json}"
+exec ./scripts/lake env "$PROJECT_DIR/vendor/comparator/.lake/build/bin/comparator" "${1:-comparator.json}"

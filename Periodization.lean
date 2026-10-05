@@ -1,4 +1,4 @@
-import Paper2PeriodizationDefinitions
+import PeriodizationDefinitions
 import BecknerOnofri.ElevenPeriodizedContinuity
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Inv

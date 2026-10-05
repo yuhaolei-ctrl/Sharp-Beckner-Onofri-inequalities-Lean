@@ -1,3 +1,4 @@
+import Proofs
 import BecknerOnofri.Friedrichs.MixedFractionalPaper
 import BecknerOnofri.Friedrichs.FullPeriodicPaper
 import BecknerOnofri.Friedrichs.ActiveSpatialSelfAdjoint

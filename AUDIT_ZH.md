@@ -1,15 +1,15 @@
-# paper 2 与现有 Lean 代码的差异审查
+# 论文与 Lean 代码的差异审查
 
 本次以 `paper 2/sharp_beckner_onofri_flat_torus.tex` 为准，以用户指定的
 2026-09-27 Lean 压缩包为证明基线。51 个正式结果的标签全部保留，去除空白差异后
 28 条陈述文本有变化。逐条原文、新文、标签、位置、目标与审查理由见
-`audit/paper2_statement_map.json`。本次是同一实施助手的源码审查，不是独立审稿人认证。
+`audit/statement_map.json`。本次是同一实施助手的源码审查，不是独立审稿人认证。
 
 **51 条正式结果范围内的适配与机器验证现已完成。** 269 个注册目标通过完整的
 官方 Comparator 检查；独立 con-ron 在 `--verified` 模式下接受全部 1,027,308 条
 声明记录（对应 1,029,606 个命名声明，含依赖），退出码为 0。
 最终证据核验见 [final-kernel-validation.json](verification/current/final-kernel-validation.json)，
-完成版证书见 [GitHub release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005)。
+完成版证书见 [GitHub release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005)。
 
 28 条文字变化分为：13 条能量归一化记号，5 条说明或排版，3 条已使用单位周期的对象，
 2 条密度端点定义域扩大，2 条 Haar 测度记号，以及物理坐标传输、已使用的物理参数、
@@ -34,8 +34,8 @@
 
 ## 已新增的适配代码
 
-原 257 目标及其辅助证明保持不变。新文件 `Paper2Definitions.lean`、
-`Paper2Proofs.lean`、`Paper2Challenge.lean`、`Paper2Solution.lean` 提供独立适配层，
+原 257 目标及其辅助证明保留。`Definitions.lean` 和 `Proofs.lean` 提供新增适配，
+现已合入统一的 `Challenge.lean` 与 `Solution.lean` 入口；旧的单独入口已删除。
 机器检查的实际结果以 `verification/STATUS.json` 为准。
 
 | 变化 | 处理 |
@@ -51,24 +51,24 @@
 
 ## 本轮补齐的正式陈述
 
-**引理 2.9（`lem:fractional`）**：`Paper2PhysicalMeasure.lean` 定义实际物理测度，
+**引理 2.9（`lem:fractional`）**：`PhysicalMeasure.lean` 定义实际物理测度，
 活动坐标为 `(0,1/2)`，非活动坐标为 `(0,1]` 的周期表示，并证明 Jacobian。
-`Paper2PhysicalLp.lean` 给出原始拉回连续线性等价、内积缩放和酉映射
-`Vf(x)=sqrt((2π)^d) f(2πx)`。`Paper2PhysicalCore.lean` 双向传递光滑核、
+`PhysicalLp.lean` 给出原始拉回连续线性等价、内积缩放和酉映射
+`Vf(x)=sqrt((2π)^d) f(2πx)`。`PhysicalCore.lean` 双向传递光滑核、
 周期条件、边界支撑和导数，证明势项平方就是论文中的系数。
-`Paper2PhysicalForm.lean` 传递闭包及双线性型；`Paper2PhysicalOperator.lean`
+`PhysicalForm.lean` 传递闭包及双线性型；`PhysicalOperator.lean`
 证明实际 Friedrichs 算子图的共轭关系、物理谱幂的一阶识别及全部实数幂的域对应。
-`Paper2PhysicalFractional.lean` 最终证明任意闭立方体光滑 U、任意非零多重指标、
+`PhysicalFractional.lean` 最终证明任意闭立方体光滑 U、任意非零多重指标、
 所有 s>0 的交换公式，包含 `(2π|k|)^(2s)` Fourier 乘子。
 
 **引理 4.2（`lem:section4-periodization-entropy-identity`）**：
-`Paper2Periodization.lean` 对原始有理 Euclidean 密度的任意有限序列坐标导数，
+`Periodization.lean` 对原始有理 Euclidean 密度的任意有限序列坐标导数，
 构造“原密度 × 有界表达式”的形式证明。平移后使用已有格点可求和控制，
 得到每个紧集上的统一可求和上界，最后由 M-test 得到导数级数局部一致收敛。
 坐标导数定义为全 Euclidean 空间中普通的坐标线导数；平移可交换性也有证明。
 已有概率质量、严格正性、光滑性和条件熵恒等式目标继续使用。
 
-这些新目标在 `Paper2Challenge.lean` 与 `Paper2Proofs.lean` 中具有相同类型，
+这些新目标在 `Challenge.lean` 与 `Proofs.lean` 中具有相同类型，
 合并配置登记 269 个目标。编译、公理扫描、完整官方重放及独立内核检查均已通过；
 传递公理仅有 `Classical.choice`、`Quot.sound`、`propext`。最终源码审查再次核对了
 4,808 个证明文件、论文的实际字节、51 条结果及 28 条文字变化。
@@ -90,3 +90,10 @@ Friedrichs 证明中显示的 O(δ^(2m−1)) 速率也未单独注册；形式�
 
 最终状态须分别记录：机器验证、新旧数学对象对应、独立外部语义审查。
 任何一项通过都不能自动替代其他两项。
+
+## 文件整理与证书对应
+
+当前文件名已移除旧稿件简称，内部 `BecknerOnofri.Paper2` 标识按用户要求保留。
+`scripts/source_layout.py` 从原证书源码逐字重建允许的文件更名、导入更新和入口合并，
+再与当前源码比对。独立内核记录仍对应原始导出字节；整理后的入口另行编译和扫描公理，
+不将原重放记录冒充为新模块路径的重放。详见 [源码对应记录](verification/SOURCE_LAYOUT.md)。

@@ -2,28 +2,35 @@
 
 Lean **4.32.0**, mathlib revision `81a5d257c8e410db227a6665ed08f64fea08e997`.
 
-This repository preserves the 257-target September 27 certificate and adds a
-separate adaptation layer for the October 3 manuscript (“paper 2”).
+This repository formalizes the October 3 manuscript with 269 registered targets,
+combining the 257-target September 27 certificate and 12 additional targets.
 The adaptation now includes the literal physical-coordinate Friedrichs
 intertwining and local uniform convergence of every derivative of the original
 periodization series. The 51 formal result environments are the declared
 coverage scope; proof-route estimates and remarks outside that set are listed
 separately. Final checker outcomes are recorded in [STATUS.json](verification/STATUS.json).
-See [the Chinese audit](AUDIT_ZH.md) and [the 51-result statement map](audit/PAPER2_STATEMENT_MAP.md).
+See [the Chinese audit](AUDIT_ZH.md) and [the 51-result statement map](audit/STATEMENT_MAP.md).
 
 **Completed within this 51-result scope:** all 269 registered targets pass the
 full upstream Comparator replay and an independent con-ron `--verified` replay.
 The [combined evidence validation](verification/current/final-kernel-validation.json)
 binds both results to the same source manifest and exact proof export.
 
+The current source uses unified `Challenge.lean` and `Solution.lean` entrypoints.
+The former split entrypoints have been removed; public theorem identifiers
+(including `BecknerOnofri.Paper2`) remain unchanged. The independent replay
+receipts refer to the frozen exported certificate. The deterministic
+[source-layout audit](scripts/source_layout.py) checks the filename/import changes
+and entrypoint merge against that certificate; the current layout has a separate
+build and axiom audit. See [source layout provenance](verification/SOURCE_LAYOUT.md).
+
 ## Challenge → Solution → Comparator
 
 | Scope | Trusted statements | Proofs | Configuration |
 |---|---|---|---|
-| Original 257 targets | `Challenge.lean` | `Solution.lean` and imported modules | `comparator.json` |
-| Original targets plus 12 paper-2 targets | `Paper2Challenge.lean` | `Paper2Solution.lean`, `Paper2Proofs.lean` | `comparator-paper2.json` |
-| Only the 12 additions | same | same | `comparator-paper2-increment.json` |
-| Seven new analysis/coordinate targets | same | same | `comparator-paper2-analysis.json` |
+| All 269 targets | `Challenge.lean` | `Solution.lean`, `Proofs.lean` | `comparator.json` |
+| Only the 12 additions | same | same | `comparator-increment.json` |
+| Seven new analysis/coordinate targets | same | same | `comparator-analysis.json` |
 
 The `sorry` terms in the trusted challenges are statement placeholders.
 Solutions do not import challenges. Transitive proof axioms must be confined
@@ -45,8 +52,8 @@ reuses existing build caches and is not a fresh-machine rebuild claim.
 
 ```sh
 python3 scripts/setup_dependencies.py
-./scripts/lake build Paper2Challenge Paper2Solution
-./scripts/lake env lean AxiomAuditPaper2.lean
+./scripts/lake build Challenge Solution
+./scripts/lake env lean AxiomAudit.lean
 python3 scripts/audit.py
 ```
 
@@ -56,7 +63,7 @@ is committed. To rebuild Comparator and its exporter:
 
 ```sh
 (cd vendor/comparator && lake build comparator lean4export)
-./scripts/check-comparator.sh --development comparator-paper2.json
+./scripts/check-comparator.sh --development comparator.json
 ```
 
 On macOS, development mode has **no Linux Landrun isolation**. It still checks
@@ -70,7 +77,7 @@ does not perform the external kernel replay.
 
 ## Evidence and scope
 
-The [completed certificate release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/paper2-verified-20261005) contains the exact Challenge and Solution exports, verification evidence and SHA-256 checksums.
+The [completed certificate release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005) contains the exact Challenge and Solution exports, verification evidence and SHA-256 checksums.
 The [full 269-target upstream Comparator replay](verification/current/comparator-local/result.json) passed the official Lean kernel on October 5; its [complete log](verification/current/comparator-local/comparator.log) is preserved. The [independent con-ron run](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046) then accepted all **1,027,308 declaration records** in verified mode, with exit status 0, after 2:30:01. These records represent 1,029,606 named declarations, including the complete dependencies of all 269 roots. Its [actual receipt and log](verification/current/con-ron-hosted) include the pinned unmodified checker, exact export identity, valid-proof acceptance and damaged-proof rejection.
 
 Failed, timed-out and deliberately retired redundant checks remain separately

@@ -1,4 +1,4 @@
-import Paper2Solution
+import Solution
 
 #print axioms BecknerOnofri.Target.density_endpoint
 #print axioms BecknerOnofri.Target.density_rigidity

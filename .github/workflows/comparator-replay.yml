@@ -37,7 +37,7 @@ jobs:
       - name: Match statements and replay the official kernel
         run: |
           set -o pipefail
-          /usr/bin/time -v .tools/replay/.lake/build/bin/replay-exports comparator-paper2.json external-check/challenge.ndjson external-check/solution.ndjson 2>&1 | tee external-check/comparator.log
+          /usr/bin/time -v .tools/replay/.lake/build/bin/replay-exports verification/certified-comparator.json external-check/challenge.ndjson external-check/solution.ndjson 2>&1 | tee external-check/comparator.log
           python3 - <<'PY'
           from pathlib import Path
           text = Path('external-check/comparator.log').read_text()

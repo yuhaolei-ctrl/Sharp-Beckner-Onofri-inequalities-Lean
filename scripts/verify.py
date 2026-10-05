@@ -36,10 +36,10 @@ def run(name, cmd):
 
 
 run('structural', ['python3', 'scripts/audit.py'])
-run('build', ['./scripts/lake', 'build', 'Paper2Challenge', 'Paper2Solution'])
-axioms = run('axioms', ['./scripts/lake', 'env', 'lean', 'AxiomAuditPaper2.lean'])
+run('build', ['./scripts/lake', 'build', 'Challenge', 'Solution'])
+axioms = run('axioms', ['./scripts/lake', 'env', 'lean', 'AxiomAudit.lean'])
 rows = re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]", axioms)
-config = json.loads((ROOT / 'comparator-paper2.json').read_text())
+config = json.loads((ROOT / 'comparator.json').read_text())
 assert len(rows) == len(config['theorem_names'])
 assert {name for name, _ in rows} == set(config['theorem_names'])
 assert {a.strip() for _, row in rows for a in row.split(',') if a.strip()} <= set(config['permitted_axioms'])
@@ -47,7 +47,7 @@ if args.comparator:
     cmd = ['./scripts/check-comparator.sh']
     if args.development:
         cmd.append('--development')
-    cmd.append('comparator-paper2.json')
+    cmd.append('comparator.json')
     text = run('comparator', cmd)
     assert 'Lean default kernel accepts the solution' in text
     assert 'Your solution is okay!' in text
