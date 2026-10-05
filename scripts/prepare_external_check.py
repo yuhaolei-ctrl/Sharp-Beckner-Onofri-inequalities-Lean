@@ -56,6 +56,8 @@ assert required_primitives <= declared, sorted(required_primitives - declared)
 (out / 'declared-targets.json').write_text(json.dumps(config['theorem_names'], indent=2) + '\n')
 settings = json.loads((root / 'verification/nanoda-config.json').read_text())
 settings['pp_declars'] = config['theorem_names']
+# Nanoda opens this destination in append mode without creating it.
+(out / 'checked-targets.txt').write_text('')
 settings['pp_output_path'] = str(out / 'checked-targets.txt')
 settings['unknown_pp_declar_hard_error'] = True
 settings['pp_options'] = {'proofs': False}

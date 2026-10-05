@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T04:46:50.333085+00:00",
+  "updated_utc": "2026-10-05T05:04:09.403765+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -37,8 +37,10 @@
     "cache_reused": true
   },
   "paper2_comparator": {
-    "status": "not_run",
-    "scope": 269
+    "status": "running",
+    "scope": 269,
+    "mode": "development; official kernel, statement and definition matching; no Linux isolation",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
   },
   "controls": {
     "status": "passed",
@@ -74,15 +76,30 @@
   },
   "paper2_headers": {
     "status": "passed",
-    "scope": 5,
-    "method": "literal declaration-header comparison; not Comparator"
+    "scope": 12,
+    "kind": "literal declaration headers plus compiled types; does not replace Comparator replay"
   },
   "source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
-  "source_manifest_sha256": "ddd7b14db80bfc345b76b26a02e532def82ecda610996c1a49cfc0ad5b7c4d41",
+  "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
   "final_registered_targets": 269,
   "continued_formalization": "Both known formal-result gaps implemented and compiled; full external verification pending.",
   "nanoda_final": {
-    "status": "not_run",
-    "scope": 269
-  }
+    "status": "retry_preparing",
+    "scope": 269,
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37265985537",
+    "run_id": 37265985537,
+    "platform": "GitHub-hosted ubuntu-24.04",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+  },
+  "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+  "verification_workflow_commit": "8ae9f25666d1bb23611fb22062dbb8d488ad17f7",
+  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980",
+  "nanoda_attempts": [
+    {
+      "run_id": 37265985537,
+      "conclusion": "failure_before_kernel_check",
+      "reason": "Nanoda requires an existing pretty-printer destination; initializer fixed",
+      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37265985537"
+    }
+  ]
 }
