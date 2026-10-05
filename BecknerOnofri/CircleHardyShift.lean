@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleHardyDefinitions
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.CircleHardyDefinitions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Actual sequence shifts, their adjoint identity, and the consecutive-moment
 Cauchy--Schwarz estimate in the circle entropy remainder proof. -/

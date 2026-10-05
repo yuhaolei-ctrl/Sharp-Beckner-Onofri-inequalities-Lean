@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarBesselPoint
-import BecknerOnofri.ScalarLogBesselEnclosure
+module
+
+public import BecknerOnofri.ScalarBesselPoint
+public import BecknerOnofri.ScalarLogBesselEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar EntropyLogCertificate Set

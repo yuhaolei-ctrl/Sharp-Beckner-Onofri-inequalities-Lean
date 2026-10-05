@@ -1,7 +1,11 @@
-import Legacy.TorusEndpoint.WeightedConvolution
-import Mathlib.Algebra.MonoidAlgebra.Defs
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Legacy.TorusEndpoint.WeightedConvolution
+public import Mathlib.Algebra.MonoidAlgebra.Defs
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Weighted norms of actual finitely supported polynomials

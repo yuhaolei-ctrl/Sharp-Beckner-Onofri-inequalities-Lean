@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenVariational
-import Mathlib.Analysis.Convex.Deriv
+module
+
+public import BecknerOnofri.ElevenVariational
+public import Mathlib.Analysis.Convex.Deriv
+
+@[expose] public section
 
 /-! On any convex set where the extended supremum is finite, its real value
 is convex because every actual admissible competitor gives an affine function. -/

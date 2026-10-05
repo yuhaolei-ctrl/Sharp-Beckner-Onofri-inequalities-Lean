@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianScalarTail
-import Legacy.BecknerOnofri.MixedBinomialComparison
-import Legacy.BecknerOnofri.CosineMixtureAxis
+module
+
+public import Legacy.BecknerOnofri.GaussianScalarTail
+public import Legacy.BecknerOnofri.MixedBinomialComparison
+public import Legacy.BecknerOnofri.CosineMixtureAxis
+
+@[expose] public section
 
 /-! The genuine spectral endpoint for strictly positive finite correlated
 cosine-power mixtures in dimensions three through ten. All scalar and

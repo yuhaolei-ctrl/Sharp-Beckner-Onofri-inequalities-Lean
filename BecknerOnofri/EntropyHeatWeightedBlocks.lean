@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatBlockChain
+module
+
+public import BecknerOnofri.EntropyHeatBlockChain
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

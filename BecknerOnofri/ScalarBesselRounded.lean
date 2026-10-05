@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselEnclosure
-import BecknerOnofri.EntropyExpCertificate
+module
+
+public import BecknerOnofri.CircleBesselEnclosure
+public import BecknerOnofri.EntropyExpCertificate
+
+@[expose] public section
 
 /-! Directed fixed-precision evaluation of the positive Bessel series. The
 state encloses both the next term and the partial sum; the analytic geometric

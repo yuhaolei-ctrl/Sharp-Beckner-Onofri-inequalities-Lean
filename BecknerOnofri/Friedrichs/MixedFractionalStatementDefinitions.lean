@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedSpectralPowers
-import BecknerOnofri.SmoothEulerStatementDefinitions
-import BecknerOnofri.SmoothAngularPower
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpectralPowers
+public import BecknerOnofri.SmoothEulerStatementDefinitions
+public import BecknerOnofri.SmoothAngularPower
+
+@[expose] public section
 
 /-! Trusted manuscript Lemma fractional: arbitrary closed-cube smooth profile,
 all nonzero multi-indices, actual mixed Lebesgue space and its spectral power.

@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedEigenStatementDefinitions
-import Mathlib.Analysis.InnerProductSpace.l2Space
+module
+
+public import BecknerOnofri.Friedrichs.MixedEigenStatementDefinitions
+public import Mathlib.Analysis.InnerProductSpace.l2Space
+
+@[expose] public section
 
 /-! Trusted explicit auxiliary statements for the full periodic sectors.
 These statements assert actual functions, measures and spatial graphs. -/

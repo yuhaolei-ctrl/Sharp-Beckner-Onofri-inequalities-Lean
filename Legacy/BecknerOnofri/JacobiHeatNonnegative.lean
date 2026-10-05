@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiHeatKernelAction
-import Legacy.BecknerOnofri.AngularPolynomialPositivity
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatKernelAction
+public import Legacy.BecknerOnofri.AngularPolynomialPositivity
+
+@[expose] public section
 
 /-! Nonnegativity of the actual Jacobi heat kernel, proved from actual parabolic comparison
 and positive polynomial approximation, without a semigroup-positivity premise. -/

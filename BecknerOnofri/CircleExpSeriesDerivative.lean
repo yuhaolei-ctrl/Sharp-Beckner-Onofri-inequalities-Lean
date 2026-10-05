@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleSeriesDerivative
+module
+
+public import BecknerOnofri.CircleSeriesDerivative
+
+@[expose] public section
 
 /-! The logarithmic derivative identity for an actual exponential Fourier series. -/
 noncomputable section

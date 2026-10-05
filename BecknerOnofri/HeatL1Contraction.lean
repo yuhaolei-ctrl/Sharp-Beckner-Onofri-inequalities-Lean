@@ -1,4 +1,8 @@
-import BecknerOnofri.HeatEnergyLimit
+module
+
+public import BecknerOnofri.HeatEnergyLimit
+
+@[expose] public section
 
 /-! The actual heat convolution contracts L1 distances between densities. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ExponentialWordSeries
-import Legacy.BecknerOnofri.CircleMilinWords
-import Legacy.BecknerOnofri.CircleEqualitySeries
+module
+
+public import Legacy.BecknerOnofri.ExponentialWordSeries
+public import Legacy.BecknerOnofri.CircleMilinWords
+public import Legacy.BecknerOnofri.CircleEqualitySeries
+
+@[expose] public section
 
 /-! The actual absolutely convergent word expansion of the circle exponential. -/
 noncomputable section

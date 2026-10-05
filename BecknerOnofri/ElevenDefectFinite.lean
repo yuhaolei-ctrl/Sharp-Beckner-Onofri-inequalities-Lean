@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenTransitionZeroSet
+module
+
+public import BecknerOnofri.ElevenTransitionZeroSet
+
+@[expose] public section
 
 /-! A real neighborhood of the transition coefficient has finite actual
 defect, by the exact coefficient-pressure involution. -/

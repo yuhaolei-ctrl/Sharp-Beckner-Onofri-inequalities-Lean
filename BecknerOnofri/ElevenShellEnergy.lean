@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenShellPolynomial
-import BecknerOnofri.ElevenPeriodizedFourier
+module
+
+public import BecknerOnofri.ElevenShellPolynomial
+public import BecknerOnofri.ElevenPeriodizedFourier
+
+@[expose] public section
 
 /-! The certified finite shells bound the genuine extended Fourier energy.
 This is a lower bound obtained by retaining a finite set of actual frequency

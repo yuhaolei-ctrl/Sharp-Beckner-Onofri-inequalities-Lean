@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.FullPeriodicStatementDefinitions
-import BecknerOnofri.Friedrichs.PeriodicHilbertBasis
+module
+
+public import BecknerOnofri.Friedrichs.FullPeriodicStatementDefinitions
+public import BecknerOnofri.Friedrichs.PeriodicHilbertBasis
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

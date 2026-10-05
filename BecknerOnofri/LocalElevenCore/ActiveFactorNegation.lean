@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorDifferential
-import BecknerOnofri.AnalyticProductFactorUnique
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorDifferential
+public import BecknerOnofri.AnalyticProductFactorUnique
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

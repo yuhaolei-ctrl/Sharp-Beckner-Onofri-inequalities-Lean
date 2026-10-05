@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleScalarDefinitions
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.CircleScalarDefinitions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Soundness of the four scalar candidates used in the manuscript's
 interval enclosure of γ. All domain boundaries and junctions are included. -/

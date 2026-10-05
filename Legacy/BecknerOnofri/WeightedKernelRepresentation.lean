@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.BoundedL2Multiplier
-import Legacy.BecknerOnofri.PositiveKernelComparison
+module
+
+public import Legacy.BecknerOnofri.BoundedL2Multiplier
+public import Legacy.BecknerOnofri.PositiveKernelComparison
+
+@[expose] public section
 
 /-! Actual kernel representations and strict comparisons survive bounded
 positive multiplication on both sides of the L2 operator. -/

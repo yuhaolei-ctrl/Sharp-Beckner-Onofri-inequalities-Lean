@@ -1,8 +1,12 @@
-import BecknerOnofri.LowDimensionRaw
-import BecknerOnofri.RawAttainment
-import BecknerOnofri.PressureRegularity
-import BecknerOnofri.ThresholdReduction
-import BecknerOnofri.PressureDuality
+module
+
+public import BecknerOnofri.LowDimensionRaw
+public import BecknerOnofri.RawAttainment
+public import BecknerOnofri.PressureRegularity
+public import BecknerOnofri.ThresholdReduction
+public import BecknerOnofri.PressureDuality
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

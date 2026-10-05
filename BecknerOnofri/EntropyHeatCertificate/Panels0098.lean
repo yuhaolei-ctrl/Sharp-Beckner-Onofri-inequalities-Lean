@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatIntegerWeights
-import BecknerOnofri.EntropyHeatCertificate.Exp0098
+module
+
+public import BecknerOnofri.EntropyHeatIntegerWeights
+public import BecknerOnofri.EntropyHeatCertificate.Exp0098
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0098
 open ExpCertificate
 set_option maxRecDepth 1000000

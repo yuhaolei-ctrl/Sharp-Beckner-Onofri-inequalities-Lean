@@ -1,6 +1,10 @@
-import BecknerOnofri.BranchDefinitions
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The actual discrete spectral gap away from constants and the first shell,
 with a bounded inverse of the linearized Fourier multiplier. -/

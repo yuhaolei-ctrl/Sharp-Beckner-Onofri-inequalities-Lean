@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.FourierEntropy
-import Legacy.TorusEndpoint.FiniteCone
-import Mathlib.Topology.Algebra.InfiniteSum.Real
+module
+
+public import Legacy.TorusEndpoint.FourierEntropy
+public import Legacy.TorusEndpoint.FiniteCone
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+
+@[expose] public section
 
 /-!
 # Conditional summability of actual half-cone Fourier energy

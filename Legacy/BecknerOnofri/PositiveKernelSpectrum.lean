@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.PositiveKernelRayleigh
-import Mathlib.Analysis.InnerProductSpace.Spectrum
+module
+
+public import Legacy.BecknerOnofri.PositiveKernelRayleigh
+public import Mathlib.Analysis.InnerProductSpace.Spectrum
+
+@[expose] public section
 
 /-! Compact self-adjoint spectral extrema and the actual L2 absolute-value replacement.
 Existence of an extremal eigenvector is derived from the compact spectral theorem.

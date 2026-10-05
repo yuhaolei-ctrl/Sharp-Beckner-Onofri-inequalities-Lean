@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarMomentFunctionEnclosure
-import BecknerOnofri.ScalarRoundedEnclosure
+module
+
+public import BecknerOnofri.ScalarMomentFunctionEnclosure
+public import BecknerOnofri.ScalarRoundedEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar Set

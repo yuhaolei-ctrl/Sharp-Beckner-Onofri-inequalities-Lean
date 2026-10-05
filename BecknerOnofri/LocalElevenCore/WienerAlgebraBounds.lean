@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.WeightedCubicExponentialTail
-import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+module
+
+public import BecknerOnofri.LocalElevenCore.WeightedCubicExponentialTail
+public import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

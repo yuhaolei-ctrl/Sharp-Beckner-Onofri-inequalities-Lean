@@ -1,5 +1,9 @@
-import BecknerOnofri.BinarySpinChannel
-import BecknerOnofri.EntropyMixtureRigidity
+module
+
+public import BecknerOnofri.BinarySpinChannel
+public import BecknerOnofri.EntropyMixtureRigidity
+
+@[expose] public section
 
 /-! The all-minus probability cap for the actual positive cosine mixture.
 This supplies the extra constraint in the thirteen-state feasible domain. -/
@@ -54,7 +58,7 @@ theorem tensor_minus_spin_bound (N : Fin 12 → ℕ) :
   rw [tensor_minus_spin]
   calc
     (∏ i : Fin 12,1/(2*((N i:ℝ)+1)))≤∏ _ : Fin 12,(1/2:ℝ) := by
-      apply Finset.prod_le_prod (fun i _ => by positivity)
+      apply Finset.prod_le_prod₀ (fun i _ => by positivity)
       intro i _
       apply div_le_div_of_nonneg_left (by norm_num) (by norm_num)
       have hn : 0≤(N i:ℝ) := Nat.cast_nonneg _

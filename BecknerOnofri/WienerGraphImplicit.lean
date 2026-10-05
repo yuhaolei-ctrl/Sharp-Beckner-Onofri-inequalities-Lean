@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphGibbs
-import BecknerOnofri.WienerGraphInverse
+module
+
+public import BecknerOnofri.WienerGraphGibbs
+public import BecknerOnofri.WienerGraphInverse
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

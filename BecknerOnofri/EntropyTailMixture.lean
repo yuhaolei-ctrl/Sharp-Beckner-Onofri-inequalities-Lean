@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailMixedMellin
-import BecknerOnofri.EntropyTailHarmonic
-import BecknerOnofri.CosineMixtureTransfer
+module
+
+public import BecknerOnofri.EntropyTailMixedMellin
+public import BecknerOnofri.EntropyTailHarmonic
+public import BecknerOnofri.CosineMixtureTransfer
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

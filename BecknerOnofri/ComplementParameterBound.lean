@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementParameterDifference
+module
+
+public import BecknerOnofri.ComplementParameterDifference
+
+@[expose] public section
 
 /-! The actual complement varies by O(|μ−1|‖z‖²), uniformly near the onset. -/
 noncomputable section

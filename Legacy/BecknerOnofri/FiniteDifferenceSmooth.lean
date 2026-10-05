@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.FiniteDifferenceCalculus
-import Mathlib.Analysis.Calculus.ContDiff.Comp
-import Mathlib.Analysis.Calculus.Deriv.Pi
-import Mathlib.Analysis.Calculus.TangentCone.Pi
-import Mathlib.Analysis.Calculus.TangentCone.Real
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceCalculus
+public import Mathlib.Analysis.Calculus.ContDiff.Comp
+public import Mathlib.Analysis.Calculus.Deriv.Pi
+public import Mathlib.Analysis.Calculus.TangentCone.Pi
+public import Mathlib.Analysis.Calculus.TangentCone.Real
+
+@[expose] public section
 
 /-! The coordinate derivative family is built from Mathlib's actual Fréchet derivative. -/
 noncomputable section

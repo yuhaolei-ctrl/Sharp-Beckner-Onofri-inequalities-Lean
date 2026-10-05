@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.MixedExponentialCalculus
-import Legacy.BecknerOnofri.MixedExponentialTerms
-import Mathlib.Algebra.MvPolynomial.Eval
+module
+
+public import Legacy.BecknerOnofri.MixedExponentialCalculus
+public import Legacy.BecknerOnofri.MixedExponentialTerms
+public import Mathlib.Algebra.MvPolynomial.Eval
+
+@[expose] public section
 
 /-! The actual ordered mixed derivatives of exp(u), with an explicit positive Bell remainder. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import Mathlib.MeasureTheory.Measure.Haar.Unique
-import Mathlib.GroupTheory.Divisible
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+public import Mathlib.GroupTheory.Divisible
+
+@[expose] public section
 
 /-! The genuine two-copy torus transformation used by the Ginibre inequality.
 Its finite covering degree is handled by normalized Haar measure; injectivity

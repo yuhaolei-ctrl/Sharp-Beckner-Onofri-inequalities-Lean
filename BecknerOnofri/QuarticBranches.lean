@@ -1,5 +1,9 @@
-import BecknerOnofri.Kappa
-import Mathlib.Algebra.Order.Chebyshev
+module
+
+public import BecknerOnofri.Kappa
+public import Mathlib.Algebra.Order.Chebyshev
+
+@[expose] public section
 
 /-! Exact algebraic part of the reduced branch classification.
 These are the actual quartic coefficients in the manuscript. This file does

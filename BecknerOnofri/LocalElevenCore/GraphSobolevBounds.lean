@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphSobolevBounds
-import BecknerOnofri.LocalElevenCore.UniformComplementBounds
-import BecknerOnofri.LocalElevenCore.GraphEnergy
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphSobolevBounds
+public import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+public import BecknerOnofri.LocalElevenCore.GraphEnergy
+
+@[expose] public section
 
 /-! Quantitative physical Sobolev estimates for the actual complementary
 graph, from its genuine Fourier equation and Haar Parseval identity. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.OnsetWienerBounds
-import BecknerOnofri.RawAttainment
+module
+
+public import BecknerOnofri.OnsetWienerBounds
+public import BecknerOnofri.RawAttainment
+
+@[expose] public section
 
 /-! Convergence of actual global maximizers in every fixed Sobolev space.
 Uniform polynomial Wiener bounds, combined with L² convergence, control the

@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.GreenDensityPotential
-import Legacy.BecknerOnofri.SobolevScalar
-import Legacy.BecknerOnofri.SubcriticalRoughBound
-import Legacy.TorusEndpoint.ExtendedEntropy
+module
+
+public import Legacy.BecknerOnofri.GreenDensityPotential
+public import Legacy.BecknerOnofri.SobolevScalar
+public import Legacy.BecknerOnofri.SubcriticalRoughBound
+public import Legacy.TorusEndpoint.ExtendedEntropy
+
+@[expose] public section
 
 /-! An actual strict density counterexample produces a positive subcritical
 global maximizer. The Green potential and all variational bounds are proved.

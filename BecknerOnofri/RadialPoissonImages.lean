@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialPoissonGaussian
-import BecknerOnofri.CubeTailBound
+module
+
+public import BecknerOnofri.RadialPoissonGaussian
+public import BecknerOnofri.CubeTailBound
+
+@[expose] public section
 
 /-! Actual uniform Poisson image remainder outside the five-point coordinate cube. -/
 noncomputable section
@@ -38,7 +42,7 @@ theorem finite_gaussianVector_bound {d : ℕ} {p y : ℝ} (hp : 0<p) (hy : 0≤y
       Finset.sum_le_sum_of_subset_of_nonneg hsub (fun k hk hk'=>gaussianVector_nonneg _ _ _)
     _ = ∏i,∑n∈D i,gaussian p y n := (Finset.prod_univ_sum D (fun _ n=>gaussian p y n)).symm
     _ ≤ ∏_i : Fin d,gaussianBound p := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro i hi
         exact Finset.sum_nonneg (fun n hn=>(Real.exp_pos _).le)
       · intro i hi

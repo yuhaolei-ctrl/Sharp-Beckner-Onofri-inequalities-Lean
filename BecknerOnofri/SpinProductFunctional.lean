@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinProductEntropy
-import BecknerOnofri.SpinProductMoments
+module
+
+public import BecknerOnofri.SpinProductEntropy
+public import BecknerOnofri.SpinProductMoments
+
+@[expose] public section
 
 /-! The exact product-law functional and the source's quartic baseline. -/
 noncomputable section

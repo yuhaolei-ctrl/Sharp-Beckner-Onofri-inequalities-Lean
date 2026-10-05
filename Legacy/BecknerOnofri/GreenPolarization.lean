@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.TorusHeatPolarization
-import Legacy.TorusEndpoint.GreenHeatEnergy
+module
+
+public import Legacy.BecknerOnofri.TorusHeatPolarization
+public import Legacy.TorusEndpoint.GreenHeatEnergy
+
+@[expose] public section
 
 /-! Actual heat pairings, their full Mellin integral, and unconditional Green-energy polarization. -/
 noncomputable section

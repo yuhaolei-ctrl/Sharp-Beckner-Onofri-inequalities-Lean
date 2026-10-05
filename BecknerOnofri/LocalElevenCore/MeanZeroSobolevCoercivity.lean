@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.MeanZeroSobolevCoercivity
-import BecknerOnofri.LocalElevenCore.ComplementSobolevCoercivity
-import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.MeanZeroSobolevCoercivity
+public import BecknerOnofri.LocalElevenCore.ComplementSobolevCoercivity
+public import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
+
+@[expose] public section
 
 /-! Critical physical Sobolev norm is controlled by energy on the entire
 mean-zero domain, including the full first shell. -/

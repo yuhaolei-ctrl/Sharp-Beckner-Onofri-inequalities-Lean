@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ChebyshevProfileDefs
-import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
-import Mathlib.Analysis.Calculus.ContDiff.Bounds
+module
+
+public import Legacy.BecknerOnofri.ChebyshevProfileDefs
+public import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
+public import Mathlib.Analysis.Calculus.ContDiff.Bounds
+
+@[expose] public section
 
 /-! Actual tensor-Chebyshev derivative bounds and smoothness of the profile on
 the entire closed cube. No analytic neighborhood extension is asserted. -/
@@ -78,7 +82,7 @@ theorem tensor_derivative_bound {d : ℕ} (k : Frequency d) (m : ℕ)
   apply mul_le_mul_of_nonneg_left _ (by positivity)
   calc
     _ ≤ ∏ _ : Fin d, radialWeight (2*m) k := by
-      apply Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+      apply Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
       intro i _
       apply (coordinate_derivative_bound k i ((p : Multiset (Fin d)).count i) hz).trans
       apply pow_le_pow_right₀ (by linarith [frequencyRadius_nonneg k])

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailDiscreteLayers
-import Mathlib.Data.Finset.Max
+module
+
+public import BecknerOnofri.EntropyTailDiscreteLayers
+public import Mathlib.Data.Finset.Max
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

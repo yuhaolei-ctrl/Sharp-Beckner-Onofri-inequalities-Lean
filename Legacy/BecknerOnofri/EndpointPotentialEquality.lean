@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.EndpointOnofri
+module
+
+public import Legacy.BecknerOnofri.EndpointOnofri
+
+@[expose] public section
 
 /-! Exact transfer of density endpoint rigidity to the potential equality
 classification. Density rigidity is kept explicit, since it is false in the

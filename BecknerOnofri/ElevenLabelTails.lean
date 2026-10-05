@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenCoordinateTail
-import BecknerOnofri.ElevenLabelSeries
-import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+module
+
+public import BecknerOnofri.ElevenCoordinateTail
+public import BecknerOnofri.ElevenLabelSeries
+public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set Filter

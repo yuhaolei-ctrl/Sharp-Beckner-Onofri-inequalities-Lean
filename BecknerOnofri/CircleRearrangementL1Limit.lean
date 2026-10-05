@@ -1,8 +1,12 @@
-import BecknerOnofri.CircleLipschitzRearrangement
-import BecknerOnofri.LipschitzL1Sequence
-import BecknerOnofri.L1DistanceLimits
-import BecknerOnofri.DistributionJointL1Limit
-import BecknerOnofri.DistributionAERadialUniqueness
+module
+
+public import BecknerOnofri.CircleLipschitzRearrangement
+public import BecknerOnofri.LipschitzL1Sequence
+public import BecknerOnofri.L1DistanceLimits
+public import BecknerOnofri.DistributionJointL1Limit
+public import BecknerOnofri.DistributionAERadialUniqueness
+
+@[expose] public section
 
 /-! The unique L1 extension of the genuine Lipschitz circle rearrangement.
 Its distribution and radial antitonicity are proved from actual limits. -/

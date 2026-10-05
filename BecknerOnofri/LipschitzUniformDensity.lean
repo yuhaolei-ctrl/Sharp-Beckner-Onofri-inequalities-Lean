@@ -1,5 +1,9 @@
-import Mathlib.Topology.ContinuousMap.StoneWeierstrass
-import Mathlib.Topology.MetricSpace.Lipschitz
+module
+
+public import Mathlib.Topology.ContinuousMap.StoneWeierstrass
+public import Mathlib.Topology.MetricSpace.Lipschitz
+
+@[expose] public section
 
 /-! Uniform Lipschitz approximation on a compact metric space. The lattice
 Stone-Weierstrass argument uses affine distance functions as separators. -/

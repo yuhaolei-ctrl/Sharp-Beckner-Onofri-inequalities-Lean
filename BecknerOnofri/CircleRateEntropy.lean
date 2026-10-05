@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselInverse
-import Legacy.TorusEndpoint.EntropyVariational
+module
+
+public import BecknerOnofri.CircleBesselInverse
+public import Legacy.TorusEndpoint.EntropyVariational
+
+@[expose] public section
 
 /-! The actual Gibbs variational step in the circle comparison: every
 finite-entropy density with first cosine moment t has entropy at least I(t). -/

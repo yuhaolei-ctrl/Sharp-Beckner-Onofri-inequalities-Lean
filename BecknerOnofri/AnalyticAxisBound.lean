@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Analytic.Constructions
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
+module
+
+public import Mathlib.Analysis.Analytic.Constructions
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+
+@[expose] public section
 
 /-! An analytic map with zero first derivative and vanishing on a parameter
 axis has the mixed quadratic bound needed in complement reduction. -/

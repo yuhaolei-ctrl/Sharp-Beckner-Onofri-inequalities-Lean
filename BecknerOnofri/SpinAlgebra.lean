@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinDefinitions
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.SpinDefinitions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

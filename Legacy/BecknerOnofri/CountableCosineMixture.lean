@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CosineMixture
-import Mathlib.Analysis.Normed.Group.FunctionSeries
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.BecknerOnofri.CosineMixture
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Genuine countable cosine mixtures under an explicit summable uniform majorant. -/
 noncomputable section
@@ -26,7 +30,7 @@ theorem cosinePower_le_zero (n : ℕ) (x : UnitAddCircle) :
 
 theorem tensor_le_zero {d : ℕ} (N : Fin d → ℕ) (x : Torus d) :
     tensor N x ≤ tensor N 0 :=
-  Finset.prod_le_prod (fun i _ => Legacy.D10.cosinePower_nonneg _ _)
+  Finset.prod_le_prod₀ (fun i _ => Legacy.D10.cosinePower_nonneg _ _)
     (fun i _ => cosinePower_le_zero _ _)
 
 @[simp] theorem tensor_zero_index {d : ℕ} (x : Torus d) :

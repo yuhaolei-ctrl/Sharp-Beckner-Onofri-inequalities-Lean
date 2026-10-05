@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarGammaBaseEnclosure
+module
+
+public import BecknerOnofri.ScalarGammaBaseEnclosure
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.ScalarCertificate

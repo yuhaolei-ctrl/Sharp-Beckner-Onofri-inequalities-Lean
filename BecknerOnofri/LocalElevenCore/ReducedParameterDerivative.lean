@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedParameterDerivative
-import BecknerOnofri.LocalElevenCore.ReducedEnergyGradient
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedParameterDerivative
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyGradient
+
+@[expose] public section
 
 /-! The actual parameter derivative of the physical energy on the implicit
 graph. Its proof differentiates the genuine projected Gibbs equation. -/

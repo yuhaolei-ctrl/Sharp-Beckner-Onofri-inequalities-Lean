@@ -1,6 +1,10 @@
-import Mathlib.Data.Int.Interval
-import Mathlib.Data.Fintype.Pi
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+module
+
+public import Mathlib.Data.Int.Interval
+public import Mathlib.Data.Fintype.Pi
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+@[expose] public section
 
 /-! Trusted finite Euclidean lattice-rectangle definitions. -/
 noncomputable section

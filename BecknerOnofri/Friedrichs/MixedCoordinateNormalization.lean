@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedCoordinateBasis
+module
+
+public import BecknerOnofri.Friedrichs.MixedCoordinateBasis
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

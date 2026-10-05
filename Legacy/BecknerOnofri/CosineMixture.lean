@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CosineFourier
-import Legacy.D10.BinomialCorrelated
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+module
+
+public import Legacy.BecknerOnofri.CosineFourier
+public import Legacy.D10.BinomialCorrelated
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+
+@[expose] public section
 
 /-! Actual finite correlated cosine-power mixtures on the unit-volume torus.
 These statements include normalization, entropy integrability, and Fourier

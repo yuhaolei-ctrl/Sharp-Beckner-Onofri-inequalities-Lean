@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatIntegerPanelCertificate
+module
+
+public import BecknerOnofri.EntropyHeatIntegerPanelCertificate
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate
 open ExpCertificate

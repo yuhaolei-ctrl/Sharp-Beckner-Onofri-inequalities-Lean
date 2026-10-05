@@ -1,7 +1,11 @@
-import BecknerOnofri.RawAttainment
-import BecknerOnofri.BesselIntegral
-import Legacy.BecknerOnofri.SubcriticalFourierVariation
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.RawAttainment
+public import BecknerOnofri.BesselIntegral
+public import Legacy.BecknerOnofri.SubcriticalFourierVariation
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Sharpness of the physical spectral coefficient from actual first-shell potentials. -/
 noncomputable section

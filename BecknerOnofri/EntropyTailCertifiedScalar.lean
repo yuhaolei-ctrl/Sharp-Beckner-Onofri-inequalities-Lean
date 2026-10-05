@@ -1,17 +1,21 @@
-import BecknerOnofri.EntropyHeatCertificate.Row00
-import BecknerOnofri.EntropyHeatCertificate.Row01
-import BecknerOnofri.EntropyHeatCertificate.Row02
-import BecknerOnofri.EntropyHeatCertificate.Row03
-import BecknerOnofri.EntropyHeatCertificate.Row04
-import BecknerOnofri.EntropyHeatCertificate.Row05
-import BecknerOnofri.EntropyHeatCertificate.Row06
-import BecknerOnofri.EntropyHeatCertificate.Row07
-import BecknerOnofri.EntropyHeatCertificate.Row08
-import BecknerOnofri.EntropyHeatCertificate.Row09
-import BecknerOnofri.EntropyHeatCertificate.Row10
-import BecknerOnofri.EntropyHeatCertificate.Row11
-import BecknerOnofri.EntropyHeatCertificate.Row12
-import BecknerOnofri.EntropyTailTwo
+module
+
+public import BecknerOnofri.EntropyHeatCertificate.Row00
+public import BecknerOnofri.EntropyHeatCertificate.Row01
+public import BecknerOnofri.EntropyHeatCertificate.Row02
+public import BecknerOnofri.EntropyHeatCertificate.Row03
+public import BecknerOnofri.EntropyHeatCertificate.Row04
+public import BecknerOnofri.EntropyHeatCertificate.Row05
+public import BecknerOnofri.EntropyHeatCertificate.Row06
+public import BecknerOnofri.EntropyHeatCertificate.Row07
+public import BecknerOnofri.EntropyHeatCertificate.Row08
+public import BecknerOnofri.EntropyHeatCertificate.Row09
+public import BecknerOnofri.EntropyHeatCertificate.Row10
+public import BecknerOnofri.EntropyHeatCertificate.Row11
+public import BecknerOnofri.EntropyHeatCertificate.Row12
+public import BecknerOnofri.EntropyTailTwo
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.EntropyTail

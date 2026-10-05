@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.FiniteMixtureEndpoint
-import Legacy.BecknerOnofri.CosineMixtureApproximation
-import Legacy.BecknerOnofri.PositiveCosineRepresentation
+module
+
+public import Legacy.BecknerOnofri.FiniteMixtureEndpoint
+public import Legacy.BecknerOnofri.CosineMixtureApproximation
+public import Legacy.BecknerOnofri.PositiveCosineRepresentation
+
+@[expose] public section
 
 /-! The endpoint for countable cosine mixtures with a summable uniform
 majorant, and for normalized densities given by summable positive cosine

@@ -1,4 +1,8 @@
-import BecknerOnofri.DistributionMonotoneUniqueness
+module
+
+public import BecknerOnofri.DistributionMonotoneUniqueness
+
+@[expose] public section
 
 /-! A representative-independent characterization of symmetric decreasing
 L1 functions: antitonicity in radius on a set of full measure. -/

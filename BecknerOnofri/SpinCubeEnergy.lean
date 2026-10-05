@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinCubeFourier
-import BecknerOnofri.CubeShellCounting
+module
+
+public import BecknerOnofri.SpinCubeFourier
+public import BecknerOnofri.CubeShellCounting
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

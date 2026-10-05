@@ -1,5 +1,9 @@
-import BecknerOnofri.Definitions
-import BecknerOnofri.CirclePoissonDefinitions
+module
+
+public import BecknerOnofri.Definitions
+public import BecknerOnofri.CirclePoissonDefinitions
+
+@[expose] public section
 
 /-! The actual circle Poisson convolution on the one-dimensional product torus.
 At time zero it is the identity; analytic assertions concern positive times. -/

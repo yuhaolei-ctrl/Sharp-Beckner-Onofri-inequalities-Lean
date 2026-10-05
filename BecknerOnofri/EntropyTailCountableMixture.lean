@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailMixtureBudget
-import BecknerOnofri.CountableMixtureTransfer
+module
+
+public import BecknerOnofri.EntropyTailMixtureBudget
+public import BecknerOnofri.CountableMixtureTransfer
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

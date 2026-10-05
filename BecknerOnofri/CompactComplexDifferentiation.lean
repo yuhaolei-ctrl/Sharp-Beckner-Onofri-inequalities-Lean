@@ -1,5 +1,9 @@
-import BecknerOnofri.CompactParameterDifferentiation
-import Mathlib.Analysis.Complex.Basic
+module
+
+public import BecknerOnofri.CompactParameterDifferentiation
+public import Mathlib.Analysis.Complex.Basic
+
+@[expose] public section
 
 /-! Differentiation under a complex-valued compact parameter integral.
 The domination is derived from joint continuity, rather than postulated. -/

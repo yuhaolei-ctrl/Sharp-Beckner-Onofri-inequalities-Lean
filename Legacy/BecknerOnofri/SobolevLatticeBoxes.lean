@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenMultiplierSummability
-import Mathlib.Data.Fintype.Pi
-import Mathlib.Data.Int.Interval
+module
+
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+public import Mathlib.Data.Fintype.Pi
+public import Mathlib.Data.Int.Interval
+
+@[expose] public section
 
 /-! Finite coordinate boxes, independent of low-dimensional polynomial certificates. -/
 

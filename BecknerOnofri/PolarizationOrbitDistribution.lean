@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationL1Properties
-import BecknerOnofri.DistributionLimit
+module
+
+public import BecknerOnofri.PolarizationL1Properties
+public import BecknerOnofri.DistributionLimit
+
+@[expose] public section
 
 /-! Equimeasurability and entropy preservation in the closure of the genuine
 finite polarization orbit. Existence and symmetry of a canonical rearranged

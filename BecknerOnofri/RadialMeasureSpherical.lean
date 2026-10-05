@@ -1,7 +1,11 @@
-import BecknerOnofri.RadialMeasureJacobian
-import Mathlib.MeasureTheory.Constructions.HaarToSphere
-import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
-import Mathlib.MeasureTheory.Function.JacobianOneDim
+module
+
+public import BecknerOnofri.RadialMeasureJacobian
+public import Mathlib.MeasureTheory.Constructions.HaarToSphere
+public import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
+public import Mathlib.MeasureTheory.Function.JacobianOneDim
+
+@[expose] public section
 
 /-! Spherical integration with the exact twelve-dimensional squared-radius constant. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleOuterWeighted
+module
+
+public import BecknerOnofri.CircleOuterWeighted
+
+@[expose] public section
 
 /-! A normalized positive even circle density with one absolutely summable
 weighted Fourier moment of its logarithm has the actual real Hardy factor and

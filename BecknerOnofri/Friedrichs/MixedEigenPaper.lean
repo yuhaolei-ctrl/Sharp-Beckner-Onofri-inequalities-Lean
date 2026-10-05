@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedEigenStatementDefinitions
-import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
+module
+
+public import BecknerOnofri.Friedrichs.MixedEigenStatementDefinitions
+public import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

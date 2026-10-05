@@ -1,5 +1,9 @@
-import BecknerOnofri.MarginalIntegrablePairing
-import Mathlib.MeasureTheory.Measure.Haar.Unique
+module
+
+public import BecknerOnofri.MarginalIntegrablePairing
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+
+@[expose] public section
 
 /-! A singular integrable circle kernel pairs with a joint density only
 through its actual one-coordinate marginal. -/

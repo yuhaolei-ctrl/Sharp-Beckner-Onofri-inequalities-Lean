@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleGammaDefinitions
-import BecknerOnofri.CircleBesselComparison
+module
+
+public import BecknerOnofri.CircleGammaDefinitions
+public import BecknerOnofri.CircleBesselComparison
+
+@[expose] public section
 
 /-! Existence and uniqueness of the actual inverse Bessel mean throughout
 0≤t<1. The Riccati equation excludes a range bounded below one. -/

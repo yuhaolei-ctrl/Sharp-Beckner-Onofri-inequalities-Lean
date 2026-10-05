@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSecondOrderSupport
+module
+
+public import BecknerOnofri.SpinSecondOrderSupport
+
+@[expose] public section
 
 /-! The second-order support estimate on the complete feasible simplex,
 including zero coordinates at the target endpoint. -/

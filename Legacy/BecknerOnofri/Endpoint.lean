@@ -1,6 +1,10 @@
-import Legacy.D10.CircleEntropy
-import Legacy.TorusEndpoint.EndpointSharpness
-import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+module
+
+public import Legacy.D10.CircleEntropy
+public import Legacy.TorusEndpoint.EndpointSharpness
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+
+@[expose] public section
 
 /-!
 Actual Fourier endpoint statements, with summability included. The general

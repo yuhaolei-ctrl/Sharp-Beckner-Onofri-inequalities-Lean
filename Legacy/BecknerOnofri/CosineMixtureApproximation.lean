@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CountableCosineMixture
-import Legacy.BecknerOnofri.UniformDensityLimits
+module
+
+public import Legacy.BecknerOnofri.CountableCosineMixture
+public import Legacy.BecknerOnofri.UniformDensityLimits
+
+@[expose] public section
 
 /-! Strictly positive finite normalized mixtures approximating an actual
 countable mixture with summable uniform majorant. -/

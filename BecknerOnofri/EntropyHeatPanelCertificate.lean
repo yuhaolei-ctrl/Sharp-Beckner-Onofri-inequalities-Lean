@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatRationalEnclosure
-import BecknerOnofri.EntropyCertifiedExp
+module
+
+public import BecknerOnofri.EntropyHeatRationalEnclosure
+public import BecknerOnofri.EntropyCertifiedExp
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate
 open ExpCertificate

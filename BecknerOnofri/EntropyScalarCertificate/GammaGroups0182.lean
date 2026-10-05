@@ -1,12 +1,16 @@
-import BecknerOnofri.EntropyScalarCertificate.Bessel0227
-import BecknerOnofri.EntropyScalarCertificate.Bessel0228
-import BecknerOnofri.EntropyScalarCertificate.Bessel0602
-import BecknerOnofri.EntropyScalarCertificate.Bessel0603
-import BecknerOnofri.EntropyScalarCertificate.Brackets0091
-import BecknerOnofri.EntropyScalarCertificate.Logs0182
-import BecknerOnofri.ScalarElementaryComposition
-import BecknerOnofri.ScalarGammaEnclosure
-import BecknerOnofri.ScalarLogBesselEndpoints
+module
+
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0227
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0228
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0602
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0603
+public import BecknerOnofri.EntropyScalarCertificate.Brackets0091
+public import BecknerOnofri.EntropyScalarCertificate.Logs0182
+public import BecknerOnofri.ScalarElementaryComposition
+public import BecknerOnofri.ScalarGammaEnclosure
+public import BecknerOnofri.ScalarLogBesselEndpoints
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.GammaPanel1456
 open EntropyLogCertificate CircleScalar
 set_option maxRecDepth 100000

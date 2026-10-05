@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarBesselRounded
-import BecknerOnofri.EntropyExpInteger
+module
+
+public import BecknerOnofri.ScalarBesselRounded
+public import BecknerOnofri.EntropyExpInteger
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open EntropyTail.ExpCertificate

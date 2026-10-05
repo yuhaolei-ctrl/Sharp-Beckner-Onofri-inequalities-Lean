@@ -1,4 +1,8 @@
-import Legacy.D10.Binomial
+module
+
+public import Legacy.D10.Binomial
+
+@[expose] public section
 
 /-! # The hypergeometric mixing weights for normalized cosine powers -/
 

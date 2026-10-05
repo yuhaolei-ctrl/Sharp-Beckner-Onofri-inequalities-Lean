@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleVonMisesComparison
-import Mathlib.Analysis.Convex.Deriv
+module
+
+public import BecknerOnofri.CircleVonMisesComparison
+public import Mathlib.Analysis.Convex.Deriv
+
+@[expose] public section
 
 /-! The three convex polynomial tests and their exact cosine identities. -/
 noncomputable section

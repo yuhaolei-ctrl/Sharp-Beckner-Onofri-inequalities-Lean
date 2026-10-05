@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyLogHorner
-import BecknerOnofri.EntropyExpInteger
+module
+
+public import BecknerOnofri.EntropyLogHorner
+public import BecknerOnofri.EntropyExpInteger
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyLogCertificate
 open EntropyTail.ExpCertificate

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.WeightedWiener
+module
+
+public import Legacy.BecknerOnofri.WeightedWiener
+
+@[expose] public section
 
 /-! Exact quadratic tails in a normalized weighted Fourier Wiener algebra. -/
 noncomputable section

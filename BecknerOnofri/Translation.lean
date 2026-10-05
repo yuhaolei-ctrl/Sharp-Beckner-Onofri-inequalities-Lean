@@ -1,6 +1,10 @@
-import BecknerOnofri.BranchDefinitions
-import Mathlib.MeasureTheory.Group.Integral
-import Mathlib.MeasureTheory.Group.LIntegral
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Mathlib.MeasureTheory.Group.Integral
+public import Mathlib.MeasureTheory.Group.LIntegral
+
+@[expose] public section
 
 /-! Actual Haar translation identities for the trusted raw function definitions. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ComplexFirstShellMoments
-import BecknerOnofri.LocalElevenCore.QuadraticSlavingBridge
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ComplexFirstShellMoments
+public import BecknerOnofri.LocalElevenCore.QuadraticSlavingBridge
+
+@[expose] public section
 
 /-! Exact second, third and fourth moments of the full complex-coordinate first shell. -/
 noncomputable section

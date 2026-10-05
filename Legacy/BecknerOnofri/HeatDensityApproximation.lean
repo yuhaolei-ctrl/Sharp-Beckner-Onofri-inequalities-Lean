@@ -1,9 +1,13 @@
-import Legacy.BecknerOnofri.Endpoint
-import Legacy.TorusEndpoint.TorusHeatBounds
-import Legacy.TorusEndpoint.GreenHeatRegularization
-import Legacy.TorusEndpoint.EntropyVariational
-import Mathlib.Analysis.Convolution
-import Mathlib.MeasureTheory.Measure.Haar.Unique
+module
+
+public import Legacy.BecknerOnofri.Endpoint
+public import Legacy.TorusEndpoint.TorusHeatBounds
+public import Legacy.TorusEndpoint.GreenHeatRegularization
+public import Legacy.TorusEndpoint.EntropyVariational
+public import Mathlib.Analysis.Convolution
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+
+@[expose] public section
 
 /-! Actual torus heat regularization of arbitrary probability densities. -/
 

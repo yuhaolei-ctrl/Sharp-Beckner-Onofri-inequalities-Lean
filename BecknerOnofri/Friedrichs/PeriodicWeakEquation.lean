@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.PeriodicAngularWeak
-import Mathlib.Analysis.Calculus.Deriv.Shift
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicAngularWeak
+public import Mathlib.Analysis.Calculus.Deriv.Shift
+
+@[expose] public section
 
 /-! Periodic integration by parts for arbitrary smooth profiles, including
 odd modes. This does not use an evenness or endpoint-derivative-zero premise. -/

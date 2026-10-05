@@ -1,5 +1,9 @@
-import BecknerOnofri.LatticeMaximizerSupport
-import BecknerOnofri.GinibreStrictSupermodularity
+module
+
+public import BecknerOnofri.LatticeMaximizerSupport
+public import BecknerOnofri.GinibreStrictSupermodularity
+
+@[expose] public section
 
 /-! An actual maximizer is fixed by every verified involutive coefficient
 symmetry. All support, maximum/minimum, and strict-covariance arguments are

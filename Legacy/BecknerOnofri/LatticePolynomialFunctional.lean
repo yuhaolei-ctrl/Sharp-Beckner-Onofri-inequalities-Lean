@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.FiniteScalarSemantics
-import Legacy.BecknerOnofri.GaussianLattice
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import Legacy.BecknerOnofri.FiniteScalarSemantics
+public import Legacy.BecknerOnofri.GaussianLattice
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-! An additive coefficient functional with the zero frequency removed.
 The radial weight is not multiplicative; tensor powers must be expanded

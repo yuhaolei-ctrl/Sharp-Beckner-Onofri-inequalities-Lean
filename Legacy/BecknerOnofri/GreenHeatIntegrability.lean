@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.GreenHeatMeasurable
-import Legacy.BecknerOnofri.TorusLogIntegrability
+module
+
+public import Legacy.BecknerOnofri.GreenHeatMeasurable
+public import Legacy.BecknerOnofri.TorusLogIntegrability
+
+@[expose] public section
 
 /-! Exponential moments and L2 membership of the actual heat-Mellin kernel.
 Identification with the Fourier-constructed Green kernel is kept separate.

@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticLinearFactor
+module
+
+public import BecknerOnofri.AnalyticLinearFactor
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

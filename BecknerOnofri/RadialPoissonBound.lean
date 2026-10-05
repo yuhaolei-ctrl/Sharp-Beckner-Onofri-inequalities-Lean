@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialPoissonMinimum
+module
+
+public import BecknerOnofri.RadialPoissonMinimum
+
+@[expose] public section
 
 /-! Complete analytic upper bound for all nonzero diagonal Poisson images. -/
 noncomputable section

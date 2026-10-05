@@ -1,9 +1,13 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.LinearAlgebra.Eigenspace.Basic
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Data.Real.Basic
+public import Mathlib.LinearAlgebra.Eigenspace.Basic
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-! Exact eigenspaces and their dimensions for the permutation-invariant
 active-amplitude matrix. The analytic application must identify its actual

@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenScalarTail
-import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+module
+
+public import BecknerOnofri.ElevenScalarTail
+public import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+
+@[expose] public section
 
 /-! Transfer of the actual eleven-dimensional scalar bound to positive cosine
 mixtures, by the same hypergeometric representation as the manuscript. -/

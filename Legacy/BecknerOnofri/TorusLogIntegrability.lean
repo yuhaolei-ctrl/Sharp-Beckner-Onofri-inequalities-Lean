@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.HeatDensityApproximation
-import Mathlib.Analysis.SpecialFunctions.Pow.Integral
+module
+
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+public import Mathlib.Analysis.SpecialFunctions.Pow.Integral
+
+@[expose] public section
 
 /-! Integrability of a logarithmic singularity on the actual Haar torus.
 The quotient map from a centered fundamental cell is proved measure preserving.

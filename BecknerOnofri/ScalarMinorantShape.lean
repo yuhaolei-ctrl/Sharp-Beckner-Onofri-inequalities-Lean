@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyScalarCertificate.Minorant
-import Mathlib.Analysis.Convex.Jensen
+module
+
+public import BecknerOnofri.EntropyScalarCertificate.Minorant
+public import Mathlib.Analysis.Convex.Jensen
+
+@[expose] public section
 
 /-! Shape properties of the explicit witness in the manuscript's entropy
 proposition: nonnegative, increasing on [0,1], continuous, and convex. -/

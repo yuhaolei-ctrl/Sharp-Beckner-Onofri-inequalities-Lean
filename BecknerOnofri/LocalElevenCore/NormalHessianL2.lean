@@ -1,10 +1,14 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.NormalHessianL2
-import BecknerOnofri.LocalElevenCore.ComplementSobolevCoercivity
-import BecknerOnofri.RawAttainment
-import Legacy.BecknerOnofri.BoundedL2Multiplier
-import Legacy.BecknerOnofri.SobolevScalar
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.NormalHessianL2
+public import BecknerOnofri.LocalElevenCore.ComplementSobolevCoercivity
+public import BecknerOnofri.RawAttainment
+public import Legacy.BecknerOnofri.BoundedL2Multiplier
+public import Legacy.BecknerOnofri.SobolevScalar
+
+@[expose] public section
 
 /-! Continuous Gibbs covariance and tangent orthogonality on the actual L²
 space used by compact critical Sobolev balls. -/

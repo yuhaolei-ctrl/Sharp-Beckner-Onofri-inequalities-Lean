@@ -1,4 +1,8 @@
-import BecknerOnofri.SpatialThetaJacobiNormalization
+module
+
+public import BecknerOnofri.SpatialThetaJacobiNormalization
+
+@[expose] public section
 
 /-! The actual spatial-theta diagonal comparison used by the dimension-twelve
 radial certificate. All infinite products and Fourier identities are proved. -/

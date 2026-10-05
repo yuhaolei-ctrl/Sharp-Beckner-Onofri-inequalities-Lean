@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.MixedExponentialPolynomial
-import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+module
+
+public import Legacy.BecknerOnofri.MixedExponentialPolynomial
+public import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+
+@[expose] public section
 
 /-! The actual mixed partials of a normalized exponential. -/
 noncomputable section

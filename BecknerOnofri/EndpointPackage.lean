@@ -1,5 +1,9 @@
-import BecknerOnofri.EndpointRigidity.RawDensity
-import BecknerOnofri.PotentialRigidity
+module
+
+public import BecknerOnofri.EndpointRigidity.RawDensity
+public import BecknerOnofri.PotentialRigidity
+
+@[expose] public section
 
 /-! All endpoint assertions of Theorem 1.3, reduced to the two exact d=12
 mixture base statements. These premises are deliberately visible; this is not

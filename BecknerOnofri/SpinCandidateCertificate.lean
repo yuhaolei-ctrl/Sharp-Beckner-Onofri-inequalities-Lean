@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinRationalMatrix
-import BecknerOnofri.EntropyCheckedLog
+module
+
+public import BecknerOnofri.SpinRationalMatrix
+public import BecknerOnofri.EntropyCheckedLog
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.Spin
 open scoped BigOperators

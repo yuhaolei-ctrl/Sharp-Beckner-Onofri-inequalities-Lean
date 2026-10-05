@@ -1,6 +1,10 @@
-import BecknerOnofri.StudentFourier
-import BecknerOnofri.HalfIntegerLaplace
-import BecknerOnofri.ElevenEuclideanMass
+module
+
+public import BecknerOnofri.StudentFourier
+public import BecknerOnofri.HalfIntegerLaplace
+public import BecknerOnofri.ElevenEuclideanMass
+
+@[expose] public section
 
 /-! The Fourier transform of the actual normalized, scaled eleven-dimensional
 profile. Gamma subordination and the half-integer integral give precisely the

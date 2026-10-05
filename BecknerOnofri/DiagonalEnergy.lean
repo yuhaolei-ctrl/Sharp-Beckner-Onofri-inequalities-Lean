@@ -1,5 +1,9 @@
-import BecknerOnofri.RealDiagonalReduction
-import BecknerOnofri.ReducedEnergyGradient
+module
+
+public import BecknerOnofri.RealDiagonalReduction
+public import BecknerOnofri.ReducedEnergyGradient
+
+@[expose] public section
 
 /-! The actual physical energy along the symmetric real diagonal, with its
 exact scalar variational equation. -/

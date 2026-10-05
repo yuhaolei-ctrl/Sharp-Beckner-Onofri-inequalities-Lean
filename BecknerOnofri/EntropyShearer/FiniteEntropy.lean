@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyShearer.AllSubsets
-import BecknerOnofri.EntropyShearer.L1Contraction
-import BecknerOnofri.EntropyShearer.EntropyFatou
+module
+
+public import BecknerOnofri.EntropyShearer.AllSubsets
+public import BecknerOnofri.EntropyShearer.L1Contraction
+public import BecknerOnofri.EntropyShearer.EntropyFatou
+
+@[expose] public section
 
 /-! Shearer's inequality on the full finite-entropy probability-density domain.
 Heat regularization, actual Haar marginalization, and Fatou's lemma remove

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GreenRoughEnergy
+module
+
+public import Legacy.BecknerOnofri.GreenRoughEnergy
+
+@[expose] public section
 
 /-! Exponential Jensen for the actual Green convolution; all integrability is proved. -/
 noncomputable section

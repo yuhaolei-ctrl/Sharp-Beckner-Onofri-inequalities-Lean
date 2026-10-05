@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatEndpointBlocks
-import BecknerOnofri.EntropyHeatPanelChain
+module
+
+public import BecknerOnofri.EntropyHeatEndpointBlocks
+public import BecknerOnofri.EntropyHeatPanelChain
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

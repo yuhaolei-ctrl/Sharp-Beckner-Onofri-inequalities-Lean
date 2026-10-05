@@ -1,4 +1,8 @@
-import BecknerOnofri.WeightedExponentialTail
+module
+
+public import BecknerOnofri.WeightedExponentialTail
+
+@[expose] public section
 
 /-! Arbitrary Taylor tails in the actual weighted Fourier Wiener algebra. -/
 noncomputable section

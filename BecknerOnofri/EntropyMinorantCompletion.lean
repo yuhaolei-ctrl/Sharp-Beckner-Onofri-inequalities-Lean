@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropySpinEndpoint
-import BecknerOnofri.SpinCertifiedGlobal
-import BecknerOnofri.NumericalBranchReduction
+module
+
+public import BecknerOnofri.EntropySpinEndpoint
+public import BecknerOnofri.SpinCertifiedGlobal
+public import BecknerOnofri.NumericalBranchReduction
+
+@[expose] public section
 
 /-! All remaining original assertions reduce to the one explicit scalar
 minorant obligation for the now fixed, certified convex spin function. The

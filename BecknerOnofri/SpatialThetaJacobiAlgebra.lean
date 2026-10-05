@@ -1,6 +1,10 @@
-import BecknerOnofri.SpatialThetaProduct
-import Mathlib.Algebra.MonoidAlgebra.Basic
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import BecknerOnofri.SpatialThetaProduct
+public import Mathlib.Algebra.MonoidAlgebra.Basic
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 /-! Fourier coefficients of finite Laurent polynomials on a circle of arbitrary
 nonzero complex radius. This is the algebraic coefficient-scaling step in the

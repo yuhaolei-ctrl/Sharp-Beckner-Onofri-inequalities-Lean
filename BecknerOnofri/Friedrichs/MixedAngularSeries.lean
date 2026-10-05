@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedSpectralPowers
-import Legacy.BecknerOnofri.AngularMixedL2
-import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpectralPowers
+public import Legacy.BecknerOnofri.AngularMixedL2
+public import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+
+@[expose] public section
 
 /-! Actual L2 convergence of the angular mixed-derivative series and its
 identification with the genuine differentiated profile. -/

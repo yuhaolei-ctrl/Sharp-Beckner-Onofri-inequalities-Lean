@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenHilbertContinuous
-import BecknerOnofri.ContinuousOptimizers
+module
+
+public import BecknerOnofri.GreenHilbertContinuous
+public import BecknerOnofri.ContinuousOptimizers
+
+@[expose] public section
 
 /-! Continuous representatives and the actual sup-norm bound for H^d on
 T^d. This bridges the manuscript's H11 neighborhood to the C-space IFT. -/

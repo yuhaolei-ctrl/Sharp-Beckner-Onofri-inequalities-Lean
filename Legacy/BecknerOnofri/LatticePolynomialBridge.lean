@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.LatticePolynomialSigned
+module
+
+public import Legacy.BecknerOnofri.LatticePolynomialSigned
+
+@[expose] public section
 
 /-! Exact equality of the full radial polynomial energy and the genuine
 integer lattice sum. All dimensions and all indices, including zero, are

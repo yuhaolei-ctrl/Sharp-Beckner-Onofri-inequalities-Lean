@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenLabelDefinitions
+module
+
+public import BecknerOnofri.ElevenLabelDefinitions
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

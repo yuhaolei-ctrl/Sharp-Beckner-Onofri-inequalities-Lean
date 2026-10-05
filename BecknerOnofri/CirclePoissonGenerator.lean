@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusFlow
+module
+
+public import BecknerOnofri.CircleTorusFlow
+
+@[expose] public section
 
 /-! The actual Haar Poisson convolution satisfies ∂ₛpₛ = -Λpₛ for positive
 times. Its derivative is obtained from uniformly summable Fourier derivatives. -/

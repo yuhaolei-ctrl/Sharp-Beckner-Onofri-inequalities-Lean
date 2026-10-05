@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.Endpoint
-import Legacy.TorusEndpoint.EntropyVariational
+module
+
+public import Legacy.BecknerOnofri.Endpoint
+public import Legacy.TorusEndpoint.EntropyVariational
+
+@[expose] public section
 
 /-! Rough entropy control by the actual normalized Green kernel.
 The exponential integrability of that actual kernel is an explicit intermediate input.

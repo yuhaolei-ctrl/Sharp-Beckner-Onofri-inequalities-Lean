@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarConvexMinorant
+module
+
+public import BecknerOnofri.ScalarConvexMinorant
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set

@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Calculus.ImplicitContDiff
-import Mathlib.Analysis.Analytic.Constructions
+module
+
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+public import Mathlib.Analysis.Analytic.Constructions
+
+@[expose] public section
 
 /-! Analytic complement equation with an actual invertible linear part.
 This lemma constructs the local implicit map; applying it to the torus still

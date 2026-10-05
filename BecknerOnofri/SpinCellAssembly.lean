@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinCandidateInterval
+module
+
+public import BecknerOnofri.SpinCandidateInterval
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.Spin
 open Set

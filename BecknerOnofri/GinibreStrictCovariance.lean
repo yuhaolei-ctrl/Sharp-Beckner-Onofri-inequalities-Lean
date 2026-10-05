@@ -1,6 +1,10 @@
-import BecknerOnofri.GinibreStrictKernel
-import BecknerOnofri.GridGibbsComparison
-import BecknerOnofri.GinibreNormMonotonicity
+module
+
+public import BecknerOnofri.GinibreStrictKernel
+public import BecknerOnofri.GridGibbsComparison
+public import BecknerOnofri.GinibreNormMonotonicity
+
+@[expose] public section
 
 /-! Quantitative strict Ginibre covariance. A positive difference-frequency
 coefficient contributes a strictly positive first-order tensor-square term. -/

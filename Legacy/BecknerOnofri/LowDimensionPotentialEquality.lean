@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EndpointEqualityL2
-import Legacy.BecknerOnofri.EndpointPotentialEquality
+module
+
+public import Legacy.BecknerOnofri.EndpointEqualityL2
+public import Legacy.BecknerOnofri.EndpointPotentialEquality
+
+@[expose] public section
 
 /-! Unconditional equality classification for every real critical Sobolev
 potential in dimensions two through ten, in the manuscript normalization. -/

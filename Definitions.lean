@@ -1,8 +1,12 @@
-import PhysicalFractionalDefinitions
-import PeriodizationDefinitions
-import Mathlib.Analysis.Normed.Group.FunctionSeries
-import BecknerOnofri.ExtendedEntropyDefinitions
-import BecknerOnofri.Friedrichs.MixedSpectralPowers
+module
+
+public import PhysicalFractionalDefinitions
+public import PeriodizationDefinitions
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+public import BecknerOnofri.ExtendedEntropyDefinitions
+public import BecknerOnofri.Friedrichs.MixedSpectralPowers
+
+@[expose] public section
 
 /-! Definitions for the October 3 paper, separate from the frozen September 21 targets.
 The negative Sobolev energy is an extended nonnegative quantity; divergent

@@ -1,6 +1,10 @@
-import BecknerOnofri.LipschitzUniformDensity
-import BecknerOnofri.PolarizationUniformL1
-import Mathlib.MeasureTheory.Function.ContinuousMapDense
+module
+
+public import BecknerOnofri.LipschitzUniformDensity
+public import BecknerOnofri.PolarizationUniformL1
+public import Mathlib.MeasureTheory.Function.ContinuousMapDense
+
+@[expose] public section
 
 /-! Nonnegative Lipschitz approximation in the actual normalized Haar L1
 metric, for arbitrary nonnegative integrable torus functions. -/

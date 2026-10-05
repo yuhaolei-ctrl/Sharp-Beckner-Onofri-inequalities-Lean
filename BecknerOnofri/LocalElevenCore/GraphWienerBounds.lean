@@ -1,10 +1,14 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphWienerBounds
-import BecknerOnofri.LocalElevenCore.GraphSobolevBounds
-import BecknerOnofri.LocalElevenCore.GraphRegularity
-import BecknerOnofri.OnsetWienerBounds
-import BecknerOnofri.LocalElevenCore.WeightedExponentialRemainder
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphWienerBounds
+public import BecknerOnofri.LocalElevenCore.GraphSobolevBounds
+public import BecknerOnofri.LocalElevenCore.GraphRegularity
+public import BecknerOnofri.OnsetWienerBounds
+public import BecknerOnofri.LocalElevenCore.WeightedExponentialRemainder
+
+@[expose] public section
 
 /-! Quantitative polynomial Wiener bounds for the genuine complementary graph. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import BecknerOnofri.CoordinateOrbitCompact
-import BecknerOnofri.CircleLayerCakeIdentification
-import BecknerOnofri.CircleRearrangementDefinitions
+module
+
+public import BecknerOnofri.CoordinateOrbitCompact
+public import BecknerOnofri.CircleLayerCakeIdentification
+public import BecknerOnofri.CircleRearrangementDefinitions
+
+@[expose] public section
 
 /-! Identification of the one-coordinate compact orbit limit with the
 canonical layer-cake rearrangement, fiber by fiber. -/

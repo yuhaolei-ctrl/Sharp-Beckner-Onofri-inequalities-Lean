@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleRadialSuperlevels
-import Mathlib.MeasureTheory.Measure.Prod
-import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
+module
+
+public import BecknerOnofri.CircleRadialSuperlevels
+public import Mathlib.MeasureTheory.Measure.Prod
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
+
+@[expose] public section
 
 /-! The extended-nonnegative layer-cake representative of the circle
 rearrangement. Infinite values at null exceptional radii are allowed. -/

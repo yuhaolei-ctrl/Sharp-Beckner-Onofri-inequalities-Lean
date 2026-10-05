@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedFullEigenvectors
-import BecknerOnofri.Friedrichs.PeriodicTrigonometricTotality
-import Legacy.BecknerOnofri.JacobiCompleteness
+module
+
+public import BecknerOnofri.Friedrichs.MixedFullEigenvectors
+public import BecknerOnofri.Friedrichs.PeriodicTrigonometricTotality
+public import Legacy.BecknerOnofri.JacobiCompleteness
+
+@[expose] public section
 
 /-! Totality on each actual mixed coordinate measure, including both periodic parities. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.EntropyVariational
-import Legacy.BecknerOnofri.Endpoint
+module
+
+public import Legacy.TorusEndpoint.EntropyVariational
+public import Legacy.BecknerOnofri.Endpoint
+
+@[expose] public section
 
 /-! The equality case of the actual Gibbs variational inequality, with all
 integrability and normalization conditions explicit. -/

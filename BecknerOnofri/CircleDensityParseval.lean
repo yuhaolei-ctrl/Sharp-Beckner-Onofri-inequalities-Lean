@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleOuterParseval
+module
+
+public import BecknerOnofri.CircleOuterParseval
+
+@[expose] public section
 
 /-! Parseval for an actual even circle probability density, with its zero mode removed. -/
 noncomputable section

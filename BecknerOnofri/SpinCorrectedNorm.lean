@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinPolytopeBound
+module
+
+public import BecknerOnofri.SpinPolytopeBound
+
+@[expose] public section
 
 /-! Correcting arbitrary tangent vectors by the two explicit vectors from
 Lemma 5.18, and the resulting seminorm estimate. -/

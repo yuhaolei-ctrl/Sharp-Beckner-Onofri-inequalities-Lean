@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.AngularReducedKernel
-import BecknerOnofri.LocalElevenCore.GraphTranslationTangents
-import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.AngularReducedKernel
+public import BecknerOnofri.LocalElevenCore.GraphTranslationTangents
+public import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
+
+@[expose] public section
 
 /-! Exact translation directions lie in the actual reduced derivative kernel.
 These are differentiated torus symmetries, not zeros of a model polynomial. -/

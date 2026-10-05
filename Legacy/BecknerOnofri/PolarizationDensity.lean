@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationIntegral
+module
+
+public import Legacy.BecknerOnofri.PolarizationIntegral
+
+@[expose] public section
 
 /-! Polarization of actual Haar probability densities, with no additional normalization assumption. -/
 noncomputable section

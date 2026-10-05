@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousGibbs
-import Mathlib.Analysis.Asymptotics.Lemmas
-import Mathlib.Analysis.Normed.Operator.Asymptotics
+module
+
+public import BecknerOnofri.ContinuousGibbs
+public import Mathlib.Analysis.Asymptotics.Lemmas
+public import Mathlib.Analysis.Normed.Operator.Asymptotics
+
+@[expose] public section
 
 /-! The actual quadratic Taylor coefficient and cubic Banach-norm remainder
 of the normalized Gibbs map on continuous real torus potentials. -/

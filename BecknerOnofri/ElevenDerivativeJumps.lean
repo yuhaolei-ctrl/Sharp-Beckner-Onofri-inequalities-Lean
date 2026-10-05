@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenDefectCorner
-import BecknerOnofri.VariationalCurveConvexity
+module
+
+public import BecknerOnofri.ElevenDefectCorner
+public import BecknerOnofri.VariationalCurveConvexity
+
+@[expose] public section
 
 /-! Explicit one-sided derivative jumps in the coexistence proof. -/
 noncomputable section

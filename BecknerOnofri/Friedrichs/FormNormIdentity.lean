@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.SpatialFormDefinitions
-import BecknerOnofri.Friedrichs.SmoothCutoffApproximation
+module
+
+public import BecknerOnofri.Friedrichs.SpatialFormDefinitions
+public import BecknerOnofri.Friedrichs.SmoothCutoffApproximation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

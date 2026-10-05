@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! The actual uniform Haar density attains the spectral endpoint equality. -/
 

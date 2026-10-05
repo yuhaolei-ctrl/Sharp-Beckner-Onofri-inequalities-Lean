@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.SlavedGibbs
-import BecknerOnofri.LocalElevenCore.SlavedMoments
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.SlavedGibbs
+public import BecknerOnofri.LocalElevenCore.SlavedMoments
+
+@[expose] public section
 
 /-! Controlled Gibbs pairings and logarithmic moments on the actual graph. -/
 noncomputable section

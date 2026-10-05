@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.ProductL2Totality
-import BecknerOnofri.Friedrichs.MixedCoordinateTotality
+module
+
+public import BecknerOnofri.Friedrichs.ProductL2Totality
+public import BecknerOnofri.Friedrichs.MixedCoordinateTotality
+
+@[expose] public section
 
 /-! Completeness of all mixed sine/cosine--Jacobi products on the actual mixed measure. -/
 noncomputable section

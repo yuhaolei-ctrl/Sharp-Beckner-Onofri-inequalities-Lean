@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalHighEnergy
-import BecknerOnofri.LocalConstants
+module
+
+public import BecknerOnofri.LocalHighEnergy
+public import BecknerOnofri.LocalConstants
+
+@[expose] public section
 
 /-! Strict local negativity for the actual first-shell/higher-mode decomposition.
 The partition is the actual Haar integral; the higher energy is the genuine

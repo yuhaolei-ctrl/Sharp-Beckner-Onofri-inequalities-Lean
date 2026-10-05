@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import Legacy.BecknerOnofri.EntropyVariationalEquality
+module
+
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import Legacy.BecknerOnofri.EntropyVariationalEquality
+
+@[expose] public section
 
 /-! Conditional duality from the actual finite-entropy Endpoint statement to
 the sharp potential inequality. Exponential integrability is proved using

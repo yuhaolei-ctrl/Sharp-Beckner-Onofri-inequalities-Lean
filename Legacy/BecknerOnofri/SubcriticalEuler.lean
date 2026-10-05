@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SubcriticalFourierVariation
+module
+
+public import Legacy.BecknerOnofri.SubcriticalFourierVariation
+
+@[expose] public section
 
 /-! The Fourier Euler equation is derived from actual global maximality by real Fourier variations. -/
 noncomputable section

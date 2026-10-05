@@ -1,6 +1,10 @@
-import BecknerOnofri.GinibreMonotonicity
-import BecknerOnofri.GraphRegularity
-import Legacy.TorusEndpoint.GridAliasing
+module
+
+public import BecknerOnofri.GinibreMonotonicity
+public import BecknerOnofri.GraphRegularity
+public import Legacy.TorusEndpoint.GridAliasing
+
+@[expose] public section
 
 /-! Exact comparison of continuous and grid Gibbs expectations.
 Positive Fourier aliasing applies directly to the centered covariance density,

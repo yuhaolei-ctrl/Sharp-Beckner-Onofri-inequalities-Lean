@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ComplexReducedLocalMaximum
-import BecknerOnofri.LocalElevenCore.ComplementEnergyMaximum
+module
+
+public import BecknerOnofri.LocalElevenCore.ComplexReducedLocalMaximum
+public import BecknerOnofri.LocalElevenCore.ComplementEnergyMaximum
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

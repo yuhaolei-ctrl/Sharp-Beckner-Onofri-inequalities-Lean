@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleGammaActual
+module
+
+public import BecknerOnofri.CircleGammaActual
+
+@[expose] public section
 
 /-! The quantitative gamma bound for an actual normalized circle density
 with an increasing convex logarithmic cosine profile. Both the entropy

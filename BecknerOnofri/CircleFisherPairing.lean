@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusDerivative
+module
+
+public import BecknerOnofri.CircleTorusDerivative
+
+@[expose] public section
 
 /-! Parseval identifies the actual signed-derivative boundary pairing with
 weighted Hardy coefficient energy. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.DiagonalProfile
-import BecknerOnofri.LocalElevenCore.DiagonalAmplitude
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.DiagonalProfile
+public import BecknerOnofri.LocalElevenCore.DiagonalAmplitude
+
+@[expose] public section
 
 /-! The actual diagonal stationary profile in the trusted physical beta and
 translation notation, with a uniform C-norm remainder estimate. -/

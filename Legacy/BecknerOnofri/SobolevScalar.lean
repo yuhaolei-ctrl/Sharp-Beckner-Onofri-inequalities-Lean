@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+module
+
+public import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+
+@[expose] public section
 
 /-! Real scalar multiplication on the actual critical Sobolev class. -/
 namespace Legacy.BecknerOnofri.TorusSobolev

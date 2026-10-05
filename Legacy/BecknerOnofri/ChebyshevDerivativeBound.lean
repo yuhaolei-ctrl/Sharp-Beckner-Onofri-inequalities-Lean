@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiAngular
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev.RootsExtrema
+module
+
+public import Legacy.BecknerOnofri.JacobiAngular
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev.RootsExtrema
+
+@[expose] public section
 
 /-! Uniform bounds for the genuine derivatives of Chebyshev polynomials on the closed interval. -/
 noncomputable section

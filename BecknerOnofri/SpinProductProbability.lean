@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinProductDefinitions
-import BecknerOnofri.SpinAlgebra
+module
+
+public import BecknerOnofri.SpinProductDefinitions
+public import BecknerOnofri.SpinAlgebra
+
+@[expose] public section
 
 /-! Actual normalization, mean and feasibility of the product comparison law. -/
 noncomputable section

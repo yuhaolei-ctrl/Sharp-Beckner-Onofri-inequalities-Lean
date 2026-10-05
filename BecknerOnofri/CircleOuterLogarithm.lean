@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleOuterBoundary
-import Legacy.BecknerOnofri.WeightedWiener
-import Mathlib.MeasureTheory.Measure.Haar.Unique
+module
+
+public import BecknerOnofri.CircleOuterBoundary
+public import Legacy.BecknerOnofri.WeightedWiener
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+
+@[expose] public section
 
 /-! Reconstruction from the actual Fourier coefficients of a continuous even
 logarithm. Absolute summability is an explicit regularity premise here; it will

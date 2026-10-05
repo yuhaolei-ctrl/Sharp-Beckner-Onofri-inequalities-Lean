@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleGammaDefinitions
+module
+
+public import BecknerOnofri.CircleGammaDefinitions
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.CircleScalar
 /-- The source's J, obtained by discarding the nonnegative quadratic minimum. -/

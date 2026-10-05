@@ -1,5 +1,9 @@
-import Legacy.D10.BinomialReal
-import Legacy.TorusEndpoint.TorusFourier
+module
+
+public import Legacy.D10.BinomialReal
+public import Legacy.TorusEndpoint.TorusFourier
+
+@[expose] public section
 
 /-! # Actual normalized cosine powers on the unit circle -/
 

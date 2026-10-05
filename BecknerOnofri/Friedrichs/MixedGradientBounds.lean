@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedScalarCutoff
-import BecknerOnofri.Friedrichs.MixedCompactBounds
+module
+
+public import BecknerOnofri.Friedrichs.MixedScalarCutoff
+public import BecknerOnofri.Friedrichs.MixedCompactBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
@@ -47,7 +51,7 @@ lemma partialDerivative_productProfile_bound {d : ℕ} (f : Fin d → ℝ → �
     |partialDerivative i (productProfile f) x|≤∏ j,C j := by
   rw [partialDerivative_productProfile f hf,abs_mul,Finset.abs_prod]
   have hp : (∏ j∈Finset.univ.erase i,|f j (x j)|)≤∏ j∈Finset.univ.erase i,C j :=
-    Finset.prod_le_prod (fun j _ => abs_nonneg _) (fun j _ => hval j)
+    Finset.prod_le_prod₀ (fun j _ => abs_nonneg _) (fun j _ => hval j)
   calc
     _ ≤ (∏ j∈Finset.univ.erase i,C j)*C i :=
       mul_le_mul hp hder (abs_nonneg _) (Finset.prod_nonneg (fun j _ => hC j))

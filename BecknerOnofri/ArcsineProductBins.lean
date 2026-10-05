@@ -1,6 +1,10 @@
-import BecknerOnofri.ArcsineCircle
-import BecknerOnofri.Definitions
-import Mathlib.MeasureTheory.Integral.Bochner.Set
+module
+
+public import BecknerOnofri.ArcsineCircle
+public import BecknerOnofri.Definitions
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+
+@[expose] public section
 
 /-! Exact multidimensional sine-square bins and their product probabilities.
 These are statements about the genuine Haar torus, before numerical enclosure. -/

@@ -1,11 +1,15 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Tactic.IntervalCases
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Tactic.IntervalCases
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # The common tail for dimensions 3 through 10

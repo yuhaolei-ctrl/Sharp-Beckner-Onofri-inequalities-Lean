@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinPrefixDefinitions
-import BecknerOnofri.BinarySpinChannel
-import BecknerOnofri.ConditionalWeightedTower
+module
+
+public import BecknerOnofri.SpinPrefixDefinitions
+public import BecknerOnofri.BinarySpinChannel
+public import BecknerOnofri.ConditionalWeightedTower
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory
@@ -24,7 +28,7 @@ theorem prefixLikelihood_bounds (k : ℕ) (σ : Configuration) (x : Torus 12) :
     have hj := abs_le.mp (torusCosines_bound x j)
     split_ifs <;> constructor <;> linarith
   exact ⟨Finset.prod_nonneg (fun j _ => (hfactor j).1),
-    Finset.prod_le_one (fun j _ => (hfactor j).1) (fun j _ => (hfactor j).2)⟩
+    Finset.prod_le_one₀ (fun j _ => (hfactor j).1) (fun j _ => (hfactor j).2)⟩
 
 theorem prefixLikelihood_bounded (k : ℕ) (σ : Configuration) :
     BoundedMeasurable (prefixLikelihood k σ) := by

@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleFisherDensity
-import BecknerOnofri.CircleDensityParseval
-import BecknerOnofri.CircleHardyEnergy
+module
+
+public import BecknerOnofri.CircleFisherDensity
+public import BecknerOnofri.CircleDensityParseval
+public import BecknerOnofri.CircleHardyEnergy
+
+@[expose] public section
 
 /-! The manuscript's genuine Fisher dissipation lower bound for a smooth
 positive even circle density. Both integrals and all moments are the actual

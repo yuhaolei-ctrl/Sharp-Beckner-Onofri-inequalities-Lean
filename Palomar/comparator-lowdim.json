@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Palomar.LowDimChallenge",
+  "solution_module": "Palomar.LowDimSolution",
+  "theorem_names": [
+    "BecknerOnofri.Target.low_density_endpoint",
+    "BecknerOnofri.Target.low_potential_endpoint",
+    "BecknerOnofri.Target.low_density_rigidity",
+    "BecknerOnofri.Target.low_potential_rigidity",
+    "BecknerOnofri.Target.low_circle_potential",
+    "BecknerOnofri.Target.low_circle_density",
+    "BecknerOnofri.Target.low_coefficient_sharp",
+    "BecknerOnofri.Target.low_pressure_formula",
+    "BecknerOnofri.Target.low_coefficient_formula"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

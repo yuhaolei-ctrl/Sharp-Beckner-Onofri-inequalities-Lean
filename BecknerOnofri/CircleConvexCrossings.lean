@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleTwoSignChange
-import Mathlib.Topology.Order.Basic
+module
+
+public import BecknerOnofri.CircleTwoSignChange
+public import Mathlib.Topology.Order.Basic
+
+@[expose] public section
 
 /-! A continuous convex logarithmic density ratio has the exact two-crossing
 sign pattern, with endpoints constructed from its negative set. -/

@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EulerWeightedEquation
-import Legacy.BecknerOnofri.AngularInactiveCoordinates
+module
+
+public import Legacy.BecknerOnofri.EulerWeightedEquation
+public import Legacy.BecknerOnofri.AngularInactiveCoordinates
+
+@[expose] public section
 
 /-! Strong induction for actual mixed derivatives of a Steiner Euler maximizer.
 The inactive-coordinate case is settled by equality of actual derivatives.

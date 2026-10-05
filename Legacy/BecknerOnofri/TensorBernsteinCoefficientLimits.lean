@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.TensorBernsteinCoefficients
-import Mathlib.Data.Nat.Factorial.BigOperators
+module
+
+public import Legacy.BecknerOnofri.TensorBernsteinCoefficients
+public import Mathlib.Data.Nat.Factorial.BigOperators
+
+@[expose] public section
 
 /-! The actual binomial normalization in tensor Bernstein coefficients. -/
 noncomputable section

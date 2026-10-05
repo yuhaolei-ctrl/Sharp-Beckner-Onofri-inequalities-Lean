@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.SpatialClosability
-import Mathlib.Topology.Algebra.Module.Basic
+module
+
+public import BecknerOnofri.Friedrichs.SpatialClosability
+public import Mathlib.Topology.Algebra.Module.Basic
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

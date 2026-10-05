@@ -1,4 +1,8 @@
-import BecknerOnofri.MixtureSubsetComparison
+module
+
+public import BecknerOnofri.MixtureSubsetComparison
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators ENNReal

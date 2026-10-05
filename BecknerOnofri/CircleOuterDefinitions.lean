@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! The one-sided logarithmic Fourier coefficients used to construct the
 outer function. On the zero hyperplane the coefficient is halved. -/

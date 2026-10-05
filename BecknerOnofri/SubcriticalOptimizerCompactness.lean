@@ -1,4 +1,8 @@
-import BecknerOnofri.OnsetCompactness
+module
+
+public import BecknerOnofri.OnsetCompactness
+
+@[expose] public section
 
 /-! Compactness of global optimizers for coefficients converging to any
 strictly subcritical value. The limit remains a genuine global optimizer. -/

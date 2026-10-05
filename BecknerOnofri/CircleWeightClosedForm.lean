@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleWeightSeries
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BecknerOnofri.CircleWeightSeries
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 /-! The logarithmic formula used for the large-mean scalar certificates,
 proved by splitting the actual logarithm series. -/

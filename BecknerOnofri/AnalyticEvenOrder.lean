@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Analytic.Uniqueness
-import Mathlib.Analysis.Asymptotics.Lemmas
+module
+
+public import Mathlib.Analysis.Analytic.Uniqueness
+public import Mathlib.Analysis.Asymptotics.Lemmas
+
+@[expose] public section
 
 /-! Parity improves a fifth-order analytic remainder to sixth order. -/
 noncomputable section

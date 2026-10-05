@@ -1,5 +1,9 @@
-import BecknerOnofri.EndpointRigidity.Reduction
-import BecknerOnofri.EndpointFromTwelve
+module
+
+public import BecknerOnofri.EndpointRigidity.Reduction
+public import BecknerOnofri.EndpointFromTwelve
+
+@[expose] public section
 
 /-! Equality propagates down the actual marginal energy/entropy chain. The
 only dimension-specific rigidity input is the twelve-dimensional mixture base. -/

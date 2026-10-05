@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GreenHeatIntegrability
-import Legacy.BecknerOnofri.GreenHeatFourier
-import Legacy.BecknerOnofri.GreenRoughEnergy
+module
+
+public import Legacy.BecknerOnofri.GreenHeatIntegrability
+public import Legacy.BecknerOnofri.GreenHeatFourier
+public import Legacy.BecknerOnofri.GreenRoughEnergy
+
+@[expose] public section
 
 /-! The actual Fourier Green kernel has every subcritical exponential moment.
 The heat-Mellin representative is identified by L2 Fourier uniqueness first.

@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailPermutationComparison
+module
+
+public import BecknerOnofri.EntropyTailPermutationComparison
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

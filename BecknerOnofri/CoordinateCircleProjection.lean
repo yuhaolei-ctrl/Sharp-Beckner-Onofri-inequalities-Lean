@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.TorusMarginals
+module
+
+public import Legacy.BecknerOnofri.TorusMarginals
+
+@[expose] public section
 
 /-! The actual coordinate map from a product torus to the one-dimensional
 Haar torus, including its measure-preserving property. -/

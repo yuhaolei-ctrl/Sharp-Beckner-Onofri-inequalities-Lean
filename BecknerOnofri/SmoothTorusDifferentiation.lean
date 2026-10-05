@@ -1,10 +1,14 @@
-import BecknerOnofri.BranchDefinitions
-import Mathlib.Analysis.Calculus.ContDiff.Comp
-import Mathlib.Analysis.Calculus.ContDiff.Operations
-import Mathlib.Analysis.Calculus.Deriv.Comp
-import Mathlib.Topology.Instances.AddCircle.Defs
-import Mathlib.Topology.Constructions
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Mathlib.Analysis.Calculus.ContDiff.Comp
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+public import Mathlib.Topology.Instances.AddCircle.Defs
+public import Mathlib.Topology.Constructions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Raw smooth periodic lifts have smooth coordinate derivatives on the torus.
 No assumption on Fourier coefficients is used. -/

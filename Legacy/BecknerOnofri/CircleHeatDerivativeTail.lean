@@ -1,8 +1,12 @@
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Data.Nat.Choose.Cast
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Analysis.SpecialFunctions.Exp
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Data.Nat.Choose.Cast
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Explicit complete infinite tails for the two circle heat derivative representations. -/
 noncomputable section

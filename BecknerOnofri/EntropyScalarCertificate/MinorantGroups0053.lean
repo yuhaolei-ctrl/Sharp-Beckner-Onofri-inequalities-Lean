@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarMinorantCell
-import BecknerOnofri.EntropyScalarCertificate.GammaGroups0053
+module
+
+public import BecknerOnofri.ScalarMinorantCell
+public import BecknerOnofri.EntropyScalarCertificate.GammaGroups0053
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.MinorantBatch0053
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.FiniteDifferenceCalculus
-import Legacy.BecknerOnofri.FiniteDifferenceRecurrence
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceCalculus
+public import Legacy.BecknerOnofri.FiniteDifferenceRecurrence
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! A rectangular finite difference is a genuine mixed derivative at an intermediate point. -/
 noncomputable section

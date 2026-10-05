@@ -1,8 +1,12 @@
-import Legacy.TorusEndpoint.GreenHeatApproximation
-import Legacy.TorusEndpoint.GreenHeatLowerBound
-import Legacy.TorusEndpoint.GreenHeatEnergy
-import Legacy.TorusEndpoint.PhysicalGreenL2
-import Legacy.TorusEndpoint.LowerBoundedFatou
+module
+
+public import Legacy.TorusEndpoint.GreenHeatApproximation
+public import Legacy.TorusEndpoint.GreenHeatLowerBound
+public import Legacy.TorusEndpoint.GreenHeatEnergy
+public import Legacy.TorusEndpoint.PhysicalGreenL2
+public import Legacy.TorusEndpoint.LowerBoundedFatou
+
+@[expose] public section
 
 /-!
 # The physical Green energy for general finite-energy densities

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleEqualityDensity
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityDensity
+
+@[expose] public section
 
 /-! Exact parameter and normalization identification with the manuscript's circle family. -/
 noncomputable section

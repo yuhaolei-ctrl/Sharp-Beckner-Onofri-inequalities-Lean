@@ -1,4 +1,8 @@
-import BecknerOnofri.OnsetSobolev
+module
+
+public import BecknerOnofri.OnsetSobolev
+
+@[expose] public section
 
 /-! Actual optimizer convergence in the unweighted Wiener norm, retaining
 the exact endpoint and rigidity premises. -/

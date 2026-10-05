@@ -1,5 +1,9 @@
-import BecknerOnofri.SupportedBranchStatementDefinitions
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.SupportedBranchStatementDefinitions
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! The supported branch family and its actual functional values. These are the
 existence and value assertions, without the still separate exhaustiveness and stability assertions. -/

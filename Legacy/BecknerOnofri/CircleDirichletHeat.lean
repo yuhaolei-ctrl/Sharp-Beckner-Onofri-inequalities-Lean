@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatStrict
+module
+
+public import Legacy.BecknerOnofri.CircleHeatStrict
+
+@[expose] public section
 
 /-! The actual reflected Dirichlet heat kernel on the interval (0,1/2). -/
 noncomputable section

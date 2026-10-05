@@ -1,4 +1,8 @@
-import BecknerOnofri.RectangleLattice
+module
+
+public import BecknerOnofri.RectangleLattice
+
+@[expose] public section
 
 /-! Finite face comparisons and induction on actual lattice rectangles. -/
 

@@ -1,8 +1,12 @@
-import PhysicalFractional
-import Periodization
-import Definitions
-import BecknerOnofri.ExtendedEntropy
-import BecknerOnofri.EntropyMainTheorems
+module
+
+public import PhysicalFractional
+public import Periodization
+public import Definitions
+public import BecknerOnofri.ExtendedEntropy
+public import BecknerOnofri.EntropyMainTheorems
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

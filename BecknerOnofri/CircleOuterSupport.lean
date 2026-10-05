@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.WienerFourier
+module
+
+public import Legacy.BecknerOnofri.WienerFourier
+
+@[expose] public section
 
 /-! Exponentiation of a one-sided Fourier series has no negative frequencies.
 This supplies one algebraic ingredient of the manuscript's outer construction. -/

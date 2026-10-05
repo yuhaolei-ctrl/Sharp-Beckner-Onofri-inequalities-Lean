@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousOptimizers
-import BecknerOnofri.OptimizerGibbsLimit
-import BecknerOnofri.PressureDuality
+module
+
+public import BecknerOnofri.ContinuousOptimizers
+public import BecknerOnofri.OptimizerGibbsLimit
+public import BecknerOnofri.PressureDuality
+
+@[expose] public section
 
 /-! Primal-dual optimizer correspondence on the full actual finite-entropy
 and critical-Sobolev domains. Regularity of a density optimizer is a conclusion. -/

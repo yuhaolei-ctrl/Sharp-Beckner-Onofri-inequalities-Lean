@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleLambda
+module
+
+public import BecknerOnofri.CircleLambda
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

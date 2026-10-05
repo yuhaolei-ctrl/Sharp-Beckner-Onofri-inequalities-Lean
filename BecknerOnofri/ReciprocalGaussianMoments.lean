@@ -1,5 +1,9 @@
-import BecknerOnofri.ReciprocalGaussianDerivative
-import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+module
+
+public import BecknerOnofri.ReciprocalGaussianDerivative
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+
+@[expose] public section
 
 /-! Polynomial moments of the reciprocal Gaussian. Integration by parts
 gives the half-integer Bessel recurrence with all boundary terms justified. -/

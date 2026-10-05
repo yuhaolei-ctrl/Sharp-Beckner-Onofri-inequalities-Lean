@@ -1,5 +1,9 @@
-import BecknerOnofri.HighDimRectangles
-import Legacy.D10.BinomialCorrelated
+module
+
+public import BecknerOnofri.HighDimRectangles
+public import Legacy.D10.BinomialCorrelated
+
+@[expose] public section
 
 /-!
 Exact finite random-rectangle representation of normalized cosine-power Fourier

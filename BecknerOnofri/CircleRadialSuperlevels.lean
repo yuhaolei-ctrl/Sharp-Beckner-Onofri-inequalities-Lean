@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleRadiusDistribution
-import BecknerOnofri.DistributionAERadialUniqueness
+module
+
+public import BecknerOnofri.CircleRadiusDistribution
+public import BecknerOnofri.DistributionAERadialUniqueness
+
+@[expose] public section
 
 /-! Superlevel sets of radial decreasing representatives are centered balls,
 up to Haar null sets, with the radius fixed by their measure. -/

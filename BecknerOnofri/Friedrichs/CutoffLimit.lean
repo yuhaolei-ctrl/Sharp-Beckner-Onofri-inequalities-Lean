@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.BoundaryCutoff
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+module
+
+public import BecknerOnofri.Friedrichs.BoundaryCutoff
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
+@[expose] public section
 
 /-! Endpoint cutoffs converge in weighted L2 and their derivative error
 vanishes for functions with the genuine linear endpoint vanishing bound. -/

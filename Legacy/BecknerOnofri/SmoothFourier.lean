@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.SubcriticalWiener
-import Mathlib.Analysis.Calculus.SmoothSeries
-import Mathlib.Analysis.Calculus.ContDiff.RestrictScalars
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+module
+
+public import Legacy.BecknerOnofri.SubcriticalWiener
+public import Mathlib.Analysis.Calculus.SmoothSeries
+public import Mathlib.Analysis.Calculus.ContDiff.RestrictScalars
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+
+@[expose] public section
 
 /-! Rapid absolutely summable Fourier moments give a genuinely smooth
 periodic lift on real coordinate space. -/

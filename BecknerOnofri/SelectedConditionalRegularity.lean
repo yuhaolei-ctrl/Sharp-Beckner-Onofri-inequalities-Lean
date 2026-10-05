@@ -1,6 +1,10 @@
-import BecknerOnofri.SelectedSpinEntropy
-import BecknerOnofri.ConditionalFourierRegularity
-import Legacy.BecknerOnofri.ChebyshevProfileIdentification
+module
+
+public import BecknerOnofri.SelectedSpinEntropy
+public import BecknerOnofri.ConditionalFourierRegularity
+public import Legacy.BecknerOnofri.ChebyshevProfileIdentification
+
+@[expose] public section
 
 /-! Smoothness of the actual selected optimizer's conditional circles. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.FiniteData16
-import BecknerOnofri.ElevenScalarFinite.Core
+module
+
+public import Legacy.BecknerOnofri.FiniteData16
+public import BecknerOnofri.ElevenScalarFinite.Core
+
+@[expose] public section
 /-! Generated rational candidate data. Every equality and inequality below
 is checked by Lean's kernel; generation supplies no trusted premise.
 Squared radii ≥ 65 retain their full polynomial mass with the upper weight

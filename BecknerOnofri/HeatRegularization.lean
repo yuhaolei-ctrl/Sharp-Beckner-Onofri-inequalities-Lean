@@ -1,6 +1,10 @@
-import BecknerOnofri.HeatDefinitions
-import BecknerOnofri.HeatDensitySmooth
-import BecknerOnofri.FiniteEntropyPhysical
+module
+
+public import BecknerOnofri.HeatDefinitions
+public import BecknerOnofri.HeatDensitySmooth
+public import BecknerOnofri.FiniteEntropyPhysical
+
+@[expose] public section
 
 /-! Bridge the source's physical heat time to the theta parameter used
 in the Fourier construction, then state regularity and interaction convergence. -/

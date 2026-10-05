@@ -1,4 +1,8 @@
-import BecknerOnofri.ConditionalEntropyChain
+module
+
+public import BecknerOnofri.ConditionalEntropyChain
+
+@[expose] public section
 
 /-! The tower identity and square Jensen inequality for actual conditional
 cosine moments. All expectations use the actual prefix Haar density. -/

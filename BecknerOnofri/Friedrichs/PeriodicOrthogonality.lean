@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.PeriodicEigenprofiles
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicEigenprofiles
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

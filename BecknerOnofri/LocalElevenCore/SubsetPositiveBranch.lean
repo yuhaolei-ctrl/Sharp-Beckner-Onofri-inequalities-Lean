@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,6 +1,10 @@
-import BecknerOnofri.CanonicalOptimizerSelection
-import BecknerOnofri.ContinuousDensityOptimizer
-import BecknerOnofri.SmoothTorusLipschitz
+module
+
+public import BecknerOnofri.CanonicalOptimizerSelection
+public import BecknerOnofri.ContinuousDensityOptimizer
+public import BecknerOnofri.SmoothTorusLipschitz
+
+@[expose] public section
 
 /-! Canonical successive rearrangement of the actual smooth representative
 of a finite-entropy minimizer, preserving the variational and Gibbs data. -/

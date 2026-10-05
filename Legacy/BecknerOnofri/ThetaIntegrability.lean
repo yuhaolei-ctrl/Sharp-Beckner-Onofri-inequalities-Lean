@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ThetaDomination
-import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
-import Mathlib.Algebra.Ring.GeomSum
+module
+
+public import Legacy.BecknerOnofri.ThetaDomination
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+public import Mathlib.Algebra.Ring.GeomSum
+
+@[expose] public section
 
 /-! Integrability of the manuscript's actual theta integrals, without numerical hypotheses. -/
 

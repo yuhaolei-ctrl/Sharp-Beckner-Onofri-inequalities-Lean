@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinExtremeSupport
-import BecknerOnofri.SpinExactArithmetic
+module
+
+public import BecknerOnofri.SpinExtremeSupport
+public import BecknerOnofri.SpinExactArithmetic
+
+@[expose] public section
 
 /-! Reduction of the extreme points to the 220 formula-generated vertices. -/
 noncomputable section

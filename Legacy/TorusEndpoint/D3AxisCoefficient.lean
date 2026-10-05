@@ -1,8 +1,12 @@
-import Legacy.TorusEndpoint.FiniteAtomMonotonicity
-import Legacy.TorusEndpoint.CertifiedExp
-import Legacy.TorusEndpoint.EndpointNormalization
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+module
+
+public import Legacy.TorusEndpoint.FiniteAtomMonotonicity
+public import Legacy.TorusEndpoint.CertifiedExp
+public import Legacy.TorusEndpoint.EndpointNormalization
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+
+@[expose] public section
 
 /-! Finite-atom mass bounds and the positive third-axis coefficient estimate.
 The finite alphabet is deduplicated; repeated entries in a list do not create

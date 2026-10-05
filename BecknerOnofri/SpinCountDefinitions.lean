@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinDefinitions
-import Mathlib.Logic.Equiv.Fintype
+module
+
+public import BecknerOnofri.SpinDefinitions
+public import Mathlib.Logic.Equiv.Fintype
+
+@[expose] public section
 
 /-! Actual binary-spin configurations, count law, and permutation symmetry. -/
 noncomputable section

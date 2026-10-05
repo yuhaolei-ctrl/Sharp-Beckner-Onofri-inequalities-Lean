@@ -1,7 +1,11 @@
-import BecknerOnofri.RadialE1
-import BecknerOnofri.EulerConstantBound
-import Mathlib.NumberTheory.Harmonic.GammaDeriv
-import Mathlib.Analysis.SpecialFunctions.Gamma.Deriv
+module
+
+public import BecknerOnofri.RadialE1
+public import BecknerOnofri.EulerConstantBound
+public import Mathlib.NumberTheory.Harmonic.GammaDeriv
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Deriv
+
+@[expose] public section
 
 /-! The exponential-integral logarithmic singularity with its actual
 Euler--Mascheroni constant, derived from the differentiated Gamma integral. -/

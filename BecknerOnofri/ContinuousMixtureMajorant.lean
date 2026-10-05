@@ -1,6 +1,10 @@
-import BecknerOnofri.CountableMixtureL1
-import BecknerOnofri.CosineMixtureStatementDefinitions
-import BecknerOnofri.UniformFourierHessian
+module
+
+public import BecknerOnofri.CountableMixtureL1
+public import BecknerOnofri.CosineMixtureStatementDefinitions
+public import BecknerOnofri.UniformFourierHessian
+
+@[expose] public section
 
 /-! A continuous density represented almost everywhere by a normalized
 cosine-power mixture automatically has the required summable spatial majorant.

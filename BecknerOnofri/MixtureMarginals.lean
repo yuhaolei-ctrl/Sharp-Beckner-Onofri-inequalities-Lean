@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureTransfer
-import BecknerOnofri.EntropyShearer.Density
+module
+
+public import BecknerOnofri.CountableMixtureTransfer
+public import BecknerOnofri.EntropyShearer.Density
+
+@[expose] public section
 
 /-! Actual coordinate deletion for countable cosine mixtures, including the
 lower-dimensional density, Fourier energy, and entropy identifications. -/

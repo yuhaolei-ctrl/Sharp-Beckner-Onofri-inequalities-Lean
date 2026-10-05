@@ -7,11 +7,11 @@ if [ -n "${LEAN_RUNTIME_BIN:-}" ]; then
 fi
 cd "$PROJECT_DIR"
 command -v lake >/dev/null 2>&1 || {
-  echo 'Install Lean 4.32.0 via elan, or set LEAN_RUNTIME_BIN to its bin directory.' >&2
+  echo 'Install Lean 4.35.0-rc2 via elan, or set LEAN_RUNTIME_BIN to its bin directory.' >&2
   exit 1
 }
-lean --version | grep -Eq 'version 4\.32\.0[, )]' || {
-  echo 'This certificate requires Lean 4.32.0.' >&2
+lean --version | grep -Eq 'version 4\.35\.0-rc2[, )]' || {
+  echo 'This certificate requires Lean 4.35.0-rc2.' >&2
   exit 1
 }
 exec lake "$@"

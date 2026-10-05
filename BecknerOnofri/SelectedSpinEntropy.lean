@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinEntropyChain
-import BecknerOnofri.SelectedSpinChannel
+module
+
+public import BecknerOnofri.SpinEntropyChain
+public import BecknerOnofri.SelectedSpinChannel
+
+@[expose] public section
 
 /-! The completed discrete entropy comparison for the actual selected Gibbs
 density and its thirteen-state count law. -/

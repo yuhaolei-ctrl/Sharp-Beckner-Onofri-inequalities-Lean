@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.Endpoint
+module
+
+public import Legacy.BecknerOnofri.Endpoint
+
+@[expose] public section
 
 /-! Passage to limits of actual probability densities. The full spectral
 bound follows from finite frequency sets, so no energy convergence is assumed. -/

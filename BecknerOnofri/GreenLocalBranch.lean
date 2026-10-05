@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousComplement
-import BecknerOnofri.ContinuousComplementInverse
-import BecknerOnofri.AnalyticAxisBound
+module
+
+public import BecknerOnofri.ContinuousComplement
+public import BecknerOnofri.ContinuousComplementInverse
+public import BecknerOnofri.AnalyticAxisBound
+
+@[expose] public section
 
 /-! An unconditional analytic complement map for the actual torus Gibbs
 Euler equation, in all cosine and sine first-shell directions. -/

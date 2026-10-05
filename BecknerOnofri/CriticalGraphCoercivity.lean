@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedQuarticParity
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.ReducedQuarticParity
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! Strict local negativity of the actual physical critical reduced energy,
 with a uniform quartic norm bound. -/

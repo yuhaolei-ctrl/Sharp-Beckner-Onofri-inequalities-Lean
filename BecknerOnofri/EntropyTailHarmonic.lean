@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailAxisFactors
+module
+
+public import BecknerOnofri.EntropyTailAxisFactors
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

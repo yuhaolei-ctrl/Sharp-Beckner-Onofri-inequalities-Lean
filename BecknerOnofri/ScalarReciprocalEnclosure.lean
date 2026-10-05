@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarFunctionEnclosure
+module
+
+public import BecknerOnofri.ScalarFunctionEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set

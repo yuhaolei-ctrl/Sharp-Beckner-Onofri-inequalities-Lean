@@ -1,7 +1,11 @@
-import BecknerOnofri.FiniteEntropyPhysical
-import Legacy.BecknerOnofri.GreenDensityPotentialL2
-import Legacy.BecknerOnofri.GreenExponentialIntegrability
-import Legacy.TorusEndpoint.GreenLowerBound
+module
+
+public import BecknerOnofri.FiniteEntropyPhysical
+public import Legacy.BecknerOnofri.GreenDensityPotentialL2
+public import Legacy.BecknerOnofri.GreenExponentialIntegrability
+public import Legacy.TorusEndpoint.GreenLowerBound
+
+@[expose] public section
 
 /-! Full finite-entropy densities have bounded actual Green potentials.
 Young's entropy inequality supplies the product integrability, rather than

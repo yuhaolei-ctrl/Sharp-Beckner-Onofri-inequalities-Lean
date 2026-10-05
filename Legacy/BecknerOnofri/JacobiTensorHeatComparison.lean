@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.JacobiTensorHeatKernel
-import Legacy.BecknerOnofri.JacobiHeatNonnegative
-import Legacy.BecknerOnofri.JacobiCircleHeat
-import Legacy.BecknerOnofri.MixedBoundaryHeat
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorHeatKernel
+public import Legacy.BecknerOnofri.JacobiHeatNonnegative
+public import Legacy.BecknerOnofri.JacobiCircleHeat
+public import Legacy.BecknerOnofri.MixedBoundaryHeat
+
+@[expose] public section
 
 /-! Genuine positivity of the actual tensor heat kernel, including Neumann coordinates. -/
 noncomputable section

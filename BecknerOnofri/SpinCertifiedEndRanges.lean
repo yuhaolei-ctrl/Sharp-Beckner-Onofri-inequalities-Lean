@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyScalarCertificate.Minorant
-import BecknerOnofri.SpinSmallMean
-import BecknerOnofri.SpinLargeMean
-import BecknerOnofri.EntropyCheckedLog
+module
+
+public import BecknerOnofri.EntropyScalarCertificate.Minorant
+public import BecknerOnofri.SpinSmallMean
+public import BecknerOnofri.SpinLargeMean
+public import BecknerOnofri.EntropyCheckedLog
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.Spin
 open ScalarCertificate ScalarCertificate.CertifiedMinorant EntropyLogCertificate
 open scoped BigOperators

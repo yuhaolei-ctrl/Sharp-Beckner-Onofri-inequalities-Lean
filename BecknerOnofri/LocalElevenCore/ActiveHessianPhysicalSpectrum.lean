@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveHessianAmplitudeSpectrum
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveHessianAmplitudeSpectrum
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

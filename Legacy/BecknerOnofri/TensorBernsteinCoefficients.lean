@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.TensorBernstein
-import Legacy.BecknerOnofri.FiniteDifferenceDefs
-import Mathlib.Algebra.Polynomial.Degree.Support
-import Mathlib.Algebra.MvPolynomial.Coeff
+module
+
+public import Legacy.BecknerOnofri.TensorBernstein
+public import Legacy.BecknerOnofri.FiniteDifferenceDefs
+public import Mathlib.Algebra.Polynomial.Degree.Support
+public import Mathlib.Algebra.MvPolynomial.Coeff
+
+@[expose] public section
 
 /-! Exact coefficient algebra for the actual tensor Bernstein polynomials. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatRoundedPowers
-import BecknerOnofri.EntropyExpInteger
+module
+
+public import BecknerOnofri.EntropyHeatRoundedPowers
+public import BecknerOnofri.EntropyExpInteger
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate
 open ExpCertificate

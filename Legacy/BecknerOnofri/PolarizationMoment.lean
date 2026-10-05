@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationPairing
+module
+
+public import Legacy.BecknerOnofri.PolarizationPairing
+
+@[expose] public section
 
 /-! A monotone reflection weight gives an increasing polarization moment;
 strict weights make equality force an actual polarization fixed point. -/

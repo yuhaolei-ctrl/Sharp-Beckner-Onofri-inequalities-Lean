@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailCore
-import BecknerOnofri.RadialHeatTail
+module
+
+public import BecknerOnofri.EntropyTailCore
+public import BecknerOnofri.RadialHeatTail
+
+@[expose] public section
 
 noncomputable section
 set_option maxRecDepth 65536

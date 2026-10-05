@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.UniformTail
-import Mathlib.Logic.Function.Iterate
+module
+
+public import Legacy.BecknerOnofri.UniformTail
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 /-! Exact arithmetic for an alternative theta certificate using a rational
 Laplace-integral majorant instead of 4096 quadrature panels. The connection
 between this finite formula and the actual J_10 remains a separate proof. -/

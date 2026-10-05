@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SquaredReducedHessian
-import Mathlib.Analysis.Calculus.FDeriv.Symmetric
+module
+
+public import BecknerOnofri.LocalElevenCore.SquaredReducedHessian
+public import Mathlib.Analysis.Calculus.FDeriv.Symmetric
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

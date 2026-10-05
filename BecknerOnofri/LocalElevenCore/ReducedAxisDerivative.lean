@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedAxisDerivative
-import BecknerOnofri.LocalElevenCore.ReducedCubicParity
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedAxisDerivative
+public import BecknerOnofri.LocalElevenCore.ReducedCubicParity
+
+@[expose] public section
 
 /-! Exact linearization of the genuine reduced equation along the uniform parameter axis. -/
 noncomputable section

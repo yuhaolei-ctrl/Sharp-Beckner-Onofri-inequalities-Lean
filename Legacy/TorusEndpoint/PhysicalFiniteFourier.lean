@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.SpectralEntropy
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import Legacy.TorusEndpoint.SpectralEntropy
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-!
 # Actual finite-kernel interaction and Fourier energy

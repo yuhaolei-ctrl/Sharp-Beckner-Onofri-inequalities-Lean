@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousGibbs
-import Mathlib.MeasureTheory.Integral.Prod
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import BecknerOnofri.ContinuousGibbs
+public import Mathlib.MeasureTheory.Integral.Prod
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-! Exponentiating a finite nonnegative sum of real rank-one product kernels
 preserves positivity of the actual double integral. The proof uses the full

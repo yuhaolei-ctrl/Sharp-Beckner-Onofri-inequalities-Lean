@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiCompleteness
+module
+
+public import Legacy.BecknerOnofri.JacobiCompleteness
+
+@[expose] public section
 
 /-! The zero Jacobi index is the Neumann cosine basis on the same Lebesgue interval. -/
 noncomputable section

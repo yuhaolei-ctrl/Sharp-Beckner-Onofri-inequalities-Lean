@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ThetaDecayAllDimensions
+module
+
+public import Legacy.BecknerOnofri.ThetaDecayAllDimensions
+
+@[expose] public section
 
 /-! Integrability of the actual dimension-eleven theta integral. No finite
 truncation is used in this lemma. -/

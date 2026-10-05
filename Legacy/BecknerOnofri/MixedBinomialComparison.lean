@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.MixedBinomialHeat
-import Legacy.BecknerOnofri.CosineMixtureEnergy
+module
+
+public import Legacy.BecknerOnofri.MixedBinomialHeat
+public import Legacy.BecknerOnofri.CosineMixtureEnergy
+
+@[expose] public section
 
 /-! Mixed binomial lattice energies are bounded by the average of their
 isotropic diagonal energies. Every coefficient occurs to the first power.

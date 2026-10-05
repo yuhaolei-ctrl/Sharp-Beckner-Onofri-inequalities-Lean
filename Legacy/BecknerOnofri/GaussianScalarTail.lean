@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.ScalarAssembly
-import Legacy.BecknerOnofri.GaussianCentral
-import Legacy.BecknerOnofri.HarmonicGaussian
-import Legacy.BecknerOnofri.LatticePolynomialBridge
-import Legacy.BecknerOnofri.GaussianHeatSplit
+module
+
+public import Legacy.BecknerOnofri.ScalarAssembly
+public import Legacy.BecknerOnofri.GaussianCentral
+public import Legacy.BecknerOnofri.HarmonicGaussian
+public import Legacy.BecknerOnofri.LatticePolynomialBridge
+public import Legacy.BecknerOnofri.GaussianHeatSplit
+
+@[expose] public section
 
 /-! The unconditional scalar tail and all-index scalar gap in dimensions
 three through ten, for the full radial polynomial and actual lattice sum. -/

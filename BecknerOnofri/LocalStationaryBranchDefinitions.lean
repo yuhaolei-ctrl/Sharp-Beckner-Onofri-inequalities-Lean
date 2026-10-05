@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! The stationary branch, full-domain Hessian and Sobolev profile, separated
 from the additional local-maximum and all-support classification assertions. -/

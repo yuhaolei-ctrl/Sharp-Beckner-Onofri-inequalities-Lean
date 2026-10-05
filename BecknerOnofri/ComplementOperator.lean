@@ -1,6 +1,10 @@
-import BecknerOnofri.ComplementGap
-import Mathlib.Analysis.Normed.Lp.lpSpace
-import Mathlib.Analysis.Normed.Operator.ContinuousLinearMap
+module
+
+public import BecknerOnofri.ComplementGap
+public import Mathlib.Analysis.Normed.Lp.lpSpace
+public import Mathlib.Analysis.Normed.Operator.ContinuousLinearMap
+
+@[expose] public section
 
 /-! A genuine bounded continuous inverse on the closed first-shell complement
 of Fourier ℓ². No operator norm or inverse is assumed. -/

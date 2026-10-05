@@ -1,5 +1,9 @@
-import BecknerOnofri.SelectedCubicSymmetry
-import BecknerOnofri.SelectedEnclosureStep
+module
+
+public import BecknerOnofri.SelectedCubicSymmetry
+public import BecknerOnofri.SelectedEnclosureStep
+
+@[expose] public section
 
 /-! Disjoint-coordinate correlation for the actual selected maximizer.
 This is the Ginibre step in the source marginal bounds, with reflection

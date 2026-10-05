@@ -1,4 +1,8 @@
-import BecknerOnofri.SelectedChannelEntropy
+module
+
+public import BecknerOnofri.SelectedChannelEntropy
+
+@[expose] public section
 
 /-! The integrated channel gamma inequality for actual joint cosine profiles.
 All conditional estimates and the infinite-sum passage are discharged. -/

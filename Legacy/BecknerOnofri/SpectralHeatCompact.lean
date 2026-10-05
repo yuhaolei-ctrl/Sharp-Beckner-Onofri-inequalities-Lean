@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SpectralHeatInverse
-import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+module
+
+public import Legacy.BecknerOnofri.SpectralHeatInverse
+public import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+
+@[expose] public section
 
 /-! Finite spectral truncation in operator norm proves actual inverse-power compactness. -/
 noncomputable section

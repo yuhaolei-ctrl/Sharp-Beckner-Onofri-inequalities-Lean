@@ -1,6 +1,10 @@
-import BecknerOnofri.SimultaneousSteinerSelection
-import BecknerOnofri.SimultaneousOrbitComparison
-import BecknerOnofri.CircleSteinerUniqueness
+module
+
+public import BecknerOnofri.SimultaneousSteinerSelection
+public import BecknerOnofri.SimultaneousOrbitComparison
+public import BecknerOnofri.CircleSteinerUniqueness
+
+@[expose] public section
 
 /-! Canonical symmetric decreasing rearrangement for Lipschitz circle
 functions, obtained by the manuscript's simultaneous polarization route. -/

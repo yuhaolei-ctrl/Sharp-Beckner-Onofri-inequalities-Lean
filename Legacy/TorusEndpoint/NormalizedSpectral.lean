@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.EndpointNormalization
-import Legacy.TorusEndpoint.FullSpectral
+module
+
+public import Legacy.TorusEndpoint.EndpointNormalization
+public import Legacy.TorusEndpoint.FullSpectral
+
+@[expose] public section
 
 /-!
 # A conditional spectral endpoint with the exact constant

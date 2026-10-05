@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.GreenPairing
-import BecknerOnofri.LocalElevenCore.GraphEnergy
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.GreenPairing
+public import BecknerOnofri.LocalElevenCore.GraphEnergy
+
+@[expose] public section
 
 /-! Self-adjointness of the actual continuous Green operator and its
 complement projection for the genuine Haar pairing. -/

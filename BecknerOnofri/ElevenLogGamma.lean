@@ -1,6 +1,10 @@
-import Mathlib.NumberTheory.Harmonic.GammaDeriv
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Mathlib.Tactic
+module
+
+public import Mathlib.NumberTheory.Harmonic.GammaDeriv
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact integer and half-integer logarithmic Gamma derivatives needed for
 the Euclidean entropy in Section 4. -/

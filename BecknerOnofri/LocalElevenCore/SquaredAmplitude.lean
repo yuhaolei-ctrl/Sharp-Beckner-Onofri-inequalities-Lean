@@ -1,7 +1,11 @@
-import BecknerOnofri.AnalyticSquareParameter
-import BecknerOnofri.AnalyticScalarInverse
-import BecknerOnofri.AnalyticScalarTaylor
-import BecknerOnofri.LocalElevenCore.DiagonalScalarBranch
+module
+
+public import BecknerOnofri.AnalyticSquareParameter
+public import BecknerOnofri.AnalyticScalarInverse
+public import BecknerOnofri.AnalyticScalarTaylor
+public import BecknerOnofri.LocalElevenCore.DiagonalScalarBranch
+
+@[expose] public section
 
 /-! Analytic squared-amplitude parametrization for the actual full-mode
 local Euler branch, with the manuscript's parameter delta=1-1/tau. -/

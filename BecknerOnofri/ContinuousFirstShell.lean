@@ -1,7 +1,11 @@
-import BecknerOnofri.ContinuousGibbs
-import BecknerOnofri.FirstShellSharpness
-import BecknerOnofri.ComplementGap
-import Legacy.BecknerOnofri.SobolevCentering
+module
+
+public import BecknerOnofri.ContinuousGibbs
+public import BecknerOnofri.FirstShellSharpness
+public import BecknerOnofri.ComplementGap
+public import Legacy.BecknerOnofri.SobolevCentering
+
+@[expose] public section
 
 /-! Continuous projections onto the constant and full cosine/sine first shell.
 The coefficients are those of the actual normalized torus Fourier transform. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyHeatCheckedWeights
-import BecknerOnofri.EntropyTailRowAssembly
-import BecknerOnofri.EntropyHeatCertificate.Panels0000
-import BecknerOnofri.EntropyHeatCertificate.Panels0001
+module
+
+public import BecknerOnofri.EntropyHeatCheckedWeights
+public import BecknerOnofri.EntropyTailRowAssembly
+public import BecknerOnofri.EntropyHeatCertificate.Panels0000
+public import BecknerOnofri.EntropyHeatCertificate.Panels0001
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate.AssemblyTest09
 set_option maxRecDepth 1000000
 set_option maxHeartbeats 100000000

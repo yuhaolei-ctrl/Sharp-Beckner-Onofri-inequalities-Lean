@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalHighShell
-import BecknerOnofri.CenteredExponential
-import Mathlib.Algebra.Order.Chebyshev
+module
+
+public import BecknerOnofri.LocalHighShell
+public import BecknerOnofri.CenteredExponential
+public import Mathlib.Algebra.Order.Chebyshev
+
+@[expose] public section
 
 /-! The actual higher-shell Qσ estimate in dimension twelve. -/
 noncomputable section

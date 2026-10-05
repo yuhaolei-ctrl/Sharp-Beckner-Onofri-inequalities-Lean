@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import BecknerOnofri.BesselIntegral
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.Definitions
+public import BecknerOnofri.BesselIntegral
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Actual first-shell Gibbs densities and their product Haar integrals. -/
 noncomputable section

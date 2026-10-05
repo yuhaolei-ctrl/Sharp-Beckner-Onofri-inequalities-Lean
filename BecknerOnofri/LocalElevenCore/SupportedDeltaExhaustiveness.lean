@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SupportedDeltaIdentification
-import BecknerOnofri.LocalElevenCore.SupportedExhaustiveness
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedDeltaIdentification
+public import BecknerOnofri.LocalElevenCore.SupportedExhaustiveness
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

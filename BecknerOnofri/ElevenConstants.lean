@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenDefinitions
-import BecknerOnofri.SubcriticalGap
+module
+
+public import BecknerOnofri.ElevenDefinitions
+public import BecknerOnofri.SubcriticalGap
+
+@[expose] public section
 
 /-! Exact constants and elementary numerical consequences from Section 4.
 These do not assume or claim the still separate analytic competitor proof. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorNegation
-import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
-import BecknerOnofri.AnalyticEvenQuadratic
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorNegation
+public import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
+public import BecknerOnofri.AnalyticEvenQuadratic
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

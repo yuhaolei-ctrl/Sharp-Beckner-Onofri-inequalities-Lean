@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.LowDimensionThresholds
-import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+module
+
+public import Legacy.BecknerOnofri.LowDimensionThresholds
+public import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+
+@[expose] public section
 
 /-! Explicit heat-density concentration makes the pressure infinite above
 collapse and the coefficient defect infinite below the sharp threshold. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Definitions only: the genuine zero-pressure threshold and the interaction
 in the manuscript normalization. The identification with the physical Green

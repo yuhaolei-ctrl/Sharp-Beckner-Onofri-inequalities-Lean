@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementParameterBound
+module
+
+public import BecknerOnofri.ComplementParameterBound
+
+@[expose] public section
 
 /-! The exact cubic reduced equation with a quantitative joint parameter remainder. -/
 noncomputable section

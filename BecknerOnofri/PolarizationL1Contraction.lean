@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationPairing
+module
+
+public import Legacy.BecknerOnofri.PolarizationPairing
+
+@[expose] public section
 
 /-! Order preservation and L1 nonexpansiveness of the actual coordinate
 polarization. These are the local sorting steps used in circle rearrangement. -/

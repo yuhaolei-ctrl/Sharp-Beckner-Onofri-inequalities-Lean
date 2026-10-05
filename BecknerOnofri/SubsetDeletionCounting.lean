@@ -1,6 +1,10 @@
-import Mathlib.Data.Finset.Powerset
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Finset.Powerset
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact multiplicity used when iterating the marginal-energy comparison. -/
 noncomputable section

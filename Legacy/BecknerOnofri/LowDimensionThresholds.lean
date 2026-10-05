@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.LowDimensionOnofri
+module
+
+public import Legacy.BecknerOnofri.LowDimensionOnofri
+
+@[expose] public section
 
 /-! Exact zero-defect regions in the manuscript's coefficient and pressure
 variables. Extended nonnegative suprema include arbitrarily large defects;

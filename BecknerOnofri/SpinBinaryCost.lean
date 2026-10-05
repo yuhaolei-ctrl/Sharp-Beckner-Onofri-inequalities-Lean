@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinProductDefinitions
-import BecknerOnofri.SpinSecondOrderSupport
+module
+
+public import BecknerOnofri.SpinProductDefinitions
+public import BecknerOnofri.SpinSecondOrderSupport
+
+@[expose] public section
 
 /-! The binary entropy cost and its sharp quadratic/quartic lower bound. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import BecknerOnofri.GinibreCovariance
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import BecknerOnofri.GinibreCovariance
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 /-! Coefficientwise monotonicity of actual normalized cosine expectations,
 proved from the genuine Ginibre covariance and the true Gibbs derivative. -/

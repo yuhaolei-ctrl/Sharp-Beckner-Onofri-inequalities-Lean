@@ -1,6 +1,10 @@
-import BecknerOnofri.GraphCritical
-import BecknerOnofri.QuadraticPairing
-import BecknerOnofri.ContinuousVariations
+module
+
+public import BecknerOnofri.GraphCritical
+public import BecknerOnofri.QuadraticPairing
+public import BecknerOnofri.ContinuousVariations
+
+@[expose] public section
 
 /-! Exact physical Fourier energy on the actual projected Gibbs graph. -/
 noncomputable section

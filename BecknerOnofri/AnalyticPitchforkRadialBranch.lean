@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticPitchforkRadial
+module
+
+public import BecknerOnofri.AnalyticPitchforkRadial
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

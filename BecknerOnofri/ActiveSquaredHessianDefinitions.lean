@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalQuarticStatementDefinitions
-import BecknerOnofri.SupportedEnergyStatementDefinitions
-import Mathlib.LinearAlgebra.Eigenspace.Basic
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import BecknerOnofri.LocalQuarticStatementDefinitions
+public import BecknerOnofri.SupportedEnergyStatementDefinitions
+public import Mathlib.LinearAlgebra.Eigenspace.Basic
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+@[expose] public section
 
 /-! Trusted statement of the active squared-amplitude Hessian assertion.
 The Hessian below is the second Frechet derivative of the physical functional

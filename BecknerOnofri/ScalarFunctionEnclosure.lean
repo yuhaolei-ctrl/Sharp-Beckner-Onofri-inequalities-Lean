@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarRationalInterval
-import BecknerOnofri.ScalarSlopeEnclosure
+module
+
+public import BecknerOnofri.ScalarRationalInterval
+public import BecknerOnofri.ScalarSlopeEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set

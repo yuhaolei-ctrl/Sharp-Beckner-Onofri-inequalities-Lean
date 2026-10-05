@@ -1,5 +1,9 @@
-import BecknerOnofri.SelectedMarginalCorrelation
-import Mathlib.MeasureTheory.Integral.Bochner.Set
+module
+
+public import BecknerOnofri.SelectedMarginalCorrelation
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+
+@[expose] public section
 
 /-! Actual one-coordinate Fubini marginals and their Fourier coefficients. -/
 noncomputable section

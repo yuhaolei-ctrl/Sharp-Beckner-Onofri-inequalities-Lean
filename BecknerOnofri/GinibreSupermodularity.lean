@@ -1,4 +1,8 @@
-import BecknerOnofri.GinibreNormMonotonicity
+module
+
+public import BecknerOnofri.GinibreNormMonotonicity
+
+@[expose] public section
 
 /-! The actual log partition is supermodular in nonnegative cosine
 coefficients. The infinite-family statement follows from proved uniform

@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.AngularMixedTerms
-import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+module
+
+public import Legacy.BecknerOnofri.AngularMixedTerms
+public import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+
+@[expose] public section
 
 /-! Actual L2 convergence of the angular mixed-derivative series and its
 identification with the genuine differentiated profile. -/

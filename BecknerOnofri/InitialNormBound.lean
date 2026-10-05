@@ -1,9 +1,13 @@
-import BecknerOnofri.SelectedNumericalModel
-import BecknerOnofri.GreenContinuous
-import BecknerOnofri.Arithmetic
-import BecknerOnofri.SubcriticalGap
-import Legacy.BecknerOnofri.GreenExponentialIntegrability
-import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+module
+
+public import BecknerOnofri.SelectedNumericalModel
+public import BecknerOnofri.GreenContinuous
+public import BecknerOnofri.Arithmetic
+public import BecknerOnofri.SubcriticalGap
+public import Legacy.BecknerOnofri.GreenExponentialIntegrability
+public import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+
+@[expose] public section
 
 /-! Actual entropy/convolution initialization for the dimension-twelve
 certificate. No density norm or numerical iteration is an input. -/

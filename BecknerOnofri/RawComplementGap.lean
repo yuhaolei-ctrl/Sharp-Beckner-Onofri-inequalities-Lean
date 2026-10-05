@@ -1,5 +1,9 @@
-import BecknerOnofri.GraphEnergy
-import BecknerOnofri.LegacyBridge
+module
+
+public import BecknerOnofri.GraphEnergy
+public import BecknerOnofri.LegacyBridge
+
+@[expose] public section
 
 /-! The complement spectral gap on the exact raw critical Sobolev domain. -/
 noncomputable section

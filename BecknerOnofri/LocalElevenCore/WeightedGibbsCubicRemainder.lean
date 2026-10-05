@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.WienerAlgebraBounds
+module
+
+public import BecknerOnofri.LocalElevenCore.WienerAlgebraBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,8 +1,12 @@
-import BecknerOnofri.ContinuousOptimizers
-import BecknerOnofri.ContinuousLocalReduction
-import BecknerOnofri.LocalAmplitudeSelection
-import BecknerOnofri.SupercriticalBranchEnergy
-import BecknerOnofri.DiagonalProfile
+module
+
+public import BecknerOnofri.ContinuousOptimizers
+public import BecknerOnofri.ContinuousLocalReduction
+public import BecknerOnofri.LocalAmplitudeSelection
+public import BecknerOnofri.SupercriticalBranchEnergy
+public import BecknerOnofri.DiagonalProfile
+
+@[expose] public section
 
 /-! The sharp pressure onset from the exact endpoint and its rigidity. These
 premises are explicit; no numerical certificate is assumed as an axiom. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalNegativity
-import BecknerOnofri.FirstShellSharpness
+module
+
+public import BecknerOnofri.LocalNegativity
+public import BecknerOnofri.FirstShellSharpness
+
+@[expose] public section
 
 /-! Identification of the local split pressure with the trusted actual dual functional. -/
 noncomputable section

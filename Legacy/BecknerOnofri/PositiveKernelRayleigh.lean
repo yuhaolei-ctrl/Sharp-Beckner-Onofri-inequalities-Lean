@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.PositiveOperatorNeumann
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import Legacy.BecknerOnofri.PositiveOperatorNeumann
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-! Actual weighted Schur estimates for symmetric nonnegative kernels on real L2.
 The weighted quotient is not assumed integrable: Tonelli/Fubini proves its integrability

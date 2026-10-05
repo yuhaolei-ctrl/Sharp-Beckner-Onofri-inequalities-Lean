@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationOrbitDistribution
-import BecknerOnofri.DistributionL1Limit
+module
+
+public import BecknerOnofri.PolarizationOrbitDistribution
+public import BecknerOnofri.DistributionL1Limit
+
+@[expose] public section
 
 /-! Actual probability densities, entropy and nonuniformity in the L1 closure
 of their finite polarization orbit. -/

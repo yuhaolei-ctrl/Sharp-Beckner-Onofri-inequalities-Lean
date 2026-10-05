@@ -1,7 +1,11 @@
-import BecknerOnofri.SpinConditionalMean
-import BecknerOnofri.SpinBinaryJensen
-import BecknerOnofri.BesselIntegral
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.SpinConditionalMean
+public import BecknerOnofri.SpinBinaryJensen
+public import BecknerOnofri.BesselIntegral
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! The binary entropy contraction for each actual earlier-spin likelihood,
 including positivity of its normalizing probability. -/

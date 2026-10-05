@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiTensorHeatPairing
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorHeatPairing
+
+@[expose] public section
 
 /-! Mellin integrability from actual heat positivity and the spectral gap. -/
 noncomputable section

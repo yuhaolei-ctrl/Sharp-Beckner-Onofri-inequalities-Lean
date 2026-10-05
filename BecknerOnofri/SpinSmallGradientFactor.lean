@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinProductGradientDefinitions
-import BecknerOnofri.SpinProductMoments
-import BecknerOnofri.SpinSparseVertices
+module
+
+public import BecknerOnofri.SpinProductGradientDefinitions
+public import BecknerOnofri.SpinProductMoments
+public import BecknerOnofri.SpinSparseVertices
+
+@[expose] public section
 
 /-! Explicit polynomial factor of the nonaffine gradient near mean zero. -/
 noncomputable section

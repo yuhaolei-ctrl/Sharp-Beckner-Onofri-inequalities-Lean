@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.GreenMultiplierSummability
-import Legacy.TorusEndpoint.TorusHeatBounds
+module
+
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+public import Legacy.TorusEndpoint.TorusHeatBounds
+
+@[expose] public section
 
 /-!
 # The exact Mellin integral of the Green multiplier

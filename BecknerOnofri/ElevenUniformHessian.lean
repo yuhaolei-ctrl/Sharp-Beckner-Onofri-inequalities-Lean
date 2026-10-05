@@ -1,6 +1,10 @@
-import BecknerOnofri.UniformEntropyHessian
-import BecknerOnofri.UniformFourierHessian
-import BecknerOnofri.ElevenTransitionZeroSet
+module
+
+public import BecknerOnofri.UniformEntropyHessian
+public import BecknerOnofri.UniformFourierHessian
+public import BecknerOnofri.ElevenTransitionZeroSet
+
+@[expose] public section
 
 /-! The second derivative in the trusted definition is computed by actual
 entropy differentiation and the exact quadratic Fourier identity. -/

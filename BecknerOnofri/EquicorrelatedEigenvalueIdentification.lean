@@ -1,4 +1,8 @@
-import BecknerOnofri.EquicorrelatedRecognition
+module
+
+public import BecknerOnofri.EquicorrelatedRecognition
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

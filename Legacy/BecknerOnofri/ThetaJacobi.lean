@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.ThetaDomination
-import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+module
+
+public import Legacy.BecknerOnofri.ThetaDomination
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+
+@[expose] public section
 
 /-!
 Jacobi transformation for the actual real theta series with manuscript

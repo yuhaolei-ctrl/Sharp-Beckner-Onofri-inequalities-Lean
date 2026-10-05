@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.DiagonalSobolevProfile
-import BecknerOnofri.LocalElevenCore.DiagonalProfile
-import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.DiagonalSobolevProfile
+public import BecknerOnofri.LocalElevenCore.DiagonalProfile
+public import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+
+@[expose] public section
 
 /-! The genuine physical diagonal branch has its trusted leading profile
 in every Sobolev norm, uniformly over all torus translations. -/

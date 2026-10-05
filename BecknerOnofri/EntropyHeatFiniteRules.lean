@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatQuadrature
-import BecknerOnofri.EntropyHeatTailIntegral
+module
+
+public import BecknerOnofri.EntropyHeatQuadrature
+public import BecknerOnofri.EntropyHeatTailIntegral
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

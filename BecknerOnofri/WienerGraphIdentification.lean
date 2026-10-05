@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphImplicit
-import BecknerOnofri.WienerGraphSobolev
+module
+
+public import BecknerOnofri.WienerGraphImplicit
+public import BecknerOnofri.WienerGraphSobolev
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

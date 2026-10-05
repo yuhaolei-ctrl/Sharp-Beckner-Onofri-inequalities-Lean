@@ -1,0 +1,66 @@
+{
+  "version": "v0.4",
+  "project": {
+    "name": "Sharp Beckner–Onofri inequalities on the flat torus",
+    "description": "A Lean development of sharp periodic Beckner–Onofri and logarithmic Hardy–Littlewood–Sobolev inequalities, their equality cases, and the exceptional first-order transition in dimension eleven. The Palomar adaptation separates the low-dimensional, high-dimensional, and dimension-eleven claims into three self-contained statement surfaces. This branch is under migration to Lean 4.35.0-rc2 and is not yet verified or ready for registration.",
+    "authors": [
+      "Yuhao Lei",
+      "Matthew Rosenzweig"
+    ],
+    "license": "Apache-2.0",
+    "responsible_maintainers": [
+      "Yuhao Lei",
+      "Matthew Rosenzweig"
+    ]
+  },
+  "classification": {
+    "arxiv": [
+      "math.AP",
+      "math.FA"
+    ],
+    "msc2020": [
+      "35A23",
+      "46E35"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Sharp Beckner–Onofri inequalities on the flat torus: coefficients, defects, and phase transitions",
+      "authors": [
+        "Yuhao Lei",
+        "Matthew Rosenzweig"
+      ],
+      "type": "paper",
+      "relationship": "formalizes",
+      "note": "Manuscript dated 1 October 2026; source SHA-256 c65fcf8972bb53f49c34350cfd28975d757f67733d74ec7c3e9886eec0adcdc9. Proof routes differ in several finite certificates; see fidelity.divergences."
+    }
+  ],
+  "status": {
+    "scope": "Palomar/comparator-lowdim.json selects 9 low-dimensional claims; comparator-highdim.json selects 10 high-dimensional endpoint and onset claims; comparator-eleven.json selects 11 dimension-eleven claims. These are separate candidate entries. The larger development retains the original 269 targets corresponding to 51 manuscript results; not all are advertised by these three candidate entries. New-toolchain compilation and Palomar verification are pending. Remark 5.6 and the separate displayed cutoff-rate estimate are outside the original registered scope.",
+    "sorry_count": 0,
+    "sorry_in_definitions": 0,
+    "axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "automation": {
+    "methods": [
+      {
+        "method": "agent",
+        "framework": "OpenAI Codex",
+        "tool_setup": "AI-assisted Lean proof development, certificate generation, statement review, CI maintenance, and toolchain migration. Material earlier work is retained in Legacy/. The complete history of model identifiers and usage was not recorded."
+      }
+    ],
+    "notes": "Authors supplied the mathematical manuscript and directed the formalization. Finite arithmetic certificates are checked by the Lean kernel with proved semantic connections; externally computed values are not accepted as proof axioms."
+  },
+  "fidelity": {
+    "divergences": "The d=2 proof checks n=1,2,3 finitely and uses analytic estimates for n>=4; some certificates use scale 2^40 instead of 2^80, and the theta integral uses a rational Laplace bound rather than the manuscript quadrature grid. Additional original public statements still need strengthened exposure of integrability, smooth potential representatives, and pointwise uniformly convergent cosine mixtures. Those supporting statements are not separately advertised in these three initial entries."
+  },
+  "review": {
+    "status": "self-assessed",
+    "notes": "Agent-assisted source/statement review identified interface omissions recorded above. No independent human semantic review and no Palomar review or registration have been completed. Original frozen-certificate checks do not certify this migrated source."
+  },
+  "acknowledgements": "Mathlib and its dependencies, Lean, Comparator, lean4export, and external kernel-checking projects. Mathematical references and the original proof development retain their own provenance."
+}

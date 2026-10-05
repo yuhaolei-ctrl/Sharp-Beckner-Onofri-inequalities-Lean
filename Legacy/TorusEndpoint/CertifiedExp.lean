@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! A rational Taylor enclosure for the actual real exponential.
 This is a sound elementary evaluator, not a certificate of a torus grid. -/

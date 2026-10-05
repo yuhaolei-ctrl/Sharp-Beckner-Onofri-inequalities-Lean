@@ -1,4 +1,8 @@
-import BecknerOnofri.BilinearPolarization
+module
+
+public import BecknerOnofri.BilinearPolarization
+
+@[expose] public section
 
 /-! Integrating the genuine four-point comparison over the actual Haar product measure. -/
 noncomputable section

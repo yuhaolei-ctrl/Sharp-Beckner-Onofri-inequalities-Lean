@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenNonzeroLimit
-import BecknerOnofri.ContinuousOptimizerFromL2
+module
+
+public import BecknerOnofri.ElevenNonzeroLimit
+public import BecknerOnofri.ContinuousOptimizerFromL2
+
+@[expose] public section
 
 /-! Coexistence at the actual transition and the strict lower endpoint of its
 certified interval. The nonuniform state is the Gibbs density of the nonzero

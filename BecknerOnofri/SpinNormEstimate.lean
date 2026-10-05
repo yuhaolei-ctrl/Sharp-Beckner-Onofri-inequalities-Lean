@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinCorrectedNorm
+module
+
+public import BecknerOnofri.SpinCorrectedNorm
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

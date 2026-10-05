@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousGibbs
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+module
+
+public import BecknerOnofri.ContinuousGibbs
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+
+@[expose] public section
 
 /-! Actual first and second derivatives of entropy along a continuous
 perturbation of the uniform density. Uniform positivity justifies both

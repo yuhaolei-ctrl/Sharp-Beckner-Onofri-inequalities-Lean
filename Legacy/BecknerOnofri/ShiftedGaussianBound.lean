@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.GaussianTheta
-import Legacy.BecknerOnofri.HeatDensityApproximation
+module
+
+public import Legacy.BecknerOnofri.GaussianTheta
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+
+@[expose] public section
 
 /-! Full shifted Gaussian lattice bounds and the actual torus heat kernel. -/
 

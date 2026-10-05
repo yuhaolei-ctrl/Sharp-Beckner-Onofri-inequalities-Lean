@@ -1,4 +1,8 @@
-import BecknerOnofri.GraphHessian
+module
+
+public import BecknerOnofri.GraphHessian
+
+@[expose] public section
 
 /-! The mixed graph/complement Hessian vanishes on the full raw L² domain,
 so in particular on every trusted critical-Sobolev complementary direction. -/

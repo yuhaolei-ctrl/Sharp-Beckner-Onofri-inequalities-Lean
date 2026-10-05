@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.FiniteCertificates
-import Legacy.BecknerOnofri.FiniteScalarSemantics
-import Legacy.BecknerOnofri.ScalarNormalization
+module
+
+public import Legacy.BecknerOnofri.FiniteCertificates
+public import Legacy.BecknerOnofri.FiniteScalarSemantics
+public import Legacy.BecknerOnofri.ScalarNormalization
+
+@[expose] public section
 
 /-! The complete finite polynomial estimate, including its actual Gamma/pi
 coefficient. The Fourier/lattice identification remains a separate obligation. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.FormLift
+module
+
+public import BecknerOnofri.Friedrichs.FormLift
+
+@[expose] public section
 
 /-! Continuity extends the weak equation from compactly supported smooth tests
 to every element of the spatial form closure. -/

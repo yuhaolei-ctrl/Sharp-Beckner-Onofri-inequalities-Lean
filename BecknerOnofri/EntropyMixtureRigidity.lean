@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailBudget
-import BecknerOnofri.GenericCosineRepresentation
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.EntropyTailBudget
+public import BecknerOnofri.GenericCosineRepresentation
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! The zero-first-moment rigidity argument (5.55) for the actual countable
 cosine mixture. The outer coordinate indices need not be independent. -/

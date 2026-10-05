@@ -1,4 +1,8 @@
-import BecknerOnofri.CirclePoissonGenerator
+module
+
+public import BecknerOnofri.CirclePoissonGenerator
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

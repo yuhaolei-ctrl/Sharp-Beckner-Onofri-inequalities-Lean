@@ -1,5 +1,9 @@
-import BecknerOnofri.HighDimRectangles
-import Mathlib.Data.Nat.Sqrt
+module
+
+public import BecknerOnofri.HighDimRectangles
+public import Mathlib.Data.Nat.Sqrt
+
+@[expose] public section
 
 /-! The d=12 rectangle case added in the 2026-09-21 manuscript.
 The zero-one cube gap is checked with exact rational lower bounds for square

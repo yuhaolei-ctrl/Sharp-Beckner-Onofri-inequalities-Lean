@@ -1,7 +1,11 @@
-import BecknerOnofri.DiagonalProfile
-import BecknerOnofri.GraphTranslationTangents
-import BecknerOnofri.GraphCritical
-import BecknerOnofri.EulerEquation
+module
+
+public import BecknerOnofri.DiagonalProfile
+public import BecknerOnofri.GraphTranslationTangents
+public import BecknerOnofri.GraphCritical
+public import BecknerOnofri.EulerEquation
+
+@[expose] public section
 
 /-! All non-Hessian fields of the actual physical full-mode branch, including
 its exact Fourier stationarity and actual raw translation tangent independence. -/

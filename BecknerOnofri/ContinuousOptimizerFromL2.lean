@@ -1,4 +1,8 @@
-import BecknerOnofri.OptimizerDuality
+module
+
+public import BecknerOnofri.OptimizerDuality
+
+@[expose] public section
 
 /-! Regularize a specified Hilbert-space optimizer, preserving that exact L2
 class and comparison with the full raw critical-Sobolev domain. -/

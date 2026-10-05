@@ -1,6 +1,10 @@
-import BecknerOnofri.TwelveExitReduction
-import BecknerOnofri.GlobalPressureOnset
-import BecknerOnofri.OnsetTransfer
+module
+
+public import BecknerOnofri.TwelveExitReduction
+public import BecknerOnofri.GlobalPressureOnset
+public import BecknerOnofri.OnsetTransfer
+
+@[expose] public section
 
 /-! Both exact scalar-onset assertions reduce to the same explicit d=12
 numerical-neighborhood obligation as the endpoint. The obligation remains

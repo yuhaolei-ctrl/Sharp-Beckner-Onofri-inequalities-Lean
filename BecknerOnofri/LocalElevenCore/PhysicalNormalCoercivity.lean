@@ -1,9 +1,13 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.PhysicalNormalCoercivity
-import BecknerOnofri.LocalElevenCore.NormalHessianCoercivity
-import BecknerOnofri.LocalElevenCore.PhysicalTranslationTangents
-import BecknerOnofri.LocalElevenCore.FullBranchHessian
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.PhysicalNormalCoercivity
+public import BecknerOnofri.LocalElevenCore.NormalHessianCoercivity
+public import BecknerOnofri.LocalElevenCore.PhysicalTranslationTangents
+public import BecknerOnofri.LocalElevenCore.FullBranchHessian
+
+@[expose] public section
 
 /-! Strict normal coercivity of the actual physical full-mode branch, with
 the exact raw H^(d/2) orthogonality and norm in the trusted theorem. -/

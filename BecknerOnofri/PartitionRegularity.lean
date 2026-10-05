@@ -1,4 +1,8 @@
-import BecknerOnofri.LegacyBridge
+module
+
+public import BecknerOnofri.LegacyBridge
+
+@[expose] public section
 
 /-! Finiteness and normalization of the actual extended log-partition.
 All exponential integrability is proved from critical Sobolev membership. -/

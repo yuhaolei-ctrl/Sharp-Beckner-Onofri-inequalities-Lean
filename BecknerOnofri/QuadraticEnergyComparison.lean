@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticEvenOrder
+module
+
+public import BecknerOnofri.AnalyticEvenOrder
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

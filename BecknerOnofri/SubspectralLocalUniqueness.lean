@@ -1,5 +1,9 @@
-import BecknerOnofri.SubspectralResolvent
-import Mathlib.Analysis.Calculus.ImplicitContDiff
+module
+
+public import BecknerOnofri.SubspectralResolvent
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+
+@[expose] public section
 
 /-! Banach implicit-function proof of local uniqueness below the spectral
 threshold. This auxiliary version uses continuous potentials, with the

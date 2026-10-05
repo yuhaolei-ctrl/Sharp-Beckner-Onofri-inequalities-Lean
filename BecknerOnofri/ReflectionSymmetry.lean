@@ -1,4 +1,8 @@
-import BecknerOnofri.PermutationSymmetry
+module
+
+public import BecknerOnofri.PermutationSymmetry
+
+@[expose] public section
 
 /-! Spatial inversion and complex conjugation symmetry of the actual torus
 Gibbs map and its uniquely constructed complementary graph. -/

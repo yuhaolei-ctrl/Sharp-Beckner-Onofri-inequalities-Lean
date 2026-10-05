@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleMeanBounds
-import BecknerOnofri.CircleMomentComparison
-import BecknerOnofri.CircleRateEntropy
+module
+
+public import BecknerOnofri.CircleMeanBounds
+public import BecknerOnofri.CircleMomentComparison
+public import BecknerOnofri.CircleRateEntropy
+
+@[expose] public section
 
 /-! The manuscript's full von Mises comparison for a normalized increasing
 convex exponential cosine profile: mean domain, moments, and entropy. -/

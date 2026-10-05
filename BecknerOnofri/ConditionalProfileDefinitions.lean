@@ -1,5 +1,9 @@
-import BecknerOnofri.ConditionalEntropyDefinitions
-import Mathlib.Analysis.Convex.Function
+module
+
+public import BecknerOnofri.ConditionalEntropyDefinitions
+public import Mathlib.Analysis.Convex.Function
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.ConditionalEntropy

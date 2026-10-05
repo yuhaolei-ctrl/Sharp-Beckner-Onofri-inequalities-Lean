@@ -1,9 +1,13 @@
-import BecknerOnofri.GeneralEuler.CosineProfile
-import BecknerOnofri.GeneralEuler.Regularity
-import Legacy.BecknerOnofri.CubeProfileMonotone
-import Legacy.BecknerOnofri.PositiveCosineRepresentation
-import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
-import Legacy.BecknerOnofri.MixedExponentialPolynomial
+module
+
+public import BecknerOnofri.GeneralEuler.CosineProfile
+public import BecknerOnofri.GeneralEuler.Regularity
+public import Legacy.BecknerOnofri.CubeProfileMonotone
+public import Legacy.BecknerOnofri.PositiveCosineRepresentation
+public import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+public import Legacy.BecknerOnofri.MixedExponentialPolynomial
+
+@[expose] public section
 
 /-! The actual smooth Euler profiles in the unit-cube coordinates used by
 the positive Taylor and mixture endpoint theorems. -/

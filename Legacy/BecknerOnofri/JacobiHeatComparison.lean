@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiHeatNonnegative
-import Legacy.BecknerOnofri.JacobiHeatFiniteComparison
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatNonnegative
+public import Legacy.BecknerOnofri.JacobiHeatFiniteComparison
+
+@[expose] public section
 
 /-! Actual Jacobi heat-kernel domination by the Dirichlet m=1 kernel.
 The initial data are matched using genuine polynomial approximation from above. -/

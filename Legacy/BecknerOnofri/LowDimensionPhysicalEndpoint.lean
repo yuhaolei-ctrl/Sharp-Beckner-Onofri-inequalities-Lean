@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.LowDimensionEquality
-import Legacy.TorusEndpoint.PhysicalGreenFiniteEnergy
+module
+
+public import Legacy.BecknerOnofri.LowDimensionEquality
+public import Legacy.TorusEndpoint.PhysicalGreenFiniteEnergy
+
+@[expose] public section
 
 /-! The actual singular Green-interaction version of the low-dimensional
 endpoint. Integrability of the interaction is a conclusion for every density

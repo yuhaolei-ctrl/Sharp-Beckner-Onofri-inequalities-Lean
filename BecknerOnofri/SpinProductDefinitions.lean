@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinDefinitions
+module
+
+public import BecknerOnofri.SpinDefinitions
+
+@[expose] public section
 
 /-! The manuscript's product-spin plus-count law and binary entropy cost. -/
 noncomputable section

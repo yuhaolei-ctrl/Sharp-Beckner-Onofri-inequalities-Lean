@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinMixtureFeasibility
+module
+
+public import BecknerOnofri.SpinMixtureFeasibility
+
+@[expose] public section
 
 /-! A definition-only interface for the trusted challenge: all hypotheses
 spell out the actual cosine mixture rather than importing its proof modules. -/

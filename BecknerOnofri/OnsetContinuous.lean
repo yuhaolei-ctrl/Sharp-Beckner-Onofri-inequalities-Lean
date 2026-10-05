@@ -1,5 +1,9 @@
-import BecknerOnofri.OnsetWienerConvergence
-import BecknerOnofri.GraphRegularity
+module
+
+public import BecknerOnofri.OnsetWienerConvergence
+public import BecknerOnofri.GraphRegularity
+
+@[expose] public section
 
 /-! Global continuous optimizers converge in the actual uniform norm, from
 endpoint rigidity and the proved quantitative Wiener bounds. -/

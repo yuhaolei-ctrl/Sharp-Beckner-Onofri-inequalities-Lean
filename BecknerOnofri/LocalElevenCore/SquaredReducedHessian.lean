@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.SquaredReducedEnergy
+module
+
+public import BecknerOnofri.LocalElevenCore.SquaredReducedEnergy
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

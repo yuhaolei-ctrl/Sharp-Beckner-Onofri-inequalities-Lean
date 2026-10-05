@@ -1,4 +1,8 @@
-import BecknerOnofri.ReducedEnergyGradient
+module
+
+public import BecknerOnofri.ReducedEnergyGradient
+
+@[expose] public section
 
 /-! The actual parameter derivative of the physical energy on the implicit
 graph. Its proof differentiates the genuine projected Gibbs equation. -/

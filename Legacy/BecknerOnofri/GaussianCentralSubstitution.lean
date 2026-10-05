@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GaussianCentral
+module
+
+public import Legacy.BecknerOnofri.GaussianCentral
+
+@[expose] public section
 
 /-! The nonlinear substitution identifying the central heat contribution. -/
 namespace Legacy.BecknerOnofri.GaussianCentral

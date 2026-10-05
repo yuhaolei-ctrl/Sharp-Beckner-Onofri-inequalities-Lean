@@ -1,5 +1,9 @@
-import BecknerOnofri.GraphTranslationTangents
-import BecknerOnofri.RealDiagonalReduction
+module
+
+public import BecknerOnofri.GraphTranslationTangents
+public import BecknerOnofri.RealDiagonalReduction
+
+@[expose] public section
 
 /-! Exact translation directions lie in the actual reduced derivative kernel.
 These are differentiated torus symmetries, not zeros of a model polynomial. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.CubeLatticeTail
+module
+
+public import BecknerOnofri.CubeLatticeTail
+
+@[expose] public section
 
 /-! The exact gamma bound for transverse lattice slices. -/
 noncomputable section
@@ -26,7 +30,7 @@ theorem finite_gaussian_le {m : ℕ} (B : Finset (Fin m → ℤ)) {t : ℝ} (ht 
       Finset.sum_le_sum_of_subset_of_nonneg hsub (by intro k hk hk'; positivity)
     _ = ∏i, ∑n∈D i,Real.exp (-t*(n:ℝ)^2) := (Finset.prod_univ_sum D (fun (_ : Fin m) (n : ℤ) => Real.exp (-t*(n:ℝ)^2))).symm
     _ ≤ ∏ _i : Fin m, (1+Real.sqrt (Real.pi/t)) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro i hi; positivity
       · intro i hi
         exact ((summable_realTheta ht).sum_le_tsum (D i) (by intro n hn; positivity)).trans

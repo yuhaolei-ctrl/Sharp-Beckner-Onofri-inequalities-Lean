@@ -1,4 +1,8 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+@[expose] public section
 
 /-! Exact coefficients in (1.28); definitions only. -/
 namespace BecknerOnofri.HighDim

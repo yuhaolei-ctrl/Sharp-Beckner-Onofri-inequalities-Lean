@@ -1,4 +1,8 @@
-import BecknerOnofri.SpatialThetaJacobiAlgebra
+module
+
+public import BecknerOnofri.SpatialThetaJacobiAlgebra
+
+@[expose] public section
 
 /-! Norm-convergent Jacobi products in the actual circle Banach algebra and
 their exact Fourier coefficient scaling with Laurent radius. -/

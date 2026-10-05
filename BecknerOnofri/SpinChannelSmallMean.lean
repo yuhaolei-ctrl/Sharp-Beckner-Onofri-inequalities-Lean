@@ -1,7 +1,11 @@
-import BecknerOnofri.SpinChannelMean
-import BecknerOnofri.SpinMixtureFeasibility
-import BecknerOnofri.SpinSmallMean
-import BecknerOnofri.CircleSmallGamma
+module
+
+public import BecknerOnofri.SpinChannelMean
+public import BecknerOnofri.SpinMixtureFeasibility
+public import BecknerOnofri.SpinSmallMean
+public import BecknerOnofri.CircleSmallGamma
+
+@[expose] public section
 
 /-! The small-mean finite-spin/scalar conclusion for the actual channel of
 a positive cosine mixture, with its mean supplied by the genuine integral. -/

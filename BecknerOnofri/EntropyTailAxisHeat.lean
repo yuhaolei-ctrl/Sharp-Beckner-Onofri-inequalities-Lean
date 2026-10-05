@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailAxisFactors
-import BecknerOnofri.EntropyTailHeat
-import BecknerOnofri.SpectralSliceBound
+module
+
+public import BecknerOnofri.EntropyTailAxisFactors
+public import BecknerOnofri.EntropyTailHeat
+public import BecknerOnofri.SpectralSliceBound
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

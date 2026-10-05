@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenHilbertContinuous
-import BecknerOnofri.RawComplementGap
+module
+
+public import BecknerOnofri.GreenHilbertContinuous
+public import BecknerOnofri.RawComplementGap
+
+@[expose] public section
 
 /-! Exact omitted inverse-Fourier tails for the dimension-twelve enclosure
 iteration. The tail constant is the genuine omitted lattice sum, and the

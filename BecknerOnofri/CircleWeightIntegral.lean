@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleWeightSeries
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import BecknerOnofri.CircleWeightSeries
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Identification of the positive-series weight with the exact integral
 appearing after integration of the Poisson-flow dissipation. -/

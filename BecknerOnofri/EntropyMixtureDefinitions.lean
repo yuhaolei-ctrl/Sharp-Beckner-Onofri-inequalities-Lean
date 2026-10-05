@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailDefinitions
+module
+
+public import BecknerOnofri.EntropyTailDefinitions
+
+@[expose] public section
 
 /-! Pure definitions of the correlated cosine mixtures in the manuscript.
 No Fourier estimate, scalar certificate, or entropy inequality is assumed. -/

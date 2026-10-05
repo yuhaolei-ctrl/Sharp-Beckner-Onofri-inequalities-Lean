@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyLogEvaluator
+module
+
+public import BecknerOnofri.EntropyLogEvaluator
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyLogCertificate
 

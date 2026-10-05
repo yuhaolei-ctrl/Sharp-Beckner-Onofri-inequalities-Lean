@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Mathlib.Topology.UniformSpace.UniformConvergence
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Mathlib.Topology.UniformSpace.UniformConvergence
+
+@[expose] public section
 
 /-! Actual closed-cube coordinate derivatives and Taylor coefficients.
 No convergence or representation statement is included in these definitions. -/

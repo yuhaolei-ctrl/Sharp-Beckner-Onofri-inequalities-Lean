@@ -1,6 +1,10 @@
-import Mathlib.Data.Finsupp.Basic
-import Mathlib.Algebra.BigOperators.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Finsupp.Basic
+public import Mathlib.Algebra.BigOperators.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The actual finite rectangular forward difference, with no differentiability assumptions. -/
 noncomputable section

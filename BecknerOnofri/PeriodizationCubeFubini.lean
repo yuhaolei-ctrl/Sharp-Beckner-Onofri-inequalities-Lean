@@ -1,5 +1,9 @@
-import BecknerOnofri.PeriodizationCube
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import BecknerOnofri.PeriodizationCube
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-! Splitting a coordinate of the half-open fundamental cube, with its
 restricted Lebesgue measure, for the label-law marginal calculation. -/

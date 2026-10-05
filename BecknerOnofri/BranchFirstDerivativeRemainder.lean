@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDerivativeLimits
+module
+
+public import BecknerOnofri.BranchDerivativeLimits
+
+@[expose] public section
 
 /-! Quantitative first derivative remainder in the parameterized branch. -/
 noncomputable section

@@ -1,7 +1,11 @@
-import BecknerOnofri.CircleTorusFlowDefinitions
-import BecknerOnofri.CirclePoissonMultiplier
-import BecknerOnofri.CircleTorusRegularity
-import BecknerOnofri.CircleLambda
+module
+
+public import BecknerOnofri.CircleTorusFlowDefinitions
+public import BecknerOnofri.CirclePoissonMultiplier
+public import BecknerOnofri.CircleTorusRegularity
+public import BecknerOnofri.CircleLambda
+
+@[expose] public section
 
 /-! Continuity, exact Fourier multipliers and convergent reconstruction of
 the actual Poisson flow on the product-torus representation of the circle. -/

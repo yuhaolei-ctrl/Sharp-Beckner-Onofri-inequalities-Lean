@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedEquation
-import BecknerOnofri.LocalElevenCore.GreenLocalBranch
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedEquation
+public import BecknerOnofri.LocalElevenCore.GreenLocalBranch
+
+@[expose] public section
 
 /-! Exact finite-dimensional reduction of the genuine preconditioned torus
 Euler equation; no polynomial substitute is used for the Gibbs map. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.CoordinatePolarizationFibers
-import BecknerOnofri.PolarizationOrbitClosure
-import BecknerOnofri.BoundedMomentFunctional
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import BecknerOnofri.CoordinatePolarizationFibers
+public import BecknerOnofri.PolarizationOrbitClosure
+public import BecknerOnofri.BoundedMomentFunctional
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-! Compact selection using only one coordinate. Full fiber distributions
 are retained, permitting subsequent identification with canonical rearrangement. -/

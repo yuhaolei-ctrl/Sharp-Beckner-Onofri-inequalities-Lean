@@ -1,5 +1,9 @@
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Mathlib.MeasureTheory.Function.LpSpace.Complete
+module
+
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Mathlib.MeasureTheory.Function.LpSpace.Complete
+
+@[expose] public section
 
 /-! Completeness in the concrete integral L1 metric and transfer of Cauchy
 convergence under a contractive transformation of an approximating sequence. -/

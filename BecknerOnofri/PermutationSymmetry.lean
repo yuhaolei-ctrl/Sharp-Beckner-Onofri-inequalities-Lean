@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedSymmetry
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.ReducedSymmetry
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Coordinate permutation covariance of the actual torus Gibbs problem. -/
 noncomputable section

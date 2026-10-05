@@ -1,5 +1,9 @@
-import BecknerOnofri.OptimizerPrescribedPotential
-import BecknerOnofri.ContinuousOptimizerFromL2
+module
+
+public import BecknerOnofri.OptimizerPrescribedPotential
+public import BecknerOnofri.ContinuousOptimizerFromL2
+
+@[expose] public section
 
 /-! Section 2 extremizer correspondence for the prescribed physical Green
 potential, on the full critical-Sobolev and finite-entropy domains. -/

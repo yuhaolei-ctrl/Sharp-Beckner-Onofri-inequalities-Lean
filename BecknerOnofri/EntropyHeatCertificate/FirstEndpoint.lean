@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatPanelCertificate
-import BecknerOnofri.EntropyHeatCertificate.Exp0000
+module
+
+public import BecknerOnofri.EntropyHeatPanelCertificate
+public import BecknerOnofri.EntropyHeatCertificate.Exp0000
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate
 open ExpCertificate
 set_option maxRecDepth 1000000

@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleVonMisesComparison
-import Mathlib.MeasureTheory.Group.Integral
-import Mathlib.MeasureTheory.Measure.OpenPos
+module
+
+public import BecknerOnofri.CircleVonMisesComparison
+public import Mathlib.MeasureTheory.Group.Integral
+public import Mathlib.MeasureTheory.Measure.OpenPos
+
+@[expose] public section
 
 /-! The actual mean lies in [0,1) for an increasing exponential cosine
 profile. The sign comes from half-period pairing; strictness from positivity. -/

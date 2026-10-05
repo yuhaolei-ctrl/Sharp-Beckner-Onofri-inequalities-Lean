@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleGammaDefinitions
-import BecknerOnofri.CircleScalarCandidates
-import BecknerOnofri.CircleWeightSeries
+module
+
+public import BecknerOnofri.CircleGammaDefinitions
+public import BecknerOnofri.CircleScalarCandidates
+public import BecknerOnofri.CircleWeightSeries
+
+@[expose] public section
 
 /-! Semantic identification of the four-candidate definition of γ with
 exactly the constrained minimum in the manuscript. -/

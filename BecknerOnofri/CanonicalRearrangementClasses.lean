@@ -1,4 +1,8 @@
-import BecknerOnofri.CoordinateRearrangementAE
+module
+
+public import BecknerOnofri.CoordinateRearrangementAE
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

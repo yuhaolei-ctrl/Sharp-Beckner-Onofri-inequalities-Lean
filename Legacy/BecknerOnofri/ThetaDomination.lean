@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Convex.SpecificFunctions.Basic
-import Mathlib.MeasureTheory.Integral.Bochner.Set
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+module
+
+public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+
+@[expose] public section
 
 /-! Dimension reduction for the theta integral in the manuscript.
 

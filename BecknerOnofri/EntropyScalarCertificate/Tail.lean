@@ -1,8 +1,12 @@
-import BecknerOnofri.ScalarTailPoint
-import BecknerOnofri.ScalarMinorantBounds
-import BecknerOnofri.CircleSmallGamma
-import BecknerOnofri.EntropyScalarCertificate.Brackets0195
-import BecknerOnofri.EntropyScalarCertificate.Bessel0488
+module
+
+public import BecknerOnofri.ScalarTailPoint
+public import BecknerOnofri.ScalarMinorantBounds
+public import BecknerOnofri.CircleSmallGamma
+public import BecknerOnofri.EntropyScalarCertificate.Brackets0195
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0488
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.CertifiedMinorant
 open EntropyLogCertificate CircleScalar
 set_option maxRecDepth 100000

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyLogCertificate
-import BecknerOnofri.EntropyExpCertificate
+module
+
+public import BecknerOnofri.EntropyLogCertificate
+public import BecknerOnofri.EntropyExpCertificate
+
+@[expose] public section
 
 /-! Directed, fixed-precision Horner evaluation for logarithm enclosures.
 All rounding is rational. The error bound comes from the analytic atanh

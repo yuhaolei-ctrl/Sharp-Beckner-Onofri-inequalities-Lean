@@ -1,6 +1,10 @@
-import BecknerOnofri.ReducedCubicExpansion
-import BecknerOnofri.AnalyticEvenOrder
-import BecknerOnofri.FirstShellOrbits
+module
+
+public import BecknerOnofri.ReducedCubicExpansion
+public import BecknerOnofri.AnalyticEvenOrder
+public import BecknerOnofri.FirstShellOrbits
+
+@[expose] public section
 
 /-! Genuine translation parity improves the actual reduced cubic remainder to order five. -/
 noncomputable section

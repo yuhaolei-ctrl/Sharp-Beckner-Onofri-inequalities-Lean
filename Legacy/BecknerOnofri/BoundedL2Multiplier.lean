@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.PositiveOperatorNeumann
-import Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp
-import Mathlib.Analysis.Normed.Operator.Compact.Basic
+module
+
+public import Legacy.BecknerOnofri.PositiveOperatorNeumann
+public import Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp
+public import Mathlib.Analysis.Normed.Operator.Compact.Basic
+
+@[expose] public section
 
 /-! Genuine bounded multiplication and symmetric weighted operators in real L2. -/
 noncomputable section

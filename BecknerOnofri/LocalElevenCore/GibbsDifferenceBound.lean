@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GibbsDifferenceBound
-import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GibbsDifferenceBound
+public import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+
+@[expose] public section
 
 /-! A uniform quadratic Lipschitz estimate for the actual normalized Gibbs remainder. -/
 noncomputable section

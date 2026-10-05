@@ -1,7 +1,11 @@
-import Mathlib.Analysis.PSeries
-import Mathlib.Analysis.SumIntegralComparisons
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.PSeries
+public import Mathlib.Analysis.SumIntegralComparisons
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The zeta(11) integral comparison and odd-integer tail used in the
 first absolute moment of the lattice label. All sums here are infinite sums. -/

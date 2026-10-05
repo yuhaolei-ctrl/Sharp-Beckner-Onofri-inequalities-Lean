@@ -1,6 +1,10 @@
-import BecknerOnofri.AnalyticPitchforkInvertible
-import BecknerOnofri.AnalyticDerivativeOrder
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import BecknerOnofri.AnalyticPitchforkInvertible
+public import BecknerOnofri.AnalyticDerivativeOrder
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

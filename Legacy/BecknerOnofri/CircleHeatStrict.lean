@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatGeometry
+module
+
+public import Legacy.BecknerOnofri.CircleHeatGeometry
+
+@[expose] public section
 
 /-! Strict circular heat monotonicity from the certified positive margins. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinChannelDefinitions
+module
+
+public import BecknerOnofri.SpinChannelDefinitions
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

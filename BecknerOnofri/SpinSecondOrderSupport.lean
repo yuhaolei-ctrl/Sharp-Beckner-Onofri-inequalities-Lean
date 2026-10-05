@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSegmentCalculus
+module
+
+public import BecknerOnofri.SpinSegmentCalculus
+
+@[expose] public section
 
 /-! A scalar second-order support theorem with continuity at the boundary.
 No differentiability of the far endpoint is required. -/

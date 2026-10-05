@@ -1,6 +1,10 @@
-import BecknerOnofri.PolarizationLipschitz
-import BecknerOnofri.PolarizationOrbitDistribution
-import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
+module
+
+public import BecknerOnofri.PolarizationLipschitz
+public import BecknerOnofri.PolarizationOrbitDistribution
+public import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
+
+@[expose] public section
 
 /-! The actual polarization orbit of a Lipschitz function has compact uniform
 closure, as used before maximizing the strict cosine moment. -/

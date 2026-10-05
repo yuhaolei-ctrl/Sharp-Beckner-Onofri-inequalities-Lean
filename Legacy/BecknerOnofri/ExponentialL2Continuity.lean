@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ExponentialPartitionContinuity
+module
+
+public import Legacy.BecknerOnofri.ExponentialPartitionContinuity
+
+@[expose] public section
 
 /-! A quantitative L2 bound for exponentials from L2 convergence of the
 potentials and their actual fourth exponential moments. -/

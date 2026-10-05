@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedSymmetry
-import BecknerOnofri.LocalElevenCore.CorrectionSymmetry
-import BecknerOnofri.LocalElevenCore.ReducedEquation
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedSymmetry
+public import BecknerOnofri.LocalElevenCore.CorrectionSymmetry
+public import BecknerOnofri.LocalElevenCore.ReducedEquation
+
+@[expose] public section
 
 /-! Exact translation covariance of the actual, non-polynomial reduced equation. -/
 noncomputable section

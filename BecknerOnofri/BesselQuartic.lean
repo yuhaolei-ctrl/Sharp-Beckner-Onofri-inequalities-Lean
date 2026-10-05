@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 The exact positive-series definition of I₀(2t) and its quartic logarithmic bound.

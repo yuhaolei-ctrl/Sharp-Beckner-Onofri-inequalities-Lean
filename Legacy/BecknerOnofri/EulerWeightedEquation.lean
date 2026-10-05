@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EulerWeightedProfiles
-import Legacy.BecknerOnofri.AngularCubeOrder
+module
+
+public import Legacy.BecknerOnofri.EulerWeightedProfiles
+public import Legacy.BecknerOnofri.AngularCubeOrder
+
+@[expose] public section
 
 /-! Exact weighted Euler equations in the actual angular L2 space. The first
 mixed derivative is an eigenvector; all higher remainders are concrete Bell

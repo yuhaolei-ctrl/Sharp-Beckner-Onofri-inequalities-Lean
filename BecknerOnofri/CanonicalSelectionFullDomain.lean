@@ -1,7 +1,11 @@
-import BecknerOnofri.CanonicalSelectionDefinitions
-import BecknerOnofri.CanonicalSelectionPaper
-import BecknerOnofri.CanonicalRearrangementClasses
-import BecknerOnofri.CanonicalSelectionFourier
+module
+
+public import BecknerOnofri.CanonicalSelectionDefinitions
+public import BecknerOnofri.CanonicalSelectionPaper
+public import BecknerOnofri.CanonicalRearrangementClasses
+public import BecknerOnofri.CanonicalSelectionFourier
+
+@[expose] public section
 
 /-! Remove the smooth-representative restriction using actual optimizer
 regularity, Fubini, and invariance of the literal layer-cake rearrangement. -/

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GreenHeatPointwise
+module
+
+public import Legacy.BecknerOnofri.GreenHeatPointwise
+
+@[expose] public section
 
 /-! Joint measurability and measurable parameter integration for the actual heat Green function. -/
 noncomputable section

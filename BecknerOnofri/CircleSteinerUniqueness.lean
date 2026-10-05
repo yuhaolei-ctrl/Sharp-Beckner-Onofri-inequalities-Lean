@@ -1,6 +1,10 @@
-import BecknerOnofri.DistributionMonotoneUniqueness
-import BecknerOnofri.PolarizationMetricGeometry
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import BecknerOnofri.DistributionMonotoneUniqueness
+public import BecknerOnofri.PolarizationMetricGeometry
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-! On the one-dimensional torus, the actual Steiner property is radial
 monotonicity, and equal distributions determine a unique continuous function. -/

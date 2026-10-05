@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.JacobiTensorBasis
-import Legacy.BecknerOnofri.TensorBernstein
-import Mathlib.LinearAlgebra.Multilinear.Basis
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorBasis
+public import Legacy.BecknerOnofri.TensorBernstein
+public import Mathlib.LinearAlgebra.Multilinear.Basis
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Completeness for actual finite tensor products of Jacobi eigenfunctions. -/
 noncomputable section
@@ -37,7 +41,7 @@ theorem tensorPolynomial_bounded {d : ℕ} (a : Index d) (p : Fin d → Polynomi
   choose C hC using fun i => angularPolynomial_bounded (a i) (p i)
   refine ⟨∏ i, C i, fun x => ?_⟩
   rw [tensorPolynomial_apply, norm_prod]
-  exact Finset.prod_le_prod (fun _ _ => norm_nonneg _) (fun i _ => hC i (x i))
+  exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _) (fun i _ => hC i (x i))
 
 theorem tensorPolynomial_memLp {d : ℕ} (a : Index d) (p : Fin d → Polynomial ℝ) :
     MemLp (tensorPolynomial a p) 2 (measure d) := by
@@ -106,7 +110,7 @@ theorem sineWeight_continuous {d : ℕ} (a : Index d) : Continuous (sineWeight a
 
 theorem sineWeight_norm_le {d : ℕ} (a : Index d) (x : Space d) : ‖sineWeight a x‖ ≤ 1 := by
   rw [sineWeight, norm_prod]
-  apply Finset.prod_le_one (fun _ _ => norm_nonneg _)
+  apply Finset.prod_le_one₀ (fun _ _ => norm_nonneg _)
   intro i _
   rw [Real.norm_eq_abs, abs_pow]
   simpa using pow_le_pow_left₀ (abs_nonneg (Real.sin (x i))) (Real.abs_sin_le_one (x i)) (a i)

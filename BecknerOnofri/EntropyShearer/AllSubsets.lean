@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyShearer.Chain
+module
+
+public import BecknerOnofri.EntropyShearer.Chain
+
+@[expose] public section
 
 /-! Shearer's inequality for all coordinate subsets of a fixed size, initially
 for positive bounded densities. The marginal is the actual Haar integral. -/

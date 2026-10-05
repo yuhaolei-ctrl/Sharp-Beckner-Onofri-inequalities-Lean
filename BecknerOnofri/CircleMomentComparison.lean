@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleMomentPolynomials
+module
+
+public import BecknerOnofri.CircleMomentPolynomials
+
+@[expose] public section
 
 /-! The exact second- and third-moment comparisons from the manuscript,
 now applied to the actual two circle densities, not assumed moments. -/

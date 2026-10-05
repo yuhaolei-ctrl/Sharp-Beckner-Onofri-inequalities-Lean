@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenLabelMarginals
-import Mathlib.Topology.Algebra.InfiniteSum.Real
+module
+
+public import BecknerOnofri.ElevenLabelMarginals
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+
+@[expose] public section
 
 /-! Coordinate expectations of the genuine joint label law, including
 absolute summability needed for logarithmic cross entropies. -/

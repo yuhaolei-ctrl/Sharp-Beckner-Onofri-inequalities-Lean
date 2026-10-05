@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedWeightedCutoff
-import BecknerOnofri.Friedrichs.AngularCutoffApproximation
-import BecknerOnofri.Friedrichs.FormNormIdentity
+module
+
+public import BecknerOnofri.Friedrichs.MixedWeightedCutoff
+public import BecknerOnofri.Friedrichs.AngularCutoffApproximation
+public import BecknerOnofri.Friedrichs.FormNormIdentity
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.SpatialGraphClosed
+module
+
+public import BecknerOnofri.Friedrichs.SpatialGraphClosed
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

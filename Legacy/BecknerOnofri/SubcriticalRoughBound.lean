@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.TruncatedGibbs
-import Legacy.BecknerOnofri.SobolevDensityPairing
-import Legacy.BecknerOnofri.GreenExponentialIntegrability
-import Legacy.BecknerOnofri.SubcriticalAttainment
+module
+
+public import Legacy.BecknerOnofri.TruncatedGibbs
+public import Legacy.BecknerOnofri.SobolevDensityPairing
+public import Legacy.BecknerOnofri.GreenExponentialIntegrability
+public import Legacy.BecknerOnofri.SubcriticalAttainment
+
+@[expose] public section
 
 /-! The full-function rough exponential inequality is obtained from actual
 truncated Gibbs densities and proved Fourier pairing. The final theorems

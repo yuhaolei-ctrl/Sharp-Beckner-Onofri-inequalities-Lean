@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleEqualityEnergy
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityEnergy
+
+@[expose] public section
 
 /-! The actual Poisson family attains the circle entropy endpoint. -/
 noncomputable section

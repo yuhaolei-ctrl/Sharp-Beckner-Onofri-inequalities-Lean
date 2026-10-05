@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.JacobiPolynomial
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
+module
+
+public import Legacy.BecknerOnofri.JacobiPolynomial
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+public import Mathlib.Analysis.Calculus.ContDiff.Deriv
+
+@[expose] public section
 
 /-! Actual one-variable angular conjugation of the Jacobi differential expression.
 This is a pointwise identity; no closed-operator or Friedrichs-domain identification is asserted.

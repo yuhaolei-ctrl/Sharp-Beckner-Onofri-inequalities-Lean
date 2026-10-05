@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.EqualAmplitudeSupport
+module
+
+public import BecknerOnofri.LocalElevenCore.EqualAmplitudeSupport
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

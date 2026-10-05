@@ -1,4 +1,8 @@
-import BecknerOnofri.GinibreMonotonicity
+module
+
+public import BecknerOnofri.GinibreMonotonicity
+
+@[expose] public section
 
 /-! Summable nonnegative cosine series define genuine uniformly convergent
 continuous potentials. Ginibre covariance and normalized expectations pass to

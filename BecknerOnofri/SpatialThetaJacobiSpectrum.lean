@@ -1,4 +1,8 @@
-import BecknerOnofri.SpatialThetaJacobiProducts
+module
+
+public import BecknerOnofri.SpatialThetaJacobiProducts
+
+@[expose] public section
 
 /-! The actual product's Fourier recurrence identifies its spectrum with the
 spatial Gaussian theta spectrum, up to one common normalization constant. -/

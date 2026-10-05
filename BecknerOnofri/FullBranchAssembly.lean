@@ -1,6 +1,10 @@
-import BecknerOnofri.PhysicalBranchProperties
-import BecknerOnofri.GlobalOptimizerClassification
-import BecknerOnofri.DiagonalSobolevProfile
+module
+
+public import BecknerOnofri.PhysicalBranchProperties
+public import BecknerOnofri.GlobalOptimizerClassification
+public import BecknerOnofri.DiagonalSobolevProfile
+
+@[expose] public section
 
 /-! Assembly of the exact trusted branch statement. All raw Hessian
 conditions remain explicit until supplied by the full-domain Hessian proof. -/

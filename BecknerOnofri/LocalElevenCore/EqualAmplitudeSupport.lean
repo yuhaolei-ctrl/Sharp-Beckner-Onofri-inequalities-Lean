@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetUniqueness
-import BecknerOnofri.LocalElevenCore.EqualActiveFourier
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetUniqueness
+public import BecknerOnofri.LocalElevenCore.EqualActiveFourier
+
+@[expose] public section
 
 noncomputable section
 open Filter

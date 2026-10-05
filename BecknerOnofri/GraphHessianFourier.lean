@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedEnergyGradient
-import BecknerOnofri.ComplementHessian
+module
+
+public import BecknerOnofri.ReducedEnergyGradient
+public import BecknerOnofri.ComplementHessian
+
+@[expose] public section
 
 /-! Genuine Fourier-energy identities for differentiated complementary equations. -/
 noncomputable section

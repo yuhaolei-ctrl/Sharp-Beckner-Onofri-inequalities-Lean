@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.WienerFourier
+module
+
+public import Legacy.BecknerOnofri.WienerFourier
+
+@[expose] public section
 
 /-! Exponentiation preserves absolutely summable Fourier coefficients with any
 normalized submultiplicative weight.  The proof uses actual convolution fibers

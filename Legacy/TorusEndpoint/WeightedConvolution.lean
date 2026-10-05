@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Order.BigOperators.Ring.Finset
-import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
-import Mathlib.Analysis.Complex.Norm
+module
+
+public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+public import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
+public import Mathlib.Analysis.Complex.Norm
+
+@[expose] public section
 
 /-!
 # Finite weighted Cauchy–Schwarz and convolution

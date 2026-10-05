@@ -1,8 +1,12 @@
-import BecknerOnofri.AnalyticEvenOrder
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Analysis.Calculus.Deriv.Mul
-import Mathlib.Analysis.Calculus.Deriv.Add
+module
+
+public import BecknerOnofri.AnalyticEvenOrder
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+public import Mathlib.Analysis.Calculus.Deriv.Mul
+public import Mathlib.Analysis.Calculus.Deriv.Add
+
+@[expose] public section
 
 /-! Differentiation lowers an actual analytic remainder's vanishing order
 by one.  No differentiation rule for arbitrary big-O errors is assumed. -/

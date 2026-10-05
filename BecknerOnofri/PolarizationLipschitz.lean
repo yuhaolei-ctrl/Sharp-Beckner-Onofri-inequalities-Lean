@@ -1,6 +1,10 @@
-import BecknerOnofri.PolarizationMetricGeometry
-import Legacy.BecknerOnofri.CoordinatePolarization
-import Mathlib.Topology.MetricSpace.Lipschitz
+module
+
+public import BecknerOnofri.PolarizationMetricGeometry
+public import Legacy.BecknerOnofri.CoordinatePolarization
+public import Mathlib.Topology.MetricSpace.Lipschitz
+
+@[expose] public section
 
 /-! Polarization preserves the Lipschitz modulus on the actual Haar torus. -/
 noncomputable section

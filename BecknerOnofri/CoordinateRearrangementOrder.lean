@@ -1,4 +1,8 @@
-import BecknerOnofri.CoordinateOrbitCompact
+module
+
+public import BecknerOnofri.CoordinateOrbitCompact
+
+@[expose] public section
 
 /-! A single-coordinate rearrangement retains symmetry and monotonicity
 already obtained in every other coordinate. -/

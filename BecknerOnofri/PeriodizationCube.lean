@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
-import Mathlib.MeasureTheory.Group.FundamentalDomain
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
+public import Mathlib.MeasureTheory.Group.FundamentalDomain
+
+@[expose] public section
 
 /-! Unfolding the half-open fundamental cube for an arbitrary nonnegative
 measurable function. The lattice action and Haar normalization are explicit. -/

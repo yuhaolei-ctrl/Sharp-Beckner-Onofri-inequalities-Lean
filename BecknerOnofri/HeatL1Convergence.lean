@@ -1,6 +1,10 @@
-import BecknerOnofri.HeatL2Convergence
-import BecknerOnofri.HeatL1Contraction
-import Legacy.BecknerOnofri.BoundedDensityApproximation
+module
+
+public import BecknerOnofri.HeatL2Convergence
+public import BecknerOnofri.HeatL1Contraction
+public import Legacy.BecknerOnofri.BoundedDensityApproximation
+
+@[expose] public section
 
 /-! L1 heat approximation on the entire probability-density domain. -/
 noncomputable section

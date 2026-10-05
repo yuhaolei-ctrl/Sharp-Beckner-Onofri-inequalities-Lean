@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
-import Legacy.BecknerOnofri.PositivePolynomialEndpoint
+module
+
+public import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+public import Legacy.BecknerOnofri.PositivePolynomialEndpoint
+
+@[expose] public section
 
 /-! The genuine density endpoint for smooth absolutely monotone cosine profiles.
 The profile representation by a positive series is a proved intermediate result.

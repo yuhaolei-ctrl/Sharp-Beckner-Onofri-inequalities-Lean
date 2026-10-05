@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleRearrangementDefinitions
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.CircleRearrangementDefinitions
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Literal fiberwise canonical circle rearrangements and their finite
 successive application in the original coordinate order. -/

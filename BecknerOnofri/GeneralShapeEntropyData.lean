@@ -1,5 +1,9 @@
-import BecknerOnofri.SmoothConditionalGamma
-import BecknerOnofri.SelectedChannelEntropy
+module
+
+public import BecknerOnofri.SmoothConditionalGamma
+public import BecknerOnofri.SelectedChannelEntropy
+
+@[expose] public section
 
 /-! Nonstationary shape-density data for the standalone global entropy estimate.
 No optimizer, Euler equation or extremality premise is part of this data. -/

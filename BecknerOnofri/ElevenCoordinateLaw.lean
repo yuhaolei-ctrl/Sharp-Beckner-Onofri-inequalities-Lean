@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenCoordinateDefinitions
-import BecknerOnofri.ElevenMarginal
-import Mathlib.MeasureTheory.Integral.Prod
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+module
+
+public import BecknerOnofri.ElevenCoordinateDefinitions
+public import BecknerOnofri.ElevenMarginal
+public import Mathlib.MeasureTheory.Integral.Prod
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
+@[expose] public section
 
 /-! The true marginal and its half-open-cell probabilities, with mass obtained
 from the eleven-dimensional density by Fubini. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.SpatialThetaComparison
-import BecknerOnofri.ArcsineProductBins
-import BecknerOnofri.SubcriticalGap
-import Legacy.BecknerOnofri.GreenExponentialIntegrability
+module
+
+public import BecknerOnofri.SpatialThetaComparison
+public import BecknerOnofri.ArcsineProductBins
+public import BecknerOnofri.SubcriticalGap
+public import Legacy.BecknerOnofri.GreenExponentialIntegrability
+
+@[expose] public section
 
 /-! The actual normalized Green kernel, its heat representative, and the
 spatial-theta radial comparison. The Fourier kernel is identified almost

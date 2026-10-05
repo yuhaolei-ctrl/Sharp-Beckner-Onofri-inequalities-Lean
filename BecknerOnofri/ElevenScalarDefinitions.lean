@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailDefinitions
+module
+
+public import BecknerOnofri.EntropyTailDefinitions
+
+@[expose] public section
 
 /-! The full scalar lattice energy G_{11,n} in Section 4. The origin is
 explicitly removed, and the Euclidean squared radius is a sum of squares.

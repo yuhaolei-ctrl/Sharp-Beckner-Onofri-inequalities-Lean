@@ -1,6 +1,10 @@
-import BecknerOnofri.ExtendedEntropyDefinitions
-import BecknerOnofri.HeatEntropyConvergence
-import BecknerOnofri.LowDimensionRaw
+module
+
+public import BecknerOnofri.ExtendedEntropyDefinitions
+public import BecknerOnofri.HeatEntropyConvergence
+public import BecknerOnofri.LowDimensionRaw
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

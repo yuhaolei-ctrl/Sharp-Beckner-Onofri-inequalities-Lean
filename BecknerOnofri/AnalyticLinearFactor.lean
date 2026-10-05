@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticTwoCoordinateDivision
+module
+
+public import BecknerOnofri.AnalyticTwoCoordinateDivision
+
+@[expose] public section
 
 /-! Analytic division by a nonzero continuous linear functional. This permits
 coordinatewise division of the actual finite-dimensional reduced Euler equation. -/

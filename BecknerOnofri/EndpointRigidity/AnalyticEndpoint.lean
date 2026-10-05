@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import Legacy.BecknerOnofri.EntropyVariationalEquality
+module
+
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import Legacy.BecknerOnofri.EntropyVariationalEquality
+
+@[expose] public section
 
 /-! Actual coefficient-parametrized entropy endpoint and its proved Sobolev duality. -/
 

@@ -1,5 +1,9 @@
-import BecknerOnofri.BranchDefinitions
-import Legacy.BecknerOnofri.GreenDensityPotential
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Legacy.BecknerOnofri.GreenDensityPotential
+
+@[expose] public section
 
 /-! The actual normalized Green convolution as a bounded operator on real
 continuous torus functions, with its exact Fourier multiplier. -/

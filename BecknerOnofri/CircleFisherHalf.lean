@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusDerivative
+module
+
+public import BecknerOnofri.CircleTorusDerivative
+
+@[expose] public section
 
 /-! The |n| multiplier of a real even logarithm is twice the real part
 of the signed multiplier of its one-sided half-spectrum. -/

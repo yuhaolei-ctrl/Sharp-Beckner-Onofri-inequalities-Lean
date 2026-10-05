@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinProductProbability
+module
+
+public import BecknerOnofri.SpinProductProbability
+
+@[expose] public section
 
 /-! Exact Fourier-spin moments of the product comparison law, proved as
 polynomial identities for every real parameter. -/

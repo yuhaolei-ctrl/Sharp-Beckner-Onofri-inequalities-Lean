@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 noncomputable section
 set_option maxRecDepth 65536

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailDefinitions
-import BecknerOnofri.EntropyTailBudget
+module
+
+public import BecknerOnofri.EntropyTailDefinitions
+public import BecknerOnofri.EntropyTailBudget
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

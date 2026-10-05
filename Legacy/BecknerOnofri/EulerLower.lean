@@ -1,9 +1,13 @@
-import Mathlib.NumberTheory.Harmonic.EulerMascheroni
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # The strict lower enclosure of Euler's constant

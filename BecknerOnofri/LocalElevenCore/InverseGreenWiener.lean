@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
-import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+module
+
+public import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
+public import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

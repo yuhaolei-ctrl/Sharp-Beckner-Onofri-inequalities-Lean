@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenEuclideanFourier
-import BecknerOnofri.ElevenPeriodizedMass
-import BecknerOnofri.PeriodizationCharacter
-import BecknerOnofri.PeriodizationComplexIntegral
+module
+
+public import BecknerOnofri.ElevenEuclideanFourier
+public import BecknerOnofri.ElevenPeriodizedMass
+public import BecknerOnofri.PeriodizationCharacter
+public import BecknerOnofri.PeriodizationComplexIntegral
+
+@[expose] public section
 
 /-! Fourier coefficients of the actual periodized competitor, obtained by
 unfolding the lattice sum on the normalized Haar fundamental cube. -/

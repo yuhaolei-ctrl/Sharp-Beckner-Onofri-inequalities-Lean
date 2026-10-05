@@ -1,6 +1,10 @@
-import BecknerOnofri.DiagonalStationaryBranch
-import BecknerOnofri.DiagonalParameterMonotonicity
-import BecknerOnofri.UniformComplementBounds
+module
+
+public import BecknerOnofri.DiagonalStationaryBranch
+public import BecknerOnofri.DiagonalParameterMonotonicity
+public import BecknerOnofri.UniformComplementBounds
+
+@[expose] public section
 
 /-! Controlled inverse amplitude for the actual supercritical diagonal branch. -/
 noncomputable section

@@ -1,8 +1,12 @@
-import BecknerOnofri.ArcsineProductBins
-import Legacy.BecknerOnofri.TorusLogIntegrability
-import Mathlib.MeasureTheory.Function.Jacobian
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.ArcsineProductBins
+public import Legacy.BecknerOnofri.TorusLogIntegrability
+public import Mathlib.MeasureTheory.Function.Jacobian
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The actual inverse-sine change of variables and its radial Jacobian bound. -/
 noncomputable section

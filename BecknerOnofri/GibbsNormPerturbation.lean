@@ -1,6 +1,10 @@
-import BecknerOnofri.GinibreNormMonotonicity
-import BecknerOnofri.GibbsPerturbation
-import BecknerOnofri.GridGibbsComparison
+module
+
+public import BecknerOnofri.GinibreNormMonotonicity
+public import BecknerOnofri.GibbsPerturbation
+public import BecknerOnofri.GridGibbsComparison
+
+@[expose] public section
 
 /-! Exact L² norm control under a bounded omitted potential. The denominator
 monotonicity is kept explicit here and discharged by nonnegative cosine

@@ -1,5 +1,9 @@
-import BecknerOnofri.GeneralSobolevEmbedding
-import BecknerOnofri.RawOptimizerCorrespondence
+module
+
+public import BecknerOnofri.GeneralSobolevEmbedding
+public import BecknerOnofri.RawOptimizerCorrespondence
+
+@[expose] public section
 
 noncomputable section
 open Filter MeasureTheory

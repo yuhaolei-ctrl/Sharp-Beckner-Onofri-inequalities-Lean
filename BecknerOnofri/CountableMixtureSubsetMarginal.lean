@@ -1,4 +1,8 @@
-import BecknerOnofri.CountableMixtureHaarMarginal
+module
+
+public import BecknerOnofri.CountableMixtureHaarMarginal
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

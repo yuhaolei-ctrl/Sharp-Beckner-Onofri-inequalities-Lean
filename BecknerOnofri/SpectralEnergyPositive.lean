@@ -1,7 +1,11 @@
-import BecknerOnofri.HeatL1Convergence
-import BecknerOnofri.PotentialRigidity
-import BecknerOnofri.FiniteEntropyEnergy
-import BecknerOnofri.Uniform
+module
+
+public import BecknerOnofri.HeatL1Convergence
+public import BecknerOnofri.PotentialRigidity
+public import BecknerOnofri.FiniteEntropyEnergy
+public import BecknerOnofri.Uniform
+
+@[expose] public section
 
 /-! Positivity of the interaction for every nonuniform finite-entropy density.
 Fourier uniqueness is obtained on the entire L1 domain by heat smoothing. -/

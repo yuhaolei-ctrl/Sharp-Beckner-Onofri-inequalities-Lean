@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenEuclideanMass
-import Legacy.TorusEndpoint.GreenMultiplierSummability
+module
+
+public import BecknerOnofri.ElevenEuclideanMass
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+
+@[expose] public section
 
 /-! A summable majorant for the exact periodization, uniform on each bounded
 cube. No truncation or normalization is introduced into the profile. -/

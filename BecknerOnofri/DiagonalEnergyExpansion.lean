@@ -1,6 +1,10 @@
-import BecknerOnofri.ReducedEnergyJointExpansion
-import BecknerOnofri.DiagonalStationaryBranch
-import BecknerOnofri.CriticalGraphCoercivity
+module
+
+public import BecknerOnofri.ReducedEnergyJointExpansion
+public import BecknerOnofri.DiagonalStationaryBranch
+public import BecknerOnofri.CriticalGraphCoercivity
+
+@[expose] public section
 
 /-! The manuscript's sharp leading pressure coefficient on the actual
 smooth full-coordinate stationary branch. -/

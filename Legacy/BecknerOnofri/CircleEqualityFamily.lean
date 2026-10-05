@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleEqualitySeries
-import Legacy.BecknerOnofri.EndpointPotential
+module
+
+public import Legacy.BecknerOnofri.CircleEqualitySeries
+public import Legacy.BecknerOnofri.EndpointPotential
+
+@[expose] public section
 
 /-! Explicit conformal potentials and Poisson densities, with their genuine Fourier series. -/
 noncomputable section

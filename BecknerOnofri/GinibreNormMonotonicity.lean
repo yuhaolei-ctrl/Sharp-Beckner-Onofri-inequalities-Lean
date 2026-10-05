@@ -1,5 +1,9 @@
-import BecknerOnofri.GinibreSeries
-import BecknerOnofri.ContinuousFirstShell
+module
+
+public import BecknerOnofri.GinibreSeries
+public import BecknerOnofri.ContinuousFirstShell
+
+@[expose] public section
 
 /-! Partition and actual Gibbs L² norm are coefficientwise monotone on
 nonnegative cosine potentials, including uniformly convergent summable series. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.PeriodicHilbertBasis
-import Mathlib.Logic.Equiv.Nat
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicHilbertBasis
+public import Mathlib.Logic.Equiv.Nat
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

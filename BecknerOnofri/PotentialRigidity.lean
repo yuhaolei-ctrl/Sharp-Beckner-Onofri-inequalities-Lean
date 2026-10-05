@@ -1,4 +1,8 @@
-import BecknerOnofri.PressureDuality
+module
+
+public import BecknerOnofri.PressureDuality
+
+@[expose] public section
 
 /-! Full raw Sobolev equality classification from density endpoint rigidity. -/
 noncomputable section

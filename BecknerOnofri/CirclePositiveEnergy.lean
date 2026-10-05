@@ -1,6 +1,10 @@
-import BecknerOnofri.ExtendedEntropyDefinitions
-import BecknerOnofri.LegacyBridge
-import Legacy.TorusEndpoint.SpectralEntropy
+module
+
+public import BecknerOnofri.ExtendedEntropyDefinitions
+public import BecknerOnofri.LegacyBridge
+public import Legacy.TorusEndpoint.SpectralEntropy
+
+@[expose] public section
 
 /-! The one-sided Fourier sum in the circle entropy inequality is controlled
 by half the full spectral energy. All sums are extended nonnegative sums. -/

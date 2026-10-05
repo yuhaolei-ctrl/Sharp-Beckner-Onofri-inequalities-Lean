@@ -1,7 +1,11 @@
-import BecknerOnofri.AnalyticPitchfork
-import BecknerOnofri.AnalyticEvenQuadratic
-import BecknerOnofri.AnalyticParameterOrderDivision
-import BecknerOnofri.AnalyticProductFactorUnique
+module
+
+public import BecknerOnofri.AnalyticPitchfork
+public import BecknerOnofri.AnalyticEvenQuadratic
+public import BecknerOnofri.AnalyticParameterOrderDivision
+public import BecknerOnofri.AnalyticProductFactorUnique
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

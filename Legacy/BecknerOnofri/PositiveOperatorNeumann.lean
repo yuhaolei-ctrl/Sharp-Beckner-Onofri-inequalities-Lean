@@ -1,9 +1,13 @@
-import Mathlib.MeasureTheory.Function.LpOrder
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Topology.Algebra.InfiniteSum.Module
-import Mathlib.Analysis.Normed.Operator.Bilinear
-import Mathlib.Tactic
+module
+
+public import Mathlib.MeasureTheory.Function.LpOrder
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Topology.Algebra.InfiniteSum.Module
+public import Mathlib.Analysis.Normed.Operator.Bilinear
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The positive cone of actual real L2 and its norm-convergent positive Neumann inverse.
 No pointwise convergence, closed-cone property, or inverse positivity is assumed.

@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinNormEstimate
+module
+
+public import BecknerOnofri.SpinNormEstimate
+
+@[expose] public section
 
 /-! Lemma 5.18 of the 2026-09-21 manuscript: global fixed-mean and
 unrestricted-mean curvature bounds on the actual thirteen-state domain. -/

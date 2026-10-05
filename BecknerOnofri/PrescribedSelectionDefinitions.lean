@@ -1,7 +1,11 @@
-import BecknerOnofri.BranchDefinitions
-import BecknerOnofri.GapDefinitions
-import BecknerOnofri.CosineMixtureStatementDefinitions
-import Mathlib.Probability.IdentDistrib
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import BecknerOnofri.GapDefinitions
+public import BecknerOnofri.CosineMixtureStatementDefinitions
+public import Mathlib.Probability.IdentDistrib
+
+@[expose] public section
 
 /-! Trusted physical statement for equimeasurable selection. It deliberately
 does not assert identification with successive canonical fiber rearrangements. -/

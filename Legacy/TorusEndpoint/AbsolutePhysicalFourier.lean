@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.PositiveFourierAnalytic
-import Legacy.TorusEndpoint.PhysicalFiniteFourier
-import Legacy.TorusEndpoint.IntegrableSeries
+module
+
+public import Legacy.TorusEndpoint.PositiveFourierAnalytic
+public import Legacy.TorusEndpoint.PhysicalFiniteFourier
+public import Legacy.TorusEndpoint.IntegrableSeries
+
+@[expose] public section
 
 /-!
 # Physical interactions for absolutely summable Fourier kernels

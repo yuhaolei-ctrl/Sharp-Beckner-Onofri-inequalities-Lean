@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureExtendedComparison
-import BecknerOnofri.MixtureMarginals
+module
+
+public import BecknerOnofri.CountableMixtureExtendedComparison
+public import BecknerOnofri.MixtureMarginals
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators Topology ENNReal

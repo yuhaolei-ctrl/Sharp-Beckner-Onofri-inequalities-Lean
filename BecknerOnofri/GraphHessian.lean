@@ -1,4 +1,8 @@
-import BecknerOnofri.GraphHessianFourier
+module
+
+public import BecknerOnofri.GraphHessianFourier
+
+@[expose] public section
 
 /-! Exact physical Hessian on the genuine implicit complementary graph. -/
 noncomputable section

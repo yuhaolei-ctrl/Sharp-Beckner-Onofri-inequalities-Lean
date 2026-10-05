@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedTensorBasis
-import BecknerOnofri.Friedrichs.MixedCoordinateNormalization
-import BecknerOnofri.Friedrichs.MixedGraphClosed
+module
+
+public import BecknerOnofri.Friedrichs.MixedTensorBasis
+public import BecknerOnofri.Friedrichs.MixedCoordinateNormalization
+public import BecknerOnofri.Friedrichs.MixedGraphClosed
+
+@[expose] public section
 
 /-! Full mixed spatial/spectral equivalence. No coordinate is replaced by a half-circle. -/
 noncomputable section

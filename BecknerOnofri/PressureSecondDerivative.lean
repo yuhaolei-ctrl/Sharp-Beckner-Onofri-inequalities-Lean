@@ -1,6 +1,10 @@
-import BecknerOnofri.SupercriticalEnergyDerivatives
-import BecknerOnofri.OnsetConsequences
-import Mathlib.Analysis.Calculus.Deriv.CompMul
+module
+
+public import BecknerOnofri.SupercriticalEnergyDerivatives
+public import BecknerOnofri.OnsetConsequences
+public import Mathlib.Analysis.Calculus.Deriv.CompMul
+
+@[expose] public section
 
 /-! One-sided second derivatives of the actual variational pressure. -/
 noncomputable section

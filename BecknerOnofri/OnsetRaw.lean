@@ -1,4 +1,8 @@
-import BecknerOnofri.OnsetSobolev
+module
+
+public import BecknerOnofri.OnsetSobolev
+
+@[expose] public section
 
 /-! The onset compactness theorem in the manuscript's actual raw-function,
 β-normalized variational problem. Centering is explicit and no smoothness or

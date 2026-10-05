@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.CutoffLimit
-import Mathlib.Analysis.Calculus.MeanValue
+module
+
+public import BecknerOnofri.Friedrichs.CutoffLimit
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-! Actual convergence in the singular spatial Jacobi form norm. The proof
 uses the endpoint cutoffs and dominated convergence on shrinking boundary

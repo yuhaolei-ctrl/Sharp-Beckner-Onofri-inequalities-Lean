@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EndpointThroughTen
-import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+module
+
+public import Legacy.BecknerOnofri.EndpointThroughTen
+public import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+
+@[expose] public section
 
 /-! At the proved endpoint, equality densities and their genuine dual
 potentials lie on a fixed entropy / logarithmic partition level. This allows

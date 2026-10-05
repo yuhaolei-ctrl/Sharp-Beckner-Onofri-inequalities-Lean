@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GreenDensityPotential
+module
+
+public import Legacy.BecknerOnofri.GreenDensityPotential
+
+@[expose] public section
 
 /-! Actual Green potentials of arbitrary L2 probability densities.  A direct
 quadratic bound proves boundedness of their convolution, without assuming

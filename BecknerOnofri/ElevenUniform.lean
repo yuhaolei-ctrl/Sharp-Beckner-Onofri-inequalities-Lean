@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenEndpoint
-import BecknerOnofri.OptimizerDuality
+module
+
+public import BecknerOnofri.ElevenEndpoint
+public import BecknerOnofri.OptimizerDuality
+
+@[expose] public section
 
 /-! The raw full finite-entropy statement at every coupling 0 ≤ beta ≤ 17.715. -/
 noncomputable section

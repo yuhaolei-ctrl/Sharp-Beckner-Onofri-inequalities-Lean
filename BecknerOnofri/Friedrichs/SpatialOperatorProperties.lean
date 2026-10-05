@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.SpatialClosability
+module
+
+public import BecknerOnofri.Friedrichs.SpatialClosability
+
+@[expose] public section
 
 /-! Positivity, symmetry and single-valuedness of the spatial graph relation. -/
 noncomputable section

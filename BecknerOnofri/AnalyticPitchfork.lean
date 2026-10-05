@@ -1,6 +1,10 @@
-import BecknerOnofri.AnalyticParameterDivision
-import Mathlib.Analysis.Calculus.ImplicitContDiff
-import BecknerOnofri.AnalyticEvenOrder
+module
+
+public import BecknerOnofri.AnalyticParameterDivision
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+public import BecknerOnofri.AnalyticEvenOrder
+
+@[expose] public section
 
 /-! The analytic scalar quotient for a scalar odd residual, with all analytic and Taylor
 data explicit and later discharged by the actual supported Euler residual. -/

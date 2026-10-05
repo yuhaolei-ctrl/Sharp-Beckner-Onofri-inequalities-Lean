@@ -1,5 +1,9 @@
-import BecknerOnofri.PeriodizationCube
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import BecknerOnofri.PeriodizationCube
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Absolute integrability and signed integral unfolding for the lattice sum. -/
 noncomputable section

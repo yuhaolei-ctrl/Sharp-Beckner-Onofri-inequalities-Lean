@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialMeasure
-import BecknerOnofri.RadialQuadrature
+module
+
+public import BecknerOnofri.RadialMeasure
+public import BecknerOnofri.RadialQuadrature
+
+@[expose] public section
 
 /-! The actual endpoint substitution removes the square-root singularity. -/
 noncomputable section

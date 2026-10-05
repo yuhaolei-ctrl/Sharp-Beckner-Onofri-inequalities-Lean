@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianTheta
-import Legacy.BecknerOnofri.GaussianMellinTerm
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.BecknerOnofri.GaussianTheta
+public import Legacy.BecknerOnofri.GaussianMellinTerm
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Mellin inversion for the actual nonzero Gaussian lattice sum.
 The exchange of the infinite sum and the improper integral is justified by

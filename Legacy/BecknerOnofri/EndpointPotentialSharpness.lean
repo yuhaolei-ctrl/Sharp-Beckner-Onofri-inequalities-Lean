@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.EndpointPotential
+module
+
+public import Legacy.BecknerOnofri.EndpointPotential
+
+@[expose] public section
 
 /-! Heat-density concentration gives actual admissible potential counterexamples
 to every coefficient below the endpoint potential coefficient. -/

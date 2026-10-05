@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.SupportedFamilyDefinitions
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedFamilyDefinitions
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

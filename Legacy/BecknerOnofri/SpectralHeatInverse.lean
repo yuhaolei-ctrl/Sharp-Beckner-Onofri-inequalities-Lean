@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.SpectralDiagonal
-import Legacy.BecknerOnofri.GaussianMellinTerm
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+module
+
+public import Legacy.BecknerOnofri.SpectralDiagonal
+public import Legacy.BecknerOnofri.GaussianMellinTerm
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+
+@[expose] public section
 
 /-! Positive spectral data, genuine heat operators and the Bochner heat-integral inverse power.
 No coordinate expansion, strong measurability, or integrability is assumed as an extra premise.

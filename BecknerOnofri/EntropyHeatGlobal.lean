@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatSmall
-import BecknerOnofri.EntropyHeatGlobalLarge
+module
+
+public import BecknerOnofri.EntropyHeatSmall
+public import BecknerOnofri.EntropyHeatGlobalLarge
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.EntropyTail

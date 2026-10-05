@@ -1,4 +1,8 @@
-import Solution
+module
+
+public import Solution
+
+@[expose] public section
 
 #print axioms BecknerOnofri.Target.density_endpoint
 #print axioms BecknerOnofri.Target.density_rigidity

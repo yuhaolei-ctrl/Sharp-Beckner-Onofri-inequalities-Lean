@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenKernelApproximation
-import Legacy.TorusEndpoint.CoefficientEndpointReduction
-import Mathlib.MeasureTheory.Function.L2Space
+module
+
+public import Legacy.TorusEndpoint.GreenKernelApproximation
+public import Legacy.TorusEndpoint.CoefficientEndpointReduction
+public import Mathlib.MeasureTheory.Function.L2Space
+
+@[expose] public section
 
 /-!
 # Physical Green interaction for actual L² densities

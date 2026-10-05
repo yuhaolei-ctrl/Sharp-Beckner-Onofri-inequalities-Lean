@@ -1,6 +1,10 @@
-import BecknerOnofri.BranchDefinitions
-import BecknerOnofri.PolarizationMetricGeometry
-import Mathlib.Analysis.Calculus.ContDiff.RCLike
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import BecknerOnofri.PolarizationMetricGeometry
+public import Mathlib.Analysis.Calculus.ContDiff.RCLike
+
+@[expose] public section
 
 /-! Smooth periodic lifts yield Lipschitz functions in the actual torus
 metric. Nearest representatives avoid discontinuities of a fixed chart. -/

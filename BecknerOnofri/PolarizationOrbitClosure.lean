@@ -1,7 +1,11 @@
-import BecknerOnofri.PolarizationOrbitCompact
-import BecknerOnofri.PolarizationUniformContinuity
-import Mathlib.Topology.Instances.ENNReal.Lemmas
-import Mathlib.Topology.Sequences
+module
+
+public import BecknerOnofri.PolarizationOrbitCompact
+public import BecknerOnofri.PolarizationUniformContinuity
+public import Mathlib.Topology.Instances.ENNReal.Lemmas
+public import Mathlib.Topology.Sequences
+
+@[expose] public section
 
 /-! The uniform orbit closure is invariant under every genuine polarization. -/
 noncomputable section

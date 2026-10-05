@@ -1,4 +1,8 @@
-import BecknerOnofri.VariationalCurveDefinitions
+module
+
+public import BecknerOnofri.VariationalCurveDefinitions
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.VariationalCurves
 noncomputable def zeroDefectCoefficient (d : ℕ) : ℝ :=

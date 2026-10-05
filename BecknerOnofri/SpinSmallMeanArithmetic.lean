@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinExactArithmetic
+module
+
+public import BecknerOnofri.SpinExactArithmetic
+
+@[expose] public section
 
 /-! The exact small-mean constants of §5.2.5, generated from the same weights.
 This file certifies the finite rational expressions, not the entropy reduction. -/

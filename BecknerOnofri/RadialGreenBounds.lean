@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialGreenPoisson
-import BecknerOnofri.RadialPoissonBound
+module
+
+public import BecknerOnofri.RadialGreenPoisson
+public import BecknerOnofri.RadialPoissonBound
+
+@[expose] public section
 
 /-! Actual Haar-a.e. radial domination and the complete diagonal E1/image
 bound for the normalized Green kernel. -/

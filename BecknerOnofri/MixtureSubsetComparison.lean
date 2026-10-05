@@ -1,4 +1,8 @@
-import BecknerOnofri.MixtureSubsetEnergy
+module
+
+public import BecknerOnofri.MixtureSubsetEnergy
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

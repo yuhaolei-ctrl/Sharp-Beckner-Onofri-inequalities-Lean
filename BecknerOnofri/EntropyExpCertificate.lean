@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.CertifiedExp
-import Mathlib.Algebra.Order.Floor.Ring
+module
+
+public import Legacy.TorusEndpoint.CertifiedExp
+public import Mathlib.Algebra.Order.Floor.Ring
+
+@[expose] public section
 
 /-! Sound dyadic range reduction with rational directed rounding after each
 squaring. This module does not assert acceptance of any generated data file. -/

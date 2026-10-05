@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinBinaryCost
+module
+
+public import BecknerOnofri.SpinBinaryCost
+
+@[expose] public section
 
 /-! The binary-entropy remainder bound used by the scalar small-mean
 minorant construction. Proved from the actual second derivative. -/

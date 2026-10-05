@@ -1,5 +1,9 @@
-import BecknerOnofri.CriticalReducedIsolation
-import BecknerOnofri.GraphRegularity
+module
+
+public import BecknerOnofri.CriticalReducedIsolation
+public import BecknerOnofri.GraphRegularity
+
+@[expose] public section
 
 /-! Exact equivalence between the solved Green equation and the manuscript's
 Fourier Euler equation, including the zero-mean normalization. -/

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.FourierCoefficientCriterion
-import Legacy.TorusEndpoint.FiniteAtomCoefficients
+module
+
+public import Legacy.TorusEndpoint.FourierCoefficientCriterion
+public import Legacy.TorusEndpoint.FiniteAtomCoefficients
+
+@[expose] public section
 
 /-!
 # Instantiating the coefficient criterion with actual finite-atom coefficients

@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.WienerFourier
-import Mathlib.Data.List.OfFn
+module
+
+public import Legacy.BecknerOnofri.WienerFourier
+public import Mathlib.Data.List.OfFn
+
+@[expose] public section
 
 /-! Absolutely convergent exponential expansions indexed by genuine finite words. -/
 noncomputable section

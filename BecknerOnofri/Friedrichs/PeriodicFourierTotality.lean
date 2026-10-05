@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

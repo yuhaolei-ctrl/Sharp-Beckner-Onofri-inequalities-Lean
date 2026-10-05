@@ -1,5 +1,9 @@
-import BecknerOnofri.CoordinateRearrangementDefinitions
-import BecknerOnofri.EntropyShearer.L1Marginal
+module
+
+public import BecknerOnofri.CoordinateRearrangementDefinitions
+public import BecknerOnofri.EntropyShearer.L1Marginal
+
+@[expose] public section
 
 /-! Canonical coordinate rearrangement is well defined on almost-everywhere
 classes. Null exceptional sets are enclosed in measurable null sets before

@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinRationalCertificate
+module
+
+public import BecknerOnofri.SpinRationalCertificate
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.Spin
 open scoped BigOperators
 def materializedInteraction : Count → Count → ℚ := ![

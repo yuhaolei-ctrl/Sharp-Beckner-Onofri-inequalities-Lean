@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenFourierDecay
-import BecknerOnofri.ElevenPeriodizedContinuity
-import BecknerOnofri.GraphRegularity
+module
+
+public import BecknerOnofri.ElevenFourierDecay
+public import BecknerOnofri.ElevenPeriodizedContinuity
+public import BecknerOnofri.GraphRegularity
+
+@[expose] public section
 
 /-! Smoothness of the actual periodized profile follows from its exponential
 Fourier decay and pointwise continuity, without changing representatives. -/

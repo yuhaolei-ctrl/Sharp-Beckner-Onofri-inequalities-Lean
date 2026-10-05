@@ -1,9 +1,13 @@
-import Legacy.BecknerOnofri.ThetaIntegrability
-import Legacy.BecknerOnofri.ThetaJacobi
-import Mathlib.MeasureTheory.Function.JacobianOneDim
-import Mathlib.MeasureTheory.Integral.IntegralEqImproper
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Legacy.BecknerOnofri.ThetaIntegrability
+public import Legacy.BecknerOnofri.ThetaJacobi
+public import Mathlib.MeasureTheory.Function.JacobianOneDim
+public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 open MeasureTheory Set
 

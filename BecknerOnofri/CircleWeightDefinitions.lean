@@ -1,4 +1,8 @@
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.CircleScalar
 noncomputable def weight (n : ℕ) (t : ℝ) : ℝ :=

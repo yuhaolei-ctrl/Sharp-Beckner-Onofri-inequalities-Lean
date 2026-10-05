@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.TorusHeatPositivity
-import Legacy.TorusEndpoint.PositiveFourierAnalytic
-import Legacy.TorusEndpoint.GreenMultiplierSummability
+module
+
+public import Legacy.TorusEndpoint.TorusHeatPositivity
+public import Legacy.TorusEndpoint.PositiveFourierAnalytic
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+
+@[expose] public section
 
 /-!
 # Actual heat Fourier coefficients, mass, and large-time decay

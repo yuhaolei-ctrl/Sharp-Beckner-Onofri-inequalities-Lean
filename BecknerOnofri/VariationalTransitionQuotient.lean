@@ -1,7 +1,11 @@
-import BecknerOnofri.VariationalCurveDefinitions
-import BecknerOnofri.SpectralEnergyPositive
-import BecknerOnofri.PressureDuality
-import BecknerOnofri.FiniteEntropyPhysical
+module
+
+public import BecknerOnofri.VariationalCurveDefinitions
+public import BecknerOnofri.SpectralEnergyPositive
+public import BecknerOnofri.PressureDuality
+public import BecknerOnofri.FiniteEntropyPhysical
+
+@[expose] public section
 
 /-! The all-dimension variational quotient formula and the complete initial
 zero interval, derived from the actual affine competitors. -/

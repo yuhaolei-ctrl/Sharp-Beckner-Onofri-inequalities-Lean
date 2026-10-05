@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Calculus.Taylor
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Probability.Moments.Variance
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.Taylor
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Probability.Moments.Variance
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! An actual second-order exponential moment bound for bounded real random variables. -/
 

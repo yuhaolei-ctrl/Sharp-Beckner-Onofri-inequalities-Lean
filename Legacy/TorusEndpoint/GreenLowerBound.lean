@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.GreenMellinPairing
+module
+
+public import Legacy.TorusEndpoint.GreenMellinPairing
+
+@[expose] public section
 
 /-!
 # A genuine almost-everywhere lower bound for the torus Green function

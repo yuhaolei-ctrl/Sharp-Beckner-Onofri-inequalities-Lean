@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailLargeIndex
+module
+
+public import BecknerOnofri.EntropyTailLargeIndex
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedEquation
-import BecknerOnofri.ContinuousGibbsTaylor
+module
+
+public import BecknerOnofri.ReducedEquation
+public import BecknerOnofri.ContinuousGibbsTaylor
+
+@[expose] public section
 
 /-! The quadratic Taylor term of the actual implicit complement correction. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.RawSubspectralLocalUniqueness
+module
+
+public import BecknerOnofri.RawSubspectralLocalUniqueness
+
+@[expose] public section
 
 /-! The literal physical Green convolution equation on the full H^d domain,
 and the local uniqueness neighborhood requested by the manuscript. -/

@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.AngularSpectralIntertwining
-import Legacy.BecknerOnofri.EulerUnitProfiles
-import Legacy.BecknerOnofri.NormalizedExponentialPartials
-import Legacy.BecknerOnofri.BoundedL2Multiplier
+module
+
+public import Legacy.BecknerOnofri.AngularSpectralIntertwining
+public import Legacy.BecknerOnofri.EulerUnitProfiles
+public import Legacy.BecknerOnofri.NormalizedExponentialPartials
+public import Legacy.BecknerOnofri.BoundedL2Multiplier
+
+@[expose] public section
 
 /-! The genuine bounded positive square-root Gibbs weight on the angular cube,
 and the exact normalized Bell formula for its differentiated density. -/

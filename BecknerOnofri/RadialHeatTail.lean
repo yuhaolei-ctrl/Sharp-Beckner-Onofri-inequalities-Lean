@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialThetaTail
-import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+module
+
+public import BecknerOnofri.RadialThetaTail
+public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+
+@[expose] public section
 
 /-! Exact complete heat-tail estimates in dimension twelve, including the
 closed fifth-moment exponential integral used beyond time 64. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenPeriodizedFourier
-import Legacy.BecknerOnofri.RadialWiener
+module
+
+public import BecknerOnofri.ElevenPeriodizedFourier
+public import Legacy.BecknerOnofri.RadialWiener
+
+@[expose] public section
 
 /-! Every polynomial Fourier moment of the competitor is absolutely
 summable. Exponential decay is compared with the existing summable lattice

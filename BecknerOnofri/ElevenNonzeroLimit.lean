@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenTransitionSequence
-import BecknerOnofri.SubspectralLocalUniqueness
+module
+
+public import BecknerOnofri.ElevenTransitionSequence
+public import BecknerOnofri.SubspectralLocalUniqueness
+
+@[expose] public section
 
 /-! The compact limit at the transition cannot be uniform: a zero L2 limit
 upgrades to uniform convergence, contradicting local Euler uniqueness and

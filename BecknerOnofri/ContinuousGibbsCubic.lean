@@ -1,4 +1,8 @@
-import BecknerOnofri.ContinuousGibbsTaylor
+module
+
+public import BecknerOnofri.ContinuousGibbsTaylor
+
+@[expose] public section
 
 /-! The genuine cubic normalized-Gibbs coefficient with a fourth-order uniform-norm remainder. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.AngularRealPowerIntertwining
+module
+
+public import BecknerOnofri.AngularRealPowerIntertwining
+
+@[expose] public section
 
 /-! Domain and closed graph of the positive real spectral power, and
 preservation of rapid Fourier summability by positive real powers.

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiCompleteness
+module
+
+public import Legacy.BecknerOnofri.JacobiCompleteness
+
+@[expose] public section
 
 /-! Nonnegative angular polynomial tests detect pointwise positivity of a continuous kernel.
 The extension to arbitrary nonnegative continuous tests is proved by positive polynomial

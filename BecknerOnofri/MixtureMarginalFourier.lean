@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureSubsetMarginal
-import BecknerOnofri.MixtureSubsetEnergy
+module
+
+public import BecknerOnofri.CountableMixtureSubsetMarginal
+public import BecknerOnofri.MixtureSubsetEnergy
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

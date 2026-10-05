@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinAlgebra
-import BecknerOnofri.SpinCountDefinitions
+module
+
+public import BecknerOnofri.SpinAlgebra
+public import BecknerOnofri.SpinCountDefinitions
+
+@[expose] public section
 
 /-! The thirteen-state distribution is the actual count pushforward of an
 exchangeable law on twelve binary spins. A finset records the plus spins. -/

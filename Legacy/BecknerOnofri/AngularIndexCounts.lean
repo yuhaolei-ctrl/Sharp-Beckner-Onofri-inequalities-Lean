@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.AngularMixedTerms
+module
+
+public import Legacy.BecknerOnofri.AngularMixedTerms
+
+@[expose] public section
 
 /-! Actual list-count combinatorics for mixed angular derivative indices. -/
 noncomputable section

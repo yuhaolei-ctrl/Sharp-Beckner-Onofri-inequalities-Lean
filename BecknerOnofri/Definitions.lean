@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Fourier.AddCircleMulti
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.ENNRealLog
-import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
+module
+
+public import Mathlib.Analysis.Fourier.AddCircleMulti
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+public import Mathlib.Analysis.SpecialFunctions.Log.ENNRealLog
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
+
+@[expose] public section
 
 /-!
 Trusted analytic definitions for the high-dimensional endpoint.

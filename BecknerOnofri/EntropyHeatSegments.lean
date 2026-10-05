@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatWeightedBlocks
+module
+
+public import BecknerOnofri.EntropyHeatWeightedBlocks
+
+@[expose] public section
 
 /-! Compact proof-carrying segments for assembling the already checked heat
 panels. Each segment stores a rational upper bound and an opaque analytic

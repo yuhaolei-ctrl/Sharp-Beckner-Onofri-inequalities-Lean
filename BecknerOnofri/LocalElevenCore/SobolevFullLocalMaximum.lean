@@ -1,6 +1,10 @@
-import BecknerOnofri.SobolevLocalMaximum
-import BecknerOnofri.LocalElevenCore.ContinuousFullLocalMaximum
-import BecknerOnofri.LocalElevenCore.DiagonalProfile
+module
+
+public import BecknerOnofri.SobolevLocalMaximum
+public import BecknerOnofri.LocalElevenCore.ContinuousFullLocalMaximum
+public import BecknerOnofri.LocalElevenCore.DiagonalProfile
+
+@[expose] public section
 
 noncomputable section
 open Filter

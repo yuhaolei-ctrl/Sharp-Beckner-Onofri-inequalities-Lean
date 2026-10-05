@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedCutoffL2
+module
+
+public import BecknerOnofri.Friedrichs.MixedCutoffL2
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

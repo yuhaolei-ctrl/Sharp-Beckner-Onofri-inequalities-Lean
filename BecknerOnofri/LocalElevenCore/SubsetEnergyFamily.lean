@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetBranchFromAmplitude
-import BecknerOnofri.LocalElevenCore.SubsetUniqueness
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetBranchFromAmplitude
+public import BecknerOnofri.LocalElevenCore.SubsetUniqueness
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

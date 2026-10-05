@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointClosure
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.BecknerOnofri.EndpointClosure
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Bounded continuous density approximations converge in L1 and entropy.
 These lemmas require no positivity lower bound. -/

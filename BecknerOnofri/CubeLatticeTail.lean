@@ -1,6 +1,10 @@
-import BecknerOnofri.IterationOmittedTail
-import BecknerOnofri.SpectralSlice
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+module
+
+public import BecknerOnofri.IterationOmittedTail
+public import BecknerOnofri.SpectralSlice
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+
+@[expose] public section
 
 /-! Explicit analytic bounds for the omitted lattice tail outside a cube.
 The estimates use the actual Gaussian lattice sum and gamma integrals. -/

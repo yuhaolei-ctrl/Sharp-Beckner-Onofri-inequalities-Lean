@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-!
 Dimension-independent critical exponential integrability and variational selection.

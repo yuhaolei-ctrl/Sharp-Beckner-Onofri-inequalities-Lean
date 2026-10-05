@@ -1,6 +1,10 @@
-import BecknerOnofri.ConditionalJensen
-import BecknerOnofri.ConditionalMomentBounds
-import BecknerOnofri.SpinBinaryCost
+module
+
+public import BecknerOnofri.ConditionalJensen
+public import BecknerOnofri.ConditionalMomentBounds
+public import BecknerOnofri.SpinBinaryCost
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

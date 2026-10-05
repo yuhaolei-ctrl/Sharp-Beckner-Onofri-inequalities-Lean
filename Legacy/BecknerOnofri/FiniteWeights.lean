@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.FiniteScalarCore
+module
+
+public import Legacy.BecknerOnofri.FiniteScalarCore
+
+@[expose] public section
 namespace Legacy.BecknerOnofri.FiniteScalar
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000

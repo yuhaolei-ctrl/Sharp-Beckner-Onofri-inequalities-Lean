@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! Definitions for the literal dimension-eleven statements in the September
 21 manuscript. No regularity, normalization, certificate, or transition

@@ -1,7 +1,11 @@
-import BecknerOnofri.Friedrichs.MixedAngularWeak
-import BecknerOnofri.Friedrichs.MixedAngularFormDomain
-import BecknerOnofri.Friedrichs.MixedClosedFormTests
-import BecknerOnofri.Friedrichs.AngularOperatorGraph
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularWeak
+public import BecknerOnofri.Friedrichs.MixedAngularFormDomain
+public import BecknerOnofri.Friedrichs.MixedClosedFormTests
+public import BecknerOnofri.Friedrichs.AngularOperatorGraph
+
+@[expose] public section
 
 /-! The actual mixed spatial weak operator equation, obtained by coordinate
 integration by parts and extension to all closed-form tests. -/

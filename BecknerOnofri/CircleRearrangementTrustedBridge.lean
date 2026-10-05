@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleRearrangementDefinitions
-import BecknerOnofri.CircleRearrangementPaper
+module
+
+public import BecknerOnofri.CircleRearrangementDefinitions
+public import BecknerOnofri.CircleRearrangementPaper
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ProbabilityTheory Legacy.TorusEndpoint

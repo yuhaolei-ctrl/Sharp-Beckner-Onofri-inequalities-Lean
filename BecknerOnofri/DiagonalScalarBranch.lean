@@ -1,7 +1,11 @@
-import BecknerOnofri.AnalyticParameterDivision
-import BecknerOnofri.RealDiagonalReduction
-import Mathlib.Analysis.Calculus.ImplicitContDiff
-import BecknerOnofri.AnalyticEvenOrder
+module
+
+public import BecknerOnofri.AnalyticParameterDivision
+public import BecknerOnofri.RealDiagonalReduction
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+public import BecknerOnofri.AnalyticEvenOrder
+
+@[expose] public section
 
 /-! The analytic scalar quotient of the actual symmetric reduced equation,
 and its genuine implicit parameter branch. -/

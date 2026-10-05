@@ -1,5 +1,9 @@
-import BecknerOnofri.ArcsineProductBins
-import Mathlib.MeasureTheory.Measure.Prod
+module
+
+public import BecknerOnofri.ArcsineProductBins
+public import Mathlib.MeasureTheory.Measure.Prod
+
+@[expose] public section
 
 /-! Atomlessness of the actual radial coordinate on every positive-dimensional torus. -/
 noncomputable section

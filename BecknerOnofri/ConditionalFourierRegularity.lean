@@ -1,6 +1,10 @@
-import BecknerOnofri.ConditionalExpectations
-import Legacy.BecknerOnofri.SmoothFourier
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import BecknerOnofri.ConditionalExpectations
+public import Legacy.BecknerOnofri.SmoothFourier
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Integrating out future coordinates preserves rapid Fourier decay and hence
 smoothness of the actual one-coordinate conditional density. -/

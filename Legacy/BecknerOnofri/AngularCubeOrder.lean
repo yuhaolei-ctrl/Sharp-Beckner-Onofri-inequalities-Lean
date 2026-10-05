@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.AngularPartialSigns
-import Mathlib.MeasureTheory.Measure.OpenPos
+module
+
+public import Legacy.BecknerOnofri.AngularPartialSigns
+public import Mathlib.MeasureTheory.Measure.OpenPos
+
+@[expose] public section
 
 /-! Transfer of actual L2 angular signs back to the entire closed unit cube,
 including the boundary, using continuity and the full-support product measure. -/

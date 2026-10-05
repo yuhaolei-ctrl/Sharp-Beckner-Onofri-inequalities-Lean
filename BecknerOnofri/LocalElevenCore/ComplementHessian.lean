@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ComplementHessian
-import BecknerOnofri.LocalElevenCore.RawComplementGap
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ComplementHessian
+public import BecknerOnofri.LocalElevenCore.RawComplementGap
+
+@[expose] public section
 
 /-! Uniform strict negativity of the physical Hessian on the full raw
 critical-Sobolev complement, for small continuous potentials. -/

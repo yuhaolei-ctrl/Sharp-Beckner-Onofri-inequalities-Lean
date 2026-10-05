@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.AngularCutoffApproximation
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+module
+
+public import BecknerOnofri.Friedrichs.AngularCutoffApproximation
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+
+@[expose] public section
 
 /-! The angular conjugation identity holds against actual spatial test
 functions after integration by parts. No spectral-domain premise is used. -/

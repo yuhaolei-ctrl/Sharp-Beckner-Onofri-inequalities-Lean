@@ -1,4 +1,8 @@
-import BecknerOnofri.StudentIntegral
+module
+
+public import BecknerOnofri.StudentIntegral
+
+@[expose] public section
 
 /-! The Gaussian Fourier step in the Gamma-subordination proof of the
 Student profile's Fourier transform. -/

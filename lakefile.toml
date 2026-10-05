@@ -3,40 +3,9 @@ version = "0.1.0"
 defaultTargets = ["Challenge", "Solution"]
 
 [[require]]
-name = "plausible"
-path = "vendor/plausible"
-
-[[require]]
-name = "LeanSearchClient"
-path = "vendor/LeanSearchClient"
-
-[[require]]
-name = "importGraph"
-path = "vendor/importGraph"
-
-[[require]]
-name = "proofwidgets"
-path = "vendor/proofwidgets"
-
-[[require]]
-name = "aesop"
-path = "vendor/aesop"
-
-[[require]]
-name = "Qq"
-path = "vendor/Qq"
-
-[[require]]
-name = "batteries"
-path = "vendor/batteries"
-
-[[require]]
-name = "Cli"
-path = "vendor/Cli"
-
-[[require]]
 name = "mathlib"
-path = "vendor/mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
 
 [[lean_lib]]
 name = "Challenge"
@@ -82,3 +51,6 @@ name = "PhysicalFractionalDefinitions"
 
 [[lean_lib]]
 name = "PhysicalFractional"
+
+[[lean_lib]]
+name = "Palomar"

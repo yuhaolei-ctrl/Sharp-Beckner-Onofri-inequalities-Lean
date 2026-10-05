@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinProductDefinitions
+module
+
+public import BecknerOnofri.SpinProductDefinitions
+
+@[expose] public section
 
 /-! The nonaffine energy-gradient term of the product comparison law.
 The affine projection coefficient is the source's sum s w_s t^(2s-1). -/

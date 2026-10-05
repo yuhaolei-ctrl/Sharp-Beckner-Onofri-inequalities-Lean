@@ -1,6 +1,10 @@
-import BecknerOnofri.ActiveSquaredHessianDefinitions
-import BecknerOnofri.LocalElevenCore.ActiveHessianPhysicalSpectrum
-import BecknerOnofri.LocalElevenCore.SubsetEnergyFamily
+module
+
+public import BecknerOnofri.ActiveSquaredHessianDefinitions
+public import BecknerOnofri.LocalElevenCore.ActiveHessianPhysicalSpectrum
+public import BecknerOnofri.LocalElevenCore.SubsetEnergyFamily
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

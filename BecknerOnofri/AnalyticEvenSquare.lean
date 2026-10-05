@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Analytic.OfScalars
-import Mathlib.Analysis.Analytic.Uniqueness
-import Mathlib.Analysis.Analytic.Constructions
-import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+module
+
+public import Mathlib.Analysis.Analytic.OfScalars
+public import Mathlib.Analysis.Analytic.Uniqueness
+public import Mathlib.Analysis.Analytic.Constructions
+public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

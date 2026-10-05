@@ -1,5 +1,9 @@
-import BecknerOnofri.ComplexFirstShellMoments
-import BecknerOnofri.ContinuousGibbsCubic
+module
+
+public import BecknerOnofri.ComplexFirstShellMoments
+public import BecknerOnofri.ContinuousGibbsCubic
+
+@[expose] public section
 
 /-! Exact Fourier multiplication by arbitrary full first-shell functions. -/
 noncomputable section

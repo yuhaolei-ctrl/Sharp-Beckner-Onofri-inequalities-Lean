@@ -1,5 +1,9 @@
-import BecknerOnofri.LatticeSobolevSummability
-import BecknerOnofri.FullSobolevEmbedding
+module
+
+public import BecknerOnofri.LatticeSobolevSummability
+public import BecknerOnofri.FullSobolevEmbedding
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

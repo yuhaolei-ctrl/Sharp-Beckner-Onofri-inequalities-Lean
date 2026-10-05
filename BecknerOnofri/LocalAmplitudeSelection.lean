@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalReducedEnergyUpper
+module
+
+public import BecknerOnofri.LocalReducedEnergyUpper
+
+@[expose] public section
 
 /-! A matching energy lower bound forces every first-shell direction to be active. -/
 noncomputable section

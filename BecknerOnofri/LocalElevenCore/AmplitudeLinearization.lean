@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.AmplitudeLinearization
-import BecknerOnofri.LocalElevenCore.ReducedCubicParity
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.AmplitudeLinearization
+public import BecknerOnofri.LocalElevenCore.ReducedCubicParity
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! The exact limiting real-amplitude equation and its invertible full-mode
 linearization. The cubic is identified with the actual Fourier reduction. -/

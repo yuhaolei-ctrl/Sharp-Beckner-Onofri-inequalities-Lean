@@ -1,6 +1,10 @@
-import BecknerOnofri.DiagonalEnergyExpansion
-import BecknerOnofri.DiagonalAmplitude
-import BecknerOnofri.PressureDuality
+module
+
+public import BecknerOnofri.DiagonalEnergyExpansion
+public import BecknerOnofri.DiagonalAmplitude
+public import BecknerOnofri.PressureDuality
+
+@[expose] public section
 
 /-! Actual supercritical branch pressure, with the manuscript's cubic onset
 error and its unconditional lower bound for the full variational pressure. -/

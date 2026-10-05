@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
-import BecknerOnofri.Friedrichs.MixedGraphClosed
-import Legacy.BecknerOnofri.JacobiTensorCompleteness
+module
+
+public import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
+public import BecknerOnofri.Friedrichs.MixedGraphClosed
+public import Legacy.BecknerOnofri.JacobiTensorCompleteness
+
+@[expose] public section
 
 /-! Exact spatial/spectral identification when every coordinate is active.
 The inactive periodic sectors require a separate full-periodic basis. -/

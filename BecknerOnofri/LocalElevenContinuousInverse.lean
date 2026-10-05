@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenHilbertInverse
-import BecknerOnofri.ContinuousComplementInverse
+module
+
+public import BecknerOnofri.LocalElevenHilbertInverse
+public import BecknerOnofri.ContinuousComplementInverse
+
+@[expose] public section
 
 /-! Upgrade the Fourier inverse to the genuine continuous complement using the Green L2-to-C map. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+
+@[expose] public section
 
 /-!
 # The exact normalization of the proposed endpoint

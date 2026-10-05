@@ -1,6 +1,10 @@
-import BecknerOnofri.GinibreSupermodularity
-import BecknerOnofri.GinibreStrictCovariance
-import BecknerOnofri.ContinuousOptimizers
+module
+
+public import BecknerOnofri.GinibreSupermodularity
+public import BecknerOnofri.GinibreStrictCovariance
+public import BecknerOnofri.ContinuousOptimizers
+
+@[expose] public section
 
 /-! Actual Sobolev potentials associated to nonnegative even cosine
 coefficient families. Coordinatewise maxima and minima stay in the original

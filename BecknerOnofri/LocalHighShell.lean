@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalFourierMajorant
+module
+
+public import BecknerOnofri.LocalFourierMajorant
+
+@[expose] public section
 
 /-! Removing the actual zero and first Fourier shells from the product majorant. -/
 noncomputable section

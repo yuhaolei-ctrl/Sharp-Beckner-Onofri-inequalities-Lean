@@ -1,5 +1,9 @@
-import BecknerOnofri.RawGapBridges
-import BecknerOnofri.FiniteEntropyPrimalGap
+module
+
+public import BecknerOnofri.RawGapBridges
+public import BecknerOnofri.FiniteEntropyPrimalGap
+
+@[expose] public section
 
 /-! The two manuscript gap identities, on the full raw-function domains and
 with the literal physical Green integral and relative entropy remainder. -/

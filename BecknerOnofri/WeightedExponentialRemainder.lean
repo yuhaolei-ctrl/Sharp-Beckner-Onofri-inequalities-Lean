@@ -1,6 +1,10 @@
-import BecknerOnofri.WeightedExponentialTail
-import BecknerOnofri.GraphRegularity
-import BecknerOnofri.OnsetWienerBounds
+module
+
+public import BecknerOnofri.WeightedExponentialTail
+public import BecknerOnofri.GraphRegularity
+public import BecknerOnofri.OnsetWienerBounds
+
+@[expose] public section
 
 /-! The actual continuous Gibbs remainder is quadratic in every radial Wiener norm. -/
 noncomputable section

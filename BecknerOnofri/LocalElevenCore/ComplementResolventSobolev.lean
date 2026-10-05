@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
-import BecknerOnofri.LocalElevenCore.GraphSobolevBounds
+module
+
+public import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
+public import BecknerOnofri.LocalElevenCore.GraphSobolevBounds
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

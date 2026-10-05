@@ -1,6 +1,10 @@
-import BecknerOnofri.HeatEnergyLimit
-import BecknerOnofri.ContinuousFirstShell
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+module
+
+public import BecknerOnofri.HeatEnergyLimit
+public import BecknerOnofri.ContinuousFirstShell
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+
+@[expose] public section
 
 /-! Strong L2 convergence of the actual heat convolution for L2 densities.
 The proof uses Parseval and domination by the original Fourier square sum. -/

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiHeatEquation
-import Legacy.BecknerOnofri.CircleBoundaryHeat
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatEquation
+public import Legacy.BecknerOnofri.CircleBoundaryHeat
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 /-! Exact identification of the normalized Jacobi heat kernels at indices zero
 and one with the actual reflected Neumann and Dirichlet circle heat kernels. -/

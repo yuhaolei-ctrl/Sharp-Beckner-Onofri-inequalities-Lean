@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.Endpoint
-import Legacy.BecknerOnofri.FiniteScalarCore
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Tactic.IntervalCases
+module
+
+public import Legacy.BecknerOnofri.Endpoint
+public import Legacy.BecknerOnofri.FiniteScalarCore
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Tactic.IntervalCases
+
+@[expose] public section
 
 /-!
 # Matching the actual endpoint coefficient to the rational finite certificates

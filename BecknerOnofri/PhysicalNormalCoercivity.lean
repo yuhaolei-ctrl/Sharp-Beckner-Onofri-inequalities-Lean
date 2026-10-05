@@ -1,6 +1,10 @@
-import BecknerOnofri.NormalHessianCoercivity
-import BecknerOnofri.PhysicalTranslationTangents
-import BecknerOnofri.FullBranchHessian
+module
+
+public import BecknerOnofri.NormalHessianCoercivity
+public import BecknerOnofri.PhysicalTranslationTangents
+public import BecknerOnofri.FullBranchHessian
+
+@[expose] public section
 
 /-! Strict normal coercivity of the actual physical full-mode branch, with
 the exact raw H^(d/2) orthogonality and norm in the trusted theorem. -/

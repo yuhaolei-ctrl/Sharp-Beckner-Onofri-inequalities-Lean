@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GaussianLattice
+module
+
+public import Legacy.BecknerOnofri.GaussianLattice
+
+@[expose] public section
 
 /-!
 The actual Gaussian sum on `Fin d → ℤ` is the d-th power of the real theta

@@ -1,4 +1,8 @@
-import BecknerOnofri.QuadraticSlavingBridge
+module
+
+public import BecknerOnofri.QuadraticSlavingBridge
+
+@[expose] public section
 
 /-! Exact second, third and fourth moments of the full complex-coordinate first shell. -/
 noncomputable section

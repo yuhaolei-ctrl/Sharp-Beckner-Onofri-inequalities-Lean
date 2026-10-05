@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedCubicParity
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.ReducedCubicParity
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! The exact limiting real-amplitude equation and its invertible full-mode
 linearization. The cubic is identified with the actual Fourier reduction. -/

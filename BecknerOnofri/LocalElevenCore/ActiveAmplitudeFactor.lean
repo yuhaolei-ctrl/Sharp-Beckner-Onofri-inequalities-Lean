@@ -1,6 +1,10 @@
-import BecknerOnofri.AnalyticLinearFactor
-import BecknerOnofri.LocalElevenCore.RescaledReducedEquation
-import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+module
+
+public import BecknerOnofri.AnalyticLinearFactor
+public import BecknerOnofri.LocalElevenCore.RescaledReducedEquation
+public import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+
+@[expose] public section
 
 /-! Actual analytic coordinate factors of the real reduced Euler equation.
 No division by a possibly zero amplitude occurs in their definitions. -/

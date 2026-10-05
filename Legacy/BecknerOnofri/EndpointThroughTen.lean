@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EulerCriticalComparison
-import Legacy.BecknerOnofri.EulerHigherPartialSigns
-import Legacy.BecknerOnofri.SteinerEndpointReduction
+module
+
+public import Legacy.BecknerOnofri.EulerCriticalComparison
+public import Legacy.BecknerOnofri.EulerHigherPartialSigns
+public import Legacy.BecknerOnofri.SteinerEndpointReduction
+
+@[expose] public section
 
 /-! The unconditional finite-entropy Beckner endpoint through dimension ten.
 Every analytic input to the high-order Steiner derivative induction is now

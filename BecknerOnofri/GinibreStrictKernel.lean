@@ -1,4 +1,8 @@
-import BecknerOnofri.GinibrePositiveKernel
+module
+
+public import BecknerOnofri.GinibrePositiveKernel
+
+@[expose] public section
 
 /-! A quantitative single-term lower bound for the actual positive
 exponential kernel, retaining one nonzero first-order Taylor contribution. -/

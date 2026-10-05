@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinDefinitions
+module
+
+public import BecknerOnofri.SpinDefinitions
+
+@[expose] public section
 
 /-! The formula-defined full gradient in the global supporting-parabola
 corollary. No bounds or differentiability assumptions are encoded here. -/

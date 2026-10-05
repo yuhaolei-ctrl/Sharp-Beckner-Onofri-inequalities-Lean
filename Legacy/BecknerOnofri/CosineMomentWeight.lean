@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationSelection
+module
+
+public import Legacy.BecknerOnofri.PolarizationSelection
+
+@[expose] public section
 
 /-! The actual sum of coordinate cosines is a strict polarization weight for
 every semicircle containing the origin in its interior. -/

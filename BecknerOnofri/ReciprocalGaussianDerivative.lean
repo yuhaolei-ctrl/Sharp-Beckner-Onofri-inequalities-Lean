@@ -1,6 +1,10 @@
-import BecknerOnofri.ReciprocalGaussian
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.Analysis.Calculus.MeanValue
+module
+
+public import BecknerOnofri.ReciprocalGaussian
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-! The reciprocal Gaussian integral satisfies its differential equation by
 dominated differentiation. The domination stays away from parameter zero;

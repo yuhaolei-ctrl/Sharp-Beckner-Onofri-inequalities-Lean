@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Real.Pi.Bounds
-import BecknerOnofri.ComplementSobolev
-import Legacy.TorusEndpoint.GreenMultiplierSummability
+module
+
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import BecknerOnofri.ComplementSobolev
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+
+@[expose] public section
 
 noncomputable section
 open Filter
@@ -53,7 +57,7 @@ theorem inverse_scale_square_le_product {d : ℕ} (hd : 0<d) {s : ℝ} (hs : (d:
     nlinarith
   have hprod : (∏ i : Fin d,(1+(k i:ℝ)^2)^(s/d))≤B^s := by
     calc
-      _ ≤ ∏ _ : Fin d,B^(s/d) := Finset.prod_le_prod
+      _ ≤ ∏ _ : Fin d,B^(s/d) := Finset.prod_le_prod₀
         (fun i hi => Real.rpow_nonneg (by positivity) _)
         (fun i hi => Real.rpow_le_rpow (by positivity) (hki i) hp.le)
       _ = (B^(s/d))^d := by simp

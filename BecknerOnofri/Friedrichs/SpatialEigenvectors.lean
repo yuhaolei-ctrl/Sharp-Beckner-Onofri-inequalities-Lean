@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.SpatialOperatorProperties
+module
+
+public import BecknerOnofri.Friedrichs.SpatialOperatorProperties
+
+@[expose] public section
 
 /-! The concrete Jacobi eigenvectors belong to the independently defined spatial
 operator graph, with their actual differential eigenvalues. -/

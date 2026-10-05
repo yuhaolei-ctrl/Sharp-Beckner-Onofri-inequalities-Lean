@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphOperator
-import BecknerOnofri.LocalElevenCore.InverseGreenWiener
+module
+
+public import BecknerOnofri.WienerGraphOperator
+public import BecknerOnofri.LocalElevenCore.InverseGreenWiener
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

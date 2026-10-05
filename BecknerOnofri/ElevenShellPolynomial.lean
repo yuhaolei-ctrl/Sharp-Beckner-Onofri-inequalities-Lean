@@ -1,7 +1,11 @@
-import BecknerOnofri.Definitions
-import Mathlib.Algebra.Polynomial.BigOperators
-import Mathlib.Algebra.Polynomial.Coeff
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.Algebra.Polynomial.BigOperators
+public import Mathlib.Algebra.Polynomial.Coeff
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-! Exact shell multiplicities in the integer box [-10,10]^d. The polynomial
 identity counts genuine lattice vectors, before any numerical certificate is

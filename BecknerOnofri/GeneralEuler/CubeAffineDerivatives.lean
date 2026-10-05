@@ -1,7 +1,11 @@
-import BecknerOnofri.SmoothEulerStatementDefinitions
-import Legacy.BecknerOnofri.CubeProfileMonotone
-import Legacy.BecknerOnofri.NormalizedExponentialPartials
-import Mathlib.Analysis.Calculus.FDeriv.Equiv
+module
+
+public import BecknerOnofri.SmoothEulerStatementDefinitions
+public import Legacy.BecknerOnofri.CubeProfileMonotone
+public import Legacy.BecknerOnofri.NormalizedExponentialPartials
+public import Mathlib.Analysis.Calculus.FDeriv.Equiv
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

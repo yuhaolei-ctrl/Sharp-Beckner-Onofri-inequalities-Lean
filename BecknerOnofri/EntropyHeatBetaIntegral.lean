@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialHeatTail
+module
+
+public import BecknerOnofri.RadialHeatTail
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

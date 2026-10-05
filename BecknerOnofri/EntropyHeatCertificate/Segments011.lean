@@ -1,13 +1,17 @@
-import BecknerOnofri.EntropyHeatCheckedWeights
-import BecknerOnofri.EntropyHeatSegments
-import BecknerOnofri.EntropyHeatCertificate.Panels0088
-import BecknerOnofri.EntropyHeatCertificate.Panels0089
-import BecknerOnofri.EntropyHeatCertificate.Panels0090
-import BecknerOnofri.EntropyHeatCertificate.Panels0091
-import BecknerOnofri.EntropyHeatCertificate.Panels0092
-import BecknerOnofri.EntropyHeatCertificate.Panels0093
-import BecknerOnofri.EntropyHeatCertificate.Panels0094
-import BecknerOnofri.EntropyHeatCertificate.Panels0095
+module
+
+public import BecknerOnofri.EntropyHeatCheckedWeights
+public import BecknerOnofri.EntropyHeatSegments
+public import BecknerOnofri.EntropyHeatCertificate.Panels0088
+public import BecknerOnofri.EntropyHeatCertificate.Panels0089
+public import BecknerOnofri.EntropyHeatCertificate.Panels0090
+public import BecknerOnofri.EntropyHeatCertificate.Panels0091
+public import BecknerOnofri.EntropyHeatCertificate.Panels0092
+public import BecknerOnofri.EntropyHeatCertificate.Panels0093
+public import BecknerOnofri.EntropyHeatCertificate.Panels0094
+public import BecknerOnofri.EntropyHeatCertificate.Panels0095
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Segments011
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

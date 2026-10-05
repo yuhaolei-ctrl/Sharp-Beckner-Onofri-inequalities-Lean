@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatDerivative
+module
+
+public import Legacy.BecknerOnofri.CircleHeatDerivative
+
+@[expose] public section
 
 /-! Actual spatial theta Fourier truncation with an explicit complete tail.
 The parameter is the source convention exp(-t*n²), including t∈[a,b]. -/

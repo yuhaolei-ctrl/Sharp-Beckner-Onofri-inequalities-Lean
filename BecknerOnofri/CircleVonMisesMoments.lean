@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleBesselInverse
+module
+
+public import BecknerOnofri.CircleBesselInverse
+
+@[expose] public section
 
 /-! Actual circle integrals of the von Mises density equal the Bessel ratios. -/
 noncomputable section

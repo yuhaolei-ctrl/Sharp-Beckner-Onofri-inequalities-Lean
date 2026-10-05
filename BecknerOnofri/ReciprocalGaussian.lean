@@ -1,6 +1,10 @@
-import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
-import Mathlib.MeasureTheory.Function.JacobianOneDim
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+public import Mathlib.MeasureTheory.Function.JacobianOneDim
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Reciprocal Gaussian integral underlying the half-integer Bessel identity.
 This file establishes its reciprocal change of variables from the actual

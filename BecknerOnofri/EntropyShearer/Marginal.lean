@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import Mathlib.MeasureTheory.Integral.Marginal
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.MeasureTheory.Integral.Marginal
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-! Actual real-valued coordinate averaging on normalized product Haar space. -/
 

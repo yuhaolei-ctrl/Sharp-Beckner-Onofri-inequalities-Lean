@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleLayerCake
-import BecknerOnofri.CircleRearrangementL1Properties
+module
+
+public import BecknerOnofri.CircleLayerCake
+public import BecknerOnofri.CircleRearrangementL1Properties
+
+@[expose] public section
 
 noncomputable section
 open scoped ENNReal

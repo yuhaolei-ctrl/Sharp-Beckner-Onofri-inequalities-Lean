@@ -1,5 +1,9 @@
-import BecknerOnofri.SelectedCubicSymmetry
-import Legacy.BecknerOnofri.CoordinatePolarization
+module
+
+public import BecknerOnofri.SelectedCubicSymmetry
+public import Legacy.BecknerOnofri.CoordinatePolarization
+
+@[expose] public section
 
 /-! Coordinate reflections of every nonnegative Fourier-coefficient global
 optimizer. The strict Ginibre argument does not select a special optimizer. -/

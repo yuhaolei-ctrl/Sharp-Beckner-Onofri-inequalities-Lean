@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EntropyVariationalEquality
-import Mathlib.MeasureTheory.Integral.Lebesgue.Add
+module
+
+public import Legacy.BecknerOnofri.EntropyVariationalEquality
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Add
+
+@[expose] public section
 
 /-! Fatou transfers vanishing integrals of actual nonnegative Young gaps to
 an almost-everywhere Gibbs identity, without any L2 assumption on the density. -/

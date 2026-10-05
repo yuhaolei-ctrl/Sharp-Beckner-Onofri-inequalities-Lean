@@ -1,4 +1,8 @@
-import BecknerOnofri.ExtendedMixtureEnergy
+module
+
+public import BecknerOnofri.ExtendedMixtureEnergy
+
+@[expose] public section
 
 /-! The codimension-one energy comparison for countable cosine-power mixtures,
 including divergent energies. There is no spatial uniform-majorant hypothesis. -/

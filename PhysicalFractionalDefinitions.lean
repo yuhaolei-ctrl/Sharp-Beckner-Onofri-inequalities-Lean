@@ -1,5 +1,9 @@
-import PhysicalOperator
-import BecknerOnofri.Friedrichs.MixedFractionalStatementDefinitions
+module
+
+public import PhysicalOperator
+public import BecknerOnofri.Friedrichs.MixedFractionalStatementDefinitions
+
+@[expose] public section
 
 noncomputable section
 open Set MeasureTheory

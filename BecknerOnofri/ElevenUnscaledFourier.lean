@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenEuclideanFourier
+module
+
+public import BecknerOnofri.ElevenEuclideanFourier
+
+@[expose] public section
 
 /-! The unscaled Euclidean profile in the displayed Section 4 formula.
 The actual Fourier integral is evaluated by Gamma–Gaussian subordination. -/

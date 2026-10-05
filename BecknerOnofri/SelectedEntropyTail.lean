@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailCountableMixture
-import BecknerOnofri.SelectedChannelEntropy
+module
+
+public import BecknerOnofri.EntropyTailCountableMixture
+public import BecknerOnofri.SelectedChannelEntropy
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

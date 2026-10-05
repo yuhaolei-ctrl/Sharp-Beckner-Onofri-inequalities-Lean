@@ -1,11 +1,15 @@
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.FunProp
-import Mathlib.Tactic.Convert
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.FunProp
+public import Mathlib.Tactic.Convert
+
+@[expose] public section
 
 /-!
 A rational upper bound for the Laplace integral of a reciprocal affine

@@ -1,5 +1,9 @@
-import BecknerOnofri.DiagonalAmplitude
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+module
+
+public import BecknerOnofri.DiagonalAmplitude
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+
+@[expose] public section
 
 /-! The chosen inverse amplitude is differentiable at every nearby positive
 parameter. Local uniqueness identifies it with the genuine analytic inverse. -/

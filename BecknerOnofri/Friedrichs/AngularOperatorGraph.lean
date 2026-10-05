@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.AngularFormDomain
-import BecknerOnofri.Friedrichs.AngularWeakEquation
+module
+
+public import BecknerOnofri.Friedrichs.AngularFormDomain
+public import BecknerOnofri.Friedrichs.AngularWeakEquation
+
+@[expose] public section
 
 /-! Sine-weighted smooth profiles satisfy the spatial closed-form graph relation.
 This theorem does not assume a spectral domain or define the spatial closure

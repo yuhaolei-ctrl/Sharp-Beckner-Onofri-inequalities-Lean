@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ReflectionSymmetry
-import BecknerOnofri.LocalElevenCore.PermutationSymmetry
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ReflectionSymmetry
+public import BecknerOnofri.LocalElevenCore.PermutationSymmetry
+
+@[expose] public section
 
 /-! Spatial inversion and complex conjugation symmetry of the actual torus
 Gibbs map and its uniquely constructed complementary graph. -/

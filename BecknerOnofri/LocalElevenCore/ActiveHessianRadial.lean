@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.ActiveHessianMatrix
-import BecknerOnofri.LocalElevenCore.ActiveFactorSupportedLine
-import BecknerOnofri.AnalyticPitchforkRadialBranch
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveHessianMatrix
+public import BecknerOnofri.LocalElevenCore.ActiveFactorSupportedLine
+public import BecknerOnofri.AnalyticPitchforkRadialBranch
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

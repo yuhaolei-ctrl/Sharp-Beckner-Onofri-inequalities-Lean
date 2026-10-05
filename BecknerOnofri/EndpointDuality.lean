@@ -1,6 +1,10 @@
-import BecknerOnofri.PartitionRegularity
-import BecknerOnofri.Entropy
-import Mathlib.Topology.Algebra.InfiniteSum.ENNReal
+module
+
+public import BecknerOnofri.PartitionRegularity
+public import BecknerOnofri.Entropy
+public import Mathlib.Topology.Algebra.InfiniteSum.ENNReal
+
+@[expose] public section
 
 /-!
 The genuine density-to-potential implication, with full function domains and

@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.WienerFourier
-import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+module
+
+public import Legacy.BecknerOnofri.WienerFourier
+public import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+
+@[expose] public section
 
 /-! Actual continuous representatives for `L²` functions with absolutely
 summable Fourier coefficients, and Wiener closure under exponentiation. -/

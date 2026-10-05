@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.TorusSobolevCoefficients
+module
+
+public import Legacy.BecknerOnofri.TorusSobolevCoefficients
+
+@[expose] public section
 
 /-! Actual critical Fourier Sobolev balls on the unit torus have compact
 closure in L². Weighted summability is part of Sobolev membership. -/

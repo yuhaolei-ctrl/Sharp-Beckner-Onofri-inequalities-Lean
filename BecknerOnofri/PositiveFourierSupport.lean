@@ -1,4 +1,8 @@
-import BecknerOnofri.SelectedNumericalModel
+module
+
+public import BecknerOnofri.SelectedNumericalModel
+
+@[expose] public section
 
 /-! Nonnegative Fourier exponentiation forces additive closure of the
 support at an actual Euler stationary point. Only its quadratic Taylor

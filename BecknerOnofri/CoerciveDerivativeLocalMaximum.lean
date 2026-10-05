@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.Calculus.FDeriv.Mul
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.FDeriv.Mul
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+
+@[expose] public section
 
 /-! A genuine local maximum criterion from a coercive second derivative.
 The proof controls first derivatives uniformly on a neighborhood and integrates

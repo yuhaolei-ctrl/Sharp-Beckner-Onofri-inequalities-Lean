@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpCertificate
+module
+
+public import BecknerOnofri.EntropyExpCertificate
+
+@[expose] public section
 
 /-! A fixed-precision Horner recurrence for exponential enclosures. It keeps
 intermediate rational sizes bounded instead of expanding forty powers. -/

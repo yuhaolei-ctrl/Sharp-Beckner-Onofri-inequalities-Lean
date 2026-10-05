@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorNonzero
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorNonzero
+
+@[expose] public section
 
 /-! Differentiating the actual analytic squared-amplitude divisibility identity.
 This is the transverse part of the active-amplitude Hessian calculation. -/

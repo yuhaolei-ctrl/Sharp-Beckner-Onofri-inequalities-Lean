@@ -1,6 +1,10 @@
-import BecknerOnofri.SupportedEnergyStatementDefinitions
-import BecknerOnofri.ContinuousSymmetry
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.SupportedEnergyStatementDefinitions
+public import BecknerOnofri.ContinuousSymmetry
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! The local branch classification and energy expansion on one common family.
 The common witnesses also satisfy genuine Morse--Bott local maximality,

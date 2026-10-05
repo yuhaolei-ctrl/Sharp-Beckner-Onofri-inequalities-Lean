@@ -1,4 +1,8 @@
-import BecknerOnofri.PolarizationOrbitClosure
+module
+
+public import BecknerOnofri.PolarizationOrbitClosure
+
+@[expose] public section
 
 /-! Compactness of the actual simultaneous two-function polarization orbit. -/
 noncomputable section

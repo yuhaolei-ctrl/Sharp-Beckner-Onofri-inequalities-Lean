@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousSymmetry
-import BecknerOnofri.GreenLocalBranch
+module
+
+public import BecknerOnofri.ContinuousSymmetry
+public import BecknerOnofri.GreenLocalBranch
+
+@[expose] public section
 
 /-! Translation equivariance of the actual local analytic correction, with a
 single parameter neighbourhood valid for every torus translation. -/

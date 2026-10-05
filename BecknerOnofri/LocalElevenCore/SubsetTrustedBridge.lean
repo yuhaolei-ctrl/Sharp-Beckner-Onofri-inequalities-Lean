@@ -1,5 +1,9 @@
-import BecknerOnofri.SupportedBranchStatementDefinitions
-import BecknerOnofri.LocalElevenCore.SubsetPositiveBranch
+module
+
+public import BecknerOnofri.SupportedBranchStatementDefinitions
+public import BecknerOnofri.LocalElevenCore.SubsetPositiveBranch
+
+@[expose] public section
 
 noncomputable section
 open Filter

@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenCoordinateLaw
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+module
+
+public import BecknerOnofri.ElevenCoordinateLaw
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+
+@[expose] public section
 
 /-! The one-coordinate polynomial tail bound used in the lattice-label moment. -/
 noncomputable section

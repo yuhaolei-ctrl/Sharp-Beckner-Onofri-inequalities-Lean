@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.UniformGraphMoments
-import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.UniformGraphMoments
+public import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+
+@[expose] public section
 
 /-! Uniform complementary Gibbs pairings along the actual two-parameter graph. -/
 noncomputable section

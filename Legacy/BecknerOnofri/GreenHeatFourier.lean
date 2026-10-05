@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.GreenHeatMeasurable
-import Legacy.TorusEndpoint.GreenMellinMultiplier
+module
+
+public import Legacy.BecknerOnofri.GreenHeatMeasurable
+public import Legacy.TorusEndpoint.GreenMellinMultiplier
+
+@[expose] public section
 
 /-! Fubini for the actual heat-Mellin integral and exact Green Fourier multipliers. -/
 noncomputable section

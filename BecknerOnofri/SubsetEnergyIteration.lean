@@ -1,6 +1,10 @@
-import BecknerOnofri.SubsetDeletionCounting
-import Mathlib.Data.ENNReal.BigOperators
-import Mathlib.Data.ENNReal.Operations
+module
+
+public import BecknerOnofri.SubsetDeletionCounting
+public import Mathlib.Data.ENNReal.BigOperators
+public import Mathlib.Data.ENNReal.Operations
+
+@[expose] public section
 
 /-! Finite-subset induction of a nonnegative marginal-energy inequality.
 All sums and products allow infinite energy. -/

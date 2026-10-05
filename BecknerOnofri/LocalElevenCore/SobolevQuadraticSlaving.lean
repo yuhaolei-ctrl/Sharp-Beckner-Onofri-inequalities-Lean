@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ComplementResolventSobolev
+module
+
+public import BecknerOnofri.LocalElevenCore.ComplementResolventSobolev
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,4 +1,8 @@
-import BecknerOnofri.FirstShellProduct
+module
+
+public import BecknerOnofri.FirstShellProduct
+
+@[expose] public section
 
 /-! Exact Fourier coefficients of the actual analytic graph's quadratic correction. -/
 noncomputable section

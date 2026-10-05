@@ -1,4 +1,8 @@
-import Std
+module
+
+public import Std
+
+@[expose] public section
 
 /-!
 # Finite atoms in the lexicographic positive cone

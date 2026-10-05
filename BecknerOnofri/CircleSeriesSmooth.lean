@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleSeriesDerivative
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
-import Mathlib.Analysis.Calculus.ContDiff.Operations
+module
+
+public import BecknerOnofri.CircleSeriesDerivative
+public import Mathlib.Analysis.Calculus.ContDiff.Deriv
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

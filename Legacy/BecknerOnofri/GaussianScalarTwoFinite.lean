@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.FiniteScalar
-import Legacy.BecknerOnofri.LatticePolynomialBridge
+module
+
+public import Legacy.BecknerOnofri.FiniteScalar
+public import Legacy.BecknerOnofri.LatticePolynomialBridge
+
+@[expose] public section
 
 /-! Three complete finite polynomial certificates for the two-dimensional scalar bound. -/
 namespace Legacy.BecknerOnofri.GaussianScalarTwoFinite

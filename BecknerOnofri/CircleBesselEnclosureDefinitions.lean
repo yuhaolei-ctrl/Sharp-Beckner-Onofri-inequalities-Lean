@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleBesselDefinitions
+module
+
+public import BecknerOnofri.CircleBesselDefinitions
+
+@[expose] public section
 
 /-! Exact factorial-series terms and finite sums used in scalar certificates. -/
 noncomputable section

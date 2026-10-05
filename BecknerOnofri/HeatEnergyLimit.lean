@@ -1,5 +1,9 @@
-import BecknerOnofri.FiniteEntropyEnergy
-import Mathlib.Analysis.Normed.Group.Tannery
+module
+
+public import BecknerOnofri.FiniteEntropyEnergy
+public import Mathlib.Analysis.Normed.Group.Tannery
+
+@[expose] public section
 
 /-! Convergence of actual heat-regularized spectral energy for finite entropy. -/
 noncomputable section

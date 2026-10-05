@@ -1,4 +1,8 @@
-import BecknerOnofri.CirclePoissonKernel
+module
+
+public import BecknerOnofri.CirclePoissonKernel
+
+@[expose] public section
 
 /-! Normalization of the actual Poisson kernel and preservation of pointwise
 bounds under convolution. All integrals use normalized Haar measure. -/

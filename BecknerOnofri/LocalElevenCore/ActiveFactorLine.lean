@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorDifference
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorDifference
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

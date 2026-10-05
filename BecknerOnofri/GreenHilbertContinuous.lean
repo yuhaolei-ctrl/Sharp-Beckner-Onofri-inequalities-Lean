@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenContinuous
-import BecknerOnofri.RealComplementOperator
+module
+
+public import BecknerOnofri.GreenContinuous
+public import BecknerOnofri.RealComplementOperator
+
+@[expose] public section
 
 /-! The genuine Green map Fourier ℓ²→C(T^d), bounded by Cauchy–Schwarz.
 This regularizing map upgrades the Hilbert inverse to the continuous-function setting. -/

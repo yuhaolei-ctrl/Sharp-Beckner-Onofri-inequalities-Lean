@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleFisherHalf
+module
+
+public import BecknerOnofri.CircleFisherHalf
+
+@[expose] public section
 
 /-! Construct the actual canonical exponential factor and prove the pointwise
 Fisher identity from Fourier differentiation. No Fisher identity is assumed. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.FullReducedHessian
-import BecknerOnofri.FullHessianDecomposition
-import BecknerOnofri.AngularTangentRepresentation
+module
+
+public import BecknerOnofri.FullReducedHessian
+public import BecknerOnofri.FullHessianDecomposition
+public import BecknerOnofri.AngularTangentRepresentation
+
+@[expose] public section
 
 /-! The complete actual raw critical-Sobolev Hessian on the diagonal branch:
 nonpositivity, a quantitative split gap, and the exact translation kernel. -/

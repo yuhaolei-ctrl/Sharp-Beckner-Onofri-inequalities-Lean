@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatWeighted
+module
+
+public import BecknerOnofri.EntropyHeatWeighted
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

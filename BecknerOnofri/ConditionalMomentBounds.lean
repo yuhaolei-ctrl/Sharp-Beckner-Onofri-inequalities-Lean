@@ -1,4 +1,8 @@
-import BecknerOnofri.ConditionalExpectations
+module
+
+public import BecknerOnofri.ConditionalExpectations
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Function

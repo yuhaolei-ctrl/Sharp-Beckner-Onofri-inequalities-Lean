@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedFormLift
+module
+
+public import BecknerOnofri.Friedrichs.MixedFormLift
+
+@[expose] public section
 
 /-! Product form-domain approximation allowing arbitrary smooth periodic
 inactive factors, including the odd sine sector of the full periodic space. -/

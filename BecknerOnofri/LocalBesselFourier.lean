@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalFirstShell
+module
+
+public import BecknerOnofri.LocalFirstShell
+
+@[expose] public section
 
 /-! Fourier coefficients of the actual circular Gibbs density, with factorial bounds. -/
 noncomputable section
@@ -124,7 +128,7 @@ lemma firstShellTilt_fourier_bound {d : ℕ} (t : Fin d → ℝ) (ht : ∀ i, 0 
     ‖fourierCoeff (firstShellTilt t) k‖ ≤
       ∏ i, t i ^ (k i).natAbs / ((k i).natAbs.factorial : ℝ) := by
   rw [firstShellTilt_fourier, norm_prod]
-  exact Finset.prod_le_prod (fun _ _ => norm_nonneg _) (fun i _ => circleTiltFourier_bound (ht i) _)
+  exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _) (fun i _ => circleTiltFourier_bound (ht i) _)
 
 #print axioms firstShellTilt_fourier_bound
 end BecknerOnofri.HighDim

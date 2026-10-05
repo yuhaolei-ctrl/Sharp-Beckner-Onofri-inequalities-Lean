@@ -1,4 +1,8 @@
-import BecknerOnofri.CubeTransverseSlice
+module
+
+public import BecknerOnofri.CubeTransverseSlice
+
+@[expose] public section
 
 noncomputable section
 set_option maxHeartbeats 1000000

@@ -1,6 +1,10 @@
-import BecknerOnofri.FiniteEntropyEnergy
-import BecknerOnofri.SubcriticalGap
-import BecknerOnofri.Uniform
+module
+
+public import BecknerOnofri.FiniteEntropyEnergy
+public import BecknerOnofri.SubcriticalGap
+public import BecknerOnofri.Uniform
+
+@[expose] public section
 
 /-! Finiteness of the actual full finite-entropy pressure in the subcritical interval. -/
 noncomputable section

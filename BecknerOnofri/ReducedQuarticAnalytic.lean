@@ -1,6 +1,10 @@
-import BecknerOnofri.ReducedQuarticExpansion
-import BecknerOnofri.ReducedSymmetry
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+module
+
+public import BecknerOnofri.ReducedQuarticExpansion
+public import BecknerOnofri.ReducedSymmetry
+public import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+
+@[expose] public section
 
 /-! Analyticity of the genuine reduced graph expression and its quartic term. -/
 noncomputable section

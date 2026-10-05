@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SupportedFamilyProfile
-import BecknerOnofri.AnalyticPitchforkMonotonicity
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedFamilyProfile
+public import BecknerOnofri.AnalyticPitchforkMonotonicity
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

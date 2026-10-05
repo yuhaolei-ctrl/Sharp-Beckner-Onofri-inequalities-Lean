@@ -1,6 +1,10 @@
-import BecknerOnofri.FiniteEntropyGreenSobolev
-import BecknerOnofri.GenericAttainment
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
+module
+
+public import BecknerOnofri.FiniteEntropyGreenSobolev
+public import BecknerOnofri.GenericAttainment
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+
+@[expose] public section
 
 /-! The literal relative-entropy gap on the full finite-entropy density domain.
 The potential is the actual Green convolution, represented in the Fourier L2 space. -/

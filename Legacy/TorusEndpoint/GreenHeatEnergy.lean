@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenHeatRegularization
-import Legacy.TorusEndpoint.GreenMellinSeries
-import Legacy.TorusEndpoint.CoefficientEndpointReduction
+module
+
+public import Legacy.TorusEndpoint.GreenHeatRegularization
+public import Legacy.TorusEndpoint.GreenMellinSeries
+public import Legacy.TorusEndpoint.CoefficientEndpointReduction
+
+@[expose] public section
 
 /-!
 # Heat-regularized physical energy dominated by the full spectrum

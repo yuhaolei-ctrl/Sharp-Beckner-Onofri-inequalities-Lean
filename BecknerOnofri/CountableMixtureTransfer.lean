@@ -1,5 +1,9 @@
-import BecknerOnofri.CosineMixtureTransfer
-import Mathlib.Analysis.Normed.Group.Tannery
+module
+
+public import BecknerOnofri.CosineMixtureTransfer
+public import Mathlib.Analysis.Normed.Group.Tannery
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

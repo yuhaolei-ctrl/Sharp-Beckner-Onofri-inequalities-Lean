@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveHessianRadial
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveHessianRadial
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

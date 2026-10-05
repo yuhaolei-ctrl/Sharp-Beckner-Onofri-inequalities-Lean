@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
-import Legacy.BecknerOnofri.Endpoint
-import Legacy.TorusEndpoint.GreenPairing
+module
+
+public import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+public import Legacy.BecknerOnofri.Endpoint
+public import Legacy.TorusEndpoint.GreenPairing
+
+@[expose] public section
 
 /-! Actual Fourier pairings between critical Sobolev potentials and L2 densities.
 The infinite-dimensional quadratic estimate follows from Parseval and a

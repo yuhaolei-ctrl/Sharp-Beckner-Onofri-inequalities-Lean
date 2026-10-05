@@ -1,9 +1,13 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ReducedHessianCoercivity
-import BecknerOnofri.LocalElevenCore.RescaledAmplitudeUniqueness
-import BecknerOnofri.LocalElevenCore.GraphHessian
-import BecknerOnofri.LocalElevenCore.DiagonalProfile
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ReducedHessianCoercivity
+public import BecknerOnofri.LocalElevenCore.RescaledAmplitudeUniqueness
+public import BecknerOnofri.LocalElevenCore.GraphHessian
+public import BecknerOnofri.LocalElevenCore.DiagonalProfile
+
+@[expose] public section
 
 /-! Positive amplitude Jacobian of the actual reduced equation near the
 all-active onset branch, obtained by continuity from its exact limiting matrix. -/

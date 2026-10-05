@@ -1,4 +1,8 @@
-import BecknerOnofri.ConditionalMoments
+module
+
+public import BecknerOnofri.ConditionalMoments
+
+@[expose] public section
 
 /-! Expressing conditional entropy and moments as expectations under the
 original joint density, as in the manuscript's chain-and-Jensen formula. -/

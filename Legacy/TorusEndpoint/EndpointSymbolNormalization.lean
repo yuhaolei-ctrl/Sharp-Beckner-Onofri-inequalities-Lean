@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.EndpointNormalization
+module
+
+public import Legacy.TorusEndpoint.EndpointNormalization
+
+@[expose] public section
 
 /-!
 # The operator-symbol normalization in the original problem

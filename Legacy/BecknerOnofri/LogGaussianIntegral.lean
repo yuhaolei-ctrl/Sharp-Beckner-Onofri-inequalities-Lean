@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GaussianCentral
+module
+
+public import Legacy.BecknerOnofri.GaussianCentral
+
+@[expose] public section
 
 /-! A logarithmic bound for the small-time Gaussian Green integral.
 

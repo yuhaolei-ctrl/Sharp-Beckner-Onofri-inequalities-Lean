@@ -1,7 +1,11 @@
-import BecknerOnofri.PrescribedSelectionDefinitions
-import BecknerOnofri.OptimizerEulerPaper
-import BecknerOnofri.GenericCosineRepresentation
-import BecknerOnofri.MixtureEnergyStatementBridge
+module
+
+public import BecknerOnofri.PrescribedSelectionDefinitions
+public import BecknerOnofri.OptimizerEulerPaper
+public import BecknerOnofri.GenericCosineRepresentation
+public import BecknerOnofri.MixtureEnergyStatementBridge
+
+@[expose] public section
 
 /-! Transfer the proved Hilbert-space cosine representation to a specified
 actual continuous Steiner optimizer. -/

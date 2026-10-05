@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointPotential
-import Legacy.BecknerOnofri.SobolevCentering
-import Legacy.TorusEndpoint.EndpointSymbolNormalization
+module
+
+public import Legacy.BecknerOnofri.EndpointPotential
+public import Legacy.BecknerOnofri.SobolevCentering
+public import Legacy.TorusEndpoint.EndpointSymbolNormalization
+
+@[expose] public section
 
 /-! The precise potential form from the manuscript, for every real critical
 Sobolev function, with its actual mean removed and its (2π|k|)^d energy. -/

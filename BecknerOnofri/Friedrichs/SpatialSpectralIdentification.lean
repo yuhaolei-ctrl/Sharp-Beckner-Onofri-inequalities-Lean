@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.SpatialEigenvectors
-import BecknerOnofri.Friedrichs.SpatialGraphLinear
+module
+
+public import BecknerOnofri.Friedrichs.SpatialEigenvectors
+public import BecknerOnofri.Friedrichs.SpatialGraphLinear
+
+@[expose] public section
 
 /-! Exact one-dimensional identification of the spatial weak graph with the
 Jacobi spectral graph. Both directions are proved; spatial form membership

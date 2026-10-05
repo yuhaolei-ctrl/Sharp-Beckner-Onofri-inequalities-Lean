@@ -1,9 +1,13 @@
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
-import Mathlib.MeasureTheory.Group.Integral
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+public import Mathlib.MeasureTheory.Group.Integral
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 Actual shifted Mellin integrals of individual Gaussian lattice terms.

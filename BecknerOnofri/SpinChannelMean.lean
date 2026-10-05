@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinCountMoments
+module
+
+public import BecknerOnofri.SpinCountMoments
+
+@[expose] public section
 
 /-! The mean coordinate of the compressed distribution is exactly the first
 cosine moment of the actual symmetric density. -/

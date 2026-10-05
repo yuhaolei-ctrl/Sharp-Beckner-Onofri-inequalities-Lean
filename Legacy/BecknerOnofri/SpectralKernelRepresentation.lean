@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SpectralKernelTensor
-import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
-import Mathlib.MeasureTheory.Function.AEEqOfIntegral
+module
+
+public import Legacy.BecknerOnofri.SpectralKernelTensor
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+public import Mathlib.MeasureTheory.Function.AEEqOfIntegral
+
+@[expose] public section
 
 /-! Reconstruction of the genuine a.e. integral representation of a Hilbert diagonal operator.
 Square summability is a hypothesis on the actual symbol. Kernel norm convergence and

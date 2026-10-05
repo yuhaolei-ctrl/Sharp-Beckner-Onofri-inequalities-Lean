@@ -1,4 +1,8 @@
-import BecknerOnofri.ContinuousComplementInverse
+module
+
+public import BecknerOnofri.ContinuousComplementInverse
+
+@[expose] public section
 
 /-! Actual finite Fourier expansion of the square of the full first shell. -/
 noncomputable section

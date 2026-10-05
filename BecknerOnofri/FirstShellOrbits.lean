@@ -1,5 +1,9 @@
-import BecknerOnofri.PermutationSymmetry
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+module
+
+public import BecknerOnofri.PermutationSymmetry
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+@[expose] public section
 
 /-! Actual torus translations remove every complex first-shell phase.
 The translation orbits are precisely the coordinatewise modulus level sets. -/

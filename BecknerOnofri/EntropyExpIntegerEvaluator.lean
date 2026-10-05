@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpInteger
+module
+
+public import BecknerOnofri.EntropyExpInteger
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.ExpCertificate
 open Legacy.TorusEndpoint.CertifiedExp

@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleHardyShift
-import Mathlib.Algebra.BigOperators.NatAntidiagonal
-import Mathlib.Topology.Algebra.InfiniteSum.Real
+module
+
+public import BecknerOnofri.CircleHardyShift
+public import Mathlib.Algebra.BigOperators.NatAntidiagonal
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+
+@[expose] public section
 
 /-! Summation of the Hardy-space shift estimates.  The weighted coefficient
 energy is finite for the smooth outer functions used in the manuscript. -/

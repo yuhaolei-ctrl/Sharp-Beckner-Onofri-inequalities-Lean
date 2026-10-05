@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SquaredReducedHessian
-import BecknerOnofri.LocalElevenCore.ActiveFactorDifferential
+module
+
+public import BecknerOnofri.LocalElevenCore.SquaredReducedHessian
+public import BecknerOnofri.LocalElevenCore.ActiveFactorDifferential
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

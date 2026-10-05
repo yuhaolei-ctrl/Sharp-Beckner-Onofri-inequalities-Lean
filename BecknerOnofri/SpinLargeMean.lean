@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinProductGibbs
+module
+
+public import BecknerOnofri.SpinProductGibbs
+
+@[expose] public section
 
 /-! Analytic closure of the large-mean range. The entropy estimate applies
 also at t=1 and permits zero probabilities, as required by the manuscript. -/

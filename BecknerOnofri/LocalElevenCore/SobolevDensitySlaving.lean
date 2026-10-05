@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.WeightedSlavingError
+module
+
+public import BecknerOnofri.LocalElevenCore.WeightedSlavingError
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

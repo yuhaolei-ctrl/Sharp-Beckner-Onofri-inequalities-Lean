@@ -1,7 +1,11 @@
-import BecknerOnofri.GinibreSeries
-import BecknerOnofri.GibbsNormPerturbation
-import BecknerOnofri.GibbsPerturbation
-import BecknerOnofri.GridGibbsComparison
+module
+
+public import BecknerOnofri.GinibreSeries
+public import BecknerOnofri.GibbsNormPerturbation
+public import BecknerOnofri.GibbsPerturbation
+public import BecknerOnofri.GridGibbsComparison
+
+@[expose] public section
 
 /-! The genuine coefficient-update step for a summable nonnegative cosine
 potential, finite retained coefficient upper bounds, and a controlled omitted

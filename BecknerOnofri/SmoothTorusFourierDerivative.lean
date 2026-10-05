@@ -1,7 +1,11 @@
-import BecknerOnofri.SmoothTorusDifferentiation
-import BecknerOnofri.CompactComplexDifferentiation
-import BecknerOnofri.Translation
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import BecknerOnofri.SmoothTorusDifferentiation
+public import BecknerOnofri.CompactComplexDifferentiation
+public import BecknerOnofri.Translation
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 /-! Fourier differentiation from the raw smooth periodic lift. The identity is
 proved by differentiating the exact Haar translation identity. -/

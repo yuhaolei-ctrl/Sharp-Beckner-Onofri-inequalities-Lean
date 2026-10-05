@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CountableMixtureEndpoint
-import Legacy.BecknerOnofri.PositivePolynomialLimit
-import Mathlib.Logic.Denumerable
+module
+
+public import Legacy.BecknerOnofri.CountableMixtureEndpoint
+public import Legacy.BecknerOnofri.PositivePolynomialLimit
+public import Mathlib.Basic.Denumerable
+
+@[expose] public section
 
 /-! Connect actual multivariate positive polynomial limits with the density
 endpoint. The polynomial/derivative construction for selected Euler densities

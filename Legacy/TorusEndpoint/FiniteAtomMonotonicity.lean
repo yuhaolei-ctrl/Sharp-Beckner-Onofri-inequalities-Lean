@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.FiniteAtomCoefficients
+module
+
+public import Legacy.TorusEndpoint.FiniteAtomCoefficients
+
+@[expose] public section
 
 /-! Monotonicity of actual finite-atom coefficients, with no infinite-cone summability premise. -/
 

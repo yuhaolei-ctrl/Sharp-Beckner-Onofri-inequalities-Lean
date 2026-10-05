@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarReciprocalEnclosure
-import BecknerOnofri.EntropyExpCertificate
+module
+
+public import BecknerOnofri.ScalarReciprocalEnclosure
+public import BecknerOnofri.EntropyExpCertificate
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open EntropyTail.ExpCertificate Set

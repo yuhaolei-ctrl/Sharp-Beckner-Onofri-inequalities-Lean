@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.RealDiagonalReduction
-import BecknerOnofri.LocalElevenCore.ReflectionSymmetry
-import BecknerOnofri.LocalElevenCore.ReducedAxisDerivative
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.RealDiagonalReduction
+public import BecknerOnofri.LocalElevenCore.ReflectionSymmetry
+public import BecknerOnofri.LocalElevenCore.ReducedAxisDerivative
+
+@[expose] public section
 
 /-! The full complex first-shell equation really restricts to one real
 equation on the symmetric diagonal, by actual torus symmetries. -/

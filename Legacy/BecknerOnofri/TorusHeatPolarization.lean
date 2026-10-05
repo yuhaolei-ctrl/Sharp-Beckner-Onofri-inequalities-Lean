@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatGeometry
+module
+
+public import Legacy.BecknerOnofri.CircleHeatGeometry
+
+@[expose] public section
 
 /-! Coordinate polarization increases the pairing of the actual torus heat kernel. -/
 noncomputable section
@@ -27,7 +31,7 @@ theorem heatKernel_half_comparison {d : ℕ} {t : ℝ} (ht : 0 < t) (i : Fin d) 
     {x y : Torus d} (hx : x ∈ halfTorus i a) (hy : y ∈ halfTorus i a) :
     heatKernel t (x-reflection i a y) ≤ heatKernel t (x-y) := by
   rw [heatKernel_product ht, heatKernel_product ht]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro j _; exact (theta_re_pos ht _).le
   · intro j _
     by_cases hj : j=i

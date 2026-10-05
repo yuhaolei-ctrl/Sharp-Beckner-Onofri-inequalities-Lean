@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialHeatTail
-import BecknerOnofri.RadialQuadrature
+module
+
+public import BecknerOnofri.RadialHeatTail
+public import BecknerOnofri.RadialQuadrature
+
+@[expose] public section
 
 /-! Sign-aware theta-mode enclosures and the complete signed heat-panel rule. -/
 noncomputable section

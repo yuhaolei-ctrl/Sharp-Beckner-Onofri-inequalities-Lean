@@ -1,6 +1,10 @@
-import BecknerOnofri.ConditionalExpectations
-import Mathlib.Analysis.Convex.Integral
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+module
+
+public import BecknerOnofri.ConditionalExpectations
+public import Mathlib.Analysis.Convex.Integral
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+
+@[expose] public section
 
 /-! Jensen's inequality for the actual density-weighted expectation. -/
 

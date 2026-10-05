@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarBesselRows
-import BecknerOnofri.ScalarReciprocalEnclosure
-import BecknerOnofri.CircleBesselRatioEnclosure
+module
+
+public import BecknerOnofri.ScalarBesselRows
+public import BecknerOnofri.ScalarReciprocalEnclosure
+public import BecknerOnofri.CircleBesselRatioEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar Set

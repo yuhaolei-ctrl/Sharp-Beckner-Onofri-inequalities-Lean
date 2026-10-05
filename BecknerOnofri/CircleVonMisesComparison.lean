@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleLogConvexOrder
-import BecknerOnofri.CircleVonMisesMoments
+module
+
+public import BecknerOnofri.CircleLogConvexOrder
+public import BecknerOnofri.CircleVonMisesMoments
+
+@[expose] public section
 
 /-! Actual convex-order comparison for circle densities exp(F(cos θ)).
 Both comparison densities and their matching moments are genuine integrals. -/

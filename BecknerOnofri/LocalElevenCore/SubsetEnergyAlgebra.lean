@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetCubic
-import BecknerOnofri.LocalElevenCore.ReducedEnergyDeltaRemainder
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetCubic
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyDeltaRemainder
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

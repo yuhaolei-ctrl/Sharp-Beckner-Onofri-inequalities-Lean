@@ -1,5 +1,9 @@
-import BecknerOnofri.SobolevCriticalInclusion
-import BecknerOnofri.FullHessianDecomposition
+module
+
+public import BecknerOnofri.SobolevCriticalInclusion
+public import BecknerOnofri.FullHessianDecomposition
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim

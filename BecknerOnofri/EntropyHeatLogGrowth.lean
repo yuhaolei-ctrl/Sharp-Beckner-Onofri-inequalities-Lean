@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyHeatSlopeMellin
-import BecknerOnofri.EntropyHeatBetaIntegral
-import BecknerOnofri.EntropyHeatGlobal
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import BecknerOnofri.EntropyHeatSlopeMellin
+public import BecknerOnofri.EntropyHeatBetaIntegral
+public import BecknerOnofri.EntropyHeatGlobal
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

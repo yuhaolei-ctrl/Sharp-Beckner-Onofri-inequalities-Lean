@@ -1,8 +1,12 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import BecknerOnofri.GeneralEuler.WeightedEquation
-import Legacy.BecknerOnofri.JacobiTensorMellinComparison
-import Legacy.BecknerOnofri.AngularIndexCounts
-import Legacy.BecknerOnofri.WeightedStrictComparison
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import BecknerOnofri.GeneralEuler.WeightedEquation
+public import Legacy.BecknerOnofri.JacobiTensorMellinComparison
+public import Legacy.BecknerOnofri.AngularIndexCounts
+public import Legacy.BecknerOnofri.WeightedStrictComparison
+
+@[expose] public section
 
 /-! Strict norm comparison for the actual weighted Euler operators. All kernel
 properties come from the actual Jacobi heat kernels and Mellin integration. -/

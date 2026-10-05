@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalQuarticStatementDefinitions
+module
+
+public import BecknerOnofri.LocalQuarticStatementDefinitions
+
+@[expose] public section
 
 /-! The existence part of the paper's local critical-branch proposition.
 All objects below are actual torus potentials and Fourier coefficients. This

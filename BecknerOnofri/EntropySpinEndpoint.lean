@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailCertifiedScalar
-import BecknerOnofri.EntropyEndpointCertificates
+module
+
+public import BecknerOnofri.EntropyTailCertifiedScalar
+public import BecknerOnofri.EntropyEndpointCertificates
+
+@[expose] public section
 
 /-! The scalar input is now proved by the complete kernel-checked heat
 certificate. Only the global convex minorant and spin inequality remain

@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedAngularSeries
-import BecknerOnofri.AngularRealPowerDomain
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularSeries
+public import BecknerOnofri.AngularRealPowerDomain
+
+@[expose] public section
 
 /-! Finite differentiated Chebyshev eigenfunctions and their rapidly converging
 series lie in the actual mixed spectral-power graph. -/

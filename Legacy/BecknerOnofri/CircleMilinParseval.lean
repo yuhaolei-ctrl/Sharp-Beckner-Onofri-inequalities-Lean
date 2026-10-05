@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleMilinSeries
+module
+
+public import Legacy.BecknerOnofri.CircleMilinSeries
+
+@[expose] public section
 
 /-! Parseval for the genuine one-sided analytic exponential, including its
 Lebesgue integral and the complete finite-word coefficients. -/

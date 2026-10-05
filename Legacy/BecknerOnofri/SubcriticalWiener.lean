@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.RadialWiener
-import Legacy.BecknerOnofri.SubcriticalEuler
-import Legacy.TorusEndpoint.GreenPairing
+module
+
+public import Legacy.BecknerOnofri.RadialWiener
+public import Legacy.BecknerOnofri.SubcriticalEuler
+public import Legacy.TorusEndpoint.GreenPairing
+
+@[expose] public section
 
 /-! The actual Euler equation upgrades every subcritical maximizer to Fourier
 coefficients with absolutely summable polynomial moments of every order. -/

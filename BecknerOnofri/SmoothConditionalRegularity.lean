@@ -1,6 +1,10 @@
-import BecknerOnofri.CompactCubeHaarIntegral
-import BecknerOnofri.ConditionalEntropyDefinitions
-import BecknerOnofri.UniformFourierHessian
+module
+
+public import BecknerOnofri.CompactCubeHaarIntegral
+public import BecknerOnofri.ConditionalEntropyDefinitions
+public import BecknerOnofri.UniformFourierHessian
+
+@[expose] public section
 
 /-! Conditional-circle smoothness directly from smoothness of the raw torus
 function, without a Fourier decay representation as an extra hypothesis. -/

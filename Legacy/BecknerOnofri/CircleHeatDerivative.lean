@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.PolarizationDensity
-import Mathlib.Analysis.Calculus.SmoothSeries
+module
+
+public import Legacy.BecknerOnofri.PolarizationDensity
+public import Mathlib.Analysis.Calculus.SmoothSeries
+
+@[expose] public section
 
 /-! Actual Fourier-series differentiation of the unit-circle heat kernel. -/
 noncomputable section

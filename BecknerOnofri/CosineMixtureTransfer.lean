@@ -1,5 +1,9 @@
-import BecknerOnofri.RandomRectangles
-import Legacy.BecknerOnofri.CountableCosineMixture
+module
+
+public import BecknerOnofri.RandomRectangles
+public import Legacy.BecknerOnofri.CountableCosineMixture
+
+@[expose] public section
 
 /-! Dimension transfer for the actual Fourier energies of correlated cosine mixtures. -/
 noncomputable section

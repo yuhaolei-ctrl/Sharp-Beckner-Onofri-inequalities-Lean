@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailCore
-import BecknerOnofri.RadialQuadrature
+module
+
+public import BecknerOnofri.EntropyTailCore
+public import BecknerOnofri.RadialQuadrature
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

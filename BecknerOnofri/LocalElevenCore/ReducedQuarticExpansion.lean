@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedQuarticExpansion
-import BecknerOnofri.LocalElevenCore.SlavedGibbs
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedQuarticExpansion
+public import BecknerOnofri.LocalElevenCore.SlavedGibbs
+
+@[expose] public section
 
 /-! The actual graph expression for the critical reduced pressure has the
 manuscript's exact quartic coefficients, with a controlled fifth-order remainder.

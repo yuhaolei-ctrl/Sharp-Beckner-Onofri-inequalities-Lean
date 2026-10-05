@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.FiniteAtomCriterion
-import Legacy.TorusEndpoint.FullSpectral
+module
+
+public import Legacy.TorusEndpoint.FiniteAtomCriterion
+public import Legacy.TorusEndpoint.FullSpectral
+
+@[expose] public section
 
 /-!
 # From actual finite-atom coefficient caps to spectral entropy

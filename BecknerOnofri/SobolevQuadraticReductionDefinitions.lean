@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalQuarticStatementDefinitions
+module
+
+public import BecknerOnofri.LocalQuarticStatementDefinitions
+
+@[expose] public section
 
 /-! The two actual H^s Taylor expansions in Section 5, at the critical
 parameter. Both use one locally unique complementary graph and one quadratic

@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationL1Properties
-import Legacy.BecknerOnofri.GibbsL2Continuity
+module
+
+public import BecknerOnofri.PolarizationL1Properties
+public import Legacy.BecknerOnofri.GibbsL2Continuity
+
+@[expose] public section
 
 /-! L2 continuity of genuine coordinate polarization, needed to keep the
 closure of a prescribed density's orbit inside the actual optimizer set. -/

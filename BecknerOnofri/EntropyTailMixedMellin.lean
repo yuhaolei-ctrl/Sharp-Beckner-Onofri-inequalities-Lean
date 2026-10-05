@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailMixedHeat
-import BecknerOnofri.EntropyTailMellin
+module
+
+public import BecknerOnofri.EntropyTailMixedHeat
+public import BecknerOnofri.EntropyTailMellin
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

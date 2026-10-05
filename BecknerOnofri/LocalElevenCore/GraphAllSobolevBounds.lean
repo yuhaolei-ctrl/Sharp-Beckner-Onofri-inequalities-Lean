@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphAllSobolevBounds
-import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphAllSobolevBounds
+public import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+
+@[expose] public section
 
 /-! Uniform quadratic bounds in every fixed physical Sobolev norm, for the
 actual analytic complementary graph. -/

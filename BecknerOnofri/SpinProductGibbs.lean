@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinProductGradientDefinitions
-import BecknerOnofri.SpinProductEntropy
-import BecknerOnofri.SpinFiniteGibbs
+module
+
+public import BecknerOnofri.SpinProductGradientDefinitions
+public import BecknerOnofri.SpinProductEntropy
+public import BecknerOnofri.SpinFiniteGibbs
+
+@[expose] public section
 
 /-! The source's exponential-moment reduction with the actual product law
 and its actual nonaffine energy gradient, without a gradient hypothesis. -/

@@ -1,5 +1,9 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Rational logarithm enclosures for the entropy-route numerical inputs.
 These use the finite atanh sum with the analytic remainder, and an exact

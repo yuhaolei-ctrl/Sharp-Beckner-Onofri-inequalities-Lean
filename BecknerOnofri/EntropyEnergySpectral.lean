@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyEnergySplit
+module
+
+public import BecknerOnofri.EntropyEnergySplit
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

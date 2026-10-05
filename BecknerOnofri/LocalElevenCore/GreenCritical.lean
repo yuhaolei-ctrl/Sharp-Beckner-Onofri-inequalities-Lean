@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.GreenCritical
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.LocalElevenCore.ReducedEquation
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.GreenCritical
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.LocalElevenCore.ReducedEquation
+
+@[expose] public section
 
 /-! Critical Sobolev regularity of actual continuous Green potentials. -/
 noncomputable section

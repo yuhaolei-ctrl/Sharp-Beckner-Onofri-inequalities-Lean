@@ -1,4 +1,8 @@
-import BecknerOnofri.EndpointRigidity.MaximizerLevel
+module
+
+public import BecknerOnofri.EndpointRigidity.MaximizerLevel
+
+@[expose] public section
 
 /-! Compactness of endpoint equality densities at a fixed entropy level.
 The energy ball is fixed by the prescribed entropy, so this proof uses no

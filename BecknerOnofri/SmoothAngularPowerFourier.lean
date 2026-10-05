@@ -1,5 +1,9 @@
-import BecknerOnofri.RealComplementOperator
-import BecknerOnofri.SmoothAngularPower
+module
+
+public import BecknerOnofri.RealComplementOperator
+public import BecknerOnofri.SmoothAngularPower
+
+@[expose] public section
 
 /-! The real smooth angular-power representative has exactly the prescribed
 Fourier multiplier. Taking its real part loses no component. -/

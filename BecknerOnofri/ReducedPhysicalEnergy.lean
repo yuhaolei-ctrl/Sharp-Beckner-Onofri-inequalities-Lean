@@ -1,5 +1,9 @@
-import BecknerOnofri.GraphEnergy
-import BecknerOnofri.ReducedQuarticExpansion
+module
+
+public import BecknerOnofri.GraphEnergy
+public import BecknerOnofri.ReducedQuarticExpansion
+
+@[expose] public section
 
 /-! The quartic expansion is an expansion of the actual trusted physical
 dual functional on the solved complementary graph. -/

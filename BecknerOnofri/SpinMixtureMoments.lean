@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinMixtureCap
-import BecknerOnofri.EntropyTailMixedHeat
+module
+
+public import BecknerOnofri.SpinMixtureCap
+public import BecknerOnofri.EntropyTailMixedHeat
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false
@@ -17,7 +21,7 @@ theorem cosineMonomial_continuous (S : Finset (Fin 12)) : Continuous (cosineMono
 
 theorem cosineMonomial_norm_le (S : Finset (Fin 12)) (x : Torus 12) : ‖cosineMonomial S x‖ ≤ 1 := by
   rw [cosineMonomial, norm_prod]
-  exact Finset.prod_le_one (fun i _ => norm_nonneg _) (fun i _ => torusCosines_bound x i)
+  exact Finset.prod_le_one₀ (fun i _ => norm_nonneg _) (fun i _ => torusCosines_bound x i)
 
 theorem cosineMonomial_eq_product (S : Finset (Fin 12)) (x : Torus 12) :
     cosineMonomial S x = ∏ i : Fin 12, if i∈S then (fourier 1 (x i)).re else 1 := by

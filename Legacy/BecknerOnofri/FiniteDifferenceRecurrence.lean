@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.FiniteDifferenceDefs
-import Mathlib.Algebra.Group.ForwardDiff
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceDefs
+public import Mathlib.Algebra.Group.ForwardDiff
+
+@[expose] public section
 
 /-! The explicit rectangular finite-grid difference satisfies the true
 coordinatewise forward-difference recurrence. -/

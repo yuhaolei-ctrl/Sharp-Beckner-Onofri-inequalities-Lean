@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenPressureCorner
-import BecknerOnofri.ElevenDefectFinite
+module
+
+public import BecknerOnofri.ElevenPressureCorner
+public import BecknerOnofri.ElevenDefectFinite
+
+@[expose] public section
 
 /-! The nonzero transition optimizer supplies the second affine support of
 the actual defect, with strictly negative slope given by its physical energy. -/

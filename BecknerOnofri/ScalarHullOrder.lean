@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarMinorantAssembly
+module
+
+public import BecknerOnofri.ScalarMinorantAssembly
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 

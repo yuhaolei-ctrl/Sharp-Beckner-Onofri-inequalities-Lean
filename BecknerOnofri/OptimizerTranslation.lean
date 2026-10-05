@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousSymmetry
-import BecknerOnofri.RawAttainment
+module
+
+public import BecknerOnofri.ContinuousSymmetry
+public import BecknerOnofri.RawAttainment
+
+@[expose] public section
 
 /-! Translation transports actual raw and continuous global optimizers.
 All comparison domains are the full raw critical Sobolev domain. -/

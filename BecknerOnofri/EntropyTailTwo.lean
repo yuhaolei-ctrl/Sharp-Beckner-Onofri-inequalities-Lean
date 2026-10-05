@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailPolynomialExpansion
+module
+
+public import BecknerOnofri.EntropyTailPolynomialExpansion
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.AngularSpectralIntertwining
+module
+
+public import Legacy.BecknerOnofri.AngularSpectralIntertwining
+
+@[expose] public section
 
 /-! Real-power spectral intertwining on the actual Jacobi tensor Hilbert space.
 This supplies the all-s spectral step. Identification of this spectral domain

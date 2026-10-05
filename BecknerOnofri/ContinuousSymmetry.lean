@@ -1,5 +1,9 @@
-import BecknerOnofri.Translation
-import BecknerOnofri.ContinuousComplement
+module
+
+public import BecknerOnofri.Translation
+public import BecknerOnofri.ContinuousComplement
+
+@[expose] public section
 
 /-! Translation on the actual continuous torus Banach space and its full first shell. -/
 noncomputable section

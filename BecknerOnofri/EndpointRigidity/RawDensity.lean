@@ -1,5 +1,9 @@
-import BecknerOnofri.EndpointRigidity.MixtureInduction
-import BecknerOnofri.Uniform
+module
+
+public import BecknerOnofri.EndpointRigidity.MixtureInduction
+public import BecknerOnofri.Uniform
+
+@[expose] public section
 
 /-! Exact extended-real Fourier-energy equality formulation, with the original
 raw density domain and normalized Haar measure. -/

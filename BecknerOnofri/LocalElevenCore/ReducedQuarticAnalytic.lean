@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedQuarticAnalytic
-import BecknerOnofri.LocalElevenCore.ReducedQuarticExpansion
-import BecknerOnofri.LocalElevenCore.ReducedSymmetry
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedQuarticAnalytic
+public import BecknerOnofri.LocalElevenCore.ReducedQuarticExpansion
+public import BecknerOnofri.LocalElevenCore.ReducedSymmetry
+public import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+
+@[expose] public section
 
 /-! Analyticity of the genuine reduced graph expression and its quartic term. -/
 noncomputable section

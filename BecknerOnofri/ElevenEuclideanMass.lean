@@ -1,5 +1,9 @@
-import BecknerOnofri.StudentIntegral
-import BecknerOnofri.ElevenConstants
+module
+
+public import BecknerOnofri.StudentIntegral
+public import BecknerOnofri.ElevenConstants
+
+@[expose] public section
 
 /-! The exact Euclidean normalization in Section 4, before periodization. -/
 noncomputable section

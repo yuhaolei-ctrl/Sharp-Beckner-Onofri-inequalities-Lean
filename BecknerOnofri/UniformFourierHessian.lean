@@ -1,8 +1,12 @@
-import BecknerOnofri.Uniform
-import BecknerOnofri.GreenCritical
-import BecknerOnofri.CircleOuterParseval
-import Mathlib.Topology.Instances.AddCircle.Defs
-import Mathlib.Topology.Constructions
+module
+
+public import BecknerOnofri.Uniform
+public import BecknerOnofri.GreenCritical
+public import BecknerOnofri.CircleOuterParseval
+public import Mathlib.Topology.Instances.AddCircle.Defs
+public import Mathlib.Topology.Constructions
+
+@[expose] public section
 
 /-! Parseval controls the genuine Fourier energy of a continuous perturbation;
 all nonzero modes of 1+t*h are exactly t times the corresponding mode of h. -/

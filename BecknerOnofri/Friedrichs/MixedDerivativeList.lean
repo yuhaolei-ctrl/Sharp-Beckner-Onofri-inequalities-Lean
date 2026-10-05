@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedFractionalStatementDefinitions
-import Legacy.BecknerOnofri.AngularMixedTerms
-import Mathlib.Algebra.BigOperators.Fin
+module
+
+public import BecknerOnofri.Friedrichs.MixedFractionalStatementDefinitions
+public import Legacy.BecknerOnofri.AngularMixedTerms
+public import Mathlib.Algebra.BigOperators.Fin
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

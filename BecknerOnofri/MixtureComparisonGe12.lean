@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureTransfer
-import BecknerOnofri.RectangleTwelve
+module
+
+public import BecknerOnofri.CountableMixtureTransfer
+public import BecknerOnofri.RectangleTwelve
+
+@[expose] public section
 
 /-! Include the manuscript's new d=12 rectangle case in the actual cosine-mixture
 energy transfer. The countable result here still assumes a summable uniform

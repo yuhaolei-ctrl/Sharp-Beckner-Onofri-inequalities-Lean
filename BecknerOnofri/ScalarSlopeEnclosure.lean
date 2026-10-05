@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Signed slope enclosures, including min/max junctions. This is the
 analytic rule behind bounding the four scalar candidates on whole mesh

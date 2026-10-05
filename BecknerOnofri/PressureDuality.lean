@@ -1,9 +1,13 @@
-import BecknerOnofri.PressureRegularity
-import BecknerOnofri.ThresholdReduction
-import BecknerOnofri.RawAttainment
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import BecknerOnofri.HeatEnergyLimit
-import Mathlib.Topology.Instances.EReal.Lemmas
+module
+
+public import BecknerOnofri.PressureRegularity
+public import BecknerOnofri.ThresholdReduction
+public import BecknerOnofri.RawAttainment
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import BecknerOnofri.HeatEnergyLimit
+public import Mathlib.Topology.Instances.EReal.Lemmas
+
+@[expose] public section
 
 /-! Actual Gibbs comparison and strict positivity above the spectral threshold. -/
 noncomputable section

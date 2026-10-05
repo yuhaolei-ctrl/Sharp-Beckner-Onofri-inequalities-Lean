@@ -1,5 +1,9 @@
-import Legacy.D10.AnalyticMarginals
-import Legacy.D10.CircleEntropy
+module
+
+public import Legacy.D10.AnalyticMarginals
+public import Legacy.D10.CircleEntropy
+
+@[expose] public section
 
 /-!
 # The actual axis Fourier bound on the ten-dimensional torus

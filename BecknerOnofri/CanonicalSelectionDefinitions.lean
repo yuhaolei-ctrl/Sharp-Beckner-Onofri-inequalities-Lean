@@ -1,5 +1,9 @@
-import BecknerOnofri.CoordinateRearrangementDefinitions
-import BecknerOnofri.PrescribedSelectionDefinitions
+module
+
+public import BecknerOnofri.CoordinateRearrangementDefinitions
+public import BecknerOnofri.PrescribedSelectionDefinitions
+
+@[expose] public section
 
 /-! Canonical finite successive Steiner selection on the entire finite-entropy
 domain. The rearrangements are the literal circle layer-cake construction,

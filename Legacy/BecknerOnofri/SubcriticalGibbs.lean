@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalAttainment
-import Legacy.TorusEndpoint.EntropyVariational
+module
+
+public import Legacy.BecknerOnofri.SubcriticalAttainment
+public import Legacy.TorusEndpoint.EntropyVariational
+
+@[expose] public section
 
 /-! The actual Gibbs density of every admissible potential, and its exact entropy identity. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianScalarTwo
-import Legacy.BecknerOnofri.PositivePolynomialEndpoint
-import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+module
+
+public import Legacy.BecknerOnofri.GaussianScalarTwo
+public import Legacy.BecknerOnofri.PositivePolynomialEndpoint
+public import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+
+@[expose] public section
 
 /-! The actual mixture and positive-profile density endpoints in every dimension 2 through 10.
 The old dimension-three interfaces are preserved in their original modules.

@@ -1,6 +1,10 @@
-import BecknerOnofri.PolarizationMetricGeometry
-import Mathlib.MeasureTheory.Group.AddCircle
-import Mathlib.MeasureTheory.Constructions.Pi
+module
+
+public import BecknerOnofri.PolarizationMetricGeometry
+public import Mathlib.MeasureTheory.Group.AddCircle
+public import Mathlib.MeasureTheory.Constructions.Pi
+
+@[expose] public section
 
 /-! The normalized radius rank on the actual circle is uniformly distributed. -/
 noncomputable section

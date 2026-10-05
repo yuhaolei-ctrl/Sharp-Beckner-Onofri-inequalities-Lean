@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.EulerEquation
-import BecknerOnofri.LocalElevenCore.CriticalReducedIsolation
-import BecknerOnofri.LocalElevenCore.GraphRegularity
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.EulerEquation
+public import BecknerOnofri.LocalElevenCore.CriticalReducedIsolation
+public import BecknerOnofri.LocalElevenCore.GraphRegularity
+
+@[expose] public section
 
 /-! Exact equivalence between the solved Green equation and the manuscript's
 Fourier Euler equation, including the zero-mean normalization. -/

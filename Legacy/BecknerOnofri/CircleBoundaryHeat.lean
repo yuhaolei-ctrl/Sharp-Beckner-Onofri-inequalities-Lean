@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleDirichletHeat
+module
+
+public import Legacy.BecknerOnofri.CircleDirichletHeat
+
+@[expose] public section
 
 /-! Genuine reflected Neumann and Dirichlet heat kernels, with their strict ordering. -/
 noncomputable section

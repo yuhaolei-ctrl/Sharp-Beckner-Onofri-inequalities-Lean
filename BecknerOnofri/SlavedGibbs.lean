@@ -1,4 +1,8 @@
-import BecknerOnofri.SlavedMoments
+module
+
+public import BecknerOnofri.SlavedMoments
+
+@[expose] public section
 
 /-! Controlled Gibbs pairings and logarithmic moments on the actual graph. -/
 noncomputable section

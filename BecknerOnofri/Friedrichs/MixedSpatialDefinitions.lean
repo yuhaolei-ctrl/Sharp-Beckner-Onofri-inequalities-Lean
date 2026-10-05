@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.SpatialFormDefinitions
-import Mathlib.MeasureTheory.Constructions.Pi
-import Mathlib.Analysis.Calculus.FDeriv.Basic
+module
+
+public import BecknerOnofri.Friedrichs.SpatialFormDefinitions
+public import Mathlib.MeasureTheory.Constructions.Pi
+public import Mathlib.Analysis.Calculus.FDeriv.Basic
+
+@[expose] public section
 
 /-! Actual mixed spatial form data. Inactive coordinates retain their full
 2*pi period; they are not replaced by Neumann half intervals. -/

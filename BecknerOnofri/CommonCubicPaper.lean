@@ -1,5 +1,9 @@
-import BecknerOnofri.GeneralCoefficientReflections
-import BecknerOnofri.UniformFourierHessian
+module
+
+public import BecknerOnofri.GeneralCoefficientReflections
+public import BecknerOnofri.UniformFourierHessian
+
+@[expose] public section
 
 /-! The full signed-permutation symmetry statement for every smooth
 nonnegative-Fourier global optimizer, without a selection hypothesis. -/

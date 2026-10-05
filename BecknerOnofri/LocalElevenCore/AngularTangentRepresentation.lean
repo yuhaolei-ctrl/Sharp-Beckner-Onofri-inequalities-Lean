@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.AngularTangentRepresentation
-import BecknerOnofri.LocalElevenCore.AngularReducedKernel
-import BecknerOnofri.LocalElevenCore.GraphHessian
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.AngularTangentRepresentation
+public import BecknerOnofri.LocalElevenCore.AngularReducedKernel
+public import BecknerOnofri.LocalElevenCore.GraphHessian
+
+@[expose] public section
 
 /-! The imaginary graph tangent space is exactly the actual spatial
 translation tangent space, with the manuscript's directional derivatives. -/

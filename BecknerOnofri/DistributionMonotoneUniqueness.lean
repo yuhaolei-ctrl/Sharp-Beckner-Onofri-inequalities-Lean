@@ -1,6 +1,10 @@
-import Mathlib.Probability.IdentDistrib
-import Mathlib.MeasureTheory.Measure.Typeclasses.Finite
-import Mathlib.Algebra.Order.Archimedean.Real.Basic
+module
+
+public import Mathlib.Probability.IdentDistrib
+public import Mathlib.MeasureTheory.Measure.Typeclasses.Finite
+public import Mathlib.Algebra.Order.Archimedean.Real.Basic
+
+@[expose] public section
 
 /-! Equimeasurability uniquely determines a decreasing function of a common
 real-valued radius, up to null sets. -/

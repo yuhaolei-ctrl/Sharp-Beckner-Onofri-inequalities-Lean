@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.FullHessianDecomposition
-import BecknerOnofri.LocalElevenCore.GraphHessianRaw
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.FullHessianDecomposition
+public import BecknerOnofri.LocalElevenCore.GraphHessianRaw
+
+@[expose] public section
 
 /-! Exact Hessian decomposition for every raw mean-zero critical-Sobolev
 variation, with genuine weighted Fourier summability and polarization. -/

@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.GaussianRemainder
-import Legacy.BecknerOnofri.UniformTail
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+module
+
+public import Legacy.BecknerOnofri.GaussianRemainder
+public import Legacy.BecknerOnofri.UniformTail
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+
+@[expose] public section
 
 /-! Exact elementary evaluation of the Gaussian central integral. -/
 namespace Legacy.BecknerOnofri.GaussianCentral

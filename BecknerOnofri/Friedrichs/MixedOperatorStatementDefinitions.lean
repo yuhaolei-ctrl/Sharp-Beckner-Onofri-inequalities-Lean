@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+
+@[expose] public section
 
 /-! Trusted tensor conjugation statement in the actual mixed spatial
 closed-form graph. Its hypotheses include no spectral or form-domain premise. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.FiniteEntropyDualGap
+module
+
+public import BecknerOnofri.FiniteEntropyDualGap
+
+@[expose] public section
 
 /-! Fourier square completion and the literal potential-side gap identity. -/
 noncomputable section

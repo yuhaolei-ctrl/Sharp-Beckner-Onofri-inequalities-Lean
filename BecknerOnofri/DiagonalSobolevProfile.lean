@@ -1,5 +1,9 @@
-import BecknerOnofri.DiagonalProfile
-import BecknerOnofri.GraphAllSobolevBounds
+module
+
+public import BecknerOnofri.DiagonalProfile
+public import BecknerOnofri.GraphAllSobolevBounds
+
+@[expose] public section
 
 /-! The genuine physical diagonal branch has its trusted leading profile
 in every Sobolev norm, uniformly over all torus translations. -/

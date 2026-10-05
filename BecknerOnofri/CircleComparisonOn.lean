@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleComparison
+module
+
+public import BecknerOnofri.CircleComparison
+
+@[expose] public section
 
 /-! The profile need only be continuous on its physical domain [-1,1].
 A continuous clamped extension preserves the actual density and all moments. -/

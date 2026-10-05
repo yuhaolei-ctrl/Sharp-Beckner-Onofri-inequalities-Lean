@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SpectralHeatCompact
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import Legacy.BecknerOnofri.SpectralHeatCompact
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-! Genuine real L2 product tensors and square-summable diagonal kernel series. -/
 noncomputable section

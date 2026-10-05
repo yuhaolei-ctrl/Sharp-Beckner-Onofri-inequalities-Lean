@@ -1,6 +1,10 @@
-import BecknerOnofri.CirclePoissonDeficit
-import BecknerOnofri.CirclePoissonLimit
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import BecknerOnofri.CirclePoissonDeficit
+public import BecknerOnofri.CirclePoissonLimit
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

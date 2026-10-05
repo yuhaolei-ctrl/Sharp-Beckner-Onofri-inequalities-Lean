@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Extended entropy with the negative part handled by a bounded shift.
 The formula is meaningful even when the positive entropy integral is infinite. -/

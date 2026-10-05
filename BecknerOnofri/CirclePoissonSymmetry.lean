@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusFlow
+module
+
+public import BecknerOnofri.CircleTorusFlow
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

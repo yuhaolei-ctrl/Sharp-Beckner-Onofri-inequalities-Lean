@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyShearer.L1Marginal
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+module
+
+public import BecknerOnofri.EntropyShearer.L1Marginal
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

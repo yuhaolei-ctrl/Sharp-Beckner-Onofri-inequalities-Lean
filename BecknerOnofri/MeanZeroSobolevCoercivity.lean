@@ -1,5 +1,9 @@
-import BecknerOnofri.ComplementSobolevCoercivity
-import BecknerOnofri.FullHessianDecomposition
+module
+
+public import BecknerOnofri.ComplementSobolevCoercivity
+public import BecknerOnofri.FullHessianDecomposition
+
+@[expose] public section
 
 /-! Critical physical Sobolev norm is controlled by energy on the entire
 mean-zero domain, including the full first shell. -/

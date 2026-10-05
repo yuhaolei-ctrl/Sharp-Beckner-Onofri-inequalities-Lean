@@ -1,6 +1,10 @@
-import BecknerOnofri.RadialGreenFinite
-import BecknerOnofri.RadialOrigin
-import BecknerOnofri.RadialEndpointChange
+module
+
+public import BecknerOnofri.RadialGreenFinite
+public import BecknerOnofri.RadialOrigin
+public import BecknerOnofri.RadialEndpointChange
+
+@[expose] public section
 
 /-! The source's actual diagonal profile and finite upper profile, including the
 singular logarithmic majorant used for rigorous integration at the origin. -/

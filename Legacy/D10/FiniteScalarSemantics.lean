@@ -1,8 +1,12 @@
-import Legacy.D10.FiniteScalarCore
-import Mathlib.Algebra.Polynomial.Coeff
-import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Algebra.Polynomial.BigOperators
-import Mathlib.Logic.Function.Iterate
+module
+
+public import Legacy.D10.FiniteScalarCore
+public import Mathlib.Algebra.Polynomial.Coeff
+public import Mathlib.Algebra.Polynomial.Eval.Defs
+public import Mathlib.Algebra.Polynomial.BigOperators
+public import Mathlib.Logic.Function.Iterate
+
+@[expose] public section
 
 namespace Legacy.D10.FiniteScalar
 

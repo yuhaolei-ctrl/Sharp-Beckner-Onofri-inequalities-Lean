@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarCheckedBessel
+module
+
+public import BecknerOnofri.ScalarCheckedBessel
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar Set

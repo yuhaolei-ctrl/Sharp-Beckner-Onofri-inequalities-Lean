@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenThetaIntegrability
-import Legacy.BecknerOnofri.ThetaPolynomialMajorant
-import Legacy.BecknerOnofri.ThetaExponentialIntegral
+module
+
+public import BecknerOnofri.ElevenThetaIntegrability
+public import Legacy.BecknerOnofri.ThetaPolynomialMajorant
+public import Legacy.BecknerOnofri.ThetaExponentialIntegral
+
+@[expose] public section
 
 /-! The dimension-eleven theta certificate from Section 4. All infinite
 series and improper integrals retain their mathematical meanings. -/

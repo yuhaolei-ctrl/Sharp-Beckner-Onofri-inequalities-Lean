@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.PermutationSymmetry
-import BecknerOnofri.LocalElevenCore.ReducedSymmetry
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.PermutationSymmetry
+public import BecknerOnofri.LocalElevenCore.ReducedSymmetry
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Coordinate permutation covariance of the actual torus Gibbs problem. -/
 noncomputable section

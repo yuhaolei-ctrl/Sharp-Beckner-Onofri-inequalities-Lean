@@ -1,5 +1,9 @@
-import BecknerOnofri.AnalyticParameterDivision
-import BecknerOnofri.AnalyticDerivativeOrder
+module
+
+public import BecknerOnofri.AnalyticParameterDivision
+public import BecknerOnofri.AnalyticDerivativeOrder
+
+@[expose] public section
 
 /-! Joint analytic division by any finite power of a scalar coordinate,
 from actual transverse vanishing order. -/

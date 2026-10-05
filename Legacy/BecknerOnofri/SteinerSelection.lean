@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SteinerFromPolarization
-import Legacy.BecknerOnofri.GreenPolarization
-import Legacy.BecknerOnofri.SmoothFourier
+module
+
+public import Legacy.BecknerOnofri.SteinerFromPolarization
+public import Legacy.BecknerOnofri.GreenPolarization
+public import Legacy.BecknerOnofri.SmoothFourier
+
+@[expose] public section
 
 /-! Genuine smooth Steiner Euler maximizers, selected from the actual compact
 variational optimizer set. All polarization energy comparisons are discharged. -/

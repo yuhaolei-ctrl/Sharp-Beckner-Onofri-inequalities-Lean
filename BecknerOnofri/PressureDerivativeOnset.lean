@@ -1,5 +1,9 @@
-import BecknerOnofri.BranchFirstDerivativeRemainder
-import BecknerOnofri.PressureSecondDerivative
+module
+
+public import BecknerOnofri.BranchFirstDerivativeRemainder
+public import BecknerOnofri.PressureSecondDerivative
+
+@[expose] public section
 
 /-! The manuscript's quantitative first-derivative onset formula. -/
 noncomputable section

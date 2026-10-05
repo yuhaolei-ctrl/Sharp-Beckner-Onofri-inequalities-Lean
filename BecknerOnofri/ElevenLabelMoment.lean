@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenLabelTails
-import BecknerOnofri.GeometricEntropy
-import Mathlib.Topology.Algebra.InfiniteSum.Real
-import Mathlib.Topology.Algebra.InfiniteSum.Ring
+module
+
+public import BecknerOnofri.ElevenLabelTails
+public import BecknerOnofri.GeometricEntropy
+public import Mathlib.Topology.Algebra.InfiniteSum.Real
+public import Mathlib.Topology.Algebra.InfiniteSum.Ring
+
+@[expose] public section
 
 /-! The first absolute moment of the actual coordinate label and the resulting
 one-coordinate Shannon entropy estimate from Section 4. -/

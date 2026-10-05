@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.GreenHeatRegularization
-import Legacy.TorusEndpoint.GreenKernelApproximation
+module
+
+public import Legacy.TorusEndpoint.GreenHeatRegularization
+public import Legacy.TorusEndpoint.GreenKernelApproximation
+
+@[expose] public section
 
 /-!
 # Actual almost-everywhere heat approximation of the Green kernel

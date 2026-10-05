@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.SpatialSpectralIdentification
+module
+
+public import BecknerOnofri.Friedrichs.SpatialSpectralIdentification
+
+@[expose] public section
 
 /-! Self-adjointness is stated as equality of the actual graph with its adjoint
 graph, rather than as symmetry alone. -/

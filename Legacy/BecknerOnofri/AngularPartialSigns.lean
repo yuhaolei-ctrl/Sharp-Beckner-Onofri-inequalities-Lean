@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.AngularSpectralIntertwining
-import Legacy.BecknerOnofri.EulerUnitProfiles
-import Legacy.BecknerOnofri.PositiveOperatorNeumann
+module
+
+public import Legacy.BecknerOnofri.AngularSpectralIntertwining
+public import Legacy.BecknerOnofri.EulerUnitProfiles
+public import Legacy.BecknerOnofri.PositiveOperatorNeumann
+
+@[expose] public section
 
 /-! Genuine nonnegativity of the first angular Jacobi vectors, with the
 coefficient sequence and the real L2 representatives identified. -/

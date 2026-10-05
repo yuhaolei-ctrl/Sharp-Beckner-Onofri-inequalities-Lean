@@ -1,5 +1,9 @@
-import BecknerOnofri.CubicFirstShell
-import BecknerOnofri.SlavedMoments
+module
+
+public import BecknerOnofri.CubicFirstShell
+public import BecknerOnofri.SlavedMoments
+
+@[expose] public section
 
 /-! Fourth-order control of the actual reduced first-shell equation on the critical slice. -/
 noncomputable section

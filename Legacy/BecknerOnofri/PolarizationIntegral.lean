@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationPairing
+module
+
+public import Legacy.BecknerOnofri.PolarizationPairing
+
+@[expose] public section
 
 /-! Integrating the genuine four-point comparison over the actual Haar product measure. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorLine
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorLine
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

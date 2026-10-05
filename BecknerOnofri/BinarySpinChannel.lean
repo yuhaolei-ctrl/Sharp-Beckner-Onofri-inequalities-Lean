@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinCountLaw
-import BecknerOnofri.SpinChannelDefinitions
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
+module
+
+public import BecknerOnofri.SpinCountLaw
+public import BecknerOnofri.SpinChannelDefinitions
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+
+@[expose] public section
 
 /-! The genuine binary-spin channel (5.48), for every Haar probability
 density. Its normalization and joint cosine moments follow from finite product

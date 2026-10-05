@@ -1,4 +1,8 @@
-import BecknerOnofri.OnsetContinuous
+module
+
+public import BecknerOnofri.OnsetContinuous
+
+@[expose] public section
 
 /-! Actual continuous global dual optimizers: full Euler equation and subcritical attainment. -/
 noncomputable section

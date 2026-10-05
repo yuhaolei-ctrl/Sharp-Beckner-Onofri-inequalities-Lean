@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.Calculus.FDeriv.Congr
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Analysis.Calculus.FDeriv.Congr
+
+@[expose] public section
 
 /-! Actual coordinate differentiation rules on the closed cube, including its boundary. -/
 noncomputable section

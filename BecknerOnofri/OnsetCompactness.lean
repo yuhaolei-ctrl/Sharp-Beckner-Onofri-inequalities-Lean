@@ -1,5 +1,9 @@
-import BecknerOnofri.EndpointRigidity.MixtureInduction
-import Legacy.BecknerOnofri.SobolevCentering
+module
+
+public import BecknerOnofri.EndpointRigidity.MixtureInduction
+public import Legacy.BecknerOnofri.SobolevCentering
+
+@[expose] public section
 
 /-! Actual global maximizers at coefficients approaching the spectral threshold
 converge to the zero potential in L². Uniform coercivity comes from the proved

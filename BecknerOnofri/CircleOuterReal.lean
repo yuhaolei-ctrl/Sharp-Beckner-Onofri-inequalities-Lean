@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleOuterSupport
+module
+
+public import BecknerOnofri.CircleOuterSupport
+
+@[expose] public section
 
 /-! Real Taylor coefficients are preserved by the actual Fourier exponential. -/
 noncomputable section

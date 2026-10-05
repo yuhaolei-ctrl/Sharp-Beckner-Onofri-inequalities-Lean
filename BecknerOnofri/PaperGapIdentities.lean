@@ -1,4 +1,8 @@
-import BecknerOnofri.RawGapIdentities
+module
+
+public import BecknerOnofri.RawGapIdentities
+
+@[expose] public section
 
 /-! Section 2 gap identities with the manuscript's arbitrary positive A.
 Here β = σ_d/(2 A (2π)^d) = (2 A c_d)⁻¹. -/

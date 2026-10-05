@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleFisherDefinitions
-import BecknerOnofri.CircleExpSeriesDerivative
-import BecknerOnofri.CircleOuterWeighted
+module
+
+public import BecknerOnofri.CircleFisherDefinitions
+public import BecknerOnofri.CircleExpSeriesDerivative
+public import BecknerOnofri.CircleOuterWeighted
+
+@[expose] public section
 
 /-! Transfer the exponential logarithmic derivative identity to the actual
 one-dimensional product torus Fourier series. -/

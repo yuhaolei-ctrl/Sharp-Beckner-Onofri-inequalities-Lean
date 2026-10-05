@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ComplementParameterDifference
-import BecknerOnofri.LocalElevenCore.GibbsDifferenceBound
-import BecknerOnofri.LocalElevenCore.UniformReducedCubic
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ComplementParameterDifference
+public import BecknerOnofri.LocalElevenCore.GibbsDifferenceBound
+public import BecknerOnofri.LocalElevenCore.UniformReducedCubic
+
+@[expose] public section
 
 /-! Quantitative dependence of the actual complementary graph on the parameter. -/
 noncomputable section

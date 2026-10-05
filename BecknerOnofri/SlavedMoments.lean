@@ -1,5 +1,9 @@
-import BecknerOnofri.ComplexFirstShellMoments
-import BecknerOnofri.ContinuousLogPartitionTaylor
+module
+
+public import BecknerOnofri.ComplexFirstShellMoments
+public import BecknerOnofri.ContinuousLogPartitionTaylor
+
+@[expose] public section
 
 /-! Actual moment expansions on the genuine implicit complementary graph. -/
 noncomputable section

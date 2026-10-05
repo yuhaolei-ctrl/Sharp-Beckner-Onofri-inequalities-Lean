@@ -1,4 +1,8 @@
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! The signs and branch-energy ordering used by the manuscript's local
 analysis hold already in dimension eleven, independently of global endpoint rigidity. -/

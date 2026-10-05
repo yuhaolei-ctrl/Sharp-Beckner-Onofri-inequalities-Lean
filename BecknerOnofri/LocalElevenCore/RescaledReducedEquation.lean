@@ -1,10 +1,14 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.RescaledReducedEquation
-import BecknerOnofri.AnalyticParameterOrderDivision
-import BecknerOnofri.LocalElevenCore.AmplitudeLinearization
-import BecknerOnofri.LocalElevenCore.ReducedParameterExpansion
-import BecknerOnofri.LocalElevenCore.ReflectionSymmetry
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.RescaledReducedEquation
+public import BecknerOnofri.AnalyticParameterOrderDivision
+public import BecknerOnofri.LocalElevenCore.AmplitudeLinearization
+public import BecknerOnofri.LocalElevenCore.ReducedParameterExpansion
+public import BecknerOnofri.LocalElevenCore.ReflectionSymmetry
+
+@[expose] public section
 
 /-! Analytic resolution of the cubic scaling singularity in the actual full
 real-amplitude reduced equation. -/

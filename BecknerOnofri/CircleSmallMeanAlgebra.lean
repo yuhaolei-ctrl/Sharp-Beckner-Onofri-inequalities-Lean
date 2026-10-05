@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleScalarCandidates
-import BecknerOnofri.SpinBinaryCostUpper
+module
+
+public import BecknerOnofri.CircleScalarCandidates
+public import BecknerOnofri.SpinBinaryCostUpper
+
+@[expose] public section
 
 /-! The exact square completion and small-mean margin used in the source's
 γ estimate. The analytic rate-function and weight bounds remain separate

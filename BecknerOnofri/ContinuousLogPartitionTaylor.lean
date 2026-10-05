@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousGibbsCubic
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BecknerOnofri.ContinuousGibbsCubic
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 /-! The actual centered logarithmic partition function through quartic order,
 with a fifth-order remainder in the Banach norm of continuous potentials. -/

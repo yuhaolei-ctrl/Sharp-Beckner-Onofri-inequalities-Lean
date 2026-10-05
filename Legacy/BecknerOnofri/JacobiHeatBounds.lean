@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiDerivativeBounds
-import Legacy.BecknerOnofri.CircleHeatDerivative
-import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
+module
+
+public import Legacy.BecknerOnofri.JacobiDerivativeBounds
+public import Legacy.BecknerOnofri.CircleHeatDerivative
+public import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
+
+@[expose] public section
 
 /-! Gaussian summability and uniform joint time-space bounds for the genuine Jacobi heat series. -/
 noncomputable section
@@ -155,7 +159,7 @@ theorem heatTerm_derivative_bound {ε : ℝ} (m n k : ℕ) {z : HeatSpace} (hz :
       apply Finset.sum_le_sum
       intro p _
       apply mul_le_mul_of_nonneg_left _ (by positivity)
-      apply Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+      apply Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
       intro i _
       apply heatFactor_derivative_bound m n k ((p:Multiset (Fin 3)).count i) _ i hz
       simpa only [Sym.card_coe] using Multiset.count_le_card i (p:Multiset (Fin 3))

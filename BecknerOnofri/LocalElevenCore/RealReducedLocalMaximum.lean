@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.RealReducedEnergyGradient
-import BecknerOnofri.LocalElevenCore.ReducedHessianCoercivity
-import BecknerOnofri.CoerciveDerivativeLocalMaximum
+module
+
+public import BecknerOnofri.LocalElevenCore.RealReducedEnergyGradient
+public import BecknerOnofri.LocalElevenCore.ReducedHessianCoercivity
+public import BecknerOnofri.CoerciveDerivativeLocalMaximum
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

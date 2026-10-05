@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.ThetaDomination
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+
+public import Legacy.BecknerOnofri.ThetaDomination
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-!
 A sparse polynomial majorant for the actual integer theta series on `t ≥ π`.

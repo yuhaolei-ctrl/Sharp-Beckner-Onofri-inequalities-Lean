@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalAmplitudeSelection
-import BecknerOnofri.RescaledAmplitudeUniqueness
-import BecknerOnofri.FirstShellOrbits
+module
+
+public import BecknerOnofri.LocalAmplitudeSelection
+public import BecknerOnofri.RescaledAmplitudeUniqueness
+public import BecknerOnofri.FirstShellOrbits
+
+@[expose] public section
 
 /-! Near-optimal actual energy forces normalized positive amplitudes to the
 all-active limiting point, where the genuine rescaled implicit theorem applies. -/

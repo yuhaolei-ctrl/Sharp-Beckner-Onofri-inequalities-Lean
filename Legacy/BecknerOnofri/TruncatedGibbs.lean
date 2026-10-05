@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
-import Legacy.TorusEndpoint.PhysicalGreenL2
-import Mathlib.MeasureTheory.Function.LpOrder
+module
+
+public import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+public import Legacy.TorusEndpoint.PhysicalGreenL2
+public import Mathlib.MeasureTheory.Function.LpOrder
+
+@[expose] public section
 
 /-! Upper-truncated Gibbs densities for actual L² potentials. The truncation
 requires no prior exponential integrability of the untruncated potential. -/

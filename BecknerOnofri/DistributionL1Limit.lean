@@ -1,4 +1,8 @@
-import BecknerOnofri.DistributionLimit
+module
+
+public import BecknerOnofri.DistributionLimit
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ProbabilityTheory Filter

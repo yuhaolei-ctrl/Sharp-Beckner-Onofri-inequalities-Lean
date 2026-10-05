@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyShearer.Deletion
+module
+
+public import BecknerOnofri.EntropyShearer.Deletion
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Function

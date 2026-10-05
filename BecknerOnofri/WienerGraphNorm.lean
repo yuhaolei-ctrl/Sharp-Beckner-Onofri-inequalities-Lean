@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphSpace
-import BecknerOnofri.OnsetContinuous
+module
+
+public import BecknerOnofri.WienerGraphSpace
+public import BecknerOnofri.OnsetContinuous
+
+@[expose] public section
 
 noncomputable section
 open scoped ENNReal

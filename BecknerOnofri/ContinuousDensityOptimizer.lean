@@ -1,5 +1,9 @@
-import BecknerOnofri.PrescribedSelectionPaper
-import BecknerOnofri.UniformPolarizationMaximizers
+module
+
+public import BecknerOnofri.PrescribedSelectionPaper
+public import BecknerOnofri.UniformPolarizationMaximizers
+
+@[expose] public section
 
 /-! Recover the actual smooth Gibbs potential of a specified continuous
 representative in the L2 optimizer set, with pointwise density identification. -/

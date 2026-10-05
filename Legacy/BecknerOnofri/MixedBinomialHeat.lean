@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianMellin
-import Legacy.D10.BinomialCorrelated
-import Mathlib.Analysis.MeanInequalities
+module
+
+public import Legacy.BecknerOnofri.GaussianMellin
+public import Legacy.D10.BinomialCorrelated
+public import Mathlib.Analysis.MeanInequalities
+
+@[expose] public section
 
 /-! The pointwise heat-polynomial comparison for arbitrary mixed degrees. -/
 open scoped BigOperators

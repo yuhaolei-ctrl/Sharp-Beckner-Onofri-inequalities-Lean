@@ -1,9 +1,13 @@
-import BecknerOnofri.QuarticCoercivityEleven
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.CriticalReducedIsolation
-import BecknerOnofri.LocalElevenCore.CriticalGraphCoercivity
-import BecknerOnofri.LocalElevenCore.ReducedCubicParity
+module
+
+public import BecknerOnofri.QuarticCoercivityEleven
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.CriticalReducedIsolation
+public import BecknerOnofri.LocalElevenCore.CriticalGraphCoercivity
+public import BecknerOnofri.LocalElevenCore.ReducedCubicParity
+
+@[expose] public section
 
 /-! The true reduced equation has an isolated zero at critical coupling. -/
 noncomputable section

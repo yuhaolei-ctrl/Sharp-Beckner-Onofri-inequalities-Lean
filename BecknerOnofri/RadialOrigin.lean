@@ -1,8 +1,12 @@
-import BecknerOnofri.RadialE1Euler
-import BecknerOnofri.SpatialThetaDiagonal
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
-import Mathlib.Analysis.Calculus.MeanValue
-import BecknerOnofri.RadialQuadrature
+module
+
+public import BecknerOnofri.RadialE1Euler
+public import BecknerOnofri.SpatialThetaDiagonal
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+public import Mathlib.Analysis.Calculus.MeanValue
+public import BecknerOnofri.RadialQuadrature
+
+@[expose] public section
 
 /-! Exact bounds for the singular origin contribution in the radial seed. -/
 noncomputable section

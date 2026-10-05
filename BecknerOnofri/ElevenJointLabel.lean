@@ -1,8 +1,12 @@
-import BecknerOnofri.ElevenLabelDefinitions
-import BecknerOnofri.ElevenPeriodizedMass
-import BecknerOnofri.PeriodizationIntegral
-import BecknerOnofri.PeriodizationCubeFubini
-import BecknerOnofri.ElevenCoordinateLaw
+module
+
+public import BecknerOnofri.ElevenLabelDefinitions
+public import BecknerOnofri.ElevenPeriodizedMass
+public import BecknerOnofri.PeriodizationIntegral
+public import BecknerOnofri.PeriodizationCubeFubini
+public import BecknerOnofri.ElevenCoordinateLaw
+
+@[expose] public section
 
 /-! The genuine joint lattice-label law and its coordinate marginals. -/
 noncomputable section

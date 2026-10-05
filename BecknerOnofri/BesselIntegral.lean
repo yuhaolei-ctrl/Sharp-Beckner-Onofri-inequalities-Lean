@@ -1,8 +1,12 @@
-import BecknerOnofri.BesselQuartic
-import Mathlib.Analysis.Fourier.AddCircle
-import Mathlib.Analysis.SpecialFunctions.Exponential
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import Mathlib.Analysis.Normed.Ring.InfiniteSum
+module
+
+public import BecknerOnofri.BesselQuartic
+public import Mathlib.Analysis.Fourier.AddCircle
+public import Mathlib.Analysis.SpecialFunctions.Exponential
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.Analysis.Normed.Ring.InfiniteSum
+
+@[expose] public section
 
 /-! Identification of the positive Bessel series with its actual circle Haar integral. -/
 

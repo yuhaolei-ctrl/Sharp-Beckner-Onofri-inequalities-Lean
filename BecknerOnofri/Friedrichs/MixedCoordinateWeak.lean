@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.PeriodicAngularWeak
-import BecknerOnofri.Friedrichs.MixedProductDerivative
-import Mathlib.Analysis.Calculus.FDeriv.Pi
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicAngularWeak
+public import BecknerOnofri.Friedrichs.MixedProductDerivative
+public import Mathlib.Analysis.Calculus.FDeriv.Pi
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

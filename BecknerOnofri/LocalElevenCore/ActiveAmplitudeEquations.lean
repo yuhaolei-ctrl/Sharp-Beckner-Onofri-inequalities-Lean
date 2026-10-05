@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveAmplitudeFactor
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveAmplitudeFactor
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

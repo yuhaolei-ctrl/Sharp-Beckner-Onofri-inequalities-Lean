@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedAngularFiber
-import BecknerOnofri.Friedrichs.MixedFiberIntegral
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularFiber
+public import BecknerOnofri.Friedrichs.MixedFiberIntegral
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

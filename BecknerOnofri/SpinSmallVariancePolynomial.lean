@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSmallGradientFactor
+module
+
+public import BecknerOnofri.SpinSmallGradientFactor
+
+@[expose] public section
 
 /-! Exact polynomial certificate for the variance. The coefficient data is
 checked against the defining probability law and gradient by the ring tactic;

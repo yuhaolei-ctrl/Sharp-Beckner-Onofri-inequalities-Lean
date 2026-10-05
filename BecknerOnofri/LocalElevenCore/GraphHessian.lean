@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphHessian
-import BecknerOnofri.LocalElevenCore.GraphHessianFourier
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphHessian
+public import BecknerOnofri.LocalElevenCore.GraphHessianFourier
+
+@[expose] public section
 
 /-! Exact physical Hessian on the genuine implicit complementary graph. -/
 noncomputable section

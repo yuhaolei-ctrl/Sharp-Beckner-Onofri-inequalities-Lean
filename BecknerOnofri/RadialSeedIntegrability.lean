@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialSeedProfile
+module
+
+public import BecknerOnofri.RadialSeedProfile
+
+@[expose] public section
 
 /-! Actual radial integrability from the proved logarithmic origin estimate
 and exact endpoint substitution, before any numerical certificate is used. -/

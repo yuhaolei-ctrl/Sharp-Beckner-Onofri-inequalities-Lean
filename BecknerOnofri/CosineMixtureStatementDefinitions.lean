@@ -1,4 +1,8 @@
-import BecknerOnofri.CoordinateMarginalDefinitions
+module
+
+public import BecknerOnofri.CoordinateMarginalDefinitions
+
+@[expose] public section
 
 /-! Trusted definitions for the manuscript's unrestricted cosine-power mixtures
 and the inverse-power energy of a retained coordinate marginal. -/

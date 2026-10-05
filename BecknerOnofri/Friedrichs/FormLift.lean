@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.FormNormIdentity
-import BecknerOnofri.Friedrichs.AngularCutoffApproximation
+module
+
+public import BecknerOnofri.Friedrichs.FormNormIdentity
+public import BecknerOnofri.Friedrichs.AngularCutoffApproximation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

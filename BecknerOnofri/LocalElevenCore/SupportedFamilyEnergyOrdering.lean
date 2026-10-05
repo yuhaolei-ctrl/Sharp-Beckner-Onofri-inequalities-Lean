@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.SupportedFamilyProfile
-import BecknerOnofri.QuadraticEnergyComparison
-import BecknerOnofri.LocalElevenCore.ContinuousEnergyAlongLine
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedFamilyProfile
+public import BecknerOnofri.QuadraticEnergyComparison
+public import BecknerOnofri.LocalElevenCore.ContinuousEnergyAlongLine
+
+@[expose] public section
 
 noncomputable section
 open Filter

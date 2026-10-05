@@ -1,5 +1,9 @@
-import BecknerOnofri.CirclePoissonEntropyFisher
-import BecknerOnofri.CirclePoissonEnergyDerivative
+module
+
+public import BecknerOnofri.CirclePoissonEntropyFisher
+public import BecknerOnofri.CirclePoissonEnergyDerivative
+
+@[expose] public section
 
 /-! Differential form of the actual circle entropy remainder along the Poisson
 flow, with actual density moments and without an assumed dissipation estimate. -/

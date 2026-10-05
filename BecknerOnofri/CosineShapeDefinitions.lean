@@ -1,5 +1,9 @@
-import BecknerOnofri.ConditionalProfileDefinitions
-import Mathlib.Analysis.Calculus.FDeriv.Defs
+module
+
+public import BecknerOnofri.ConditionalProfileDefinitions
+public import Mathlib.Analysis.Calculus.FDeriv.Defs
+
+@[expose] public section
 
 /-! Actual coordinate partials on the closed cosine cube. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-! Actual Haar-density entropy nonnegativity and rigidity.
 The scalar Young argument follows the supplied low-dimensional project's

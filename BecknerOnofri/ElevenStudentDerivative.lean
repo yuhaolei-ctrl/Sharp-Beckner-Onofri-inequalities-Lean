@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenEuclideanMass
-import Mathlib.Analysis.Calculus.ParametricIntegral
+module
+
+public import BecknerOnofri.ElevenEuclideanMass
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+
+@[expose] public section
 
 /-! Differentiation of the actual eleven-dimensional beta integral. A
 strictly integrable power majorant controls the logarithmic derivative. -/

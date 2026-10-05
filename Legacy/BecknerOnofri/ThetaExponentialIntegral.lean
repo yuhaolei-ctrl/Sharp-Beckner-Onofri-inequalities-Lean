@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.LaplaceReciprocal
-import Mathlib.MeasureTheory.Group.Integral
-import Mathlib.MeasureTheory.Integral.IntegralEqImproper
-import Mathlib.Algebra.BigOperators.Field
+module
+
+public import Legacy.BecknerOnofri.LaplaceReciprocal
+public import Mathlib.MeasureTheory.Group.Integral
+public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+public import Mathlib.Algebra.BigOperators.Field
+
+@[expose] public section
 
 /-!
 An analytic integral bound for each exponential term in the theta polynomial

@@ -1,7 +1,11 @@
-import BecknerOnofri.FiniteEntropyPhysical
-import BecknerOnofri.PressureDuality
-import BecknerOnofri.LowDimensionDefinitions
-import Legacy.BecknerOnofri.CollapseDivergence
+module
+
+public import BecknerOnofri.FiniteEntropyPhysical
+public import BecknerOnofri.PressureDuality
+public import BecknerOnofri.LowDimensionDefinitions
+public import Legacy.BecknerOnofri.CollapseDivergence
+
+@[expose] public section
 
 /-! Both concentration obstructions in every positive dimension, with the
 actual full finite-entropy and Sobolev variational domains. -/

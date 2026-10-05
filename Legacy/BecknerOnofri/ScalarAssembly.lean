@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.FiniteScalar
-import Legacy.BecknerOnofri.UniformTail
-import Legacy.BecknerOnofri.ThetaIntegrability
-import Legacy.BecknerOnofri.EulerLower
-import Legacy.BecknerOnofri.ThetaIntegralBound
+module
+
+public import Legacy.BecknerOnofri.FiniteScalar
+public import Legacy.BecknerOnofri.UniformTail
+public import Legacy.BecknerOnofri.ThetaIntegrability
+public import Legacy.BecknerOnofri.EulerLower
+public import Legacy.BecknerOnofri.ThetaIntegralBound
+
+@[expose] public section
 
 /-!
 Assembly of the finite certificate and the common tail. The numerical bound

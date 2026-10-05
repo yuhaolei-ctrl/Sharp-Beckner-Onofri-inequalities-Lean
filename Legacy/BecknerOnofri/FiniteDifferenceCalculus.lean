@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.FiniteDifferenceDefs
-import Mathlib.Data.Finsupp.Multiset
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.Calculus.Deriv.Add
-import Mathlib.Analysis.Calculus.ContDiff.Operations
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceDefs
+public import Mathlib.Data.Finsupp.Multiset
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Add
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+
+@[expose] public section
 
 /-! Analytic finite-difference facts on the actual closed cube. -/
 noncomputable section

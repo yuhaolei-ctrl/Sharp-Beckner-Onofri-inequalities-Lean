@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ThetaIntegrability
+module
+
+public import Legacy.BecknerOnofri.ThetaIntegrability
+
+@[expose] public section
 
 open MeasureTheory Set
 open scoped BigOperators

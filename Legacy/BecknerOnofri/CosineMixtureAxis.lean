@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CosineMixtureEnergy
-import Legacy.BecknerOnofri.TorusMarginals
-import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+module
+
+public import Legacy.BecknerOnofri.CosineMixtureEnergy
+public import Legacy.BecknerOnofri.TorusMarginals
+public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+
+@[expose] public section
 
 /-! The actual axis Fourier energy of a correlated cosine mixture equals
 the latent expectation of the sum of harmonic numbers. -/

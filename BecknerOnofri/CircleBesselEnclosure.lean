@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselEnclosureDefinitions
-import BecknerOnofri.CircleBesselSeries
+module
+
+public import BecknerOnofri.CircleBesselEnclosureDefinitions
+public import BecknerOnofri.CircleBesselSeries
+
+@[expose] public section
 
 /-! Sound factorial-series enclosures, at any nonnegative real parameter.
 All omitted terms are bounded analytically by a convergent geometric series. -/

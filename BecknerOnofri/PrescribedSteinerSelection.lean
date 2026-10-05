@@ -1,5 +1,9 @@
-import BecknerOnofri.PrescribedPolarizationOrbit
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import BecknerOnofri.PrescribedPolarizationOrbit
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-! Equimeasurable selection within the orbit closure of a prescribed
 maximizer. This does not identify the result with the finite successive

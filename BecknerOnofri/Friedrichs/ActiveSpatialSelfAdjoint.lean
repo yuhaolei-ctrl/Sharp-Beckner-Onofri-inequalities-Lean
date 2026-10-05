@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.ActiveSpatialSpectrum
+module
+
+public import BecknerOnofri.Friedrichs.ActiveSpatialSpectrum
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

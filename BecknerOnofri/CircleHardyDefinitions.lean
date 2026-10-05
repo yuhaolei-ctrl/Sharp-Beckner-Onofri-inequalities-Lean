@@ -1,4 +1,8 @@
-import Mathlib.Analysis.InnerProductSpace.l2Space
+module
+
+public import Mathlib.Analysis.InnerProductSpace.l2Space
+
+@[expose] public section
 
 /-! The real coefficient model of the Hardy space used in §5.2. -/
 noncomputable section

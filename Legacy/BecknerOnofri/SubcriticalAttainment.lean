@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SubcriticalExponentialBounds
+module
+
+public import Legacy.BecknerOnofri.SubcriticalExponentialBounds
+
+@[expose] public section
 
 /-! A genuine subcritical global maximizer follows from the full-function
 rough exponential estimate. No optimizer or convergence is assumed. -/

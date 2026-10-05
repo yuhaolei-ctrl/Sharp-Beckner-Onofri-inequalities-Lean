@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinCandidateCertificate
-import BecknerOnofri.ScalarConvexMinorant
+module
+
+public import BecknerOnofri.SpinCandidateCertificate
+public import BecknerOnofri.ScalarConvexMinorant
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.Spin
 open ScalarCertificate Set

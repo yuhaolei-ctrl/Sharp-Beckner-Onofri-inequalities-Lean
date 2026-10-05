@@ -1,7 +1,11 @@
-import BecknerOnofri.Friedrichs.MixedCutoffL2
-import Mathlib.Analysis.Calculus.FDeriv.Mul
-import Mathlib.Analysis.Calculus.FDeriv.Prod
-import Mathlib.Analysis.Calculus.Deriv.Comp
+module
+
+public import BecknerOnofri.Friedrichs.MixedCutoffL2
+public import Mathlib.Analysis.Calculus.FDeriv.Mul
+public import Mathlib.Analysis.Calculus.FDeriv.Prod
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

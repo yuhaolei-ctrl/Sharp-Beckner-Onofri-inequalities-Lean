@@ -1,6 +1,10 @@
-import BecknerOnofri.RadialE1
-import Mathlib.Topology.Algebra.InfiniteSum.NatInt
-import Mathlib.Analysis.SpecificLimits.Normed
+module
+
+public import BecknerOnofri.RadialE1
+public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+public import Mathlib.Analysis.SpecificLimits.Normed
+
+@[expose] public section
 
 /-! Shifted one-dimensional Gaussian bounds for the nonzero Poisson image tail. -/
 noncomputable section

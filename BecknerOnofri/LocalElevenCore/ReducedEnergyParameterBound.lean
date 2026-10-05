@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedEnergyParameterBound
-import BecknerOnofri.LocalElevenCore.UniformGraphMoments
-import BecknerOnofri.LocalElevenCore.ReducedParameterDerivative
-import BecknerOnofri.ParameterMeanValue
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedEnergyParameterBound
+public import BecknerOnofri.LocalElevenCore.UniformGraphMoments
+public import BecknerOnofri.LocalElevenCore.ReducedParameterDerivative
+public import BecknerOnofri.ParameterMeanValue
+
+@[expose] public section
 
 /-! A joint parameter expansion for the actual physical reduced energy. -/
 noncomputable section

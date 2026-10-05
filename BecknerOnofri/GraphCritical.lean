@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenCritical
-import BecknerOnofri.QuadraticModes
+module
+
+public import BecknerOnofri.GreenCritical
+public import BecknerOnofri.QuadraticModes
+
+@[expose] public section
 
 /-! The actual local complementary graph belongs to the trusted critical
 Sobolev domain, as follows from its genuine projected Euler equation. -/

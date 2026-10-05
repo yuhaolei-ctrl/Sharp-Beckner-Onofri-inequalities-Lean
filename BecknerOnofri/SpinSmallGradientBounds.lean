@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSmallVariancePolynomial
+module
+
+public import BecknerOnofri.SpinSmallVariancePolynomial
+
+@[expose] public section
 
 /-! Exact interval bounds on the actual nonaffine gradient. These imply the
 manuscript's V0/O0 bounds, using a direct polynomial verification of the same

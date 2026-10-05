@@ -1,7 +1,11 @@
-import Legacy.TorusEndpoint.AbsolutePhysicalFourier
-import Legacy.TorusEndpoint.TorusHeatBounds
-import Legacy.TorusEndpoint.GreenKernelReal
-import Mathlib.Analysis.Normed.Group.Tannery
+module
+
+public import Legacy.TorusEndpoint.AbsolutePhysicalFourier
+public import Legacy.TorusEndpoint.TorusHeatBounds
+public import Legacy.TorusEndpoint.GreenKernelReal
+public import Mathlib.Analysis.Normed.Group.Tannery
+
+@[expose] public section
 
 /-!
 # Actual heat regularizations and their L2 limit

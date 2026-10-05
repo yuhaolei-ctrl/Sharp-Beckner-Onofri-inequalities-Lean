@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.FiniteAtomEuler
-import Legacy.TorusEndpoint.GlobalCoefficientCriterion
+module
+
+public import Legacy.TorusEndpoint.FiniteAtomEuler
+public import Legacy.TorusEndpoint.GlobalCoefficientCriterion
+
+@[expose] public section
 
 /-! The circle entropy inequality, proved from the actual exponential
 coefficients. The finite coefficient estimate is proved here by the Euler

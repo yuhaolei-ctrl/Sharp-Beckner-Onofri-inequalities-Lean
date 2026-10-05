@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+
+@[expose] public section
 
 /-! Actual unit-period mixed Lebesgue measure and the change from angles.
 Inactive coordinates keep a full period; active coordinates are open half intervals. -/

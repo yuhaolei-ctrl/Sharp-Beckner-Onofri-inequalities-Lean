@@ -1,6 +1,10 @@
-import BecknerOnofri.FullBranchAssembly
-import BecknerOnofri.PhysicalNormalCoercivity
-import BecknerOnofri.NumericalOnsetReduction
+module
+
+public import BecknerOnofri.FullBranchAssembly
+public import BecknerOnofri.PhysicalNormalCoercivity
+public import BecknerOnofri.NumericalOnsetReduction
+
+@[expose] public section
 
 /-! Completion of the analytic branch argument. The exact full branch theorem
 has the same single explicit d=12 numerical obligation as the endpoint theorem.

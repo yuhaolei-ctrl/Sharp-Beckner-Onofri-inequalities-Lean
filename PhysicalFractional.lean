@@ -1,5 +1,9 @@
-import PhysicalFractionalDefinitions
-import BecknerOnofri.Friedrichs.MixedFractionalPaper
+module
+
+public import PhysicalFractionalDefinitions
+public import BecknerOnofri.Friedrichs.MixedFractionalPaper
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,9 @@
-import BecknerOnofri.RectangleInduction
-import BecknerOnofri.SpectralSliceBound
+module
+
+public import BecknerOnofri.RectangleInduction
+public import BecknerOnofri.SpectralSliceBound
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

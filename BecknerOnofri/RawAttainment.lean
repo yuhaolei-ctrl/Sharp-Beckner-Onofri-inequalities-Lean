@@ -1,7 +1,11 @@
-import BecknerOnofri.LegacyBridge
-import BecknerOnofri.GenericAttainment
-import BecknerOnofri.BranchDefinitions
-import BecknerOnofri.PartitionRegularity
+module
+
+public import BecknerOnofri.LegacyBridge
+public import BecknerOnofri.GenericAttainment
+public import BecknerOnofri.BranchDefinitions
+public import BecknerOnofri.PartitionRegularity
+
+@[expose] public section
 
 /-! Subcritical variational attainment on the actual raw-function Sobolev domain. -/
 

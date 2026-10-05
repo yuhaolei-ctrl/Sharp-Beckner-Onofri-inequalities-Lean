@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedStatementDefinitions
-import BecknerOnofri.Friedrichs.MixedAngularFormDomain
+module
+
+public import BecknerOnofri.Friedrichs.MixedStatementDefinitions
+public import BecknerOnofri.Friedrichs.MixedAngularFormDomain
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

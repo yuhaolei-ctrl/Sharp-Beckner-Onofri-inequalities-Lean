@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialSeedIntegrability
+module
+
+public import BecknerOnofri.RadialSeedIntegrability
+
+@[expose] public section
 
 /-! Finite origin/interior/endpoint evaluation of the actual radial integral.
 The only inputs are elementary geometric properties of the finite grids. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.DiagonalAmplitude
+module
+
+public import BecknerOnofri.DiagonalAmplitude
+
+@[expose] public section
 
 /-! The actual diagonal stationary profile in the trusted physical beta and
 translation notation, with a uniform C-norm remainder estimate. -/

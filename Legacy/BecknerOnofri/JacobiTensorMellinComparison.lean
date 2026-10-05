@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiTensorMellinKernel
-import Legacy.BecknerOnofri.JacobiTensorHeatStrictComparison
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorMellinKernel
+public import Legacy.BecknerOnofri.JacobiTensorHeatStrictComparison
+
+@[expose] public section
 
 /-! Strict comparison survives actual Mellin integration; no inverse-kernel order is assumed. -/
 noncomputable section

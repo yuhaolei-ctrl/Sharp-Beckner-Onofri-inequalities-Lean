@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarMomentFunctionEnclosure
-import BecknerOnofri.ScalarCompositionEnclosure
-import BecknerOnofri.CircleRateLower
+module
+
+public import BecknerOnofri.ScalarMomentFunctionEnclosure
+public import BecknerOnofri.ScalarCompositionEnclosure
+public import BecknerOnofri.CircleRateLower
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar EntropyLogCertificate Set

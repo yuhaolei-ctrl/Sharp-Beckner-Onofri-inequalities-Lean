@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointEqualityCompactness
-import Legacy.BecknerOnofri.PolarizationSelection
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import Legacy.BecknerOnofri.EndpointEqualityCompactness
+public import Legacy.BecknerOnofri.PolarizationSelection
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-! Genuine endpoint Steiner selection at a fixed entropy level. Starting
 from an actual equality density, the selected smooth Euler density preserves

@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarBesselRows
+module
+
+public import BecknerOnofri.ScalarBesselRows
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.BesselBatch0246
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

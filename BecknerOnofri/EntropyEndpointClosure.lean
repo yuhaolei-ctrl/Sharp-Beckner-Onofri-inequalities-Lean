@@ -1,4 +1,8 @@
-import BecknerOnofri.SelectedEntropyRigidity
+module
+
+public import BecknerOnofri.SelectedEntropyRigidity
+
+@[expose] public section
 
 /-! Analytic closure of the latest entropy route, from the vanishing of actual
 selected maximizers. Heat approximation preserves the finite-entropy domain;

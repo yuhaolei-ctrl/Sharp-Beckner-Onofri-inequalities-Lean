@@ -1,8 +1,12 @@
-import BecknerOnofri.CirclePoissonBounds
-import BecknerOnofri.CirclePoissonGenerator
-import BecknerOnofri.CircleLambdaMass
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+module
+
+public import BecknerOnofri.CirclePoissonBounds
+public import BecknerOnofri.CirclePoissonGenerator
+public import BecknerOnofri.CircleLambdaMass
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

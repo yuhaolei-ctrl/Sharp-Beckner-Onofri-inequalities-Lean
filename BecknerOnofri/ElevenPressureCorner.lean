@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenCoexistence
-import BecknerOnofri.SupportingLineCorner
-import BecknerOnofri.Entropy
+module
+
+public import BecknerOnofri.ElevenCoexistence
+public import BecknerOnofri.SupportingLineCorner
+public import BecknerOnofri.Entropy
+
+@[expose] public section
 
 /-! The two coexisting states give distinct active affine supporting lines
 of the actual finite pressure. -/

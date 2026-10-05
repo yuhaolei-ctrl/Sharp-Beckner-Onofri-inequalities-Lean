@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleOuterParseval
+module
+
+public import BecknerOnofri.CircleOuterParseval
+
+@[expose] public section
 
 /-! Parseval for a modulated boundary factor identifies its actual density
 Fourier coefficients with the Hardy autocorrelation moments. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.ContinuousComplementInverse
+module
+
+public import BecknerOnofri.ContinuousComplementInverse
+
+@[expose] public section
 
 /-! Explicit sup-norm bounds for the actual continuous-function complement inverse. -/
 noncomputable section

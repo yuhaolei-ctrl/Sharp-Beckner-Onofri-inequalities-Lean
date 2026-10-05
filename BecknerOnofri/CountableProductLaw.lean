@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableShannon
-import Mathlib.Analysis.Normed.Ring.InfiniteSum
+module
+
+public import BecknerOnofri.CountableShannon
+public import Mathlib.Analysis.Normed.Ring.InfiniteSum
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

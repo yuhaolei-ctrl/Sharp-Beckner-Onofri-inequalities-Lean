@@ -1,9 +1,13 @@
-import BecknerOnofri.QuarticCoercivityEleven
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.CriticalGraphCoercivity
-import BecknerOnofri.LocalElevenCore.ReducedQuarticParity
-import BecknerOnofri.QuarticBranches
+module
+
+public import BecknerOnofri.QuarticCoercivityEleven
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.CriticalGraphCoercivity
+public import BecknerOnofri.LocalElevenCore.ReducedQuarticParity
+public import BecknerOnofri.QuarticBranches
+
+@[expose] public section
 
 /-! Strict local negativity of the actual physical critical reduced energy,
 with a uniform quartic norm bound. -/

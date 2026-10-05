@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ContinuousComplementBounds
-import BecknerOnofri.LocalElevenContinuousInverse
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ContinuousComplementBounds
+public import BecknerOnofri.LocalElevenContinuousInverse
+
+@[expose] public section
 
 /-! Explicit sup-norm bounds for the actual continuous-function complement inverse. -/
 noncomputable section

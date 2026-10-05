@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatIntegerPowers
+module
+
+public import BecknerOnofri.EntropyHeatIntegerPowers
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate
 

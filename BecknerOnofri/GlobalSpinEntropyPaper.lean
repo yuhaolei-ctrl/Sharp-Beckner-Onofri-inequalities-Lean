@@ -1,4 +1,8 @@
-import BecknerOnofri.GlobalShapeEntropyPaper
+module
+
+public import BecknerOnofri.GlobalShapeEntropyPaper
+
+@[expose] public section
 
 /-! A single witness for both clauses of the manuscript's general spin entropy
 proposition, with the original uncompressed probability laws. -/

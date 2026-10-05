@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationMetricGeometry
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
+module
+
+public import BecknerOnofri.PolarizationMetricGeometry
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
+
+@[expose] public section
 
 /-! Measurability of an even decreasing circle kernel is a consequence of
 its radial monotonicity, not an extra premise on the manuscript's kernel. -/

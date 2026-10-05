@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
-import Mathlib.Topology.Sequences
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+public import Mathlib.Topology.Sequences
+
+@[expose] public section
 
 /-! Closedness of multiplication by the actual singular potential factor.
 The proof uses almost-everywhere subsequences of L2 limits. -/

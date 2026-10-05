@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.CircleEqualityReverseData
-import Legacy.BecknerOnofri.CircleMilinParseval
-import Legacy.BecknerOnofri.CircleEqualityPaper
-import Legacy.BecknerOnofri.EndpointEqualityCorrespondence
-import Legacy.BecknerOnofri.LowDimensionOnofri
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityReverseData
+public import Legacy.BecknerOnofri.CircleMilinParseval
+public import Legacy.BecknerOnofri.CircleEqualityPaper
+public import Legacy.BecknerOnofri.EndpointEqualityCorrespondence
+public import Legacy.BecknerOnofri.LowDimensionOnofri
+
+@[expose] public section
 
 /-! Complete reverse equality classification on the circle.  The actual
 Sobolev Fourier series is connected to the convergent exponential word

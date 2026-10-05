@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
-import Mathlib.Analysis.Normed.Group.FunctionSeries
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+
+@[expose] public section
 
 /-!
 # Strict pointwise positivity of the unit-circle Fourier heat kernel

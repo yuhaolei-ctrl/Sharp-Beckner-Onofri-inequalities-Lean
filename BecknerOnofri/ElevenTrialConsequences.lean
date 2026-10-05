@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenCompetitorEnergy
-import BecknerOnofri.ElevenConditionalEntropy
-import BecknerOnofri.ElevenVariational
+module
+
+public import BecknerOnofri.ElevenCompetitorEnergy
+public import BecknerOnofri.ElevenConditionalEntropy
+public import BecknerOnofri.ElevenVariational
+
+@[expose] public section
 
 /-! Unconditional variational consequences of the specified competitor.
 Both its entropy and its actual infinite Fourier energy are now proved. -/

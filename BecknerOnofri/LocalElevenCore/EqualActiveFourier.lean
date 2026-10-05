@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.EqualActiveAmplitudes
-import BecknerOnofri.LocalElevenCore.ContinuousLocalReduction
-import BecknerOnofri.LocalElevenCore.EulerEquation
+module
+
+public import BecknerOnofri.LocalElevenCore.EqualActiveAmplitudes
+public import BecknerOnofri.LocalElevenCore.ContinuousLocalReduction
+public import BecknerOnofri.LocalElevenCore.EulerEquation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

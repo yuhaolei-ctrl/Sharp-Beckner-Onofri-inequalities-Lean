@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointThroughTen
-import Legacy.BecknerOnofri.EndpointOnofri
-import Legacy.BecknerOnofri.EndpointPotentialSharpness
+module
+
+public import Legacy.BecknerOnofri.EndpointThroughTen
+public import Legacy.BecknerOnofri.EndpointOnofri
+public import Legacy.BecknerOnofri.EndpointPotentialSharpness
+
+@[expose] public section
 
 /-! Unconditional potential inequality through dimension ten, including the
 manuscript's exact physical normalization and its optimal coefficient. -/

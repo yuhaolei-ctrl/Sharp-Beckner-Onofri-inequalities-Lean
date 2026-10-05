@@ -1,4 +1,8 @@
-import BecknerOnofri.GeneralShapeChannelEntropy
+module
+
+public import BecknerOnofri.GeneralShapeChannelEntropy
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

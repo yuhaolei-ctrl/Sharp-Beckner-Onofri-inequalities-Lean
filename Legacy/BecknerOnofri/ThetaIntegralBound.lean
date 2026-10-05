@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.ThetaConstants
-import Legacy.BecknerOnofri.ThetaIntegrability
-import Legacy.BecknerOnofri.ThetaPolynomialMajorant
-import Legacy.BecknerOnofri.ThetaPolynomialCertificate
-import Legacy.BecknerOnofri.ThetaExponentialIntegral
+module
+
+public import Legacy.BecknerOnofri.ThetaConstants
+public import Legacy.BecknerOnofri.ThetaIntegrability
+public import Legacy.BecknerOnofri.ThetaPolynomialMajorant
+public import Legacy.BecknerOnofri.ThetaPolynomialCertificate
+public import Legacy.BecknerOnofri.ThetaExponentialIntegral
+
+@[expose] public section
 
 /-! A numerical bound for the actual theta integral.  The proof uses a
 finite polynomial majorant of the complete one-dimensional theta series. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.AngularRealPowerDomain
+module
+
+public import BecknerOnofri.AngularRealPowerDomain
+
+@[expose] public section
 
 /-! Finite spectral polynomials converge in the graph topology of every
 positive real power. This is the closed-operator limit step in the manuscript;

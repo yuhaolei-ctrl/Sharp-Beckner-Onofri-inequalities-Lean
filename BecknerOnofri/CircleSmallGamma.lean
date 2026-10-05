@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleGammaDefinitions
-import BecknerOnofri.CircleRateLower
-import BecknerOnofri.CircleSmallMeanWeighted
+module
+
+public import BecknerOnofri.CircleGammaDefinitions
+public import BecknerOnofri.CircleRateLower
+public import BecknerOnofri.CircleSmallMeanWeighted
+
+@[expose] public section
 
 /-! The complete small-mean γ bound, with the actual inverse Bessel mean,
 actual rate function, actual weights and actual constrained minimum. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.ReducedCubicParity
+module
+
+public import BecknerOnofri.ReducedCubicParity
+
+@[expose] public section
 
 /-! Exact linearization of the genuine reduced equation along the uniform parameter axis. -/
 noncomputable section

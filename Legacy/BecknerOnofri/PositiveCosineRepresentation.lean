@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CountableCosineMixture
-import Mathlib.Topology.UnitInterval
+module
+
+public import Legacy.BecknerOnofri.CountableCosineMixture
+public import Mathlib.Topology.UnitInterval
+
+@[expose] public section
 
 /-! Normalize a positive cosine-monomial expansion into a genuine countable
 probability mixture. Coefficient summability supplies the uniform majorant. -/

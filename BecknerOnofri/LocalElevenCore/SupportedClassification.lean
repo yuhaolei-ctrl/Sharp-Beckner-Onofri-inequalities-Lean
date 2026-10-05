@@ -1,5 +1,9 @@
-import BecknerOnofri.SupportedClassificationStatementDefinitions
-import BecknerOnofri.LocalElevenCore.SupportedDeltaExhaustiveness
+module
+
+public import BecknerOnofri.SupportedClassificationStatementDefinitions
+public import BecknerOnofri.LocalElevenCore.SupportedDeltaExhaustiveness
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

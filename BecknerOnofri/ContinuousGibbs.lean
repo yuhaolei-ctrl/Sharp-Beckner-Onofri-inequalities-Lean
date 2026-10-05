@@ -1,9 +1,13 @@
-import BecknerOnofri.BranchDefinitions
-import Mathlib.Analysis.SpecialFunctions.Exponential
-import Mathlib.Analysis.Analytic.Constructions
-import Mathlib.Topology.ContinuousMap.Bounded.Basic
-import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
-import Mathlib.Analysis.Calculus.Deriv.Inv
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Mathlib.Analysis.SpecialFunctions.Exponential
+public import Mathlib.Analysis.Analytic.Constructions
+public import Mathlib.Topology.ContinuousMap.Bounded.Basic
+public import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+
+@[expose] public section
 
 /-! The genuine normalized Gibbs map on the Banach algebra of real continuous
 torus potentials: analyticity and its exact derivative at zero. -/

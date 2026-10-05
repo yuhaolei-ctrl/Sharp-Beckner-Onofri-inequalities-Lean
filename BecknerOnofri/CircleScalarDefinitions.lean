@@ -1,4 +1,8 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+@[expose] public section
 
 /-! The piecewise quadratic appearing in the definition of γ in §5.2.
 Here r will be t² and m the von Mises second moment. -/

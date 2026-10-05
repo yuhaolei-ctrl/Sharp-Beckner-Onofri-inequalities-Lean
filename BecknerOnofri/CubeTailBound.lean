@@ -1,5 +1,9 @@
-import BecknerOnofri.CubeCylinderTail
-import BecknerOnofri.LatticeDefinitions
+module
+
+public import BecknerOnofri.CubeCylinderTail
+public import BecknerOnofri.LatticeDefinitions
+
+@[expose] public section
 
 /-! The exact coordinate/sign union bound for omitted Euclidean lattice mass. -/
 noncomputable section

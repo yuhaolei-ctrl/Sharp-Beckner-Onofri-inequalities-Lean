@@ -1,5 +1,9 @@
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 /-! Fubini and Cauchy--Schwarz for tensor completeness in actual product L2 spaces. -/
 noncomputable section
@@ -33,19 +37,19 @@ lemma integral_mul_sq_le {f g : X → ℝ} (hf : MemLp f 2 μ) (hg : MemLp g 2 �
 
 lemma memLp_product {f : X → ℝ} {g : Y → ℝ} (hf : MemLp f 2 μ) (hg : MemLp g 2 ν) :
     MemLp (fun p : X×Y => f p.1*g p.2) 2 (μ.prod ν) := by
-  apply (memLp_two_iff_integrable_sq (hf.1.comp_fst.mul hg.1.comp_snd)).mpr
+  apply (memLp_two_iff_integrable_sq (hf.aestronglyMeasurable.comp_fst.mul hg.aestronglyMeasurable.comp_snd)).mpr
   simpa only [Pi.mul_apply,mul_pow] using hf.integrable_sq.mul_prod hg.integrable_sq
 
 lemma memLp_fibers {F : X×Y → ℝ} (hF : MemLp F 2 (μ.prod ν)) :
     ∀ᵐ y ∂ν,MemLp (fun x => F (x,y)) 2 μ := by
-  filter_upwards [hF.1.prodMk_right,hF.integrable_sq.prod_left_ae] with y hm hi
+  filter_upwards [hF.aestronglyMeasurable.prodMk_right,hF.integrable_sq.prod_left_ae] with y hm hi
   exact (memLp_two_iff_integrable_sq hm).mpr hi
 
 lemma coefficient_memLp {F : X×Y → ℝ} {u : X → ℝ}
     (hF : MemLp F 2 (μ.prod ν)) (hu : MemLp u 2 μ) :
     MemLp (fun y => ∫ x,u x*F (x,y) ∂μ) 2 ν := by
   have hm : AEStronglyMeasurable (fun y => ∫ x,u x*F (x,y) ∂μ) ν :=
-    (hu.1.comp_fst.mul hF.1).prod_swap.integral_prod_right'
+    (hu.aestronglyMeasurable.comp_fst.mul hF.aestronglyMeasurable).prod_swap.integral_prod_right'
   apply (memLp_two_iff_integrable_sq hm).mpr
   have hbound : Integrable (fun y => (∫ x,u x^2 ∂μ)*(∫ x,F (x,y)^2 ∂μ)) ν :=
     hF.integrable_sq.integral_prod_right.const_mul _

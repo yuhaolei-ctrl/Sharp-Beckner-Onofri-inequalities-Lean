@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.RawComplementGap
-import BecknerOnofri.LocalElevenCore.GraphEnergy
-import BecknerOnofri.LegacyBridge
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.RawComplementGap
+public import BecknerOnofri.LocalElevenCore.GraphEnergy
+public import BecknerOnofri.LegacyBridge
+
+@[expose] public section
 
 /-! The complement spectral gap on the exact raw critical Sobolev domain. -/
 noncomputable section

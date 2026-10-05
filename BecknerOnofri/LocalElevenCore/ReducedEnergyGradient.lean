@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedEnergyGradient
-import BecknerOnofri.LocalElevenCore.GreenPairing
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedEnergyGradient
+public import BecknerOnofri.LocalElevenCore.GreenPairing
+
+@[expose] public section
 
 /-! The exact derivative of the physical reduced energy on the actual
 complementary Gibbs graph. -/

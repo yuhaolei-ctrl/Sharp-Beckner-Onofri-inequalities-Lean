@@ -1,83 +1,87 @@
-import BecknerOnofri.TwelveExitReduction
-import BecknerOnofri.EndpointPackage
-import BecknerOnofri.OnsetTransfer
-import BecknerOnofri.QuarticBranches
-import BecknerOnofri.OnsetRaw
-import BecknerOnofri.Translation
-import BecknerOnofri.ContinuousComplementBounds
-import BecknerOnofri.QuadraticSlaving
-import BecknerOnofri.ReducedSymmetry
-import BecknerOnofri.ContinuousGibbsCubic
-import BecknerOnofri.ContinuousLogPartitionTaylor
-import BecknerOnofri.EulerEquation
-import BecknerOnofri.ReducedEnergyGradient
-import BecknerOnofri.RealDiagonalReduction
-import BecknerOnofri.AnalyticParameterDivision
-import BecknerOnofri.UniformComplementBounds
-import BecknerOnofri.ComplementSobolevCoercivity
-import BecknerOnofri.GraphTranslationTangents
-import BecknerOnofri.DiagonalStationaryBranch
-import BecknerOnofri.DiagonalParameterMonotonicity
-import BecknerOnofri.ReducedParameterDerivative
-import BecknerOnofri.ReducedParameterExpansion
-import BecknerOnofri.DiagonalEnergy
-import BecknerOnofri.ReducedEnergyJointExpansion
-import BecknerOnofri.GraphSobolevBounds
-import BecknerOnofri.AmplitudeLinearization
-import BecknerOnofri.SupercriticalBranchEnergy
-import BecknerOnofri.DiagonalProfile
-import BecknerOnofri.OnsetContinuous
-import BecknerOnofri.ContinuousLocalReduction
-import BecknerOnofri.ContinuousOptimizers
-import BecknerOnofri.LocalAmplitudeSelection
-import BecknerOnofri.GraphAllSobolevBounds
-import BecknerOnofri.DiagonalSobolevProfile
-import BecknerOnofri.RescaledAmplitudeUniqueness
-import BecknerOnofri.NearOptimalAmplitudeLimit
-import BecknerOnofri.GraphHessianRaw
-import BecknerOnofri.NumericalOnsetReduction
-import BecknerOnofri.AngularTangentRepresentation
-import BecknerOnofri.GlobalOptimizerClassification
-import BecknerOnofri.FullHessianDecomposition
-import BecknerOnofri.FullReducedHessian
-import BecknerOnofri.FullBranchAssembly
-import BecknerOnofri.PhysicalTranslationTangents
-import BecknerOnofri.FullBranchHessian
-import BecknerOnofri.MeanZeroSobolevCoercivity
-import BecknerOnofri.NumericalBranchReduction
-import BecknerOnofri.RadialQuadrature
-import BecknerOnofri.GinibreCovariance
-import BecknerOnofri.GinibreMonotonicity
-import BecknerOnofri.GinibreSeries
-import BecknerOnofri.GibbsPerturbation
-import BecknerOnofri.GridGibbsComparison
-import BecknerOnofri.IterationOmittedTail
-import BecknerOnofri.CommonEnclosure
-import BecknerOnofri.GibbsTrialLower
+module
 
-import BecknerOnofri.CubeTwelveConstants
-import BecknerOnofri.SelectedEnclosureStep
-import BecknerOnofri.InitialNormBound
-import BecknerOnofri.RadialHeatTail
-import BecknerOnofri.SpatialThetaDiagonal
-import BecknerOnofri.SpatialThetaProduct
-import BecknerOnofri.GinibreSupermodularity
-import BecknerOnofri.GinibreStrictCovariance
+public import BecknerOnofri.TwelveExitReduction
+public import BecknerOnofri.EndpointPackage
+public import BecknerOnofri.OnsetTransfer
+public import BecknerOnofri.QuarticBranches
+public import BecknerOnofri.OnsetRaw
+public import BecknerOnofri.Translation
+public import BecknerOnofri.ContinuousComplementBounds
+public import BecknerOnofri.QuadraticSlaving
+public import BecknerOnofri.ReducedSymmetry
+public import BecknerOnofri.ContinuousGibbsCubic
+public import BecknerOnofri.ContinuousLogPartitionTaylor
+public import BecknerOnofri.EulerEquation
+public import BecknerOnofri.ReducedEnergyGradient
+public import BecknerOnofri.RealDiagonalReduction
+public import BecknerOnofri.AnalyticParameterDivision
+public import BecknerOnofri.UniformComplementBounds
+public import BecknerOnofri.ComplementSobolevCoercivity
+public import BecknerOnofri.GraphTranslationTangents
+public import BecknerOnofri.DiagonalStationaryBranch
+public import BecknerOnofri.DiagonalParameterMonotonicity
+public import BecknerOnofri.ReducedParameterDerivative
+public import BecknerOnofri.ReducedParameterExpansion
+public import BecknerOnofri.DiagonalEnergy
+public import BecknerOnofri.ReducedEnergyJointExpansion
+public import BecknerOnofri.GraphSobolevBounds
+public import BecknerOnofri.AmplitudeLinearization
+public import BecknerOnofri.SupercriticalBranchEnergy
+public import BecknerOnofri.DiagonalProfile
+public import BecknerOnofri.OnsetContinuous
+public import BecknerOnofri.ContinuousLocalReduction
+public import BecknerOnofri.ContinuousOptimizers
+public import BecknerOnofri.LocalAmplitudeSelection
+public import BecknerOnofri.GraphAllSobolevBounds
+public import BecknerOnofri.DiagonalSobolevProfile
+public import BecknerOnofri.RescaledAmplitudeUniqueness
+public import BecknerOnofri.NearOptimalAmplitudeLimit
+public import BecknerOnofri.GraphHessianRaw
+public import BecknerOnofri.NumericalOnsetReduction
+public import BecknerOnofri.AngularTangentRepresentation
+public import BecknerOnofri.GlobalOptimizerClassification
+public import BecknerOnofri.FullHessianDecomposition
+public import BecknerOnofri.FullReducedHessian
+public import BecknerOnofri.FullBranchAssembly
+public import BecknerOnofri.PhysicalTranslationTangents
+public import BecknerOnofri.FullBranchHessian
+public import BecknerOnofri.MeanZeroSobolevCoercivity
+public import BecknerOnofri.NumericalBranchReduction
+public import BecknerOnofri.RadialQuadrature
+public import BecknerOnofri.GinibreCovariance
+public import BecknerOnofri.GinibreMonotonicity
+public import BecknerOnofri.GinibreSeries
+public import BecknerOnofri.GibbsPerturbation
+public import BecknerOnofri.GridGibbsComparison
+public import BecknerOnofri.IterationOmittedTail
+public import BecknerOnofri.CommonEnclosure
+public import BecknerOnofri.GibbsTrialLower
 
-import BecknerOnofri.RadialExterior
-import BecknerOnofri.RadialE1Euler
-import BecknerOnofri.RadialPoissonBound
-import BecknerOnofri.SpatialThetaComparison
-import BecknerOnofri.LatticeMaximizerSupport
-import BecknerOnofri.GinibreStrictSupermodularity
+public import BecknerOnofri.CubeTwelveConstants
+public import BecknerOnofri.SelectedEnclosureStep
+public import BecknerOnofri.InitialNormBound
+public import BecknerOnofri.RadialHeatTail
+public import BecknerOnofri.SpatialThetaDiagonal
+public import BecknerOnofri.SpatialThetaProduct
+public import BecknerOnofri.GinibreSupermodularity
+public import BecknerOnofri.GinibreStrictCovariance
 
-import BecknerOnofri.RadialOrigin
-import BecknerOnofri.RadialGreenHeat
+public import BecknerOnofri.RadialExterior
+public import BecknerOnofri.RadialE1Euler
+public import BecknerOnofri.RadialPoissonBound
+public import BecknerOnofri.SpatialThetaComparison
+public import BecknerOnofri.LatticeMaximizerSupport
+public import BecknerOnofri.GinibreStrictSupermodularity
 
-import BecknerOnofri.SelectedCubicSymmetry
-import BecknerOnofri.RadialHeatPanels
+public import BecknerOnofri.RadialOrigin
+public import BecknerOnofri.RadialGreenHeat
 
-import BecknerOnofri.RadialMeasure
+public import BecknerOnofri.SelectedCubicSymmetry
+public import BecknerOnofri.RadialHeatPanels
+
+public import BecknerOnofri.RadialMeasure
+
+@[expose] public section
 
 /-! Import completed analytic proof chains into the normal Solution build.
 Conditional endpoint reductions retain their explicit numerical premises.

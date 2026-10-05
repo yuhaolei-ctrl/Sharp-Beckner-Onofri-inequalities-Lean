@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedGradientBounds
+module
+
+public import BecknerOnofri.Friedrichs.MixedGradientBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailAxisHeat
-import BecknerOnofri.EntropyTailProductDeficit
+module
+
+public import BecknerOnofri.EntropyTailAxisHeat
+public import BecknerOnofri.EntropyTailProductDeficit
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

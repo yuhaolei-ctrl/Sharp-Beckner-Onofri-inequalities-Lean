@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenHeatLowerBound
-import Legacy.TorusEndpoint.GreenMellinPairing
-import Legacy.TorusEndpoint.PhysicalGreenL2
+module
+
+public import Legacy.TorusEndpoint.GreenHeatLowerBound
+public import Legacy.TorusEndpoint.GreenMellinPairing
+public import Legacy.TorusEndpoint.PhysicalGreenL2
+
+@[expose] public section
 
 /-!
 # Actual heat densities for endpoint sharpness

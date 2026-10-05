@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.SmoothCutoffApproximation
-import Legacy.BecknerOnofri.JacobiAngular
+module
+
+public import BecknerOnofri.Friedrichs.SmoothCutoffApproximation
+public import Legacy.BecknerOnofri.JacobiAngular
+
+@[expose] public section
 
 /-! Sine-weighted smooth cosine profiles have actual compactly supported
 spatial approximants in the singular Jacobi form norm. -/

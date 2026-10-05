@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorPermutation
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorPermutation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

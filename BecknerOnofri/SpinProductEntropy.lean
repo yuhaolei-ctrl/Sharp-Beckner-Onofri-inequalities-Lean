@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinProductProbability
-import BecknerOnofri.SpinBinaryCost
-import BecknerOnofri.SpinSparseVertices
+module
+
+public import BecknerOnofri.SpinProductProbability
+public import BecknerOnofri.SpinBinaryCost
+public import BecknerOnofri.SpinSparseVertices
+
+@[expose] public section
 
 /-! Exact entropy of the source's product-spin comparison law. -/
 noncomputable section

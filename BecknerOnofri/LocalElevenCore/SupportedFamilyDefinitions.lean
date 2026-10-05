@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.CommonSquaredAmplitude
+module
+
+public import BecknerOnofri.LocalElevenCore.CommonSquaredAmplitude
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

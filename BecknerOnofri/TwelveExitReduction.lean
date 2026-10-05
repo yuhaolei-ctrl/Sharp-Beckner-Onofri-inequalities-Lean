@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalFourierExit
-import BecknerOnofri.GenericCosineRepresentation
-import BecknerOnofri.CountableMixtureTransfer
-import BecknerOnofri.EndpointPackage
+module
+
+public import BecknerOnofri.LocalFourierExit
+public import BecknerOnofri.GenericCosineRepresentation
+public import BecknerOnofri.CountableMixtureTransfer
+public import BecknerOnofri.EndpointPackage
+
+@[expose] public section
 
 /-! The exact remaining numerical neighborhood obligation in dimension twelve.
 This file proves consequences of that obligation; it does not assert or certify it.

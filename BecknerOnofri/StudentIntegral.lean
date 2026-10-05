@@ -1,8 +1,12 @@
-import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
-import Mathlib.MeasureTheory.Integral.Prod
-import Mathlib.MeasureTheory.Integral.Pi
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+public import Mathlib.MeasureTheory.Integral.Prod
+public import Mathlib.MeasureTheory.Integral.Pi
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The beta-integral normalization of the manuscript's Euclidean profile.
 The proof evaluates its positive Gamma/Gaussian mixture by Tonelli. -/

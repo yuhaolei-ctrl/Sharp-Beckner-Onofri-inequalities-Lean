@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralShapeEntropyGap
-import BecknerOnofri.CosineShapeCalculus
-import BecknerOnofri.ContinuousMixtureMajorant
+module
+
+public import BecknerOnofri.GeneralShapeEntropyGap
+public import BecknerOnofri.CosineShapeCalculus
+public import BecknerOnofri.ContinuousMixtureMajorant
+
+@[expose] public section
 
 /-! The standalone nonstationary global entropy estimate with the manuscript's
 actual closed-cube first and second partial derivative hypotheses. -/

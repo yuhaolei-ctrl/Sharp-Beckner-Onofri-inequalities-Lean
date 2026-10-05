@@ -1,7 +1,11 @@
-import BecknerOnofri.GapDefinitions
-import BecknerOnofri.FiniteEntropyDualGap
-import BecknerOnofri.RawAttainment
-import BecknerOnofri.PotentialRigidity
+module
+
+public import BecknerOnofri.GapDefinitions
+public import BecknerOnofri.FiniteEntropyDualGap
+public import BecknerOnofri.RawAttainment
+public import BecknerOnofri.PotentialRigidity
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

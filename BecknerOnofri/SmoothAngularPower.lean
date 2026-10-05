@@ -1,6 +1,10 @@
-import BecknerOnofri.SmoothTorusSobolev
-import BecknerOnofri.AngularRealPowerDomain
-import Legacy.BecknerOnofri.SmoothFourier
+module
+
+public import BecknerOnofri.SmoothTorusSobolev
+public import BecknerOnofri.AngularRealPowerDomain
+public import Legacy.BecknerOnofri.SmoothFourier
+
+@[expose] public section
 
 /-! Positive angular spectral powers of raw smooth torus functions.
 This discharges the rapid-decay premise in the spectral intertwining theorem.

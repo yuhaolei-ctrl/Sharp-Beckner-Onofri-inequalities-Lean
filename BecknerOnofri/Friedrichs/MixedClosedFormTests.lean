@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+
+@[expose] public section
 
 noncomputable section
 open Set MeasureTheory

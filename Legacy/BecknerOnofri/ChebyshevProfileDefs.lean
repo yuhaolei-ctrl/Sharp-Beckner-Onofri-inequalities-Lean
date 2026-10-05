@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.RadialWiener
-import Legacy.BecknerOnofri.ChebyshevDerivativeBound
+module
+
+public import Legacy.BecknerOnofri.RadialWiener
+public import Legacy.BecknerOnofri.ChebyshevDerivativeBound
+
+@[expose] public section
 
 /-! The actual tensor-Chebyshev profile of a full lattice Fourier series. -/
 

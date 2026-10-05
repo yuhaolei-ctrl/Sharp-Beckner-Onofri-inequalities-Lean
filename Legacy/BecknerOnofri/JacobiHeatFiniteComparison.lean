@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiHeatFinite
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatFinite
+
+@[expose] public section
 
 /-! Comparison of two concrete finite Jacobi spectral evolutions with ordered actual initial data. -/
 noncomputable section

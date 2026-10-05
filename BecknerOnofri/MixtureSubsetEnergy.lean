@@ -1,5 +1,9 @@
-import BecknerOnofri.MixtureFrequencyEmbedding
-import BecknerOnofri.SubsetEnergyIteration
+module
+
+public import BecknerOnofri.MixtureFrequencyEmbedding
+public import BecknerOnofri.SubsetEnergyIteration
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,9 @@
-import BecknerOnofri.HeatGreenPairing
-import BecknerOnofri.GreenCoordinateAE
+module
+
+public import BecknerOnofri.HeatGreenPairing
+public import BecknerOnofri.GreenCoordinateAE
+
+@[expose] public section
 
 /-! Critical entropy-energy bound by coordinate Green comparison and the
 one-dimensional sharp inequality. The constants are actual finite reals. -/

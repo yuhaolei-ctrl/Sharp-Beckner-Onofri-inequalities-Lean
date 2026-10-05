@@ -1,5 +1,9 @@
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import Mathlib.Analysis.Normed.Group.InfiniteSum
+module
+
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.Analysis.Normed.Group.InfiniteSum
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

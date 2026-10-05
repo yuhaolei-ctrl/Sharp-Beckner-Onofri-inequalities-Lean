@@ -1,7 +1,11 @@
-import BecknerOnofri.CircleRemainder
-import BecknerOnofri.CircleGammaEntropyReduction
-import BecknerOnofri.CircleComparisonOn
-import BecknerOnofri.CircleMomentTransport
+module
+
+public import BecknerOnofri.CircleRemainder
+public import BecknerOnofri.CircleGammaEntropyReduction
+public import BecknerOnofri.CircleComparisonOn
+public import BecknerOnofri.CircleMomentTransport
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

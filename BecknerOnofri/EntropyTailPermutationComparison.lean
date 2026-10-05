@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailCouplingComparison
-import Mathlib.GroupTheory.Perm.Basic
-import Mathlib.Algebra.Group.Equiv.Basic
+module
+
+public import BecknerOnofri.EntropyTailCouplingComparison
+public import Mathlib.GroupTheory.Perm.Basic
+public import Mathlib.Algebra.Group.Equiv.Basic
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

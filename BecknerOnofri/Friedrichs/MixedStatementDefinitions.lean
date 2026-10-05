@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+
+@[expose] public section
 
 /-! Trusted actual mixed-space tensor form-domain statement. This is the
 finite-eigenfunction domain step of the source fractional-intertwining proof,

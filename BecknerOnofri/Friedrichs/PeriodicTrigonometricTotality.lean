@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.PeriodicFourierTotality
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicFourierTotality
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,7 +1,11 @@
-import BecknerOnofri.TwelveExitReduction
-import BecknerOnofri.CommonEnclosure
-import BecknerOnofri.GinibreNormMonotonicity
-import BecknerOnofri.IterationOmittedTail
+module
+
+public import BecknerOnofri.TwelveExitReduction
+public import BecknerOnofri.CommonEnclosure
+public import BecknerOnofri.GinibreNormMonotonicity
+public import BecknerOnofri.IterationOmittedTail
+
+@[expose] public section
 
 /-! The numerical iteration is applied to the actual selected endpoint
 maximizer: its nonnegative summable Fourier coefficients reconstruct its

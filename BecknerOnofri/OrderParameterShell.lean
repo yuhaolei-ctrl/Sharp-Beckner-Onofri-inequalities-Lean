@@ -1,6 +1,10 @@
-import BecknerOnofri.OrderParameterDefinitions
-import BecknerOnofri.LocalHighShell
-import BecknerOnofri.ComplementGap
+module
+
+public import BecknerOnofri.OrderParameterDefinitions
+public import BecknerOnofri.LocalHighShell
+public import BecknerOnofri.ComplementGap
+
+@[expose] public section
 
 /-! The finite coordinate expression is exactly the complete |k|=1 shell. -/
 noncomputable section

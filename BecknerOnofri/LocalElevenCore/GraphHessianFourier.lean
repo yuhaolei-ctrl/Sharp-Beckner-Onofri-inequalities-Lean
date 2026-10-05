@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphHessianFourier
-import BecknerOnofri.LocalElevenCore.ReducedEnergyGradient
-import BecknerOnofri.LocalElevenCore.ComplementHessian
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphHessianFourier
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyGradient
+public import BecknerOnofri.LocalElevenCore.ComplementHessian
+
+@[expose] public section
 
 /-! Genuine Fourier-energy identities for differentiated complementary equations. -/
 noncomputable section

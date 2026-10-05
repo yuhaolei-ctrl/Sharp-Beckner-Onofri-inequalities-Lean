@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpRows
+module
+
+public import BecknerOnofri.EntropyExpRows
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0085
 set_option maxRecDepth 1000000
 set_option maxHeartbeats 100000000

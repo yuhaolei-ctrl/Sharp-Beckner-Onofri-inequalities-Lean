@@ -1,5 +1,9 @@
-import BecknerOnofri.CompactParameterDifferentiation
-import Mathlib.Analysis.Calculus.ContDiff.Comp
+module
+
+public import BecknerOnofri.CompactParameterDifferentiation
+public import Mathlib.Analysis.Calculus.ContDiff.Comp
+
+@[expose] public section
 
 /-! Smooth compact-parameter integrals, derived from the actual smooth
 integrand rather than an assumed derivative family. -/

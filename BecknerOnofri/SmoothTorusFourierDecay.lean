@@ -1,7 +1,11 @@
-import BecknerOnofri.SmoothTorusFourierDerivative
-import Legacy.TorusEndpoint.GreenMultiplierSummability
-import Legacy.BecknerOnofri.RadialWiener
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+
+public import BecknerOnofri.SmoothTorusFourierDerivative
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+public import Legacy.BecknerOnofri.RadialWiener
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-! Every polynomially weighted Fourier coefficient of a raw smooth torus
 function is uniformly bounded. All bounds come from its actual derivatives. -/

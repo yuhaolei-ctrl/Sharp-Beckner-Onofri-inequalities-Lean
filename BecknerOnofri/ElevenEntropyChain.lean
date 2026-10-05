@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenLabelDefinitions
-import BecknerOnofri.ElevenEuclideanEntropy
-import BecknerOnofri.ElevenPeriodizedMass
-import BecknerOnofri.PeriodizationIntegral
+module
+
+public import BecknerOnofri.ElevenLabelDefinitions
+public import BecknerOnofri.ElevenEuclideanEntropy
+public import BecknerOnofri.ElevenPeriodizedMass
+public import BecknerOnofri.PeriodizationIntegral
+
+@[expose] public section
 
 /-! Absolute-integral justification of the actual conditional entropy chain rule. -/
 noncomputable section

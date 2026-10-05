@@ -1,5 +1,9 @@
-import BecknerOnofri.HeatL1Convergence
-import BecknerOnofri.HeatRegularization
+module
+
+public import BecknerOnofri.HeatL1Convergence
+public import BecknerOnofri.HeatRegularization
+
+@[expose] public section
 
 /-! Entropy convergence of actual heat smoothing on the full finite-entropy
 domain. Fatou gives lower semicontinuity along a.e. convergent subsequences;

@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedFractionalIntertwining
-import BecknerOnofri.Friedrichs.MixedDerivativeList
+module
+
+public import BecknerOnofri.Friedrichs.MixedFractionalIntertwining
+public import BecknerOnofri.Friedrichs.MixedDerivativeList
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

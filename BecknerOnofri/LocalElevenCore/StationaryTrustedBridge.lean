@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalStationaryBranchDefinitions
-import BecknerOnofri.LocalElevenCore.PhysicalBranchProperties
-import BecknerOnofri.LocalElevenCore.PhysicalNormalCoercivity
-import BecknerOnofri.LocalElevenCore.DiagonalSobolevProfile
+module
+
+public import BecknerOnofri.LocalStationaryBranchDefinitions
+public import BecknerOnofri.LocalElevenCore.PhysicalBranchProperties
+public import BecknerOnofri.LocalElevenCore.PhysicalNormalCoercivity
+public import BecknerOnofri.LocalElevenCore.DiagonalSobolevProfile
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

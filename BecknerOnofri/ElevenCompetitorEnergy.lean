@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenEnergyData
+module
+
+public import BecknerOnofri.ElevenEnergyData
+
+@[expose] public section
 
 /-! The strict competitor-energy bound from all one hundred certified
 positive shells, transferred to the actual infinite Fourier energy. -/

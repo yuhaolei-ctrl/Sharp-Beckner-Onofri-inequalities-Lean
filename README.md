@@ -1,66 +1,68 @@
-# Sharp Beckner–Onofri inequalities
+# Sharp Beckner–Onofri inequalities — Palomar adaptation
 
-Lean formalization of 51 formal results, with 269 registered proof targets.
-Requires **Lean 4.32.0** and the pinned dependencies in
-[dependencies.json](dependencies.json).
+Authors and maintainers: Yuhao Lei and Matthew Rosenzweig. Apache-2.0.
+
+This branch migrates the existing proof development to **Lean 4.35.0-rc2**
+and its matching pinned Mathlib revision. It is a work in progress, not a
+Palomar registration or a verified replacement for the original certificate.
+Current results are recorded in [verification/STATUS.json](verification/STATUS.json).
+
+## Candidate entries
+
+Each entry has a self-contained mathematical Challenge importing only Mathlib.
+Its Solution imports the proof development, never the Challenge.
+
+| Subject | Comparator configuration | Claims |
+| --- | --- | ---: |
+| Dimensions 1–10: sharp inequalities, equality and thresholds | `Palomar/comparator-lowdim.json` | 9 |
+| Dimensions at least 12: sharp inequalities and full-mode onset | `Palomar/comparator-highdim.json` | 10 |
+| Dimension 11: explicit competitor and first-order transition | `Palomar/comparator-eleven.json` | 11 |
+
+Select exactly one configuration when submitting an entry. The root
+`comparator.json` retains the original 269-target development; it is not a
+Palomar submission configuration. The original 51-result development remains
+in the repository. These first three candidate entries advertise its principal
+theorems, not every supporting lemma. `statements.json` records the larger
+manuscript mapping; `formalization.yaml` discloses scope and known differences.
+
+For Haar probability measure on the unit flat torus, the density statements
+compare entropy with the extended Fourier energy
+`sum (|k|^(-d) * |rho_hat(k)|^2)` over nonzero integer frequencies. For
+dimensions 1–10 the coefficient is `d / sigma_d`, where
+`sigma_d = 2 * pi^(d/2) / Gamma(d/2)`; for dimensions at least 12 it is `1/2`.
+The corresponding potential inequalities and sharp coefficients are included.
+Equality is classified by the conformal family in dimension one and by constants
+in the other dimensions covered by these two entries. The high-dimensional
+entry also describes the full-mode branch, its translation orbit and Sobolev
+profile, and the quadratic pressure onset. The dimension-eleven entry places
+the global transition strictly between `3543/200` and `2063/100`, below the
+spectral threshold, and states coexistence and nondifferentiability of the
+pressure and defect. Each configuration names the precise formal claims it
+advertises; compilation of the migrated proofs is still in progress.
 
 ## Build
 
-```sh
-python3 scripts/setup_dependencies.py
-./scripts/lake build Challenge Solution
-./scripts/lake env lean AxiomAudit.lean
-python3 scripts/audit.py
-```
-
-Install the toolchain in `lean-toolchain`, or set `LEAN_RUNTIME_BIN` to its
-`bin` directory. Dependency setup requires Git, Python 3.11 or newer, and
-network access. Building requires the Lean toolchain and a C toolchain.
-
-## Proof structure
-
-- `Challenge.lean`: the statements to prove.
-- `Solution.lean`: the complete proof entrypoint.
-- `BecknerOnofri/`, `Legacy/`, and the root proof modules: definitions and proofs.
-- `comparator.json`: all 269 targets and their permitted axioms.
-- [statements.json](statements.json): manuscript labels mapped to Lean targets.
-
-Challenge statements use `sorry` as placeholders. Solutions do not import
-Challenge, and their transitive axioms are restricted to `Classical.choice`,
-`Quot.sound`, and `propext`. Dimensions 1–10 use the same verification workflow;
-`Legacy/` contains checked proofs, including finite certificates evaluated with
-`decide +kernel`.
-
-## Verify
+Install the toolchain in `lean-toolchain`, or set `LEAN_RUNTIME_BIN` to that
+toolchain's `bin` directory. Git dependencies are fixed by `lake-manifest.json`.
 
 ```sh
-python3 scripts/verify.py
+./scripts/lake exe cache get
+python3 scripts/audit_palomar.py
+./scripts/lake build Palomar.LowDimChallenge Palomar.HighDimChallenge Palomar.ElevenChallenge
+./scripts/lake build Palomar.LowDimSolution Palomar.HighDimSolution Palomar.ElevenSolution
 ```
 
-This checks source integrity, builds both entrypoints and audits all target
-axioms. To run the full Comparator after building its pinned tools:
+Statement placeholders are intentional. A successful Challenge build alone is
+not proof verification. The migrated Solutions must build and pass Comparator
+and independent kernel replay before this branch can be called verified.
 
-```sh
-(cd vendor/comparator && lake build comparator lean4export)
-python3 scripts/verify.py --comparator --development
-```
+## Provenance
 
-Development mode checks statements, definitions, axioms and the official
-kernel, but does not provide Linux sandbox isolation. Generated logs are
-written to the ignored `verification/runs/` directory.
+The mathematical source is *Sharp Beckner–Onofri inequalities on the flat
+torus: coefficients, defects, and phase transitions*, by Yuhao Lei and
+Matthew Rosenzweig, manuscript dated 1 October 2026.
 
-The [published certificate](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005)
-passed complete official Comparator replay and an independent
-[con-ron verified replay](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046).
-These results concern the frozen exported certificate. The unified source
-layout has a separate build and an exact source-correspondence check.
-See [verification instructions](verification/README.md) and
-[check status](verification/STATUS.json).
-
-## Scope
-
-The 51-result scope excludes the counterexample in Remark 5.6 and a separate
-proof of the displayed cutoff-rate estimate; the latter is replaced by proved
-form-norm convergence. Independent review of the correspondence between the
-manuscript and the Lean statements remains outstanding. No Kernel Arena
-listing or acceptance is claimed.
+The [original certificate release](https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005)
+records checks of the pre-migration Lean 4.32.0 source. Those results do not
+certify this branch. The module-system migration keeps the existing internal
+mathematical declaration names. Dependencies retain their own licences.

@@ -1,7 +1,11 @@
-import Legacy.TorusEndpoint.GreenKernelReal
-import Legacy.TorusEndpoint.FinitePhysicalBound
-import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
-import Mathlib.MeasureTheory.Group.Prod
+module
+
+public import Legacy.TorusEndpoint.GreenKernelReal
+public import Legacy.TorusEndpoint.FinitePhysicalBound
+public import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
+public import Mathlib.MeasureTheory.Group.Prod
+
+@[expose] public section
 
 /-!
 # Actual finite Green-kernel approximation on the Haar product torus

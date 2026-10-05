@@ -1,7 +1,11 @@
-import Mathlib.Analysis.SumIntegralComparisons
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
-import Mathlib.Analysis.PSeries
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SumIntegralComparisons
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+public import Mathlib.Analysis.PSeries
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The unconditional rational base bound in the one-dimensional spectral slice estimate. -/
 

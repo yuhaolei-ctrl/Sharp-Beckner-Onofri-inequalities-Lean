@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailHeat
-import BecknerOnofri.RadialThetaTail
+module
+
+public import BecknerOnofri.EntropyTailHeat
+public import BecknerOnofri.RadialThetaTail
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

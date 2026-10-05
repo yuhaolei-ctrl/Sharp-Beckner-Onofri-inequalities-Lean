@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Convex.SpecificFunctions.Basic
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
+module
+
+public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+
+@[expose] public section
 
 /-! Integrating out variables preserves convexity and monotonicity of the
 logarithmic profile. This is the integral form of the conditional Hessian

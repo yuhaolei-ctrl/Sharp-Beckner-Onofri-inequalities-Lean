@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedProductCutoff
-import BecknerOnofri.Friedrichs.CutoffLimit
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.Friedrichs.MixedProductCutoff
+public import BecknerOnofri.Friedrichs.CutoffLimit
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Actual L2 convergence of product cutoffs on the mixed spatial measure. -/
 noncomputable section
@@ -25,7 +29,7 @@ lemma productCutoff_mem {d : ℕ} (α : MultiIndex d) (δ : ℝ) (x : Space d) :
     · exact ⟨zero_le_one,le_rfl⟩
     · exact boundaryCutoff_mem δ (x i)
   exact ⟨Finset.prod_nonneg (fun i _ => (hi i).1),
-    Finset.prod_le_one (fun i _ => (hi i).1) (fun i _ => (hi i).2)⟩
+    Finset.prod_le_one₀ (fun i _ => (hi i).1) (fun i _ => (hi i).2)⟩
 
 lemma ae_active_interior {d : ℕ} (α : MultiIndex d) :
     ∀ᵐ x ∂spatialMeasure α,∀ i,α i≠0 → x i∈Ioo 0 Real.pi := by

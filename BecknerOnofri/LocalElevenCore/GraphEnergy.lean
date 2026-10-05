@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.GraphEnergy
-import BecknerOnofri.LocalElevenCore.GraphCritical
-import BecknerOnofri.QuadraticPairing
-import BecknerOnofri.ContinuousVariations
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.GraphEnergy
+public import BecknerOnofri.LocalElevenCore.GraphCritical
+public import BecknerOnofri.QuadraticPairing
+public import BecknerOnofri.ContinuousVariations
+
+@[expose] public section
 
 /-! Exact physical Fourier energy on the actual projected Gibbs graph. -/
 noncomputable section

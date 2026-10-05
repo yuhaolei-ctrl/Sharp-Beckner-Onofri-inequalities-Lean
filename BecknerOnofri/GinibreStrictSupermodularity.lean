@@ -1,4 +1,8 @@
-import BecknerOnofri.CosineCoefficientLattice
+module
+
+public import BecknerOnofri.CosineCoefficientLattice
+
+@[expose] public section
 
 /-! Strict coefficient comparison from the genuine positive covariance term.
 These are actual Banach-space derivatives of the full summable potential. -/

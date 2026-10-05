@@ -1,4 +1,8 @@
-import BecknerOnofri.GreenLocalBranch
+module
+
+public import BecknerOnofri.GreenLocalBranch
+
+@[expose] public section
 
 /-! Exact finite-dimensional reduction of the genuine preconditioned torus
 Euler equation; no polynomial substitute is used for the Gibbs map. -/

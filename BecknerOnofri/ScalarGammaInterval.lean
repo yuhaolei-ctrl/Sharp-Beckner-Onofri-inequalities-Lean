@@ -1,8 +1,12 @@
-import BecknerOnofri.ScalarCandidateEnclosure
-import BecknerOnofri.ScalarMomentFunctionEnclosure
-import BecknerOnofri.ScalarCheckedWeight
-import BecknerOnofri.CircleRateLower
-import BecknerOnofri.SpinBinaryCost
+module
+
+public import BecknerOnofri.ScalarCandidateEnclosure
+public import BecknerOnofri.ScalarMomentFunctionEnclosure
+public import BecknerOnofri.ScalarCheckedWeight
+public import BecknerOnofri.CircleRateLower
+public import BecknerOnofri.SpinBinaryCost
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.ScalarCertificate

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GreenDensityPotentialL2
-import Legacy.BecknerOnofri.SubcriticalCounterexample
-import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+module
+
+public import Legacy.BecknerOnofri.GreenDensityPotentialL2
+public import Legacy.BecknerOnofri.SubcriticalCounterexample
+public import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+
+@[expose] public section
 
 /-! Primal-dual comparison and actual density maximizers on the full L2
 probability class. These results do not assume a selected or smooth optimizer. -/

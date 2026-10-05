@@ -1,4 +1,8 @@
-import BecknerOnofri.MixtureMarginals
+module
+
+public import BecknerOnofri.MixtureMarginals
+
+@[expose] public section
 
 /-! The high-dimensional endpoint induction. Its sole dimension-specific input
 is the exact twelve-dimensional cosine-mixture endpoint. -/

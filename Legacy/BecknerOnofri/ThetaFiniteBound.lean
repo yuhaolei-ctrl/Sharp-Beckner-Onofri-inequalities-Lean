@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ThetaConstants
-import Legacy.BecknerOnofri.LaplaceReciprocal
-import Mathlib.Data.Rat.Cast.Order
+module
+
+public import Legacy.BecknerOnofri.ThetaConstants
+public import Legacy.BecknerOnofri.LaplaceReciprocal
+public import Mathlib.Data.Rat.Cast.Order
+
+@[expose] public section
 
 /-! The 24 retained shell terms now contain actual Laplace integrals.
 The remaining obligation is to bound the full theta integral by this

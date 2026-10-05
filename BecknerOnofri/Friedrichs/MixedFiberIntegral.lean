@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedEnergyJointExpansion
-import BecknerOnofri.CriticalGraphCoercivity
+module
+
+public import BecknerOnofri.ReducedEnergyJointExpansion
+public import BecknerOnofri.CriticalGraphCoercivity
+
+@[expose] public section
 
 /-! The actual local physical energy has the sharp upper onset coefficient. -/
 noncomputable section

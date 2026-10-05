@@ -1,5 +1,9 @@
-import BecknerOnofri.CirclePoissonProbability
-import Mathlib.MeasureTheory.Integral.Prod
+module
+
+public import BecknerOnofri.CirclePoissonProbability
+public import Mathlib.MeasureTheory.Integral.Prod
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

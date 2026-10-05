@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinMixtureCap
+module
+
+public import BecknerOnofri.SpinMixtureCap
+
+@[expose] public section
 
 /-! The actual positive-mixture spin law belongs to the full thirteen-state
 feasible domain, including its all-minus probability cap. -/

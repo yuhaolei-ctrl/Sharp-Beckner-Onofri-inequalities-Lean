@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedProfileOperator
-import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
-import BecknerOnofri.Friedrichs.PeriodicEigenprofiles
+module
+
+public import BecknerOnofri.Friedrichs.MixedProfileOperator
+public import BecknerOnofri.Friedrichs.MixedChebyshevEigenvectors
+public import BecknerOnofri.Friedrichs.PeriodicEigenprofiles
+
+@[expose] public section
 
 /-! Full mixed Dirichlet/periodic eigenfunctions. Inactive coordinates include
 both sine and cosine modes on the actual full circle. -/

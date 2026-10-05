@@ -1,7 +1,11 @@
-import BecknerOnofri.SimultaneousOrbitCompact
-import BecknerOnofri.PolarizationUniformL1
-import BecknerOnofri.BilinearPairingL1Limit
-import BecknerOnofri.PolarizationL1Properties
+module
+
+public import BecknerOnofri.SimultaneousOrbitCompact
+public import BecknerOnofri.PolarizationUniformL1
+public import BecknerOnofri.BilinearPairingL1Limit
+public import BecknerOnofri.PolarizationL1Properties
+
+@[expose] public section
 
 /-! Order, L1 contraction, and bounded-kernel comparison on the actual
 simultaneous orbit and its uniform closure. -/

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.GreenHeatBounds
+module
+
+public import Legacy.BecknerOnofri.GreenHeatBounds
+
+@[expose] public section
 
 /-! An actual heat-Mellin Green candidate, its pointwise integrability and logarithmic bound. -/
 noncomputable section

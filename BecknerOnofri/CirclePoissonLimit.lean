@@ -1,7 +1,11 @@
-import BecknerOnofri.CirclePoissonEntropyFisher
-import BecknerOnofri.CirclePoissonConvergence
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import Mathlib.Analysis.Normed.Group.Tannery
+module
+
+public import BecknerOnofri.CirclePoissonEntropyFisher
+public import BecknerOnofri.CirclePoissonConvergence
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.Analysis.Normed.Group.Tannery
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

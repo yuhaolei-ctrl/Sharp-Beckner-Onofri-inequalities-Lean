@@ -1,5 +1,9 @@
-import BecknerOnofri.SimultaneousOrbitCompact
-import BecknerOnofri.LipschitzSteinerSelection
+module
+
+public import BecknerOnofri.SimultaneousOrbitCompact
+public import BecknerOnofri.LipschitzSteinerSelection
+
+@[expose] public section
 
 /-! One compact simultaneous orbit produces two equimeasurable symmetric
 limits. Independent one-function orbit choices are not substituted here. -/

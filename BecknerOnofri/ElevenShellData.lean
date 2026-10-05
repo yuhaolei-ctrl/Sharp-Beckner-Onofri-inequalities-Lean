@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenShellArray
+module
+
+public import BecknerOnofri.ElevenShellArray
+
+@[expose] public section
 /-! Generated candidate multiplicities. All convolution equalities below
 are evaluated by Lean's kernel, with no native evaluator or external oracle. -/
 namespace BecknerOnofri.HighDim.Eleven.Shell

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointDensityPotentialLimit
-import BecknerOnofri.EndpointRigidity.AnalyticEndpoint
-import Legacy.BecknerOnofri.YoungGapLimit
+module
+
+public import Legacy.BecknerOnofri.EndpointDensityPotentialLimit
+public import BecknerOnofri.EndpointRigidity.AnalyticEndpoint
+public import Legacy.BecknerOnofri.YoungGapLimit
+
+@[expose] public section
 
 /-! Every finite-entropy endpoint equality density is a genuine Gibbs density.
 The density is not assumed square-integrable: L2 follows from the Gibbs identity. -/

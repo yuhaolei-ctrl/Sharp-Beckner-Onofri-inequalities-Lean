@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailMellin
-import BecknerOnofri.EntropyTailMonotone
-import BecknerOnofri.EntropyHeatFarTail
+module
+
+public import BecknerOnofri.EntropyTailMellin
+public import BecknerOnofri.EntropyTailMonotone
+public import BecknerOnofri.EntropyHeatFarTail
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

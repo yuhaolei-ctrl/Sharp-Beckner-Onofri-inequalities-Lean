@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.GibbsL2Continuity
-import Legacy.BecknerOnofri.SubcriticalDensityEuler
+module
+
+public import Legacy.BecknerOnofri.GibbsL2Continuity
+public import Legacy.BecknerOnofri.SubcriticalDensityEuler
+
+@[expose] public section
 
 /-! The set of all actual L2 density maximizers is compact in L2.  This
 supports selection by maximizing a continuous moment on the optimizer set. -/

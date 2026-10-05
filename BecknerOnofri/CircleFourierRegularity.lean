@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Fourier.AddCircle
-import Mathlib.Analysis.PSeries
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
-import Mathlib.Analysis.Calculus.Deriv.Shift
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Fourier.AddCircle
+public import Mathlib.Analysis.PSeries
+public import Mathlib.Analysis.Calculus.ContDiff.Deriv
+public import Mathlib.Analysis.Calculus.Deriv.Shift
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Three integrations by parts give weighted absolute Fourier summability.
 The derivative chain and its endpoint equalities are explicit in this lemma. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedPhysicalEnergy
-import BecknerOnofri.LocalElevenCore.GraphEnergy
-import BecknerOnofri.LocalElevenCore.ReducedQuarticExpansion
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedPhysicalEnergy
+public import BecknerOnofri.LocalElevenCore.GraphEnergy
+public import BecknerOnofri.LocalElevenCore.ReducedQuarticExpansion
+
+@[expose] public section
 
 /-! The quartic expansion is an expansion of the actual trusted physical
 dual functional on the solved complementary graph. -/

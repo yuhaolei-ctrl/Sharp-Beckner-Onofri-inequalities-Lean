@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenStrictMixture
-import BecknerOnofri.GenericCosineRepresentation
-import BecknerOnofri.EndpointRigidity.Reduction
-import BecknerOnofri.ElevenVariational
+module
+
+public import BecknerOnofri.ElevenStrictMixture
+public import BecknerOnofri.GenericCosineRepresentation
+public import BecknerOnofri.EndpointRigidity.Reduction
+public import BecknerOnofri.ElevenVariational
+
+@[expose] public section
 
 /-! Section 4: the full finite-entropy inequality at beta0. The proof selects
 an actual Steiner optimizer, uses its positive cosine mixture, and transfers

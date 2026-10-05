@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenCore.RealGraphSaddles
-import BecknerOnofri.LocalElevenCore.ContinuousLocalReduction
-import BecknerOnofri.LocalElevenCore.EulerEquation
-import BecknerOnofri.OptimizerTranslation
+module
+
+public import BecknerOnofri.LocalElevenCore.RealGraphSaddles
+public import BecknerOnofri.LocalElevenCore.ContinuousLocalReduction
+public import BecknerOnofri.LocalElevenCore.EulerEquation
+public import BecknerOnofri.OptimizerTranslation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

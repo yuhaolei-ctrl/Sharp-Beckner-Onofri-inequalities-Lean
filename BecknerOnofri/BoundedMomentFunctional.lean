@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CosineMomentWeight
-import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
+module
+
+public import Legacy.BecknerOnofri.CosineMomentWeight
+public import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
+
+@[expose] public section
 
 /-! Continuous moment functionals on the uniform function space used for
 compact polarization-orbit selection. -/

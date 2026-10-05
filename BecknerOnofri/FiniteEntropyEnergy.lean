@@ -1,6 +1,10 @@
-import BecknerOnofri.EndpointDuality
-import Legacy.BecknerOnofri.HeatDensityApproximation
-import Legacy.BecknerOnofri.EndpointClosure
+module
+
+public import BecknerOnofri.EndpointDuality
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+public import Legacy.BecknerOnofri.EndpointClosure
+
+@[expose] public section
 
 /-! The actual energy of every finite-entropy density is finite. Heat
 regularization and finite-frequency limits extend the proved rough bound. -/

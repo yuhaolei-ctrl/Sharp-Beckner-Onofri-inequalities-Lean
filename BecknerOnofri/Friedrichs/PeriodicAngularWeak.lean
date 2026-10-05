@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.AngularWeakEquation
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+module
+
+public import BecknerOnofri.Friedrichs.AngularWeakEquation
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

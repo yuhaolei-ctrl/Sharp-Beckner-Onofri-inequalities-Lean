@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ActiveHessianTransverse
-import BecknerOnofri.EquicorrelatedEigenvalueIdentification
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveHessianTransverse
+public import BecknerOnofri.EquicorrelatedEigenvalueIdentification
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

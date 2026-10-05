@@ -1,5 +1,9 @@
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+
+@[expose] public section
 
 /-! Sound real-arithmetic quadrature rules for the dimension-twelve radial
 partition calculation. These are exact integral inequalities, not a numerical

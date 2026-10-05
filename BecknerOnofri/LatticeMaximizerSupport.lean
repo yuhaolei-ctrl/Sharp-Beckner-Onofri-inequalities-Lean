@@ -1,5 +1,9 @@
-import BecknerOnofri.CosineCoefficientLattice
-import BecknerOnofri.PositiveFourierSupport
+module
+
+public import BecknerOnofri.CosineCoefficientLattice
+public import BecknerOnofri.PositiveFourierSupport
+
+@[expose] public section
 
 /-! Genuine Euler support groups for all nonnegative coefficient maximizers,
 including the actual maximum and minimum candidates from supermodularity. -/

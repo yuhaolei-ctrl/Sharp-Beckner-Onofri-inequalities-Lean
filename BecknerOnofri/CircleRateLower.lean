@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleRateDefinitions
-import BecknerOnofri.CircleBesselComparison
+module
+
+public import BecknerOnofri.CircleRateDefinitions
+public import BecknerOnofri.CircleBesselComparison
+
+@[expose] public section
 
 /-! The source's quartic lower bound for the von Mises rate, parametrized
 by its actual Bessel mean. This uses the proved Riccati comparison. -/

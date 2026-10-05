@@ -1,6 +1,10 @@
-import BecknerOnofri.AnalyticScalarTaylor
-import Mathlib.Analysis.Calculus.Deriv.Comp
-import Mathlib.Analysis.Calculus.Deriv.Add
+module
+
+public import BecknerOnofri.AnalyticScalarTaylor
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+public import Mathlib.Analysis.Calculus.Deriv.Add
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

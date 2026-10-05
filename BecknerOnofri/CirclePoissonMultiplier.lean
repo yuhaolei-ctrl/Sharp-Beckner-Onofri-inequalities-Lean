@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleConvolutionFourier
-import BecknerOnofri.CirclePoissonFourier
+module
+
+public import BecknerOnofri.CircleConvolutionFourier
+public import BecknerOnofri.CirclePoissonFourier
+
+@[expose] public section
 
 /-! Fourier action and mass preservation of the actual Haar Poisson convolution. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenMellinSeries
-import Legacy.TorusEndpoint.TorusHeatPairing
-import Legacy.TorusEndpoint.IntegrableSeries
+module
+
+public import Legacy.TorusEndpoint.GreenMellinSeries
+public import Legacy.TorusEndpoint.TorusHeatPairing
+public import Legacy.TorusEndpoint.IntegrableSeries
+
+@[expose] public section
 
 /-!
 # The actual Mellin--heat representation of L2 Green pairings

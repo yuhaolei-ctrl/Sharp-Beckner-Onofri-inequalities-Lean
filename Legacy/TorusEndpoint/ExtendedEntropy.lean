@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Legacy.TorusEndpoint.EntropyVariational
-import Mathlib.MeasureTheory.Function.SpecialFunctions.Basic
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Legacy.TorusEndpoint.EntropyVariational
+public import Mathlib.MeasureTheory.Function.SpecialFunctions.Basic
+
+@[expose] public section
 
 /-!
 # Extended entropy for every probability density

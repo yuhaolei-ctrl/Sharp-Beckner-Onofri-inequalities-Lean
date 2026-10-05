@@ -1,7 +1,11 @@
-import BecknerOnofri.ReducedQuarticAnalytic
-import BecknerOnofri.AnalyticEvenOrder
-import BecknerOnofri.FirstShellOrbits
-import BecknerOnofri.ReducedPhysicalEnergy
+module
+
+public import BecknerOnofri.ReducedQuarticAnalytic
+public import BecknerOnofri.AnalyticEvenOrder
+public import BecknerOnofri.FirstShellOrbits
+public import BecknerOnofri.ReducedPhysicalEnergy
+
+@[expose] public section
 
 /-! The actual critical reduced pressure has a sixth-order remainder.
 The improvement follows from analyticity and genuine half-period translation symmetry. -/

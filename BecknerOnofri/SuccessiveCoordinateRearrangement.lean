@@ -1,7 +1,11 @@
-import BecknerOnofri.CoordinateRearrangementDefinitions
-import BecknerOnofri.CoordinateCanonicalIdentification
-import BecknerOnofri.CoordinateRearrangementOrder
-import BecknerOnofri.CoordinateOrbitRange
+module
+
+public import BecknerOnofri.CoordinateRearrangementDefinitions
+public import BecknerOnofri.CoordinateCanonicalIdentification
+public import BecknerOnofri.CoordinateRearrangementOrder
+public import BecknerOnofri.CoordinateOrbitRange
+
+@[expose] public section
 
 /-! Finite successive canonical coordinate rearrangements. Previously
 obtained coordinate monotonicity is retained at each step. -/

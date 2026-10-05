@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarCheckedWeight
+module
+
+public import BecknerOnofri.ScalarCheckedWeight
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.ScalarCertificate

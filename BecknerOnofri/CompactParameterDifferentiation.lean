@@ -1,7 +1,11 @@
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.Analysis.Calculus.ContDiff.Operations
-import Mathlib.MeasureTheory.Integral.Bochner.Set
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 /-! Parameter differentiation of continuous derivative families on a compact
 integration space. Compactness proves the local domination, rather than

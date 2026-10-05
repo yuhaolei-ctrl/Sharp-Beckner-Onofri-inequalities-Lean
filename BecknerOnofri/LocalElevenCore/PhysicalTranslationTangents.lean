@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.PhysicalTranslationTangents
-import BecknerOnofri.LocalElevenCore.PhysicalBranchProperties
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.PhysicalTranslationTangents
+public import BecknerOnofri.LocalElevenCore.PhysicalBranchProperties
+
+@[expose] public section
 
 /-! Actual continuous representatives of each spatial translation tangent of
 the physical branch, for the raw L² orthogonality in the trusted statement. -/

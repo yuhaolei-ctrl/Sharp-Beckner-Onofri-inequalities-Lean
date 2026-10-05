@@ -1,4 +1,8 @@
-import Mathlib.Tactic
+module
+
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Small signed rational interval algebra for the scalar gamma certificate.
 Every arithmetic operation carries a theorem about actual real values. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarGammaInterval
-import BecknerOnofri.ScalarDerivativeEnclosure
-import BecknerOnofri.ScalarLogBesselEnclosure
+module
+
+public import BecknerOnofri.ScalarGammaInterval
+public import BecknerOnofri.ScalarDerivativeEnclosure
+public import BecknerOnofri.ScalarLogBesselEnclosure
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.ScalarCertificate

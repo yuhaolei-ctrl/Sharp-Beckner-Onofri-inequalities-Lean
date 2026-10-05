@@ -1,8 +1,12 @@
-import BecknerOnofri.GlobalPressureOnset
-import BecknerOnofri.LocalOrbitClassification
-import BecknerOnofri.PressureRegularity
-import BecknerOnofri.OptimizerTranslation
-import BecknerOnofri.OptimizerDuality
+module
+
+public import BecknerOnofri.GlobalPressureOnset
+public import BecknerOnofri.LocalOrbitClassification
+public import BecknerOnofri.PressureRegularity
+public import BecknerOnofri.OptimizerTranslation
+public import BecknerOnofri.OptimizerDuality
+
+@[expose] public section
 
 /-! Global optimizer classification through genuine uniform compactness and
 actual stationary, near-optimal local orbit selection. -/

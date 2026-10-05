@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.SubsetDiagonal
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetDiagonal
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

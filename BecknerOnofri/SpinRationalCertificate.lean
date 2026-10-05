@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinIntervalCertificate
+module
+
+public import BecknerOnofri.SpinIntervalCertificate
+
+@[expose] public section
 
 /-! Rational interfaces for the manuscript's spin candidates. The only
 transcendental input is a checked enclosure of each actual log(p_j / μ_j).

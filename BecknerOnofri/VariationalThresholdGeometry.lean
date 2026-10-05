@@ -1,9 +1,13 @@
-import BecknerOnofri.CurveThresholdDefinitions
-import BecknerOnofri.VariationalTransitionQuotient
-import BecknerOnofri.ConcentrationDivergence
-import BecknerOnofri.LowDimensionConsequences
-import BecknerOnofri.ElevenTransitionZeroSet
-import BecknerOnofri.EntropyMainTheorems
+module
+
+public import BecknerOnofri.CurveThresholdDefinitions
+public import BecknerOnofri.VariationalTransitionQuotient
+public import BecknerOnofri.ConcentrationDivergence
+public import BecknerOnofri.LowDimensionConsequences
+public import BecknerOnofri.ElevenTransitionZeroSet
+public import BecknerOnofri.EntropyMainTheorems
+
+@[expose] public section
 
 /-! The common pressure/defect thresholds in every positive dimension.
 Positivity uses the previously proved dimension-specific endpoint estimates;

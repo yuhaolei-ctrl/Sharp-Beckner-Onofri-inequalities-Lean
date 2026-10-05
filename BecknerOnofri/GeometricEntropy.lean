@@ -1,7 +1,11 @@
-import BecknerOnofri.CountableShannon
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Mathlib.Analysis.Complex.ExponentialBounds
-import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+module
+
+public import BecknerOnofri.CountableShannon
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Mathlib.Analysis.Complex.ExponentialBounds
+public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+
+@[expose] public section
 
 /-! The normalized two-sided geometric reference law used for the integer
 shift, and its relative-entropy estimate in terms of the absolute first moment. -/

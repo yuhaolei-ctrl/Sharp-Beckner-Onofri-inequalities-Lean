@@ -1,4 +1,8 @@
-import BecknerOnofri.UniformComplementBounds
+module
+
+public import BecknerOnofri.UniformComplementBounds
+
+@[expose] public section
 
 /-! Uniform complementary Gibbs pairings along the actual two-parameter graph. -/
 noncomputable section

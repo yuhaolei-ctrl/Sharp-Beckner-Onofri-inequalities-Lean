@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.FiniteDifferenceDefs
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceDefs
+
+@[expose] public section
 
 /-! Explicit finite Bell monomials, with direction order retained and nonnegative coefficients. -/
 noncomputable section

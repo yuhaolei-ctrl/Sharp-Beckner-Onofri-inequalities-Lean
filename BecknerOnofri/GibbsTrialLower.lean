@@ -1,6 +1,10 @@
-import BecknerOnofri.GibbsPerturbation
-import BecknerOnofri.GridGibbsComparison
-import BecknerOnofri.LocalBesselFourier
+module
+
+public import BecknerOnofri.GibbsPerturbation
+public import BecknerOnofri.GridGibbsComparison
+public import BecknerOnofri.LocalBesselFourier
+
+@[expose] public section
 
 /-! Actual Gibbs trial lower bounds and the product von Mises denominator.
 The Bessel factors are the convergent series already identified with their

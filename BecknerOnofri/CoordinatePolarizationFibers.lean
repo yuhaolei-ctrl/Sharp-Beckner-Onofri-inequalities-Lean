@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationOrbitDistribution
-import BecknerOnofri.EntropyShearer.L1Marginal
+module
+
+public import BecknerOnofri.PolarizationOrbitDistribution
+public import BecknerOnofri.EntropyShearer.L1Marginal
+
+@[expose] public section
 
 /-! Single-coordinate polarizations preserve each circle fiber's full
  distribution. This is stronger than global equimeasurability and is needed

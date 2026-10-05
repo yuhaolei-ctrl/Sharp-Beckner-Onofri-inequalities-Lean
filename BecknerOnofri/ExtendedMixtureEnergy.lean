@@ -1,4 +1,8 @@
-import BecknerOnofri.MixtureComparisonGe12
+module
+
+public import BecknerOnofri.MixtureComparisonGe12
+
+@[expose] public section
 
 /-! Extended nonnegative energies of arbitrary countable cosine mixtures.
 No uniform spatial majorant is assumed in the approximation lemmas. -/

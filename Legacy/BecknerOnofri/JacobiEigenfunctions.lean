@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.JacobiAngular
-import Legacy.BecknerOnofri.ChebyshevDerivativeBound
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
-import Mathlib.MeasureTheory.Function.L2Space
+module
+
+public import Legacy.BecknerOnofri.JacobiAngular
+public import Legacy.BecknerOnofri.ChebyshevDerivativeBound
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
+public import Mathlib.MeasureTheory.Function.L2Space
+
+@[expose] public section
 
 /-! The concrete Dirichlet Jacobi eigenfunctions on `(0, π)`.
 The differential equation below concerns actual derivatives, and orthogonality

@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialMeasureSpherical
-import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
+module
+
+public import BecknerOnofri.RadialMeasureSpherical
+public import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
+
+@[expose] public section
 
 /-! The source's exact twelve-dimensional Haar radial-measure estimate. -/
 noncomputable section

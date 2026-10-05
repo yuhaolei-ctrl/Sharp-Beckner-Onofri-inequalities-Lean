@@ -1,5 +1,9 @@
-import BecknerOnofri.CubeTailBound
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+
+public import BecknerOnofri.CubeTailBound
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-! Exact rational omitted-tail certificates for the 24- and 16-point grids.
 All finite arithmetic and half-integer gamma reductions are checked by Lean. -/

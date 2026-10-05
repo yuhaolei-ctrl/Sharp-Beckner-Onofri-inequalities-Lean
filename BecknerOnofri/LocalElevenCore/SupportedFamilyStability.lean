@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.SupportedFullIdentification
-import BecknerOnofri.LocalElevenCore.SmallSolutionSaddles
-import BecknerOnofri.LocalElevenCore.FullModeLocalBranch
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedFullIdentification
+public import BecknerOnofri.LocalElevenCore.SmallSolutionSaddles
+public import BecknerOnofri.LocalElevenCore.FullModeLocalBranch
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

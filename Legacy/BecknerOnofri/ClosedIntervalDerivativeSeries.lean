@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
+module
+
+public import Legacy.BecknerOnofri.ClosedConvexSmoothSeries
+
+@[expose] public section
 
 /-! Termwise differentiation of a uniformly dominated series on a closed
 interval, including its one-sided boundary derivatives. -/

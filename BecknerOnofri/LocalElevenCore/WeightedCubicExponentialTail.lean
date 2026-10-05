@@ -1,5 +1,9 @@
-import BecknerOnofri.WeightedExponentialTaylorTail
-import BecknerOnofri.LocalElevenCore.WeightedExponentialRemainder
+module
+
+public import BecknerOnofri.WeightedExponentialTaylorTail
+public import BecknerOnofri.LocalElevenCore.WeightedExponentialRemainder
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

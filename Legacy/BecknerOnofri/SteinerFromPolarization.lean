@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationContinuous
+module
+
+public import Legacy.BecknerOnofri.PolarizationContinuous
+
+@[expose] public section
 
 /-! Actual coordinatewise symmetry and monotonicity follow from all
 origin-directed polarization fixed points. -/

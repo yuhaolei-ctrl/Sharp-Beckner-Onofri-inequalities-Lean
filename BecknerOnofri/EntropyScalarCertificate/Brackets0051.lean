@@ -1,7 +1,11 @@
-import BecknerOnofri.ScalarCheckedBessel
-import BecknerOnofri.EntropyScalarCertificate.Bessel0127
-import BecknerOnofri.EntropyScalarCertificate.Bessel0128
-import BecknerOnofri.EntropyScalarCertificate.Bessel0129
+module
+
+public import BecknerOnofri.ScalarCheckedBessel
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0127
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0128
+public import BecknerOnofri.EntropyScalarCertificate.Bessel0129
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.BracketBatch0051
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

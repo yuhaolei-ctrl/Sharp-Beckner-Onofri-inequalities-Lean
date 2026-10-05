@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinCellAssembly
-import BecknerOnofri.EntropyScalarCertificate.Minorant
-import BecknerOnofri.EntropySpinCertificate.Candidates0056
+module
+
+public import BecknerOnofri.SpinCellAssembly
+public import BecknerOnofri.EntropyScalarCertificate.Minorant
+public import BecknerOnofri.EntropySpinCertificate.Candidates0056
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.Spin.IntervalBatch0056
 open CandidateBatch0056 ScalarCertificate ScalarCertificate.CertifiedMinorant
 set_option maxRecDepth 100000

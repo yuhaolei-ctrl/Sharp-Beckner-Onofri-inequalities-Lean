@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Polynomial.Chebyshev
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.Polynomial.Chebyshev
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The formal polynomial part of the Jacobi intertwining argument.
 These are differential identities; Friedrichs domains and fractional powers

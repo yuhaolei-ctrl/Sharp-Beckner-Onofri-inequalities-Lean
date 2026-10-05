@@ -1,5 +1,9 @@
-import BecknerOnofri.BranchDefinitions
-import Legacy.TorusEndpoint.GreenKernelReal
+module
+
+public import BecknerOnofri.BranchDefinitions
+public import Legacy.TorusEndpoint.GreenKernelReal
+
+@[expose] public section
 
 /-! Literal physical-space objects in the two Section 2 gap identities.
 The coefficient is A = 1/(2 β c_d), with c_d = (2π)^d / σ_d.

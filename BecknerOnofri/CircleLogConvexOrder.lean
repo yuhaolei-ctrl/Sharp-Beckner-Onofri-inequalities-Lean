@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleConvexCrossings
+module
+
+public import BecknerOnofri.CircleConvexCrossings
+
+@[expose] public section
 
 /-! Convex order from a continuous convex logarithmic density ratio and
 matching zeroth and first moments. No external crossing theorem is assumed. -/

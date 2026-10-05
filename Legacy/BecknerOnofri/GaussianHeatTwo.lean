@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.GaussianHeatSplit
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import Legacy.BecknerOnofri.GaussianHeatSplit
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 /-! The boundary exponent s = 1 in the actual Gaussian heat splitting. -/
 noncomputable section

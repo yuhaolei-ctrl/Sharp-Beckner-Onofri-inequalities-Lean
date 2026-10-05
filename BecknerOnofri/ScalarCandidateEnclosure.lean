@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarTightEnclosure
-import BecknerOnofri.CircleScalarDefinitions
+module
+
+public import BecknerOnofri.ScalarTightEnclosure
+public import BecknerOnofri.CircleScalarDefinitions
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar

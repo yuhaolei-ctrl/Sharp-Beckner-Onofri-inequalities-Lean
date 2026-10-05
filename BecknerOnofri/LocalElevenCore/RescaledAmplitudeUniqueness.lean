@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.RescaledAmplitudeUniqueness
-import BecknerOnofri.LocalElevenCore.RescaledReducedEquation
-import Mathlib.Analysis.Calculus.ImplicitContDiff
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.RescaledAmplitudeUniqueness
+public import BecknerOnofri.LocalElevenCore.RescaledReducedEquation
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+
+@[expose] public section
 
 /-! Actual analytic full-amplitude implicit branch near the all-active limiting
 point, and uniqueness of its real amplitudes by permutation symmetry. -/

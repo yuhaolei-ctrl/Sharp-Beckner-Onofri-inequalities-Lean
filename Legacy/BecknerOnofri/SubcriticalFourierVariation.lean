@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalGibbs
-import Legacy.TorusEndpoint.GreenKernelReal
+module
+
+public import Legacy.BecknerOnofri.SubcriticalGibbs
+public import Legacy.TorusEndpoint.GreenKernelReal
+
+@[expose] public section
 
 /-! Actual real Fourier perturbations and exact finite-mode Sobolev energy variations. -/
 noncomputable section

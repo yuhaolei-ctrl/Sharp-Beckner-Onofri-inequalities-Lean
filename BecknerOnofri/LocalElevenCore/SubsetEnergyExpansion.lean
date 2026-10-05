@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetEnergyAlgebra
-import BecknerOnofri.AnalyticPitchforkPositive
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetEnergyAlgebra
+public import BecknerOnofri.AnalyticPitchforkPositive
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

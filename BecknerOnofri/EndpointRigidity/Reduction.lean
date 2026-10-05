@@ -1,6 +1,10 @@
-import BecknerOnofri.EndpointRigidity.DensityGibbs
-import BecknerOnofri.EndpointRigidity.Selection
-import BecknerOnofri.GenericCosineRepresentation
+module
+
+public import BecknerOnofri.EndpointRigidity.DensityGibbs
+public import BecknerOnofri.EndpointRigidity.Selection
+public import BecknerOnofri.GenericCosineRepresentation
+
+@[expose] public section
 
 /-! Full finite-entropy rigidity reduces to rigidity of genuine positive cosine
 mixtures. The passage uses the actual Gibbs identity and entropy-preserving

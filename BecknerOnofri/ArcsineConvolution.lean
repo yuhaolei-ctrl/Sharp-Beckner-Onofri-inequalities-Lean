@@ -1,5 +1,9 @@
-import BecknerOnofri.ArcsineProductBins
-import Mathlib.Algebra.Polynomial.BigOperators
+module
+
+public import BecknerOnofri.ArcsineProductBins
+public import Mathlib.Algebra.Polynomial.BigOperators
+
+@[expose] public section
 
 /-! Exact convolution probabilities, as coefficients of a polynomial power.
 This supplies the mathematical meaning of the finite 12-fold bin convolution. -/

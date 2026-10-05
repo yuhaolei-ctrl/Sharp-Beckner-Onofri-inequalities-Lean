@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedAngularPowers
-import BecknerOnofri.Friedrichs.SmoothCosinePower
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularPowers
+public import BecknerOnofri.Friedrichs.SmoothCosinePower
+
+@[expose] public section
 
 /-! The smooth-profile real-power intertwining on the manuscript's actual
 mixed periodic/Dirichlet space, with genuine derivatives on [-1,1]^d. -/

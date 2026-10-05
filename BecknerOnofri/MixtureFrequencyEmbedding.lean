@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureExtendedComparison
-import Mathlib.Data.Finset.Sort
+module
+
+public import BecknerOnofri.CountableMixtureExtendedComparison
+public import Mathlib.Data.Finset.Sort
+
+@[expose] public section
 
 /-! Fourier reindexing for an arbitrary coordinate subset of a cosine mixture. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.ReducedEquation
+module
+
+public import BecknerOnofri.ReducedEquation
+
+@[expose] public section
 
 /-! Every small continuous mean-zero solution of the actual Euler equation
 belongs to the uniquely constructed analytic complementary graph. -/

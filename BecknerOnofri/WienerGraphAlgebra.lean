@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphNorm
-import Mathlib.Algebra.Ring.InjSurj
+module
+
+public import BecknerOnofri.WienerGraphNorm
+public import Mathlib.Algebra.Ring.InjSurj
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

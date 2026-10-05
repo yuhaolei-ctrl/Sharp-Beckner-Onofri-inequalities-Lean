@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphHessianRaw
-import BecknerOnofri.LocalElevenCore.GraphHessian
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphHessianRaw
+public import BecknerOnofri.LocalElevenCore.GraphHessian
+
+@[expose] public section
 
 /-! The mixed graph/complement Hessian vanishes on the full raw L² domain,
 so in particular on every trusted critical-Sobolev complementary direction. -/

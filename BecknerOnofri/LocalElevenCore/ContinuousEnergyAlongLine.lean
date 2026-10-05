@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
-import BecknerOnofri.GibbsPerturbation
+module
+
+public import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
+public import BecknerOnofri.GibbsPerturbation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

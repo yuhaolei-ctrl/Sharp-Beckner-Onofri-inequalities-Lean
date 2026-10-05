@@ -1,7 +1,11 @@
-import BecknerOnofri.CircleFisherBoundary
-import BecknerOnofri.CircleFisherPairing
-import BecknerOnofri.CircleTorusRegularity
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BecknerOnofri.CircleFisherBoundary
+public import BecknerOnofri.CircleFisherPairing
+public import BecknerOnofri.CircleTorusRegularity
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 /-! The genuine circle Fisher integral equals twice the actual Hardy
 coefficient energy for smooth positive even probability densities. -/

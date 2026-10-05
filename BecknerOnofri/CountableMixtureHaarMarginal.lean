@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureL1
-import BecknerOnofri.EntropyShearer.L1Contraction
+module
+
+public import BecknerOnofri.CountableMixtureL1
+public import BecknerOnofri.EntropyShearer.L1Contraction
+
+@[expose] public section
 
 /-! Actual Haar marginalization of unrestricted countable probability mixtures.
 The equality is almost everywhere, as is appropriate on the full L1 domain. -/

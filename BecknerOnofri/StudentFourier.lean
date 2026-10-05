@@ -1,4 +1,8 @@
-import BecknerOnofri.StudentSubordination
+module
+
+public import BecknerOnofri.StudentSubordination
+
+@[expose] public section
 
 /-! Gamma/Gaussian subordination for the actual Euclidean Fourier integral.
 All exchanges are justified by absolute integrability of the mixture. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenStudentDerivative
-import BecknerOnofri.ElevenLogGamma
+module
+
+public import BecknerOnofri.ElevenStudentDerivative
+public import BecknerOnofri.ElevenLogGamma
+
+@[expose] public section
 
 /-! Exact Euclidean entropy of the specified scaled profile, obtained by
 differentiating its true beta integral. -/

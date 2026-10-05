@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Mathlib.Probability.IdentDistrib
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Mathlib.Probability.IdentDistrib
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+
+@[expose] public section
 
 /-! Transparent mathematical objects used by the trusted circle statement.
 There are no existence assumptions or proof certificates in these definitions. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSupportingParabola
+module
+
+public import BecknerOnofri.SpinSupportingParabola
+
+@[expose] public section
 
 /-! Soundness of the manuscript's interval certificates. A candidate's exact
 mass, mean, positivity and residual bound give a lower bound for every

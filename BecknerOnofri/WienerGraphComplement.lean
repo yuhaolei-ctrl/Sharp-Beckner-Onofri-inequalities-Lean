@@ -1,4 +1,8 @@
-import BecknerOnofri.WienerGraphGreen
+module
+
+public import BecknerOnofri.WienerGraphGreen
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenCore.WeightedGibbsCubicRemainder
-import BecknerOnofri.LocalElevenCore.WeightedQuadraticDifference
-import BecknerOnofri.LocalElevenCore.InverseGreenWiener
-import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+module
+
+public import BecknerOnofri.LocalElevenCore.WeightedGibbsCubicRemainder
+public import BecknerOnofri.LocalElevenCore.WeightedQuadraticDifference
+public import BecknerOnofri.LocalElevenCore.InverseGreenWiener
+public import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

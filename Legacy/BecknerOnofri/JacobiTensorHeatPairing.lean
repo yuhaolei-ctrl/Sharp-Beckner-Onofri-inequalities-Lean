@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiTensorHeatComparison
-import Legacy.BecknerOnofri.PositiveKernelComparison
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorHeatComparison
+public import Legacy.BecknerOnofri.PositiveKernelComparison
+
+@[expose] public section
 
 /-! Actual product heat pairings and the spectral-gap L1 bound used for Mellin inversion. -/
 noncomputable section

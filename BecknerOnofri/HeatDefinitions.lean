@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Literal heat semigroup at physical time t on the unit-volume torus.
 The multiplier is exp(-4*pi^2*|k|^2*t); these are definitions only. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenThetaIntegral
+module
+
+public import BecknerOnofri.ElevenThetaIntegral
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+module
+
+public import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+
+@[expose] public section
 
 /-! A quantitative strict endpoint gap for a genuine finite cosine mixture.
 A single positive nonconstant component supplies a fixed latent diagonal event. -/

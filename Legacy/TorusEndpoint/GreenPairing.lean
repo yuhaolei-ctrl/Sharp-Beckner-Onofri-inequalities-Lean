@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.GreenKernelReal
+module
+
+public import Legacy.TorusEndpoint.GreenKernelReal
+
+@[expose] public section
 
 /-!
 # Absolutely convergent Green pairings and a test-function lower-bound criterion

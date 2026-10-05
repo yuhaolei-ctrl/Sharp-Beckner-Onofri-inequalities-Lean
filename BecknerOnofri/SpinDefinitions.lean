@@ -1,6 +1,10 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Data.Nat.Choose.Sum
-import Mathlib.Data.Finset.Sort
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Data.Nat.Choose.Sum
+public import Mathlib.Data.Finset.Sort
+
+@[expose] public section
 
 /-! Exact definitions from §5.2.5 of the manuscript dated 2026-09-21.
 All matrix entries are generated from their binomial formulas. The domain

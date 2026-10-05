@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleEqualityClassification
-import Legacy.BecknerOnofri.FiniteEnergyGreenIdentification
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityClassification
+public import Legacy.BecknerOnofri.FiniteEnergyGreenIdentification
+
+@[expose] public section
 
 /-! The complete circle equality statements, including arbitrary means,
 finite-entropy densities and the manuscript's singular Green integral. -/

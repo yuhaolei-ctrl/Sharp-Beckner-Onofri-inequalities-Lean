@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.EndpointNormalization
-import Mathlib.Analysis.PSeries
-import Mathlib.Analysis.Normed.Ring.InfiniteSum
+module
+
+public import Legacy.TorusEndpoint.EndpointNormalization
+public import Mathlib.Analysis.PSeries
+public import Mathlib.Analysis.Normed.Ring.InfiniteSum
+
+@[expose] public section
 
 /-!
 # Square summability of the actual critical Green multiplier
@@ -77,7 +81,7 @@ lemma shifted_radial_inv_le_product {d : ℕ} (k : Frequency d) :
   have hprod : (∏ j : Fin d, (1 + (k j : ℝ) ^ 2)) ≤ (1 + radiusSq k) ^ d := by
     calc
       _ ≤ ∏ _ : Fin d, (1 + radiusSq k) := by
-        apply Finset.prod_le_prod
+        apply Finset.prod_le_prod₀
         · intro j _
           positivity
         · intro j _

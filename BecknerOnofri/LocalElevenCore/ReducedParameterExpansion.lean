@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ReducedParameterExpansion
-import BecknerOnofri.LocalElevenCore.ComplementParameterBound
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ReducedParameterExpansion
+public import BecknerOnofri.LocalElevenCore.ComplementParameterBound
+
+@[expose] public section
 
 /-! The exact cubic reduced equation with a quantitative joint parameter remainder. -/
 noncomputable section

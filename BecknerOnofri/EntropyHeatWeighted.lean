@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatLarge
-import Mathlib.Analysis.SpecialFunctions.Exp
+module
+
+public import BecknerOnofri.EntropyHeatLarge
+public import Mathlib.Analysis.SpecialFunctions.Exp
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

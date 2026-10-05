@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuadraticSchur
-import BecknerOnofri.LocalElevenCore.QuadraticResolvent
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuadraticSchur
+public import BecknerOnofri.LocalElevenCore.QuadraticResolvent
+
+@[expose] public section
 
 /-! Exact quartic Schur contribution of the genuine quadratic slaved mode. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialPoissonImages
+module
+
+public import BecknerOnofri.RadialPoissonImages
+
+@[expose] public section
 
 /-! Exact diagonal minima for the finite five-symbol Poisson image set. -/
 noncomputable section

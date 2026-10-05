@@ -1,5 +1,9 @@
-import BecknerOnofri.GibbsTrialLower
-import BecknerOnofri.GinibreStrictCovariance
+module
+
+public import BecknerOnofri.GibbsTrialLower
+public import BecknerOnofri.GinibreStrictCovariance
+
+@[expose] public section
 
 /-! Derivatives of the actual Bessel ratios, obtained from the already
 proved Gibbs integral representation and covariance derivative. -/

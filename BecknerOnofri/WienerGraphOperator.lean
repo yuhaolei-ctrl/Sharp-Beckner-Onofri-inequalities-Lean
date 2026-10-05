@@ -1,4 +1,8 @@
-import BecknerOnofri.WienerGraphNorm
+module
+
+public import BecknerOnofri.WienerGraphNorm
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

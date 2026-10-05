@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CosineMomentWeight
+module
+
+public import Legacy.BecknerOnofri.CosineMomentWeight
+
+@[expose] public section
 
 /-! Passing almost-everywhere polarization fixed points to actual pointwise
 reflection inequalities for continuous functions, including null boundary faces. -/

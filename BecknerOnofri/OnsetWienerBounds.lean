@@ -1,4 +1,8 @@
-import BecknerOnofri.OnsetCompactness
+module
+
+public import BecknerOnofri.OnsetCompactness
+
+@[expose] public section
 
 /-! Quantitative polynomial Wiener estimates for actual Euler optimizers. -/
 noncomputable section

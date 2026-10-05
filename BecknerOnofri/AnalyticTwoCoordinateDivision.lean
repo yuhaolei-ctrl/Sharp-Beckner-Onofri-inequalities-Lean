@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticParameterDivision
+module
+
+public import BecknerOnofri.AnalyticParameterDivision
+
+@[expose] public section
 
 /-! Analytic divisibility by two scalar coordinates, including the coordinate
 hyperplanes themselves. This is used for the squared-amplitude difference factor. -/

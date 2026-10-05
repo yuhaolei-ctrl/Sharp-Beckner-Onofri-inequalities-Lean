@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
-import Legacy.BecknerOnofri.ExponentialPartitionContinuity
-import Mathlib.Topology.MetricSpace.Lipschitz
+module
+
+public import Legacy.BecknerOnofri.SubcriticalAttainmentDefs
+public import Legacy.BecknerOnofri.ExponentialPartitionContinuity
+public import Mathlib.Topology.MetricSpace.Lipschitz
+
+@[expose] public section
 
 /-! The global rough exponential estimate implies quantitative partition
 continuity on actual critical Sobolev energy balls. -/

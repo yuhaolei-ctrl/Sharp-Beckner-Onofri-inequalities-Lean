@@ -1,24 +1,28 @@
-import BecknerOnofri.ElevenScalarFinite.Case01
-import BecknerOnofri.ElevenScalarFinite.Case02
-import BecknerOnofri.ElevenScalarFinite.Case03
-import BecknerOnofri.ElevenScalarFinite.Case04
-import BecknerOnofri.ElevenScalarFinite.Case05
-import BecknerOnofri.ElevenScalarFinite.Case06
-import BecknerOnofri.ElevenScalarFinite.Case07
-import BecknerOnofri.ElevenScalarFinite.Case08
-import BecknerOnofri.ElevenScalarFinite.Case09
-import BecknerOnofri.ElevenScalarFinite.Case10
-import BecknerOnofri.ElevenScalarFinite.Case11
-import BecknerOnofri.ElevenScalarFinite.Case12
-import BecknerOnofri.ElevenScalarFinite.Case13
-import BecknerOnofri.ElevenScalarFinite.Case14
-import BecknerOnofri.ElevenScalarFinite.Case15
-import BecknerOnofri.ElevenScalarFinite.Case16
-import BecknerOnofri.ElevenScalarFinite.Case17
-import BecknerOnofri.ElevenScalarFinite.Case18
-import BecknerOnofri.ElevenScalarFinite.Case19
-import BecknerOnofri.ElevenScalarFinite.Case20
-import BecknerOnofri.ElevenScalarFinite.Case21
+module
+
+public import BecknerOnofri.ElevenScalarFinite.Case01
+public import BecknerOnofri.ElevenScalarFinite.Case02
+public import BecknerOnofri.ElevenScalarFinite.Case03
+public import BecknerOnofri.ElevenScalarFinite.Case04
+public import BecknerOnofri.ElevenScalarFinite.Case05
+public import BecknerOnofri.ElevenScalarFinite.Case06
+public import BecknerOnofri.ElevenScalarFinite.Case07
+public import BecknerOnofri.ElevenScalarFinite.Case08
+public import BecknerOnofri.ElevenScalarFinite.Case09
+public import BecknerOnofri.ElevenScalarFinite.Case10
+public import BecknerOnofri.ElevenScalarFinite.Case11
+public import BecknerOnofri.ElevenScalarFinite.Case12
+public import BecknerOnofri.ElevenScalarFinite.Case13
+public import BecknerOnofri.ElevenScalarFinite.Case14
+public import BecknerOnofri.ElevenScalarFinite.Case15
+public import BecknerOnofri.ElevenScalarFinite.Case16
+public import BecknerOnofri.ElevenScalarFinite.Case17
+public import BecknerOnofri.ElevenScalarFinite.Case18
+public import BecknerOnofri.ElevenScalarFinite.Case19
+public import BecknerOnofri.ElevenScalarFinite.Case20
+public import BecknerOnofri.ElevenScalarFinite.Case21
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.Eleven.ScalarFinite
 open Legacy.D10.FiniteScalar Legacy.BecknerOnofri.FiniteScalar
 set_option maxHeartbeats 0

@@ -1,5 +1,9 @@
-import BecknerOnofri.WienerGraphNorm
-import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+module
+
+public import BecknerOnofri.WienerGraphNorm
+public import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

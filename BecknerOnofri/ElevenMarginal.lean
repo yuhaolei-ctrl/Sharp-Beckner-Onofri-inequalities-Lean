@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenEuclideanMass
+module
+
+public import BecknerOnofri.ElevenEuclideanMass
+
+@[expose] public section
 
 /-! The actual first-coordinate marginal in Section 4, by integrating the
 remaining ten coordinates using the beta integral. -/

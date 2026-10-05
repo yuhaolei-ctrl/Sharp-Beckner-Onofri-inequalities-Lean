@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ActiveAmplitudeEquations
-import BecknerOnofri.AnalyticLinearFactorUnique
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveAmplitudeEquations
+public import BecknerOnofri.AnalyticLinearFactorUnique
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

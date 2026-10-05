@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.CoefficientEndpointReduction
-import Legacy.TorusEndpoint.PhysicalFiniteFourier
+module
+
+public import Legacy.TorusEndpoint.CoefficientEndpointReduction
+public import Legacy.TorusEndpoint.PhysicalFiniteFourier
+
+@[expose] public section
 
 /-! Finite interaction bounds for actual kernels with Fourier multipliers
 dominated by the Green multiplier. Singular-kernel passage is a separate task. -/

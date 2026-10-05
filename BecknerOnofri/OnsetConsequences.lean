@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyMainTheorems
-import BecknerOnofri.OrderParameterOnset
-import BecknerOnofri.OrderParameterShell
-import BecknerOnofri.QuadraticOnsetDerivative
+module
+
+public import BecknerOnofri.EntropyMainTheorems
+public import BecknerOnofri.OrderParameterOnset
+public import BecknerOnofri.OrderParameterShell
+public import BecknerOnofri.QuadraticOnsetDerivative
+
+@[expose] public section
 
 /-! Unconditional source-facing consequences of the full high-dimensional route. -/
 noncomputable section

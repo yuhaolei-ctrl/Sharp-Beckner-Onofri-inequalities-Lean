@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenCore.SubsetCubic
-import BecknerOnofri.AnalyticPitchforkPositive
-import BecknerOnofri.LocalElevenCore.GraphRegularity
-import BecknerOnofri.LocalElevenCore.GraphCritical
-import BecknerOnofri.LocalElevenCore.EulerEquation
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetCubic
+public import BecknerOnofri.AnalyticPitchforkPositive
+public import BecknerOnofri.LocalElevenCore.GraphRegularity
+public import BecknerOnofri.LocalElevenCore.GraphCritical
+public import BecknerOnofri.LocalElevenCore.EulerEquation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

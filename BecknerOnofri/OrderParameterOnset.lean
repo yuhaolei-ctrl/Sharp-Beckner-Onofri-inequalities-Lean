@@ -1,6 +1,10 @@
-import BecknerOnofri.OrderParameterDefinitions
-import BecknerOnofri.PhysicalBranchProperties
-import BecknerOnofri.GlobalOptimizerClassification
+module
+
+public import BecknerOnofri.OrderParameterDefinitions
+public import BecknerOnofri.PhysicalBranchProperties
+public import BecknerOnofri.GlobalOptimizerClassification
+
+@[expose] public section
 
 /-! Density first-shell order parameter, uniformly over every global optimizer.
 The proof uses the exact Euler multiplier and the diagonal amplitude estimate. -/

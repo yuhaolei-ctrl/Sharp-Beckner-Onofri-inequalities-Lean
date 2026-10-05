@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleBoundaryHeat
+module
+
+public import Legacy.BecknerOnofri.CircleBoundaryHeat
+
+@[expose] public section
 
 /-! Actual product heat kernels on (0,pi)^d: Neumann in inactive coordinates,
 Dirichlet in active coordinates. Strict comparison uses a genuine reflected heat factor. -/
@@ -36,7 +40,7 @@ theorem neumannKernel_pos {d : ℕ} {t : ℝ} (ht : 0 < t) (x y : Fin d → ℝ)
 theorem kernel_le_neumann {d : ℕ} {t : ℝ} (ht : 0 < t) (active : Finset (Fin d))
     {x y : Fin d → ℝ} (hx : x ∈ interiorCube d) (hy : y ∈ interiorCube d) :
     kernel active t x y ≤ neumannKernel t x y := by
-  apply Finset.prod_le_prod (fun i _ => (factor_pos ht active hx hy i).le)
+  apply Finset.prod_le_prod₀ (fun i _ => (factor_pos ht active hx hy i).le)
   intro i _
   split_ifs
   · exact (dirichletPiHeat_lt_neumann ht _ _).le
@@ -57,7 +61,7 @@ theorem kernel_lt_neumann {d : ℕ} {t : ℝ} (ht : 0 < t) (active : Finset (Fin
 theorem kernel_antitone_active {d : ℕ} {t : ℝ} (ht : 0 < t) {active larger : Finset (Fin d)}
     (hsub : active ⊆ larger) {x y : Fin d → ℝ} (hx : x ∈ interiorCube d) (hy : y ∈ interiorCube d) :
     kernel larger t x y ≤ kernel active t x y := by
-  apply Finset.prod_le_prod (fun i _ => (factor_pos ht larger hx hy i).le)
+  apply Finset.prod_le_prod₀ (fun i _ => (factor_pos ht larger hx hy i).le)
   intro i _
   by_cases hi : i ∈ active
   · rw [if_pos hi,if_pos (hsub hi)]

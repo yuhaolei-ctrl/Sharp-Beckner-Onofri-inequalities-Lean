@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ThetaCertificate
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.NormNum
+module
+
+public import Legacy.BecknerOnofri.ThetaCertificate
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # A finite theta-polynomial certificate

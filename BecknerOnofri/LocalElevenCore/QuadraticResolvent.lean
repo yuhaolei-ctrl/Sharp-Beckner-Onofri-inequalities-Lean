@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuadraticResolvent
-import BecknerOnofri.QuadraticPairing
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuadraticResolvent
+public import BecknerOnofri.QuadraticPairing
+
+@[expose] public section
 
 /-! The genuine complement resolvent (D−I)⁻¹ and its exact finite-mode action. -/
 noncomputable section

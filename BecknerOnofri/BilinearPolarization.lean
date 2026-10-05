@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PolarizationPairing
+module
+
+public import Legacy.BecknerOnofri.PolarizationPairing
+
+@[expose] public section
 
 /-! The genuine four-point sorting comparison for two independent functions. -/
 noncomputable section

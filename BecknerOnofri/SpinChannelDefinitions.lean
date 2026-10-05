@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinCountDefinitions
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.SpinCountDefinitions
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! The actual binary-spin channel and its joint moments. -/
 noncomputable section

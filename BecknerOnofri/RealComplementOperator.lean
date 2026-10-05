@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementSobolev
+module
+
+public import BecknerOnofri.ComplementSobolev
+
+@[expose] public section
 
 /-! The real complete Sobolev Fourier complement and its actual bounded inverse.
 Conjugate symmetry is a proved invariant, and decoding yields real H^s functions. -/

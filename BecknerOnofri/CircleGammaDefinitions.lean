@@ -1,7 +1,11 @@
-import BecknerOnofri.CircleRateDefinitions
-import BecknerOnofri.CircleScalarDefinitions
-import BecknerOnofri.CircleWeightDefinitions
-import BecknerOnofri.SpinProductDefinitions
+module
+
+public import BecknerOnofri.CircleRateDefinitions
+public import BecknerOnofri.CircleScalarDefinitions
+public import BecknerOnofri.CircleWeightDefinitions
+public import BecknerOnofri.SpinProductDefinitions
+
+@[expose] public section
 
 /-! The source's h(t), I(t), and γ(t). The inverse is only used after
 existence is established on the domain in question. The four-point minimum

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.FiniteAtomCoefficients
-import Mathlib.Analysis.Complex.Basic
+module
+
+public import Legacy.TorusEndpoint.FiniteAtomCoefficients
+public import Mathlib.Analysis.Complex.Basic
+
+@[expose] public section
 
 /-! Complete positive-integer words for the equality-sensitive circle
 exponential-coefficient argument. -/

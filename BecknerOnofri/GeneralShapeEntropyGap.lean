@@ -1,7 +1,11 @@
-import BecknerOnofri.GeneralShapeFourierEntropy
-import BecknerOnofri.SelectedEntropyRigidity
-import BecknerOnofri.EntropyCertifiedWitness
-import BecknerOnofri.EntropyTailCertifiedScalar
+module
+
+public import BecknerOnofri.GeneralShapeFourierEntropy
+public import BecknerOnofri.SelectedEntropyRigidity
+public import BecknerOnofri.EntropyCertifiedWitness
+public import BecknerOnofri.EntropyTailCertifiedScalar
+
+@[expose] public section
 
 /-! The full nonstationary entropy comparison from the shape assumptions,
 using the already checked scalar and spin certificates. -/

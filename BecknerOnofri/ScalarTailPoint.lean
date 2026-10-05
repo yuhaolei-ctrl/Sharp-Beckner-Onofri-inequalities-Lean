@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarLogBesselEndpoints
-import BecknerOnofri.CircleTailClosure
+module
+
+public import BecknerOnofri.ScalarLogBesselEndpoints
+public import BecknerOnofri.CircleTailClosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar EntropyLogCertificate

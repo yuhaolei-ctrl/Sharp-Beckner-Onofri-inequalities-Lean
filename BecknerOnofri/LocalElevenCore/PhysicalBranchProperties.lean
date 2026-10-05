@@ -1,10 +1,14 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.PhysicalBranchProperties
-import BecknerOnofri.LocalElevenCore.DiagonalProfile
-import BecknerOnofri.LocalElevenCore.GraphTranslationTangents
-import BecknerOnofri.LocalElevenCore.GraphCritical
-import BecknerOnofri.LocalElevenCore.EulerEquation
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.PhysicalBranchProperties
+public import BecknerOnofri.LocalElevenCore.DiagonalProfile
+public import BecknerOnofri.LocalElevenCore.GraphTranslationTangents
+public import BecknerOnofri.LocalElevenCore.GraphCritical
+public import BecknerOnofri.LocalElevenCore.EulerEquation
+
+@[expose] public section
 
 /-! All non-Hessian fields of the actual physical full-mode branch, including
 its exact Fourier stationarity and actual raw translation tangent independence. -/

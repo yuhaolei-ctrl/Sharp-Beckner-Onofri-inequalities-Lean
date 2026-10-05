@@ -1,6 +1,10 @@
-import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Mathlib.MeasureTheory.Function.LocallyIntegrable
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Mathlib.MeasureTheory.Function.LocallyIntegrable
+
+@[expose] public section
 
 /-!
 # From polynomial integral bounds to an exponential integral bound

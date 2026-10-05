@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedAngularPotential
-import BecknerOnofri.Friedrichs.MixedGradientLimit
-import BecknerOnofri.Friedrichs.FormLift
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularPotential
+public import BecknerOnofri.Friedrichs.MixedGradientLimit
+public import BecknerOnofri.Friedrichs.FormLift
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

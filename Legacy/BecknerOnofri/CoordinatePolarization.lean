@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CoordinateReflection
-import Legacy.BecknerOnofri.ExponentialPartitionContinuity
+module
+
+public import Legacy.BecknerOnofri.CoordinateReflection
+public import Legacy.BecknerOnofri.ExponentialPartitionContinuity
+
+@[expose] public section
 
 /-! Genuine half-circle max/min polarization preserves every integrable scalar distributional statistic. -/
 noncomputable section

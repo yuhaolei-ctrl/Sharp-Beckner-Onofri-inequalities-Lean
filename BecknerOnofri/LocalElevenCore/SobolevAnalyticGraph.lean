@@ -1,5 +1,9 @@
-import BecknerOnofri.SobolevAnalyticGraphDefinitions
-import BecknerOnofri.WienerGraphIdentification
+module
+
+public import BecknerOnofri.SobolevAnalyticGraphDefinitions
+public import BecknerOnofri.WienerGraphIdentification
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.LocalEleven

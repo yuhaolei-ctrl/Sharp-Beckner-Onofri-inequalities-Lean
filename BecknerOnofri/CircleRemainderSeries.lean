@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleDeficitDefinitions
-import BecknerOnofri.CircleDensityParseval
-import BecknerOnofri.CircleRemainderKernel
+module
+
+public import BecknerOnofri.CircleDeficitDefinitions
+public import BecknerOnofri.CircleDensityParseval
+public import BecknerOnofri.CircleRemainderKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

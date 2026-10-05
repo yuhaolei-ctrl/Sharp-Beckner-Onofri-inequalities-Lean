@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.Asymptotics.Lemmas
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+public import Mathlib.Analysis.Asymptotics.Lemmas
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! A quadratic right onset attached to a zero left phase has zero derivative. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusFlow
+module
+
+public import BecknerOnofri.CircleTorusFlow
+
+@[expose] public section
 
 /-! Uniform bounds along the actual positive-time Poisson flow. -/
 noncomputable section

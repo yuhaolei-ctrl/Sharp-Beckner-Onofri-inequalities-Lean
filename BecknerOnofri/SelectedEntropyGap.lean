@@ -1,6 +1,10 @@
-import BecknerOnofri.SelectedEntropyTail
-import BecknerOnofri.SpinCubeEnergy
-import BecknerOnofri.EntropyEnergySplit
+module
+
+public import BecknerOnofri.SelectedEntropyTail
+public import BecknerOnofri.SpinCubeEnergy
+public import BecknerOnofri.EntropyEnergySplit
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

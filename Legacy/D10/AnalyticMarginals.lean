@@ -1,4 +1,8 @@
-import Legacy.D10.Analytic
+module
+
+public import Legacy.D10.Analytic
+
+@[expose] public section
 
 /-!
 # Actual coordinate marginals and entropy subadditivity

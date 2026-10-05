@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.EndpointSharpnessHeat
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import Legacy.TorusEndpoint.EndpointSharpnessHeat
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 /-!
 # Quantitative concentration sharpness for the actual Green kernel

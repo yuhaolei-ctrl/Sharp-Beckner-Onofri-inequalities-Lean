@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.ChebyshevMixedSeries
-import Legacy.BecknerOnofri.JacobiTensorBasis
+module
+
+public import Legacy.BecknerOnofri.ChebyshevMixedSeries
+public import Legacy.BecknerOnofri.JacobiTensorBasis
+
+@[expose] public section
 
 /-! The genuine angular conjugates of differentiated Fourier-Chebyshev
 terms are scalar multiples of the concrete normalized tensor eigenfunctions.
@@ -37,7 +41,7 @@ theorem angularCube_coordinate {d : ℕ} (x : Fin d → ℝ) (i : Fin d) :
 
 theorem weight_norm_le {d : ℕ} (is : List (Fin d)) (x : Fin d → ℝ) : ‖weight is x‖ ≤ 1 := by
   rw [weight, norm_prod]
-  apply Finset.prod_le_one (fun _ _ => norm_nonneg _)
+  apply Finset.prod_le_one₀ (fun _ _ => norm_nonneg _)
   intro i _
   rw [norm_pow]
   exact pow_le_one₀ (norm_nonneg _) (by simpa only [Real.norm_eq_abs] using Real.abs_sin_le_one (x i))

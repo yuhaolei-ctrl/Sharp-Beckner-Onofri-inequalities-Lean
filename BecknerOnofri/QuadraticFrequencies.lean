@@ -1,5 +1,9 @@
-import BecknerOnofri.ComplementGap
-import BecknerOnofri.FirstShellSharpness
+module
+
+public import BecknerOnofri.ComplementGap
+public import BecknerOnofri.FirstShellSharpness
+
+@[expose] public section
 
 /-! Exact frequency identities for the quadratic first-shell modes. -/
 noncomputable section

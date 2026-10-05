@@ -1,5 +1,9 @@
-import BecknerOnofri.Definitions
-import Mathlib.MeasureTheory.Integral.Marginal
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.MeasureTheory.Integral.Marginal
+
+@[expose] public section
 
 /-! Actual ordered conditional densities on normalized product Haar space. -/
 

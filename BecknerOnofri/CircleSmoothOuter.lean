@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleOuterFactorization
-import BecknerOnofri.CircleTorusRegularity
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BecknerOnofri.CircleOuterFactorization
+public import BecknerOnofri.CircleTorusRegularity
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 /-! The manuscript's smooth positive even circle density has a real Hardy factor.
 Weighted absolute Fourier regularity is derived from C³ smoothness, not assumed. -/

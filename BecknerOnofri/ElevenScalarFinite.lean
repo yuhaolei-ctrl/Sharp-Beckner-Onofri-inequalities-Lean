@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenScalarFinite.Certificates
-import BecknerOnofri.ElevenConstants
-import BecknerOnofri.ElevenScalarDefinitions
-import Legacy.BecknerOnofri.LatticePolynomialBridge
+module
+
+public import BecknerOnofri.ElevenScalarFinite.Certificates
+public import BecknerOnofri.ElevenConstants
+public import BecknerOnofri.ElevenScalarDefinitions
+public import Legacy.BecknerOnofri.LatticePolynomialBridge
+
+@[expose] public section
 
 /-! Section 4's strict scalar gap for 1 ≤ n ≤ 21, on the actual binomial
 lattice sum. The positive polynomial tail is included using an upper bound

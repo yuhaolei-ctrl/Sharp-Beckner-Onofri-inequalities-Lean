@@ -1,4 +1,8 @@
-import BecknerOnofri.ReciprocalGaussianMoments
+module
+
+public import BecknerOnofri.ReciprocalGaussianMoments
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set Filter

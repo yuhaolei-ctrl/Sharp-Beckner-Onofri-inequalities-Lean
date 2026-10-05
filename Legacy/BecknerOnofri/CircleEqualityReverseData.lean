@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CircleEqualityEnergy
-import Legacy.BecknerOnofri.SubcriticalWiener
-import Legacy.BecknerOnofri.CircleMilinEquality
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityEnergy
+public import Legacy.BecknerOnofri.SubcriticalWiener
+public import Legacy.BecknerOnofri.CircleMilinEquality
+
+@[expose] public section
 
 /-! Actual positive Fourier data of a real circle potential. -/
 noncomputable section

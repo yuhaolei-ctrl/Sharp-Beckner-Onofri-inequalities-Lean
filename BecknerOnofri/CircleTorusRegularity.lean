@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleFourierRegularity
-import BecknerOnofri.CircleOuterDefinitions
+module
+
+public import BecknerOnofri.CircleFourierRegularity
+public import BecknerOnofri.CircleOuterDefinitions
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

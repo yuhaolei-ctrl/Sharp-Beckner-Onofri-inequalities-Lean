@@ -1,7 +1,11 @@
-import BecknerOnofri.FullSobolevEmbedding
-import BecknerOnofri.SubspectralLocalUniqueness
-import BecknerOnofri.EulerEquation
-import BecknerOnofri.PotentialRigidity
+module
+
+public import BecknerOnofri.FullSobolevEmbedding
+public import BecknerOnofri.SubspectralLocalUniqueness
+public import BecknerOnofri.EulerEquation
+public import BecknerOnofri.PotentialRigidity
+
+@[expose] public section
 
 /-! Local uniqueness on the full raw H^d domain, using its continuous
 representative and the exact Fourier form of the Euler equation. -/

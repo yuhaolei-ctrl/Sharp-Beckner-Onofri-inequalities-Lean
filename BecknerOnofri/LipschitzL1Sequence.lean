@@ -1,5 +1,9 @@
-import BecknerOnofri.LipschitzL1Approximation
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import BecknerOnofri.LipschitzL1Approximation
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Legacy.TorusEndpoint

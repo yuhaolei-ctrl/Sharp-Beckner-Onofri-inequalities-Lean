@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleEqualityComplete
-import Legacy.BecknerOnofri.CollapseDivergence
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityComplete
+public import Legacy.BecknerOnofri.CollapseDivergence
+
+@[expose] public section
 
 /-! A single checked proposition collecting the complete low-dimensional
 manuscript theorem and its coefficient/pressure consequences. -/

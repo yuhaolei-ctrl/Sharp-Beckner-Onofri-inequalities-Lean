@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyShearer.Marginal
-import BecknerOnofri.Entropy
+module
+
+public import BecknerOnofri.EntropyShearer.Marginal
+public import BecknerOnofri.Entropy
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Function

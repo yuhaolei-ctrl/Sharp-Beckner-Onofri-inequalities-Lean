@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Fourier.AddCircleMulti
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Fourier.AddCircleMulti
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Unit-volume cubic torus and finite Fourier Parseval identity.
 No endpoint inequality or kernel identity is asserted in this module. -/

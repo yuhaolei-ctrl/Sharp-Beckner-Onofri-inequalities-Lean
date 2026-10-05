@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleBesselSupersolution
+module
+
+public import BecknerOnofri.CircleBesselSupersolution
+
+@[expose] public section
 
 /-! The explicit logarithmic comparison used by the manuscript for the
 remaining mean range t≥0.999. -/

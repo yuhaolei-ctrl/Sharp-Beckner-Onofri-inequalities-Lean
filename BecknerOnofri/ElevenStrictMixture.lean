@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenMixture
-import Legacy.BecknerOnofri.StrictCountableMixture
+module
+
+public import BecknerOnofri.ElevenMixture
+public import Legacy.BecknerOnofri.StrictCountableMixture
+
+@[expose] public section
 noncomputable section
 open Finset MeasureTheory Legacy.TorusEndpoint Filter
 open scoped BigOperators Topology

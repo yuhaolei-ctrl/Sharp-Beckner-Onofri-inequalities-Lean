@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.EulerUnitProfiles
-import Legacy.BecknerOnofri.NormalizedExponentialPartials
-import Legacy.BecknerOnofri.SubcriticalEulerEnergy
-import Legacy.BecknerOnofri.HeatEndpointReduction
-import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+module
+
+public import Legacy.BecknerOnofri.EulerUnitProfiles
+public import Legacy.BecknerOnofri.NormalizedExponentialPartials
+public import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+public import Legacy.BecknerOnofri.HeatEndpointReduction
+public import Legacy.BecknerOnofri.LowDimensionMixtureEndpoint
+
+@[expose] public section
 
 /-! The endpoint consequence of the remaining higher-Jacobi derivative sign
 statement. Selection, smoothness, profile identification, Bell expansion,

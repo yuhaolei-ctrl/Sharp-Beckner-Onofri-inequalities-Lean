@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleEqualityFamily
+module
+
+public import Legacy.BecknerOnofri.CircleEqualityFamily
+
+@[expose] public section
 
 /-! Actual critical Sobolev membership and equality for the conformal circle family. -/
 noncomputable section

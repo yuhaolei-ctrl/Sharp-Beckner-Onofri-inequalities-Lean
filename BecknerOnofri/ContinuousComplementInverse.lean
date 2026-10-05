@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenHilbertContinuous
-import BecknerOnofri.ContinuousFirstShell
+module
+
+public import BecknerOnofri.GreenHilbertContinuous
+public import BecknerOnofri.ContinuousFirstShell
+
+@[expose] public section
 
 /-! The actual Green linearization on the closed continuous first-shell complement
 is a bounded real Banach-space isomorphism. The inverse is obtained from the

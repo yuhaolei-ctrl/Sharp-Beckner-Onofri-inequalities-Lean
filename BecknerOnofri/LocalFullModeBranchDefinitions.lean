@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! Full local Morse--Bott branch from the local critical-branch proposition.
 The assertion applies at d=11 as well as d≥12; it contains no global-minimality claim. -/

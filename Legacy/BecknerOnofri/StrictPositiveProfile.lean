@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.StrictCountableMixture
+module
+
+public import Legacy.BecknerOnofri.StrictCountableMixture
+
+@[expose] public section
 
 /-! Equality forces the actual density to be uniform for summable positive
 cosine series, and hence for smooth absolutely monotone closed-cube profiles.

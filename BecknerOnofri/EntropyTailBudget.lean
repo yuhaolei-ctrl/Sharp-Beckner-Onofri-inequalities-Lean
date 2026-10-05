@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureTransfer
-import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+module
+
+public import BecknerOnofri.CountableMixtureTransfer
+public import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+
+@[expose] public section
 
 /-! The actual harmonic/binomial tail budget R_n from §5.2.2 of the
 2026-09-21 manuscript, including its all-large-index logarithmic lower bound. -/

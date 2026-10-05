@@ -1,5 +1,9 @@
-import BecknerOnofri.PressureDuality
-import BecknerOnofri.Constants
+module
+
+public import BecknerOnofri.PressureDuality
+public import BecknerOnofri.Constants
+
+@[expose] public section
 
 /-! Transfer of the scalar pressure asymptotic by the exact physical duality.
 The pressure asymptotic remains an explicit premise, not an assumed axiom. -/

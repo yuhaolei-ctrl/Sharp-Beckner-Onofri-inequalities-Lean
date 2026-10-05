@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatLargeTime
+module
+
+public import Legacy.BecknerOnofri.CircleHeatLargeTime
+
+@[expose] public section
 
 /-! Real Gaussian derivative estimates used in the small-time circle heat proof. -/
 noncomputable section

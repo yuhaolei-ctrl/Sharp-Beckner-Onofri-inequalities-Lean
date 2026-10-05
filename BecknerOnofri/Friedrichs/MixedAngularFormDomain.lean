@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedAngularVectors
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularVectors
+
+@[expose] public section
 
 /-! Sine-weighted tensor profiles belong to the actual mixed spatial form
 closure. The single product cutoff handles all active boundary faces. -/

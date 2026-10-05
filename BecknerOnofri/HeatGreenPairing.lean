@@ -1,6 +1,10 @@
-import BecknerOnofri.MarginalKernelPairing
-import Legacy.BecknerOnofri.GreenExponentialIntegrability
-import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+module
+
+public import BecknerOnofri.MarginalKernelPairing
+public import Legacy.BecknerOnofri.GreenExponentialIntegrability
+public import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+
+@[expose] public section
 
 /-! Normalization of actual heat-kernel interactions and the one-dimensional
 entropy bound for the coordinate reduction. -/

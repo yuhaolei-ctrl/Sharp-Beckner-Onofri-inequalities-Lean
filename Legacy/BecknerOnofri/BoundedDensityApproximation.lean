@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.EndpointClosure
+module
+
+public import Legacy.BecknerOnofri.EndpointClosure
+
+@[expose] public section
 
 /-! Genuine bounded normalized truncations of any probability density.
 Their pointwise convergence and common integrable domination require no

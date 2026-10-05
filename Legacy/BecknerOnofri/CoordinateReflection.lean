@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.HeatDensityApproximation
+module
+
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+
+@[expose] public section
 
 /-! Actual circle half-arcs and measure-preserving coordinate reflections on the Haar torus. -/
 noncomputable section

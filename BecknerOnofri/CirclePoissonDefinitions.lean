@@ -1,4 +1,8 @@
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.CirclePoisson

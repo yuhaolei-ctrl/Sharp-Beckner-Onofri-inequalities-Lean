@@ -1,9 +1,13 @@
+module
+
 /- Replay exact on-disk exports with the pinned Comparator libraries.
 This driver changes only input transport (file streams instead of String buffers)
 and progress reporting. It does not alter matching or kernel algorithms. -/
-import Comparator
-import Lean4Checker.Replay
-import Export.Parse
+public import Comparator
+public import Lean4Checker.Replay
+public import Export.Parse
+
+@[expose] public section
 
 open Lean
 

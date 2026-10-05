@@ -1,7 +1,11 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.MeasureTheory.Constructions.Pi
-import Mathlib.MeasureTheory.Measure.Typeclasses.NullSingletonClass
-import Mathlib.Analysis.Calculus.ContDiff.Operations
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.MeasureTheory.Constructions.Pi
+public import Mathlib.MeasureTheory.Measure.Typeclasses.NullSingletonClass
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

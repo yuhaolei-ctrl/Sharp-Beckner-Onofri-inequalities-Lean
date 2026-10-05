@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Convex.Slope
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Convex.Slope
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The two-sign-change criterion used in the circle convex-order argument.
 It works directly on an observable, so no arcsine change of variables is

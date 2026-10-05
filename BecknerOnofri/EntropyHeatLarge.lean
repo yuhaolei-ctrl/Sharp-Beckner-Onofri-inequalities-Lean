@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyThetaEnclosure
-import Mathlib.Analysis.Complex.ExponentialBounds
-import Mathlib.Algebra.Order.Ring.Abs
+module
+
+public import BecknerOnofri.EntropyThetaEnclosure
+public import Mathlib.Analysis.Complex.ExponentialBounds
+public import Mathlib.Algebra.Order.Ring.Abs
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

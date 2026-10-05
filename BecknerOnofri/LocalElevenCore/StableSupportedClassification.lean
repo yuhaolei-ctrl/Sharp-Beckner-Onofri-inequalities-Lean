@@ -1,8 +1,12 @@
-import BecknerOnofri.StableSupportedClassificationDefinitions
-import BecknerOnofri.LocalElevenCore.SupportedClassification
-import BecknerOnofri.LocalElevenCore.SupportedRawClassification
-import BecknerOnofri.LocalElevenCore.SupportedFamilyStability
-import BecknerOnofri.LocalElevenCore.SupportedFamilyEnergyOrdering
+module
+
+public import BecknerOnofri.StableSupportedClassificationDefinitions
+public import BecknerOnofri.LocalElevenCore.SupportedClassification
+public import BecknerOnofri.LocalElevenCore.SupportedRawClassification
+public import BecknerOnofri.LocalElevenCore.SupportedFamilyStability
+public import BecknerOnofri.LocalElevenCore.SupportedFamilyEnergyOrdering
+
+@[expose] public section
 
 noncomputable section
 open Filter

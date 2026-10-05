@@ -1,5 +1,9 @@
-import BecknerOnofri.SpectralSlice
-import BecknerOnofri.SpectralSliceBase
+module
+
+public import BecknerOnofri.SpectralSlice
+public import BecknerOnofri.SpectralSliceBase
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.FormSubmodule
-import BecknerOnofri.Friedrichs.SpatialOperatorProperties
-import Mathlib.Topology.MetricSpace.Cauchy
+module
+
+public import BecknerOnofri.Friedrichs.FormSubmodule
+public import BecknerOnofri.Friedrichs.SpatialOperatorProperties
+public import Mathlib.Topology.MetricSpace.Cauchy
+
+@[expose] public section
 
 /-! Closedness of the independently defined spatial weak operator graph. -/
 noncomputable section

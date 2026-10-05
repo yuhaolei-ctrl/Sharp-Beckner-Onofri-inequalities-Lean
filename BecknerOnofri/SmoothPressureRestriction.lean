@@ -1,5 +1,9 @@
-import BecknerOnofri.PressureDuality
-import BecknerOnofri.HeatDensitySmooth
+module
+
+public import BecknerOnofri.PressureDuality
+public import BecknerOnofri.HeatDensitySmooth
+
+@[expose] public section
 
 /-! The full pressure supremum can be taken over smooth strictly positive
 densities. Heat entropy contraction and convergence of the actual Fourier

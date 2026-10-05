@@ -1,5 +1,9 @@
-import BecknerOnofri.CriticalGraphCoercivity
-import BecknerOnofri.ReducedCubicParity
+module
+
+public import BecknerOnofri.CriticalGraphCoercivity
+public import BecknerOnofri.ReducedCubicParity
+
+@[expose] public section
 
 /-! The true reduced equation has an isolated zero at critical coupling. -/
 noncomputable section

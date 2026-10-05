@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatCheckedPanels
+module
+
+public import BecknerOnofri.EntropyHeatCheckedPanels
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

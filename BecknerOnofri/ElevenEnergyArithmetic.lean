@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenShellData
-import BecknerOnofri.ElevenShellEnergy
-import BecknerOnofri.EntropyExpRows
+module
+
+public import BecknerOnofri.ElevenShellData
+public import BecknerOnofri.ElevenShellEnergy
+public import BecknerOnofri.EntropyExpRows
+
+@[expose] public section
 
 /-! Rational lower certificates for the one hundred Fourier shells. The
 checker validates square-root brackets, a proved exponential interval, and

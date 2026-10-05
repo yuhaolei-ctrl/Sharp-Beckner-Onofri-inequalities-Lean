@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousComplement
-import BecknerOnofri.GreenContinuous
+module
+
+public import BecknerOnofri.ContinuousComplement
+public import BecknerOnofri.GreenContinuous
+
+@[expose] public section
 
 /-! Explicit interface for the continuous-space local quartic reduction.
 The graph is existentially quantified; its definition contains no selected

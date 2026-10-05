@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinAlgebra
-import Mathlib.Analysis.InnerProductSpace.PiL2
-import Mathlib.Analysis.Convex.Function
+module
+
+public import BecknerOnofri.SpinAlgebra
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+public import Mathlib.Analysis.Convex.Function
+
+@[expose] public section
 
 /-! The manuscript matrix induces an actual seminorm, and its quadratic form
 is convex. These facts justify the geometric steps in the curvature proof. -/

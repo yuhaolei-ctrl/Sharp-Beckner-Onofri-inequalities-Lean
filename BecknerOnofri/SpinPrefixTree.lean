@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinPosteriorJensen
-import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+module
+
+public import BecknerOnofri.SpinPosteriorJensen
+public import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+
+@[expose] public section
 
 /-! The actual finite tree of spin prefixes, with no duplicate prefix events. -/
 

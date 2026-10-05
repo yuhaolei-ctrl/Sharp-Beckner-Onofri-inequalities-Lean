@@ -1,7 +1,11 @@
-import BecknerOnofri.CirclePoissonDefinitions
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.CirclePoissonDefinitions
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

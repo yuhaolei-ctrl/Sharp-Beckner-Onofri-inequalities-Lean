@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Mathlib.Analysis.SpecialFunctions.Complex.CircleAddChar
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Mathlib.Analysis.SpecialFunctions.Complex.CircleAddChar
+
+@[expose] public section
 
 /-!
 # Exact aliasing on the uniform torus grid

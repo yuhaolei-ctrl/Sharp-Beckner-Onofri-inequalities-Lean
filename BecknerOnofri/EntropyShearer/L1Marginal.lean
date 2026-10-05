@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyShearer.Chain
+module
+
+public import BecknerOnofri.EntropyShearer.Chain
+
+@[expose] public section
 
 /-! Haar marginalization on the full L1 domain. The redundant coordinates in
 this full-torus integral have probability mass one. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.Arithmetic
-import BecknerOnofri.RectangleCombinatorics
-import Mathlib.Data.Nat.Choose.Cast
+module
+
+public import BecknerOnofri.Arithmetic
+public import BecknerOnofri.RectangleCombinatorics
+public import Mathlib.Data.Nat.Choose.Cast
+
+@[expose] public section
 
 /-!
 The positive two-coordinate reserve dominates the large-support tail in

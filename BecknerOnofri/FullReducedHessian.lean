@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedHessianCoercivity
-import BecknerOnofri.AngularReducedKernel
+module
+
+public import BecknerOnofri.ReducedHessianCoercivity
+public import BecknerOnofri.AngularReducedKernel
+
+@[expose] public section
 
 /-! The full complex reduced Hessian: real amplitude directions are strictly
 negative for the energy, and exactly the phase directions form its kernel. -/

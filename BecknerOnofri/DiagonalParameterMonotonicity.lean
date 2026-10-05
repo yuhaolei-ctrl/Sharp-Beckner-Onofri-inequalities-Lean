@@ -1,7 +1,11 @@
-import BecknerOnofri.DiagonalScalarBranch
-import BecknerOnofri.AnalyticDerivativeOrder
-import BecknerOnofri.Kappa
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+
+public import BecknerOnofri.DiagonalScalarBranch
+public import BecknerOnofri.AnalyticDerivativeOrder
+public import BecknerOnofri.Kappa
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 /-! Strict monotonicity of the actual analytic parameter branch on positive
 amplitudes, from its proved expansion and exact positivity of κd. -/

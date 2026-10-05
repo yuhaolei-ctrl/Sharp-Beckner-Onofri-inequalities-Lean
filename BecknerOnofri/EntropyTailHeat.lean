@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailGaussian
-import BecknerOnofri.EntropyTailTwo
+module
+
+public import BecknerOnofri.EntropyTailGaussian
+public import BecknerOnofri.EntropyTailTwo
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

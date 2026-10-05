@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.HeatDensityApproximation
-import Legacy.BecknerOnofri.EndpointClosure
+module
+
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+public import Legacy.BecknerOnofri.EndpointClosure
+
+@[expose] public section
 
 /-! A proved reduction of the full finite-entropy endpoint to continuous
 strictly positive densities. The remaining bound on that class is an explicit

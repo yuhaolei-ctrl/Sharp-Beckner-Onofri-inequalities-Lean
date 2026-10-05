@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedAxisDerivative
-import BecknerOnofri.ContinuousComplementBounds
+module
+
+public import BecknerOnofri.ReducedAxisDerivative
+public import BecknerOnofri.ContinuousComplementBounds
+
+@[expose] public section
 
 /-! Uniform quadratic size of the actual implicit complement correction in the amplitude,
 proved by the genuine complement resolvent and absorption of the quadratic Gibbs remainder. -/

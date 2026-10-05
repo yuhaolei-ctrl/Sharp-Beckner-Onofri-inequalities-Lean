@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.FiniteScalarCore
-import Legacy.BecknerOnofri.FiniteWeights
-import Mathlib.Algebra.Polynomial.Eval.Degree
-import Mathlib.Algebra.BigOperators.Field
-import Mathlib.Order.Interval.Finset.Nat
+module
+
+public import Legacy.BecknerOnofri.FiniteScalarCore
+public import Legacy.BecknerOnofri.FiniteWeights
+public import Mathlib.Algebra.Polynomial.Eval.Degree
+public import Mathlib.Algebra.BigOperators.Field
+public import Mathlib.Order.Interval.Finset.Nat
+
+@[expose] public section
 
 /-!
 The certified finite arrays bound the energy of the full radial polynomial.

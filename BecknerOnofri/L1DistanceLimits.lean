@@ -1,4 +1,8 @@
-import BecknerOnofri.L1ContractiveLimit
+module
+
+public import BecknerOnofri.L1ContractiveLimit
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

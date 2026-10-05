@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpHorner
+module
+
+public import BecknerOnofri.EntropyExpHorner
+
+@[expose] public section
 
 /-! Integer implementation of directed rational rounding. These identities
 are the bridge required before the fast integer rehearsal can be kernel used. -/

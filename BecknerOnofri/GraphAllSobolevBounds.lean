@@ -1,4 +1,8 @@
-import BecknerOnofri.GraphWienerBounds
+module
+
+public import BecknerOnofri.GraphWienerBounds
+
+@[expose] public section
 
 /-! Uniform quadratic bounds in every fixed physical Sobolev norm, for the
 actual analytic complementary graph. -/

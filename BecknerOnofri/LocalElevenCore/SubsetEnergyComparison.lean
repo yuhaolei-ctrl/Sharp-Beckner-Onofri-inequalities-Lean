@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetEnergyFamily
-import BecknerOnofri.QuadraticEnergyComparison
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetEnergyFamily
+public import BecknerOnofri.QuadraticEnergyComparison
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

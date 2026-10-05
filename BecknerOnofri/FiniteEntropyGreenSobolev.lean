@@ -1,5 +1,9 @@
-import BecknerOnofri.FiniteEntropyGreenPotential
-import Legacy.BecknerOnofri.EndpointDensityFinitePotential
+module
+
+public import BecknerOnofri.FiniteEntropyGreenPotential
+public import Legacy.BecknerOnofri.EndpointDensityFinitePotential
+
+@[expose] public section
 
 /-! The actual Green convolution on the entire finite-entropy domain, with
 its exact critical Sobolev energy and pairing. -/

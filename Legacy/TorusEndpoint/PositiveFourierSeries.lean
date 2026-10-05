@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GridAliasing
-import Legacy.TorusEndpoint.ScalarExponentialCoefficients
-import Mathlib.Analysis.Normed.Ring.InfiniteSum
+module
+
+public import Legacy.TorusEndpoint.GridAliasing
+public import Legacy.TorusEndpoint.ScalarExponentialCoefficients
+public import Mathlib.Analysis.Normed.Ring.InfiniteSum
+
+@[expose] public section
 
 /-!
 # Nonnegative absolutely summable Fourier series

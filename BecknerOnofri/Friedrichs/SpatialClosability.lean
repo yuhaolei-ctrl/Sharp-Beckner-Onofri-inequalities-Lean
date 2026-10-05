@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.AngularOperatorGraph
-import BecknerOnofri.Friedrichs.ClosedFormTests
-import Legacy.BecknerOnofri.JacobiCompleteness
+module
+
+public import BecknerOnofri.Friedrichs.AngularOperatorGraph
+public import BecknerOnofri.Friedrichs.ClosedFormTests
+public import Legacy.BecknerOnofri.JacobiCompleteness
+
+@[expose] public section
 
 /-! Uniqueness of the derivative and potential components in the spatial form
 closure. Completeness of ordinary cosine and sine-weighted polynomial tests

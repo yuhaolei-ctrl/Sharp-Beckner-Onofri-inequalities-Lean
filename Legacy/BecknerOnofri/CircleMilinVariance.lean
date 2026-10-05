@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleMilinCoefficientCap
+module
+
+public import Legacy.BecknerOnofri.CircleMilinCoefficientCap
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

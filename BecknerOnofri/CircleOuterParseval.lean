@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleOuterLogarithm
-import BecknerOnofri.CircleHardyDefinitions
+module
+
+public import BecknerOnofri.CircleOuterLogarithm
+public import BecknerOnofri.CircleHardyDefinitions
+
+@[expose] public section
 
 /-! Haar normalization of a one-sided boundary factor gives an actual unit
 vector in the real Hardy coefficient space. -/

@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.EntropyVariational
+module
+
+public import Legacy.TorusEndpoint.EntropyVariational
+
+@[expose] public section
 
 /-!
 # Finite real feature tests give a finite entropy lower bound

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.CosineMixture
-import Legacy.BecknerOnofri.LatticePolynomialBridge
-import Legacy.BecknerOnofri.Endpoint
+module
+
+public import Legacy.BecknerOnofri.CosineMixture
+public import Legacy.BecknerOnofri.LatticePolynomialBridge
+public import Legacy.BecknerOnofri.Endpoint
+
+@[expose] public section
 
 /-! Full lattice energies for mixed-index cosine components and their actual
 finite correlated mixtures. Summability is proved from finite Fourier support. -/

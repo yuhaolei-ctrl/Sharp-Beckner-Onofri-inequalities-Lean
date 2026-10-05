@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleWeightDefinitions
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.CircleWeightDefinitions
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Positive-series bounds for the circle remainder weights. The remainder
 is controlled analytically for every truncation order, not by a sampled sum. -/

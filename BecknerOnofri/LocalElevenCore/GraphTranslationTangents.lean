@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.GraphTranslationTangents
-import BecknerOnofri.LocalElevenCore.FirstShellOrbits
-import BecknerOnofri.ContinuousVariations
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.GraphTranslationTangents
+public import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+public import BecknerOnofri.ContinuousVariations
+
+@[expose] public section
 
 /-! Actual spatial translation tangents on the implicit graph, and their
 independence whenever every first-shell mode is nonzero. -/

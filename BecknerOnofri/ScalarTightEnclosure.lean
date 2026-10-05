@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarRoundedEnclosure
+module
+
+public import BecknerOnofri.ScalarRoundedEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 

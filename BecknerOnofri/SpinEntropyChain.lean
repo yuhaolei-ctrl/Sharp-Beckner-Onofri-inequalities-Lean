@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinPrefixTree
-import BecknerOnofri.SpinEntropyChainScalar
+module
+
+public import BecknerOnofri.SpinPrefixTree
+public import BecknerOnofri.SpinEntropyChainScalar
+
+@[expose] public section
 
 /-! The finite spin entropy chain and its comparison with the actual
 conditional angle means. Prefix events are counted exactly once. -/

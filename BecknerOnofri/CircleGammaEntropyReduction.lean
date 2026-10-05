@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleGammaMinimum
+module
+
+public import BecknerOnofri.CircleGammaMinimum
+
+@[expose] public section
 
 /-! Exact final algebra in the quantitative circle entropy estimate.
 The entropy remainder and moment comparison are explicit analytic inputs;

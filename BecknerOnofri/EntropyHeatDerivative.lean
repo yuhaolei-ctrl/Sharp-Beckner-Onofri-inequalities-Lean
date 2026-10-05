@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailCore
-import Mathlib.Analysis.Calculus.SmoothSeries
+module
+
+public import BecknerOnofri.EntropyTailCore
+public import Mathlib.Analysis.Calculus.SmoothSeries
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

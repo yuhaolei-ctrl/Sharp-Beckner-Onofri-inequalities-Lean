@@ -1,7 +1,11 @@
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.Analysis.SpecialFunctions.Exp
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Quantitative exponential partition continuity from actual square-integrability. -/
 noncomputable section

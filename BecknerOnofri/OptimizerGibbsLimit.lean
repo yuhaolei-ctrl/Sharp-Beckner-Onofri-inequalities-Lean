@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EndpointDensityPotentialLimit
-import Legacy.BecknerOnofri.YoungGapLimit
+module
+
+public import Legacy.BecknerOnofri.EndpointDensityPotentialLimit
+public import Legacy.BecknerOnofri.YoungGapLimit
+
+@[expose] public section
 
 /-! An actual finite-entropy primal optimizer is a Gibbs density.
 The proof uses finite Fourier inverse potentials and vanishing Young gaps;

@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyShearer.Contraction
+module
+
+public import BecknerOnofri.EntropyShearer.Contraction
+
+@[expose] public section
 
 /-! Haar-marginal deletion Shearer inequality from proved entropy contraction. -/
 

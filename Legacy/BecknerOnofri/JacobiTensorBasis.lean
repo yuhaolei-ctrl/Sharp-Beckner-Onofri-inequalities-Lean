@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiNeumann
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import Legacy.BecknerOnofri.JacobiNeumann
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Concrete finite products of the normalized Jacobi functions and their spectrum. -/
 noncomputable section
@@ -40,7 +44,7 @@ theorem tensorFunction_bounded {d : ℕ} (a n : Index d) :
   choose C hC using fun i => normalizedFunction_bounded (a i) (n i)
   refine ⟨∏ i, C i, fun x => ?_⟩
   rw [tensorFunction, norm_prod]
-  exact Finset.prod_le_prod (fun _ _ => norm_nonneg _) (fun i _ => hC i (x i))
+  exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _) (fun i _ => hC i (x i))
 
 theorem tensorFunction_memLp {d : ℕ} (a n : Index d) :
     MemLp (tensorFunction a n) 2 (measure d) := by

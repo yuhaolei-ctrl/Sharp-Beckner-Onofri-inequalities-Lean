@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ChebyshevMixedSeries
+module
+
+public import Legacy.BecknerOnofri.ChebyshevMixedSeries
+
+@[expose] public section
 
 /-! Actual mixed partials of the closed cosine profile depend only on the
 coordinate multiplicities. A coordinate that is identically inactive stays

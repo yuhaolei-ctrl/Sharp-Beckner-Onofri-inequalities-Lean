@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenEnergyArithmetic
+module
+
+public import BecknerOnofri.ElevenEnergyArithmetic
+
+@[expose] public section
 /-! Generated candidate brackets; accepted and floor_sum are kernel checks. -/
 namespace BecknerOnofri.HighDim.Eleven.Shell.EnergyData
 set_option maxHeartbeats 0

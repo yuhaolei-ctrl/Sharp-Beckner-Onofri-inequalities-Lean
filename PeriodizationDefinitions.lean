@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenDefinitions
-import Mathlib.Analysis.Calculus.Deriv.Basic
+module
+
+public import BecknerOnofri.ElevenDefinitions
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.Paper2.Periodization

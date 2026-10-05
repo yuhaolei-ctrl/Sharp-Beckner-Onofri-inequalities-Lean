@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenCoordinateComparison
-import Legacy.BecknerOnofri.GreenHeatIntegrability
+module
+
+public import BecknerOnofri.GreenCoordinateComparison
+public import Legacy.BecknerOnofri.GreenHeatIntegrability
+
+@[expose] public section
 
 /-! The coordinate comparison on the Haar torus. All exceptional coordinate
 hyperplanes are removed by their proved zero measure. -/

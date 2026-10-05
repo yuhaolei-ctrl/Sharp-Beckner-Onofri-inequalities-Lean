@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiTensorCompleteness
-import Legacy.BecknerOnofri.SpectralHeatCompact
-import Legacy.TorusEndpoint.GreenMultiplierSummability
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorCompleteness
+public import Legacy.BecknerOnofri.SpectralHeatCompact
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+
+@[expose] public section
 
 /-! The concrete positive Jacobi tensor spectrum, heat and inverse powers.
 The critical inverse symbol is square summable by an injective embedding into

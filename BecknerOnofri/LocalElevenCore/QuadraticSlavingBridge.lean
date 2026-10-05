@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuadraticSlavingBridge
-import BecknerOnofri.LocalElevenCore.QuadraticSchur
-import BecknerOnofri.LocalElevenCore.QuadraticSlaving
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuadraticSlavingBridge
+public import BecknerOnofri.LocalElevenCore.QuadraticSchur
+public import BecknerOnofri.LocalElevenCore.QuadraticSlaving
+
+@[expose] public section
 
 /-! Identification of the actual analytic implicit-map quadratic term with its
 finite Fourier resolvent and Schur coefficient. -/

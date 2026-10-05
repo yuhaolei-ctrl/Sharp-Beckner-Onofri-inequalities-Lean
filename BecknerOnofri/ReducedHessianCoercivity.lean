@@ -1,6 +1,10 @@
-import BecknerOnofri.RescaledAmplitudeUniqueness
-import BecknerOnofri.GraphHessian
-import BecknerOnofri.DiagonalProfile
+module
+
+public import BecknerOnofri.RescaledAmplitudeUniqueness
+public import BecknerOnofri.GraphHessian
+public import BecknerOnofri.DiagonalProfile
+
+@[expose] public section
 
 /-! Positive amplitude Jacobian of the actual reduced equation near the
 all-active onset branch, obtained by continuity from its exact limiting matrix. -/

@@ -1,5 +1,9 @@
-import Legacy.D10.CosinePower
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import Legacy.D10.CosinePower
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! The actual Fourier coefficients and mass of the normalized cosine powers.
 The coefficients are unsquared; squares arise only when computing energy. -/

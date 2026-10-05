@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.SlavedMoments
-import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
-import BecknerOnofri.ContinuousLogPartitionTaylor
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.SlavedMoments
+public import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
+public import BecknerOnofri.ContinuousLogPartitionTaylor
+
+@[expose] public section
 
 /-! Actual moment expansions on the genuine implicit complementary graph. -/
 noncomputable section

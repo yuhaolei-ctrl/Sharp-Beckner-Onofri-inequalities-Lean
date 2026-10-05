@@ -1,6 +1,10 @@
-import Mathlib.Data.Nat.Choose.Cast
-import Mathlib.Data.Nat.Choose.Vandermonde
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Nat.Choose.Cast
+public import Mathlib.Data.Nat.Choose.Vandermonde
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Rational normalized central binomial coefficients

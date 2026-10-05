@@ -1,41 +1,19 @@
 {
-  "registered_targets": 269,
-  "formal_results": 51,
-  "current_source": {
-    "manifest": "../SOURCE_MANIFEST.json",
-    "build": "passed",
-    "axioms": "passed",
-    "source_layout": "passed"
-  },
-  "published_certificate": {
-    "release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005",
-    "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
-    "source_manifest": "certified-source-manifest.json",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
-  },
-  "official_comparator": {
-    "status": "passed",
-    "mode": "local development mode; no Linux sandbox",
-    "targets": 269,
-    "evidence": "verification-evidence.tar.gz in the certificate release"
-  },
-  "con_ron": {
-    "status": "passed",
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046",
-    "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
-    "mode": "verified",
-    "exit_code": 0,
-    "accepted_declaration_records": 1027308
-  },
-  "lean4lean": {
-    "status": "in_progress",
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37356177464",
-    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da"
-  },
-  "independent_natural_language_review": "not_completed",
-  "scope_exclusions": [
-    "Remark 5.6 counterexample is not separately registered",
-    "The displayed cutoff-rate estimate is replaced by proved form-norm convergence"
+  "adaptation_status": "in_progress",
+  "base_commit": "c191a29a8a67b90a97677b693ddb6a7c8b3ffbdc",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "module_headers_migrated": 4814,
+  "challenge_build": "passed",
+  "solution_build": "in_progress_with_compatibility_repairs",
+  "comparator": "not_run",
+  "palomar_registration": "not_submitted",
+  "entries": [
+    "Palomar/comparator-lowdim.json",
+    "Palomar/comparator-highdim.json",
+    "Palomar/comparator-eleven.json"
   ],
-  "evidence_storage": "Full logs and historical attempts are available in GitHub Actions, the certificate release and historical commits; generated evidence is not tracked in the source tree."
+  "historical_certificate": "verified-20261005 applies only to the pre-migration source",
+  "structural_preflight": "passed",
+  "challenge_build_log_sha256": "faee7c177adb6fa640b4f86dcb8f772323658602474a7c70323df8e54ce7a953"
 }

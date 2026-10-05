@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.EulerCosineProfile
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Mathlib.Analysis.Calculus.Deriv.Slope
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+
+public import Legacy.BecknerOnofri.EulerCosineProfile
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+
+@[expose] public section
 
 /-! Steiner monotonicity becomes genuine coordinate monotonicity of the
 closed cosine profile, including its boundary. Its first derivatives are

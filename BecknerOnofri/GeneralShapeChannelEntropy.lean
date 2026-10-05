@@ -1,4 +1,8 @@
-import BecknerOnofri.GeneralShapeEntropyData
+module
+
+public import BecknerOnofri.GeneralShapeEntropyData
+
+@[expose] public section
 
 /-! The full integrated channel entropy estimate for a general smooth
 shape density; no stationarity is assumed. -/

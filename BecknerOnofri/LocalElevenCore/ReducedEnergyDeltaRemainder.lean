@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ReducedEnergyJointExpansion
+module
+
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyJointExpansion
+
+@[expose] public section
 
 /-! The joint remainder in the manuscript's exact variables:
 δ=1−1/μ and S=Σ|zᵢ|². -/

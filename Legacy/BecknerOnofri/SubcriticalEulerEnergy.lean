@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalEuler
-import Legacy.BecknerOnofri.SobolevDensityPairing
+module
+
+public import Legacy.BecknerOnofri.SubcriticalEuler
+public import Legacy.BecknerOnofri.SobolevDensityPairing
+
+@[expose] public section
 
 /-! Exact density/potential energy identities for the actually derived Euler pair. -/
 namespace Legacy.BecknerOnofri.SubcriticalEuler

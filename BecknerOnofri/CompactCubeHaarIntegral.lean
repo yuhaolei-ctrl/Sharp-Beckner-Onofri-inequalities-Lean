@@ -1,8 +1,12 @@
-import BecknerOnofri.SmoothCompactParameterIntegral
-import Mathlib.MeasureTheory.Constructions.UnitInterval
-import Mathlib.MeasureTheory.Group.AddCircle
-import Mathlib.MeasureTheory.Constructions.Pi
-import Mathlib.Analysis.Fourier.AddCircle
+module
+
+public import BecknerOnofri.SmoothCompactParameterIntegral
+public import Mathlib.MeasureTheory.Constructions.UnitInterval
+public import Mathlib.MeasureTheory.Group.AddCircle
+public import Mathlib.MeasureTheory.Constructions.Pi
+public import Mathlib.Analysis.Fourier.AddCircle
+
+@[expose] public section
 
 /-! Haar integration as integration over the compact unit cube; endpoints
 have zero measure, so the closed cube is available for differentiation. -/

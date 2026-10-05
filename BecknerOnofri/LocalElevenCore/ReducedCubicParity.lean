@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedCubicParity
-import BecknerOnofri.LocalElevenCore.ReducedCubicExpansion
-import BecknerOnofri.AnalyticEvenOrder
-import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedCubicParity
+public import BecknerOnofri.LocalElevenCore.ReducedCubicExpansion
+public import BecknerOnofri.AnalyticEvenOrder
+public import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+
+@[expose] public section
 
 /-! Genuine translation parity improves the actual reduced cubic remainder to order five. -/
 noncomputable section

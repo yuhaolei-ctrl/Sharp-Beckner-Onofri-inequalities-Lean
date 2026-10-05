@@ -1,5 +1,9 @@
-import BecknerOnofri.Constants
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.Constants
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact algebraic positivity of the quartic coefficient in dimensions at least twelve. -/
 

@@ -1,4 +1,8 @@
-import BecknerOnofri.BinarySpinChannel
+module
+
+public import BecknerOnofri.BinarySpinChannel
+
+@[expose] public section
 
 /-! The binomial coefficients in the thirteen-state matrix are the actual
 joint spin moments on each count class, verified over the full finite space. -/

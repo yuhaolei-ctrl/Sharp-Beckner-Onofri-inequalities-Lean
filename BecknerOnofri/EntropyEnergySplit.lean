@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailCountableMixture
+module
+
+public import BecknerOnofri.EntropyTailCountableMixture
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

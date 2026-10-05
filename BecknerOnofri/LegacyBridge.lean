@@ -1,6 +1,10 @@
-import BecknerOnofri.Definitions
-import Legacy.BecknerOnofri.SobolevCentering
-import Legacy.BecknerOnofri.SubcriticalRoughBound
+module
+
+public import BecknerOnofri.Definitions
+public import Legacy.BecknerOnofri.SobolevCentering
+public import Legacy.BecknerOnofri.SubcriticalRoughBound
+
+@[expose] public section
 
 /-!
 Exact identifications between the trusted raw-function statement and the

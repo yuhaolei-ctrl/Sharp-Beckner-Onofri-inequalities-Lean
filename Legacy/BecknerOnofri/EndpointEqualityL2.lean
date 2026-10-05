@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointEqualitySelection
-import Legacy.BecknerOnofri.StrictPositiveProfile
-import Legacy.BecknerOnofri.EndpointPotential
+module
+
+public import Legacy.BecknerOnofri.EndpointEqualitySelection
+public import Legacy.BecknerOnofri.StrictPositiveProfile
+public import Legacy.BecknerOnofri.EndpointPotential
+
+@[expose] public section
 
 /-! Endpoint rigidity for every actual L2 density in dimensions two through
 ten. Compact selection preserves entropy and produces an actual absolutely

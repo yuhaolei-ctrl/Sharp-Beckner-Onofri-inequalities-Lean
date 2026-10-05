@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpRows
+module
+
+public import BecknerOnofri.EntropyExpRows
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.ExpCertificate
 

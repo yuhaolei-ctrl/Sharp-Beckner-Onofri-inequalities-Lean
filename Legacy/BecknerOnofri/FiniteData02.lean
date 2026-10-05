@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.FiniteScalarCore
+module
+
+public import Legacy.BecknerOnofri.FiniteScalarCore
+
+@[expose] public section
 namespace Legacy.BecknerOnofri.FiniteScalar.Case02
 open Legacy.D10.FiniteScalar
 set_option maxHeartbeats 0

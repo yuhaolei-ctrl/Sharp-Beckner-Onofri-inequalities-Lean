@@ -1,5 +1,9 @@
-import BecknerOnofri.EndpointDuality
-import BecknerOnofri.FirstShellSharpness
+module
+
+public import BecknerOnofri.EndpointDuality
+public import BecknerOnofri.FirstShellSharpness
+
+@[expose] public section
 
 /-! Exact coefficient-threshold consequence of the density endpoint.
 The still-unproved density endpoint is an explicit premise of this reduction. -/

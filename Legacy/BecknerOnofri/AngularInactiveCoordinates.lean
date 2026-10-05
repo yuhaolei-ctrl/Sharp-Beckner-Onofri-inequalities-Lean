@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.AngularCubeOrder
-import Legacy.BecknerOnofri.ProfilePartialSymmetry
+module
+
+public import Legacy.BecknerOnofri.AngularCubeOrder
+public import Legacy.BecknerOnofri.ProfilePartialSymmetry
+
+@[expose] public section
 
 /-! Inactive first angular directions annihilate every actual higher mixed
 derivative that contains them. -/

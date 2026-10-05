@@ -1,10 +1,14 @@
-import BecknerOnofri.MixtureEndpointInduction
-import BecknerOnofri.GenericCosineRepresentation
-import BecknerOnofri.SubcriticalGap
-import BecknerOnofri.EndpointDuality
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import Legacy.BecknerOnofri.HeatDensityApproximation
-import Legacy.BecknerOnofri.EndpointClosure
+module
+
+public import BecknerOnofri.MixtureEndpointInduction
+public import BecknerOnofri.GenericCosineRepresentation
+public import BecknerOnofri.SubcriticalGap
+public import BecknerOnofri.EndpointDuality
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+public import Legacy.BecknerOnofri.EndpointClosure
+
+@[expose] public section
 
 /-! Genuine optimizer selection, cosine representation, and heat closure reduce
 the unrestricted high-dimensional density endpoint to its exact d=12 mixture base. -/

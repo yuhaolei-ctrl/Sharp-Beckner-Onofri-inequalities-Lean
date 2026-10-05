@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianHeatTwo
-import Legacy.BecknerOnofri.GaussianScalarTwoFinite
-import Legacy.BecknerOnofri.GaussianScalarTail
+module
+
+public import Legacy.BecknerOnofri.GaussianHeatTwo
+public import Legacy.BecknerOnofri.GaussianScalarTwoFinite
+public import Legacy.BecknerOnofri.GaussianScalarTail
+
+@[expose] public section
 
 /-! The complete two-dimensional scalar inequality for the actual integer-lattice energy. -/
 namespace Legacy.BecknerOnofri.GaussianScalarTwo

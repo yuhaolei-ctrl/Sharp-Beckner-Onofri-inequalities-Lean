@@ -1,4 +1,8 @@
-import BecknerOnofri.SelectedConditionalProfile
+module
+
+public import BecknerOnofri.SelectedConditionalProfile
+
+@[expose] public section
 
 /-! The conditional gamma estimates integrated against the actual joint density,
 combined with discrete spin entropy and closed by nonnegative finite sums.

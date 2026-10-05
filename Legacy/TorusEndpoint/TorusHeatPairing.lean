@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.TorusHeatBounds
-import Legacy.TorusEndpoint.GreenPairing
+module
+
+public import Legacy.TorusEndpoint.TorusHeatBounds
+public import Legacy.TorusEndpoint.GreenPairing
+
+@[expose] public section
 
 /-!
 # Actual L2 heat pairings and nonnegative-test lower bounds

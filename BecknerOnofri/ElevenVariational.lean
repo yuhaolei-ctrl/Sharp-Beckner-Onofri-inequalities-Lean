@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenConstants
-import BecknerOnofri.PressureRegularity
-import BecknerOnofri.PressureDuality
+module
+
+public import BecknerOnofri.ElevenConstants
+public import BecknerOnofri.PressureRegularity
+public import BecknerOnofri.PressureDuality
+
+@[expose] public section
 
 /-! Variational consequences used in Section 4. The competitor's analytic
 bounds are explicit premises here, until its periodization and Fourier

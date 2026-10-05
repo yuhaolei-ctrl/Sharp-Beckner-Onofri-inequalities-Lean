@@ -1,4 +1,8 @@
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! The exact positive-series special functions appearing in the source.
 No numerical enclosure or derivative property is included in these definitions. -/

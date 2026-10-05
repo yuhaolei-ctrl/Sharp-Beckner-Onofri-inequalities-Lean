@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarHullOrder
-import BecknerOnofri.ScalarMinorantBounds
-import Mathlib.Data.List.GetD
+module
+
+public import BecknerOnofri.ScalarHullOrder
+public import BecknerOnofri.ScalarMinorantBounds
+public import Mathlib.Data.List.GetD
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set

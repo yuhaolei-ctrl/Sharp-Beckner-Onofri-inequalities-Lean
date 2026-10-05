@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalQuarticStatementDefinitions
-import BecknerOnofri.ComplementSobolev
+module
+
+public import BecknerOnofri.LocalQuarticStatementDefinitions
+public import BecknerOnofri.ComplementSobolev
+
+@[expose] public section
 
 /-! Sobolev-valued analyticity is expressed in the physical weighted Fourier
 Hilbert space. Every coefficient of the analytic lift is prescribed by the

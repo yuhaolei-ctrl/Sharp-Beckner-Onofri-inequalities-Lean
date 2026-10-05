@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Actual circle spectral operators, with period-one Fourier characters.
 The multiplier of Λ is |n| (angular normalization), not 2π|n|.

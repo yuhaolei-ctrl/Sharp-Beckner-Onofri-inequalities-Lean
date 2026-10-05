@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.RealReducedLocalMaximum
-import BecknerOnofri.LocalElevenCore.FirstShellOrbits
-import BecknerOnofri.OptimizerTranslation
+module
+
+public import BecknerOnofri.LocalElevenCore.RealReducedLocalMaximum
+public import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+public import BecknerOnofri.OptimizerTranslation
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

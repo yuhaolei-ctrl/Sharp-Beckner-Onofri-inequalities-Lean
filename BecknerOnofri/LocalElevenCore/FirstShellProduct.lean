@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.FirstShellProduct
-import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
-import BecknerOnofri.ContinuousGibbsCubic
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.FirstShellProduct
+public import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
+public import BecknerOnofri.ContinuousGibbsCubic
+
+@[expose] public section
 
 /-! Exact Fourier multiplication by arbitrary full first-shell functions. -/
 noncomputable section

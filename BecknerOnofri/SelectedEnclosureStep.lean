@@ -1,4 +1,8 @@
-import BecknerOnofri.SelectedNumericalModel
+module
+
+public import BecknerOnofri.SelectedNumericalModel
+
+@[expose] public section
 
 /-! Certified enclosure updates specialize to the original selected maximizer
 without an abstract monotonicity or omitted-tail assumption. -/

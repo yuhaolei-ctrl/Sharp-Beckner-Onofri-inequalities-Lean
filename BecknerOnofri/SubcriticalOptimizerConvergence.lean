@@ -1,5 +1,9 @@
-import BecknerOnofri.OnsetWienerConvergence
-import BecknerOnofri.ContinuousOptimizers
+module
+
+public import BecknerOnofri.OnsetWienerConvergence
+public import BecknerOnofri.ContinuousOptimizers
+
+@[expose] public section
 
 /-! For genuine optimizers in a common critical-energy ball, L2 convergence
 to zero upgrades to the Wiener norm and hence to uniform convergence. -/

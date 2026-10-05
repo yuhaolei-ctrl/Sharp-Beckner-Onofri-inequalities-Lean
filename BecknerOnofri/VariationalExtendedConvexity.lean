@@ -1,5 +1,9 @@
-import BecknerOnofri.VariationalTransitionQuotient
-import BecknerOnofri.ConcentrationDivergence
+module
+
+public import BecknerOnofri.VariationalTransitionQuotient
+public import BecknerOnofri.ConcentrationDivergence
+
+@[expose] public section
 
 /-! Convex-combination inequalities for the actual extended-real suprema.
 They remain meaningful where the supremum is infinite and do not assume

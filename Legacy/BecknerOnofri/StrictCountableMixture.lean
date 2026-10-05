@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.StrictFiniteMixture
+module
+
+public import Legacy.BecknerOnofri.StrictFiniteMixture
+
+@[expose] public section
 
 /-! The finite scalar margin survives the actual normalized finite approximations.
 The countable theorem assumes the same summable uniform majorant as its constructive approximation. -/

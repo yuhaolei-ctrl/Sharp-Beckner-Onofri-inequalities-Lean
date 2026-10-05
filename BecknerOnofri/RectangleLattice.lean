@@ -1,6 +1,10 @@
-import BecknerOnofri.LatticeDefinitions
-import BecknerOnofri.RectangleReserve
-import Mathlib.Data.Int.Interval
+module
+
+public import BecknerOnofri.LatticeDefinitions
+public import BecknerOnofri.RectangleReserve
+public import Mathlib.Data.Int.Interval
+
+@[expose] public section
 
 /-!
 Actual finite lattice rectangles and coordinate projections.  A deleted

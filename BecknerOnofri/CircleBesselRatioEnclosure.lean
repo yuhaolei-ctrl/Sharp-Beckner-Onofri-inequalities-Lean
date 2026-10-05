@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselEnclosure
-import BecknerOnofri.CircleBesselInverse
+module
+
+public import BecknerOnofri.CircleBesselEnclosure
+public import BecknerOnofri.CircleBesselInverse
+
+@[expose] public section
 
 /-! Certified ratios and inverse-mean brackets from actual convergent series. -/
 noncomputable section

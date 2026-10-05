@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
-import Mathlib.Analysis.Calculus.Deriv.Mul
+module
+
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+public import Mathlib.Analysis.Calculus.Deriv.Mul
+
+@[expose] public section
 
 /-! Distinct active affine supporting lines preclude differentiability. -/
 noncomputable section

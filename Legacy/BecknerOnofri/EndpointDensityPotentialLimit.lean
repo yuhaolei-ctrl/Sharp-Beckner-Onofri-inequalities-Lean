@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.EndpointDensityFinitePotential
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+module
+
+public import Legacy.BecknerOnofri.EndpointDensityFinitePotential
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+
+@[expose] public section
 
 /-! A genuine Sobolev limit of the finite Fourier inverse potentials of a
 finite-energy L1 probability density, together with actual a.e. convergence. -/

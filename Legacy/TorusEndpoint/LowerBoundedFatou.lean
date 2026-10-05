@@ -1,5 +1,9 @@
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Legacy.TorusEndpoint.PhysicalFiniteFourier
+module
+
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Legacy.TorusEndpoint.PhysicalFiniteFourier
+
+@[expose] public section
 
 /-!
 # Fatou with an integrable lower bound and finite upper integrals

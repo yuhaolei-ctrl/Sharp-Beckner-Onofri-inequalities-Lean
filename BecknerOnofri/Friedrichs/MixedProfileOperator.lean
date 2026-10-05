@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedProfileFormDomain
-import BecknerOnofri.Friedrichs.MixedAngularOperator
-import BecknerOnofri.Friedrichs.PeriodicWeakEquation
+module
+
+public import BecknerOnofri.Friedrichs.MixedProfileFormDomain
+public import BecknerOnofri.Friedrichs.MixedAngularOperator
+public import BecknerOnofri.Friedrichs.PeriodicWeakEquation
+
+@[expose] public section
 
 /-! Tensor weak equations for arbitrary smooth one-dimensional profiles.
 The inactive factors may be odd periodic functions. -/

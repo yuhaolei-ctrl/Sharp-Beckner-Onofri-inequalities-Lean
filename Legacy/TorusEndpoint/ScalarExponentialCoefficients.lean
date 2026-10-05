@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.PowerSeries.Exp
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.PowerSeries.Exp
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact scalar Taylor coefficients and their finite convolution identity.
 These provide the factorial factors in finite-atom exponential coefficients. -/

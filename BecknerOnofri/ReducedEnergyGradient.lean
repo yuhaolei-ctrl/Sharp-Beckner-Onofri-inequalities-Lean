@@ -1,4 +1,8 @@
-import BecknerOnofri.GreenPairing
+module
+
+public import BecknerOnofri.GreenPairing
+
+@[expose] public section
 
 /-! The exact derivative of the physical reduced energy on the actual
 complementary Gibbs graph. -/

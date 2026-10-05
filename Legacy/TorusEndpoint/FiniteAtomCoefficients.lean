@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.FiniteCone
-import Legacy.TorusEndpoint.ScalarExponentialCoefficients
-import Mathlib.Algebra.Order.BigOperators.GroupWithZero.List
+module
+
+public import Legacy.TorusEndpoint.FiniteCone
+public import Legacy.TorusEndpoint.ScalarExponentialCoefficients
+public import Mathlib.Algebra.Order.BigOperators.GroupWithZero.List
+
+@[expose] public section
 
 /-!
 # Complete finite-atom exponential coefficients

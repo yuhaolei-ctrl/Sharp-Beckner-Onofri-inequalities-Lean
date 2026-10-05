@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PositiveKernelSpectrum
+module
+
+public import Legacy.BecknerOnofri.PositiveKernelSpectrum
+
+@[expose] public section
 
 /-! Genuine dominated-kernel modulus and strict compact comparison.
 The top eigenvector and strict norm conclusion are derived, not assumed.

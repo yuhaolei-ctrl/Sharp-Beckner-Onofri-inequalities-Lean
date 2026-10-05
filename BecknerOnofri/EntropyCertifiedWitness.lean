@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarCertifiedGlobal
-import BecknerOnofri.ScalarMinorantShape
-import BecknerOnofri.SpinCertifiedGlobal
+module
+
+public import BecknerOnofri.ScalarCertifiedGlobal
+public import BecknerOnofri.ScalarMinorantShape
+public import BecknerOnofri.SpinCertifiedGlobal
+
+@[expose] public section
 
 /-! The same explicit convex witness satisfies both sides of the entropy
 certificate. This module is accepted only once the complete scalar assembly

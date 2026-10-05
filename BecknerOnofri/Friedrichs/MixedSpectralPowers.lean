@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedSpatialSpectrum
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialSpectrum
+
+@[expose] public section
 
 /-! Spectral powers of the self-adjoint realization of the actual mixed spatial graph.
 The complete mixed basis includes all periodic odd sectors. -/

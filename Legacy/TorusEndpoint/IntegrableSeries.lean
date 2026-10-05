@@ -1,4 +1,8 @@
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-!
 # Integrability of absolutely integrable series

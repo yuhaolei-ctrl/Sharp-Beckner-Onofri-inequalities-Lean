@@ -1,5 +1,9 @@
-import BecknerOnofri.AngularReducedKernel
-import BecknerOnofri.GraphHessian
+module
+
+public import BecknerOnofri.AngularReducedKernel
+public import BecknerOnofri.GraphHessian
+
+@[expose] public section
 
 /-! The imaginary graph tangent space is exactly the actual spatial
 translation tangent space, with the manuscript's directional derivatives. -/

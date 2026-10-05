@@ -1,24 +1,28 @@
-import Legacy.BecknerOnofri.FiniteData01
-import Legacy.BecknerOnofri.FiniteData02
-import Legacy.BecknerOnofri.FiniteData03
-import Legacy.BecknerOnofri.FiniteData04
-import Legacy.BecknerOnofri.FiniteData05
-import Legacy.BecknerOnofri.FiniteData06
-import Legacy.BecknerOnofri.FiniteData07
-import Legacy.BecknerOnofri.FiniteData08
-import Legacy.BecknerOnofri.FiniteData09
-import Legacy.BecknerOnofri.FiniteData10
-import Legacy.BecknerOnofri.FiniteData11
-import Legacy.BecknerOnofri.FiniteData12
-import Legacy.BecknerOnofri.FiniteData13
-import Legacy.BecknerOnofri.FiniteData14
-import Legacy.BecknerOnofri.FiniteData15
-import Legacy.BecknerOnofri.FiniteData16
-import Legacy.BecknerOnofri.FiniteData17
-import Legacy.BecknerOnofri.FiniteData18
-import Legacy.BecknerOnofri.FiniteData19
-import Legacy.BecknerOnofri.FiniteData20
-import Legacy.BecknerOnofri.FiniteData21
+module
+
+public import Legacy.BecknerOnofri.FiniteData01
+public import Legacy.BecknerOnofri.FiniteData02
+public import Legacy.BecknerOnofri.FiniteData03
+public import Legacy.BecknerOnofri.FiniteData04
+public import Legacy.BecknerOnofri.FiniteData05
+public import Legacy.BecknerOnofri.FiniteData06
+public import Legacy.BecknerOnofri.FiniteData07
+public import Legacy.BecknerOnofri.FiniteData08
+public import Legacy.BecknerOnofri.FiniteData09
+public import Legacy.BecknerOnofri.FiniteData10
+public import Legacy.BecknerOnofri.FiniteData11
+public import Legacy.BecknerOnofri.FiniteData12
+public import Legacy.BecknerOnofri.FiniteData13
+public import Legacy.BecknerOnofri.FiniteData14
+public import Legacy.BecknerOnofri.FiniteData15
+public import Legacy.BecknerOnofri.FiniteData16
+public import Legacy.BecknerOnofri.FiniteData17
+public import Legacy.BecknerOnofri.FiniteData18
+public import Legacy.BecknerOnofri.FiniteData19
+public import Legacy.BecknerOnofri.FiniteData20
+public import Legacy.BecknerOnofri.FiniteData21
+
+@[expose] public section
 namespace Legacy.BecknerOnofri.FiniteScalar
 theorem finite_checks : ∀ j : Fin 21, ∀ i : Fin 8, FiniteCheck (i.val+3) (j.val+1) := by
   intro j

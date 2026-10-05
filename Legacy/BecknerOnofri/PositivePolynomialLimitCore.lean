@@ -1,10 +1,14 @@
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Analysis.Normed.Group.Tannery
-import Mathlib.Analysis.Normed.Group.FunctionSeries
-import Mathlib.Analysis.Normed.Ring.InfiniteSum
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Topology.UnitInterval
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Analysis.Normed.Group.Tannery
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+public import Mathlib.Analysis.Normed.Ring.InfiniteSum
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Topology.UnitInterval
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Coefficient compactness and geometric majorants for positive multivariate
 polynomials. The indices are Mathlib's actual multivariate-polynomial indices. -/
@@ -28,7 +32,7 @@ theorem monomialValue_nonneg {d : ℕ} (a : Index d) (y : Cube d) :
 
 theorem monomialValue_le_one {d : ℕ} (a : Index d) (y : Cube d) :
     monomialValue a y ≤ 1 := by
-  exact Finset.prod_le_one (fun i _ => pow_nonneg (y i).property.1 _)
+  exact Finset.prod_le_one₀ (fun i _ => pow_nonneg (y i).property.1 _)
     (fun i _ => pow_le_one₀ (y i).property.1 (y i).property.2)
 
 theorem continuous_monomialValue {d : ℕ} (a : Index d) :
@@ -103,7 +107,7 @@ theorem geometric_index_summable (d : ℕ) {r : ℝ} (hr0 : 0 ≤ r) (hr1 : r < 
 
 theorem monomialValue_le_geometric {d : ℕ} (a : Index d) (y : Cube d)
     {r : ℝ} (hyr : ∀ i, (y i : ℝ) ≤ r) : monomialValue a y ≤ ∏ i, r ^ a i := by
-  exact Finset.prod_le_prod (fun i _ => pow_nonneg (y i).property.1 _)
+  exact Finset.prod_le_prod₀ (fun i _ => pow_nonneg (y i).property.1 _)
     (fun i _ => pow_le_pow_left₀ (y i).property.1 (hyr i) _)
 
 end Legacy.BecknerOnofri.PositivePolynomialLimit

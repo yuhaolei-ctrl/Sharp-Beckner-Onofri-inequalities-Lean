@@ -1,5 +1,9 @@
-import BecknerOnofri.BinarySpinChannel
-import BecknerOnofri.PermutationSymmetry
+module
+
+public import BecknerOnofri.BinarySpinChannel
+public import BecknerOnofri.PermutationSymmetry
+
+@[expose] public section
 
 /-! Coordinate symmetry of a genuine Haar density implies exchangeability of
 its binary channel law, by an actual measure-preserving change of variables. -/

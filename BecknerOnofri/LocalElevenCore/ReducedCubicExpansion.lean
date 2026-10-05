@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedCubicExpansion
-import BecknerOnofri.LocalElevenCore.CubicFirstShell
-import BecknerOnofri.LocalElevenCore.SlavedMoments
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedCubicExpansion
+public import BecknerOnofri.LocalElevenCore.CubicFirstShell
+public import BecknerOnofri.LocalElevenCore.SlavedMoments
+
+@[expose] public section
 
 /-! Fourth-order control of the actual reduced first-shell equation on the critical slice. -/
 noncomputable section

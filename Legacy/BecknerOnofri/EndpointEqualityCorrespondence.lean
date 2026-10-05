@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointDensityGibbs
-import Legacy.BecknerOnofri.EndpointMaximizerLevel
-import Legacy.BecknerOnofri.EndpointPotentialEquality
+module
+
+public import Legacy.BecknerOnofri.EndpointDensityGibbs
+public import Legacy.BecknerOnofri.EndpointMaximizerLevel
+public import Legacy.BecknerOnofri.EndpointPotentialEquality
+
+@[expose] public section
 
 /-! Actual finite-entropy equality densities and actual Sobolev potential
 equality cases correspond through the Gibbs map, including the circle. -/

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Fourier.AddCircle
-import Mathlib.MeasureTheory.Group.AddCircle
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+
+public import Mathlib.Analysis.Fourier.AddCircle
+public import Mathlib.MeasureTheory.Group.AddCircle
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+
+@[expose] public section
 
 /-! The actual sine-square distribution under uniform circle Haar measure,
 including the exact finite bin masses used by the radial partition certificate. -/

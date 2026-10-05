@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.CubicFirstShell
-import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
-import BecknerOnofri.Kappa
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.CubicFirstShell
+public import BecknerOnofri.LocalElevenCore.QuadraticCorrectionCoefficients
+public import BecknerOnofri.Kappa
+
+@[expose] public section
 
 /-! Actual cubic first-shell term of the reduced normalized Gibbs equation. -/
 noncomputable section

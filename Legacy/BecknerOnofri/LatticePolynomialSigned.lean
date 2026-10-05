@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.LatticePolynomialFunctional
+module
+
+public import Legacy.BecknerOnofri.LatticePolynomialFunctional
+
+@[expose] public section
 
 open scoped BigOperators
 

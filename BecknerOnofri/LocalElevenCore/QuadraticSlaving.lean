@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuadraticSlaving
-import BecknerOnofri.LocalElevenCore.ReducedEquation
-import BecknerOnofri.ContinuousGibbsTaylor
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuadraticSlaving
+public import BecknerOnofri.LocalElevenCore.ReducedEquation
+public import BecknerOnofri.ContinuousGibbsTaylor
+
+@[expose] public section
 
 /-! The quadratic Taylor term of the actual implicit complement correction. -/
 noncomputable section

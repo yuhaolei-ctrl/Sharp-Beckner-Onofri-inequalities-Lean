@@ -1,7 +1,11 @@
-import Legacy.TorusEndpoint.WeightedPolynomial
-import Legacy.TorusEndpoint.TorusFourier
-import Legacy.TorusEndpoint.ExponentialLimit
-import Mathlib.Algebra.MonoidAlgebra.Basic
+module
+
+public import Legacy.TorusEndpoint.WeightedPolynomial
+public import Legacy.TorusEndpoint.TorusFourier
+public import Legacy.TorusEndpoint.ExponentialLimit
+public import Mathlib.Algebra.MonoidAlgebra.Basic
+
+@[expose] public section
 
 /-!
 # A conditional Fourier coefficient criterion

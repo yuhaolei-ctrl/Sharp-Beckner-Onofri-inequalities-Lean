@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.InactivePositiveDirection
-import BecknerOnofri.LocalElevenCore.ComplementNegativeDirection
+module
+
+public import BecknerOnofri.LocalElevenCore.InactivePositiveDirection
+public import BecknerOnofri.LocalElevenCore.ComplementNegativeDirection
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

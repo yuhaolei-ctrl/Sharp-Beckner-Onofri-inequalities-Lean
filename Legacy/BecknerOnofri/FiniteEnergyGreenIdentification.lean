@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.BoundedDensityApproximation
-import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+module
+
+public import Legacy.BecknerOnofri.BoundedDensityApproximation
+public import Legacy.BecknerOnofri.LowDimensionPhysicalEndpoint
+
+@[expose] public section
 
 /-! Exact equality of the singular Green double integral and the full Fourier
 energy for every L1 probability density of finite spectral energy. Bounded

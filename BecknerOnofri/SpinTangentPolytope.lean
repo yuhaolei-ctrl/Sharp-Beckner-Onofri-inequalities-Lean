@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinGeometry
-import Mathlib.Analysis.Convex.KreinMilman
+module
+
+public import BecknerOnofri.SpinGeometry
+public import Mathlib.Analysis.Convex.KreinMilman
+
+@[expose] public section
 
 /-! The actual compact convex tangent polytope in Lemma 5.18. The reduction
 to its extreme points is an analytic theorem, separate from finite arithmetic. -/

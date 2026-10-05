@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.SpatialFormDefinitions
+module
+
+public import BecknerOnofri.Friedrichs.SpatialFormDefinitions
+
+@[expose] public section
 
 /-! Trusted spatial statements for the one-dimensional domain argument in
 Lemma `fractional`. Profiles here are globally smooth representatives; the

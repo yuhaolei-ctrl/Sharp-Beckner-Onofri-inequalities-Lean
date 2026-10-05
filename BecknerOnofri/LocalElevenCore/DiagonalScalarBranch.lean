@@ -1,10 +1,14 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.DiagonalScalarBranch
-import BecknerOnofri.AnalyticParameterDivision
-import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
-import Mathlib.Analysis.Calculus.ImplicitContDiff
-import BecknerOnofri.AnalyticEvenOrder
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.DiagonalScalarBranch
+public import BecknerOnofri.AnalyticParameterDivision
+public import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+public import BecknerOnofri.AnalyticEvenOrder
+
+@[expose] public section
 
 /-! The analytic scalar quotient of the actual symmetric reduced equation,
 and its genuine implicit parameter branch. -/

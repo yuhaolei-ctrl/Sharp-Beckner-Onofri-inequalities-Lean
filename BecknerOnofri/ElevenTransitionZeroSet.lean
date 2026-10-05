@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenTrialConsequences
-import BecknerOnofri.ElevenUniform
+module
+
+public import BecknerOnofri.ElevenTrialConsequences
+public import BecknerOnofri.ElevenUniform
+
+@[expose] public section
 
 /-! The genuine pressure has a closed initial zero interval. In particular,
 uniform density is a global minimizer at the supremum defining the transition. -/

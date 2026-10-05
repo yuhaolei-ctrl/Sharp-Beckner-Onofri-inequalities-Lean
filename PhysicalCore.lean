@@ -1,5 +1,9 @@
-import PhysicalLp
-import Mathlib.Analysis.Calculus.ContDiff.Operations
+module
+
+public import PhysicalLp
+public import Mathlib.Analysis.Calculus.ContDiff.Operations
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

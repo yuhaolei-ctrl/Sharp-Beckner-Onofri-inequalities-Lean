@@ -1,6 +1,10 @@
-import Legacy.D10.GaussianMajorant
-import Legacy.D10.BinomialReal
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+module
+
+public import Legacy.D10.GaussianMajorant
+public import Legacy.D10.BinomialReal
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+@[expose] public section
 
 namespace Legacy.D10
 

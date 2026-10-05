@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.PositivePolynomialLimitCore
+module
+
+public import Legacy.BecknerOnofri.PositivePolynomialLimitCore
+
+@[expose] public section
 
 /-! The second half of the positive Bernstein/Taylor argument. Nonnegative
 polynomial coefficients with a common mass and coefficientwise limits give

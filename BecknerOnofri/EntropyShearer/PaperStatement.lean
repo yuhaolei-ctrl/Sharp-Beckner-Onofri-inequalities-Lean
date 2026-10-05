@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyShearer.FiniteEntropy
-import BecknerOnofri.CoordinateMarginalDefinitions
+module
+
+public import BecknerOnofri.EntropyShearer.FiniteEntropy
+public import BecknerOnofri.CoordinateMarginalDefinitions
+
+@[expose] public section
 
 /-! The precise normalization and full finite-entropy domain of the manuscript's
 Lemma `spectral-subset-entropy`. -/

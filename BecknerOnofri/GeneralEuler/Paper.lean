@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralEuler.Mixture
-import BecknerOnofri.GeneralEuler.RawData
-import BecknerOnofri.GeneralEuler.CubeAffineDerivatives
+module
+
+public import BecknerOnofri.GeneralEuler.Mixture
+public import BecknerOnofri.GeneralEuler.RawData
+public import BecknerOnofri.GeneralEuler.CubeAffineDerivatives
+
+@[expose] public section
 
 /-! The full raw smooth Euler-pair proposition, with actual derivatives on the
 closed cosine cube and no variational maximality assumption. -/

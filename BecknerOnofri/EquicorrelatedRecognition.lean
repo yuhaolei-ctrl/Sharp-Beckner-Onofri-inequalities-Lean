@@ -1,4 +1,8 @@
-import BecknerOnofri.EquicorrelatedSpectrum
+module
+
+public import BecknerOnofri.EquicorrelatedSpectrum
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

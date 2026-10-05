@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.EndpointEqualityL2
-import Legacy.BecknerOnofri.EndpointDensityGibbs
-import Legacy.BecknerOnofri.LowDimensionPotentialEquality
+module
+
+public import Legacy.BecknerOnofri.EndpointEqualityL2
+public import Legacy.BecknerOnofri.EndpointDensityGibbs
+public import Legacy.BecknerOnofri.LowDimensionPotentialEquality
+
+@[expose] public section
 
 /-! Unconditional equality classification for all finite-entropy densities
 in dimensions two through ten. L2 regularity is deduced from equality using

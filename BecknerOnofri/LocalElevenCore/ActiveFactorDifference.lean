@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ActivePairCoordinates
-import BecknerOnofri.AnalyticSquaredDifference
+module
+
+public import BecknerOnofri.LocalElevenCore.ActivePairCoordinates
+public import BecknerOnofri.AnalyticSquaredDifference
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatPoissonAux
+module
+
+public import Legacy.BecknerOnofri.CircleHeatPoissonAux
+
+@[expose] public section
 
 /-! Monotonicity of the genuine periodized Gaussian from finite sums and their limits. -/
 noncomputable section

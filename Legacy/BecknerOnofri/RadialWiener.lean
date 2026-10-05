@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.WeightedWiener
-import Legacy.BecknerOnofri.WienerRepresentative
+module
+
+public import Legacy.BecknerOnofri.WeightedWiener
+public import Legacy.BecknerOnofri.WienerRepresentative
+
+@[expose] public section
 
 /-! Polynomial Euclidean frequency weights for the complex Wiener algebra. -/
 

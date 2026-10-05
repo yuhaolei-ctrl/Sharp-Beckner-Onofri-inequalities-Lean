@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.SobolevDensitySlaving
+module
+
+public import BecknerOnofri.LocalElevenCore.SobolevDensitySlaving
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

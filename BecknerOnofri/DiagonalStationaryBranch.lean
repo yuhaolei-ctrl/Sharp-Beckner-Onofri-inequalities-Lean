@@ -1,7 +1,11 @@
-import BecknerOnofri.DiagonalScalarBranch
-import BecknerOnofri.GraphRegularity
-import BecknerOnofri.Kappa
-import Mathlib.Topology.Order.IntermediateValue
+module
+
+public import BecknerOnofri.DiagonalScalarBranch
+public import BecknerOnofri.GraphRegularity
+public import BecknerOnofri.Kappa
+public import Mathlib.Topology.Order.IntermediateValue
+
+@[expose] public section
 
 /-! Actual smooth full Euler solutions on the supercritical side, obtained
 from the analytic symmetric branch by the intermediate value theorem. -/

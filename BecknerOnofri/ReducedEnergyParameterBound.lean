@@ -1,6 +1,10 @@
-import BecknerOnofri.UniformGraphMoments
-import BecknerOnofri.ReducedParameterDerivative
-import BecknerOnofri.ParameterMeanValue
+module
+
+public import BecknerOnofri.UniformGraphMoments
+public import BecknerOnofri.ReducedParameterDerivative
+public import BecknerOnofri.ParameterMeanValue
+
+@[expose] public section
 
 /-! A joint parameter expansion for the actual physical reduced energy. -/
 noncomputable section

@@ -1,7 +1,11 @@
-import BecknerOnofri.PolarizationOrbitClosure
-import BecknerOnofri.PolarizationUniformL1
-import BecknerOnofri.BoundedMomentFunctional
-import Legacy.BecknerOnofri.SteinerSelection
+module
+
+public import BecknerOnofri.PolarizationOrbitClosure
+public import BecknerOnofri.PolarizationUniformL1
+public import BecknerOnofri.BoundedMomentFunctional
+public import Legacy.BecknerOnofri.SteinerSelection
+
+@[expose] public section
 
 /-! Compact orbit selection for arbitrary Lipschitz functions, independent of
 variational optimality or Euler equations. -/

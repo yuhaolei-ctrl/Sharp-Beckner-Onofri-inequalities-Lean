@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalSplitBridge
-import Legacy.BecknerOnofri.WienerRepresentative
+module
+
+public import BecknerOnofri.LocalSplitBridge
+public import Legacy.BecknerOnofri.WienerRepresentative
+
+@[expose] public section
 
 /-! The local exit criterion stated directly using the Fourier coefficients of an
 actual real Sobolev potential. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyShearer.PositiveBounds
+module
+
+public import BecknerOnofri.EntropyShearer.PositiveBounds
+
+@[expose] public section
 
 /-! Relative-entropy contraction under genuine product-Haar averaging. -/
 

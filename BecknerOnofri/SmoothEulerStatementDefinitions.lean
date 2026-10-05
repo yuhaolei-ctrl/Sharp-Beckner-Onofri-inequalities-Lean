@@ -1,6 +1,10 @@
-import BecknerOnofri.PrescribedSelectionDefinitions
-import Mathlib.Analysis.Calculus.ContDiff.Defs
-import Mathlib.Analysis.Calculus.FDeriv.Defs
+module
+
+public import BecknerOnofri.PrescribedSelectionDefinitions
+public import Mathlib.Analysis.Calculus.ContDiff.Defs
+public import Mathlib.Analysis.Calculus.FDeriv.Defs
+
+@[expose] public section
 
 /-! The manuscript's general smooth monotone Euler-pair assertion. Derivatives
 are actual iterated Frechet derivatives within the closed cosine cube [-1,1]^d. -/

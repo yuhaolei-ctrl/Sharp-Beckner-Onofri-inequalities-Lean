@@ -1,7 +1,11 @@
-import BecknerOnofri.GraphSobolevBounds
-import BecknerOnofri.GraphRegularity
-import BecknerOnofri.OnsetWienerBounds
-import BecknerOnofri.WeightedExponentialRemainder
+module
+
+public import BecknerOnofri.GraphSobolevBounds
+public import BecknerOnofri.GraphRegularity
+public import BecknerOnofri.OnsetWienerBounds
+public import BecknerOnofri.WeightedExponentialRemainder
+
+@[expose] public section
 
 /-! Quantitative polynomial Wiener bounds for the genuine complementary graph. -/
 noncomputable section

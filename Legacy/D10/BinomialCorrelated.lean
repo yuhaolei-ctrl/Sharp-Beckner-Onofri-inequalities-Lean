@@ -1,4 +1,8 @@
-import Legacy.D10.BinomialReal
+module
+
+public import Legacy.D10.BinomialReal
+
+@[expose] public section
 
 /-!
 # Exact finite correlated-mixture identities

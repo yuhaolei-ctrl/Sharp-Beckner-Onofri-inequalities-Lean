@@ -1,6 +1,10 @@
-import BecknerOnofri.RadialGreenHeat
-import BecknerOnofri.RadialGreenE1
-import BecknerOnofri.RadialPoissonImages
+module
+
+public import BecknerOnofri.RadialGreenHeat
+public import BecknerOnofri.RadialGreenE1
+public import BecknerOnofri.RadialPoissonImages
+
+@[expose] public section
 
 /-! Poisson summation and absolutely justified time integration for the
 actual twelve-dimensional heat representative. -/

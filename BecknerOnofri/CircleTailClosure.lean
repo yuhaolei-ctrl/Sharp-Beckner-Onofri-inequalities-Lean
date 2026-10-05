@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleTailMonotonicity
-import BecknerOnofri.CircleGammaMinimum
+module
+
+public import BecknerOnofri.CircleTailMonotonicity
+public import BecknerOnofri.CircleGammaMinimum
+
+@[expose] public section
 
 /-! The analytic reduction of the entire final mean range to the source's
 single scalar lower enclosure at t=0.999. That numerical enclosure remains

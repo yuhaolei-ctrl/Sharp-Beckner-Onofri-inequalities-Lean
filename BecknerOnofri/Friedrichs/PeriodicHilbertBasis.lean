@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.PeriodicOrthogonality
-import BecknerOnofri.Friedrichs.MixedCoordinateTotality
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicOrthogonality
+public import BecknerOnofri.Friedrichs.MixedCoordinateTotality
+
+@[expose] public section
 
 /-! A real Hilbert basis on the full unscaled Lebesgue circle. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.CoordinateCircleProjection
+module
+
+public import BecknerOnofri.CoordinateCircleProjection
+
+@[expose] public section
 
 /-! Fubini pairing against integrable, possibly unbounded circle functions.
 This removes the bounded-test restriction when using a singular Green kernel. -/

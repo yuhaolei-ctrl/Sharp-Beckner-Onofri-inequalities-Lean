@@ -1,4 +1,8 @@
-import BecknerOnofri.UniformComplementBounds
+module
+
+public import BecknerOnofri.UniformComplementBounds
+
+@[expose] public section
 
 /-! A uniform quadratic Lipschitz estimate for the actual normalized Gibbs remainder. -/
 noncomputable section

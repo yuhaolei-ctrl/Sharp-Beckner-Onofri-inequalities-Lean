@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CircleHeatPoisson
+module
+
+public import Legacy.BecknerOnofri.CircleHeatPoisson
+
+@[expose] public section
 
 /-! The actual circular half-arc comparison for the unit-circle heat kernel. -/
 noncomputable section

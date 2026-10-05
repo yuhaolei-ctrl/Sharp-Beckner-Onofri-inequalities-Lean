@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.MixedExponentialDerivatives
+module
+
+public import Legacy.BecknerOnofri.MixedExponentialDerivatives
+
+@[expose] public section
 
 /-! The explicit Bell remainder is an actual multivariate polynomial with natural coefficients. -/
 noncomputable section

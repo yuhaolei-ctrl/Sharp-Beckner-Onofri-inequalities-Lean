@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiHeatComparison
-import Legacy.BecknerOnofri.JacobiCircleHeat
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatComparison
+public import Legacy.BecknerOnofri.JacobiCircleHeat
+
+@[expose] public section
 
 /-! Strict actual heat-kernel domination follows from the quantified potential gap. -/
 noncomputable section

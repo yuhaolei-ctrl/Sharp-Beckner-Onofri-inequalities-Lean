@@ -1,4 +1,8 @@
-import BecknerOnofri.QuarticSignsEleven
+module
+
+public import BecknerOnofri.QuarticSignsEleven
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

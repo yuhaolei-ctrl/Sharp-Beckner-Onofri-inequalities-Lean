@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.ThetaCertificate
+module
+
+public import Legacy.BecknerOnofri.ThetaCertificate
+
+@[expose] public section
 namespace Legacy.BecknerOnofri.ThetaCertificate
 
  theorem a_pos : (0 : ℝ) < (a : ℝ) := by norm_num [a]

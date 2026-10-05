@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Calculus.SmoothSeries
-import Mathlib.Analysis.Calculus.FDeriv.Extend
+module
+
+public import Mathlib.Analysis.Calculus.SmoothSeries
+public import Mathlib.Analysis.Calculus.FDeriv.Extend
+
+@[expose] public section
 
 /-! Uniform derivative bounds on the closure of a convex open set give smooth
 series on that closure, with genuine derivatives at boundary points. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselRiccati
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+module
+
+public import BecknerOnofri.CircleBesselRiccati
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+
+@[expose] public section
 
 /-! The explicit supersolution in the source's Riccati comparison. -/
 noncomputable section

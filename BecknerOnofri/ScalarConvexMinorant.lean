@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Convex.Piecewise
-import Mathlib.Analysis.Convex.Mul
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Convex.Piecewise
+public import Mathlib.Analysis.Convex.Mul
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The quartic-to-affine base used for the global convex scalar minorant.
 Finite maxima with certified affine segments give a continuous convex

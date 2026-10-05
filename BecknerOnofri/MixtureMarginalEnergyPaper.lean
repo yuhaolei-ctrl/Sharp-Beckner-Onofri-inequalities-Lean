@@ -1,6 +1,10 @@
-import BecknerOnofri.MixtureSubsetNormalized
-import BecknerOnofri.MixtureMarginalFourier
-import BecknerOnofri.MixtureEnergyStatementBridge
+module
+
+public import BecknerOnofri.MixtureSubsetNormalized
+public import BecknerOnofri.MixtureMarginalFourier
+public import BecknerOnofri.MixtureEnergyStatementBridge
+
+@[expose] public section
 
 /-! The two literal marginal-energy inequalities of the manuscript, with actual
 Haar marginals, normalized probability mixtures, and extended Fourier energies. -/

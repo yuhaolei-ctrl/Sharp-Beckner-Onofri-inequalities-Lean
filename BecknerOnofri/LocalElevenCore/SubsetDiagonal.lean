@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
-import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+module
+
+public import BecknerOnofri.LocalElevenCore.RealDiagonalReduction
+public import BecknerOnofri.LocalElevenCore.FirstShellOrbits
+
+@[expose] public section
 
 /-! Equal-amplitude directions for every nonempty coordinate support. -/
 noncomputable section

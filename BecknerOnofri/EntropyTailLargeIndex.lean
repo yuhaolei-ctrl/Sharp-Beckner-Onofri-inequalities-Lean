@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyHeatLogGrowth
-import BecknerOnofri.EntropyTailScalarBasic
-import BecknerOnofri.EntropyHeatConstants
-import Legacy.TorusEndpoint.CertifiedExp
+module
+
+public import BecknerOnofri.EntropyHeatLogGrowth
+public import BecknerOnofri.EntropyTailScalarBasic
+public import BecknerOnofri.EntropyHeatConstants
+public import Legacy.TorusEndpoint.CertifiedExp
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

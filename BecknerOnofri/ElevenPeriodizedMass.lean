@@ -1,7 +1,11 @@
-import BecknerOnofri.ElevenPeriodizedSummability
-import BecknerOnofri.PeriodizationCube
-import BecknerOnofri.LegacyBridge
-import Legacy.TorusEndpoint.PhysicalGreenL2
+module
+
+public import BecknerOnofri.ElevenPeriodizedSummability
+public import BecknerOnofri.PeriodizationCube
+public import BecknerOnofri.LegacyBridge
+public import Legacy.TorusEndpoint.PhysicalGreenL2
+
+@[expose] public section
 
 /-! The explicitly periodized competitor is a genuine probability density.
 Its mass is obtained by unfolding the fundamental cube, not by renormalizing. -/

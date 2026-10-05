@@ -1,9 +1,13 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.WeightedExponentialRemainder
-import BecknerOnofri.WeightedExponentialTail
-import BecknerOnofri.LocalElevenCore.GraphRegularity
-import BecknerOnofri.OnsetWienerBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.WeightedExponentialRemainder
+public import BecknerOnofri.WeightedExponentialTail
+public import BecknerOnofri.LocalElevenCore.GraphRegularity
+public import BecknerOnofri.OnsetWienerBounds
+
+@[expose] public section
 
 /-! The actual continuous Gibbs remainder is quadratic in every radial Wiener norm. -/
 noncomputable section

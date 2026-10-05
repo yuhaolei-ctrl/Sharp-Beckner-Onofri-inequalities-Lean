@@ -1,5 +1,9 @@
-import BecknerOnofri.LowScalarDefinitions
-import Legacy.BecknerOnofri.GaussianScalarTwo
+module
+
+public import BecknerOnofri.LowScalarDefinitions
+public import Legacy.BecknerOnofri.GaussianScalarTwo
+
+@[expose] public section
 
 /-! Exact source-facing Section 3 identities, including the infinite harmonic
 sum and the whole d=2,...,10 scalar range. No finite cutoff is a premise. -/

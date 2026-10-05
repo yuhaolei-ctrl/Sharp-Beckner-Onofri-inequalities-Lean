@@ -1,7 +1,11 @@
-import BecknerOnofri.Friedrichs.MixedOpenBox
-import BecknerOnofri.Friedrichs.MixedCoordinateWeak
-import BecknerOnofri.Friedrichs.MixedFiberIntegral
-import BecknerOnofri.Friedrichs.MixedCompactBounds
+module
+
+public import BecknerOnofri.Friedrichs.MixedOpenBox
+public import BecknerOnofri.Friedrichs.MixedCoordinateWeak
+public import BecknerOnofri.Friedrichs.MixedFiberIntegral
+public import BecknerOnofri.Friedrichs.MixedCompactBounds
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

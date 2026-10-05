@@ -1,5 +1,9 @@
-import BecknerOnofri.SmoothTorusFourierDecay
-import BecknerOnofri.OnsetSobolev
+module
+
+public import BecknerOnofri.SmoothTorusFourierDecay
+public import BecknerOnofri.OnsetSobolev
+
+@[expose] public section
 
 /-! Raw smooth functions belong to the actual Fourier-defined Sobolev spaces,
 including the critical domain. No summability assumption is added. -/

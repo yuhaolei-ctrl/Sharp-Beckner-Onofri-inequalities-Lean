@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleMilinVariance
-import Mathlib.Topology.Algebra.InfiniteSum.Order
+module
+
+public import Legacy.BecknerOnofri.CircleMilinVariance
+public import Mathlib.Topology.Algebra.InfiniteSum.Order
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

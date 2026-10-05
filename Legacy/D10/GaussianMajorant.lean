@@ -1,4 +1,8 @@
-import Legacy.D10.Binomial
+module
+
+public import Legacy.D10.Binomial
+
+@[expose] public section
 
 /-! A rational proof of the binomial Gaussian majorant used in the scalar
 tail argument. No transcendental comparison or numerical estimate is needed

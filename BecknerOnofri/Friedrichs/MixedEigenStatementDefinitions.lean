@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
-import Mathlib.RingTheory.Polynomial.Chebyshev
+module
+
+public import BecknerOnofri.Friedrichs.MixedSpatialDefinitions
+public import Mathlib.RingTheory.Polynomial.Chebyshev
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

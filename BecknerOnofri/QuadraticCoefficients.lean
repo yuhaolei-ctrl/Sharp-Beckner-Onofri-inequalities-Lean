@@ -1,5 +1,9 @@
-import BecknerOnofri.QuadraticModes
-import BecknerOnofri.QuadraticFrequencies
+module
+
+public import BecknerOnofri.QuadraticModes
+public import BecknerOnofri.QuadraticFrequencies
+
+@[expose] public section
 
 /-! Exact first-shell-square coefficients at the second and mixed modes. -/
 noncomputable section

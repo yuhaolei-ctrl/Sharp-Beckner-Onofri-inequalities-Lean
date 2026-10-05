@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleWeightDerivative
-import BecknerOnofri.ScalarCompositionEnclosure
+module
+
+public import BecknerOnofri.CircleWeightDerivative
+public import BecknerOnofri.ScalarCompositionEnclosure
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar EntropyLogCertificate Set

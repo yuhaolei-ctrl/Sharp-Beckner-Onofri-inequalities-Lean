@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.InactiveDerivative
+module
+
+public import BecknerOnofri.LocalElevenCore.InactiveDerivative
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

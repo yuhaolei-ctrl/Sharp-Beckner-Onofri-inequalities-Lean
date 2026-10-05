@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuadraticCorrectionCoefficients
-import BecknerOnofri.LocalElevenCore.FirstShellProduct
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuadraticCorrectionCoefficients
+public import BecknerOnofri.LocalElevenCore.FirstShellProduct
+
+@[expose] public section
 
 /-! Exact Fourier coefficients of the actual analytic graph's quadratic correction. -/
 noncomputable section

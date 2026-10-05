@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedFormSubmodule
-import BecknerOnofri.Friedrichs.MixedClosedFormTests
+module
+
+public import BecknerOnofri.Friedrichs.MixedFormSubmodule
+public import BecknerOnofri.Friedrichs.MixedClosedFormTests
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

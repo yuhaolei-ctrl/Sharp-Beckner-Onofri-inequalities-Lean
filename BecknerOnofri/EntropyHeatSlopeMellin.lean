@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatDerivative
+module
+
+public import BecknerOnofri.EntropyHeatDerivative
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

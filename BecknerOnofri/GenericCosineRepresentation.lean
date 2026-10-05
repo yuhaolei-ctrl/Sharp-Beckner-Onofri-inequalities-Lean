@@ -1,8 +1,12 @@
-import BecknerOnofri.GenericAttainment
-import Legacy.BecknerOnofri.EulerCriticalComparison
-import Legacy.BecknerOnofri.EulerHigherPartialSigns
-import Legacy.BecknerOnofri.NormalizedExponentialPartials
-import Legacy.BecknerOnofri.PositiveCosineRepresentation
+module
+
+public import BecknerOnofri.GenericAttainment
+public import Legacy.BecknerOnofri.EulerCriticalComparison
+public import Legacy.BecknerOnofri.EulerHigherPartialSigns
+public import Legacy.BecknerOnofri.NormalizedExponentialPartials
+public import Legacy.BecknerOnofri.PositiveCosineRepresentation
+
+@[expose] public section
 
 /-!
 Dimension-independent positive cosine-mixture representation for actual Steiner

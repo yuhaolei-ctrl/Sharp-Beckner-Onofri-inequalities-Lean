@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyShearer.Deletion
-import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+module
+
+public import BecknerOnofri.EntropyShearer.Deletion
+public import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+
+@[expose] public section
 
 /-! Coordinate-chain entropy bounds for actual Haar marginals. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import BecknerOnofri.Friedrichs.MixedGraphLinear
-import Mathlib.Topology.MetricSpace.Cauchy
-import Mathlib.Topology.Sequences
+module
+
+public import BecknerOnofri.Friedrichs.MixedGraphLinear
+public import Mathlib.Topology.MetricSpace.Cauchy
+public import Mathlib.Topology.Sequences
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

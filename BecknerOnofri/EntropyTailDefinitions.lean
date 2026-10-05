@@ -1,5 +1,9 @@
-import BecknerOnofri.Definitions
-import Mathlib.NumberTheory.Harmonic.Defs
+module
+
+public import BecknerOnofri.Definitions
+public import Mathlib.NumberTheory.Harmonic.Defs
+
+@[expose] public section
 
 /-! The actual scalar Fourier tail and matching harmonic budget in the
 2026-09-21 manuscript. No numerical or analytic estimate is assumed here. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.ReducedEnergyJointExpansion
-import BecknerOnofri.LocalElevenCore.ReducedEnergyParameterBound
-import BecknerOnofri.LocalElevenCore.ReducedQuarticParity
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.ReducedEnergyJointExpansion
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyParameterBound
+public import BecknerOnofri.LocalElevenCore.ReducedQuarticParity
+
+@[expose] public section
 
 /-! Exact manuscript quartic coefficients in the full parameter-dependent physical energy. -/
 noncomputable section

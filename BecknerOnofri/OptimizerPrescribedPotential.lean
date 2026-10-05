@@ -1,5 +1,9 @@
-import BecknerOnofri.OptimizerDuality
-import BecknerOnofri.RawGapIdentities
+module
+
+public import BecknerOnofri.OptimizerDuality
+public import BecknerOnofri.RawGapIdentities
+
+@[expose] public section
 
 /-! Identification of an optimizer with the prescribed Green potential,
 rather than an existentially chosen Gibbs representative. -/

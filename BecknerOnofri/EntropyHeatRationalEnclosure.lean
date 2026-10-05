@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyHeatEnclosureRules
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+
+public import BecknerOnofri.EntropyHeatEnclosureRules
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-! Exact rational endpoint expressions and their analytic soundness. -/
 noncomputable section

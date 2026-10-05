@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialGreenBounds
-import BecknerOnofri.RadialHeatPanels
+module
+
+public import BecknerOnofri.RadialGreenBounds
+public import BecknerOnofri.RadialHeatPanels
+
+@[expose] public section
 
 /-! The full finite upper profile used by the radial seed, connected to the
 actual Fourier Green kernel through the proved heat and Poisson identities. -/

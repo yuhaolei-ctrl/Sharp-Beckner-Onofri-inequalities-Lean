@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.SpatialStatementDefinitions
-import BecknerOnofri.Friedrichs.SpatialOperatorProperties
+module
+
+public import BecknerOnofri.Friedrichs.SpatialStatementDefinitions
+public import BecknerOnofri.Friedrichs.SpatialOperatorProperties
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

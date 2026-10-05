@@ -1,10 +1,14 @@
-import Mathlib.NumberTheory.Harmonic.EulerMascheroni
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Legacy.D10.Binomial
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Legacy.D10.Binomial
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # The harmonic estimate for the Gaussian parameter

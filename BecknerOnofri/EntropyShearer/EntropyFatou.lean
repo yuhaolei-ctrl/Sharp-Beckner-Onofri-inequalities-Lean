@@ -1,4 +1,8 @@
-import BecknerOnofri.HeatEntropyConvergence
+module
+
+public import BecknerOnofri.HeatEntropyConvergence
+
+@[expose] public section
 
 /-! Finite entropy of an L1 limit follows from a uniform entropy bound;
 finiteness is a conclusion, not an additional assumption on the limiting density. -/

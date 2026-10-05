@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleSmallMeanAlgebra
-import BecknerOnofri.CircleWeightSeries
+module
+
+public import BecknerOnofri.CircleSmallMeanAlgebra
+public import BecknerOnofri.CircleWeightSeries
+
+@[expose] public section
 
 /-! The small-mean scalar margin with the source's actual infinite-series
 weights. The only remaining analytic input here is the rate-function bound. -/

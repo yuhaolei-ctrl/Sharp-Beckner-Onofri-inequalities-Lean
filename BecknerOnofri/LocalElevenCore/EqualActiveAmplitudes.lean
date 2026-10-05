@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ActiveFactorNonzero
+module
+
+public import BecknerOnofri.LocalElevenCore.ActiveFactorNonzero
+
+@[expose] public section
 
 noncomputable section
 open Filter

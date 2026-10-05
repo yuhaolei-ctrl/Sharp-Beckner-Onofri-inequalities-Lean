@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.GlobalCoefficientCriterion
-import Legacy.TorusEndpoint.NormalizedSpectral
+module
+
+public import Legacy.TorusEndpoint.GlobalCoefficientCriterion
+public import Legacy.TorusEndpoint.NormalizedSpectral
+
+@[expose] public section
 
 /-!
 # The coefficient-to-spectral endpoint reduction

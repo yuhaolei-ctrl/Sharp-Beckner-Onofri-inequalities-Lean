@@ -1,7 +1,11 @@
-import BecknerOnofri.CirclePoissonEntropyDerivative
-import BecknerOnofri.CirclePoissonRegularity
-import BecknerOnofri.CirclePoissonSymmetry
-import BecknerOnofri.CircleFisherBound
+module
+
+public import BecknerOnofri.CirclePoissonEntropyDerivative
+public import BecknerOnofri.CirclePoissonRegularity
+public import BecknerOnofri.CirclePoissonSymmetry
+public import BecknerOnofri.CircleFisherBound
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

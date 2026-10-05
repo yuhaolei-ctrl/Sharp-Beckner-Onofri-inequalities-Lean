@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.ChebyshevProfileBounds
-import Legacy.BecknerOnofri.SmoothFourier
+module
+
+public import Legacy.BecknerOnofri.ChebyshevProfileBounds
+public import Legacy.BecknerOnofri.SmoothFourier
+
+@[expose] public section
 
 /-! Separate reflection symmetry identifies the actual torus Fourier series
 with its closed-cube Chebyshev profile. -/
@@ -120,7 +124,7 @@ theorem series_sign_sum {d : ℕ} (a : Frequency d → ℂ)
 theorem cosine_tensor_norm_le_one {d : ℕ} (k : Frequency d) (x : Space d) :
     |tensor k (cosinePoint x)| ≤ 1 := by
   rw [tensor_cosinePoint, Finset.abs_prod]
-  exact Finset.prod_le_one (fun _ _ => abs_nonneg _) (fun _ _ => abs_le.mpr
+  exact Finset.prod_le_one₀ (fun _ _ => abs_nonneg _) (fun _ _ => abs_le.mpr
     ⟨Real.neg_one_le_cos _, Real.cos_le_one _⟩)
 
 theorem profile_cosine_eq {d : ℕ} (a : Frequency d → ℂ)

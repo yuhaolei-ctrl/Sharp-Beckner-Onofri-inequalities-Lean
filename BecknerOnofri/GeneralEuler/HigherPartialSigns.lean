@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import BecknerOnofri.GeneralEuler.WeightedEquation
-import Legacy.BecknerOnofri.AngularInactiveCoordinates
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import BecknerOnofri.GeneralEuler.WeightedEquation
+public import Legacy.BecknerOnofri.AngularInactiveCoordinates
+
+@[expose] public section
 
 /-! Strong induction for actual mixed derivatives of a smooth Steiner Euler pair.
 The inactive-coordinate case is settled by equality of actual derivatives.

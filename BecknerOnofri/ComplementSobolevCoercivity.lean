@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementHessian
+module
+
+public import BecknerOnofri.ComplementHessian
+
+@[expose] public section
 
 /-! Physical H^(d/2) coercivity of the actual complementary Hessian. -/
 noncomputable section

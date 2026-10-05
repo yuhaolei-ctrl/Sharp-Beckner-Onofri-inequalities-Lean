@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.WienerAlgebraBounds
-import Mathlib.Analysis.Normed.Lp.lpSpace
+module
+
+public import BecknerOnofri.LocalElevenCore.WienerAlgebraBounds
+public import Mathlib.Analysis.Normed.Lp.lpSpace
+
+@[expose] public section
 
 /-! A complete space for continuous functions with polynomially weighted
 summable Fourier coefficients. The graph norm keeps the actual function and

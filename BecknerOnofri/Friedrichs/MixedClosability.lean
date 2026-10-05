@@ -1,7 +1,11 @@
-import BecknerOnofri.Friedrichs.MixedGradientTesting
-import BecknerOnofri.Friedrichs.MixedPotentialClosed
-import BecknerOnofri.Friedrichs.MixedFormSubmodule
-import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
+module
+
+public import BecknerOnofri.Friedrichs.MixedGradientTesting
+public import BecknerOnofri.Friedrichs.MixedPotentialClosed
+public import BecknerOnofri.Friedrichs.MixedFormSubmodule
+public import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

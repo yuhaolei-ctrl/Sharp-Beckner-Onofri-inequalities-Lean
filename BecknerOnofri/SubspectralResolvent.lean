@@ -1,5 +1,9 @@
-import BecknerOnofri.GreenCritical
-import BecknerOnofri.GraphWienerBounds
+module
+
+public import BecknerOnofri.GreenCritical
+public import BecknerOnofri.GraphWienerBounds
+
+@[expose] public section
 
 /-! The full Green linearization below the first eigenvalue. The Fourier
 resolvent is bounded by (1-mu)^{-1}; Green regularization then constructs

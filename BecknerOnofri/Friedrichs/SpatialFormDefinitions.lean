@@ -1,8 +1,12 @@
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.Analysis.Calculus.ContDiff.Defs
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+module
+
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.Analysis.Calculus.ContDiff.Defs
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+
+@[expose] public section
 
 /-! Spatial form closure, defined independently of the Jacobi spectrum.
 A core element records the function, its actual derivative, and its actual

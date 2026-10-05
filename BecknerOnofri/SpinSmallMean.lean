@@ -1,7 +1,11 @@
-import BecknerOnofri.SpinSmallGradientBounds
-import BecknerOnofri.SpinProductGibbs
-import BecknerOnofri.SpinProductFunctional
-import BecknerOnofri.SpinCenteredMoment
+module
+
+public import BecknerOnofri.SpinSmallGradientBounds
+public import BecknerOnofri.SpinProductGibbs
+public import BecknerOnofri.SpinProductFunctional
+public import BecknerOnofri.SpinCenteredMoment
+
+@[expose] public section
 
 /-! The complete small-mean finite-state inequality, with the actual
 probability law, entropy and interaction matrix of the manuscript. -/

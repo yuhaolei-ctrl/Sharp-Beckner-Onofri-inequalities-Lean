@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSupportingParabola
+module
+
+public import BecknerOnofri.SpinSupportingParabola
+
+@[expose] public section
 
 /-! The fixed-mean entropy convexity inequality, including boundary targets. -/
 noncomputable section

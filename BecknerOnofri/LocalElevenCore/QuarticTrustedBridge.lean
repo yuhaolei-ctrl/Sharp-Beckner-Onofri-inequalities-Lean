@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
-import BecknerOnofri.LocalQuarticStatementDefinitions
-import BecknerOnofri.LocalElevenCore.ReducedEnergyDeltaRemainder
-import BecknerOnofri.LocalElevenCore.GraphRegularity
+module
+
+public import BecknerOnofri.LocalElevenCore.GraphAllSobolevBounds
+public import BecknerOnofri.LocalQuarticStatementDefinitions
+public import BecknerOnofri.LocalElevenCore.ReducedEnergyDeltaRemainder
+public import BecknerOnofri.LocalElevenCore.GraphRegularity
+
+@[expose] public section
 
 noncomputable section
 open Filter Asymptotics

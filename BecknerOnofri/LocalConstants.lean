@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Complex.Exponential
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Analysis.Complex.Exponential
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 The two actual real-exponential estimates used in the manuscript's dimension-twelve

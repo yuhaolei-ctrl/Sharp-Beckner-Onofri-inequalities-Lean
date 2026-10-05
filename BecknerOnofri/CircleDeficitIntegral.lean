@@ -1,6 +1,10 @@
-import BecknerOnofri.CirclePoissonInitial
-import BecknerOnofri.CirclePoissonDeficitControl
-import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+module
+
+public import BecknerOnofri.CirclePoissonInitial
+public import BecknerOnofri.CirclePoissonDeficitControl
+public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

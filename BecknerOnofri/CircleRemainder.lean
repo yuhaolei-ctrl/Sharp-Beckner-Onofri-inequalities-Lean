@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleDeficitIntegral
-import BecknerOnofri.CircleRemainderSeries
+module
+
+public import BecknerOnofri.CircleDeficitIntegral
+public import BecknerOnofri.CircleRemainderSeries
+
+@[expose] public section
 
 /-! The quantitative circle entropy remainder, obtained by integrating the
 actual Poisson dissipation. Finite nonnegative sums followed by their monotone

@@ -1,4 +1,8 @@
-import BecknerOnofri.ConditionalExpectations
+module
+
+public import BecknerOnofri.ConditionalExpectations
+
+@[expose] public section
 
 /-! The conditional tower identity with a likelihood depending on earlier
 coordinates. This is the angle-to-spin posterior identity in the manuscript. -/

@@ -1,7 +1,11 @@
-import Mathlib.Probability.IdentDistrib
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
-import Mathlib.MeasureTheory.Measure.HasOuterApproxClosed
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Mathlib.Probability.IdentDistrib
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+public import Mathlib.MeasureTheory.Measure.HasOuterApproxClosed
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Distributional constraints survive convergence in measure. This is the
 closedness step for the L1 closure of a polarization orbit. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyLogRows
+module
+
+public import BecknerOnofri.EntropyLogRows
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyLogCertificate
 structure CheckedLog where

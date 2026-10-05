@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.CorrectionSymmetry
-import BecknerOnofri.ContinuousSymmetry
-import BecknerOnofri.LocalElevenCore.GreenLocalBranch
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.CorrectionSymmetry
+public import BecknerOnofri.ContinuousSymmetry
+public import BecknerOnofri.LocalElevenCore.GreenLocalBranch
+
+@[expose] public section
 
 /-! Translation equivariance of the actual local analytic correction, with a
 single parameter neighbourhood valid for every torus translation. -/

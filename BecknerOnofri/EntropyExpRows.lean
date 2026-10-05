@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyExpIntegerEvaluator
+module
+
+public import BecknerOnofri.EntropyExpIntegerEvaluator
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.EntropyTail.ExpCertificate
 

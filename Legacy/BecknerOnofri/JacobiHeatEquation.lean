@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiHeatSmooth
-import Legacy.BecknerOnofri.JacobiNeumann
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatSmooth
+public import Legacy.BecknerOnofri.JacobiNeumann
+
+@[expose] public section
 
 /-! The genuine, complete Jacobi heat kernel satisfies its heat equation and
 Dirichlet or Neumann boundary conditions. All series derivatives are justified

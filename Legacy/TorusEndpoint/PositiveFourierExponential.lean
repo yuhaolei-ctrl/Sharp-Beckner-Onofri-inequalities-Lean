@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.PositiveFourierSeries
-import Mathlib.Analysis.SpecialFunctions.Exponential
+module
+
+public import Legacy.TorusEndpoint.PositiveFourierSeries
+public import Mathlib.Analysis.SpecialFunctions.Exponential
+
+@[expose] public section
 
 /-!
 # Exponentiation preserves nonnegative absolutely summable Fourier coefficients

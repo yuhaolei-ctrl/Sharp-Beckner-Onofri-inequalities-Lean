@@ -1,6 +1,10 @@
-import BecknerOnofri.ConditionalLogProfile
-import BecknerOnofri.SmoothConditionalRegularity
-import BecknerOnofri.CircleGammaProfile
+module
+
+public import BecknerOnofri.ConditionalLogProfile
+public import BecknerOnofri.SmoothConditionalRegularity
+public import BecknerOnofri.CircleGammaProfile
+
+@[expose] public section
 
 /-! The circle gamma estimate applied to the actual normalized conditional
 circle, with its profile and regularity derived from the joint density. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.SelectedMarginalCorrelation
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import BecknerOnofri.SelectedMarginalCorrelation
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-! Parseval consequences of the actual selected-maximizer symmetries. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.D3AxisCoefficient
-import Mathlib.Data.List.InsertIdx
+module
+
+public import Legacy.TorusEndpoint.D3AxisCoefficient
+public import Mathlib.Data.List.InsertIdx
+
+@[expose] public section
 
 /-! The Euler recurrence for the actual finite-atom exponential coefficient.
 Marked letters are erased and reinserted bijectively; no recurrence is assumed

@@ -1,4 +1,8 @@
-import BecknerOnofri.SpatialThetaJacobiSpectrum
+module
+
+public import BecknerOnofri.SpatialThetaJacobiSpectrum
+
+@[expose] public section
 
 /-! The normalized Jacobi product identity for the actual spatial theta
 function, derived from the genuine Banach product and its Fourier spectrum. -/

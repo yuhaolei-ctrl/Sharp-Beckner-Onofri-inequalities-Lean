@@ -1,5 +1,9 @@
-import BecknerOnofri.GraphRegularity
-import BecknerOnofri.FiniteEntropyEnergy
+module
+
+public import BecknerOnofri.GraphRegularity
+public import BecknerOnofri.FiniteEntropyEnergy
+
+@[expose] public section
 
 /-! Every positive-time heat regularization of an actual probability density
 is smooth. All Fourier moments are controlled by a slower Gaussian. -/

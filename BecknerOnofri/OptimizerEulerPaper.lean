@@ -1,5 +1,9 @@
-import BecknerOnofri.RawOptimizerCorrespondence
-import BecknerOnofri.EulerEquation
+module
+
+public import BecknerOnofri.RawOptimizerCorrespondence
+public import BecknerOnofri.EulerEquation
+
+@[expose] public section
 
 /-! Smooth positive density representatives, the Fourier Euler equation, and
 Kirkwood--Monroe at every actual global extremizer. -/

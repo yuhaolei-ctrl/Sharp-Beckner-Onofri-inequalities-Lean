@@ -1,5 +1,9 @@
-import BecknerOnofri.RescaledReducedEquation
-import Mathlib.Analysis.Calculus.ImplicitContDiff
+module
+
+public import BecknerOnofri.RescaledReducedEquation
+public import Mathlib.Analysis.Calculus.ImplicitContDiff
+
+@[expose] public section
 
 /-! Actual analytic full-amplitude implicit branch near the all-active limiting
 point, and uniqueness of its real amplitudes by permutation symmetry. -/

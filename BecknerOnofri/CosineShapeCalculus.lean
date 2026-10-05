@@ -1,6 +1,10 @@
-import BecknerOnofri.CosineShapeDefinitions
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Mathlib.Analysis.Convex.Deriv
+module
+
+public import BecknerOnofri.CosineShapeDefinitions
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Mathlib.Analysis.Convex.Deriv
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

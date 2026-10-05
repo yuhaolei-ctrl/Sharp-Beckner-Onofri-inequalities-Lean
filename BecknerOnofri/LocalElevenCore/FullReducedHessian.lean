@@ -1,8 +1,12 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.FullReducedHessian
-import BecknerOnofri.LocalElevenCore.ReducedHessianCoercivity
-import BecknerOnofri.LocalElevenCore.AngularReducedKernel
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.FullReducedHessian
+public import BecknerOnofri.LocalElevenCore.ReducedHessianCoercivity
+public import BecknerOnofri.LocalElevenCore.AngularReducedKernel
+
+@[expose] public section
 
 /-! The full complex reduced Hessian: real amplitude directions are strictly
 negative for the energy, and exactly the phase directions form its kernel. -/

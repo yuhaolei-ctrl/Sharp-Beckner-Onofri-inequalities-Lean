@@ -1,5 +1,9 @@
-import BecknerOnofri.RadialE1
-import Mathlib.MeasureTheory.Function.JacobianOneDim
+module
+
+public import BecknerOnofri.RadialE1
+public import Mathlib.MeasureTheory.Function.JacobianOneDim
+
+@[expose] public section
 
 /-! Exact reciprocal substitution in the actual E1 improper integral. -/
 noncomputable section

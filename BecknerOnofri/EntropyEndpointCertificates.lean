@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyEndpointClosure
+module
+
+public import BecknerOnofri.EntropyEndpointClosure
+
+@[expose] public section
 
 /-! Endpoint consequences of the two numerical inputs in the manuscript's
 entropy proof. These are conditional helper theorems, not replacements for

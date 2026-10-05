@@ -1,8 +1,12 @@
-import Mathlib.Analysis.SpecialFunctions.SmoothTransition
-import Mathlib.Analysis.Calculus.Deriv.Support
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.SmoothTransition
+public import Mathlib.Analysis.Calculus.Deriv.Support
+public import Mathlib.Analysis.Calculus.ContDiff.Deriv
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Concrete smooth endpoint cutoffs for the spatial Friedrichs form.
 These are the manuscript's cutoffs, not an assumed approximation family. -/

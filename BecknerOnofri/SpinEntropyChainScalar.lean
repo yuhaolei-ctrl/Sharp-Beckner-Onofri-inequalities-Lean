@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinBinaryJensen
+module
+
+public import BecknerOnofri.SpinBinaryJensen
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

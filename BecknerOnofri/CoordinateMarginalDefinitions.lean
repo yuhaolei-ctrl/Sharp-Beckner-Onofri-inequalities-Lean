@@ -1,4 +1,8 @@
-import BecknerOnofri.Definitions
+module
+
+public import BecknerOnofri.Definitions
+
+@[expose] public section
 
 /-! Coordinate marginals with respect to normalized product Haar measure.
 `I` lists the retained coordinates. Integration over unused coordinates of `y`

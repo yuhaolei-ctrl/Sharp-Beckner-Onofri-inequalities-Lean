@@ -1,5 +1,9 @@
-import BecknerOnofri.ReducedEnergyParameterBound
-import BecknerOnofri.ReducedQuarticParity
+module
+
+public import BecknerOnofri.ReducedEnergyParameterBound
+public import BecknerOnofri.ReducedQuarticParity
+
+@[expose] public section
 
 /-! Exact manuscript quartic coefficients in the full parameter-dependent physical energy. -/
 noncomputable section

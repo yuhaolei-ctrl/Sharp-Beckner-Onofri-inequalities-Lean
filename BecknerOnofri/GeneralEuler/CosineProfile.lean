@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import Legacy.BecknerOnofri.SteinerSelection
-import Legacy.BecknerOnofri.ChebyshevProfileIdentification
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import Legacy.BecknerOnofri.SteinerSelection
+public import Legacy.BecknerOnofri.ChebyshevProfileIdentification
+
+@[expose] public section
 
 /-! Actual closed-cube smooth profiles for the smooth Euler potential and
 Gibbs density, identified with their concrete Fourier coefficients. -/

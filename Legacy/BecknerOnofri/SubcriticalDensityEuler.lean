@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import Legacy.BecknerOnofri.EntropyVariationalEquality
+module
+
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import Legacy.BecknerOnofri.EntropyVariationalEquality
+
+@[expose] public section
 
 /-! Recovery of the actual Euler density from a global L2 density maximizer,
 including the equality argument needed after entropy-preserving rearrangement. -/

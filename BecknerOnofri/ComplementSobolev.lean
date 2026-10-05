@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementOperator
+module
+
+public import BecknerOnofri.ComplementOperator
+
+@[expose] public section
 
 /-! Exact weighted Fourier encoding of the source Sobolev spaces. The bounded
 complement inverse acts on this complete ℓ² representation for every s. -/

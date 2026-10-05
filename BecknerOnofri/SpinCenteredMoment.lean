@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinFiniteGibbs
-import BecknerOnofri.CenteredExponential
+module
+
+public import BecknerOnofri.SpinFiniteGibbs
+public import BecknerOnofri.CenteredExponential
+
+@[expose] public section
 
 /-! The centered exponential-moment bound used in the small-mean range,
 with its exact rational denominator rather than a floating-point estimate. -/

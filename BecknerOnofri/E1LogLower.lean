@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialE1
+module
+
+public import BecknerOnofri.RadialE1
+
+@[expose] public section
 
 /-! A lower logarithmic estimate retaining the exact singular coefficient.
 This is an auxiliary ingredient toward the still-missing Adams endpoint. -/

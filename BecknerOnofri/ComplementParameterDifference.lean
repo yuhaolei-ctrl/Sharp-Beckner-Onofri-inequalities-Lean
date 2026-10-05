@@ -1,5 +1,9 @@
-import BecknerOnofri.GibbsDifferenceBound
-import BecknerOnofri.UniformReducedCubic
+module
+
+public import BecknerOnofri.GibbsDifferenceBound
+public import BecknerOnofri.UniformReducedCubic
+
+@[expose] public section
 
 /-! Quantitative dependence of the actual complementary graph on the parameter. -/
 noncomputable section

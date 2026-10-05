@@ -1,5 +1,9 @@
-import BecknerOnofri.NormalHessianL2
-import BecknerOnofri.MeanZeroSobolevCoercivity
+module
+
+public import BecknerOnofri.NormalHessianL2
+public import BecknerOnofri.MeanZeroSobolevCoercivity
+
+@[expose] public section
 
 /-! Compact critical Sobolev balls turn the exact Hessian nullspace theorem
 into a strict uniform gap on the actual L²-orthogonal normal domain. -/

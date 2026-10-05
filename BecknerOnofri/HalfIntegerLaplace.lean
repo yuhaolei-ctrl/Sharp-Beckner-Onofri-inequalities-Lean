@@ -1,4 +1,8 @@
-import BecknerOnofri.ReciprocalGaussianRecurrence
+module
+
+public import BecknerOnofri.ReciprocalGaussianRecurrence
+
+@[expose] public section
 
 /-! The actual Laplace integral at order 11/2. This is the half-integer
 Bessel evaluation used by the manuscript, proved by its Gaussian base case

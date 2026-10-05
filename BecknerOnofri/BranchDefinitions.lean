@@ -1,7 +1,11 @@
-import BecknerOnofri.Definitions
-import BecknerOnofri.Constants
-import Mathlib.Analysis.Calculus.ContDiff.Defs
-import Mathlib.Analysis.Calculus.Deriv.Basic
+module
+
+public import BecknerOnofri.Definitions
+public import BecknerOnofri.Constants
+public import Mathlib.Analysis.Calculus.ContDiff.Defs
+public import Mathlib.Analysis.Calculus.Deriv.Basic
+
+@[expose] public section
 
 /-!
 Analytic objects needed to state (1.32)--(1.34). These are definitions, not

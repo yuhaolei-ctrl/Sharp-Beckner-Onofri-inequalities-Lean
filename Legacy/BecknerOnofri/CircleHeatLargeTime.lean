@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleHeatDerivative
-import Legacy.BecknerOnofri.CircleHeatDerivativeTail
+module
+
+public import Legacy.BecknerOnofri.CircleHeatDerivative
+public import Legacy.BecknerOnofri.CircleHeatDerivativeTail
+
+@[expose] public section
 
 /-! Actual circle heat monotonicity for t >= 1/4, from a certified complete Fourier derivative tail. -/
 noncomputable section

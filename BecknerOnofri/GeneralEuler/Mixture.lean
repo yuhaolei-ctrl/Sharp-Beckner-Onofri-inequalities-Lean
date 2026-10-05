@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralEuler.CriticalComparison
-import BecknerOnofri.GeneralEuler.HigherPartialSigns
-import BecknerOnofri.GenericCosineRepresentation
+module
+
+public import BecknerOnofri.GeneralEuler.CriticalComparison
+public import BecknerOnofri.GeneralEuler.HigherPartialSigns
+public import BecknerOnofri.GenericCosineRepresentation
+
+@[expose] public section
 
 /-! The Jacobi strict-comparison and positive-Taylor argument for general
 smooth monotone Euler pairs, without variational optimality. -/

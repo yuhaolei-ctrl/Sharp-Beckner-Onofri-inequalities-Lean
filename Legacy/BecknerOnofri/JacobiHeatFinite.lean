@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiCompleteness
-import Legacy.BecknerOnofri.ParabolicComparison
-import Legacy.BecknerOnofri.SpectralHeatInverse
+module
+
+public import Legacy.BecknerOnofri.JacobiCompleteness
+public import Legacy.BecknerOnofri.ParabolicComparison
+public import Legacy.BecknerOnofri.SpectralHeatInverse
+
+@[expose] public section
 
 /-! Positivity for actual finite Jacobi spectral heat evolutions.
 Every regularity, PDE, endpoint and initial-value assertion used by the maximum principle

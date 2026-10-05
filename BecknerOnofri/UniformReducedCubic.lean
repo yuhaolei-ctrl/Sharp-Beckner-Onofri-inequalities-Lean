@@ -1,4 +1,8 @@
-import BecknerOnofri.UniformComplementBounds
+module
+
+public import BecknerOnofri.UniformComplementBounds
+
+@[expose] public section
 
 /-! Uniform cubic size of the nonlinear part of the actual reduced equation. -/
 noncomputable section

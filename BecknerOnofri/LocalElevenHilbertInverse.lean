@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenGap
-import BecknerOnofri.RealComplementOperator
+module
+
+public import BecknerOnofri.LocalElevenGap
+public import BecknerOnofri.RealComplementOperator
+
+@[expose] public section
 
 /-! Real Fourier Hilbert inverse for the actual local equation, including d=11. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiHeatBounds
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatBounds
+
+@[expose] public section
 
 /-! Uniform convergence of all time-space derivatives and genuine joint C-infinity
 smoothness of the complete normalized Jacobi heat series for positive time. -/

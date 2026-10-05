@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.InactiveFactorSign
-import BecknerOnofri.LocalElevenCore.GraphHessian
+module
+
+public import BecknerOnofri.LocalElevenCore.InactiveFactorSign
+public import BecknerOnofri.LocalElevenCore.GraphHessian
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

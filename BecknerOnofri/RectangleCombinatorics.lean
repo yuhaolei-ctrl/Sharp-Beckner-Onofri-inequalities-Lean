@@ -1,7 +1,11 @@
-import Mathlib.Data.Fintype.Powerset
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Fintype.Powerset
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 Finite combinatorics for the rectangular Fourier-lattice comparison.

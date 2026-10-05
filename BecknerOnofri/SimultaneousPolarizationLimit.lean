@@ -1,5 +1,9 @@
-import BecknerOnofri.PolarizationOrbitL1
-import BecknerOnofri.BilinearPairingL1Limit
+module
+
+public import BecknerOnofri.PolarizationOrbitL1
+public import BecknerOnofri.BilinearPairingL1Limit
+
+@[expose] public section
 
 /-! One common reflection sequence for both functions, and passage of the
 bounded-kernel comparison to actual L1 limits. -/

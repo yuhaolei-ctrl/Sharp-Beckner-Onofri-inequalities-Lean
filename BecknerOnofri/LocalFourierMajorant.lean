@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalBesselFourier
-import Legacy.TorusEndpoint.TorusHeatPositivity
+module
+
+public import BecknerOnofri.LocalBesselFourier
+public import Legacy.TorusEndpoint.TorusHeatPositivity
+
+@[expose] public section
 
 /-! Summable factorial majorants for actual first-shell Gibbs Fourier coefficients. -/
 noncomputable section
@@ -83,7 +87,7 @@ lemma firstShellFourierMajorant_tsum {d : ℕ} (t : Fin d → ℝ) :
 lemma firstShellFourierMajorant_tsum_le {d : ℕ} (t : Fin d → ℝ) :
     (∑' k : Frequency d, firstShellFourierMajorant t k) ≤ Real.exp (2 * ∑ i, t i ^ 2) := by
   rw [firstShellFourierMajorant_tsum, Finset.mul_sum, Real.exp_sum]
-  exact Finset.prod_le_prod
+  exact Finset.prod_le_prod₀
     (fun _ _ => tsum_nonneg (circleFourierMajorant_nonneg _))
     (fun i _ => circleFourierMajorant_tsum_le (t i))
 

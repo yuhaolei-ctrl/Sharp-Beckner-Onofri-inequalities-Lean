@@ -1,4 +1,8 @@
-import BecknerOnofri.QuadraticPairing
+module
+
+public import BecknerOnofri.QuadraticPairing
+
+@[expose] public section
 
 /-! The genuine complement resolvent (D−I)⁻¹ and its exact finite-mode action. -/
 noncomputable section

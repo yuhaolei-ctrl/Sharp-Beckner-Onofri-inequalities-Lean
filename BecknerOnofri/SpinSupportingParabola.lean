@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinSegmentBounds
-import BecknerOnofri.SpinDifferentialDefinitions
+module
+
+public import BecknerOnofri.SpinSegmentBounds
+public import BecknerOnofri.SpinDifferentialDefinitions
+
+@[expose] public section
 
 /-! Global supporting parabolas on every mean slice, with the exact
 constants of the 2026-09-21 manuscript and boundary probabilities allowed. -/

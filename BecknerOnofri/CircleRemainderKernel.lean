@@ -1,4 +1,8 @@
-import BecknerOnofri.CirclePoissonWeight
+module
+
+public import BecknerOnofri.CirclePoissonWeight
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set

@@ -1,4 +1,8 @@
-import Legacy.D10.AnalyticCircleMarginals
+module
+
+public import Legacy.D10.AnalyticCircleMarginals
+
+@[expose] public section
 
 /-! Actual coordinate marginals and the axis entropy estimate in every
 positive dimension. This is an axis estimate, not the full endpoint. -/

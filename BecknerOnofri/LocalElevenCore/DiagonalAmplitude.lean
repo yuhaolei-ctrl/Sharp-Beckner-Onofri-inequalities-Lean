@@ -1,9 +1,13 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.DiagonalAmplitude
-import BecknerOnofri.LocalElevenCore.DiagonalStationaryBranch
-import BecknerOnofri.LocalElevenCore.DiagonalParameterMonotonicity
-import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.DiagonalAmplitude
+public import BecknerOnofri.LocalElevenCore.DiagonalStationaryBranch
+public import BecknerOnofri.LocalElevenCore.DiagonalParameterMonotonicity
+public import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+
+@[expose] public section
 
 /-! Controlled inverse amplitude for the actual supercritical diagonal branch. -/
 noncomputable section

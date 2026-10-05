@@ -1,7 +1,11 @@
-import BecknerOnofri.SpatialThetaDiagonal
-import Mathlib.Analysis.SpecialFunctions.Log.Summable
-import Mathlib.Analysis.Convex.SpecificFunctions.Basic
-import Mathlib.Analysis.Convex.Jensen
+module
+
+public import BecknerOnofri.SpatialThetaDiagonal
+public import Mathlib.Analysis.SpecialFunctions.Log.Summable
+public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
+public import Mathlib.Analysis.Convex.Jensen
+
+@[expose] public section
 
 /-! The convergent normalized Jacobi product, its positivity, log-concavity,
 and diagonal comparison. This file does not assume or assert its identification

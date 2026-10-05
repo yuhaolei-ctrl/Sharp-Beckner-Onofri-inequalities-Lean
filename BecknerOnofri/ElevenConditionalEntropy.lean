@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenEntropyChain
-import BecknerOnofri.ElevenJointEntropy
-import BecknerOnofri.CountableIntegral
+module
+
+public import BecknerOnofri.ElevenEntropyChain
+public import BecknerOnofri.ElevenJointEntropy
+public import BecknerOnofri.CountableIntegral
+
+@[expose] public section
 
 /-! Nonnegativity of mutual information for the genuine lattice decomposition,
 including absolute-integral justification for the countable cross entropy. -/

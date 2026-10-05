@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailScalarBasic
-import BecknerOnofri.ComplementGap
-import Mathlib.Algebra.Polynomial.Coeff
+module
+
+public import BecknerOnofri.EntropyTailScalarBasic
+public import BecknerOnofri.ComplementGap
+public import Mathlib.Algebra.Polynomial.Coeff
+
+@[expose] public section
 
 /-! A polynomial encoding of the actual finite lattice sum for n=2. -/
 noncomputable section

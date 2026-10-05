@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Mathlib.Analysis.Convex.Deriv
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Mathlib.Analysis.Convex.Deriv
+
+@[expose] public section
 
 /-! Coordinate convexity from the actual nonnegative second partials on the
 closed cube, including faces where other coordinates are on the boundary. -/

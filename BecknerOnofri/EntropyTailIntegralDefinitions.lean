@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailDefinitions
+module
+
+public import BecknerOnofri.EntropyTailDefinitions
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

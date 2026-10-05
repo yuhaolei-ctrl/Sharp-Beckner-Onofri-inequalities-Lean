@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalFirstShell
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import BecknerOnofri.LocalFirstShell
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-! Exact Haar moments of the first shell, including absence of cubic resonance
 and the unslaved fourth cumulant used in the Lyapunov--Schmidt calculation. -/

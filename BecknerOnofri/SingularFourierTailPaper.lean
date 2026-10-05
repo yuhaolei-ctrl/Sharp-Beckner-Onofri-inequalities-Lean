@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousMixtureMajorant
-import BecknerOnofri.EntropyTailCountableMixture
-import BecknerOnofri.EntropyTailCertifiedScalar
+module
+
+public import BecknerOnofri.ContinuousMixtureMajorant
+public import BecknerOnofri.EntropyTailCountableMixture
+public import BecknerOnofri.EntropyTailCertifiedScalar
+
+@[expose] public section
 
 /-! The source singular Fourier-tail proposition on every smooth probability
 mixture, with the majorant derived rather than added as a hypothesis. -/

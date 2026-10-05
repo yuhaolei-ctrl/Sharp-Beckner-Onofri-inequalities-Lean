@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenShellPolynomial
+module
+
+public import BecknerOnofri.ElevenShellPolynomial
+
+@[expose] public section
 
 /-! Truncated convolution computes the exact coefficients up to squared
 radius 100; no terms that can reach those coefficients are discarded. -/

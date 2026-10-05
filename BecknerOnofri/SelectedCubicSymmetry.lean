@@ -1,6 +1,10 @@
-import BecknerOnofri.InvolutiveMaximizerSymmetry
-import BecknerOnofri.PermutationSymmetry
-import Mathlib.GroupTheory.Perm.Sign
+module
+
+public import BecknerOnofri.InvolutiveMaximizerSymmetry
+public import BecknerOnofri.PermutationSymmetry
+public import Mathlib.GroupTheory.Perm.Sign
+
+@[expose] public section
 
 /-! Actual coordinate-permutation symmetry of nonnegative Fourier maximizers.
 The support and strict Ginibre arguments are applied to transpositions, then

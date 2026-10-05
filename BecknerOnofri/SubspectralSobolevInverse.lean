@@ -1,5 +1,9 @@
-import BecknerOnofri.SubspectralResolvent
-import BecknerOnofri.ComplementSobolev
+module
+
+public import BecknerOnofri.SubspectralResolvent
+public import BecknerOnofri.ComplementSobolev
+
+@[expose] public section
 
 /-! Exact Hs norm bound for the same Fourier inverse used by the local IFT.
 In particular s=11 gives the bound displayed in the manuscript. -/

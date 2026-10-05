@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SubcriticalFourierVariation
+module
+
+public import Legacy.BecknerOnofri.SubcriticalFourierVariation
+
+@[expose] public section
 
 /-! Removing the actual mean of a real critical Sobolev potential preserves
 its Fourier energy and gives the standard mean-zero admissible class. -/

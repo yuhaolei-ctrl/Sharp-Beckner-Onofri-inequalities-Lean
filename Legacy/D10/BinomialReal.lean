@@ -1,4 +1,8 @@
-import Legacy.D10.BinomialMixture
+module
+
+public import Legacy.D10.BinomialMixture
+
+@[expose] public section
 
 /-! # Real-valued interfaces for the exact rational mixture algebra -/
 

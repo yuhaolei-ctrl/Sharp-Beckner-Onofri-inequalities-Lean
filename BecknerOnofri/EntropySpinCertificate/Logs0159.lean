@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyLogRows
+module
+
+public import BecknerOnofri.EntropyLogRows
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0159
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

@@ -1,7 +1,11 @@
-import BecknerOnofri.CircleTailDefinitions
-import BecknerOnofri.CircleTailLogBound
-import BecknerOnofri.CircleRateGlobal
-import BecknerOnofri.SpinBinaryCost
+module
+
+public import BecknerOnofri.CircleTailDefinitions
+public import BecknerOnofri.CircleTailLogBound
+public import BecknerOnofri.CircleRateGlobal
+public import BecknerOnofri.SpinBinaryCost
+
+@[expose] public section
 
 /-! Analytic monotonicity of the source's final scalar lower bound J on
 [0.999,1), proved along the genuine inverse Bessel parametrization. -/

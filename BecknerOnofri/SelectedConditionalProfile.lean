@@ -1,6 +1,10 @@
-import BecknerOnofri.SelectedConditionalRegularity
-import BecknerOnofri.CoordinateConvexity
-import BecknerOnofri.ConditionalGamma
+module
+
+public import BecknerOnofri.SelectedConditionalRegularity
+public import BecknerOnofri.CoordinateConvexity
+public import BecknerOnofri.ConditionalGamma
+
+@[expose] public section
 
 /-! The actual selected Euler potential supplies the increasing convex joint
 cosine profile needed by every conditional circle. -/

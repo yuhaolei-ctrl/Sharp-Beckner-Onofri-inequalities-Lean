@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.ExponentialL2Continuity
-import Legacy.BecknerOnofri.SubcriticalGibbs
+module
+
+public import Legacy.BecknerOnofri.ExponentialL2Continuity
+public import Legacy.BecknerOnofri.SubcriticalGibbs
+
+@[expose] public section
 
 /-! The actual Gibbs map is continuous from bounded critical Sobolev energy
 balls with their L2 topology into real L2 densities. -/

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyMinorantCompletion
-import BecknerOnofri.EntropyCertifiedWitness
+module
+
+public import BecknerOnofri.EntropyMinorantCompletion
+public import BecknerOnofri.EntropyCertifiedWitness
+
+@[expose] public section
 
 /-! Unconditional original targets, using the complete latest-route certificate.
 This generated module remains pending until ScalarCertifiedGlobal is checked. -/

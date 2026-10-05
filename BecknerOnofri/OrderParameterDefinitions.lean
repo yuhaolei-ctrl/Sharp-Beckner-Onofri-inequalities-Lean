@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDefinitions
+module
+
+public import BecknerOnofri.BranchDefinitions
+
+@[expose] public section
 
 /-! The Euclidean norm of the complete first nonzero Fourier shell.
 The two frequencies for coordinate i are e_i and -e_i. -/

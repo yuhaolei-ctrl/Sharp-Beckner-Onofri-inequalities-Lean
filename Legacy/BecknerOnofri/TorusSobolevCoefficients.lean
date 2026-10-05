@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.SobolevLatticeBoxes
-import Mathlib.Analysis.Fourier.AddCircleMulti
-import Mathlib.Topology.Sequences
-import Mathlib.Analysis.Normed.Module.FiniteDimension
+module
+
+public import Legacy.BecknerOnofri.SobolevLatticeBoxes
+public import Mathlib.Analysis.Fourier.AddCircleMulti
+public import Mathlib.Topology.Sequences
+public import Mathlib.Analysis.Normed.Module.FiniteDimension
+
+@[expose] public section
 
 /-! Finite Fourier projections and compactness from a uniform square-summable tail. -/
 

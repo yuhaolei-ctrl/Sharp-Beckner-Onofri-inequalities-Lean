@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyTailDefinitions
+module
+
+public import BecknerOnofri.EntropyTailDefinitions
+
+@[expose] public section
 
 /-! Literal scalar lattice and hypergeometric quantities from Section 3. -/
 noncomputable section

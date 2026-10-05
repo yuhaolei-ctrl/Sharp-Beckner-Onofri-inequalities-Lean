@@ -1,6 +1,10 @@
-import BecknerOnofri.AnalyticEvenSquare
-import BecknerOnofri.AnalyticParameterOrderDivision
-import Mathlib.Analysis.Calculus.DSlope
+module
+
+public import BecknerOnofri.AnalyticEvenSquare
+public import BecknerOnofri.AnalyticParameterOrderDivision
+public import Mathlib.Analysis.Calculus.DSlope
+
+@[expose] public section
 
 /-! The linear coefficient after replacing an even analytic amplitude by its
 square is determined by the actual quadratic expansion, not postulated. -/

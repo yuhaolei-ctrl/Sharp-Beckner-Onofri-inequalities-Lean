@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyHeatConstants
-import BecknerOnofri.EntropyHeatWeighted
-import BecknerOnofri.RadialHeatTail
-import BecknerOnofri.SpectralSlice
+module
+
+public import BecknerOnofri.EntropyHeatConstants
+public import BecknerOnofri.EntropyHeatWeighted
+public import BecknerOnofri.RadialHeatTail
+public import BecknerOnofri.SpectralSlice
+
+@[expose] public section
 
 noncomputable section
 set_option maxHeartbeats 1000000

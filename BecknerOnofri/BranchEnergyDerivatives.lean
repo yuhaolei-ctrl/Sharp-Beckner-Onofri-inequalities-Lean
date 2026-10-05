@@ -1,6 +1,10 @@
-import BecknerOnofri.DiagonalEnergyExpansion
-import BecknerOnofri.AnalyticDerivativeOrder
-import BecknerOnofri.ReducedQuarticAnalytic
+module
+
+public import BecknerOnofri.DiagonalEnergyExpansion
+public import BecknerOnofri.AnalyticDerivativeOrder
+public import BecknerOnofri.ReducedQuarticAnalytic
+
+@[expose] public section
 
 /-! Differentiated analytic energy remainders on the actual diagonal branch.
 The analytic hypothesis is proved from the Gibbs graph before differentiating. -/

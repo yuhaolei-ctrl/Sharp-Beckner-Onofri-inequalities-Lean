@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Topology.Order.Compact
-import Mathlib.Topology.Order.LeftRightNhds
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Topology.Order.Compact
+public import Mathlib.Topology.Order.LeftRightNhds
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! A one-dimensional parabolic comparison principle proved by the compact minimum argument.
 Only interior values of the nonnegative potential are used; it may be singular at the endpoints.

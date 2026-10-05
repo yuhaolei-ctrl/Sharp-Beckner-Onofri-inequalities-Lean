@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinTangentPolytope
+module
+
+public import BecknerOnofri.SpinTangentPolytope
+
+@[expose] public section
 
 /-! Sign-face perturbations for the thirteen-state tangent polytope. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.WeightedKernelRepresentation
+module
+
+public import Legacy.BecknerOnofri.WeightedKernelRepresentation
+
+@[expose] public section
 
 /-! Actual weighted Schur normalization from a nonzero nonnegative Euler
 eigenvector, followed by strict comparison and the positive Neumann inverse. -/

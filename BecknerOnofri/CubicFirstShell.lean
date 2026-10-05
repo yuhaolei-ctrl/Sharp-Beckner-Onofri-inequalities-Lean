@@ -1,5 +1,9 @@
-import BecknerOnofri.QuadraticCorrectionCoefficients
-import BecknerOnofri.Kappa
+module
+
+public import BecknerOnofri.QuadraticCorrectionCoefficients
+public import BecknerOnofri.Kappa
+
+@[expose] public section
 
 /-! Actual cubic first-shell term of the reduced normalized Gibbs equation. -/
 noncomputable section

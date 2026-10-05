@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.SpectralEntropy
-import Legacy.TorusEndpoint.FiniteConeTotal
-import Mathlib.Topology.Algebra.InfiniteSum.Constructions
+module
+
+public import Legacy.TorusEndpoint.SpectralEntropy
+public import Legacy.TorusEndpoint.FiniteConeTotal
+public import Mathlib.Topology.Algebra.InfiniteSum.Constructions
+
+@[expose] public section
 
 /-!
 # Full-spectrum versus half-cone reindexing

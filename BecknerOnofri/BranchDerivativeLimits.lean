@@ -1,5 +1,9 @@
-import BecknerOnofri.BranchEnergyDerivatives
-import BecknerOnofri.DiagonalParameterMonotonicity
+module
+
+public import BecknerOnofri.BranchEnergyDerivatives
+public import BecknerOnofri.DiagonalParameterMonotonicity
+
+@[expose] public section
 
 /-! Exact limits of the differentiated branch energy in the physical parameter.
 These are obtained from analytic Taylor remainders, not formal differentiation

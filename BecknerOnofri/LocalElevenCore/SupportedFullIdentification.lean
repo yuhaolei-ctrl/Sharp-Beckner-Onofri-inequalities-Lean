@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.SupportedDeltaIdentification
-import BecknerOnofri.LocalElevenCore.SubsetUniqueness
-import BecknerOnofri.LocalElevenCore.DiagonalProfile
+module
+
+public import BecknerOnofri.LocalElevenCore.SupportedDeltaIdentification
+public import BecknerOnofri.LocalElevenCore.SubsetUniqueness
+public import BecknerOnofri.LocalElevenCore.DiagonalProfile
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

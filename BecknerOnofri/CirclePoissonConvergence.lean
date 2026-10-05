@@ -1,5 +1,9 @@
-import BecknerOnofri.CirclePoissonProbability
-import Mathlib.MeasureTheory.Measure.Haar.Unique
+module
+
+public import BecknerOnofri.CirclePoissonProbability
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+
+@[expose] public section
 
 /-! A uniform quantitative approach to the constant density as the Poisson
 radius tends to zero. This is a value estimate, not yet smooth convergence. -/

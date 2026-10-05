@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.RealReducedEnergyGradient
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+module
+
+public import BecknerOnofri.LocalElevenCore.RealReducedEnergyGradient
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+
+@[expose] public section
 
 /-! The actual reduced energy in squared active-amplitude coordinates.
 All derivatives are obtained by the chain rule on the positive orthant. -/

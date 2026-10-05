@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.FormLift
+module
+
+public import BecknerOnofri.Friedrichs.FormLift
+
+@[expose] public section
 
 /-! Actual sine-weighted smooth profiles belong to the spatial form closure,
 with the function, derivative and singular-weight components identified in L2. -/

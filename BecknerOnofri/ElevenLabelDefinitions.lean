@@ -1,4 +1,8 @@
-import BecknerOnofri.ElevenDefinitions
+module
+
+public import BecknerOnofri.ElevenDefinitions
+
+@[expose] public section
 
 /-! Literal conditional lattice-label probabilities and Shannon entropy from
 Section 4. The entropy is defined by its integral, not by the identity to be proved. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleBesselSupersolution
+module
+
+public import BecknerOnofri.CircleBesselSupersolution
+
+@[expose] public section
 
 /-! The source's Riccati supersolution comparison. Multiplication by h
 removes the singular coefficient at zero; the positive-barrier argument

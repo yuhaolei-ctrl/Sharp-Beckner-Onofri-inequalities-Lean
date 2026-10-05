@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.JacobiTensorMellinIntegrability
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorMellinIntegrability
+
+@[expose] public section
 
 /-! The actual nonnegative Mellin kernel of every positive inverse Jacobi tensor power. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import BecknerOnofri.EntropyTailAxisFactors
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import BecknerOnofri.EntropyTailAxisFactors
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

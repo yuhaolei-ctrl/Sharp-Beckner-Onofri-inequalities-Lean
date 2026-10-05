@@ -1,7 +1,11 @@
-import BecknerOnofri.BranchDerivativeLimits
-import BecknerOnofri.AmplitudeDifferentiability
-import BecknerOnofri.SupercriticalBranchEnergy
-import Mathlib.Analysis.Calculus.Deriv.Inv
+module
+
+public import BecknerOnofri.BranchDerivativeLimits
+public import BecknerOnofri.AmplitudeDifferentiability
+public import BecknerOnofri.SupercriticalBranchEnergy
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+
+@[expose] public section
 
 /-! Genuine first and second derivatives of the supercritical energy. -/
 noncomputable section

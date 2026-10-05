@@ -1,5 +1,9 @@
-import BecknerOnofri.FirstShellOrbits
-import BecknerOnofri.ContinuousVariations
+module
+
+public import BecknerOnofri.FirstShellOrbits
+public import BecknerOnofri.ContinuousVariations
+
+@[expose] public section
 
 /-! Actual spatial translation tangents on the implicit graph, and their
 independence whenever every first-shell mode is nonzero. -/

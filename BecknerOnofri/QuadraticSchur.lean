@@ -1,4 +1,8 @@
-import BecknerOnofri.QuadraticResolvent
+module
+
+public import BecknerOnofri.QuadraticResolvent
+
+@[expose] public section
 
 /-! Exact quartic Schur contribution of the genuine quadratic slaved mode. -/
 noncomputable section

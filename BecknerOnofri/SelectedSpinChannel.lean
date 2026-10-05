@@ -1,7 +1,11 @@
-import BecknerOnofri.SpinChannelSymmetry
-import BecknerOnofri.SpinChannelSmallMean
-import BecknerOnofri.SelectedCubicSymmetry
-import BecknerOnofri.EndpointDuality
+module
+
+public import BecknerOnofri.SpinChannelSymmetry
+public import BecknerOnofri.SpinChannelSmallMean
+public import BecknerOnofri.SelectedCubicSymmetry
+public import BecknerOnofri.EndpointDuality
+
+@[expose] public section
 
 /-! Application of the new entropy route to the actual selected maximizer.
 Neither permutation symmetry nor the cosine mixture is an added hypothesis. -/

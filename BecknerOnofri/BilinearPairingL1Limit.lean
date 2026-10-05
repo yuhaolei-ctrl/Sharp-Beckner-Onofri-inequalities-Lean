@@ -1,4 +1,8 @@
-import BecknerOnofri.BilinearPairingL1Continuity
+module
+
+public import BecknerOnofri.BilinearPairingL1Continuity
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Legacy.TorusEndpoint

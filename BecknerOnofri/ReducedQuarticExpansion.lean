@@ -1,4 +1,8 @@
-import BecknerOnofri.SlavedGibbs
+module
+
+public import BecknerOnofri.SlavedGibbs
+
+@[expose] public section
 
 /-! The actual graph expression for the critical reduced pressure has the
 manuscript's exact quartic coefficients, with a controlled fifth-order remainder.

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.PositiveFourierAnalytic
-import Legacy.BecknerOnofri.TorusSobolevCompactness
+module
+
+public import Legacy.TorusEndpoint.PositiveFourierAnalytic
+public import Legacy.BecknerOnofri.TorusSobolevCompactness
+
+@[expose] public section
 
 /-!
 # The complex Wiener algebra on the unit torus

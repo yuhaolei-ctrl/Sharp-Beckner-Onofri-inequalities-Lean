@@ -1,4 +1,8 @@
-import BecknerOnofri.BilinearPolarizationIntegral
+module
+
+public import BecknerOnofri.BilinearPolarizationIntegral
+
+@[expose] public section
 
 /-! The quantitative L1 continuity needed to pass a bounded-kernel
 rearrangement inequality from regular functions to the full L1 domain. -/

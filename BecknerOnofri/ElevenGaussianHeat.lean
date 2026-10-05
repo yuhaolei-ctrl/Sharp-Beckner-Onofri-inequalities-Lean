@@ -1,5 +1,9 @@
-import BecknerOnofri.ElevenThetaIntegrability
-import Legacy.BecknerOnofri.GaussianHeatSplit
+module
+
+public import BecknerOnofri.ElevenThetaIntegrability
+public import Legacy.BecknerOnofri.GaussianHeatSplit
+
+@[expose] public section
 
 /-! The same Gaussian/Mellin splitting as Section 3, now applied to d=11.
 The old d≤10 integrability assumptions are discharged here by the actual

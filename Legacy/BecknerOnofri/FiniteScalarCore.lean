@@ -1,5 +1,9 @@
-import Legacy.D10.FiniteScalarSemantics
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+module
+
+public import Legacy.D10.FiniteScalarSemantics
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+@[expose] public section
 
 /-!
 Finite certificates for Section 3 of the September 16 manuscript.

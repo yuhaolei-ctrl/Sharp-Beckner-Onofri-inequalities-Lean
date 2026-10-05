@@ -1,9 +1,13 @@
-import BecknerOnofri.PolarizationLpContinuity
-import BecknerOnofri.PolarizationOrbitDistribution
-import Legacy.BecknerOnofri.GreenPolarization
-import Legacy.BecknerOnofri.SubcriticalDensityCompactness
-import Legacy.BecknerOnofri.PolarizationContinuous
-import Mathlib.Topology.Sequences
+module
+
+public import BecknerOnofri.PolarizationLpContinuity
+public import BecknerOnofri.PolarizationOrbitDistribution
+public import Legacy.BecknerOnofri.GreenPolarization
+public import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+public import Legacy.BecknerOnofri.PolarizationContinuous
+public import Mathlib.Topology.Sequences
+
+@[expose] public section
 
 /-! The closure of the polarization orbit of a prescribed L2 density
 maximizer is compact, polarization invariant and equimeasurable with it. -/

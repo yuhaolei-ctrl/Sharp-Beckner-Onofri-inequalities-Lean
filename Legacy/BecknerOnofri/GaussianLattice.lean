@@ -1,6 +1,10 @@
-import Legacy.D10.GaussianMajorantReal
-import Legacy.TorusEndpoint.TorusHeatBounds
-import Legacy.BecknerOnofri.ThetaDomination
+module
+
+public import Legacy.D10.GaussianMajorantReal
+public import Legacy.TorusEndpoint.TorusHeatBounds
+public import Legacy.BecknerOnofri.ThetaDomination
+
+@[expose] public section
 
 /-! The binomial-to-Gaussian comparison on the actual integer lattice.
 The sums have their zero mode explicitly removed. Their summability is
@@ -38,7 +42,7 @@ theorem binomialProduct_gaussian {d n : ℕ} (hn : 0 < n) (k : Frequency d) :
     binomialProduct n k ≤ gaussian (Real.log (1+1/(n : ℝ))) k := by
   unfold binomialProduct gaussian radiusSq
   rw [Finset.mul_sum, Real.exp_sum]
-  exact Finset.prod_le_prod (fun i _ => binomialZ_nonneg n (k i))
+  exact Finset.prod_le_prod₀ (fun i _ => binomialZ_nonneg n (k i))
     (fun i _ => binomialZ_gaussian n hn (k i))
 
 theorem summable_gaussian {d : ℕ} {a : ℝ} (ha : 0 < a) :

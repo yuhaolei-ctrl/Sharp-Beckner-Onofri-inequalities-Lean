@@ -1,4 +1,8 @@
-import BecknerOnofri.ComplementGap
+module
+
+public import BecknerOnofri.ComplementGap
+
+@[expose] public section
 
 /-! Spectral complement gap in every dimension d ≥ 11. The useful bound is 32, rather than the d ≥ 12 bound 64. -/
 noncomputable section

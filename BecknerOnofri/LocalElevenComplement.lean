@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.GreenLocalBranch
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.GreenLocalBranch
+
+@[expose] public section
 
 /-! The full complex first-shell Lyapunov–Schmidt complement for every d ≥ 11. No global-optimizer hypothesis is used. -/
 noncomputable section

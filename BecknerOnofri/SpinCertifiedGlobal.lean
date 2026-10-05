@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinCertifiedMiddle
-import BecknerOnofri.SpinCertifiedEndRanges
+module
+
+public import BecknerOnofri.SpinCertifiedMiddle
+public import BecknerOnofri.SpinCertifiedEndRanges
+
+@[expose] public section
 
 /-! The complete finite-state inequality for the explicit rational convex
 function. The separate claim that this function lies below gamma is proved

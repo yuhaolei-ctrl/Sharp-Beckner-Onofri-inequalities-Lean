@@ -1,6 +1,10 @@
-import BecknerOnofri.RadialThetaTail
-import Legacy.BecknerOnofri.CircleHeatPoisson
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+
+public import BecknerOnofri.RadialThetaTail
+public import Legacy.BecknerOnofri.CircleHeatPoisson
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+
+@[expose] public section
 
 /-! Actual spatial-theta radial geometry and monotonicity. The stronger
 off-diagonal comparison is not assumed here: it requires a separate proof

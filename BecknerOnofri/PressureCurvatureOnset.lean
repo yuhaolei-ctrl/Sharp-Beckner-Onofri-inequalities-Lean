@@ -1,5 +1,9 @@
-import BecknerOnofri.BranchSecondDerivativeRemainder
-import BecknerOnofri.PressureDerivativeOnset
+module
+
+public import BecknerOnofri.BranchSecondDerivativeRemainder
+public import BecknerOnofri.PressureDerivativeOnset
+
+@[expose] public section
 
 /-! The differentiated pressure asymptotics from the analytic local branch. -/
 noncomputable section

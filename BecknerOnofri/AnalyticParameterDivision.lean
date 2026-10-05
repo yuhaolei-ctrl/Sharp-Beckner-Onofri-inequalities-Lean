@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Analysis.Analytic.ChangeOrigin
-import Mathlib.Analysis.Calculus.Deriv.Mul
-import Mathlib.Analysis.Calculus.Deriv.Prod
-import Mathlib.Analysis.Normed.Module.Multilinear.Curry
+module
+
+public import Mathlib.Analysis.Analytic.IsolatedZeros
+public import Mathlib.Analysis.Analytic.ChangeOrigin
+public import Mathlib.Analysis.Calculus.Deriv.Mul
+public import Mathlib.Analysis.Calculus.Deriv.Prod
+public import Mathlib.Analysis.Normed.Module.Multilinear.Curry
+
+@[expose] public section
 
 /-! Jointly analytic division by a scalar coordinate, with Banach parameters. -/
 noncomputable section
@@ -43,7 +47,7 @@ private def dividedSeries (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ) :
 private theorem dividedTerm_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (n : ℕ) (j : Fin (n+1)) : ‖dividedTerm p n j‖ ≤ ‖p (n+1)‖ := by
   have hprod : (∏ i : Fin n, ‖slotMap (E := E) j i‖) ≤ 1 := by
-    simpa using Finset.prod_le_prod (fun i _ => norm_nonneg (slotMap (E := E) j i))
+    simpa using Finset.prod_le_prod₀ (fun i _ => norm_nonneg (slotMap (E := E) j i))
       (fun i _ => slotMap_norm_le (E := E) j i)
   have hcur : ‖(p (n+1)).curryMid j (0,1)‖ ≤ ‖p (n+1)‖ := by
     simpa only [ContinuousMultilinearMap.norm_curryMid, Prod.norm_def, norm_zero, norm_one,

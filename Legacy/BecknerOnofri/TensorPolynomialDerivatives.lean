@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CubeProfileMonotone
-import Legacy.BecknerOnofri.NormalizedExponentialPartials
+module
+
+public import Legacy.BecknerOnofri.CubeProfileMonotone
+public import Legacy.BecknerOnofri.NormalizedExponentialPartials
+
+@[expose] public section
 
 /-! Explicit tensor polynomial formulas for genuine ordered mixed partials
 in the unit cube. -/

@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.SubcriticalWiener
+module
+
+public import Legacy.BecknerOnofri.SubcriticalWiener
+
+@[expose] public section
 
 /-! Analytic input for a general smooth Euler pair. This internal interface
 contains rapid Fourier decay and the actual Fourier Euler equation, not

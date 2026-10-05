@@ -1,7 +1,11 @@
-import BecknerOnofri.AnalyticParameterOrderDivision
-import BecknerOnofri.AmplitudeLinearization
-import BecknerOnofri.ReducedParameterExpansion
-import BecknerOnofri.ReflectionSymmetry
+module
+
+public import BecknerOnofri.AnalyticParameterOrderDivision
+public import BecknerOnofri.AmplitudeLinearization
+public import BecknerOnofri.ReducedParameterExpansion
+public import BecknerOnofri.ReflectionSymmetry
+
+@[expose] public section
 
 /-! Analytic resolution of the cubic scaling singularity in the actual full
 real-amplitude reduced equation. -/

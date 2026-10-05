@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiHeatFinite
-import Legacy.BecknerOnofri.JacobiHeatSmooth
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.BecknerOnofri.JacobiHeatFinite
+public import Legacy.BecknerOnofri.JacobiHeatSmooth
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-! Actual Jacobi heat-kernel action on finite spectral and angular-polynomial initial data. -/
 noncomputable section

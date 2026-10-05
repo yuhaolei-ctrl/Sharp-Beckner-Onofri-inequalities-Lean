@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SubcriticalDensityCompactness
-import Legacy.BecknerOnofri.PolarizationMoment
-import Legacy.BecknerOnofri.PolarizationDensity
+module
+
+public import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+public import Legacy.BecknerOnofri.PolarizationMoment
+public import Legacy.BecknerOnofri.PolarizationDensity
+
+@[expose] public section
 
 /-! Compact variational selection: a single actual density maximizer is fixed
 by every polarization which increases energy and is strict for the chosen

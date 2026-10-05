@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedCutoffL2
+module
+
+public import BecknerOnofri.Friedrichs.MixedCutoffL2
+
+@[expose] public section
 
 /-! Weighted cutoff convergence includes the singular potential components;
 the dominating weight is required to be genuinely integrable. -/

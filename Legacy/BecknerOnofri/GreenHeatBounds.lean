@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.ShiftedGaussianBound
-import Legacy.BecknerOnofri.LogGaussianIntegral
-import Legacy.BecknerOnofri.ThetaDecayAllDimensions
+module
+
+public import Legacy.BecknerOnofri.ShiftedGaussianBound
+public import Legacy.BecknerOnofri.LogGaussianIntegral
+public import Legacy.BecknerOnofri.ThetaDecayAllDimensions
+
+@[expose] public section
 
 /-! Time measurability and integrable pointwise majorants for the actual heat kernel. -/
 noncomputable section

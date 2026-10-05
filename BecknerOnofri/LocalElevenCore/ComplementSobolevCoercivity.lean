@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ComplementSobolevCoercivity
-import BecknerOnofri.LocalElevenCore.ComplementHessian
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ComplementSobolevCoercivity
+public import BecknerOnofri.LocalElevenCore.ComplementHessian
+
+@[expose] public section
 
 /-! Physical H^(d/2) coercivity of the actual complementary Hessian. -/
 noncomputable section

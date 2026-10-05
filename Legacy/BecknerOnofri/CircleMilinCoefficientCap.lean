@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CircleMilinWords
-import Legacy.D10.CircleEntropy
+module
+
+public import Legacy.BecknerOnofri.CircleMilinWords
+public import Legacy.D10.CircleEntropy
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

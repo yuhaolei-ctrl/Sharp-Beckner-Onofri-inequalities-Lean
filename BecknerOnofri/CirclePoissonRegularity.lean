@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleSeriesSmooth
-import BecknerOnofri.CircleTorusFlow
-import Mathlib.Analysis.SpecialFunctions.Exp
+module
+
+public import BecknerOnofri.CircleSeriesSmooth
+public import BecknerOnofri.CircleTorusFlow
+public import Mathlib.Analysis.SpecialFunctions.Exp
+
+@[expose] public section
 
 /-! Positive-time Poisson flow has arbitrarily many spatial derivatives.
 Polynomially weighted exponential multipliers give absolute convergence

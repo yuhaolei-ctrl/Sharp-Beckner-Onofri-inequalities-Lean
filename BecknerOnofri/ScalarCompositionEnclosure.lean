@@ -1,6 +1,10 @@
-import BecknerOnofri.ScalarReciprocalEnclosure
-import BecknerOnofri.EntropyCheckedLog
-import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+module
+
+public import BecknerOnofri.ScalarReciprocalEnclosure
+public import BecknerOnofri.EntropyCheckedLog
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set EntropyLogCertificate

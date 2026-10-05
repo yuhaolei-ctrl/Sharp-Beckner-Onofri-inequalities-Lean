@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleRearrangementL1Limit
-import BecknerOnofri.CircleRadialKernel
+module
+
+public import BecknerOnofri.CircleRearrangementL1Limit
+public import BecknerOnofri.CircleRadialKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ProbabilityTheory Filter Set Legacy.TorusEndpoint

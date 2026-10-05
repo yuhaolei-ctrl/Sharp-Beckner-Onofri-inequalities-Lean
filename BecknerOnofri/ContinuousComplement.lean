@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousFirstShell
-import BecknerOnofri.ComplementImplicit
+module
+
+public import BecknerOnofri.ContinuousFirstShell
+public import BecknerOnofri.ComplementImplicit
+
+@[expose] public section
 
 /-! The genuine normalized Gibbs nonlinearity in the full first-shell and
 continuous complement coordinates. -/

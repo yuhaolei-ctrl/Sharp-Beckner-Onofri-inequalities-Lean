@@ -1,9 +1,13 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.FullBranchHessian
-import BecknerOnofri.LocalElevenCore.FullReducedHessian
-import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
-import BecknerOnofri.LocalElevenCore.AngularTangentRepresentation
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.FullBranchHessian
+public import BecknerOnofri.LocalElevenCore.FullReducedHessian
+public import BecknerOnofri.LocalElevenCore.FullHessianDecomposition
+public import BecknerOnofri.LocalElevenCore.AngularTangentRepresentation
+
+@[expose] public section
 
 /-! The complete actual raw critical-Sobolev Hessian on the diagonal branch:
 nonpositivity, a quantitative split gap, and the exact translation kernel. -/

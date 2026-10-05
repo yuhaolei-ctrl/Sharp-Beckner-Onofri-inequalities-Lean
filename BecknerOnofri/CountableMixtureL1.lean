@@ -1,5 +1,9 @@
-import BecknerOnofri.CountableMixtureExtendedMarginals
-import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+module
+
+public import BecknerOnofri.CountableMixtureExtendedMarginals
+public import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
+
+@[expose] public section
 
 /-! Countable probability mixtures converge in L1 without a uniform majorant. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Data.Rat.Cast.Order
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.Data.Nat.Choose.Basic
+public import Mathlib.Data.Rat.Cast.Order
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Kernel-checked d10 finite scalar arithmetic

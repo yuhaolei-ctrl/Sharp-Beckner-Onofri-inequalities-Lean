@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
-import Mathlib.Logic.Equiv.Fintype
+module
+
+public import BecknerOnofri.LocalElevenCore.SubsetStationaryBranch
+public import Mathlib.Logic.Equiv.Fintype
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

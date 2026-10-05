@@ -1,4 +1,8 @@
-import Legacy.TorusEndpoint.FiniteCone
+module
+
+public import Legacy.TorusEndpoint.FiniteCone
+
+@[expose] public section
 
 /-! The lexicographic positive cone partitions the nonzero lattice into two halves. -/
 

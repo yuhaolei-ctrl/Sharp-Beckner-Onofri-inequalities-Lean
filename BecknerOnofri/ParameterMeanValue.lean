@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Analysis.Asymptotics.Defs
+module
+
+public import Mathlib.Analysis.Calculus.MeanValue
+public import Mathlib.Analysis.Asymptotics.Defs
+
+@[expose] public section
 
 /-! Integrating a uniform parameter derivative bound without losing amplitude powers. -/
 noncomputable section

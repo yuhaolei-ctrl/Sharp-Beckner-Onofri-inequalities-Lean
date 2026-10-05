@@ -1,4 +1,8 @@
-import BecknerOnofri.SpinSparseVertices
+module
+
+public import BecknerOnofri.SpinSparseVertices
+
+@[expose] public section
 
 /-! The vertex computation is promoted to a bound on the entire tangent
 polytope, with no finite-support or optimizer hypothesis left over. -/

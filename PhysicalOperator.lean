@@ -1,5 +1,9 @@
-import PhysicalForm
-import BecknerOnofri.Friedrichs.MixedSpectralPowers
+module
+
+public import PhysicalForm
+public import BecknerOnofri.Friedrichs.MixedSpectralPowers
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

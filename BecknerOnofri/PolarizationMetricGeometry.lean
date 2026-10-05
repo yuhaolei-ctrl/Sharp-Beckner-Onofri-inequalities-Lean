@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CoordinateReflection
-import Mathlib.Analysis.Normed.Group.AddCircle
+module
+
+public import Legacy.BecknerOnofri.CoordinateReflection
+public import Mathlib.Analysis.Normed.Group.AddCircle
+
+@[expose] public section
 
 /-! Metric geometry of the actual half-circle reflections. -/
 noncomputable section

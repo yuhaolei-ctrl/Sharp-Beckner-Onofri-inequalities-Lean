@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiNormalizationBounds
-import Mathlib.Analysis.Calculus.ContDiff.Bounds
+module
+
+public import Legacy.BecknerOnofri.JacobiNormalizationBounds
+public import Mathlib.Analysis.Calculus.ContDiff.Bounds
+
+@[expose] public section
 
 /-! Polynomial bounds for every actual spatial derivative of the normalized Jacobi eigenfunctions. -/
 noncomputable section

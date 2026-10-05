@@ -1,6 +1,10 @@
-import BecknerOnofri.EndpointRigidity.AnalyticEndpoint
-import Legacy.BecknerOnofri.SubcriticalEulerEnergy
-import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+module
+
+public import BecknerOnofri.EndpointRigidity.AnalyticEndpoint
+public import Legacy.BecknerOnofri.SubcriticalEulerEnergy
+public import Legacy.BecknerOnofri.SubcriticalDensityCompactness
+
+@[expose] public section
 
 /-! At the proved endpoint, equality densities and their genuine dual
 potentials lie on a fixed entropy / logarithmic partition level. This allows

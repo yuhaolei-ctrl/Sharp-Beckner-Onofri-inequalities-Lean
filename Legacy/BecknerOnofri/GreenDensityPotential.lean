@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GreenConvolutionJensen
-import Legacy.BecknerOnofri.SobolevDensityPairing
-import Legacy.BecknerOnofri.HeatDensityApproximation
+module
+
+public import Legacy.BecknerOnofri.GreenConvolutionJensen
+public import Legacy.BecknerOnofri.SobolevDensityPairing
+public import Legacy.BecknerOnofri.HeatDensityApproximation
+
+@[expose] public section
 
 /-! The actual Green convolution of a continuous density is a real critical
 Sobolev potential, with exact Fourier coefficients and energy.

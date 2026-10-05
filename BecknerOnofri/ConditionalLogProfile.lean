@@ -1,7 +1,11 @@
-import BecknerOnofri.ConditionalProfileDefinitions
-import BecknerOnofri.ConditionalExpectations
-import BecknerOnofri.LogMarginalConvexity
-import Mathlib.MeasureTheory.Integral.Bochner.Set
+module
+
+public import BecknerOnofri.ConditionalProfileDefinitions
+public import BecknerOnofri.ConditionalExpectations
+public import BecknerOnofri.LogMarginalConvexity
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
+
+@[expose] public section
 
 /-! Actual conditional densities inherit the increasing convex logarithmic
 cosine profile by integration of the original exponential profile. -/

@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.JacobiEigenfunctions
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+
+public import Legacy.BecknerOnofri.JacobiEigenfunctions
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-! Polynomial control of the actual Jacobi L2 normalization, from an explicit
 positive interval near the Chebyshev endpoint. -/

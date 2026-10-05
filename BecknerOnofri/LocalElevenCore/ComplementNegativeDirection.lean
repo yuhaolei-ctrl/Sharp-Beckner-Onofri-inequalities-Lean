@@ -1,5 +1,9 @@
-import BecknerOnofri.LocalElevenCore.ComplementHessian
-import BecknerOnofri.QuadraticResolvent
+module
+
+public import BecknerOnofri.LocalElevenCore.ComplementHessian
+public import BecknerOnofri.QuadraticResolvent
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleLayerCakeIdentification
+module
+
+public import BecknerOnofri.CircleLayerCakeIdentification
+
+@[expose] public section
 
 /-! The circle rearrangement lemma on the complete nonnegative L1 domain.
 The layer-cake functions are genuine extended-nonnegative canonical

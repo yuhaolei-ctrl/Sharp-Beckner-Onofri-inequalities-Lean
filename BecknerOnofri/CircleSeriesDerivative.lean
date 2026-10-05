@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Fourier.AddCircle
-import Mathlib.Analysis.Calculus.SmoothSeries
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Fourier.AddCircle
+public import Mathlib.Analysis.Calculus.SmoothSeries
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Differentiation of actual absolutely convergent circle Fourier series.
 The first weighted absolute moment controls the derivative uniformly. -/

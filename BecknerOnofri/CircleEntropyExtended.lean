@@ -1,5 +1,9 @@
-import BecknerOnofri.ExtendedEntropy
-import BecknerOnofri.CirclePositiveEnergy
+module
+
+public import BecknerOnofri.ExtendedEntropy
+public import BecknerOnofri.CirclePositiveEnergy
+
+@[expose] public section
 
 /-! The circle entropy inequality including infinite entropy and divergent
 positive-frequency series, with neither replaced by a default real integral. -/

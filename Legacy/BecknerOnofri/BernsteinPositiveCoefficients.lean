@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.FiniteDifferenceSmooth
-import Legacy.BecknerOnofri.FiniteDifferenceMeanValue
-import Legacy.BecknerOnofri.TensorBernsteinCoefficientLimits
-import Legacy.BecknerOnofri.PositivePolynomialLimit
+module
+
+public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
+public import Legacy.BecknerOnofri.FiniteDifferenceMeanValue
+public import Legacy.BecknerOnofri.TensorBernsteinCoefficientLimits
+public import Legacy.BecknerOnofri.PositivePolynomialLimit
+
+@[expose] public section
 
 /-! Positive Taylor expansions from actual smooth coordinate derivatives.
 The derivatives are iterated Mathlib `fderivWithin` values, in one fixed order

@@ -1,6 +1,10 @@
-import BecknerOnofri.LowDimensionDefinitions
-import BecknerOnofri.FiniteEntropyEnergy
-import Legacy.BecknerOnofri.LowDimensionComplete
+module
+
+public import BecknerOnofri.LowDimensionDefinitions
+public import BecknerOnofri.FiniteEntropyEnergy
+public import Legacy.BecknerOnofri.LowDimensionComplete
+
+@[expose] public section
 
 /-! The recovered low-dimensional proof on the current trusted raw-function
 domains. All comparisons use actual Haar integrals and Fourier energies. -/

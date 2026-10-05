@@ -1,5 +1,9 @@
-import BecknerOnofri.QuadraticSchur
-import BecknerOnofri.QuadraticSlaving
+module
+
+public import BecknerOnofri.QuadraticSchur
+public import BecknerOnofri.QuadraticSlaving
+
+@[expose] public section
 
 /-! Identification of the actual analytic implicit-map quadratic term with its
 finite Fourier resolvent and Schur coefficient. -/

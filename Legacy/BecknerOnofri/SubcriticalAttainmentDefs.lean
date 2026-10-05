@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.TorusSobolevCompactness
-import Mathlib.Topology.Semicontinuity.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+module
+
+public import Legacy.BecknerOnofri.TorusSobolevCompactness
+public import Mathlib.Topology.Semicontinuity.Basic
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+@[expose] public section
 
 /-! Actual real mean-zero torus potentials, their partition function, and the
 explicit rough exponential estimate needed for subcritical attainment. -/

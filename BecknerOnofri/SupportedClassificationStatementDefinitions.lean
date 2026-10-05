@@ -1,5 +1,9 @@
-import BecknerOnofri.SupportedEnergyStatementDefinitions
-import BecknerOnofri.ContinuousSymmetry
+module
+
+public import BecknerOnofri.SupportedEnergyStatementDefinitions
+public import BecknerOnofri.ContinuousSymmetry
+
+@[expose] public section
 
 /-! The local branch classification and energy expansion on one common family.
 This statement uses only actual torus potentials, Fourier Euler equations,

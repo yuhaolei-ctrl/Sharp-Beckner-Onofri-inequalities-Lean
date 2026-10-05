@@ -1,4 +1,8 @@
-import BecknerOnofri.AnalyticTwoCoordinateDivision
+module
+
+public import BecknerOnofri.AnalyticTwoCoordinateDivision
+
+@[expose] public section
 
 /-! Analytic squared-amplitude divisibility from permutation and reflection
 symmetry, without treating a formal series as a convergent analytic function. -/

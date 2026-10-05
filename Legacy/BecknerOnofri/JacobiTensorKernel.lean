@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiTensorSpectrum
-import Legacy.BecknerOnofri.SpectralKernelRepresentation
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorSpectrum
+public import Legacy.BecknerOnofri.SpectralKernelRepresentation
+
+@[expose] public section
 
 /-! The actual L2 kernel of the critical inverse Jacobi tensor operator.
 All square summability needed by the kernel reconstruction has been proved

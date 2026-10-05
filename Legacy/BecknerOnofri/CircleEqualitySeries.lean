@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.WienerFourier
-import Legacy.BecknerOnofri.CosineMixtureAxis
-import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
+module
+
+public import Legacy.BecknerOnofri.WienerFourier
+public import Legacy.BecknerOnofri.CosineMixtureAxis
+public import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
+
+@[expose] public section
 
 /-! Actual two-sided Fourier series on the one-dimensional torus. -/
 noncomputable section

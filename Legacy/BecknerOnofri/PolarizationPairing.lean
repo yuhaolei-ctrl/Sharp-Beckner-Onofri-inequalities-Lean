@@ -1,4 +1,8 @@
-import Legacy.BecknerOnofri.CoordinatePolarization
+module
+
+public import Legacy.BecknerOnofri.CoordinatePolarization
+
+@[expose] public section
 
 /-! The actual four-point polarization inequality and its Haar integral consequence. -/
 noncomputable section

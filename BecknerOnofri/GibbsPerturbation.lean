@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousVariations
-import Mathlib.Analysis.Calculus.MeanValue
+module
+
+public import BecknerOnofri.ContinuousVariations
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-! Quantitative comparison of the actual normalized Gibbs density under a
 bounded continuous perturbation. These estimates control the omitted

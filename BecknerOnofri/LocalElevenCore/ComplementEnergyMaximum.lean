@@ -1,4 +1,8 @@
-import BecknerOnofri.LocalElevenCore.ContinuousEnergyAlongLine
+module
+
+public import BecknerOnofri.LocalElevenCore.ContinuousEnergyAlongLine
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

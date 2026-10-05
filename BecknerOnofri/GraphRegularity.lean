@@ -1,5 +1,9 @@
-import BecknerOnofri.GraphCritical
-import BecknerOnofri.OnsetRaw
+module
+
+public import BecknerOnofri.GraphCritical
+public import BecknerOnofri.OnsetRaw
+
+@[expose] public section
 
 /-! Arbitrary continuous solutions of the actual complementary Gibbs equation
 have all polynomial Wiener moments and are smooth in every Sobolev space.

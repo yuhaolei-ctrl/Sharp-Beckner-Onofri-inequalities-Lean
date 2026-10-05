@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.CoordinatePolarization
-import Mathlib.Topology.MetricSpace.Pseudo.Basic
+module
+
+public import Legacy.BecknerOnofri.CoordinatePolarization
+public import Mathlib.Topology.MetricSpace.Pseudo.Basic
+
+@[expose] public section
 
 /-! Uniform continuity of genuine max/min polarization, needed for invariance
 of the uniform closure of the finite orbit. -/

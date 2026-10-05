@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedCoordinateWeak
-import BecknerOnofri.Friedrichs.MixedAngularVectors
+module
+
+public import BecknerOnofri.Friedrichs.MixedCoordinateWeak
+public import BecknerOnofri.Friedrichs.MixedAngularVectors
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

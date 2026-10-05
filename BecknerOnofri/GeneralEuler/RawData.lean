@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import BecknerOnofri.SmoothTorusSobolev
-import BecknerOnofri.OptimizerEulerPaper
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import BecknerOnofri.SmoothTorusSobolev
+public import BecknerOnofri.OptimizerEulerPaper
+
+@[expose] public section
 
 /-! Raw smoothness and the Fourier Euler equation imply the internal analytic
 interface. No maximality or decay assumption is added. -/

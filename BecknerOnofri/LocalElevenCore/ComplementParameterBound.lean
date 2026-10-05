@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.ComplementParameterBound
-import BecknerOnofri.LocalElevenCore.ComplementParameterDifference
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.ComplementParameterBound
+public import BecknerOnofri.LocalElevenCore.ComplementParameterDifference
+
+@[expose] public section
 
 /-! The actual complement varies by O(|μ−1|‖z‖²), uniformly near the onset. -/
 noncomputable section

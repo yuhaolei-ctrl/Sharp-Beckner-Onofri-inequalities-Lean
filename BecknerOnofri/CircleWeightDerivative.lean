@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleWeightClosedForm
-import Mathlib.Analysis.Calculus.Deriv.Pow
+module
+
+public import BecknerOnofri.CircleWeightClosedForm
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.CircleScalar

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.Normed.Group.InfiniteSum
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Analysis.Normed.Group.InfiniteSum
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The countable relative-entropy comparison needed for lattice labels.
 Cross-entropy integrability implies entropy integrability, rather than being

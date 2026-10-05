@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.PositiveFourierExponential
-import Mathlib.Analysis.Normed.Group.FunctionSeries
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
+module
+
+public import Legacy.TorusEndpoint.PositiveFourierExponential
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+public import Mathlib.MeasureTheory.Integral.DominatedConvergence
+
+@[expose] public section
 
 /-!
 # Actual Fourier coefficients and positive quadrature for absolutely convergent series

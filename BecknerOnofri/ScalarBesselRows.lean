@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarBesselInteger
+module
+
+public import BecknerOnofri.ScalarBesselInteger
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar

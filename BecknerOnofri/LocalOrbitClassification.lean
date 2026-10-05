@@ -1,5 +1,9 @@
-import BecknerOnofri.NearOptimalAmplitudeLimit
-import BecknerOnofri.DiagonalAmplitude
+module
+
+public import BecknerOnofri.NearOptimalAmplitudeLimit
+public import BecknerOnofri.DiagonalAmplitude
+
+@[expose] public section
 
 /-! Actual local orbit selection for near-optimal stationary points, through
 positive-amplitude normalization and the full rescaled implicit theorem. -/

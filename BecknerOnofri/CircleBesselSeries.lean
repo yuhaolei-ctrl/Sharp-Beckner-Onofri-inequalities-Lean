@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselDefinitions
-import BecknerOnofri.CircleBesselDifferential
+module
+
+public import BecknerOnofri.CircleBesselDefinitions
+public import BecknerOnofri.CircleBesselDifferential
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.CircleScalar

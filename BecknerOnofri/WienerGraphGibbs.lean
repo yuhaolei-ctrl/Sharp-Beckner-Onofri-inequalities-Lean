@@ -1,4 +1,8 @@
-import BecknerOnofri.WienerGraphAlgebra
+module
+
+public import BecknerOnofri.WienerGraphAlgebra
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

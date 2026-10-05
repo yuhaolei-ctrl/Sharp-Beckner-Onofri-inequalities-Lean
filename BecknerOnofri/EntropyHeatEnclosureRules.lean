@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatGlobal
+module
+
+public import BecknerOnofri.EntropyHeatGlobal
+
+@[expose] public section
 
 /-! Analytic soundness rules for the numerical theta enclosures. Actual
 certificate values must separately satisfy every premise. -/

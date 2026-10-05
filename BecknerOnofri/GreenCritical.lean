@@ -1,5 +1,9 @@
-import BecknerOnofri.ContinuousComplementInverse
-import BecknerOnofri.ReducedEquation
+module
+
+public import BecknerOnofri.ContinuousComplementInverse
+public import BecknerOnofri.ReducedEquation
+
+@[expose] public section
 
 /-! Critical Sobolev regularity of actual continuous Green potentials. -/
 noncomputable section

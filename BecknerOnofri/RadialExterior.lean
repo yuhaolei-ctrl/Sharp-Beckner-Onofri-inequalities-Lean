@@ -1,4 +1,8 @@
-import BecknerOnofri.ArcsineConvolution
+module
+
+public import BecknerOnofri.ArcsineConvolution
+
+@[expose] public section
 
 /-! The entire exterior radial-bin integral bound, with the precise bins that
 cross S=1 included and probabilities given by the true arcsine convolution. -/

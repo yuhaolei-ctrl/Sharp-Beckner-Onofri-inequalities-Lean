@@ -1,4 +1,8 @@
-import BecknerOnofri.StudentFourierGaussian
+module
+
+public import BecknerOnofri.StudentFourierGaussian
+
+@[expose] public section
 
 /-! Absolute integrability of the Gamma-Gaussian mixture. This supplies the
 Fubini justification for the oscillatory Fourier integral. -/

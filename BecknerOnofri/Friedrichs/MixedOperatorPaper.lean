@@ -1,5 +1,9 @@
-import BecknerOnofri.Friedrichs.MixedOperatorStatementDefinitions
-import BecknerOnofri.Friedrichs.MixedAngularOperator
+module
+
+public import BecknerOnofri.Friedrichs.MixedOperatorStatementDefinitions
+public import BecknerOnofri.Friedrichs.MixedAngularOperator
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

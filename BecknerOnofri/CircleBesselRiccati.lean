@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleBesselSeries
+module
+
+public import BecknerOnofri.CircleBesselSeries
+
+@[expose] public section
 
 /-! The source's Bessel recurrence and Riccati equation, proved from the
 actual convergent factorial series rather than assumed special-function rules. -/

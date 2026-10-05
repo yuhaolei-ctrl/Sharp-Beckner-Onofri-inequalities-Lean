@@ -1,7 +1,11 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import BecknerOnofri.GeneralEuler.SpectralIntertwining
-import BecknerOnofri.GeneralEuler.UnitProfiles
-import Legacy.BecknerOnofri.PositiveOperatorNeumann
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import BecknerOnofri.GeneralEuler.SpectralIntertwining
+public import BecknerOnofri.GeneralEuler.UnitProfiles
+public import Legacy.BecknerOnofri.PositiveOperatorNeumann
+
+@[expose] public section
 
 /-! Genuine nonnegativity of the first angular Jacobi vectors, with the
 coefficient sequence and the real L2 representatives identified. -/

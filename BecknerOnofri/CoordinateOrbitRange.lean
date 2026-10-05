@@ -1,4 +1,8 @@
-import BecknerOnofri.CoordinateOrbitCompact
+module
+
+public import BecknerOnofri.CoordinateOrbitCompact
+
+@[expose] public section
 
 noncomputable section
 open Set Filter Legacy.TorusEndpoint

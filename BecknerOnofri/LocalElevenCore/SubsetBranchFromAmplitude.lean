@@ -1,6 +1,10 @@
-import BecknerOnofri.SupportedEnergyStatementDefinitions
-import BecknerOnofri.LocalElevenCore.SubsetPositiveBranch
-import BecknerOnofri.LocalElevenCore.SubsetEnergyExpansion
+module
+
+public import BecknerOnofri.SupportedEnergyStatementDefinitions
+public import BecknerOnofri.LocalElevenCore.SubsetPositiveBranch
+public import BecknerOnofri.LocalElevenCore.SubsetEnergyExpansion
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

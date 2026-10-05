@@ -1,4 +1,8 @@
-import BecknerOnofri.SubcriticalOptimizerConvergence
+module
+
+public import BecknerOnofri.SubcriticalOptimizerConvergence
+
+@[expose] public section
 
 /-! The same compact sequence of actual optimizers converges to zero in
 every fixed physical Sobolev norm whenever its L2 limit is zero. This

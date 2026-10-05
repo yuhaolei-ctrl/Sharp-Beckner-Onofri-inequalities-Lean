@@ -1,6 +1,10 @@
-import BecknerOnofri.GeneralSobolevEmbedding
-import BecknerOnofri.RawSubspectralLocalUniqueness
-import BecknerOnofri.LocalElevenCore.SupportedDeltaExhaustiveness
+module
+
+public import BecknerOnofri.GeneralSobolevEmbedding
+public import BecknerOnofri.RawSubspectralLocalUniqueness
+public import BecknerOnofri.LocalElevenCore.SupportedDeltaExhaustiveness
+
+@[expose] public section
 
 noncomputable section
 open Filter MeasureTheory

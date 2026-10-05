@@ -1,6 +1,10 @@
-import BecknerOnofri.PrescribedPolarizationOrbit
-import BecknerOnofri.PolarizationOrbitClosure
-import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
+module
+
+public import BecknerOnofri.PrescribedPolarizationOrbit
+public import BecknerOnofri.PolarizationOrbitClosure
+public import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
+
+@[expose] public section
 
 /-! Uniform orbit limits of a prescribed optimizer remain actual optimizers,
 by the continuous embedding into L2 and the proved closed optimizer set. -/

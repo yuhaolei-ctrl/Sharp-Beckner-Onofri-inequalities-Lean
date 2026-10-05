@@ -1,5 +1,9 @@
-import PhysicalMeasure
-import Mathlib.Dynamics.Ergodic.MeasurePreserving
+module
+
+public import PhysicalMeasure
+public import Mathlib.Dynamics.Ergodic.MeasurePreserving
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +21,7 @@ lemma ae_weight {X : Type*} [MeasurableSpace X] {μ : Measure X}
 section Rescale
 variable {X : Type*} [MeasurableSpace X] (μ : Measure X) (r : ℝ) (hr : 0 < r)
 include hr in
-private lemma rescale_bound : μ ≤ (ENNReal.ofReal r)⁻¹ • (ENNReal.ofReal r • μ) := by
+lemma rescale_bound : μ ≤ (ENNReal.ofReal r)⁻¹ • (ENNReal.ofReal r • μ) := by
   rw [smul_smul, ENNReal.inv_mul_cancel (ne_of_gt (ENNReal.ofReal_pos.mpr hr)) ENNReal.ofReal_ne_top, one_smul]
 
 def rescaleForward : Lp ℝ 2 μ →L[ℝ] Lp ℝ 2 (ENNReal.ofReal r • μ) :=

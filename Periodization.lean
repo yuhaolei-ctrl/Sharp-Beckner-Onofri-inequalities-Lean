@@ -1,8 +1,12 @@
-import PeriodizationDefinitions
-import BecknerOnofri.ElevenPeriodizedContinuity
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Analysis.Calculus.Deriv.ZPow
+module
+
+public import PeriodizationDefinitions
+public import BecknerOnofri.ElevenPeriodizedContinuity
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+public import Mathlib.Analysis.Calculus.Deriv.ZPow
+
+@[expose] public section
 
 /-! Locally uniform convergence of every coordinate derivative of the literal
 Euclidean periodization. Derivatives are ordinary derivatives along coordinate

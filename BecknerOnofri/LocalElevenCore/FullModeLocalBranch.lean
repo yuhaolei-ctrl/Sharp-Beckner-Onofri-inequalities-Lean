@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalFullModeBranchDefinitions
-import BecknerOnofri.LocalElevenCore.StationaryTrustedBridge
-import BecknerOnofri.LocalElevenCore.SobolevFullLocalMaximum
+module
+
+public import BecknerOnofri.LocalFullModeBranchDefinitions
+public import BecknerOnofri.LocalElevenCore.StationaryTrustedBridge
+public import BecknerOnofri.LocalElevenCore.SobolevFullLocalMaximum
+
+@[expose] public section
 
 noncomputable section
 open Filter

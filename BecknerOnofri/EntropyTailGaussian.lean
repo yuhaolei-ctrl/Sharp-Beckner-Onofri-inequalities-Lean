@@ -1,6 +1,10 @@
-import BecknerOnofri.EntropyTailScalarBasic
-import BecknerOnofri.ComplementGap
-import Legacy.BecknerOnofri.GaussianTheta
+module
+
+public import BecknerOnofri.EntropyTailScalarBasic
+public import BecknerOnofri.ComplementGap
+public import Legacy.BecknerOnofri.GaussianTheta
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +33,7 @@ theorem scalarProduct_gaussian {n : ℕ} (hn : 0 < n) (k : Frequency 12) :
     (∏ i : Fin 12, scalarCoefficient n (k i).natAbs) ≤
       Legacy.BecknerOnofri.GaussianLattice.gaussian (1/((n : ℝ)+1/2)) k := by
   rw [Legacy.BecknerOnofri.GaussianLattice.gaussian_eq_product]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro i _
     unfold scalarCoefficient
     positivity

@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenPeriodizedMass
-import Mathlib.Analysis.Normed.Group.FunctionSeries
-import Mathlib.Topology.Algebra.Group.Quotient
+module
+
+public import BecknerOnofri.ElevenPeriodizedMass
+public import Mathlib.Analysis.Normed.Group.FunctionSeries
+public import Mathlib.Topology.Algebra.Group.Quotient
+
+@[expose] public section
 
 /-! Continuity of the exact representative-based periodization, including
 across the boundary of the fundamental cube. -/

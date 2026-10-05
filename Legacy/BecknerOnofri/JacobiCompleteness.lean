@@ -1,8 +1,12 @@
-import Legacy.BecknerOnofri.JacobiEigenfunctions
-import Mathlib.Topology.ContinuousMap.Weierstrass
-import Mathlib.MeasureTheory.Function.ContinuousMapDense
-import Mathlib.Analysis.InnerProductSpace.l2Space
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+
+public import Legacy.BecknerOnofri.JacobiEigenfunctions
+public import Mathlib.Topology.ContinuousMap.Weierstrass
+public import Mathlib.MeasureTheory.Function.ContinuousMapDense
+public import Mathlib.Analysis.InnerProductSpace.l2Space
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+
+@[expose] public section
 
 /-! Completeness of the actual Jacobi eigenfunctions. -/
 noncomputable section

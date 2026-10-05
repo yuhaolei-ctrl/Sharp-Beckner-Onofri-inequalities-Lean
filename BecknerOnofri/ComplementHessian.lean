@@ -1,4 +1,8 @@
-import BecknerOnofri.RawComplementGap
+module
+
+public import BecknerOnofri.RawComplementGap
+
+@[expose] public section
 
 /-! Uniform strict negativity of the physical Hessian on the full raw
 critical-Sobolev complement, for small continuous potentials. -/

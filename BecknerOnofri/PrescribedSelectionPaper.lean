@@ -1,7 +1,11 @@
-import BecknerOnofri.PrescribedSelectionDefinitions
-import BecknerOnofri.PrescribedSteinerSelection
-import BecknerOnofri.OptimizerEulerPaper
-import BecknerOnofri.SteinerOptimizerMixture
+module
+
+public import BecknerOnofri.PrescribedSelectionDefinitions
+public import BecknerOnofri.PrescribedSteinerSelection
+public import BecknerOnofri.OptimizerEulerPaper
+public import BecknerOnofri.SteinerOptimizerMixture
+
+@[expose] public section
 
 /-! Full finite-entropy-domain equimeasurable selection, via the closure of
 finite polarizations of the given minimizer. Canonical successive-coordinate

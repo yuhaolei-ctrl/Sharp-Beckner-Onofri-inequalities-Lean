@@ -1,5 +1,9 @@
-import Mathlib.NumberTheory.Harmonic.EulerMascheroni
-import Mathlib.Tactic
+module
+
+public import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Exact rational lower bound for the actual Euler--Mascheroni constant.
 All finite integer arithmetic and exponential Taylor bounds are kernel checked. -/

@@ -1,7 +1,11 @@
-import BecknerOnofri.GinibrePositiveKernel
-import BecknerOnofri.GinibreHaar
-import BecknerOnofri.ContinuousVariations
-import BecknerOnofri.Translation
+module
+
+public import BecknerOnofri.GinibrePositiveKernel
+public import BecknerOnofri.GinibreHaar
+public import BecknerOnofri.ContinuousVariations
+public import BecknerOnofri.Translation
+
+@[expose] public section
 
 /-! Ginibre cosine covariance positivity for genuine finite nonnegative cosine
 potentials and their actual normalized Gibbs densities on the flat torus. -/

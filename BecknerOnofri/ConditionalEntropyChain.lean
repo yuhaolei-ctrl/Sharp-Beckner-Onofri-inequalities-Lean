@@ -1,5 +1,9 @@
-import BecknerOnofri.ConditionalEntropyDefinitions
-import BecknerOnofri.EntropyShearer.Contraction
+module
+
+public import BecknerOnofri.ConditionalEntropyDefinitions
+public import BecknerOnofri.EntropyShearer.Contraction
+
+@[expose] public section
 
 /-! The ordered entropy chain rule for genuine Haar conditional densities. -/
 

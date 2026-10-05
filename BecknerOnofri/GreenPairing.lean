@@ -1,4 +1,8 @@
-import BecknerOnofri.GraphEnergy
+module
+
+public import BecknerOnofri.GraphEnergy
+
+@[expose] public section
 
 /-! Self-adjointness of the actual continuous Green operator and its
 complement projection for the genuine Haar pairing. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.SuccessiveCoordinateRearrangement
-import BecknerOnofri.UniformPolarizationMaximizers
-import BecknerOnofri.PolarizationUniformL1
+module
+
+public import BecknerOnofri.SuccessiveCoordinateRearrangement
+public import BecknerOnofri.UniformPolarizationMaximizers
+public import BecknerOnofri.PolarizationUniformL1
+
+@[expose] public section
 
 /-! Finite canonical coordinate rearrangement of a prescribed optimizer,
 with its full distribution and variational optimality preserved. -/

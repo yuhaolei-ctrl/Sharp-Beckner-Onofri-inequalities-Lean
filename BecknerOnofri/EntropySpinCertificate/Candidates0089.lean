@@ -1,7 +1,11 @@
-import BecknerOnofri.SpinCandidateCertificate
-import BecknerOnofri.EntropySpinCertificate.Logs0144
-import BecknerOnofri.EntropySpinCertificate.Logs0145
-import BecknerOnofri.EntropySpinCertificate.Logs0146
+module
+
+public import BecknerOnofri.SpinCandidateCertificate
+public import BecknerOnofri.EntropySpinCertificate.Logs0144
+public import BecknerOnofri.EntropySpinCertificate.Logs0145
+public import BecknerOnofri.EntropySpinCertificate.Logs0146
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.Spin.CandidateBatch0089
 open EntropyLogCertificate
 set_option maxRecDepth 100000

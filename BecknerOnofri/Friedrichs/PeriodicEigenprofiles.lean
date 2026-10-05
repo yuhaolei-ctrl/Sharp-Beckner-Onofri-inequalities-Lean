@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.PeriodicWeakEquation
+module
+
+public import BecknerOnofri.Friedrichs.PeriodicWeakEquation
+
+@[expose] public section
 
 /-! All real trigonometric modes on the full circle, including the odd sector. -/
 noncomputable section

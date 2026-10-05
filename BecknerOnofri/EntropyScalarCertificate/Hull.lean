@@ -1,4 +1,8 @@
-import BecknerOnofri.ScalarHullCertificate
+module
+
+public import BecknerOnofri.ScalarHullCertificate
+
+@[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.CertifiedMinorant
 set_option maxRecDepth 100000
 set_option maxHeartbeats 10000000

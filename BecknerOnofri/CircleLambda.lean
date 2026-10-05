@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusDerivative
+module
+
+public import BecknerOnofri.CircleTorusDerivative
+
+@[expose] public section
 
 /-! Continuity, actual Fourier coefficients and self-adjointness of the
 circle |n| multiplier on functions with an absolutely summable first moment. -/

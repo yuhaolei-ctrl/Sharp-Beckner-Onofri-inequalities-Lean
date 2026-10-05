@@ -1,6 +1,10 @@
-import BecknerOnofri.FiniteEntropyEnergy
-import BecknerOnofri.HeatEnergyLimit
-import Legacy.BecknerOnofri.FiniteEnergyGreenIdentification
+module
+
+public import BecknerOnofri.FiniteEntropyEnergy
+public import BecknerOnofri.HeatEnergyLimit
+public import Legacy.BecknerOnofri.FiniteEnergyGreenIdentification
+
+@[expose] public section
 
 /-! The finite-entropy Green assertions in Section 2 for every positive
 dimension, including the literal singular-kernel integral and heat limit. -/

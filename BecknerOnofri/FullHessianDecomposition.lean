@@ -1,4 +1,8 @@
-import BecknerOnofri.GraphHessianRaw
+module
+
+public import BecknerOnofri.GraphHessianRaw
+
+@[expose] public section
 
 /-! Exact Hessian decomposition for every raw mean-zero critical-Sobolev
 variation, with genuine weighted Fourier summability and polarization. -/

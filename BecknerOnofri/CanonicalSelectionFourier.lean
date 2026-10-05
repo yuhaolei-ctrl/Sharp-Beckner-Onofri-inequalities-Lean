@@ -1,4 +1,8 @@
-import BecknerOnofri.SteinerOptimizerMixture
+module
+
+public import BecknerOnofri.SteinerOptimizerMixture
+
+@[expose] public section
 
 /-! Nonnegative real Fourier coefficients of cosine mixtures, and propagation
 to the prescribed mean-zero Green potential by the actual Euler equation. -/

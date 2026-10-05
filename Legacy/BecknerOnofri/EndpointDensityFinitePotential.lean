@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.SubcriticalPrimalDual
-import Legacy.BecknerOnofri.SobolevLatticeBoxes
-import Legacy.BecknerOnofri.WienerRepresentative
+module
+
+public import Legacy.BecknerOnofri.SubcriticalPrimalDual
+public import Legacy.BecknerOnofri.SobolevLatticeBoxes
+public import Legacy.BecknerOnofri.WienerRepresentative
+
+@[expose] public section
 
 /-! Actual finite Fourier inverse potentials for arbitrary probability densities.
 No L2 assumption on the density is used. -/

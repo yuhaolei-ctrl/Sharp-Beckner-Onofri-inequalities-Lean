@@ -1,5 +1,9 @@
-import BecknerOnofri.StudentFourierGaussian
-import BecknerOnofri.Translation
+module
+
+public import BecknerOnofri.StudentFourierGaussian
+public import BecknerOnofri.Translation
+
+@[expose] public section
 
 /-! Identification of the quotient character with the Euclidean Fourier
 phase, including its exact invariance under the integer lattice. -/

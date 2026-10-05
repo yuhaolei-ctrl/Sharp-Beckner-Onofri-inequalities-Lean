@@ -1,8 +1,12 @@
-import BecknerOnofri.AdamsEndpointEnergy
-import BecknerOnofri.SmoothPressureRestriction
-import BecknerOnofri.FiniteEntropyPhysical
-import BecknerOnofri.LowDimensionDefinitions
-import BecknerOnofri.UniformFourierHessian
+module
+
+public import BecknerOnofri.AdamsEndpointEnergy
+public import BecknerOnofri.SmoothPressureRestriction
+public import BecknerOnofri.FiniteEntropyPhysical
+public import BecknerOnofri.LowDimensionDefinitions
+public import BecknerOnofri.UniformFourierHessian
+
+@[expose] public section
 
 /-! Transfer of the critical energy bound to the full finite-entropy and
 raw critical-Sobolev variational domains. -/

@@ -1,6 +1,10 @@
-import BecknerOnofri.GreenFirstImageLower
-import BecknerOnofri.E1LogLower
-import BecknerOnofri.RadialGreenE1
+module
+
+public import BecknerOnofri.GreenFirstImageLower
+public import BecknerOnofri.E1LogLower
+public import BecknerOnofri.RadialGreenE1
+
+@[expose] public section
 
 /-! Matching logarithmic lower estimate for the actual heat-Mellin Green function. -/
 noncomputable section

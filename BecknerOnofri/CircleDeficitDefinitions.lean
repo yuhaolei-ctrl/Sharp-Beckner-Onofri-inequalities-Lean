@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleTorusFlowDefinitions
+module
+
+public import BecknerOnofri.CircleTorusFlowDefinitions
+
+@[expose] public section
 
 noncomputable section
 namespace BecknerOnofri.HighDim.CirclePoisson

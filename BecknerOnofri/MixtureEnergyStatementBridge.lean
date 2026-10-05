@@ -1,6 +1,10 @@
-import BecknerOnofri.CosineMixtureStatementDefinitions
-import BecknerOnofri.ExtendedMixtureEnergy
-import BecknerOnofri.EntropyShearer.PaperStatement
+module
+
+public import BecknerOnofri.CosineMixtureStatementDefinitions
+public import BecknerOnofri.ExtendedMixtureEnergy
+public import BecknerOnofri.EntropyShearer.PaperStatement
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

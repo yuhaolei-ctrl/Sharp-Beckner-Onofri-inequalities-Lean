@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleDensityParseval
-import BecknerOnofri.CircleSmoothOuter
-import BecknerOnofri.CircleHardyEnergy
+module
+
+public import BecknerOnofri.CircleDensityParseval
+public import BecknerOnofri.CircleSmoothOuter
+public import BecknerOnofri.CircleHardyEnergy
+
+@[expose] public section
 
 /-! Apply the Hardy shift estimate to actual density Fourier coefficients.
 The remaining Fisher identity must identify the coefficient energy with the

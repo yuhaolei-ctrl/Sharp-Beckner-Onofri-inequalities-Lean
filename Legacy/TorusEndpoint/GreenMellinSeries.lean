@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.GreenMellinMultiplier
-import Legacy.TorusEndpoint.GreenPairing
+module
+
+public import Legacy.TorusEndpoint.GreenMellinMultiplier
+public import Legacy.TorusEndpoint.GreenPairing
+
+@[expose] public section
 
 /-!
 # Absolute convergence of the Green Mellin pairing

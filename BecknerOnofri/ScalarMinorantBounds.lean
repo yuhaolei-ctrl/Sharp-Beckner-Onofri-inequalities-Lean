@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyScalarCertificate.Minorant
+module
+
+public import BecknerOnofri.EntropyScalarCertificate.Minorant
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set

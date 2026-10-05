@@ -1,8 +1,12 @@
-import Mathlib.Analysis.SpecialFunctions.Bernstein
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.Topology.MetricSpace.Pseudo.Pi
-import Mathlib.Analysis.Normed.Group.Bounded
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Bernstein
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Topology.MetricSpace.Pseudo.Pi
+public import Mathlib.Analysis.Normed.Group.Bounded
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Actual tensor Bernstein polynomials on the closed finite-dimensional cube. -/
 noncomputable section

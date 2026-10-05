@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalElevenContinuousInverse
-import BecknerOnofri.QuarticSignsEleven
-import BecknerOnofri.UniformReducedCubic
-import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+module
+
+public import BecknerOnofri.LocalElevenContinuousInverse
+public import BecknerOnofri.QuarticSignsEleven
+public import BecknerOnofri.UniformReducedCubic
+public import BecknerOnofri.LocalElevenCore.UniformComplementBounds
+
+@[expose] public section
 
 /-! Uniform cubic size of the nonlinear part of the actual reduced equation. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.CirclePoissonProbability
+module
+
+public import BecknerOnofri.CirclePoissonProbability
+
+@[expose] public section
 
 /-! Exact Fourier multipliers of the actual rational Poisson kernel. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
-import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
-import Mathlib.Analysis.Calculus.FDeriv.Analytic
+module
+
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
+public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
+public import Mathlib.Analysis.Calculus.FDeriv.Analytic
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

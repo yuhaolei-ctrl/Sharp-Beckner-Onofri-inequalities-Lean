@@ -1,7 +1,11 @@
-import BecknerOnofri.GeneralEuler.Regularity
-import Legacy.BecknerOnofri.AngularMixedL2
-import Legacy.BecknerOnofri.JacobiTensorSpectrum
-import Legacy.BecknerOnofri.SubcriticalWiener
+module
+
+public import BecknerOnofri.GeneralEuler.Regularity
+public import Legacy.BecknerOnofri.AngularMixedL2
+public import Legacy.BecknerOnofri.JacobiTensorSpectrum
+public import Legacy.BecknerOnofri.SubcriticalWiener
+
+@[expose] public section
 
 /-! Actual bounded inverse powers intertwine the full angular differentiated
 Fourier series. This proves the Euler inverse equation in the real L2 cube. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.BranchDerivativeLimits
+module
+
+public import BecknerOnofri.BranchDerivativeLimits
+
+@[expose] public section
 
 /-! Quantitative control of the curvature remainder by analytic branch expansions. -/
 noncomputable section

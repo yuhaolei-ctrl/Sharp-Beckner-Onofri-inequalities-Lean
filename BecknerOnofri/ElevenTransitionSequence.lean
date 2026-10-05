@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenTransitionZeroSet
-import BecknerOnofri.SubcriticalOptimizerCompactness
-import BecknerOnofri.SubcriticalOptimizerConvergence
+module
+
+public import BecknerOnofri.ElevenTransitionZeroSet
+public import BecknerOnofri.SubcriticalOptimizerCompactness
+public import BecknerOnofri.SubcriticalOptimizerConvergence
+
+@[expose] public section
 
 /-! An explicit sequence of positive-pressure subcritical couplings decreasing
 to the global transition, with a uniform genuine coercivity gap. -/

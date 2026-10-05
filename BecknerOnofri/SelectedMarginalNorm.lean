@@ -1,5 +1,9 @@
-import BecknerOnofri.SelectedMarginalParseval
-import BecknerOnofri.ContinuousMarginal
+module
+
+public import BecknerOnofri.SelectedMarginalParseval
+public import BecknerOnofri.ContinuousMarginal
+
+@[expose] public section
 
 /-! The common actual one-coordinate marginal of a selected maximizer satisfies
 the source twelfth-root L² bound. -/

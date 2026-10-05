@@ -1,6 +1,10 @@
-import BecknerOnofri.PolarizationOrbitDistribution
-import BecknerOnofri.DistributionL1Limit
-import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
+module
+
+public import BecknerOnofri.PolarizationOrbitDistribution
+public import BecknerOnofri.DistributionL1Limit
+public import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter ProbabilityTheory Legacy.TorusEndpoint

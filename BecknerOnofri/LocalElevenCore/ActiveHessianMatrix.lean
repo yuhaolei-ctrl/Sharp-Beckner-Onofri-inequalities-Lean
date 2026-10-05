@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalElevenCore.SquaredHessianRowDifference
-import BecknerOnofri.LocalElevenCore.SquaredHessianSymmetry
-import BecknerOnofri.EquicorrelatedRecognition
+module
+
+public import BecknerOnofri.LocalElevenCore.SquaredHessianRowDifference
+public import BecknerOnofri.LocalElevenCore.SquaredHessianSymmetry
+public import BecknerOnofri.EquicorrelatedRecognition
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

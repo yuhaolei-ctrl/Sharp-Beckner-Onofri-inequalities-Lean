@@ -1,4 +1,8 @@
-import BecknerOnofri.Friedrichs.MixedAngularOperator
+module
+
+public import BecknerOnofri.Friedrichs.MixedAngularOperator
+
+@[expose] public section
 
 /-! Actual mixed spatial operator eigenvectors used in the finite cosine-sum
 step of the manuscript. The coordinate frequency may be less than alpha. -/

@@ -1,4 +1,8 @@
-import BecknerOnofri.RadialGreenFinite
+module
+
+public import BecknerOnofri.RadialGreenFinite
+
+@[expose] public section
 
 /-! The source's exact rational heat-time partition: ratio 1025/1024,
 clipped at 64, with exactly 4261 nonempty panels. -/

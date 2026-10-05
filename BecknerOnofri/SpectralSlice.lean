@@ -1,7 +1,11 @@
-import Legacy.BecknerOnofri.ThetaIntegrability
-import Legacy.TorusEndpoint.GreenMellinMultiplier
-import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
-import Mathlib.Analysis.SumIntegralComparisons
+module
+
+public import Legacy.BecknerOnofri.ThetaIntegrability
+public import Legacy.TorusEndpoint.GreenMellinMultiplier
+public import Mathlib.Analysis.SpecialFunctions.Gaussian.PoissonSummation
+public import Mathlib.Analysis.SumIntegralComparisons
+
+@[expose] public section
 
 /-! The actual one-dimensional spectral slice, with its Mellin representation. -/
 

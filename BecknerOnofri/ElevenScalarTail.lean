@@ -1,8 +1,12 @@
-import BecknerOnofri.ElevenScalarFinite
-import BecknerOnofri.ElevenThetaCertificate
-import BecknerOnofri.ElevenGaussianHeat
-import Legacy.BecknerOnofri.GaussianScalarTail
-import Legacy.BecknerOnofri.EulerLower
+module
+
+public import BecknerOnofri.ElevenScalarFinite
+public import BecknerOnofri.ElevenThetaCertificate
+public import BecknerOnofri.ElevenGaussianHeat
+public import Legacy.BecknerOnofri.GaussianScalarTail
+public import Legacy.BecknerOnofri.EulerLower
+
+@[expose] public section
 
 /-! The large-index part of the eleven-dimensional scalar gap, using the
 actual Gaussian lattice sum and the certified improper theta integral. -/

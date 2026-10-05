@@ -1,6 +1,10 @@
-import BecknerOnofri.CircleDeficitDefinitions
-import BecknerOnofri.CircleTorusRegularity
-import BecknerOnofri.CircleDensityParseval
+module
+
+public import BecknerOnofri.CircleDeficitDefinitions
+public import BecknerOnofri.CircleTorusRegularity
+public import BecknerOnofri.CircleDensityParseval
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

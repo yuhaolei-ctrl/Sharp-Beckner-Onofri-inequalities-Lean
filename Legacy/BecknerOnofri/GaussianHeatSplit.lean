@@ -1,6 +1,10 @@
-import Legacy.BecknerOnofri.GaussianHeatChanges
-import Legacy.BecknerOnofri.GaussianMellin
-import Legacy.BecknerOnofri.GaussianCentralSubstitution
+module
+
+public import Legacy.BecknerOnofri.GaussianHeatChanges
+public import Legacy.BecknerOnofri.GaussianMellin
+public import Legacy.BecknerOnofri.GaussianCentralSubstitution
+
+@[expose] public section
 
 /-!
 # Splitting the actual shifted Mellin integral at pi

@@ -1,6 +1,10 @@
-import BecknerOnofri.ElevenLabelExpectations
-import BecknerOnofri.ElevenLabelMoment
-import BecknerOnofri.CountableProductLaw
+module
+
+public import BecknerOnofri.ElevenLabelExpectations
+public import BecknerOnofri.ElevenLabelMoment
+public import BecknerOnofri.CountableProductLaw
+
+@[expose] public section
 
 /-! Entropy subadditivity for the actual eleven-dimensional lattice-label law. -/
 noncomputable section

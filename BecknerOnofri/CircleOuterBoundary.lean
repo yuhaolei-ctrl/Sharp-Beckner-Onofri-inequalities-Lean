@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleOuterDefinitions
-import BecknerOnofri.CircleOuterReal
+module
+
+public import BecknerOnofri.CircleOuterDefinitions
+public import BecknerOnofri.CircleOuterReal
+
+@[expose] public section
 
 /-! One-sided Fourier reconstruction of half a real, even logarithm and the
 exact modulus of its exponential on the boundary. -/

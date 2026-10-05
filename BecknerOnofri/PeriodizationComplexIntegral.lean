@@ -1,4 +1,8 @@
-import BecknerOnofri.PeriodizationIntegral
+module
+
+public import BecknerOnofri.PeriodizationIntegral
+
+@[expose] public section
 
 /-! Complex-valued integral unfolding on the same fundamental cube. -/
 noncomputable section

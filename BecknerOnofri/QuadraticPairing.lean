@@ -1,4 +1,8 @@
-import BecknerOnofri.QuadraticCoefficients
+module
+
+public import BecknerOnofri.QuadraticCoefficients
+
+@[expose] public section
 
 /-! Actual Haar pairings of the quadratic source with its finite Fourier modes. -/
 noncomputable section

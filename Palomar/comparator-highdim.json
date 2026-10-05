@@ -1,0 +1,22 @@
+{
+  "challenge_module": "Palomar.HighDimChallenge",
+  "solution_module": "Palomar.HighDimSolution",
+  "theorem_names": [
+    "BecknerOnofri.Target.density_endpoint",
+    "BecknerOnofri.Target.density_rigidity",
+    "BecknerOnofri.Target.potential_endpoint",
+    "BecknerOnofri.Target.potential_rigidity",
+    "BecknerOnofri.Target.pressure_threshold",
+    "BecknerOnofri.Target.coefficient_threshold",
+    "BecknerOnofri.Target.kappa_positive",
+    "BecknerOnofri.Target.full_branch_onset",
+    "BecknerOnofri.Target.pressure_onset",
+    "BecknerOnofri.Target.coefficient_onset"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

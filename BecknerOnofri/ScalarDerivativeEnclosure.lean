@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarCompositionEnclosure
-import Mathlib.Analysis.Calculus.Deriv.Slope
+module
+
+public import BecknerOnofri.ScalarCompositionEnclosure
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set Filter

@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.GreenLowerBound
-import Legacy.TorusEndpoint.GreenHeatRegularization
+module
+
+public import Legacy.TorusEndpoint.GreenLowerBound
+public import Legacy.TorusEndpoint.GreenHeatRegularization
+
+@[expose] public section
 
 /-!
 # Shifted heat tests for the actual heat-regularized Green function

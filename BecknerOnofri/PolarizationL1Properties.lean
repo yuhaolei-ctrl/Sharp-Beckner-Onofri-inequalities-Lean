@@ -1,4 +1,8 @@
-import BecknerOnofri.PolarizationL1Contraction
+module
+
+public import BecknerOnofri.PolarizationL1Contraction
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Set Legacy.TorusEndpoint

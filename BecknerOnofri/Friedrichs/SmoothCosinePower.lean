@@ -1,6 +1,10 @@
-import BecknerOnofri.SmoothAngularPowerFourier
-import BecknerOnofri.GeneralCoefficientReflections
-import BecknerOnofri.GeneralEuler.CubeAffineDerivatives
+module
+
+public import BecknerOnofri.SmoothAngularPowerFourier
+public import BecknerOnofri.GeneralCoefficientReflections
+public import BecknerOnofri.GeneralEuler.CubeAffineDerivatives
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

@@ -1,7 +1,11 @@
-import BecknerOnofri.LocalQsigma
-import BecknerOnofri.LocalTiltedEstimates
-import BecknerOnofri.LegacyBridge
-import Legacy.BecknerOnofri.SobolevDensityPairing
+module
+
+public import BecknerOnofri.LocalQsigma
+public import BecknerOnofri.LocalTiltedEstimates
+public import BecknerOnofri.LegacyBridge
+public import Legacy.BecknerOnofri.SobolevDensityPairing
+
+@[expose] public section
 
 /-! Actual Parseval and quadratic pairing bounds for higher Fourier modes. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import BecknerOnofri.EntropyHeatFiniteRules
+module
+
+public import BecknerOnofri.EntropyHeatFiniteRules
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

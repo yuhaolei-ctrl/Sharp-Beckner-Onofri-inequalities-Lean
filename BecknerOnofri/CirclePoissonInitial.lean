@@ -1,6 +1,10 @@
-import BecknerOnofri.CirclePoissonEntropyFisher
-import BecknerOnofri.CirclePoissonLimit
-import BecknerOnofri.CircleDeficitDefinitions
+module
+
+public import BecknerOnofri.CirclePoissonEntropyFisher
+public import BecknerOnofri.CirclePoissonLimit
+public import BecknerOnofri.CircleDeficitDefinitions
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

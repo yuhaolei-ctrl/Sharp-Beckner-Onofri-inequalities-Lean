@@ -1,6 +1,10 @@
-import BecknerOnofri.ContinuousLogPartitionTaylor
-import Mathlib.Analysis.Normed.Operator.Bilinear
-import Mathlib.Analysis.Calculus.FDeriv.CompCLM
+module
+
+public import BecknerOnofri.ContinuousLogPartitionTaylor
+public import Mathlib.Analysis.Normed.Operator.Bilinear
+public import Mathlib.Analysis.Calculus.FDeriv.CompCLM
+
+@[expose] public section
 
 /-! Exact Fréchet variations of the real continuous Gibbs map and log partition. -/
 noncomputable section

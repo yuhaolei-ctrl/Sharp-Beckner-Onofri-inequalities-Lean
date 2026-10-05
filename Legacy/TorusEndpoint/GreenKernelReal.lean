@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.GreenMultiplierSummability
-import Legacy.TorusEndpoint.PhysicalFiniteFourier
-import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+module
+
+public import Legacy.TorusEndpoint.GreenMultiplierSummability
+public import Legacy.TorusEndpoint.PhysicalFiniteFourier
+public import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
+
+@[expose] public section
 
 /-!
 # A real representative of the actual Haar L² Green function

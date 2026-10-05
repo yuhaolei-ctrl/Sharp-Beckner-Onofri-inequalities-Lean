@@ -1,6 +1,10 @@
-import BecknerOnofri.LocalFirstShell
-import BecknerOnofri.CenteredExponential
-import Mathlib.MeasureTheory.Measure.Tilted
+module
+
+public import BecknerOnofri.LocalFirstShell
+public import BecknerOnofri.CenteredExponential
+public import Mathlib.MeasureTheory.Measure.Tilted
+
+@[expose] public section
 
 /-! Actual tilted probability measures and the bounded higher-mode exponential estimate. -/
 noncomputable section

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.InnerProductSpace.l2Space
-import Mathlib.Analysis.InnerProductSpace.Spectrum
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.InnerProductSpace.l2Space
+public import Mathlib.Analysis.InnerProductSpace.Spectrum
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Actual bounded real diagonal multipliers in a genuine Hilbert basis. -/
 noncomputable section

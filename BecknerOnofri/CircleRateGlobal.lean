@@ -1,5 +1,9 @@
-import BecknerOnofri.CircleBesselInverse
-import BecknerOnofri.CircleRateLower
+module
+
+public import BecknerOnofri.CircleBesselInverse
+public import BecknerOnofri.CircleRateLower
+
+@[expose] public section
 
 /-! Rate-function bounds on the entire mean interval, using the actual
 inverse Bessel mean. The second bound is the input to the source's final

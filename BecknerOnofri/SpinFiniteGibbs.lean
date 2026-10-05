@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinEntropyConvexity
-import BecknerOnofri.Entropy
+module
+
+public import BecknerOnofri.SpinEntropyConvexity
+public import BecknerOnofri.Entropy
+
+@[expose] public section
 
 /-! The finite Gibbs variational estimate used in the small-mean proof. -/
 noncomputable section

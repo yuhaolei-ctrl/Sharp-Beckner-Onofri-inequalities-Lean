@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinMixtureMoments
-import BecknerOnofri.SpinCountMoments
+module
+
+public import BecknerOnofri.SpinMixtureMoments
+public import BecknerOnofri.SpinCountMoments
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

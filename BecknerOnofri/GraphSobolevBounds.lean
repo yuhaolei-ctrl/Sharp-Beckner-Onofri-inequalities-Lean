@@ -1,5 +1,9 @@
-import BecknerOnofri.UniformComplementBounds
-import BecknerOnofri.GraphEnergy
+module
+
+public import BecknerOnofri.UniformComplementBounds
+public import BecknerOnofri.GraphEnergy
+
+@[expose] public section
 
 /-! Quantitative physical Sobolev estimates for the actual complementary
 graph, from its genuine Fourier equation and Haar Parseval identity. -/

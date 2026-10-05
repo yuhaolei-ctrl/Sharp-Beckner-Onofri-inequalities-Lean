@@ -1,4 +1,8 @@
-import BecknerOnofri.PhysicalBranchProperties
+module
+
+public import BecknerOnofri.PhysicalBranchProperties
+
+@[expose] public section
 
 /-! Actual continuous representatives of each spatial translation tangent of
 the physical branch, for the raw L² orthogonality in the trusted statement. -/

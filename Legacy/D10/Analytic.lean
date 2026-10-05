@@ -1,6 +1,10 @@
-import Legacy.TorusEndpoint.EntropyVariational
-import Legacy.TorusEndpoint.ExtendedEntropy
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import Legacy.TorusEndpoint.EntropyVariational
+public import Legacy.TorusEndpoint.ExtendedEntropy
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 /-!
 # Unconditional entropy analysis for the dimension-ten proof

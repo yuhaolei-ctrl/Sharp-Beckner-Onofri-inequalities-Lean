@@ -1,4 +1,8 @@
-import BecknerOnofri.CircleOuterMoments
+module
+
+public import BecknerOnofri.CircleOuterMoments
+
+@[expose] public section
 
 /-! The first weighted Wiener moment supplies the finite coefficient energy
 required by the Hardy dissipation bound. -/

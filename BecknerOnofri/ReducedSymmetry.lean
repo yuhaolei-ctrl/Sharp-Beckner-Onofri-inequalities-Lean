@@ -1,5 +1,9 @@
-import BecknerOnofri.CorrectionSymmetry
-import BecknerOnofri.ReducedEquation
+module
+
+public import BecknerOnofri.CorrectionSymmetry
+public import BecknerOnofri.ReducedEquation
+
+@[expose] public section
 
 /-! Exact translation covariance of the actual, non-polynomial reduced equation. -/
 noncomputable section

@@ -1,5 +1,9 @@
-import BecknerOnofri.ClosedCubeTaylorDefinitions
-import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+module
+
+public import BecknerOnofri.ClosedCubeTaylorDefinitions
+public import Legacy.BecknerOnofri.BernsteinPositiveCoefficients
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators Topology ContDiff

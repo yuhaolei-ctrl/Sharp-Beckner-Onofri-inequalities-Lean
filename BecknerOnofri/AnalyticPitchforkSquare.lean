@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import BecknerOnofri.AnalyticSquareParameter
-import BecknerOnofri.AnalyticScalarInverse
-import BecknerOnofri.AnalyticScalarTaylor
-import BecknerOnofri.AnalyticPitchfork
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+public import BecknerOnofri.AnalyticSquareParameter
+public import BecknerOnofri.AnalyticScalarInverse
+public import BecknerOnofri.AnalyticScalarTaylor
+public import BecknerOnofri.AnalyticPitchfork
+
+@[expose] public section
 
 /-! Analytic squared-amplitude parametrization for an actual odd scalar residual
 whose analytic data have been supplied, with the manuscript's parameter delta=1-1/tau. -/

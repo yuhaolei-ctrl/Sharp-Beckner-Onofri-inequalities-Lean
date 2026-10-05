@@ -1,5 +1,9 @@
-import BecknerOnofri.DistributionL1Limit
-import Mathlib.MeasureTheory.Function.ConvergenceInDistribution
+module
+
+public import BecknerOnofri.DistributionL1Limit
+public import Mathlib.MeasureTheory.Function.ConvergenceInDistribution
+
+@[expose] public section
 
 /-! Both sides of an equidistribution identity may vary along L1-convergent
 sequences. This is needed when rearranging approximations of an L1 function. -/

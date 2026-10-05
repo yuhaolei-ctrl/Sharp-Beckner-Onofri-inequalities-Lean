@@ -1,5 +1,9 @@
-import BecknerOnofri.SpinDefinitions
-import Mathlib.Tactic
+module
+
+public import BecknerOnofri.SpinDefinitions
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Kernel-checked rational calculations for the new thirteen-state argument.
 No external numerical program or saved numerical report is a premise. -/

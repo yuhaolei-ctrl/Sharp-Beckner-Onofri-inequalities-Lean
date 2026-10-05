@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiTensorHeatComparison
-import Legacy.BecknerOnofri.JacobiHeatStrictComparison
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorHeatComparison
+public import Legacy.BecknerOnofri.JacobiHeatStrictComparison
+
+@[expose] public section
 
 /-! Genuine product-kernel comparison with the single-active-coordinate baseline. -/
 noncomputable section
@@ -33,7 +37,7 @@ theorem activeCoordinates_nonempty {d : ℕ} (a : Index d) (ha : a≠0) :
 theorem kernel_le_boundary {d : ℕ} (a : Index d) {t : ℝ} (ht : 0<t)
     {x y : Space d} (hx : x∈MixedBoundaryHeat.interiorCube d) (hy : y∈MixedBoundaryHeat.interiorCube d) :
     kernel a t x y≤kernel (boundaryIndex (activeCoordinates a)) t x y := by
-  apply Finset.prod_le_prod (fun i _ => heatKernel_nonnegative_all (a i) ht (hx i) (hy i))
+  apply Finset.prod_le_prod₀ (fun i _ => heatKernel_nonnegative_all (a i) ht (hx i) (hy i))
   intro i hi
   by_cases ha : a i=0
   · simp [boundaryIndex,mem_activeCoordinates,ha]

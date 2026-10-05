@@ -1,4 +1,8 @@
-import BecknerOnofri.GreenLogLower
+module
+
+public import BecknerOnofri.GreenLogLower
+
+@[expose] public section
 
 /-! Pointwise comparison of the logarithmically normalized Green function
 with the average of its one-dimensional coordinate kernels. -/

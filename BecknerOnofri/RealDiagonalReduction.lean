@@ -1,5 +1,9 @@
-import BecknerOnofri.ReflectionSymmetry
-import BecknerOnofri.ReducedAxisDerivative
+module
+
+public import BecknerOnofri.ReflectionSymmetry
+public import BecknerOnofri.ReducedAxisDerivative
+
+@[expose] public section
 
 /-! The full complex first-shell equation really restricts to one real
 equation on the symmetric diagonal, by actual torus symmetries. -/

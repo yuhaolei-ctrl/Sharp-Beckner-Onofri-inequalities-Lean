@@ -1,7 +1,11 @@
-import BecknerOnofri.EntropyTailIntegralDefinitions
-import BecknerOnofri.EntropyTailHeat
-import Legacy.BecknerOnofri.GaussianMellinTerm
-import Legacy.TorusEndpoint.IntegrableSeries
+module
+
+public import BecknerOnofri.EntropyTailIntegralDefinitions
+public import BecknerOnofri.EntropyTailHeat
+public import Legacy.BecknerOnofri.GaussianMellinTerm
+public import Legacy.TorusEndpoint.IntegrableSeries
+
+@[expose] public section
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false

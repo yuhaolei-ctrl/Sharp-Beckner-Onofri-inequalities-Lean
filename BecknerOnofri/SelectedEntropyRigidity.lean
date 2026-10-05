@@ -1,7 +1,11 @@
-import BecknerOnofri.SelectedEntropyGap
-import BecknerOnofri.EntropyEnergySpectral
-import BecknerOnofri.EntropyMixtureRigidity
-import BecknerOnofri.Uniform
+module
+
+public import BecknerOnofri.SelectedEntropyGap
+public import BecknerOnofri.EntropyEnergySpectral
+public import BecknerOnofri.EntropyMixtureRigidity
+public import BecknerOnofri.Uniform
+
+@[expose] public section
 
 /-! Final analytic rigidity step of the entropy route. The scalar-tail and
 finite-spin certificates remain explicit hypotheses until separately checked. -/

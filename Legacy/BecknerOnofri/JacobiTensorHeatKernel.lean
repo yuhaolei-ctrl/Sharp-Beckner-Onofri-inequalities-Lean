@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.JacobiTensorKernel
-import Legacy.BecknerOnofri.JacobiHeatSmooth
+module
+
+public import Legacy.BecknerOnofri.JacobiTensorKernel
+public import Legacy.BecknerOnofri.JacobiHeatSmooth
+
+@[expose] public section
 
 /-! The actual product of the one-dimensional Jacobi heat kernels,
 with the heat parameter `exp(-t*lambda)` in every coordinate. -/
@@ -79,7 +83,7 @@ theorem term_eq_product {d : ℕ} (a n : Index d) (t : ℝ) (x y : Space d) :
 theorem term_bound {d : ℕ} (a : Index d) (t : ℝ) (n : Index d) (z : Space d × Space d) :
     ‖term a t n z‖ ≤ majorant a t n := by
   rw [show z = (z.1,z.2) from rfl, term_eq_product, norm_prod]
-  exact Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+  exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
     (fun i _ => oneTerm_bound (a i) t (n i) (z.1 i) (z.2 i))
 
 theorem majorant_nonneg {d : ℕ} (a : Index d) (t : ℝ) (n : Index d) : 0 ≤ majorant a t n :=

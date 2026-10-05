@@ -1,5 +1,9 @@
-import Legacy.TorusEndpoint.TorusFourier
-import Legacy.TorusEndpoint.FiniteFeatureEntropy
+module
+
+public import Legacy.TorusEndpoint.TorusFourier
+public import Legacy.TorusEndpoint.FiniteFeatureEntropy
+
+@[expose] public section
 
 /-!
 # Actual finite Fourier moments and entropy

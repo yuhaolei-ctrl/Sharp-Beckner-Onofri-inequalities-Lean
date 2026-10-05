@@ -1,5 +1,9 @@
-import Legacy.BecknerOnofri.TensorPolynomialDerivatives
-import Legacy.BecknerOnofri.ClosedIntervalDerivativeSeries
+module
+
+public import Legacy.BecknerOnofri.TensorPolynomialDerivatives
+public import Legacy.BecknerOnofri.ClosedIntervalDerivativeSeries
+
+@[expose] public section
 
 /-! Every genuine mixed derivative of the actual cosine profile equals its
 full differentiated Fourier-Chebyshev series, also at the boundary. -/
@@ -38,7 +42,7 @@ theorem tensor_bound {d : ℕ} (is : List (Fin d)) (k : Frequency d)
       linarith
   calc
     _ ≤ ∏ _ : Fin d, radialWeight (2*is.length) k :=
-      Finset.prod_le_prod (fun _ _ => norm_nonneg _) (fun i _ => hfactor i)
+      Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _) (fun i _ => hfactor i)
     _ = _ := by simp [radialWeight, ← pow_mul]
 
 theorem term_bound {d : ℕ} (a : Frequency d → ℂ) (is : List (Fin d)) (k : Frequency d)

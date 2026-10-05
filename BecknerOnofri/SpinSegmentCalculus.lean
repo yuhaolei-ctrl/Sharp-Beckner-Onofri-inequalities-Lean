@@ -1,6 +1,10 @@
-import BecknerOnofri.SpinCurvature
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
-import Mathlib.Analysis.Convex.Deriv
+module
+
+public import BecknerOnofri.SpinCurvature
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+public import Mathlib.Analysis.Convex.Deriv
+
+@[expose] public section
 
 /-! Actual derivatives of the thirteen-state functional along affine segments.
 The entropy continuity statement includes zero coordinates. -/

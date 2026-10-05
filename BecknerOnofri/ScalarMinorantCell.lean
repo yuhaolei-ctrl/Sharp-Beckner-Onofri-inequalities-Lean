@@ -1,5 +1,9 @@
-import BecknerOnofri.ScalarGammaEnclosure
-import BecknerOnofri.EntropyScalarCertificate.Hull
+module
+
+public import BecknerOnofri.ScalarGammaEnclosure
+public import BecknerOnofri.EntropyScalarCertificate.Hull
+
+@[expose] public section
 
 namespace BecknerOnofri.HighDim.ScalarCertificate
 open Set CircleScalar CertifiedMinorant
