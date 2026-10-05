@@ -1,10 +1,18 @@
 name: Independent kernel certificate
+run-name: Nanoda certificate (${{ github.event_name }} at ${{ github.sha }})
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/independent-kernel.yml
+      - scripts/run_nanoda.py
+      - tests/test_nanoda_runner.py
   workflow_dispatch:
     inputs:
       certificate_release:
         description: Release containing solution.ndjson.gz and certificate-export.json
         required: true
+        default: verified-20261005
         type: string
       worker_threads:
         description: Independent checker worker threads
@@ -15,7 +23,7 @@ on:
       extra_swap_gb:
         description: Additional swap on the disposable GitHub runner
         required: true
-        default: "0"
+        default: "8"
         type: choice
         options: ["0", "8"]
 permissions:
@@ -26,13 +34,16 @@ jobs:
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Test process supervision and failure receipts
+        run: python3 -m unittest discover -s tests -p test_nanoda_runner.py
       - name: Download and validate the exact proof export
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          CERT_RELEASE: ${{ inputs.certificate_release }}
-          NANODA_THREADS: ${{ inputs.worker_threads }}
+          CERT_RELEASE: ${{ inputs.certificate_release || 'verified-20261005' }}
+          NANODA_THREADS: ${{ inputs.worker_threads || '1' }}
         run: |
+          set -o pipefail
           mkdir -p external-check
           gh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check
           python3 scripts/prepare_external_check.py | tee external-check/identity.log
@@ -48,7 +59,7 @@ jobs:
           PY
       - name: Record host memory and optionally add swap
         env:
-          EXTRA_SWAP_GB: ${{ inputs.extra_swap_gb }}
+          EXTRA_SWAP_GB: ${{ inputs.extra_swap_gb || '8' }}
         run: |
           set -o pipefail
           python3 - <<'PYSETTINGS'
@@ -70,6 +81,8 @@ jobs:
           fi
           free -h | tee external-check/host-memory.log
           swapon --show | tee -a external-check/host-memory.log
+          cat /proc/meminfo >> external-check/host-memory.log
+          df -h "$RUNNER_TEMP" >> external-check/host-memory.log
       - name: Build pinned independent kernel
         run: |
           git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
@@ -79,29 +92,43 @@ jobs:
           cargo +1.90.0 build --release --locked --manifest-path .tools/nanoda/Cargo.toml
           sha256sum .tools/nanoda/target/release/nanoda_bin > external-check/checker-binary.sha256
           git -C .tools/nanoda diff > external-check/checker.patch
+      - name: Accept valid and reject damaged proof controls
+        run: |
+          ulimit -c 0
+          python3 - <<'PY'
+          import gzip, hashlib, json, re, subprocess
+          from pathlib import Path
+          out = Path('external-check')
+          fixtures = Path('tests/kernel_controls')
+          manifest = json.loads((fixtures / 'manifest.json').read_text())
+          settings = json.loads(Path('verification/nanoda-config.json').read_text())
+          settings['num_threads'] = 1
+          settings['unpermitted_axiom_hard_error'] = True
+          config = out / 'controls-config.json'
+          config.write_text(json.dumps(settings, indent=2) + '\n')
+          results = []
+          for name in ['valid', 'invalid']:
+              archive = (fixtures / (name + '.ndjson.gz')).read_bytes()
+              assert hashlib.sha256(archive).hexdigest() == manifest[name]['gzip_sha256']
+              raw = gzip.decompress(archive)
+              assert hashlib.sha256(raw).hexdigest() == manifest[name]['raw_sha256']
+              run = subprocess.run(['.tools/nanoda/target/release/nanoda_bin', str(config)],
+                                   input=raw, capture_output=True, timeout=120)
+              text = (run.stdout + run.stderr).decode('utf-8', errors='replace')
+              results.append({'control': name, 'exit_code': run.returncode, 'output': text})
+              (out / 'controls.json').write_text(json.dumps(results, indent=2) + '\n')
+              print(name, run.returncode, text)
+              if name == 'valid':
+                  assert run.returncode == 0 and re.search(r'^Checked [0-9]+ declarations with no errors$', text, re.M)
+              else:
+                  assert run.returncode != 0 and 'assertion failed: self.def_eq(u, v)' in text
+          PY
       - name: Check all exported declarations and resolve all registered targets
         env:
           NANODA_TRACE_DIR: ${{ github.workspace }}/external-check
         run: |
-          set -o pipefail
           ulimit -c 0
-          (while sleep 60; do
-            date -u
-            ps -C nanoda_bin -o pid,etime,time,%cpu,rss,vsz,stat || true
-            for trace in external-check/*.trace; do
-              test ! -f "$trace" || tail -n 1 "$trace"
-            done
-          done) &
-          monitor_pid=$!
-          trap 'kill "$monitor_pid" 2>/dev/null || true' EXIT
-          /usr/bin/time -v .tools/nanoda/target/release/nanoda_bin external-check/nanoda-config.json < external-check/solution.ndjson 2>&1 | tee external-check/nanoda.log
-          python3 - <<'PY'
-          import re
-          from pathlib import Path
-          text = Path('external-check/nanoda.log').read_text()
-          assert re.search(r'Checked [0-9]+ declarations with no errors', text)
-          assert Path('external-check/checked-targets.txt').stat().st_size > 0
-          PY
+          python3 scripts/run_nanoda.py --binary .tools/nanoda/target/release/nanoda_bin
       - name: Preserve compact declaration traces
         if: always()
         run: |
@@ -126,6 +153,7 @@ jobs:
           name: independent-kernel-evidence
           path: |
             external-check/*.log
+            external-check/*.jsonl
             external-check/*.json
             external-check/*.txt
             external-check/*.sha256
