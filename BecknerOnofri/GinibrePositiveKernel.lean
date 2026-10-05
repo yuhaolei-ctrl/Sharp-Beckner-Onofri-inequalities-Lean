@@ -17,7 +17,7 @@ namespace BecknerOnofri.GinibrePositiveKernel
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [SecondCountableTopology X] [MeasurableSpace X] [BorelSpace X]
 
-private theorem integrable_cont (μ : Measure X) [IsProbabilityMeasure μ] (f : C(X,ℝ)) :
+theorem integrable_cont (μ : Measure X) [IsProbabilityMeasure μ] (f : C(X,ℝ)) :
     Integrable f μ := f.continuous.integrable_of_hasCompactSupport (HasCompactSupport.of_compactSpace _)
 
 def expectation (μ : Measure X) [IsProbabilityMeasure μ] : C(X,ℝ) →L[ℝ] ℝ :=

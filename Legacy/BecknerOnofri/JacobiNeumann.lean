@@ -1,6 +1,7 @@
 module
 
 public import Legacy.BecknerOnofri.JacobiCompleteness
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev.Basic
 
 @[expose] public section
 

@@ -28,12 +28,12 @@ for path in paths:
     require(not path.is_symlink(), f'Symlinked Lean source: {path}')
     text = path.read_text()
     require(len(text.splitlines()) <= 10000, f'Overlong source: {path}')
-    code = code_only(text)
+    code = code_only(text[:16384])
     require(code.lstrip().startswith('module\n'), f'Missing module header: {path}')
     rel = path.relative_to(ROOT)
     deliberate_challenge = path.name.endswith('Challenge.lean')
     control = rel.parts[:2] == ('tests', 'comparator_controls')
-    if not deliberate_challenge and not control:
+    if not deliberate_challenge and not control and re.search(r'\b(sorry|admit|sorryAx|native_decide|axiom)\b', text):
         for line, token in forbidden_hits(text):
             errors.append(f'{rel}:{line}: forbidden proof token {token}')
 

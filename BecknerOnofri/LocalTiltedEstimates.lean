@@ -22,7 +22,7 @@ lemma firstShell_exp_integrable {d : ℕ} (t : Fin d → ℝ) :
 lemma firstShell_partition_ge_one {d : ℕ} (t : Fin d → ℝ) :
     1 ≤ ∫ x, Real.exp (firstShellPotential t x) ∂torusMeasure d := by
   rw [firstShell_partition]
-  exact Finset.one_le_prod (fun i _ => one_le_besselI0Two (t i))
+  exact Finset.one_le_prod₀ (fun i _ => one_le_besselI0Two (t i))
 
 lemma firstShellPotential_le {d : ℕ} (t : Fin d → ℝ) (ht : ∀ i, 0 ≤ t i) (x : Torus d) :
     firstShellPotential t x ≤ 2 * ∑ i, t i := by

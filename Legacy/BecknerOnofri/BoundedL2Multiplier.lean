@@ -27,7 +27,7 @@ variable {μ} (w : Weight μ)
 theorem memLp_top : MemLp w.value ∞ μ := MemLp.of_bound w.measurable w.bound w.bounded
 
 theorem product_memLp (f : RealL2 μ) : MemLp (fun x => w.value x*f x) 2 μ :=
-  (Lp.memLp f).mul' w.memLp_top
+  w.memLp_top.fun_mul (Lp.memLp f)
 
 def product (f : RealL2 μ) : RealL2 μ := (w.product_memLp f).toLp (fun x => w.value x*f x)
 

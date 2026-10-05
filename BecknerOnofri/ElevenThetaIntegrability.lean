@@ -33,11 +33,11 @@ theorem theta_decay_integrable :
       ((r ^ (9/2 : ℝ) + 1) * Real.exp (-Real.pi * r))) (Ici (1 : ℝ)) := by
   have hp : IntegrableOn (fun r : ℝ => r^(9/2 : ℝ)*Real.exp (-Real.pi*r)) (Ioi (0 : ℝ)) := by
     have h := integrableOn_rpow_mul_exp_neg_mul_rpow
-      (by norm_num : (-1 : ℝ) < 9/2) (by norm_num : (1 : ℝ) ≤ 1) Real.pi_pos
+      (by norm_num : (-1 : ℝ) < 9/2) (by norm_num : (0 : ℝ) < 1) Real.pi_pos
     simpa only [Real.rpow_one] using h
   have he : IntegrableOn (fun r : ℝ => Real.exp (-Real.pi*r)) (Ioi (0 : ℝ)) := by
     have h := integrableOn_rpow_mul_exp_neg_mul_rpow
-      (by norm_num : (-1 : ℝ) < 0) (by norm_num : (1 : ℝ) ≤ 1) Real.pi_pos
+      (by norm_num : (-1 : ℝ) < 0) (by norm_num : (0 : ℝ) < 1) Real.pi_pos
     simpa only [Real.rpow_one, Real.rpow_zero, one_mul] using h
   have h := (hp.add he).const_mul (thetaDecayConstant 11)
   apply (IntegrableOn.mono_set h

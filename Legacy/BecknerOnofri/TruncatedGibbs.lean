@@ -22,7 +22,7 @@ theorem truncated_memLp {d : ℕ} {f : Torus d → ℝ} (hf : MemLp f 2 (torusMe
 
 theorem numerator_memLp {d : ℕ} {f : Torus d → ℝ} (hf : MemLp f 2 (torusMeasure d)) (N : ℕ) :
     MemLp (numerator f N) 2 (torusMeasure d) := by
-  apply MemLp.of_bound (Real.continuous_exp.comp_aestronglyMeasurable (truncated_memLp hf N).1)
+  apply MemLp.of_bound (Real.continuous_exp.comp_aestronglyMeasurable (truncated_memLp hf N).aestronglyMeasurable)
     (Real.exp (N : ℝ))
   apply ae_of_all
   intro x
@@ -63,9 +63,7 @@ theorem entropy_identity {d : ℕ} {f : Torus d → ℝ} (hf : MemLp f 2 (torusM
   unfold densityEntropy
   simp_rw [log_density, mul_sub]
   have hp : Integrable (fun x => (density hf N).value x * truncated f N x) (torusMeasure d) := by
-    convert (density_memLp hf N).integrable_mul (truncated_memLp hf N) using 1
-    funext x
-    rfl
+    exact (density_memLp hf N).integrable_mul (truncated_memLp hf N)
   rw [integral_sub hp ((density hf N).integrable.mul_const _),
     integral_mul_const, (density hf N).mass, one_mul]
 
@@ -107,7 +105,7 @@ theorem integrable_exp_of_truncated_log_bound {d : ℕ} {f : Torus d → ℝ}
       _ = ∫⁻ x, ⨆ N : ℕ, ENNReal.ofReal (numerator f N x) ∂torusMeasure d :=
         lintegral_congr he
       _ = ⨆ N : ℕ, ∫⁻ x, ENNReal.ofReal (numerator f N x) ∂torusMeasure d := by
-        apply lintegral_iSup' (fun N => (numerator_memLp hf N).1.aemeasurable.ennreal_ofReal)
+        apply lintegral_iSup' (fun N => (numerator_memLp hf N).aemeasurable.ennreal_ofReal)
         apply ae_of_all
         intro x N M hNM
         apply ENNReal.ofReal_le_ofReal
@@ -120,7 +118,7 @@ theorem integrable_exp_of_truncated_log_bound {d : ℕ} {f : Torus d → ℝ}
           (ae_of_all _ (fun x => Real.exp_nonneg (truncated f N x)))]
         exact ENNReal.ofReal_le_ofReal (hZ N)
   have hi : Integrable (fun x => Real.exp (f x)) (torusMeasure d) := by
-    refine ⟨Real.continuous_exp.comp_aestronglyMeasurable hf.1, ?_⟩
+    refine ⟨Real.continuous_exp.comp_aestronglyMeasurable hf.aestronglyMeasurable, ?_⟩
     rw [hasFiniteIntegral_iff_norm]
     simpa only [Real.norm_eq_abs, Real.abs_exp] using hlin.trans_lt ENNReal.ofReal_lt_top
   refine ⟨hi, ?_⟩

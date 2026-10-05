@@ -8,6 +8,7 @@ public import BecknerOnofri.ComplementSobolev
 Conjugate symmetry is a proved invariant, and decoding yields real H^s functions. -/
 noncomputable section
 set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
 open scoped BigOperators ENNReal ComplexConjugate
 open MeasureTheory
 
@@ -107,12 +108,14 @@ def realComplementLinearEquiv {d : ℕ} (hd : 12 ≤ d) {μ : ℝ}
 
 /-- The real Banach-space inverse needed by the Lyapunov--Schmidt/IFT step. -/
 def realComplementContinuousLinearEquiv {d : ℕ} (hd : 12 ≤ d) {μ : ℝ}
-    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : realLpComplement d ≃L[ℝ] realLpComplement d :=
-  (realComplementLinearEquiv hd hμ0 hμ2).toContinuousLinearEquivOfBounds 1 (32/31)
-    (fun a => by
-      change ‖lpComplementForward hd hμ0 hμ2 a.val‖ ≤ 1*‖a.val‖
-      simpa only [one_mul] using lpComplementForward_norm_le hd hμ0 hμ2 a.val)
-    (fun a => lpComplementInverse_norm_le hd hμ0 hμ2 a.val)
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : realLpComplement d ≃L[ℝ] realLpComplement d where
+  toLinearEquiv := realComplementLinearEquiv hd hμ0 hμ2
+  continuous_toFun :=
+    ((lpComplementContinuousLinearEquiv hd hμ0 hμ2).continuous.comp
+      continuous_subtype_val).subtype_mk _
+  continuous_invFun :=
+    ((lpComplementContinuousLinearEquiv hd hμ0 hμ2).symm.continuous.comp
+      continuous_subtype_val).subtype_mk _
 
 theorem fourierCoeff_conjugate {d : ℕ} (u : Torus d → ℝ) : ConjugateSymmetric (fourierCoeff u) := by
   intro k

@@ -80,8 +80,8 @@ private theorem indicator_eq_iff {d m : ℕ} (alpha : Fin d →₀ ℕ) (a : Gri
 private theorem coefficient_grid_expansion {d m : ℕ}
     (c : Fin d → Fin (m+1) → ℝ) (alpha : Fin d →₀ ℕ)
     (ha : ∀ i, alpha i ≤ m) :
-    MvPolynomial.coeff alpha (∑ a : Grid d m,
-      MvPolynomial.C (∏ i, c i (a i)) * ∏ i, (MvPolynomial.X i)^((a i).val)) =
+    (∑ a : Grid d m,
+      MvPolynomial.C (∏ i, c i (a i)) * ∏ i, (MvPolynomial.X i)^((a i).val)).coeff alpha =
       ∏ i, c i ⟨alpha i, Nat.lt_succ_of_le (ha i)⟩ := by
   rw [MvPolynomial.coeff_sum]
   simp_rw [MvPolynomial.coeff_C_mul, MvPolynomial.coeff_prod_X_pow, indicator_eq_iff]
@@ -99,8 +99,8 @@ private theorem coefficient_grid_expansion {d m : ℕ}
 private theorem coefficient_grid_expansion_outside {d m : ℕ}
     (c : Fin d → Fin (m+1) → ℝ) (alpha : Fin d →₀ ℕ)
     (ha : ¬ ∀ i, alpha i ≤ m) :
-    MvPolynomial.coeff alpha (∑ a : Grid d m,
-      MvPolynomial.C (∏ i, c i (a i)) * ∏ i, (MvPolynomial.X i)^((a i).val)) = 0 := by
+    (∑ a : Grid d m,
+      MvPolynomial.C (∏ i, c i (a i)) * ∏ i, (MvPolynomial.X i)^((a i).val)).coeff alpha = 0 := by
   rw [MvPolynomial.coeff_sum]
   simp_rw [MvPolynomial.coeff_C_mul, MvPolynomial.coeff_prod_X_pow, indicator_eq_iff]
   apply sum_eq_zero
@@ -126,9 +126,8 @@ private theorem product_basis_expansion {d m : ℕ} (j : Grid d m) :
 
 /-- Coefficients of the tensor product of separate-variable Bernstein factors. -/
 theorem product_basis_coefficient {d m : ℕ} (j : Grid d m) (alpha : Fin d →₀ ℕ) :
-    MvPolynomial.coeff alpha
-      (∏ i : Fin d, (MvPolynomial.C (m.choose (j i):ℝ) * MvPolynomial.X i^(j i).val *
-        (1-MvPolynomial.X i)^(m-(j i).val))) =
+    (∏ i : Fin d, (MvPolynomial.C (m.choose (j i):ℝ) * MvPolynomial.X i^(j i).val *
+        (1-MvPolynomial.X i)^(m-(j i).val))).coeff alpha =
       ∏ i, (m.choose (alpha i):ℝ)*((alpha i).choose (j i):ℝ)*(-1:ℝ)^(alpha i-(j i).val) := by
   rw [product_basis_expansion]
   by_cases ha : ∀ i, alpha i ≤ m
@@ -144,7 +143,7 @@ theorem product_basis_coefficient {d m : ℕ} (j : Grid d m) (alpha : Fin d →�
 
 /-- Actual coefficient formula before shrinking the grid to the multiindex rectangle. -/
 theorem polynomial_coefficient_grid {d : ℕ} (m : ℕ) (f : Cube d → ℝ) (alpha : Fin d →₀ ℕ) :
-    MvPolynomial.coeff alpha (polynomial m f) =
+    (polynomial m f).coeff alpha =
       ∑ j : Grid d m, f (point j) *
         ∏ i, (m.choose (alpha i):ℝ)*((alpha i).choose (j i):ℝ)*(-1:ℝ)^(alpha i-(j i).val) := by
   unfold polynomial
@@ -153,7 +152,7 @@ theorem polynomial_coefficient_grid {d : ℕ} (m : ℕ) (f : Cube d → ℝ) (al
 
 theorem polynomial_coefficient_outside {d : ℕ} (m : ℕ) (f : Cube d → ℝ)
     (alpha : Fin d →₀ ℕ) (ha : ¬ ∀ i, alpha i ≤ m) :
-    MvPolynomial.coeff alpha (polynomial m f) = 0 := by
+    (polynomial m f).coeff alpha = 0 := by
   rw [polynomial_coefficient_grid]
   push Not at ha
   obtain ⟨i, hi⟩ := ha
@@ -203,7 +202,7 @@ private theorem grid_sum_eq_difference {d m : ℕ} (alpha : Fin d →₀ ℕ)
 No differentiability or sign hypothesis is used, and zero degree is also valid. -/
 theorem polynomial_coefficient_difference {d : ℕ} (m : ℕ)
     (f : (Fin d → ℝ) → ℝ) (alpha : Fin d →₀ ℕ) (ha : ∀ i, alpha i ≤ m) :
-    MvPolynomial.coeff alpha (polynomial m (fun y => f (fun i => (y i:ℝ)))) =
+    (polynomial m (fun y => f (fun i => (y i:ℝ)))).coeff alpha =
       (∏ i, (m.choose (alpha i):ℝ)) *
         FiniteDifferences.rectangularDifference alpha (1/(m:ℝ)) f 0 := by
   rw [polynomial_coefficient_grid]

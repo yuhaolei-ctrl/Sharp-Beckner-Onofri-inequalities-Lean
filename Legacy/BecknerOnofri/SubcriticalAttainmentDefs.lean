@@ -87,7 +87,9 @@ theorem energy_lowerSemicontinuousOn (d : ℕ) (B : ℝ) :
 
 @[simp] theorem criticalSobolev_zero (d : ℕ) : CriticalSobolev (0 : TorusL2 d) := by
   constructor
-  · simp [fourierIsometry]
+  · change fourierIsometry d 0 0 = 0
+    rw [(fourierIsometry d).map_zero]
+    rfl
   · simp only [map_zero]
     have he : weightedSquare (0 : Coefficients (Frequency d)) = 0 := by
       funext k; simp [weightedSquare]

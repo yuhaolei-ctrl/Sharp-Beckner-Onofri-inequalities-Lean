@@ -1,0 +1,18 @@
+name: Palomar structural preflight
+on:
+  push:
+    branches: [codex/palomar-adaptation]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Check source layout, statement entries and metadata
+        run: python3 scripts/audit_palomar.py
+      - name: State the scope of this check
+        run: |
+          echo 'This check validates repository structure only. It does not build proofs, replay kernels, or establish Palomar acceptance.' >> "$GITHUB_STEP_SUMMARY"

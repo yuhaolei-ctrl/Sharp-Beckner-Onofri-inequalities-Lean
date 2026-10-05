@@ -6,6 +6,8 @@ public import Mathlib.Topology.MetricSpace.Lipschitz
 
 @[expose] public section
 
+set_option backward.isDefEq.respectTransparency false
+
 /-! The global rough exponential estimate implies quantitative partition
 continuity on actual critical Sobolev energy balls. -/
 noncomputable section

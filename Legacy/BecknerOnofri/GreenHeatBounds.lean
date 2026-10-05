@@ -76,7 +76,7 @@ theorem integrable_tailMajorant {d : ℕ} (hd : 0 < d) :
   have hdreal : (0 : ℝ) < d := by exact_mod_cast hd
   have hi := integrableOn_rpow_mul_exp_neg_mul_rpow
     (by linarith : (-1 : ℝ) < (d : ℝ)/2-1)
-    (by norm_num : (1 : ℝ) ≤ 1) (by positivity : 0 < Real.pi/2)
+    (by norm_num : (0 : ℝ) < 1) (by positivity : 0 < Real.pi/2)
   have he : (fun t : ℝ => t^((d : ℝ)/2-1)*Real.exp (-(Real.pi/2)*t^(1:ℝ))) =
       (fun t : ℝ => t^((d : ℝ)/2-1)*Real.exp (-Real.pi*t/2)) := by
     ext t

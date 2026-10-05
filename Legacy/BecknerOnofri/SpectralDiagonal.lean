@@ -18,7 +18,7 @@ abbrev Coordinates (ι : Type*) := lp (fun _ : ι => ℝ) 2
 def boundedSymbol (a : ι → ℝ) (M : ℝ) (ha : ∀ i, ‖a i‖ ≤ M) : Symbol ι :=
   ⟨a,memℓp_infty ⟨M,by rintro _ ⟨i,rfl⟩; exact ha i⟩⟩
 
-private theorem multiply_mem (a : Symbol ι) (x : Coordinates ι) :
+theorem multiply_mem (a : Symbol ι) (x : Coordinates ι) :
     Memℓp (fun i => a i*x i) 2 := by
   apply ((lp.memℓp x).norm.const_mul ‖a‖).mono
   intro i
@@ -28,7 +28,7 @@ private theorem multiply_mem (a : Symbol ι) (x : Coordinates ι) :
 def multiply (a : Symbol ι) (x : Coordinates ι) : Coordinates ι :=
   ⟨fun i => a i*x i,multiply_mem a x⟩
 
-private theorem multiply_norm_le (a : Symbol ι) (x : Coordinates ι) :
+theorem multiply_norm_le (a : Symbol ι) (x : Coordinates ι) :
     ‖multiply a x‖ ≤ ‖a‖*‖x‖ := by
   have h : ‖multiply a x‖ ≤ ‖‖a‖ • x‖ := by
     apply lp.norm_mono (by norm_num : (2:ℝ≥0∞) ≠ 0)

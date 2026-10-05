@@ -82,6 +82,8 @@ theorem heatDensity_energy_log_lower {d : ℕ} (hd : 0 < d) {t : ℝ}
     filter_upwards [self_mem_ae_restrict measurableSet_Ioi] with u hu
     exact heatEnergyIntegrand_nonneg ht hu
   have hfull := setIntegral_mono_set hi hpos hsub.eventuallyLE
+  change (∫ x in Ioc t 1, heatEnergyIntegrand d t x) ≤
+    (∫ x in Ioi 0, heatEnergyIntegrand d t x) at hfull
   rw [← intervalIntegral.integral_of_le ht1, heatDensity_energy_mellin hd ht] at hfull
   have hbound := hmono.trans hfull
   rw [heatEnergyLowerIntegrand_integral hd ht] at hbound

@@ -55,6 +55,8 @@ python3 scripts/audit_palomar.py
 Statement placeholders are intentional. A successful Challenge build alone is
 not proof verification. The migrated Solutions must build and pass Comparator
 and independent kernel replay before this branch can be called verified.
+The GitHub structural-preflight job checks layout and metadata only.
+See [verification instructions](verification/README.md) for the full checks.
 
 ## Provenance
 

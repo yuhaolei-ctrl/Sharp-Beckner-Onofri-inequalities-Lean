@@ -15,5 +15,7 @@
   ],
   "historical_certificate": "verified-20261005 applies only to the pre-migration source",
   "structural_preflight": "passed",
-  "challenge_build_log_sha256": "faee7c177adb6fa640b4f86dcb8f772323658602474a7c70323df8e54ce7a953"
+  "challenge_build_log_sha256": "c7dbd66b4a0a68bcdf578ea7dc5da05536aa29f2729925acba65141b3b846ed7",
+  "foundation_repair_build": "passed",
+  "foundation_repair_log_sha256": "c91b8c11bd16a3318ee04500a7fed98e4d8c1fb5861cf1e990f42410d72b40e1"
 }

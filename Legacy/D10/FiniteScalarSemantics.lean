@@ -5,6 +5,7 @@ public import Mathlib.Algebra.Polynomial.Coeff
 public import Mathlib.Algebra.Polynomial.Eval.Defs
 public import Mathlib.Algebra.Polynomial.BigOperators
 public import Mathlib.Logic.Function.Iterate
+public import Mathlib.Tactic.FinCases
 
 @[expose] public section
 

@@ -15,12 +15,11 @@ variable {X : Type*} [MeasurableSpace X] {μ : Measure X} [IsFiniteMeasure μ] (
 def kernel (c : ℝ) (K : X × X → ℝ) (z : X × X) : ℝ :=
   c*w.value z.1*K z*w.value z.2
 
-omit [IsFiniteMeasure μ] in
+-- Product-measure lifting retains the ambient finite-measure instance.
 theorem kernel_measurable (c : ℝ) {K : X × X → ℝ}
     (hK : AEStronglyMeasurable K (μ.prod μ)) : AEStronglyMeasurable (w.kernel c K) (μ.prod μ) :=
   (((aestronglyMeasurable_const.mul w.measurable.comp_fst).mul hK).mul w.measurable.comp_snd)
 
-omit [IsFiniteMeasure μ] in
 theorem kernel_nonnegative {c : ℝ} (hc : 0 ≤ c) (hw : ∀ᵐ x ∂μ, 0 ≤ w.value x)
     {K : X × X → ℝ} (hK : ∀ᵐ z ∂μ.prod μ, 0 ≤ K z) :
     ∀ᵐ z ∂μ.prod μ, 0 ≤ w.kernel c K z := by
@@ -28,7 +27,6 @@ theorem kernel_nonnegative {c : ℝ} (hc : 0 ≤ c) (hw : ∀ᵐ x ∂μ, 0 ≤ 
     Measure.quasiMeasurePreserving_snd.ae hw, hK] with z hx hy hk
   exact mul_nonneg (mul_nonneg (mul_nonneg hc hx) hk) hy
 
-omit [IsFiniteMeasure μ] in
 theorem kernel_strict_comparison {c : ℝ} (hc : 0 < c) (hw : ∀ᵐ x ∂μ, 0 < w.value x)
     {K L : X × X → ℝ} (hKL : ∀ᵐ z ∂μ.prod μ, K z < L z) :
     ∀ᵐ z ∂μ.prod μ, w.kernel c K z < w.kernel c L z := by

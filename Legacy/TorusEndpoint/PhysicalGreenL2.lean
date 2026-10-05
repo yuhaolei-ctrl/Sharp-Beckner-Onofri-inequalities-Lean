@@ -38,8 +38,8 @@ theorem densityProduct_memLp {d : ℕ} (rho : ProbabilityDensity d)
     (hρ : MemLp rho.value 2 (torusMeasure d)) :
     MemLp (fun xy : Torus d × Torus d => rho.value xy.1 * rho.value xy.2) 2
       ((torusMeasure d).prod (torusMeasure d)) := by
-  have hm := (hρ.comp_measurePreserving measurePreserving_fst).1.mul
-    (hρ.comp_measurePreserving measurePreserving_snd).1
+  have hm := (hρ.comp_measurePreserving measurePreserving_fst).aestronglyMeasurable.mul
+    (hρ.comp_measurePreserving measurePreserving_snd).aestronglyMeasurable
   apply (memLp_two_iff_integrable_sq hm).2
   change Integrable (fun xy : Torus d × Torus d =>
     (rho.value xy.1 * rho.value xy.2) ^ 2) _
@@ -171,7 +171,7 @@ theorem finiteEntropy_of_memLp {d : ℕ} (rho : ProbabilityDensity d)
     (hρ : MemLp rho.value 2 (torusMeasure d)) : rho.FiniteEntropy := by
   have hm : AEStronglyMeasurable (fun x => rho.value x * Real.log (rho.value x))
       (torusMeasure d) := by
-    have hr := hρ.1.aemeasurable
+    have hr := hρ.aemeasurable
     exact (hr.mul (Real.measurable_log.comp_aemeasurable hr)).aestronglyMeasurable
   apply (hρ.integrable_sq.add (integrable_const (1 : ℝ))).mono' hm
   filter_upwards [rho.nonneg] with x hx
