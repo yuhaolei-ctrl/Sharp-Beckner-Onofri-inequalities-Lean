@@ -49,7 +49,8 @@ with (out / 'solution.ndjson').open('rb') as src:
                 if kind in row:
                     declared.add(names[row[kind]['name']])
 assert set(config['theorem_names']) <= declared
-required_primitives = {'Nat', 'String', 'String.mk', 'Char', 'Char.ofNat', 'List',
+# This pinned Nanoda version uses String.ofList (see its NameCache), not String.mk.
+required_primitives = {'Nat', 'String', 'String.ofList', 'Char', 'Char.ofNat', 'List',
                        'Quot', 'Quot.mk', 'Quot.lift', 'Quot.ind'}
 assert required_primitives <= declared, sorted(required_primitives - declared)
 (out / 'declared-targets.json').write_text(json.dumps(config['theorem_names'], indent=2) + '\n')
