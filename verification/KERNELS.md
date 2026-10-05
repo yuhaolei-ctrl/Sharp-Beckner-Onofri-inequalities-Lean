@@ -7,7 +7,8 @@ itself an independent kernel. The historical configuration disables Nanoda.
 The current checker source is pinned to Nanoda
 `4c544ed4099c8227f07d5de77ad1e69fb0740a27`, built with Rust 1.90.0.
 The one source patch raises `STACK_SIZE` from 16,777,216 to 268,435,456 bytes,
-as in the Arena recipe. Our configuration uses two worker threads and a strict
+as in the Arena recipe. Our local configuration uses two worker threads; the public workflow also
+supports four workers. Both use a strict
 axiom allow-list, instead of Arena's permissive all-axioms setting.
 `unpermitted_axiom_hard_error=false` only skips unused exported axioms; a proof
 referring to one still fails. `unsafe_permit_all_axioms` remains false.

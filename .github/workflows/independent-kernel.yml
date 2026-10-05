@@ -6,6 +6,12 @@ on:
         description: Release containing solution.ndjson.gz and certificate-export.json
         required: true
         type: string
+      worker_threads:
+        description: Independent checker worker threads
+        required: true
+        default: "2"
+        type: choice
+        options: ["2", "4"]
 permissions:
   contents: read
 jobs:
@@ -19,10 +25,21 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           CERT_RELEASE: ${{ inputs.certificate_release }}
+          NANODA_THREADS: ${{ inputs.worker_threads }}
         run: |
           mkdir -p external-check
           gh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check
           python3 scripts/prepare_external_check.py | tee external-check/identity.log
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path("external-check/nanoda-config.json")
+          settings = json.loads(p.read_text())
+          workers = int(os.environ["NANODA_THREADS"])
+          assert workers in (2, 4)
+          settings["num_threads"] = workers
+          p.write_text(json.dumps(settings, indent=2) + "\n")
+          PY
       - name: Build pinned independent kernel
         run: |
           git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
