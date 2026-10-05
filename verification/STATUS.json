@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T08:01:37.985548+00:00",
+  "updated_utc": "2026-10-05T08:37:11.097467+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -192,5 +192,16 @@
     "worker_stack_bytes": 1073741824,
     "scope": 269,
     "workflow_commit": "b10b843"
+  },
+  "comparator_statement_matching": {
+    "status": "passed",
+    "scope": 269,
+    "reachable_definitions": "passed",
+    "axiom_dependencies": "passed",
+    "solution_declarations": 1029606,
+    "challenge_declarations": 47029,
+    "source": "Live GitHub log observed in authenticated browser; final artifact pending",
+    "run_id": 37267009000,
+    "official_kernel_replay": "still_running"
   }
 }

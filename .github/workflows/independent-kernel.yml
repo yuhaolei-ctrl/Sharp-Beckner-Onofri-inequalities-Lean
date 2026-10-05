@@ -12,6 +12,12 @@ on:
         default: "1"
         type: choice
         options: ["1", "2", "4"]
+      extra_swap_gb:
+        description: Additional swap on the disposable GitHub runner
+        required: true
+        default: "0"
+        type: choice
+        options: ["0", "8"]
 permissions:
   contents: read
 jobs:
@@ -40,6 +46,30 @@ jobs:
           settings["num_threads"] = workers
           p.write_text(json.dumps(settings, indent=2) + "\n")
           PY
+      - name: Record host memory and optionally add swap
+        env:
+          EXTRA_SWAP_GB: ${{ inputs.extra_swap_gb }}
+        run: |
+          set -o pipefail
+          python3 - <<'PYSETTINGS'
+          import json, os
+          from pathlib import Path
+          size = int(os.environ['EXTRA_SWAP_GB'])
+          assert size in (0, 8)
+          Path('external-check/host-memory-settings.json').write_text(json.dumps({
+              'additional_swap_bytes': size * 1024**3,
+              'scope': 'disposable GitHub runner only; no proof or checker rule changes'
+          }, indent=2) + '\n')
+          PYSETTINGS
+          if [ "$EXTRA_SWAP_GB" = "8" ]; then
+            test "$(df --output=avail -B1 "$RUNNER_TEMP" | tail -n 1)" -gt 9663676416
+            sudo fallocate -l 8G "$RUNNER_TEMP/nanoda-extra.swap"
+            sudo chmod 600 "$RUNNER_TEMP/nanoda-extra.swap"
+            sudo mkswap "$RUNNER_TEMP/nanoda-extra.swap"
+            sudo swapon "$RUNNER_TEMP/nanoda-extra.swap"
+          fi
+          free -h | tee external-check/host-memory.log
+          swapon --show | tee -a external-check/host-memory.log
       - name: Build pinned independent kernel
         run: |
           git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda

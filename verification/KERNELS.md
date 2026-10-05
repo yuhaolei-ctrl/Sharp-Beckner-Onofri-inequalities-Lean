@@ -152,3 +152,8 @@ artifact, or both independent implementations when both completed. Use
 upstream CLI receipt. The acceptance requirement is a completed full official
 Comparator replay and at least one completed independent implementation;
 unsuccessful optional implementations remain explicitly recorded.
+
+A separately recorded two-worker retry can add 8 GiB of swap on its disposable
+GitHub runner. This supplies memory headroom without changing any proof or
+checking rule. The workflow preserves the host memory/swap settings. The prior
+exit-143 cause remains unspecified; this resource variant is not a diagnosis.
