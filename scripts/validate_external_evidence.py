@@ -16,12 +16,14 @@ nanoda_input = parser.add_mutually_exclusive_group()
 nanoda_input.add_argument('--nanoda', type=Path)
 nanoda_input.add_argument('--local-nanoda', type=Path)
 parser.add_argument('--eink0rn', type=Path)
-parser.add_argument('--con-ron', type=Path)
+con_ron_input = parser.add_mutually_exclusive_group()
+con_ron_input.add_argument('--con-ron', type=Path)
+con_ron_input.add_argument('--local-con-ron', type=Path)
 official = parser.add_mutually_exclusive_group(required=True)
 official.add_argument('--comparator', type=Path)
 official.add_argument('--local-comparator', type=Path)
 args = parser.parse_args()
-if not (args.nanoda or args.local_nanoda or args.eink0rn or args.con_ron):
+if not (args.nanoda or args.local_nanoda or args.eink0rn or args.con_ron or args.local_con_ron):
     parser.error('At least one completed independent-kernel receipt is required.')
 config = json.loads((root / 'comparator-paper2.json').read_text())
 manifest_hash = hashlib.sha256((root / 'SOURCE_MANIFEST.json').read_bytes()).hexdigest()
@@ -116,19 +118,21 @@ if args.eink0rn:
     record['runtime_settings'] = settings
     independent['eink0rn'] = record
 
-if args.con_ron:
-    record = base(args.con_ron)
-    settings = json.loads((args.con_ron / 'runtime-settings.json').read_text())
+con_ron_path = args.con_ron or args.local_con_ron
+if con_ron_path:
+    record = base(con_ron_path, hosted=bool(args.con_ron))
+    settings = json.loads((con_ron_path / 'runtime-settings.json').read_text())
     assert settings['checker_revision'] == '2e3486617cee878f796d8133c481e239696132fe'
     assert settings['source_patch'] is None and settings['mode'] == 'verified'
-    assert settings['arguments'] == ['--verified', '--jobs=4', '--progress=10000']
+    assert settings['num_threads'] in (1, 4)
+    assert settings['arguments'] == ['--verified', f"--jobs={settings['num_threads']}", '--progress=10000']
     assert settings['pins'] == 'checker-embedded defaults'
-    assert json.loads((args.con_ron / 'solution-inventory.json').read_text()) == inventory
-    text = (args.con_ron / 'con-ron.log').read_text()
+    assert json.loads((con_ron_path / 'solution-inventory.json').read_text()) == inventory
+    text = (con_ron_path / 'con-ron.log').read_text()
     match = re.search(r'^con-ron: accepted ([0-9]+) declarations \(--verified\)$', text, re.M)
     assert match, 'Missing con-ron verified-mode acceptance'
     assert int(match[1]) == inventory['declaration_record_count']
-    controls = json.loads((args.con_ron / 'controls.json').read_text())
+    controls = json.loads((con_ron_path / 'controls.json').read_text())
     assert [(r['control'], r['exit_code']) for r in controls] == [('valid', 0), ('invalid', 1)]
     assert re.search(r'^con-ron: accepted [0-9]+ declarations \(--verified\)$', controls[0]['output'], re.M)
     record['runtime_settings'] = settings

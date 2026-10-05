@@ -239,3 +239,14 @@ DIR --local-comparator DIR` requires a completed successful hosted run,
 verified-mode acceptance of every record, exact certificate identity, the
 fixed checker settings and actual control results. A decline, error or partial
 run cannot satisfy it.
+
+For a local run without the hosted job's wall-time limit, build the same pinned
+checker and run `python3 scripts/check_con_ron.py --checker /path/to/con-ron
+--evidence /new/evidence/directory --workers 1`. The helper verifies the clean
+source checkout and raw certificate hash, runs the controls, and records the
+checker's direct process exit (without a timing-command wrapper). Its input
+is `external-check/solution.ndjson`, prepared as above. The final validator's
+`--local-con-ron DIR` option requires the actual completed local receipt and
+the same full verified-mode acceptance conditions; it also permits the
+four-worker invocation. An ongoing local run has no final receipt and cannot
+pass validation.
