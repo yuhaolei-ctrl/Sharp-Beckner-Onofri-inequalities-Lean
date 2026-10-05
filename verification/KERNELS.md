@@ -31,6 +31,10 @@ stack path; inference and checking rules remain unchanged. Its valid/invalid
 controls and exact-once 536-declaration trace inventory are recorded in
 `current/nanoda-single-worker-control/`. All worker choices use a strict
 three-axiom allow-list.
+The single-worker hosted run (37281025130) ultimately failed because GitHub
+lost contact with its runner. GitHub supplied no checker exit code, finished
+log or artifact; the actual run state and annotation are retained in
+`current/nanoda-attempt-37281025130/`. It is not an independent acceptance.
 `unpermitted_axiom_hard_error=false` only skips unused exported axioms; a proof
 referring to one still fails. `unsafe_permit_all_axioms` remains false.
 
