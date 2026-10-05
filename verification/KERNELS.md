@@ -104,3 +104,10 @@ lake -d .tools/replay build replay-exports
 The source manifest, challenge and solution digests are checked before replay.
 The comparator library checks equality of reachable definitions, so a changed
 meaning cannot be hidden behind an unchanged theorem name.
+
+Downloaded final Actions artifacts can be checked together with
+`scripts/validate_external_evidence.py --nanoda DIR --comparator DIR`. Each
+directory must also contain `run.json`, obtained with `gh run view RUN_ID
+--json databaseId,url,headSha,status,conclusion,jobs`. The validator requires
+completed successful runs, acceptance messages, exact source/export identities,
+and the registered declaration inventory. It does not certify prose semantics.

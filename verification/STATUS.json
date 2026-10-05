@@ -98,7 +98,8 @@
       "run_id": 37265985537,
       "conclusion": "failure_before_kernel_check",
       "reason": "Nanoda requires an existing pretty-printer destination; initializer fixed",
-      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37265985537"
+      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37265985537",
+      "evidence_directory": "current/nanoda-attempt-37265985537"
     }
   ],
   "historical_paper2_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
