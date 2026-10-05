@@ -13,6 +13,7 @@ declared = set()
 axioms = set()
 digest = hashlib.sha256()
 size = 0
+records = 0
 with args.export.open('rb') as src:
     for line in src:
         digest.update(line)
@@ -26,16 +27,19 @@ with args.export.open('rb') as src:
             component = item.get('str', str(item.get('num', item.get('i', '?'))))
             names[row['in']] = parent + ('.' if parent else '') + component
         elif 'inductive' in row:
+            records += 1
             for group in ('types', 'ctors', 'recs'):
                 declared.update(names[item['name']] for item in row['inductive'][group])
         else:
             for kind in ('def', 'thm', 'axiom', 'opaque', 'quot'):
                 if kind in row:
+                    records += 1
                     name = names[row[kind]['name']]
                     declared.add(name)
                     if kind == 'axiom':
                         axioms.add(name)
 print(json.dumps({'export_sha256': digest.hexdigest(), 'bytes': size,
+                  'declaration_record_count': records,
                   'declaration_count': len(declared),
                   'declaration_names_sha256': hashlib.sha256(
                       ''.join(n + '\n' for n in sorted(declared)).encode()).hexdigest(),

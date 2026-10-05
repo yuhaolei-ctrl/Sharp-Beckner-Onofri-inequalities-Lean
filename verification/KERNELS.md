@@ -197,3 +197,26 @@ cross-version incompatibility or unfinished replay is recorded as such, never
 as acceptance. The upstream import driver recreates quotient primitives,
 regenerates inductive constructors/recursors and checks their exported forms;
 its reported count is a replay-operation count, not the raw declaration count.
+
+## Independent con-ron verified mode
+
+The `con-ron.yml` workflow uses the unmodified
+[Arena-pinned con-ron](https://github.com/leanprover/con-ron/tree/2e3486617cee878f796d8133c481e239696132fe)
+revision `2e3486617cee878f796d8133c481e239696132fe`, Rust 1.90.0, four workers,
+and **`--verified`**, with its embedded default prelude and arithmetic pins.
+The `--trusted` mode is never used. The raw export and registered roots are
+validated before replay, and correct/damaged proof controls must pass first.
+
+Con-ron is a Rust implementation of con-leche's checker, with different term
+storage and caching. Its upstream project supplies refinement and consistency
+theorems via Aeneas; its driver and parser are outside those theorems. This task
+does not claim to have independently audited or rebuilt that metatheory.
+
+The exact export contains 1,027,308 declaration **records**, representing
+1,029,606 named declarations. An inductive block is one record but introduces
+several names. Con-ron's final accepted count must equal the former; Nanoda's
+count must equal the latter. `scripts/validate_external_evidence.py --con-ron
+DIR --local-comparator DIR` requires a completed successful hosted run,
+verified-mode acceptance of every record, exact certificate identity, the
+fixed checker settings and actual control results. A decline, error or partial
+run cannot satisfy it.
