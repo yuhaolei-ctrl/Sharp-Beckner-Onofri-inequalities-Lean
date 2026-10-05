@@ -16,6 +16,9 @@ must agree with the actual entropy integral; the infinite case must use top,
 and a divergent Fourier sum must not become a default real zero. Verify
 `negativeSobolevEnergy_fourier` against the paper's explicit Fourier convention.
 
+The new clauses have a detailed object-level crosswalk in
+[audit/NEW_ANALYTIC_CLAUSES.md](audit/NEW_ANALYTIC_CLAUSES.md).
+
 For the mixed Friedrichs lemma, inspect the actual unit-period spaces in
 `Paper2PhysicalMeasure`, both core transports in `Paper2PhysicalCore`, the
 closure and operator graph equivalences, the unitary in `Paper2PhysicalLp`,

@@ -27,6 +27,32 @@ with gzip.open(archive, 'rb') as src, (out / 'solution.ndjson').open('wb') as ds
         dst.write(chunk)
 assert digest.hexdigest() == record['export_sha256']
 assert size == record['bytes']
+# Confirm that the actual export declares every requested root, not just that
+# the recorded command requested it. The full expression graph is checked by Nanoda.
+names = {0: ''}
+declared = set()
+with (out / 'solution.ndjson').open('rb') as src:
+    for line in src:
+        if b'"ie":' in line or b'"il":' in line:
+            continue
+        row = json.loads(line)
+        if 'in' in row:
+            item = row.get('str', row.get('num', {}))
+            parent = names.get(item.get('pre', 0), '?')
+            component = item.get('str', str(item.get('num', item.get('i', '?'))))
+            names[row['in']] = parent + ('.' if parent else '') + component
+        elif 'inductive' in row:
+            for group in ('types', 'ctors', 'recs'):
+                declared.update(names[item['name']] for item in row['inductive'][group])
+        else:
+            for kind in ('def', 'thm', 'axiom', 'opaque', 'quot'):
+                if kind in row:
+                    declared.add(names[row[kind]['name']])
+assert set(config['theorem_names']) <= declared
+required_primitives = {'Nat', 'String', 'String.mk', 'Char', 'Char.ofNat', 'List',
+                       'Quot', 'Quot.mk', 'Quot.lift', 'Quot.ind'}
+assert required_primitives <= declared, sorted(required_primitives - declared)
+(out / 'declared-targets.json').write_text(json.dumps(config['theorem_names'], indent=2) + '\n')
 settings = json.loads((root / 'verification/nanoda-config.json').read_text())
 settings['pp_declars'] = config['theorem_names']
 settings['pp_output_path'] = str(out / 'checked-targets.txt')
