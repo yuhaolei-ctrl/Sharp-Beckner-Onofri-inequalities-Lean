@@ -1,8 +1,10 @@
 """Process-level regression checks for evidence and resource-failure handling."""
 import importlib.util
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
@@ -24,7 +26,8 @@ class RunnerTests(unittest.TestCase):
             (out / 'nanoda-config.json').write_text('{}')
             (out / 'solution.ndjson').write_text('fixture input\n')
             (out / 'checked-targets.txt').write_text('target\n' if resolved else '')
-            with patch.object(RUNNER, 'read_memory', return_value=memory):
+            # Expected failures must not emit real GitHub Actions annotations.
+            with patch.object(RUNNER, 'read_memory', return_value=memory), redirect_stdout(io.StringIO()):
                 code = RUNNER.run_checked(binary, out, poll_seconds=0.01,
                                           heartbeat_seconds=60, max_seconds=max_seconds)
             result = json.loads((out / 'nanoda-result.json').read_text())
