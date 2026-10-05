@@ -1,0 +1,18 @@
+{
+  "worker_threads": 1,
+  "worker_stack_bytes": 1073741824,
+  "logical_checker_unchanged": true,
+  "checker_binary_sha256": "ec6ddf05aba3419a0c186067b5d496d5020c7719e15e236ddf1415ca9553ae9f",
+  "controls": [
+    {
+      "control": "valid",
+      "exit_code": 0,
+      "declarations": 536,
+      "trace_indices_exactly_once": true
+    },
+    {
+      "control": "invalid",
+      "exit_code": 101
+    }
+  ]
+}

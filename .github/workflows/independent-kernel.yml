@@ -9,9 +9,9 @@ on:
       worker_threads:
         description: Independent checker worker threads
         required: true
-        default: "2"
+        default: "1"
         type: choice
-        options: ["2", "4"]
+        options: ["1", "2", "4"]
 permissions:
   contents: read
 jobs:
@@ -36,7 +36,7 @@ jobs:
           p = Path("external-check/nanoda-config.json")
           settings = json.loads(p.read_text())
           workers = int(os.environ["NANODA_THREADS"])
-          assert workers in (2, 4)
+          assert workers in (1, 2, 4)
           settings["num_threads"] = workers
           p.write_text(json.dumps(settings, indent=2) + "\n")
           PY
@@ -57,6 +57,7 @@ jobs:
           ulimit -c 0
           (while sleep 60; do
             date -u
+            ps -C nanoda_bin -o pid,etime,time,%cpu,rss,vsz,stat || true
             for trace in external-check/*.trace; do
               test ! -f "$trace" || tail -n 1 "$trace"
             done
@@ -85,7 +86,7 @@ jobs:
           (out / 'runtime-settings.json').write_text(json.dumps({
               'worker_stack_bytes': 1073741824,
               'num_threads': settings['num_threads'],
-              'patch_scope': 'stack allocation and optional diagnostic name traces; logical checker unchanged'
+              'patch_scope': 'worker stack allocation (also with one worker) and optional diagnostic name traces; logical checker unchanged'
           }, indent=2) + '\n')
           PY
       - name: Preserve independent checker evidence

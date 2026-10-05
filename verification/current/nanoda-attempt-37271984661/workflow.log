@@ -1,0 +1,498 @@
+nanoda	Set up job	﻿2026-10-05T06:21:18.2545805Z Current runner version: '2.337.0'
+nanoda	Set up job	2026-10-05T06:21:18.2571631Z ##[group]Runner Image Provisioner
+nanoda	Set up job	2026-10-05T06:21:18.2572573Z Hosted Compute Agent
+nanoda	Set up job	2026-10-05T06:21:18.2573225Z Version: 20260901.588
+nanoda	Set up job	2026-10-05T06:21:18.2573882Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+nanoda	Set up job	2026-10-05T06:21:18.2574936Z Build Date: 2026-09-01T19:56:44Z
+nanoda	Set up job	2026-10-05T06:21:18.2575706Z Worker ID: {3c02449a-b777-45f4-afac-ff766dad2772}
+nanoda	Set up job	2026-10-05T06:21:18.2576423Z Azure Region: westus
+nanoda	Set up job	2026-10-05T06:21:18.2576977Z ##[endgroup]
+nanoda	Set up job	2026-10-05T06:21:18.2578667Z ##[group]Operating System
+nanoda	Set up job	2026-10-05T06:21:18.2579352Z Ubuntu
+nanoda	Set up job	2026-10-05T06:21:18.2579993Z 24.04.5
+nanoda	Set up job	2026-10-05T06:21:18.2580506Z LTS
+nanoda	Set up job	2026-10-05T06:21:18.2581027Z ##[endgroup]
+nanoda	Set up job	2026-10-05T06:21:18.2581647Z ##[group]Runner Image
+nanoda	Set up job	2026-10-05T06:21:18.2582283Z Image: ubuntu-24.04
+nanoda	Set up job	2026-10-05T06:21:18.2582885Z Version: 20260927.320.1
+nanoda	Set up job	2026-10-05T06:21:18.2584333Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+nanoda	Set up job	2026-10-05T06:21:18.2586230Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+nanoda	Set up job	2026-10-05T06:21:18.2587244Z ##[endgroup]
+nanoda	Set up job	2026-10-05T06:21:18.2588399Z ##[group]GITHUB_TOKEN Permissions
+nanoda	Set up job	2026-10-05T06:21:18.2590511Z Contents: read
+nanoda	Set up job	2026-10-05T06:21:18.2591220Z Metadata: read
+nanoda	Set up job	2026-10-05T06:21:18.2591845Z ##[endgroup]
+nanoda	Set up job	2026-10-05T06:21:18.2593876Z Secret source: Actions
+nanoda	Set up job	2026-10-05T06:21:18.2595604Z Cache mode: write
+nanoda	Set up job	2026-10-05T06:21:18.2596363Z Prepare workflow directory
+nanoda	Set up job	2026-10-05T06:21:18.2952732Z Prepare all required actions
+nanoda	Set up job	2026-10-05T06:21:18.3026664Z Getting action download info
+nanoda	Set up job	2026-10-05T06:21:18.6811975Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+nanoda	Set up job	2026-10-05T06:21:18.7980743Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+nanoda	Set up job	2026-10-05T06:21:19.0103702Z Complete job name: nanoda
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-05T06:21:19.1009657Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1010806Z with:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1011431Z   repository: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1015873Z   token: ***
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1016332Z   ssh-strict: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1016785Z   ssh-user: git
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1017245Z   persist-credentials: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1017738Z   clean: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1018186Z   sparse-checkout-cone-mode: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1018719Z   fetch-depth: 1
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1019160Z   fetch-tags: false
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1019614Z   show-progress: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1020069Z   lfs: false
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1020488Z   submodules: false
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1020950Z   set-safe-directory: true
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1021467Z   allow-unsafe-pr-checkout: false
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.1022260Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2092108Z Syncing repository: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2095548Z ##[group]Getting Git version info
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2097411Z Working directory is '/home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean'
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2099815Z [command]/usr/bin/git version
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2170871Z git version 2.55.0
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2199297Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2213404Z Temporarily overriding HOME='/home/runner/work/_temp/370c4c28-df01-4f27-9eaf-78c8d30765b7' before making global git config changes
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2216792Z Adding repository directory to the temporary git global config as a safe directory
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2226610Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2289192Z Deleting the contents of '/home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean'
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2299529Z ##[group]Initializing the repository
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2305579Z [command]/usr/bin/git init /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2448830Z hint: Using 'master' as the name for the initial branch. This default branch name
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2450698Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2452279Z hint: to use in all of your new repositories, which will suppress this warning,
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2453165Z hint: call:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2453595Z hint:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2454521Z hint: 	git config --global init.defaultBranch <name>
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2455216Z hint:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2455820Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2456802Z hint: 'development'. The just-created branch can be renamed via this command:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2457789Z hint:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2458245Z hint: 	git branch -m <name>
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2458732Z hint:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2459431Z hint: Disable this message with "git config set advice.defaultBranchName false"
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2460888Z Initialized empty Git repository in /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean/.git/
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2466855Z [command]/usr/bin/git remote add origin https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2520442Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2521251Z ##[group]Disabling automatic garbage collection
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2525501Z [command]/usr/bin/git config --local gc.auto 0
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2559820Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2560652Z ##[group]Setting up auth
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2569159Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.2604640Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3020703Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3060225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3315840Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3357448Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3607210Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3660122Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3661966Z ##[group]Fetching the repository
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:19.3672254Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a0309136454062e714ea027e5c4c459d7f58566c:refs/remotes/origin/main
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8268589Z From https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8275805Z  * [new ref]         a0309136454062e714ea027e5c4c459d7f58566c -> origin/main
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8279802Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8281279Z ##[group]Determining the checkout info
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8283143Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8284845Z [command]/usr/bin/git sparse-checkout disable
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8356824Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8392462Z ##[group]Checking out the ref
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:20.8398372Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:21.4289611Z Switched to a new branch 'main'
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:21.4295355Z branch 'main' set up to track 'origin/main'.
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:21.4345272Z ##[endgroup]
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:21.4391328Z [command]/usr/bin/git log -1 --format=%H
+nanoda	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:21:21.4419145Z a0309136454062e714ea027e5c4c459d7f58566c
+nanoda	Download and validate the exact proof export	﻿2026-10-05T06:21:21.4651774Z ##[group]Run mkdir -p external-check
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4652373Z ^[[36;1mmkdir -p external-check^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4653143Z ^[[36;1mgh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4654287Z ^[[36;1mpython3 scripts/prepare_external_check.py | tee external-check/identity.log^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4654888Z ^[[36;1mpython3 - <<'PY'^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4655223Z ^[[36;1mimport json, os^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4655566Z ^[[36;1mfrom pathlib import Path^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4655993Z ^[[36;1mp = Path("external-check/nanoda-config.json")^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4656459Z ^[[36;1msettings = json.loads(p.read_text())^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4656920Z ^[[36;1mworkers = int(os.environ["NANODA_THREADS"])^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4657361Z ^[[36;1massert workers in (2, 4)^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4657742Z ^[[36;1msettings["num_threads"] = workers^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4658240Z ^[[36;1mp.write_text(json.dumps(settings, indent=2) + "\n")^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4658706Z ^[[36;1mPY^[[0m
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4941245Z shell: /usr/bin/bash -e {0}
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4941714Z env:
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4946477Z   GH_TOKEN: ***
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4946978Z   GH_REPO: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4947569Z   CERT_RELEASE: certificate-20261005-d561980
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4948006Z   NANODA_THREADS: 2
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:21.4948330Z ##[endgroup]
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1616459Z {
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1617418Z   "validated_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1618295Z   "source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1618822Z   "target_count": 269,
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1619481Z   "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2"
+nanoda	Download and validate the exact proof export	2026-10-05T06:21:57.1620228Z }
+nanoda	Build pinned independent kernel	﻿2026-10-05T06:21:57.3399547Z ##[group]Run git clone https://github.com/ammkrn/nanoda_lib .tools/nanoda
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3400206Z ^[[36;1mgit clone https://github.com/ammkrn/nanoda_lib .tools/nanoda^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3400768Z ^[[36;1mgit -C .tools/nanoda checkout --detach 4c544ed4099c8227f07d5de77ad1e69fb0740a27^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3401306Z ^[[36;1mpython3 scripts/patch_nanoda_runtime.py .tools/nanoda^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3401724Z ^[[36;1mrustup toolchain install 1.90.0 --profile minimal^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3402189Z ^[[36;1mcargo +1.90.0 build --release --locked --manifest-path .tools/nanoda/Cargo.toml^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3402816Z ^[[36;1msha256sum .tools/nanoda/target/release/nanoda_bin > external-check/checker-binary.sha256^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3403420Z ^[[36;1mgit -C .tools/nanoda diff > external-check/checker.patch^[[0m
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3470487Z shell: /usr/bin/bash -e {0}
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3470822Z ##[endgroup]
+nanoda	Build pinned independent kernel	2026-10-05T06:21:57.3633093Z Cloning into '.tools/nanoda'...
+nanoda	Build pinned independent kernel	2026-10-05T06:21:58.1522197Z HEAD is now at 4c544ed Merge pull request #31 from ammkrn/flt_perf
+nanoda	Build pinned independent kernel	2026-10-05T06:21:58.1800028Z Applied runtime-only stack and diagnostic-trace patch; checker rules unchanged.
+nanoda	Build pinned independent kernel	2026-10-05T06:21:58.2318926Z info: syncing channel updates for 1.90.0-x86_64-unknown-linux-gnu
+nanoda	Build pinned independent kernel	2026-10-05T06:21:58.3300292Z info: latest update on 2025-09-18 for version 1.90.0 (1159e78c4 2025-09-14)
+nanoda	Build pinned independent kernel	2026-10-05T06:21:58.3300856Z info: downloading 3 components
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.6834633Z 
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.6913241Z   1.90.0-x86_64-unknown-linux-gnu installed - rustc 1.90.0 (1159e78c4 2025-09-14)
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.6913661Z 
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.7319352Z     Updating crates.io index
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8072038Z  Downloading crates ...
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8370167Z   Downloaded rand v0.8.5
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8411459Z   Downloaded hashbrown v0.16.1
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8469426Z   Downloaded rustc-hash v1.1.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8489671Z   Downloaded rand_core v0.6.4
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8516032Z   Downloaded serde v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8557120Z   Downloaded unicode-ident v1.0.12
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8587029Z   Downloaded serde_derive v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8620070Z   Downloaded serde_core v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8649607Z   Downloaded ryu v1.0.20
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8683560Z   Downloaded indexmap v2.13.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8727890Z   Downloaded num-bigint v0.4.4
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8775586Z   Downloaded serde_json v1.0.145
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8849949Z   Downloaded memchr v2.7.6
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8905366Z   Downloaded num-traits v0.2.17
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8931669Z   Downloaded semver v1.0.27
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8955726Z   Downloaded rand_chacha v0.3.1
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8969214Z   Downloaded quote v1.0.35
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.8996656Z   Downloaded ppv-lite86 v0.2.17
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9010475Z   Downloaded cfg-if v1.0.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9022477Z   Downloaded syn v2.0.111
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9128367Z   Downloaded proc-macro2 v1.0.103
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9158612Z   Downloaded num-integer v0.1.46
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9175498Z   Downloaded itoa v1.0.15
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9191096Z   Downloaded getrandom v0.2.11
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9222202Z   Downloaded equivalent v1.0.1
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9231137Z   Downloaded autocfg v1.1.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9289152Z   Downloaded libc v0.2.180
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9903370Z    Compiling autocfg v1.1.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9904938Z    Compiling proc-macro2 v1.0.103
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9905778Z    Compiling unicode-ident v1.0.12
+nanoda	Build pinned independent kernel	2026-10-05T06:22:05.9906496Z    Compiling serde_core v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.0570352Z    Compiling serde v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.2271085Z    Compiling serde_json v1.0.145
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.2348032Z    Compiling num-traits v0.2.17
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.2995292Z    Compiling num-bigint v0.4.4
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.5625153Z    Compiling equivalent v1.0.1
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.5955082Z    Compiling hashbrown v0.16.1
+nanoda	Build pinned independent kernel	2026-10-05T06:22:06.8235467Z    Compiling quote v1.0.35
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.0526554Z    Compiling syn v2.0.111
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.3430263Z    Compiling ryu v1.0.20
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.4435090Z    Compiling num-integer v0.1.46
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.5565106Z    Compiling itoa v1.0.15
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.6325059Z    Compiling memchr v2.7.6
+nanoda	Build pinned independent kernel	2026-10-05T06:22:07.8075234Z    Compiling indexmap v2.13.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:08.5005096Z    Compiling rustc-hash v1.1.0
+nanoda	Build pinned independent kernel	2026-10-05T06:22:08.5455114Z    Compiling semver v1.0.27
+nanoda	Build pinned independent kernel	2026-10-05T06:22:09.0847880Z    Compiling serde_derive v1.0.228
+nanoda	Build pinned independent kernel	2026-10-05T06:22:11.8052292Z    Compiling nanoda_lib v0.4.17 (/home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean/.tools/nanoda)
+nanoda	Build pinned independent kernel	2026-10-05T06:22:24.2268801Z     Finished `release` profile [optimized] target(s) in 18.52s
+nanoda	Check all exported declarations and resolve all registered targets	﻿2026-10-05T06:22:24.2516212Z ##[group]Run set -o pipefail
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2516543Z ^[[36;1mset -o pipefail^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2516776Z ^[[36;1mulimit -c 0^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2516995Z ^[[36;1m(while sleep 60; do^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2517223Z ^[[36;1m  date -u^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2517468Z ^[[36;1m  for trace in external-check/*.trace; do^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2517827Z ^[[36;1m    test ! -f "$trace" || tail -n 1 "$trace"^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2518117Z ^[[36;1m  done^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2518314Z ^[[36;1mdone) &^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2518519Z ^[[36;1mmonitor_pid=$!^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2518803Z ^[[36;1mtrap 'kill "$monitor_pid" 2>/dev/null || true' EXIT^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2519569Z ^[[36;1m/usr/bin/time -v .tools/nanoda/target/release/nanoda_bin external-check/nanoda-config.json < external-check/solution.ndjson 2>&1 | tee external-check/nanoda.log^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2520277Z ^[[36;1mpython3 - <<'PY'^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2520500Z ^[[36;1mimport re^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2520733Z ^[[36;1mfrom pathlib import Path^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2521103Z ^[[36;1mtext = Path('external-check/nanoda.log').read_text()^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2521555Z ^[[36;1massert re.search(r'Checked [0-9]+ declarations with no errors', text)^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2522059Z ^[[36;1massert Path('external-check/checked-targets.txt').stat().st_size > 0^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2522602Z ^[[36;1mPY^[[0m
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2588272Z shell: /usr/bin/bash -e {0}
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2588532Z env:
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2589092Z   NANODA_TRACE_DIR: /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean/external-check
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:22:24.2589745Z ##[endgroup]
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:23:24.2706448Z Mon Oct  5 06:23:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:23:24.2729103Z 64163 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0000.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:23:24.2741772Z 62104 BecknerOnofri.HighDim.Spin.count_joint_moment_rational._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:24:24.2772700Z Mon Oct  5 06:24:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:24:24.2787353Z 67340 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0003.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:24:24.2800035Z 68052 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0003.e000841._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:25:24.2830622Z Mon Oct  5 06:25:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:25:24.2844794Z 73588 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0009.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:25:24.2857488Z 74267 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0009.e002385._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:26:24.2888371Z Mon Oct  5 06:26:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:26:24.2902342Z 79828 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0015.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:26:24.2915671Z 80641 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0015.e003890._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:27:24.2946860Z Mon Oct  5 06:27:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:27:24.2960455Z 86076 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0021.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:27:24.2973642Z 86947 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0021.e005409._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:28:24.3006133Z Mon Oct  5 06:28:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:28:24.3020232Z 93353 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0027.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:28:24.3033182Z 92324 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0027.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:29:24.3065312Z Mon Oct  5 06:29:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:29:24.3079842Z 99601 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0033.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:29:24.3092722Z 98572 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0033.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:30:24.3124220Z Mon Oct  5 06:30:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:30:24.3137772Z 105860 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0040.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:30:24.3150149Z 104812 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0039.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:31:24.3180881Z Mon Oct  5 06:31:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:31:24.3194610Z 112100 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0046.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:31:24.3206859Z 112130 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0046.e012030
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:32:24.3238772Z Mon Oct  5 06:32:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:32:24.3253195Z 118348 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0052.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:32:24.3266426Z 118580 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0052.e013505._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:33:24.3298210Z Mon Oct  5 06:33:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:33:24.3313180Z 124596 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0058.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:33:24.3326495Z 124971 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0058.e015013._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:34:24.3359095Z Mon Oct  5 06:34:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:34:24.3372991Z 130844 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0064.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:34:24.3386605Z 131496 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0064.e016474._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:35:24.3418347Z Mon Oct  5 06:35:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:35:24.3432836Z 137084 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0070.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:35:24.3447502Z 137631 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0070.e018032._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:36:24.3479772Z Mon Oct  5 06:36:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:36:24.3495039Z 143332 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0076.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:36:24.3509088Z 143894 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0076.e019571
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:37:24.3541289Z Mon Oct  5 06:37:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:37:24.3555417Z 149580 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0082.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:37:24.3568348Z 150113 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0082.e021116._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:38:24.3600542Z Mon Oct  5 06:38:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:38:24.3616082Z 155828 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0088.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:38:24.3629009Z 156220 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0088.e022681._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:39:24.3660347Z Mon Oct  5 06:39:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:39:24.3674804Z 162068 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0094.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:39:24.3687696Z 162267 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0094.e024265._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:40:24.3719422Z Mon Oct  5 06:40:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:40:24.3733272Z 168316 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0100.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:40:24.3746319Z 168356 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0100.e025841._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:41:24.3778038Z Mon Oct  5 06:41:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:41:24.3791864Z 174559 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0105.weights_checked._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:41:24.3805110Z 173524 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0105.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:42:24.3836809Z Mon Oct  5 06:42:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:42:24.3851096Z 180796 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0111.aligned._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:42:24.3863470Z 179764 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0111.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:43:24.3895250Z Mon Oct  5 06:43:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:43:24.3909363Z 187041 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0117.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:43:24.3922529Z 186012 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0117.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:44:24.3955276Z Mon Oct  5 06:44:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:44:24.3969685Z 193245 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0123.e031501._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:44:24.3982708Z 192260 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0123.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:45:24.4016385Z Mon Oct  5 06:45:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:45:24.4030252Z 199396 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0129.e033061._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:45:24.4042996Z 198508 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0129.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:46:24.4074719Z Mon Oct  5 06:46:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:46:24.4088631Z 204748 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0135.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:46:24.4101226Z 205326 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0135.e034679
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:47:24.4132454Z Mon Oct  5 06:47:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:47:24.4146900Z 211487 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0141.e036226._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:47:24.4159585Z 210996 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0141.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:48:24.4191160Z Mon Oct  5 06:48:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:48:24.4205729Z 217802 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0147.e037994._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:48:24.4218294Z 217245 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0148.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:49:24.4249782Z Mon Oct  5 06:49:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:49:24.4263196Z 224242 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0152.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:49:24.4275615Z 224532 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0149.e039127
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:50:24.4307433Z Mon Oct  5 06:50:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:50:24.4323342Z 230436 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0158.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:50:24.4339190Z 231597 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0151.aligned._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:51:24.4370795Z Mon Oct  5 06:51:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:51:24.4385483Z 237807 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0169.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:51:24.4397893Z 238419 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0154.e043336._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:52:24.4428799Z Mon Oct  5 06:52:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:52:24.4442381Z 244869 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0174.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:52:24.4454651Z 244001 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0175.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:53:24.4486359Z Mon Oct  5 06:53:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:53:24.4500927Z 252083 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0158.e046102._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:53:24.4514376Z 252084 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0158.e046102._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:54:24.4546324Z Mon Oct  5 06:54:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:54:24.4561578Z 258325 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0185.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:54:24.4574943Z 259306 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0160.e047364._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:55:24.4606643Z Mon Oct  5 06:55:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:55:24.4620657Z 265862 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0163.e050378
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:55:24.4632884Z 265688 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0196.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:56:24.4665797Z Mon Oct  5 06:56:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:56:24.4680384Z 272750 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0201.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:56:24.4693854Z 271882 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0202.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:57:24.4726836Z Mon Oct  5 06:57:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:57:24.4741343Z 279389 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0167.e053158._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:57:24.4754544Z 278944 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0207.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:58:24.4786444Z Mon Oct  5 06:58:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:58:24.4800239Z 286513 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0169.e054444._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:58:24.4813135Z 286206 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0212.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:59:24.4845941Z Mon Oct  5 06:59:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:59:24.4860588Z 293558 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0171.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T06:59:24.4873475Z 292400 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0218.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:00:24.4905655Z Mon Oct  5 07:00:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:00:24.4920015Z 299763 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0229.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:00:24.4932729Z 300242 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0174.e058759._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:01:24.4966004Z Mon Oct  5 07:01:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:01:24.4979961Z 306833 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0234.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:01:24.4992566Z 305965 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0235.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:02:24.5025177Z Mon Oct  5 07:02:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:02:24.5039353Z 314023 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0178.e061456._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:02:24.5053258Z 314024 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0178.e061456._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:03:24.5085993Z Mon Oct  5 07:03:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:03:24.5100395Z 321249 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0180.e062721._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:03:24.5113360Z 320281 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0245.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:04:24.5145159Z Mon Oct  5 07:04:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:04:24.5159197Z 327939 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0183.e065673._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:04:24.5172331Z 327644 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0256.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:05:24.5204626Z Mon Oct  5 07:05:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:05:24.5220123Z 333846 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0262.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:05:24.5234450Z 334714 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0261.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:06:24.5269262Z Mon Oct  5 07:06:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:06:24.5284955Z 340908 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0267.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:06:24.5298983Z 341632 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0187.e068444._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:07:24.5331992Z Mon Oct  5 07:07:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:07:24.5347602Z 348162 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0272.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:07:24.5361259Z 348848 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0189.e069706
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:08:24.5393133Z Mon Oct  5 07:08:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:08:24.5407352Z 355533 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0283.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:08:24.5419937Z 354356 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0278.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:09:24.5451226Z Mon Oct  5 07:09:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:09:24.5465486Z 361727 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0289.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:09:24.5478088Z 362595 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0288.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:10:24.5509311Z Mon Oct  5 07:10:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:10:24.5523689Z 368789 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0294.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:10:24.5537041Z 369133 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0196.e075453._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:11:24.5568473Z Mon Oct  5 07:11:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:11:24.5582580Z 376043 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0299.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:11:24.5595980Z 376473 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0198.e076698
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:12:24.5628125Z Mon Oct  5 07:12:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:12:24.5641798Z 382245 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0305.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:12:24.5655210Z 383409 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0200.weights_checked._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:13:24.5687879Z Mon Oct  5 07:13:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:13:24.5702579Z 389608 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0316.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:13:24.5716178Z 390425 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0203.e080923._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:14:24.5748418Z Mon Oct  5 07:14:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:14:24.5763690Z 396980 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0205.e082356
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:14:24.5777460Z 396670 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0321.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:15:24.5809881Z Mon Oct  5 07:15:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:15:24.5830552Z 404307 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0207.e083647._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:15:24.5839878Z 403924 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0326.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:16:24.5871367Z Mon Oct  5 07:16:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:16:24.5885096Z 411287 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0209.aligned._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:16:24.5897069Z 410126 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0332.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:17:24.5928672Z Mon Oct  5 07:17:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:17:24.5944557Z 417489 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0343.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:17:24.5961321Z 418227 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0212.e087863
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:18:24.5989161Z Mon Oct  5 07:18:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:18:24.6004862Z 424829 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0214.e089308
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:18:24.6020652Z 424551 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0348.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:19:24.6050711Z Mon Oct  5 07:19:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:19:24.6067588Z 431813 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0353.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:19:24.6079715Z 432122 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0216.e090540._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:20:24.6111452Z Mon Oct  5 07:20:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:20:24.6125907Z 438007 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0359.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:20:24.6138430Z 439171 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0218.weights_checked._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:21:24.6170298Z Mon Oct  5 07:21:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:21:24.6186030Z 445370 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0370.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:21:24.6200106Z 446091 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0221.e094771._proof_3
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:22:24.6232370Z Mon Oct  5 07:22:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:22:24.6246340Z 452754 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0223.e096183
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:22:24.6258817Z 452432 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0375.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:23:24.6290683Z Mon Oct  5 07:23:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:23:24.6306102Z 459694 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0380.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:23:24.6319039Z 460096 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0225.e097427
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:24:24.6351047Z Mon Oct  5 07:24:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:24:24.6364788Z 465888 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0386.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:24:24.6378225Z 467057 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0391.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:25:24.6408978Z Mon Oct  5 07:25:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:25:24.6422432Z 474119 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0396.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:25:24.6436126Z 473251 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0397.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:26:24.6468552Z Mon Oct  5 07:26:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:26:24.6484577Z 480321 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0402.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:26:24.6498334Z 480892 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0232.e103062._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:27:24.6530576Z Mon Oct  5 07:27:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:27:24.6545794Z 487575 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0407.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:27:24.6558768Z 488147 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0234.e104334._proof_2
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:28:24.6591157Z Mon Oct  5 07:28:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:28:24.6605344Z 494984 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0237.e107226
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:28:24.6618085Z 494938 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0418.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:29:24.6649781Z Mon Oct  5 07:29:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:29:24.6664433Z 502000 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0423.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:29:24.6677124Z 501132 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0424.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:30:24.6708739Z Mon Oct  5 07:30:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:30:24.6722839Z 508202 BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0429.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:30:24.6735949Z 509073 BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0241.e109857._proof_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:31:24.6767307Z Mon Oct  5 07:31:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:31:24.6780993Z 524051 BecknerOnofri.HighDim.Spin.vertex_energy_bound._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:31:24.6794271Z 524080 BecknerOnofri.HighDim.Spin.correcting_vectors_bounds._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:32:24.6826135Z Mon Oct  5 07:32:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:32:24.6840193Z 526462 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0192.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:32:24.6852734Z 526495 BecknerOnofri.HighDim.Spin.CandidateBatch0118.accepted1891._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:33:24.6883815Z Mon Oct  5 07:33:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:33:24.6897961Z 528852 BecknerOnofri.HighDim.Spin.IntervalBatch0108.intervalAccepted1741._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:33:24.6910387Z 528849 BecknerOnofri.HighDim.Spin.CandidateBatch0108.accepted1741._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:34:24.6941869Z Mon Oct  5 07:34:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:34:24.6956098Z 531155 BecknerOnofri.HighDim.Spin.IntervalBatch0107.intervalAccepted1717._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:34:24.6968841Z 531152 BecknerOnofri.HighDim.Spin.CandidateBatch0107.accepted1717._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:35:24.7001394Z Mon Oct  5 07:35:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:35:24.7016951Z 533559 BecknerOnofri.HighDim.Spin.CandidateBatch0094.accepted1517._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:35:24.7029747Z 533524 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0154.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:36:24.7061269Z Mon Oct  5 07:36:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:36:24.7075492Z 535995 BecknerOnofri.HighDim.Spin.CandidateBatch0090.accepted1447._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:36:24.7089132Z 535984 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0147.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:37:24.7120744Z Mon Oct  5 07:37:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:37:24.7134982Z 538287 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0132.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:37:24.7147773Z 538294 BecknerOnofri.HighDim.Spin.CandidateBatch0081.accepted1299._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:38:24.7179856Z Mon Oct  5 07:38:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:38:24.7193542Z 540734 BecknerOnofri.HighDim.Spin.CandidateBatch0079.accepted1278._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:38:24.7207109Z 540711 BecknerOnofri.HighDim.Spin.CandidateBatch0079.accepted1277._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:39:24.7238786Z Mon Oct  5 07:39:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:39:24.7252617Z 543210 BecknerOnofri.HighDim.Spin.CandidateBatch0070.accepted1127._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:39:24.7265529Z 543214 BecknerOnofri.HighDim.Spin.IntervalBatch0070.intervalAccepted1127._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:40:24.7296740Z Mon Oct  5 07:40:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:40:24.7310762Z 545732 BecknerOnofri.HighDim.Spin.CandidateBatch0066.accepted1058._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:40:24.7323619Z 545709 BecknerOnofri.HighDim.Spin.CandidateBatch0066.accepted1057._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:41:24.7355769Z Mon Oct  5 07:41:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:41:24.7370079Z 548293 BecknerOnofri.HighDim.Spin.CandidateBatch0061.accepted0991._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:41:24.7382938Z 548307 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0087.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:42:24.7414627Z Mon Oct  5 07:42:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:42:24.7428082Z 550772 BecknerOnofri.HighDim.Spin.CandidateBatch0052.accepted0840._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:42:24.7440996Z 550749 BecknerOnofri.HighDim.Spin.CandidateBatch0052.accepted0839._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:43:24.7471854Z Mon Oct  5 07:43:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:43:24.7486212Z 553243 BecknerOnofri.HighDim.Spin.CandidateBatch0043.accepted0691._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:43:24.7499028Z 553190 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0070.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:44:24.7530310Z Mon Oct  5 07:44:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:44:24.7544539Z 555720 BecknerOnofri.HighDim.Spin.CandidateBatch0031.candidate0498._proof_4
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:44:24.7558273Z 555669 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0050.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:45:24.7590218Z Mon Oct  5 07:45:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:45:24.7603866Z 558322 BecknerOnofri.HighDim.Spin.CandidateBatch0027.accepted0432._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:45:24.7617190Z 558306 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0043.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:46:24.7648702Z Mon Oct  5 07:46:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:46:24.7667179Z 560840 BecknerOnofri.HighDim.Spin.CandidateBatch0025.accepted0411._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:46:24.7679653Z 560863 BecknerOnofri.HighDim.Spin.CandidateBatch0025.accepted0412._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:47:24.7707514Z Mon Oct  5 07:47:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:47:24.7721772Z 563429 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0027.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:47:24.7734514Z 563457 BecknerOnofri.HighDim.Spin.CandidateBatch0016.accepted0266._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:48:24.7766029Z Mon Oct  5 07:48:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:48:24.7779814Z 566090 BecknerOnofri.HighDim.Spin.CandidateBatch0007.candidate0122._proof_11
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:48:24.7791874Z 566071 BecknerOnofri.HighDim.Spin.CandidateBatch0007.accepted0121._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:49:24.7823047Z Mon Oct  5 07:49:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:49:24.7837393Z 568686 BecknerOnofri.HighDim.Spin.CandidateBatch0003.accepted0061._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:49:24.7850366Z 568625 BecknerOnofri.HighDim.EntropyLogCertificate.SpinLogs0006.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:50:24.7881765Z Mon Oct  5 07:50:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:50:24.7895472Z 570278 BecknerOnofri.HighDim.ScalarCertificate.BesselBatch0480.accepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:50:24.7907858Z 570241 BecknerOnofri.HighDim.ScalarCertificate.CertifiedMinorant.hullAccepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:51:24.8132273Z Mon Oct  5 07:51:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:51:24.8140947Z 570476 BecknerOnofri.HighDim.ScalarCertificate.momentRange_sound
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:51:24.8143062Z 570241 BecknerOnofri.HighDim.ScalarCertificate.CertifiedMinorant.hullAccepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:52:24.8426237Z Mon Oct  5 07:52:24 UTC 2026
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:52:24.8480626Z 570476 BecknerOnofri.HighDim.ScalarCertificate.momentRange_sound
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:52:24.8481312Z 570241 BecknerOnofri.HighDim.ScalarCertificate.CertifiedMinorant.hullAccepted._proof_1_1
+nanoda	Check all exported declarations and resolve all registered targets	2026-10-05T07:52:44.5616425Z ##[error]Process completed with exit code 143.
+nanoda	Complete job	﻿2026-10-05T07:52:44.7140655Z Cleaning up orphan processes
+nanoda	Complete job	2026-10-05T07:52:44.8878214Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

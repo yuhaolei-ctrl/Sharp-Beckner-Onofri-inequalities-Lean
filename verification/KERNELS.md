@@ -20,8 +20,17 @@ only when `NANODA_TRACE_DIR` is set; they make a later runtime failure locatable
 The valid/invalid proof controls and exact-once trace inventory are recorded in
 `current/nanoda-runtime-control/`. They do not replace the full-corpus check.
 
-The default remains two workers to limit memory use. Both worker choices use a
-strict three-axiom allow-list.
+Run 37271984661, with two 1 GiB workers, ended with exit 143. GitHub supplied
+no further termination cause and skipped artifact preservation. Its full log
+and annotations are retained; it did not report a mathematical rejection.
+The last live trace entries were declarations 570476 and 570241.
+
+The next run uses **one worker** to reduce concurrent memory use. The runtime
+adapter dispatches that worker through the same explicitly allocated 1 GiB
+stack path; inference and checking rules remain unchanged. Its valid/invalid
+controls and exact-once 536-declaration trace inventory are recorded in
+`current/nanoda-single-worker-control/`. All worker choices use a strict
+three-axiom allow-list.
 `unpermitted_axiom_hard_error=false` only skips unused exported axioms; a proof
 referring to one still fails. `unsafe_permit_all_axioms` remains false.
 

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T06:38:16.346212+00:00",
+  "updated_utc": "2026-10-05T07:58:57.636986+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -112,6 +112,18 @@
       "elapsed": "1:07:44",
       "max_rss_kib": 13158032,
       "proof_rejection_diagnostic": false
+    },
+    {
+      "run_id": 37271984661,
+      "conclusion": "terminated",
+      "exit_code": 143,
+      "reason": "Termination cause unspecified in available GitHub logs; no mathematical rejection diagnostic",
+      "last_logged_declaration_indices": [
+        570476,
+        570241
+      ],
+      "evidence_directory": "current/nanoda-attempt-37271984661",
+      "artifacts_available": false
     }
   ],
   "historical_paper2_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
@@ -142,13 +154,16 @@
     "evidence": "current/nanoda-runtime-control"
   },
   "nanoda_large_stack": {
-    "status": "running",
+    "status": "terminated",
     "run_id": 37271984661,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37271984661",
     "scope": 269,
     "worker_stack_bytes": 1073741824,
     "num_threads": 2,
-    "workflow_commit": "a030913"
+    "workflow_commit": "a030913",
+    "exit_code": 143,
+    "proof_rejection_diagnostic": false,
+    "termination_reason": "Not specified by GitHub logs; all subsequent evidence steps were skipped"
   },
   "eink0rn": {
     "status": "running",
@@ -159,5 +174,14 @@
     "source_patch": null,
     "controls": "passed: accepts valid proof; rejects altered proof",
     "run_stage": "full certificate check"
+  },
+  "nanoda_single_worker_control": {
+    "status": "passed",
+    "worker_threads": 1,
+    "worker_stack_bytes": 1073741824,
+    "valid_declarations": 536,
+    "trace_indices_exactly_once": true,
+    "invalid_proof_rejected": true,
+    "evidence": "current/nanoda-single-worker-control"
   }
 }
