@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T11:33:54.678946+00:00",
+  "updated_utc": "2026-10-05T12:32:26.479147+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -191,14 +191,19 @@
     "termination_reason": "Not specified by GitHub logs; all subsequent evidence steps were skipped"
   },
   "eink0rn": {
-    "status": "running",
+    "status": "timed_out",
     "run_id": 37272652155,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155",
     "scope": 269,
     "checker_revision": "31a9e3a1347d0544e8362fabea0ac669b41afbbb",
     "source_patch": null,
     "controls": "passed: accepts valid proof; rejects altered proof",
-    "run_stage": "full certificate check"
+    "run_stage": "ended without complete acceptance",
+    "reason": "GitHub job exceeded maximum execution time of 6h0m0s",
+    "evidence_directory": "current/eink0rn-attempt-37272652155",
+    "last_reported_declaration_count": 522206,
+    "last_reported_declaration": "BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1",
+    "checker_exit_code": null
   },
   "nanoda_single_worker_control": {
     "status": "passed",
@@ -296,5 +301,17 @@
       "lazyDelta": 1000000
     },
     "scope": 269
+  },
+  "con_ron_local": {
+    "status": "running",
+    "scope": 269,
+    "worker_threads": 1,
+    "platform": "macOS arm64",
+    "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
+    "source_patch": null,
+    "mode": "verified",
+    "controls": "passed: valid proof exit 0; damaged proof exit 1",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+    "run_stage": "full export check; no acceptance receipt yet"
   }
 }

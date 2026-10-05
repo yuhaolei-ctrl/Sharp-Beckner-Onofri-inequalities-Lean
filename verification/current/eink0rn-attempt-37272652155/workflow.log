@@ -1,0 +1,689 @@
+eink0rn	Set up job	﻿2026-10-05T06:29:12.5443004Z Current runner version: '2.337.0'
+eink0rn	Set up job	2026-10-05T06:29:12.5471154Z ##[group]Runner Image Provisioner
+eink0rn	Set up job	2026-10-05T06:29:12.5472387Z Hosted Compute Agent
+eink0rn	Set up job	2026-10-05T06:29:12.5472985Z Version: 20260901.588
+eink0rn	Set up job	2026-10-05T06:29:12.5473658Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+eink0rn	Set up job	2026-10-05T06:29:12.5474897Z Build Date: 2026-09-01T19:56:44Z
+eink0rn	Set up job	2026-10-05T06:29:12.5475669Z Worker ID: {624466aa-be2b-475c-a2d7-9abec8f5019f}
+eink0rn	Set up job	2026-10-05T06:29:12.5476527Z Azure Region: eastus
+eink0rn	Set up job	2026-10-05T06:29:12.5477106Z ##[endgroup]
+eink0rn	Set up job	2026-10-05T06:29:12.5478731Z ##[group]Operating System
+eink0rn	Set up job	2026-10-05T06:29:12.5479407Z Ubuntu
+eink0rn	Set up job	2026-10-05T06:29:12.5479945Z 24.04.5
+eink0rn	Set up job	2026-10-05T06:29:12.5480537Z LTS
+eink0rn	Set up job	2026-10-05T06:29:12.5481051Z ##[endgroup]
+eink0rn	Set up job	2026-10-05T06:29:12.5481583Z ##[group]Runner Image
+eink0rn	Set up job	2026-10-05T06:29:12.5482275Z Image: ubuntu-24.04
+eink0rn	Set up job	2026-10-05T06:29:12.5482821Z Version: 20260927.320.1
+eink0rn	Set up job	2026-10-05T06:29:12.5483994Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+eink0rn	Set up job	2026-10-05T06:29:12.5486028Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+eink0rn	Set up job	2026-10-05T06:29:12.5487038Z ##[endgroup]
+eink0rn	Set up job	2026-10-05T06:29:12.5488201Z ##[group]GITHUB_TOKEN Permissions
+eink0rn	Set up job	2026-10-05T06:29:12.5490413Z Contents: read
+eink0rn	Set up job	2026-10-05T06:29:12.5491015Z Metadata: read
+eink0rn	Set up job	2026-10-05T06:29:12.5492070Z ##[endgroup]
+eink0rn	Set up job	2026-10-05T06:29:12.5494200Z Secret source: Actions
+eink0rn	Set up job	2026-10-05T06:29:12.5495560Z Cache mode: write
+eink0rn	Set up job	2026-10-05T06:29:12.5496467Z Prepare workflow directory
+eink0rn	Set up job	2026-10-05T06:29:12.5833849Z Prepare all required actions
+eink0rn	Set up job	2026-10-05T06:29:12.5885086Z Getting action download info
+eink0rn	Set up job	2026-10-05T06:29:12.8263512Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+eink0rn	Set up job	2026-10-05T06:29:12.9416158Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+eink0rn	Set up job	2026-10-05T06:29:13.1563055Z Complete job name: eink0rn
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-05T06:29:13.2482117Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2483228Z with:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2483848Z   repository: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2488535Z   token: ***
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2489013Z   ssh-strict: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2489462Z   ssh-user: git
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2489908Z   persist-credentials: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2490396Z   clean: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2490843Z   sparse-checkout-cone-mode: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2491358Z   fetch-depth: 1
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2491781Z   fetch-tags: false
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2492224Z   show-progress: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2492685Z   lfs: false
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2493093Z   submodules: false
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2493546Z   set-safe-directory: true
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2494050Z   allow-unsafe-pr-checkout: false
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.2494984Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3505998Z Syncing repository: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3509003Z ##[group]Getting Git version info
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3510821Z Working directory is '/home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean'
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3513137Z [command]/usr/bin/git version
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3625822Z git version 2.55.0
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3656672Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3670461Z Temporarily overriding HOME='/home/runner/work/_temp/43a2715f-6f2b-4f4d-ada2-79dab0fefcba' before making global git config changes
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3675919Z Adding repository directory to the temporary git global config as a safe directory
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3678736Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3725059Z Deleting the contents of '/home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean'
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3729295Z ##[group]Initializing the repository
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3733697Z [command]/usr/bin/git init /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3851158Z hint: Using 'master' as the name for the initial branch. This default branch name
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3852982Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3855980Z hint: to use in all of your new repositories, which will suppress this warning,
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3857277Z hint: call:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3857956Z hint:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3858826Z hint: 	git config --global init.defaultBranch <name>
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3859858Z hint:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3860834Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3862413Z hint: 'development'. The just-created branch can be renamed via this command:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3863674Z hint:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3864518Z hint: 	git branch -m <name>
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3865298Z hint:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3866403Z hint: Disable this message with "git config set advice.defaultBranchName false"
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3868742Z Initialized empty Git repository in /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean/.git/
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3872750Z [command]/usr/bin/git remote add origin https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3921989Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3923386Z ##[group]Disabling automatic garbage collection
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3926072Z [command]/usr/bin/git config --local gc.auto 0
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3959595Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3960764Z ##[group]Setting up auth
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.3968155Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4005601Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4408212Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4447333Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4677881Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4716389Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4949837Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4992121Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.4993183Z ##[group]Fetching the repository
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:13.5001952Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +63eeeee5228daaa791b3aa347ac62bfbfd54cfff:refs/remotes/origin/main
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6356362Z From https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6358694Z  * [new ref]         63eeeee5228daaa791b3aa347ac62bfbfd54cfff -> origin/main
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6362120Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6363638Z ##[group]Determining the checkout info
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6365540Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6370159Z [command]/usr/bin/git sparse-checkout disable
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6435162Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6477153Z ##[group]Checking out the ref
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:14.6482677Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:15.2443964Z Switched to a new branch 'main'
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:15.2449560Z branch 'main' set up to track 'origin/main'.
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:15.2483681Z ##[endgroup]
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:15.2530082Z [command]/usr/bin/git log -1 --format=%H
+eink0rn	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T06:29:15.2558352Z 63eeeee5228daaa791b3aa347ac62bfbfd54cfff
+eink0rn	Validate exact export, registered roots, and all axioms	﻿2026-10-05T06:29:15.2795873Z ##[group]Run set -o pipefail
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.2796439Z ^[[36;1mset -o pipefail^[[0m
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.2796804Z ^[[36;1mmkdir -p external-check^[[0m
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.2797561Z ^[[36;1mgh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check^[[0m
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.2798517Z ^[[36;1mpython3 scripts/prepare_external_check.py | tee external-check/identity.log^[[0m
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3077862Z shell: /usr/bin/bash -e {0}
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3078392Z env:
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3082528Z   GH_TOKEN: ***
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3082967Z   GH_REPO: yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3083489Z   CERT_RELEASE: certificate-20261005-d561980
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:15.3083872Z ##[endgroup]
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7867033Z {
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7868274Z   "validated_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7871578Z   "source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7872822Z   "target_count": 269,
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7873970Z   "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2"
+eink0rn	Validate exact export, registered roots, and all axioms	2026-10-05T06:29:45.7875565Z }
+eink0rn	Build pinned independent Haskell kernel	﻿2026-10-05T06:29:45.9371527Z ##[group]Run set -o pipefail
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9371908Z ^[[36;1mset -o pipefail^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9372268Z ^[[36;1mgit clone https://github.com/Timeroot/eink0rn .tools/eink0rn^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9372807Z ^[[36;1mgit -C .tools/eink0rn checkout --detach 31a9e3a1347d0544e8362fabea0ac669b41afbbb^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9373432Z ^[[36;1m(cd .tools/eink0rn && bash tools/arena-build.sh) 2>&1 | tee external-check/eink0rn-build.log^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9374064Z ^[[36;1msha256sum .tools/eink0rn/arena/eink0rn > external-check/checker-binary.sha256^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9374947Z ^[[36;1mtest -z "$(git -C .tools/eink0rn status --porcelain --untracked-files=no)"^[[0m
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9441279Z shell: /usr/bin/bash -e {0}
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9441550Z ##[endgroup]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:45.9538105Z Cloning into '.tools/eink0rn'...
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:46.9401294Z HEAD is now at 31a9e3a Keep the sed that fills in rev from rewriting the line that describes it
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:29:58.0435453Z == building with /usr/local/.ghcup/bin/ghc (9.14.1)
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:16.6740209Z [ 1 of 18] Compiling Front.Json       ( src/Front/Json.hs, arena/obj/Front/Json.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1551116Z [ 2 of 18] Compiling Front.Mmap       ( src/Front/Mmap.hs, arena/obj/Front/Mmap.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1552375Z [ 3 of 18] Compiling Front.Scan       ( src/Front/Scan.hs, arena/obj/Front/Scan.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1553256Z [ 4 of 18] Compiling Front.Pool       ( src/Front/Pool.hs, arena/obj/Front/Pool.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1554198Z [ 5 of 18] Compiling Kernel.Cache     ( src/Kernel/Cache.hs, arena/obj/Kernel/Cache.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1555786Z [ 6 of 18] Compiling Kernel.Name      ( src/Kernel/Name.hs, arena/obj/Kernel/Name.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1556752Z [ 7 of 18] Compiling Kernel.Level     ( src/Kernel/Level.hs, arena/obj/Kernel/Level.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:19.1557677Z [ 8 of 18] Compiling Kernel.Expr      ( src/Kernel/Expr.hs, arena/obj/Kernel/Expr.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:21.4979179Z [ 9 of 18] Compiling Kernel.Env       ( src/Kernel/Env.hs, arena/obj/Kernel/Env.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.0128946Z [10 of 18] Compiling Kernel.Canon     ( src/Kernel/Canon.hs, arena/obj/Kernel/Canon.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.4067661Z [11 of 18] Compiling Kernel.Check     ( src/Kernel/Check.hs, arena/obj/Kernel/Check.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8369853Z src/Kernel/Check.hs:2766:27: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8371164Z     In the use of ‘tail’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8502180Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8503908Z     "This is a partial function, it throws an error on empty lists. Replace it with 'drop' 1, or use pattern matching or 'GHC.Internal.Data.List.uncons' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8506301Z      |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8506830Z 2766 |       peelParams (k - 1) (tail ps) (inst1 (head ps) cod)
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8507499Z      |                           ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8507825Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8508129Z src/Kernel/Check.hs:2766:44: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8509066Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8509623Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8511135Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8512471Z      |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8512896Z 2766 |       peelParams (k - 1) (tail ps) (inst1 (head ps) cod)
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8513484Z      |                                            ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:22.8513868Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4087687Z [12 of 18] Compiling Kernel.Inductive ( src/Kernel/Inductive.hs, arena/obj/Kernel/Inductive.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4350082Z src/Kernel/Inductive.hs:436:17: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4351460Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4352492Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4355688Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4357325Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4363073Z 436 |   | otherwise = head [ n | i <- [1 :: Integer ..]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4363651Z     |                 ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:27.4363933Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.3984911Z [13 of 18] Compiling Front.Export     ( src/Front/Export.hs, arena/obj/Front/Export.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.3986103Z [14 of 18] Compiling Front.Block      ( src/Front/Block.hs, arena/obj/Front/Block.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4661111Z src/Front/Block.hs:555:45: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4662611Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4663293Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4665442Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4667322Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4667982Z 555 |       elimLvl   = if wantLarge then LParam (head (recLevels recF)) else LZero
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4668866Z     |                                             ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:28.4669324Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.3682004Z [15 of 18] Compiling Front.Hetero     ( src/Front/Hetero.hs, arena/obj/Front/Hetero.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6410088Z src/Front/Hetero.hs:92:64: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6415142Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6416311Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6418157Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6419622Z    |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6420165Z 92 |       ctxt        = "the heterogeneous block of " ++ showName (head memNames) ++ ": "
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6420906Z    |                                                                ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6421281Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6421555Z src/Front/Hetero.hs:276:36: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6422226Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6422720Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6424174Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6425728Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6426468Z 276 |     unless (levelEquiv (resLvls !! head sc) (resLvls !! j)) $
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6426928Z     |                                    ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6427113Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6427287Z src/Front/Hetero.hs:278:38: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6427696Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6428019Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6428897Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6429649Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6429951Z 278 |             ++ showName (memNames !! head sc) ++ " depend on each other but do \
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6430336Z     |                                      ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6430520Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6430692Z src/Front/Hetero.hs:291:43: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6431065Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6431356Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6432189Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6433127Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6433431Z 291 |                  ++ showName (memNames !! head sc) ++ ", "
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6434029Z     |                                           ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:30.6434609Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.8495589Z [16 of 18] Compiling Front.Lower      ( src/Front/Lower.hs, arena/obj/Front/Lower.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9786503Z src/Front/Lower.hs:492:23: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9787599Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9788195Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9791888Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9793355Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9793693Z 492 |       let iv0       = head types
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9794131Z     |                       ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9794619Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9794892Z src/Front/Lower.hs:634:59: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9795502Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9795847Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9796829Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9797712Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9798052Z 634 |       ctxt      = "flattening the block of " ++ showName (head declNames) ++ ": "
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9798522Z     |                                                           ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9798767Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9798953Z src/Front/Lower.hs:913:14: warning: [GHC-63394] [-Wx-partial]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9799369Z     In the use of ‘head’
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9799710Z     (imported from Prelude, but defined in GHC.Internal.List):
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9800683Z     "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9801545Z     |
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9801816Z 913 | unAux ns n = head ([ nsHead x | x <- ns, nsAux x == n ]
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9802166Z     |              ^^^^
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:34.9802308Z 
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:37.0161487Z [17 of 18] Compiling Main             ( app/Main.hs, arena/obj/Main.o )
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:39.0788443Z [18 of 18] Linking arena/eink0rn
+eink0rn	Build pinned independent Haskell kernel	2026-10-05T06:30:46.0646045Z == built arena/eink0rn with /usr/local/.ghcup/bin/ghc
+eink0rn	Check valid and deliberately damaged proof controls	﻿2026-10-05T06:30:46.2527270Z ##[group]Run python3 - <<'PY'
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2527808Z ^[[36;1mpython3 - <<'PY'^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2528080Z ^[[36;1mimport gzip, hashlib, json, subprocess^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2528390Z ^[[36;1mfrom pathlib import Path^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2528681Z ^[[36;1mroot = Path('tests/kernel_controls')^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2529055Z ^[[36;1mmanifest = json.loads((root / 'manifest.json').read_text())^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2529410Z ^[[36;1mrecords = []^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2529692Z ^[[36;1mfor name, expected in [('valid', 0), ('invalid', 1)]:^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2530074Z ^[[36;1m    blob = (root / (name + '.ndjson.gz')).read_bytes()^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2530518Z ^[[36;1m    assert hashlib.sha256(blob).hexdigest() == manifest[name]['gzip_sha256']^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2530937Z ^[[36;1m    data = gzip.decompress(blob)^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2531334Z ^[[36;1m    assert hashlib.sha256(data).hexdigest() == manifest[name]['raw_sha256']^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2531782Z ^[[36;1m    p = Path('external-check') / (name + '.ndjson')^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2532135Z ^[[36;1m    p.write_bytes(data)^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2532544Z ^[[36;1m    result = subprocess.run(['.tools/eink0rn/arena/eink0rn', '--enforce-mutual-univ',^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2533142Z ^[[36;1m        '--pin-std=error', '--nat-accel=canonical', str(p)], capture_output=True, text=True)^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2533608Z ^[[36;1m    output = result.stdout + result.stderr^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2533940Z ^[[36;1m    (p.with_suffix('.log')).write_text(output)^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2534688Z ^[[36;1m    records.append({'control': name, 'exit_code': result.returncode, 'output': output})^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2535172Z ^[[36;1m    assert result.returncode == expected, output^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2535587Z ^[[36;1m    assert ('ACCEPT' if expected == 0 else 'REJECT') in output, output^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2536125Z ^[[36;1mPath('external-check/controls.json').write_text(json.dumps(records, indent=2) + '\n')^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2536552Z ^[[36;1mPY^[[0m
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2599204Z shell: /usr/bin/bash -e {0}
+eink0rn	Check valid and deliberately damaged proof controls	2026-10-05T06:30:46.2599468Z ##[endgroup]
+eink0rn	Check the complete certificate	﻿2026-10-05T06:30:46.5307306Z ##[group]Run set -o pipefail
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5307654Z ^[[36;1mset -o pipefail^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5307895Z ^[[36;1mulimit -c 0^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5308789Z ^[[36;1m/usr/bin/time -v .tools/eink0rn/arena/eink0rn --enforce-mutual-univ --pin-std=error --nat-accel=canonical --progress=60 --mem=4000 -j4 external-check/solution.ndjson +RTS -A32m -M13g -K1g -RTS 2>&1 | tee external-check/eink0rn.log^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5309727Z ^[[36;1mpython3 - <<'PY'^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5309959Z ^[[36;1mimport re, json^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5310197Z ^[[36;1mfrom pathlib import Path^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5310523Z ^[[36;1mtext = Path('external-check/eink0rn.log').read_text()^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5310934Z ^[[36;1massert re.search(r'^ACCEPT\s*$', text, re.M), text[-2000:]^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5311417Z ^[[36;1mPath('external-check/runtime-settings.json').write_text(json.dumps({^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5311931Z ^[[36;1m    'checker_revision': '31a9e3a1347d0544e8362fabea0ac669b41afbbb',^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5312453Z ^[[36;1m    'source_patch': None, 'worker_threads': 4, 'enforce_mutual_univ': True,^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5312942Z ^[[36;1m    'pin_std': 'error', 'nat_accel': 'canonical', 'heap_limit': '13g',^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5313335Z ^[[36;1m    'stack_limit': '1g', 'mem_budget': 4000^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5313622Z ^[[36;1m}, indent=2) + '\n')^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5313851Z ^[[36;1mPY^[[0m
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5379541Z shell: /usr/bin/bash -e {0}
+eink0rn	Check the complete certificate	2026-10-05T06:30:46.5379815Z ##[endgroup]
+eink0rn	Check the complete certificate	2026-10-05T06:31:50.8236520Z [ 64320 declarations, 60.04s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:32:50.8433101Z [ 69407 declarations, 120.07s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:33:50.8867565Z [ 74680 declarations, 180.11s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:34:50.9058323Z [ 79940 declarations, 240.13s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:35:50.9435368Z [ 86040 declarations, 300.17s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:36:50.9665571Z [ 91256 declarations, 360.19s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:37:51.0055683Z [ 96464 declarations, 420.23s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:38:51.0245368Z [ 101675 declarations, 480.25s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:39:51.0476119Z [ 107550 declarations, 540.27s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:40:51.0855397Z [ 113112 declarations, 600.31s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:41:51.1248606Z [ 118312 declarations, 660.35s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:42:51.1456713Z [ 123520 declarations, 720.37s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:43:51.1632527Z [ 128006 declarations, 780.39s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:44:51.2255455Z [ 132896 declarations, 840.45s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:45:51.2433008Z [ 138096 declarations, 900.47s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:46:51.2835369Z [ 142326 declarations, 960.51s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:47:51.3415333Z [ 147472 declarations, 1020.56s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:48:51.3635505Z [ 152562 declarations, 1080.59s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:49:51.3857608Z [ 156840 declarations, 1140.61s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:50:51.4032827Z [ 162032 declarations, 1200.63s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:51:51.4232736Z [ 166208 declarations, 1260.65s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:52:51.4455376Z [ 171408 declarations, 1320.67s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:53:51.4885508Z [ 175576 declarations, 1380.71s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:54:51.5032625Z [ 180776 declarations, 1440.73s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:55:51.5265273Z [ 184948 declarations, 1500.75s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:56:51.5915358Z [ 190144 declarations, 1560.81s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:57:51.6065329Z [ 194330 declarations, 1620.83s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:58:51.6455988Z [ 199512 declarations, 1680.87s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T06:59:51.6855977Z [ 203688 declarations, 1740.91s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:00:51.7044528Z [ 208193 declarations, 1800.93s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:01:51.7655487Z [ 213051 declarations, 1860.99s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:02:51.7855602Z [ 218148 declarations, 1921.01s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:03:51.8085415Z [ 223584 declarations, 1981.03s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:04:51.8235656Z [ 229505 declarations, 2041.05s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:05:51.8755228Z [ 235691 declarations, 2101.09s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:06:51.8895547Z [ 241566 declarations, 2161.11s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:07:51.9088551Z [ 246918 declarations, 2221.13s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:08:51.9335743Z [ 252414 declarations, 2281.15s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:09:51.9615371Z [ 257452 declarations, 2341.18s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:10:51.9770840Z [ 263572 declarations, 2401.20s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:11:52.0295364Z [ 269774 declarations, 2461.25s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:12:52.0455412Z [ 276035 declarations, 2521.27s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:13:52.0865316Z [ 282243 declarations, 2581.31s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:14:52.1380227Z [ 288364 declarations, 2641.36s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:15:52.1433029Z [ 295226 declarations, 2701.37s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:16:52.1635762Z [ 302279 declarations, 2761.39s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:17:52.2080423Z [ 308882 declarations, 2821.43s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:18:52.2248608Z [ 315557 declarations, 2881.45s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:19:52.2511433Z [ 322431 declarations, 2941.47s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:20:52.2735292Z [ 328628 declarations, 3001.49s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:21:52.2832635Z [ 335113 declarations, 3061.51s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:22:52.3062711Z [ 342864 declarations, 3121.53s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:23:52.3415345Z [ 350479 declarations, 3181.56s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:24:52.3685453Z [ 359614 declarations, 3241.59s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:25:52.3716558Z [ 368902 declarations, 3301.59s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:26:52.3895616Z [ 377755 declarations, 3361.61s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:27:52.4455264Z [ 386866 declarations, 3421.63s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:28:52.4655491Z [ 396035 declarations, 3481.69s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:29:52.5105969Z [ 405255 declarations, 3541.73s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:30:52.5255493Z [ 414662 declarations, 3601.75s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:31:52.5345351Z [ 424664 declarations, 3661.75s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:32:52.8586374Z [ 433966 declarations, 3722.08s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:33:52.8837004Z [ 443642 declarations, 3782.11s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:34:52.9153798Z [ 453942 declarations, 3842.14s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:35:52.9255490Z [ 464714 declarations, 3902.15s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:36:52.9455533Z [ 474584 declarations, 3962.17s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:37:52.9895389Z [ 485613 declarations, 4022.21s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:38:53.0033644Z [ 496184 declarations, 4082.23s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:39:53.0252223Z [ 507842 declarations, 4142.25s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:40:53.0666497Z [ 519378 declarations, 4202.29s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:41:53.0845634Z [ 522141 declarations, 4262.31s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:42:53.1096430Z [ 522183 declarations, 4322.33s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:43:53.1654947Z [ 522183 declarations, 4382.39s elapsed, 80.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1922._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:44:53.2045884Z [ 522206 declarations, 4442.43s elapsed ]
+eink0rn	Check the complete certificate	2026-10-05T07:45:53.2265872Z [ 522206 declarations, 4502.45s elapsed, 93.81s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:46:53.2685913Z [ 522206 declarations, 4562.49s elapsed, 153.85s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:47:53.3044285Z [ 522206 declarations, 4622.53s elapsed, 213.89s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:48:53.3285723Z [ 522206 declarations, 4682.55s elapsed, 273.91s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:49:53.3455852Z [ 522206 declarations, 4742.57s elapsed, 333.93s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:50:53.3638460Z [ 522206 declarations, 4802.59s elapsed, 393.95s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:51:53.4275914Z [ 522206 declarations, 4862.65s elapsed, 454.01s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:52:53.4756524Z [ 522206 declarations, 4922.69s elapsed, 514.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:53:53.5065866Z [ 522206 declarations, 4982.73s elapsed, 574.09s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:54:53.5456049Z [ 522206 declarations, 5042.77s elapsed, 634.13s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:55:53.8286601Z [ 522206 declarations, 5103.05s elapsed, 694.41s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:56:53.8467119Z [ 522206 declarations, 5163.07s elapsed, 754.43s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:57:54.1066565Z [ 522206 declarations, 5223.33s elapsed, 814.69s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:58:54.1433322Z [ 522206 declarations, 5283.37s elapsed, 874.73s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T07:59:54.1833392Z [ 522206 declarations, 5343.41s elapsed, 934.77s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:00:54.2245890Z [ 522206 declarations, 5403.45s elapsed, 994.81s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:01:54.2456454Z [ 522206 declarations, 5463.47s elapsed, 1054.83s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:02:54.2651883Z [ 522206 declarations, 5523.49s elapsed, 1114.85s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:03:54.3056168Z [ 522206 declarations, 5583.53s elapsed, 1174.89s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:04:54.3245710Z [ 522206 declarations, 5643.55s elapsed, 1234.91s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:05:54.3865910Z [ 522206 declarations, 5703.61s elapsed, 1294.97s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:06:54.4656850Z [ 522206 declarations, 5763.69s elapsed, 1355.05s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:07:54.4842556Z [ 522206 declarations, 5823.71s elapsed, 1415.07s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:08:54.5066035Z [ 522206 declarations, 5883.73s elapsed, 1475.09s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:09:54.5365872Z [ 522206 declarations, 5943.76s elapsed, 1535.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:10:54.5775844Z [ 522206 declarations, 6003.80s elapsed, 1595.16s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:11:54.5933484Z [ 522206 declarations, 6063.82s elapsed, 1655.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:12:54.6133655Z [ 522206 declarations, 6123.84s elapsed, 1715.20s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:13:54.6366054Z [ 522206 declarations, 6183.86s elapsed, 1775.22s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:14:54.8537658Z [ 522206 declarations, 6244.08s elapsed, 1835.44s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:15:54.8766248Z [ 522206 declarations, 6304.10s elapsed, 1895.46s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:16:54.8975893Z [ 522206 declarations, 6364.12s elapsed, 1955.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:17:54.9145923Z [ 522206 declarations, 6424.14s elapsed, 2015.50s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:18:54.9565827Z [ 522206 declarations, 6484.18s elapsed, 2075.54s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:19:54.9752685Z [ 522206 declarations, 6544.20s elapsed, 2135.56s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:20:55.0333503Z [ 522206 declarations, 6604.26s elapsed, 2195.62s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:21:55.0535877Z [ 522206 declarations, 6664.28s elapsed, 2255.64s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:22:55.0734543Z [ 522206 declarations, 6724.30s elapsed, 2315.66s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:23:55.1335949Z [ 522206 declarations, 6784.36s elapsed, 2375.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:24:55.1556716Z [ 522206 declarations, 6844.38s elapsed, 2435.74s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:25:55.3175855Z [ 522206 declarations, 6904.54s elapsed, 2495.90s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:26:55.3356551Z [ 522206 declarations, 6964.56s elapsed, 2555.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:27:55.3533281Z [ 522206 declarations, 7024.58s elapsed, 2615.94s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:28:55.4045882Z [ 522206 declarations, 7084.62s elapsed, 2675.99s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:29:55.4533552Z [ 522206 declarations, 7144.68s elapsed, 2736.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:30:55.4765773Z [ 522206 declarations, 7204.70s elapsed, 2796.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:31:55.4956493Z [ 522206 declarations, 7264.72s elapsed, 2856.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:32:55.5489473Z [ 522206 declarations, 7324.77s elapsed, 2916.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:33:55.5545825Z [ 522206 declarations, 7384.78s elapsed, 2976.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:34:55.6105825Z [ 522206 declarations, 7444.83s elapsed, 3036.19s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:35:55.7955982Z [ 522206 declarations, 7505.02s elapsed, 3096.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:36:55.8165831Z [ 522206 declarations, 7565.04s elapsed, 3156.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:37:55.8565889Z [ 522206 declarations, 7625.08s elapsed, 3216.44s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:38:55.8933227Z [ 522206 declarations, 7685.12s elapsed, 3276.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:39:55.9473531Z [ 522206 declarations, 7745.17s elapsed, 3336.53s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:40:55.9775840Z [ 522206 declarations, 7805.20s elapsed, 3396.56s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:41:55.9986006Z [ 522206 declarations, 7865.22s elapsed, 3456.58s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:42:56.0155837Z [ 522206 declarations, 7925.24s elapsed, 3516.60s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:43:56.0356538Z [ 522206 declarations, 7985.26s elapsed, 3576.62s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:44:56.0575870Z [ 522206 declarations, 8045.28s elapsed, 3636.64s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:45:56.0756737Z [ 522206 declarations, 8105.30s elapsed, 3696.66s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:46:56.0948575Z [ 522206 declarations, 8165.32s elapsed, 3756.68s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:47:56.1165868Z [ 522206 declarations, 8225.34s elapsed, 3816.70s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:48:56.1375839Z [ 522206 declarations, 8285.36s elapsed, 3876.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:49:56.1595854Z [ 522206 declarations, 8345.38s elapsed, 3936.74s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:50:56.1785856Z [ 522206 declarations, 8405.40s elapsed, 3996.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:51:56.2333644Z [ 522206 declarations, 8465.46s elapsed, 4056.82s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:52:56.3212855Z [ 522206 declarations, 8525.54s elapsed, 4116.91s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:53:56.4366877Z [ 522206 declarations, 8585.66s elapsed, 4177.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:54:56.4535686Z [ 522206 declarations, 8645.68s elapsed, 4237.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:55:56.5125910Z [ 522206 declarations, 8705.73s elapsed, 4297.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:56:56.5695859Z [ 522206 declarations, 8765.79s elapsed, 4357.15s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:57:56.5733140Z [ 522206 declarations, 8825.80s elapsed, 4417.16s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:58:56.5945929Z [ 522206 declarations, 8885.82s elapsed, 4477.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T08:59:56.6495840Z [ 522206 declarations, 8945.87s elapsed, 4537.23s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:00:56.6756506Z [ 522206 declarations, 9005.90s elapsed, 4597.26s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:01:56.6936162Z [ 522206 declarations, 9065.92s elapsed, 4657.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:02:56.7375792Z [ 522206 declarations, 9125.96s elapsed, 4717.32s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:03:56.7555929Z [ 522206 declarations, 9185.98s elapsed, 4777.34s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:04:57.0337203Z [ 522206 declarations, 9246.26s elapsed, 4837.62s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:05:57.0565728Z [ 522206 declarations, 9306.28s elapsed, 4897.64s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:06:57.0733411Z [ 522206 declarations, 9366.30s elapsed, 4957.66s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:07:57.2137492Z [ 522206 declarations, 9426.44s elapsed, 5017.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:08:57.2566117Z [ 522206 declarations, 9486.48s elapsed, 5077.84s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:09:57.2775894Z [ 522206 declarations, 9546.50s elapsed, 5137.86s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:10:57.3165857Z [ 522206 declarations, 9606.54s elapsed, 5197.90s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:11:57.3366686Z [ 522206 declarations, 9666.56s elapsed, 5257.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:12:57.3933115Z [ 522206 declarations, 9726.62s elapsed, 5317.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:13:57.4147292Z [ 522206 declarations, 9786.64s elapsed, 5378.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:14:57.4365813Z [ 522206 declarations, 9846.66s elapsed, 5438.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:15:57.4585854Z [ 522206 declarations, 9906.68s elapsed, 5498.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:16:57.5035886Z [ 522206 declarations, 9966.72s elapsed, 5558.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:17:57.5175802Z [ 522206 declarations, 10026.74s elapsed, 5618.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:18:57.5365854Z [ 522206 declarations, 10086.76s elapsed, 5678.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:19:57.5752922Z [ 522206 declarations, 10146.80s elapsed, 5738.16s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:20:57.5965899Z [ 522206 declarations, 10206.82s elapsed, 5798.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:21:57.6815835Z [ 522206 declarations, 10266.90s elapsed, 5858.26s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:22:57.6985886Z [ 522206 declarations, 10326.92s elapsed, 5918.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:23:57.7170195Z [ 522206 declarations, 10386.94s elapsed, 5978.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:24:57.7333305Z [ 522206 declarations, 10446.96s elapsed, 6038.32s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:25:57.7575917Z [ 522206 declarations, 10506.98s elapsed, 6098.34s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:26:57.7937306Z [ 522206 declarations, 10567.02s elapsed, 6158.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:27:58.1335860Z [ 522206 declarations, 10627.36s elapsed, 6218.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:28:58.1573304Z [ 522206 declarations, 10687.38s elapsed, 6278.74s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:29:58.2165912Z [ 522206 declarations, 10747.44s elapsed, 6338.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:30:58.2595852Z [ 522206 declarations, 10807.48s elapsed, 6398.84s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:31:58.2756990Z [ 522206 declarations, 10867.50s elapsed, 6458.86s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:32:58.2965490Z [ 522206 declarations, 10927.52s elapsed, 6518.88s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:33:58.3345883Z [ 522206 declarations, 10987.56s elapsed, 6578.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:34:58.3933634Z [ 522206 declarations, 11047.62s elapsed, 6638.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:35:58.4356543Z [ 522206 declarations, 11107.66s elapsed, 6699.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:36:58.4533457Z [ 522206 declarations, 11167.68s elapsed, 6759.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:37:58.4756643Z [ 522206 declarations, 11227.70s elapsed, 6819.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:38:58.5133345Z [ 522206 declarations, 11287.74s elapsed, 6879.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:39:58.5355858Z [ 522206 declarations, 11347.76s elapsed, 6939.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:40:58.5566526Z [ 522206 declarations, 11407.78s elapsed, 6999.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:41:58.6059205Z [ 522206 declarations, 11467.83s elapsed, 7059.19s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:42:58.6176047Z [ 522206 declarations, 11527.84s elapsed, 7119.20s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:43:58.6952261Z [ 522206 declarations, 11587.92s elapsed, 7179.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:44:58.7135860Z [ 522206 declarations, 11647.94s elapsed, 7239.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:45:58.8937501Z [ 522206 declarations, 11708.12s elapsed, 7299.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:46:59.0556701Z [ 522206 declarations, 11768.28s elapsed, 7359.64s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:47:59.1935766Z [ 522206 declarations, 11828.42s elapsed, 7419.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:48:59.3137223Z [ 522206 declarations, 11888.54s elapsed, 7479.90s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:49:59.3605858Z [ 522206 declarations, 11948.58s elapsed, 7539.94s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:50:59.3756944Z [ 522206 declarations, 12008.60s elapsed, 7599.96s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:51:59.3985917Z [ 522206 declarations, 12068.62s elapsed, 7659.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:52:59.4165941Z [ 522206 declarations, 12128.64s elapsed, 7720.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:53:59.4556748Z [ 522206 declarations, 12188.68s elapsed, 7780.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:54:59.4766017Z [ 522206 declarations, 12248.70s elapsed, 7840.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:55:59.4933407Z [ 522206 declarations, 12308.72s elapsed, 7900.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:56:59.5141526Z [ 522206 declarations, 12368.74s elapsed, 7960.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:57:59.6125757Z [ 522206 declarations, 12428.83s elapsed, 8020.20s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:58:59.6355952Z [ 522206 declarations, 12488.86s elapsed, 8080.22s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T09:59:59.6965823Z [ 522206 declarations, 12548.92s elapsed, 8140.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:00:59.7155747Z [ 522206 declarations, 12608.94s elapsed, 8200.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:01:59.7550870Z [ 522206 declarations, 12668.98s elapsed, 8260.34s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:02:59.7737405Z [ 522206 declarations, 12729.00s elapsed, 8320.36s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:03:59.8333588Z [ 522206 declarations, 12789.06s elapsed, 8380.42s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:04:59.8570467Z [ 522206 declarations, 12849.08s elapsed, 8440.44s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:05:59.8755929Z [ 522206 declarations, 12909.10s elapsed, 8500.46s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:06:59.9165898Z [ 522206 declarations, 12969.14s elapsed, 8560.50s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:07:59.9334538Z [ 522206 declarations, 13029.16s elapsed, 8620.52s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:08:59.9533564Z [ 522206 declarations, 13089.18s elapsed, 8680.54s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:09:59.9775899Z [ 522206 declarations, 13149.20s elapsed, 8740.56s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:10:59.9956697Z [ 522206 declarations, 13209.22s elapsed, 8800.58s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:12:00.0118960Z [ 522206 declarations, 13269.23s elapsed, 8860.60s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:13:00.3146073Z [ 522206 declarations, 13329.54s elapsed, 8920.90s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:14:00.3395958Z [ 522206 declarations, 13389.56s elapsed, 8980.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:15:00.3955871Z [ 522206 declarations, 13449.62s elapsed, 9040.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:16:00.4145890Z [ 522206 declarations, 13509.64s elapsed, 9101.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:17:00.4375692Z [ 522206 declarations, 13569.66s elapsed, 9161.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:18:00.4565905Z [ 522206 declarations, 13629.68s elapsed, 9221.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:19:00.4775810Z [ 522206 declarations, 13689.70s elapsed, 9281.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:20:00.5133820Z [ 522206 declarations, 13749.74s elapsed, 9341.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:21:00.7933637Z [ 522206 declarations, 13810.02s elapsed, 9401.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:22:00.8156389Z [ 522206 declarations, 13870.04s elapsed, 9461.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:23:01.1356738Z [ 522206 declarations, 13930.36s elapsed, 9521.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:24:01.1756857Z [ 522206 declarations, 13990.40s elapsed, 9581.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:25:01.3965884Z [ 522206 declarations, 14050.62s elapsed, 9641.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:26:01.4375787Z [ 522206 declarations, 14110.66s elapsed, 9702.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:27:01.4566576Z [ 522206 declarations, 14170.68s elapsed, 9762.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:28:01.4985988Z [ 522206 declarations, 14230.72s elapsed, 9822.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:29:01.5175772Z [ 522206 declarations, 14290.74s elapsed, 9882.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:30:01.5365930Z [ 522206 declarations, 14350.76s elapsed, 9942.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:31:01.5565938Z [ 522206 declarations, 14410.78s elapsed, 10002.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:32:01.6096591Z [ 522206 declarations, 14470.83s elapsed, 10062.19s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:33:01.6376112Z [ 522206 declarations, 14530.86s elapsed, 10122.22s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:34:01.6965838Z [ 522206 declarations, 14590.92s elapsed, 10182.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:35:01.7446222Z [ 522206 declarations, 14650.97s elapsed, 10242.33s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:36:01.7955878Z [ 522206 declarations, 14711.02s elapsed, 10302.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:37:01.8133531Z [ 522206 declarations, 14771.04s elapsed, 10362.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:38:01.8333735Z [ 522206 declarations, 14831.06s elapsed, 10422.42s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:39:01.8533392Z [ 522206 declarations, 14891.08s elapsed, 10482.44s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:40:01.8755867Z [ 522206 declarations, 14951.10s elapsed, 10542.46s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:41:01.9005967Z [ 522206 declarations, 15011.12s elapsed, 10602.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:42:01.9531843Z [ 522206 declarations, 15071.17s elapsed, 10662.54s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:43:01.9947508Z [ 522206 declarations, 15131.22s elapsed, 10722.58s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:44:02.0195846Z [ 522206 declarations, 15191.24s elapsed, 10782.60s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:45:02.0345782Z [ 522206 declarations, 15251.26s elapsed, 10842.62s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:46:02.0575924Z [ 522206 declarations, 15311.28s elapsed, 10902.64s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:47:02.1136431Z [ 522206 declarations, 15371.34s elapsed, 10962.70s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:48:02.1333679Z [ 522206 declarations, 15431.36s elapsed, 11022.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:49:02.1733737Z [ 522206 declarations, 15491.40s elapsed, 11082.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:50:02.1956714Z [ 522206 declarations, 15551.42s elapsed, 11142.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:51:02.2172379Z [ 522206 declarations, 15611.44s elapsed, 11202.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:52:02.3576587Z [ 522206 declarations, 15671.58s elapsed, 11262.94s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:53:02.3765958Z [ 522206 declarations, 15731.60s elapsed, 11322.96s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:54:02.3956636Z [ 522206 declarations, 15791.62s elapsed, 11382.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:55:02.4136822Z [ 522206 declarations, 15851.64s elapsed, 11443.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:56:02.4565822Z [ 522206 declarations, 15911.68s elapsed, 11503.04s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:57:02.4935912Z [ 522206 declarations, 15971.72s elapsed, 11563.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:58:02.5175824Z [ 522206 declarations, 16031.74s elapsed, 11623.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T10:59:02.5537779Z [ 522206 declarations, 16091.78s elapsed, 11683.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:00:02.5955888Z [ 522206 declarations, 16151.81s elapsed, 11743.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:01:02.6138315Z [ 522206 declarations, 16211.84s elapsed, 11803.20s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:02:02.6555858Z [ 522206 declarations, 16271.88s elapsed, 11863.24s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:03:02.6738940Z [ 522206 declarations, 16331.90s elapsed, 11923.26s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:04:02.8486805Z [ 522206 declarations, 16392.07s elapsed, 11983.43s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:05:02.8565879Z [ 522206 declarations, 16452.08s elapsed, 12043.44s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:06:02.8959851Z [ 522206 declarations, 16512.12s elapsed, 12103.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:07:02.9175910Z [ 522206 declarations, 16572.14s elapsed, 12163.50s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:08:02.9732771Z [ 522206 declarations, 16632.19s elapsed, 12223.56s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:09:03.2136511Z [ 522206 declarations, 16692.44s elapsed, 12283.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:10:03.5556189Z [ 522206 declarations, 16752.78s elapsed, 12344.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:11:03.5965806Z [ 522206 declarations, 16812.82s elapsed, 12404.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:12:03.6138272Z [ 522206 declarations, 16872.84s elapsed, 12464.20s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:13:03.6996077Z [ 522206 declarations, 16932.92s elapsed, 12524.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:14:03.7185939Z [ 522206 declarations, 16992.94s elapsed, 12584.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:15:03.7356677Z [ 522206 declarations, 17052.96s elapsed, 12644.32s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:16:03.7556533Z [ 522206 declarations, 17112.98s elapsed, 12704.34s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:17:03.7756580Z [ 522206 declarations, 17173.00s elapsed, 12764.36s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:18:03.7955708Z [ 522206 declarations, 17233.02s elapsed, 12824.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:19:03.8134755Z [ 522206 declarations, 17293.04s elapsed, 12884.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:20:04.1727023Z [ 522206 declarations, 17353.39s elapsed, 12944.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:21:04.1938394Z [ 522206 declarations, 17413.42s elapsed, 13004.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:22:04.2475791Z [ 522206 declarations, 17473.47s elapsed, 13064.83s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:23:04.2765841Z [ 522206 declarations, 17533.50s elapsed, 13124.86s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:24:04.2965949Z [ 522206 declarations, 17593.52s elapsed, 13184.88s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:25:04.3156348Z [ 522206 declarations, 17653.54s elapsed, 13244.90s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:26:04.3357968Z [ 522206 declarations, 17713.56s elapsed, 13304.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:27:04.3745773Z [ 522206 declarations, 17773.60s elapsed, 13364.96s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:28:04.3975916Z [ 522206 declarations, 17833.62s elapsed, 13424.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:29:04.4135897Z [ 522206 declarations, 17893.64s elapsed, 13485.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:30:04.4735983Z [ 522206 declarations, 17953.70s elapsed, 13545.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:31:04.4965917Z [ 522206 declarations, 18013.72s elapsed, 13605.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:32:04.5135819Z [ 522206 declarations, 18073.74s elapsed, 13665.10s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:33:04.5386001Z [ 522206 declarations, 18133.76s elapsed, 13725.12s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:34:04.5565778Z [ 522206 declarations, 18193.78s elapsed, 13785.14s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:35:04.5765942Z [ 522206 declarations, 18253.80s elapsed, 13845.16s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:36:04.5933575Z [ 522206 declarations, 18313.82s elapsed, 13905.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:37:04.6365849Z [ 522206 declarations, 18373.86s elapsed, 13965.22s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:38:04.6538077Z [ 522206 declarations, 18433.88s elapsed, 14025.24s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:39:04.6967133Z [ 522206 declarations, 18493.92s elapsed, 14085.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:40:04.7175724Z [ 522206 declarations, 18553.94s elapsed, 14145.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:41:04.8135856Z [ 522206 declarations, 18614.04s elapsed, 14205.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:42:04.8385896Z [ 522206 declarations, 18674.06s elapsed, 14265.42s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:43:05.1156994Z [ 522206 declarations, 18734.34s elapsed, 14325.70s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:44:05.1346204Z [ 522206 declarations, 18794.36s elapsed, 14385.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:45:05.1566605Z [ 522206 declarations, 18854.38s elapsed, 14445.74s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:46:05.1733331Z [ 522206 declarations, 18914.40s elapsed, 14505.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:47:05.1988919Z [ 522206 declarations, 18974.42s elapsed, 14565.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:48:05.2156056Z [ 522206 declarations, 19034.44s elapsed, 14625.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:49:05.2352941Z [ 522206 declarations, 19094.46s elapsed, 14685.82s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:50:05.2985908Z [ 522206 declarations, 19154.52s elapsed, 14745.88s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:51:05.3575900Z [ 522206 declarations, 19214.58s elapsed, 14805.94s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:52:05.3805048Z [ 522206 declarations, 19274.60s elapsed, 14865.96s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:53:05.4345662Z [ 522206 declarations, 19334.66s elapsed, 14926.02s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:54:05.4733557Z [ 522206 declarations, 19394.70s elapsed, 14986.06s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:55:05.4966057Z [ 522206 declarations, 19454.72s elapsed, 15046.08s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:56:05.5495888Z [ 522206 declarations, 19514.77s elapsed, 15106.13s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:57:05.5933180Z [ 522206 declarations, 19574.82s elapsed, 15166.18s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:58:05.6966845Z [ 522206 declarations, 19634.92s elapsed, 15226.28s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T11:59:05.7156913Z [ 522206 declarations, 19694.94s elapsed, 15286.30s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:00:05.7733386Z [ 522206 declarations, 19755.00s elapsed, 15346.36s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:01:05.8133090Z [ 522206 declarations, 19815.04s elapsed, 15406.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:02:06.1142289Z [ 522206 declarations, 19875.34s elapsed, 15466.70s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:03:06.1365894Z [ 522206 declarations, 19935.36s elapsed, 15526.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:04:06.1932923Z [ 522206 declarations, 19995.41s elapsed, 15586.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:05:06.2175997Z [ 522206 declarations, 20055.44s elapsed, 15646.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:06:06.2333257Z [ 522206 declarations, 20115.46s elapsed, 15706.82s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:07:06.2586258Z [ 522206 declarations, 20175.48s elapsed, 15766.84s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:08:06.2775840Z [ 522206 declarations, 20235.50s elapsed, 15826.86s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:09:06.3356188Z [ 522206 declarations, 20295.56s elapsed, 15886.92s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:10:06.3765903Z [ 522206 declarations, 20355.60s elapsed, 15946.96s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:11:06.3975834Z [ 522206 declarations, 20415.62s elapsed, 16006.98s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:12:06.4133528Z [ 522206 declarations, 20475.64s elapsed, 16067.00s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:13:06.7401399Z [ 522206 declarations, 20535.96s elapsed, 16127.32s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:14:06.7565911Z [ 522206 declarations, 20595.98s elapsed, 16187.34s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:15:06.7815905Z [ 522206 declarations, 20656.00s elapsed, 16247.37s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:16:06.7956386Z [ 522206 declarations, 20716.02s elapsed, 16307.38s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:17:06.8165775Z [ 522206 declarations, 20776.04s elapsed, 16367.40s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:18:06.8765920Z [ 522206 declarations, 20836.10s elapsed, 16427.46s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:19:06.8951817Z [ 522206 declarations, 20896.12s elapsed, 16487.48s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:20:06.9855861Z [ 522206 declarations, 20956.20s elapsed, 16547.57s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:21:07.0165739Z [ 522206 declarations, 21016.24s elapsed, 16607.60s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:22:07.0385705Z [ 522206 declarations, 21076.26s elapsed, 16667.62s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:23:07.0831793Z [ 522206 declarations, 21136.30s elapsed, 16727.67s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:24:07.1175906Z [ 522206 declarations, 21196.34s elapsed, 16787.70s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:25:07.1336160Z [ 522206 declarations, 21256.36s elapsed, 16847.72s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:26:07.1556422Z [ 522206 declarations, 21316.38s elapsed, 16907.74s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:27:07.1749650Z [ 522206 declarations, 21376.40s elapsed, 16967.76s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:28:07.1966103Z [ 522206 declarations, 21436.42s elapsed, 17027.78s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:29:07.2186580Z [ 522206 declarations, 21496.44s elapsed, 17087.80s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:30:07.2345681Z [ 522206 declarations, 21556.46s elapsed, 17147.82s in BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1 ]
+eink0rn	Check the complete certificate	2026-10-05T12:30:07.7638959Z ##[error]The operation was canceled.
+eink0rn	Preserve independent kernel evidence	﻿2026-10-05T12:30:07.7858492Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7859173Z with:
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7859492Z   name: eink0rn-evidence
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7860052Z   path: external-check/*.log
+eink0rn	Preserve independent kernel evidence	external-check/*.json
+eink0rn	Preserve independent kernel evidence	external-check/*.sha256
+eink0rn	Preserve independent kernel evidence	
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7860979Z   if-no-files-found: warn
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7861347Z   compression-level: 6
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7861697Z   overwrite: false
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7862036Z   include-hidden-files: false
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:07.7862417Z ##[endgroup]
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.1087221Z (node:5339) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.1150939Z (Use `node --trace-deprecation ...` to show where the warning was created)
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.1527777Z With the provided path, there will be 11 files uploaded
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.1528714Z Artifact name is valid!
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.1529145Z Root directory input is valid!
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.3497416Z Beginning upload of artifact content to blob storage
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.4127009Z (node:5339) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.4450828Z Uploaded bytes 15078
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.4887420Z Finished uploading artifact content to blob storage!
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.4888490Z SHA256 digest of uploaded artifact zip is 452d61b4eac22bc4bd634d9c9fdc6dbb3b1ba0368d1b9e8882852548cc9194f0
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.4889453Z Finalizing artifact upload
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.7516749Z Artifact eink0rn-evidence.zip successfully finalized. Artifact ID 11345615020
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.7535446Z Artifact eink0rn-evidence has been successfully uploaded! Final size is 15078 bytes. Artifact ID is 11345615020
+eink0rn	Preserve independent kernel evidence	2026-10-05T12:30:08.7590087Z Artifact download URL: https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155/artifacts/11345615020
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-05T12:30:08.7947622Z Post job cleanup.
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:08.9526877Z [command]/usr/bin/git version
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.0095873Z git version 2.55.0
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.0888402Z Temporarily overriding HOME='/home/runner/work/_temp/23576686-e23c-419e-8c24-1b6cfebe5ee9' before making global git config changes
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.0890074Z Adding repository directory to the temporary git global config as a safe directory
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.0891566Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Sharp-Beckner-Onofri-inequalities-Lean/Sharp-Beckner-Onofri-inequalities-Lean
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1499910Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1626055Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1628170Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1629059Z http.https://github.com/.extraheader
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1630375Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1633078Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.1935948Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+eink0rn	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-05T12:30:09.2055645Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+eink0rn	Complete job	﻿2026-10-05T12:30:09.3168384Z Cleaning up orphan processes
+eink0rn	Complete job	2026-10-05T12:30:09.3435135Z Terminate orphan process: pid (2442) (time)
+eink0rn	Complete job	2026-10-05T12:30:09.3468364Z Terminate orphan process: pid (2443) (tee)
+eink0rn	Complete job	2026-10-05T12:30:09.3503328Z Terminate orphan process: pid (2444) (eink0rn)
+eink0rn	Complete job	2026-10-05T12:30:09.3642607Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

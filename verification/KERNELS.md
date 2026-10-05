@@ -150,6 +150,13 @@ Lean kernel, nor is its source review a new metatheoretic soundness proof.
 An `ACCEPT` is recorded only after the complete run returns successfully;
 resource limits, checker faults and rejections remain distinguished.
 
+Run 37272652155 reached GitHub's six-hour limit without complete acceptance.
+Its final progress reports 522,206 declarations and a prolonged reduction of
+`Spin.CandidateBatch0120.candidate1923._proof_1`. The complete workflow log,
+actual timeout annotation and uploaded evidence are preserved in
+`current/eink0rn-attempt-37272652155/`. No checker exit code or mathematical
+rejection is inferred from this platform cancellation.
+
 The evidence validator also accepts `--eink0rn DIR` for a completed eink0rn
 artifact, or both independent implementations when both completed. Use
 `--local-comparator DIR` instead of `--comparator DIR` for an actual completed

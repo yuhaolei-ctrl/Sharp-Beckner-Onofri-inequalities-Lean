@@ -1,0 +1,108 @@
+== building with /usr/local/.ghcup/bin/ghc (9.14.1)
+[ 1 of 18] Compiling Front.Json       ( src/Front/Json.hs, arena/obj/Front/Json.o )
+[ 2 of 18] Compiling Front.Mmap       ( src/Front/Mmap.hs, arena/obj/Front/Mmap.o )
+[ 3 of 18] Compiling Front.Scan       ( src/Front/Scan.hs, arena/obj/Front/Scan.o )
+[ 4 of 18] Compiling Front.Pool       ( src/Front/Pool.hs, arena/obj/Front/Pool.o )
+[ 5 of 18] Compiling Kernel.Cache     ( src/Kernel/Cache.hs, arena/obj/Kernel/Cache.o )
+[ 6 of 18] Compiling Kernel.Name      ( src/Kernel/Name.hs, arena/obj/Kernel/Name.o )
+[ 7 of 18] Compiling Kernel.Level     ( src/Kernel/Level.hs, arena/obj/Kernel/Level.o )
+[ 8 of 18] Compiling Kernel.Expr      ( src/Kernel/Expr.hs, arena/obj/Kernel/Expr.o )
+[ 9 of 18] Compiling Kernel.Env       ( src/Kernel/Env.hs, arena/obj/Kernel/Env.o )
+[10 of 18] Compiling Kernel.Canon     ( src/Kernel/Canon.hs, arena/obj/Kernel/Canon.o )
+[11 of 18] Compiling Kernel.Check     ( src/Kernel/Check.hs, arena/obj/Kernel/Check.o )
+src/Kernel/Check.hs:2766:27: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘tail’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Replace it with 'drop' 1, or use pattern matching or 'GHC.Internal.Data.List.uncons' instead. Consider refactoring to use "Data.List.NonEmpty"."
+     |
+2766 |       peelParams (k - 1) (tail ps) (inst1 (head ps) cod)
+     |                           ^^^^
+
+src/Kernel/Check.hs:2766:44: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+     |
+2766 |       peelParams (k - 1) (tail ps) (inst1 (head ps) cod)
+     |                                            ^^^^
+
+[12 of 18] Compiling Kernel.Inductive ( src/Kernel/Inductive.hs, arena/obj/Kernel/Inductive.o )
+src/Kernel/Inductive.hs:436:17: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+436 |   | otherwise = head [ n | i <- [1 :: Integer ..]
+    |                 ^^^^
+
+[13 of 18] Compiling Front.Export     ( src/Front/Export.hs, arena/obj/Front/Export.o )
+[14 of 18] Compiling Front.Block      ( src/Front/Block.hs, arena/obj/Front/Block.o )
+src/Front/Block.hs:555:45: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+555 |       elimLvl   = if wantLarge then LParam (head (recLevels recF)) else LZero
+    |                                             ^^^^
+
+[15 of 18] Compiling Front.Hetero     ( src/Front/Hetero.hs, arena/obj/Front/Hetero.o )
+src/Front/Hetero.hs:92:64: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+   |
+92 |       ctxt        = "the heterogeneous block of " ++ showName (head memNames) ++ ": "
+   |                                                                ^^^^
+
+src/Front/Hetero.hs:276:36: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+276 |     unless (levelEquiv (resLvls !! head sc) (resLvls !! j)) $
+    |                                    ^^^^
+
+src/Front/Hetero.hs:278:38: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+278 |             ++ showName (memNames !! head sc) ++ " depend on each other but do \
+    |                                      ^^^^
+
+src/Front/Hetero.hs:291:43: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+291 |                  ++ showName (memNames !! head sc) ++ ", "
+    |                                           ^^^^
+
+[16 of 18] Compiling Front.Lower      ( src/Front/Lower.hs, arena/obj/Front/Lower.o )
+src/Front/Lower.hs:492:23: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+492 |       let iv0       = head types
+    |                       ^^^^
+
+src/Front/Lower.hs:634:59: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+634 |       ctxt      = "flattening the block of " ++ showName (head declNames) ++ ": "
+    |                                                           ^^^^
+
+src/Front/Lower.hs:913:14: warning: [GHC-63394] [-Wx-partial]
+    In the use of ‘head’
+    (imported from Prelude, but defined in GHC.Internal.List):
+    "This is a partial function, it throws an error on empty lists. Use pattern matching, 'Data.List.uncons' or 'Data.Maybe.listToMaybe' instead. Consider refactoring to use "Data.List.NonEmpty"."
+    |
+913 | unAux ns n = head ([ nsHead x | x <- ns, nsAux x == n ]
+    |              ^^^^
+
+[17 of 18] Compiling Main             ( app/Main.hs, arena/obj/Main.o )
+[18 of 18] Linking arena/eink0rn
+== built arena/eink0rn with /usr/local/.ghcup/bin/ghc
