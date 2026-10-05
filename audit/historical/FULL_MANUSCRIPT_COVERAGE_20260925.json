@@ -1,0 +1,1293 @@
+{
+  "source_pdf": "/Users/tudou/Downloads/BECKNER_ONOFRI_MU_NOTATION_20260916T003824Z/beckner_onofri_full_manuscript_20260921T180354Z/sharp_beckner_onofri_flat_torus.pdf",
+  "source_pdf_sha256": "a0ce0e642370a4bd70da36c64d65fa9df02855ba2052fa50793261363a62e7b6",
+  "source_tex_sha256": "cbe4ef788e1491fe4b0f62d869b6d40240aeaf59ff005bea1c680bcfa124ea3d",
+  "scope": "September 21 manuscript: the principal conclusions of all 51 labelled results and their required proof inputs, with documented alternative proofs. No claim of literal formalization of every sentence or general results in referenced publications.",
+  "high_dim_baseline": "verification/ge12_baseline_131",
+  "status": "complete",
+  "assertions": [
+    {
+      "source_label": "thm:intro-low-dimensional",
+      "kind": "thm",
+      "title": "Sharp inequality through dimension ten",
+      "source_line": 377,
+      "section": "introduction",
+      "statement_tex": "\\label{thm:intro-low-dimensional}\nLet \\(1\\leq \\d\\leq10\\).  Every real \\(u\\in H^{\\d/2}(\\T^\\d)\\) satisfies\n\\begin{equation}\n \\log\\int_{\\T^\\d}e^{u-\\bar u}\\,\\dd\\muunif\n \\leq\\frac{1}{4\\d c_\\d}\\Ebo_\\d(u).\n \\label{eq:intro-low-primal}\n\\end{equation}\nEquivalently, every probability density of finite entropy satisfies\n\\begin{equation}\n \\Hr(\\rho\\mid\\muunif)\\geq \\d\\Gc_\\d(\\rho).\n \\label{eq:intro-low-dual}\n\\end{equation}\nThe coefficient in \\eqref{eq:intro-low-primal} is sharp.  In dimension one, equality is attained precisely by the family \\eqref{eq:intro-circle-extremizers}, up to additive constants, equivalently by the Poisson kernels \\eqref{eq:intro-circle-poisson}.  In dimensions two through ten, equality holds only for constants, equivalently only for \\(\\rho\\equiv1\\).",
+      "statement_audit": "matched and built: raw real critical-Sobolev domain, full finite-entropy domain, exact collapse coefficient, actual Green integral, both equality classifications and sharpness",
+      "proof_correspondence_audit": "Core route preserved: scalar Gaussian/finite certificates, hypergeometric mixture transfer, absolutely-monotone Steiner selection, endpoint closure, equality and concentration sharpness. Finite arithmetic uses a conservative full-mass tail bound; no original certificate-byte identity claimed.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_density_endpoint",
+        "BecknerOnofri.Target.low_potential_endpoint",
+        "BecknerOnofri.Target.low_density_rigidity",
+        "BecknerOnofri.Target.low_potential_rigidity",
+        "BecknerOnofri.Target.low_circle_potential",
+        "BecknerOnofri.Target.low_circle_density",
+        "BecknerOnofri.Target.low_coefficient_sharp",
+        "BecknerOnofri.Target.low_pressure_formula",
+        "BecknerOnofri.Target.low_coefficient_formula",
+        "BecknerOnofri.Target.low_physical_density_endpoint"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.LowDimensionDefinitions",
+        "BecknerOnofri.LowDimensionRaw",
+        "BecknerOnofri.LowDimensionConsequences",
+        "Legacy.BecknerOnofri.LowDimensionComplete"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "1.1",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "thm:intro-d11",
+      "kind": "thm",
+      "title": "Dimension eleven: failure and first-order coexistence",
+      "source_line": 410,
+      "section": "introduction",
+      "statement_tex": "\\label{thm:intro-d11}\nLet\n\\begin{equation}\n \\rho_*(x)\n :=\\sum_{n\\in\\Z^{11}}\n 5^{11}\\frac{122880}{\\pi^6}\n \\bigl(1+25|x+n|^2\\bigr)^{-11}.\n \\label{eq:intro-rho-star}\n\\end{equation}\nThen \\(\\rho_*\\) is a smooth positive probability density on \\(\\T^{11}\\), and\n\\begin{equation}\n \\Hr(\\rho_*\\mid\\muunif)<\\frac{8653}{600},\n \\qquad\n \\frac12\\Qcal_{11}(\\rho_*)>\\frac{14475384292906}{10^{12}}.\n \\label{eq:intro-d11-certificate}\n\\end{equation}\nConsequently,\n\\begin{equation}\n \\Cc_{11}\\bigl(\\As(11)\\bigr)\n =\\Pc_{11}\\bigl(\\betas(11)\\bigr)>\\frac1{30},\n \\qquad\n 17.715<\\betagm(11)<20.630<\\betas(11)<22.\n \\label{eq:intro-d11-threshold}\n\\end{equation}\nAt \\(\\be=\\betagm(11)\\), the uniform density and at least one nonuniform smooth positive density are global minimizers of \\(\\Ec_{\\be}\\), while the Hessian at the uniform density is strictly positive.  Hence, \\(\\Pc_{11}\\) has a corner at \\(\\betagm(11)\\), and \\(\\Cc_{11}\\) has a corresponding corner at \\(\\Azero(11)\\).",
+      "statement_audit": "All asserted main conclusions implemented and built: exact smooth positive periodized profile and certified entropy/energy; spectral pressure gap; strict transition interval; nonuniform coexistence; literal second derivative Hessian bound; both corners. The current whole257 configuration passed build, axiom audit and Comparator; see current_verification.",
+      "proof_correspondence_audit": "Core route preserved. Competitor follows Student/Gamma integrals, periodization and conditional entropy, half-integer Fourier transform and rational shell certificate. Coexistence follows subcritical optimizing sequence, compactness, nonzero-limit exclusion by Fourier inverse and Banach implicit-function theorem. Technical substitution: uniform Wiener estimates give C convergence and the IFT is applied in C, rather than source Vitali L2-to-H11 bootstrap. Explicit one-sided derivative jumps are now built targets. The exact full H11-domain local uniqueness bridge is additionally built in RawEulerConvolution.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_profile_regular",
+        "BecknerOnofri.Target.eleven_competitor_entropy",
+        "BecknerOnofri.Target.eleven_competitor_energy",
+        "BecknerOnofri.Target.eleven_spectral_pressure",
+        "BecknerOnofri.Target.eleven_transition_interval",
+        "BecknerOnofri.Target.eleven_uniform_unique",
+        "BecknerOnofri.Target.eleven_coexistence",
+        "BecknerOnofri.Target.eleven_uniform_hessian",
+        "BecknerOnofri.Target.eleven_pressure_corner",
+        "BecknerOnofri.Target.eleven_defect_corner"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.ElevenDefinitions",
+        "BecknerOnofri.ElevenConstants",
+        "BecknerOnofri.ElevenVariational",
+        "BecknerOnofri.ElevenUniform",
+        "BecknerOnofri.ElevenEndpoint",
+        "BecknerOnofri.ElevenStrictMixture"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "1.2",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "thm:intro-high-dimensional",
+      "kind": "thm",
+      "title": "Sharp high-dimensional endpoint and second-order onset",
+      "source_line": 451,
+      "section": "introduction",
+      "statement_tex": "\\label{thm:intro-high-dimensional}\nLet \\(\\d\\geq12\\).  Every probability density of finite entropy satisfies\n\\begin{equation}\n \\Hr(\\rho\\mid\\muunif)\n \\geq\\frac12\\sum_{k\\in\\Z^\\d\\setminus\\{0\\}}|k|^{-\\d}|\\wh\\rho(k)|^2,\n \\label{eq:intro-high-dual}\n\\end{equation}\nwith equality if and only if \\(\\rho\\equiv1\\).  Equivalently, every real \\(u\\in H^{\\d/2}(\\T^\\d)\\) satisfies\n\\begin{equation}\n \\log\\int_{\\T^\\d}e^{u-\\bar u}\\,\\dd\\muunif\n \\leq\\frac{1}{2(2\\pi)^\\d}\\Ebo_\\d(u),\n \\label{eq:intro-high-primal}\n\\end{equation}\nwith equality if and only if \\(u\\) is constant.  In particular,\n\\begin{equation}\n \\betagm(\\d)=\\betas(\\d),\n \\qquad\n \\Azero(\\d)=\\As(\\d).\n \\label{eq:intro-high-threshold}\n\\end{equation}\n\nThere exists \\(\\varepsilon_\\d>0\\) such that, for\n\\begin{equation}\n \\betas(\\d)<\\be<\\betas(\\d)+\\varepsilon_\\d,\n \\label{eq:intro-onset-range}\n\\end{equation}\nevery global minimizer belongs, modulo translation, to the full \\(\\d\\)-mode Morse--Bott branch.  More precisely, writing\n\\begin{equation}\n \\delta:=1-\\frac{\\betas(\\d)}{\\be},\n \\qquad\n \\int_{\\T^\\d}u_{\\be,x_0}\\,\\dd\\muunif=0,\n \\qquad\n \\rho_{\\be,x_0}=\\frac{e^{u_{\\be,x_0}}}{\\int_{\\T^\\d}e^{u_{\\be,x_0}}\\,\\dd\\muunif},\n \\label{eq:intro-delta-rho}\n\\end{equation}\none has, for every fixed Sobolev index \\(s\\geq0\\), uniformly in \\(x_0\\),\n\\begin{equation}\n u_{\\be,x_0}(x)\n =2\\sqrt{\\frac{\\delta}{\\kappa_\\d}}\n \\sum_{j=1}^\\d\\cos\\bigl(2\\pi(x_j-x_{0,j})\\bigr)\n +O_{H^s}(\\delta),\n \\qquad x_0\\in\\T^\\d.\n \\label{eq:intro-onset-branch}\n\\end{equation}\nThe pressure satisfies\n\\begin{equation}\n \\Pc_\\d(\\be)\n =\\frac{\\d}{2\\kappa_\\d}\n \\left(1-\\frac{\\betas(\\d)}{\\be}\\right)^2\n +O_\\d\\bigl((\\be-\\betas(\\d))^3\\bigr)\n \\quad\\text{as }\\be\\downarrow\\betas(\\d).\n \\label{eq:intro-pressure-onset}\n\\end{equation}\nConsequently,\n\\begin{equation}\n \\Cc_\\d(A)\n =\\frac{\\d}{2\\kappa_\\d}\n \\left(1-\\frac{A}{\\As(\\d)}\\right)^2\n +O_\\d\\left(\\left(1-\\frac{A}{\\As(\\d)}\\right)^3\\right)\n \\quad\\text{as }A\\uparrow\\As(\\d).\n \\label{eq:intro-C-onset}\n\\end{equation}",
+      "statement_audit": "Matched by 10 existing verified main targets: full finite-entropy endpoint/rigidity; raw critical-Sobolev potential endpoint/rigidity; both threshold characterizations; kappa positivity; full-mode Morse-Bott branch and all-global-minimizer classification; uniform-in-translation Hs profile for every fixed s; actual pressure and coefficient asymptotics.",
+      "proof_correspondence_audit": "The listed ten registered main targets cover the introductory conclusions. The current all-dimensional entropy endpoint, full branch classification and critical asymptotics use proved certificates. See the September 30 audit for precise scope limits; this is not a claim of line-by-line reproduction of every source proof.",
+      "lean_targets": [
+        "BecknerOnofri.Target.density_endpoint",
+        "BecknerOnofri.Target.density_rigidity",
+        "BecknerOnofri.Target.potential_endpoint",
+        "BecknerOnofri.Target.potential_rigidity",
+        "BecknerOnofri.Target.pressure_threshold",
+        "BecknerOnofri.Target.coefficient_threshold",
+        "BecknerOnofri.Target.kappa_positive",
+        "BecknerOnofri.Target.full_branch_onset",
+        "BecknerOnofri.Target.pressure_onset",
+        "BecknerOnofri.Target.coefficient_onset"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.EntropyMainTheorems",
+        "BecknerOnofri.BranchDefinitions",
+        "BecknerOnofri.NumericalBranchReduction"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "1.3",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section2-finite-entropy-energy",
+      "kind": "lemma",
+      "title": "Finite entropy controls the logarithmic interaction",
+      "source_line": 671,
+      "section": "common",
+      "statement_tex": "\\label{lem:section2-finite-entropy-energy}\nLet \\(\\mu\\) be a probability measure on \\(\\T^{\\d}\\) such that \\(\\Hr(\\mu\\mid\\muunif)<\\infty\\).  Then \\(I_{\\mu}>-\\infty\\).  More precisely, for every \\(a\\in(0,\\d)\\),\n\\begin{equation}\n 0\\leq-2I_{\\mu}\n \\leq\\frac{2}{a}\\Hr(\\mu\\mid\\muunif)\n +\\frac1a\\log\\iint_{(\\T^{\\d})^2}e^{a\\g(x-y)}\n \\,\\dd\\muunif(x)\\dd\\muunif(y).\n \\label{eq:section2-finite-entropy-energy-bound}\n\\end{equation}\nIf \\(P_t=e^{t\\Delta}\\) is the heat semigroup and \\(\\mu_t=P_t\\mu\\), then\n\\begin{align}\n \\Hr(\\mu_t\\mid\\muunif)&\\longrightarrow\\Hr(\\mu\\mid\\muunif),\n \\label{eq:section2-entropy-heat-approximation}\\\\\n I_{\\mu_t}&\\longrightarrow I_{\\mu}\n \\label{eq:section2-energy-heat-approximation}\n\\end{align}\nwhen \\(t\\downarrow0\\).  Moreover, \\(\\mu_t\\) has a smooth strictly positive density for every \\(t>0\\).",
+      "statement_audit": "All conclusions now have exact density-domain targets: literal singular-kernel interaction bound and absolute integrability, heat interaction convergence, smooth positive probability heat regularization, and full finite-entropy heat entropy convergence. Physical heat multiplier exp(-4*pi^2*t*|k|^2) is explicit. L1 heat approximation is also proved on the full probability-density domain. Current whole257 verification passed.",
+      "proof_correspondence_audit": "Heat Fourier multipliers and finite-energy Green identification follow the source. The quantitative bound follows a stronger one-density entropy/Jensen bound, relaxed to the source 2/a constant, whereas the source uses product-law entropy. Heat smoothness follows Gaussian Fourier decay. Entropy convergence follows entropy contraction and lower semicontinuity as in the source; technically we prove stronger L1 convergence by Parseval, bounded truncations and contraction, then use a.e. subsequences and Fatou rather than a general weak-topology entropy theorem.",
+      "lean_targets": [
+        "BecknerOnofri.Target.finite_entropy_energy",
+        "BecknerOnofri.Target.finite_entropy_physical_bound",
+        "BecknerOnofri.Target.heat_regularization_smooth",
+        "BecknerOnofri.Target.heat_interaction_limit",
+        "BecknerOnofri.Target.heat_entropy_limit",
+        "BecknerOnofri.Target.heat_l1_limit"
+      ],
+      "lean_modules": [
+        "BecknerOnofri/FiniteEntropyPhysical.lean",
+        "BecknerOnofri/HeatDensitySmooth.lean",
+        "BecknerOnofri/HeatRegularization.lean",
+        "BecknerOnofri/HeatEntropyConvergence.lean",
+        "BecknerOnofri/HeatL1Convergence.lean",
+        "BecknerOnofri/HeatL1Contraction.lean",
+        "BecknerOnofri/HeatL2Convergence.lean"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.1",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section2-coefficient-pressure-duality",
+      "kind": "prop",
+      "title": "Exact coefficient--pressure duality",
+      "source_line": 735,
+      "section": "common",
+      "statement_tex": "\\label{prop:section2-coefficient-pressure-duality}\nLet \\(A>0\\) and set\n\\begin{equation}\n \\be=\\frac1{2Ac_{\\d}}.\n \\label{eq:section2-A-beta}\n\\end{equation}\nThen\n\\begin{equation}\n \\Cc_{\\d}(A)=\\Pc_{\\d}(\\be).\n \\label{eq:section2-coefficient-pressure-duality}\n\\end{equation}\nBoth sides may take the value \\(+\\infty\\).  The supremum defining \\(\\Pc_{\\d}\\) may be restricted to smooth strictly positive probability densities.",
+      "statement_audit": "Exact full-domain coefficient-pressure duality already built. The supremum restriction to smooth strictly positive probability densities is now proved for every real beta and has a dedicated pressure_smooth_sup target for the source positive-beta domain.",
+      "proof_correspondence_audit": "Gibbs inequality, Fourier optimization and heat approximation correspond to the source route; the smooth supremum restriction uses actual heat smoothing, entropy contraction and convergence of the Fourier energy; equality remains valid for infinite pressure. This avoids requiring entropy convergence for this particular restriction step.",
+      "lean_targets": [
+        "BecknerOnofri.Target.pressure_duality",
+        "BecknerOnofri.Target.pressure_smooth_sup"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.PressureDuality",
+        "BecknerOnofri.EndpointDuality"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.2",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section2-universal-obstructions",
+      "kind": "lemma",
+      "title": "Concentration and first-shell tests",
+      "source_line": 843,
+      "section": "common",
+      "statement_tex": "\\label{lem:section2-universal-obstructions}\nThe following statements hold.\n\n\\begin{enumerate}[(i)]\n\\item If \\(\\be>2\\d\\), then \\(\\Pc_{\\d}(\\be)=+\\infty\\).  Equivalently,\n\\begin{equation}\n \\Cc_{\\d}(A)=+\\infty\n \\qquad\\text{when }A<\\Acrit(\\d).\n \\label{eq:section2-subcritical-coefficient-infinite}\n\\end{equation}\nAt \\(A=\\Acrit(\\d)\\), the defect is finite by \\eqref{eq:section2-critical-adams}.\n\n\\item If \\(\\be>\\betas(\\d)\\), then \\(\\Pc_{\\d}(\\be)>0\\).  Equivalently,\n\\begin{equation}\n \\Cc_{\\d}(A)>0\n \\qquad\\text{when }A<\\As(\\d).\n \\label{eq:section2-below-spectral-positive}\n\\end{equation}\n\\end{enumerate}",
+      "statement_audit": "All-dimensional concentration divergence and first-shell tests use the raw extended-real variational definitions. Exact endpoint finiteness is now proved for every positive dimension, including the bound for every raw InCriticalSobolev potential with exact collapseCoefficient and a common finite additive constant. Current whole257 verification passed.",
+      "proof_correspondence_audit": "The concentration and first-shell test routes match the manuscript. Its cited compact-manifold Adams estimate is replaced by an independent flat-torus proof: sharp logarithmic heat Green comparison with coordinate circle kernels, exact marginal Fubini identities, circle entropy bounds, entropy subadditivity, smooth full-domain supremum and exact primal-dual transfer. The general compact-manifold cited theorem is not claimed formalized.",
+      "lean_targets": [
+        "BecknerOnofri.Target.pressure_concentration_divergence",
+        "BecknerOnofri.Target.coefficient_concentration_divergence",
+        "BecknerOnofri.Target.critical_adams_bound",
+        "BecknerOnofri.Target.pressure_at_collapse_finite",
+        "BecknerOnofri.Target.coefficient_at_collapse_finite"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.ConcentrationDivergence",
+        "BecknerOnofri.AdamsEndpointEnergy",
+        "BecknerOnofri.AdamsEndpointPressure"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.3",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section2-basic-curve-geometry",
+      "kind": "prop",
+      "title": "Basic geometry of the pressure and defect",
+      "source_line": 922,
+      "section": "common",
+      "statement_tex": "\\label{prop:section2-basic-curve-geometry}\nThe function \\(\\be\\mapsto\\Pc_{\\d}(\\be)\\) is convex, nondecreasing, and nonnegative on \\([0,2\\d]\\).  The function \\(A\\mapsto\\Cc_{\\d}(A)\\) is convex, nonincreasing, and nonnegative on \\((0,\\infty)\\).  Moreover,\n\\begin{equation}\n \\betagm(\\d)\n =\\inf_{\\substack{\\mu\\text{ probability},\\ \\mu\\neq\\muunif\\\\\n \\Hr(\\mu\\mid\\muunif)<\\infty}}\n \\frac{\\Hr(\\mu\\mid\\muunif)}{-I_{\\mu}},\n \\label{eq:section2-beta-gm-quotient}\n\\end{equation}\nwhere \\(-I_{\\mu}>0\\) for every nonuniform finite-entropy probability measure \\(\\mu\\).  In particular,\n\\begin{align}\n \\Pc_{\\d}(\\be)=0\n &\\quad\\Longleftrightarrow\\quad 0\\leq\\be\\leq\\betagm(\\d),\n \\label{eq:section2-pressure-zero-set}\\\\\n \\Cc_{\\d}(A)=0\n &\\quad\\Longleftrightarrow\\quad A\\geq\\Azero(\\d),\n \\label{eq:section2-defect-zero-set}\n\\end{align}\nwith\n\\begin{equation}\n \\Azero(\\d)=\\frac1{2c_{\\d}\\betagm(\\d)}.\n \\label{eq:section2-A-zero}\n\\end{equation}\nFinally,\n\\begin{equation}\n \\betagm(\\d)\\leq\\min\\{\\betac(\\d),\\betas(\\d)\\},\n \\qquad\n \\Azero(\\d)\\geq\\max\\{\\Acrit(\\d),\\As(\\d)\\}.\n \\label{eq:section2-threshold-upper-bounds}\n\\end{equation}",
+      "statement_audit": "Matched and registered in the 205-target configuration: extended-real pressure and coefficient convexity with the source parameter domains, monotonicity and nonnegativity, exact entropy/physical-interaction transition quotient, closed zero sets, positive threshold and both universal bounds. Current whole257 verification passed.",
+      "proof_correspondence_audit": "All variational geometry is derived from actual affine competitors. Full L1 Fourier uniqueness is proved by heat smoothing and L1 convergence, without adding an L2 premise to density positivity. Taking the infimum of entropy/interaction ratios gives the pressure zero interval; exact primal-dual duality gives the coefficient zero interval. Positivity of the threshold is assembled from the independently proved dimension-specific endpoint bounds, a technical change in proof ordering with no circular dependency. Actual extended-real convexity is proved directly, without a finiteness hypothesis.",
+      "lean_targets": [
+        "BecknerOnofri.Target.general_pressure_geometry",
+        "BecknerOnofri.Target.general_coefficient_geometry",
+        "BecknerOnofri.Target.interaction_physical_positive",
+        "BecknerOnofri.Target.general_transition_quotient",
+        "BecknerOnofri.Target.general_pressure_zero_set",
+        "BecknerOnofri.Target.general_coefficient_zero_set",
+        "BecknerOnofri.Target.general_threshold_bounds"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.SpectralEnergyPositive",
+        "BecknerOnofri.VariationalCurveDefinitions",
+        "BecknerOnofri.VariationalTransitionQuotient",
+        "BecknerOnofri.CurveThresholdDefinitions",
+        "BecknerOnofri.VariationalThresholdGeometry",
+        "BecknerOnofri.VariationalExtendedConvexity"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.4",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section2-gap-identities",
+      "kind": "prop",
+      "title": "Primal--dual gap identities",
+      "source_line": 970,
+      "section": "common",
+      "statement_tex": "\\label{prop:section2-gap-identities}\nLet \\(A>0\\), let \\(\\be=(2Ac_{\\d})^{-1}\\), and define \\(\\mu_u\\) and \\(u_{\\mu}\\) by \\eqref{eq:section2-gibbs-density} and \\eqref{eq:section2-potential-of-density}.  Then every real mean-zero \\(u\\in H^{\\d/2}(\\T^{\\d})\\) satisfies\n\\begin{align}\n \\log\\int e^u\\,\\dd\\muunif-A\\Ebo_{\\d}(u)\n &=-\\be I_{\\mu_u}-\\Hr(\\mu_u\\mid\\muunif)\n -A\\Ebo_{\\d}(u-u_{\\mu_u}).\n \\label{eq:section2-primal-gap-identity}\n\\end{align}\nEvery finite-entropy probability measure \\(\\mu\\) satisfies\n\\begin{align}\n -\\be I_{\\mu}-\\Hr(\\mu\\mid\\muunif)\n &=\\log\\int e^{u_{\\mu}}\\,\\dd\\muunif\n -A\\Ebo_{\\d}(u_{\\mu})\n -\\Hr(\\mu\\mid\\mu_{u_{\\mu}}).\n \\label{eq:section2-dual-gap-identity}\n\\end{align}",
+      "statement_audit": "Implemented and auxiliary modules built: both literal physical-space identities for every positive A and positive dimension, every real mean-zero critical Sobolev potential, and every finite-entropy probability density. The true Green convolution and relative-entropy integral appear explicitly. No L2 or smoothness assumption is added to the density. Three independent targets added to the 189-target configuration; full 189-target build and axiom audit passed, three-target Comparator passed with the default Lean kernel, exit code 0.",
+      "proof_correspondence_audit": "Matches Gibbs equality plus Fourier square completion for the primal identity, and relative-entropy expansion plus Green-potential energy/pairing for the dual identity. Full-domain construction uses Young entropy-exponential bounds to prove the actual Green potential bounded, then its Fourier Sobolev energy and pairing. Physical (2π)^d normalization and β=(2Ac_d)⁻¹ are proved algebraically.",
+      "lean_targets": [
+        "BecknerOnofri.Target.finite_entropy_green_potential",
+        "BecknerOnofri.Target.primal_gap_identity",
+        "BecknerOnofri.Target.dual_gap_identity"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.GapDefinitions",
+        "BecknerOnofri.FiniteEntropyGreenPotential",
+        "BecknerOnofri.FiniteEntropyGreenSobolev",
+        "BecknerOnofri.FiniteEntropyDualGap",
+        "BecknerOnofri.FiniteEntropyPrimalGap",
+        "BecknerOnofri.RawGapBridges",
+        "BecknerOnofri.RawGapIdentities",
+        "BecknerOnofri.PaperGapIdentities"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.5",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "cor:section2-extremizer-correspondence",
+      "kind": "cor",
+      "title": "Extremizer correspondence and Euler--Lagrange equation",
+      "source_line": 1020,
+      "section": "common",
+      "statement_tex": "\\label{cor:section2-extremizer-correspondence}\nLet \\(A>0\\) and \\(\\be=(2Ac_{\\d})^{-1}\\).\n\n\\begin{enumerate}[(i)]\n\\item A real mean-zero potential \\(u\\) maximizes \\(\\Cc_{\\d}(A)\\) if and only if \\(\\mu_u\\) maximizes \\(\\Pc_{\\d}(\\be)\\) and\n\\begin{equation}\n u=\\be\\,\\g*(\\mu_u-\\muunif).\n \\label{eq:section2-primal-critical-relation}\n\\end{equation}\n\n\\item A finite-entropy probability measure \\(\\mu\\) maximizes \\(\\Pc_{\\d}(\\be)\\) if and only if \\(u_{\\mu}\\) maximizes \\(\\Cc_{\\d}(A)\\) and\n\\begin{equation}\n \\frac{\\dd\\mu}{\\dd\\muunif}\n =\\frac{e^{u_{\\mu}}}{\\int e^{u_{\\mu}}\\,\\dd\\muunif}.\n \\label{eq:section2-dual-critical-relation}\n\\end{equation}\n\n\\item Every extremizing measure has a smooth strictly positive density \\(\\rho\\).  Every extremizing pair \\((u,\\mu)\\), with \\(\\mu=\\rho\\muunif\\), solves\n\\begin{equation}\n \\frac1{c_{\\d}}|\\nabla|^{\\d}u\n =\\be(\\rho-1),\n \\qquad\n \\rho=\\frac{e^u}{\\int e^u\\,\\dd\\muunif}.\n \\label{eq:section2-euler-lagrange}\n\\end{equation}\nEquivalently,\n\\begin{equation}\n \\rho\n =\\frac{\\exp\\{\\be\\,\\g*(\\rho-1)\\}}\n {\\int\\exp\\{\\be\\,\\g*(\\rho-1)\\}\\,\\dd\\muunif}.\n \\label{eq:section2-kirkwood-monroe}\n\\end{equation}\n\\end{enumerate}",
+      "statement_audit": "Matched and built: both explicit iff claims use the prescribed physical Green convolution on the full raw critical-Sobolev/finite-entropy domains. Every extremizer has a smooth strictly positive density representative, satisfies the actual Kirkwood-Monroe relation, and obeys the nonzero-mode Fourier Euler equation. Positive beta has no strict subcritical restriction.",
+      "proof_correspondence_audit": "Technical variant explicitly recorded: finite-entropy Gibbs optimizer construction and Fourier Euler uniqueness identify the prescribed potential; Fourier/Wiener regularization replaces the displayed Sobolev bootstrap. The source proves the iff directly from the nonnegative gap remainders; both gap identities are separately formalized. See EXTREMIZER_CORRESPONDENCE_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.primal_extremizer_correspondence",
+        "BecknerOnofri.Target.dual_extremizer_correspondence",
+        "BecknerOnofri.Target.optimizer_euler_equation",
+        "BecknerOnofri.Target.optimizer_smooth_kirkwood"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.OptimizerPrescribedPotential",
+        "BecknerOnofri.RawOptimizerCorrespondence",
+        "BecknerOnofri.OptimizerEulerPaper"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "216-target full build passed (8140 jobs); all 216 exact-target axiom audits passed with only the permitted three axioms; eight-target Comparator pending.",
+      "source_number": "2.6",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section2-subcritical-attainment",
+      "kind": "prop",
+      "title": "Subcritical attainment and regularity",
+      "source_line": 1064,
+      "section": "common",
+      "statement_tex": "\\label{prop:section2-subcritical-attainment}\nLet \\(0<\\be<2\\d\\) and put \\(A=(2\\be c_{\\d})^{-1}>\\Acrit(\\d)\\).  Then the supremum defining \\(\\Cc_{\\d}(A)\\) is attained by a real mean-zero potential \\(u\\in H^{\\d/2}(\\T^{\\d})\\), and the supremum defining \\(\\Pc_{\\d}(\\be)\\) is attained by a probability measure \\(\\mu\\).  Every such extremizing measure has a smooth strictly positive density \\(\\rho\\), and\n\\begin{equation}\n 0<\\rho\\in C^\\infty(\\T^{\\d}),\n \\qquad\n u\\in C^\\infty(\\T^{\\d}).\n \\label{eq:section2-subcritical-smoothness}\n\\end{equation}\nThe same conclusion holds at \\(\\be=2\\d\\) whenever the endpoint supremum is attained.",
+      "statement_audit": "Raw mean-zero dual attainment is an exact target for every 0<beta<2d. OptimizerDuality.exists_minimizer and continuous_optimizer_of_minimizer supply density attainment and smooth representatives. The combined assertion for every extremizer, including conditional endpoint attainment, still needs a full dedicated target.",
+      "proof_correspondence_audit": "Coercive strict subcritical bound, Hilbert compactness and exponential-integral continuity give attainment; Fourier/Wiener regularity yields smooth Gibbs representatives. The available regularity argument is not restricted to strict subcritical beta once an optimizer exists.",
+      "lean_targets": [
+        "BecknerOnofri.Target.subcritical_dual_attainment",
+        "BecknerOnofri.Target.primal_extremizer_correspondence",
+        "BecknerOnofri.Target.dual_extremizer_correspondence",
+        "BecknerOnofri.Target.optimizer_smooth_kirkwood"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.7",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:circle-rearrangement",
+      "kind": "lemma",
+      "title": "Circle rearrangement",
+      "source_line": 1158,
+      "section": "common",
+      "statement_tex": "\\label{lem:circle-rearrangement}\nLet $q$ be a bounded, nonnegative circle kernel that is even and\nnonincreasing as a function of geodesic distance from the origin.\nFor nonnegative $f,g\\in L^1$, let $f^*,g^*$ be their symmetric\ndecreasing rearrangements. Then\n\\begin{equation}\\label{eq:circle-rearrangement}\n \\iint f(\\theta)q(\\theta-\\phi)g(\\phi)\n                  \\,\\dd\\mu_1(\\theta)\\,\\dd\\mu_1(\\phi)\n \\le\n \\iint f^*(\\theta)q(\\theta-\\phi)g^*(\\phi)\n                  \\,\\dd\\mu_1(\\theta)\\,\\dd\\mu_1(\\phi),\n\\end{equation}\nwhere $\\dd\\mu_1=\\dd\\theta/(2\\pi)$. Rearrangement preserves\npointwise order and is nonexpansive in $L^1$.",
+      "statement_audit": "Complete canonical layer-cake circle rearrangement for arbitrary nonnegative L1 input, with equidistribution, finiteness ae, pointwise radial monotonicity/order, actual double integral inequality and L1 contraction. No smoothness, optimizer, Euler or certificate premise. Registered as target219; main219 build and exact axiom audit passed.",
+      "proof_correspondence_audit": "Follows four-point sorting, preservation of Lipschitz bounds, Arzela-Ascoli compactness, common cosine-moment maximization, canonical identification and L1 approximation. L1 contraction is first passed from simultaneous finite polarizations to Lipschitz orbit limits and then to arbitrary L1 limits; the manuscript derives contraction directly from the layer-cake distance identity. Layer-cake representatives are independently identified via exact centered-arc measures and superlevel sets; pointwise order is proved directly for these representatives, including possible infinite values at null radii.",
+      "lean_targets": [
+        "BecknerOnofri.Target.circle_rearrangement"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.PolarizationL1Properties",
+        "BecknerOnofri.BilinearPolarizationIntegral",
+        "BecknerOnofri.BilinearPairingL1Limit",
+        "BecknerOnofri.DistributionLimit",
+        "BecknerOnofri.DistributionL1Limit",
+        "BecknerOnofri.PolarizationOrbitDistribution",
+        "BecknerOnofri.PolarizationOrbitL1",
+        "BecknerOnofri.SimultaneousPolarizationLimit",
+        "BecknerOnofri.SimultaneousSteinerSelection",
+        "BecknerOnofri.SimultaneousOrbitComparison",
+        "BecknerOnofri.CircleLipschitzRearrangement",
+        "BecknerOnofri.CircleRearrangementL1Limit",
+        "BecknerOnofri.CircleRearrangementL1Properties",
+        "BecknerOnofri.CircleLayerCake",
+        "BecknerOnofri.CircleLayerCakeIdentification",
+        "BecknerOnofri.CircleRearrangementPaper",
+        "BecknerOnofri.CircleRearrangementDefinitions",
+        "BecknerOnofri.CircleRearrangementTrustedBridge"
+      ],
+      "verification": "Main219 build (8209 jobs), exact219 axiom audit and source scan passed. Circle219 Comparator passed, exit0, including default Lean kernel replay. Current222 main build and audit also pass.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.8",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:fractional",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 1245,
+      "section": "common",
+      "statement_tex": "\\label{lem:fractional}\n\nLet $u(\\theta)=U(\\cos\\theta_1,\\ldots,\\cos\\theta_\\d)$ with $U\\in C^\\infty([-1,1]^\\d)$. For a nonzero multi-index $\\alpha$, set\n\n\\begin{equation}\n S_\\alpha=\\{i:\\alpha_i>0\\},\\quad\n \\Omega_\\alpha=(0,\\pi)^{S_\\alpha}\\times(\\R/2\\pi\\Z)^{S_\\alpha^c},\\quad\n w_\\alpha=\\prod_{i\\in S_\\alpha}\\sin^{\\alpha_i}\\theta_i.\n\\end{equation}\n\nThus the superscripts in the Cartesian product record the original coordinate labels: $\\theta_i\\in(0,\\pi)$ when $i\\in S_\\alpha$, and $\\theta_i\\in\\R/2\\pi\\Z$ when $i\\in S_\\alpha^c$.\n\nAll restricted operators use Lebesgue measure, with the same normalization before and after restriction. Let $B_\\alpha$ be the Friedrichs operator\\footnote{This is the self-adjoint operator associated with the closure of the indicated nonnegative quadratic form; see \\cite[Section~2.3, Theorems~2.13--2.14]{Teschl2014}.}\n\n\\begin{equation}\n B_\\alpha=P_{D_{S_\\alpha}}+V_\\alpha,\\qquad\n V_\\alpha=\\sum_{i:\\alpha_i>0}\\alpha_i(\\alpha_i-1)\\csc^2\\theta_i.\n \\label{eq:restricted-jacobi-operator}\n\\end{equation}\n\nHere $P_{D_{S_\\alpha}}$ is the second-order Laplacian $-\\Delta_\\theta$ on $\\Omega_\\alpha$, with zero Dirichlet values at $\\theta_i=0,\\pi$ when $\\alpha_i>0$, and periodic conditions when $\\alpha_i=0$. By contrast, $P=-\\Delta_\\theta$ acts on the full angular torus, and $P^s$ denotes its spectral power:\n\n\\begin{equation}\n \\widehat{P^su}(k)=|k|^{2s}\\widehat u(k),\\qquad k\\in\\Z^\\d.\n \\label{eq:angular-periodic-power}\n\\end{equation}\n\nFor every $s>0$, $w_\\alpha\\partial_z^\\alpha U\\in\\Dom(B_\\alpha^s)$, and\n\n\\begin{equation}\n B_\\alpha^s(w_\\alpha\\partial_z^\\alpha U)\n  =w_\\alpha\\partial_z^\\alpha(P^su).\n \\label{eq:fractional-intertwining}\n\\end{equation}\n\nThe derivative on the right is taken after expressing the smooth even function $P^su$ in the cosine variables.",
+      "statement_audit": "Matched and built: arbitrary ContDiffOn smooth U on the original closed cosine cube, every nonzero multi-index including zero coordinate entries, and every real s>0. Actual mixed unscaled Lebesgue space, literal Friedrichs form closure, full periodic sine/cosine sectors, exact power domain and image, and Fourier characterization of the prescribed P^s u. No extra decay, global smooth extension, domain or optimizer hypothesis.",
+      "proof_correspondence_audit": "Core source route completed: differentiated Chebyshev conjugation, product cutoffs, coordinate integration by parts and closed-form test density, actual spatial eigenvectors, full mixed spectral realization, rapid smooth Fourier decay, differentiated-polynomial bounds, absolutely convergent graph series and closedness of B^s. Technical variants: dominated cutoff convergence instead of an explicit O(delta^(2m-1)) rate; integer Fourier indexing instead of merged natural cosine indexing. Arbitrary-U identification and all affine scaling factors proved. See FRACTIONAL_FINAL_CORRESPONDENCE_20260927.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.fractional_intertwining"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.AngularRealPowerIntertwining",
+        "BecknerOnofri.AngularRealPowerDomain",
+        "BecknerOnofri.AngularPowerPolynomialCore",
+        "BecknerOnofri.SmoothTorusDifferentiation",
+        "BecknerOnofri.SmoothTorusFourierDerivative",
+        "BecknerOnofri.SmoothTorusFourierDecay",
+        "BecknerOnofri.SmoothTorusSobolev",
+        "BecknerOnofri.SmoothAngularPower",
+        "BecknerOnofri.Friedrichs.SpatialPaper",
+        "BecknerOnofri.Friedrichs.SpatialSpectralIdentification",
+        "BecknerOnofri.Friedrichs.SpatialSelfAdjoint",
+        "BecknerOnofri.Friedrichs.MixedSpatialDefinitions",
+        "BecknerOnofri.Friedrichs.MixedProfileFormDomain",
+        "BecknerOnofri.Friedrichs.MixedProfileOperator",
+        "BecknerOnofri.Friedrichs.MixedFullEigenvectors",
+        "BecknerOnofri.Friedrichs.PeriodicHilbertBasis",
+        "BecknerOnofri.Friedrichs.ProductL2Totality",
+        "BecknerOnofri.Friedrichs.MixedTensorBasis",
+        "BecknerOnofri.Friedrichs.MixedSpatialSpectrum",
+        "BecknerOnofri.Friedrichs.MixedSpectralPowers",
+        "BecknerOnofri.Friedrichs.MixedAngularSeries",
+        "BecknerOnofri.Friedrichs.MixedAngularPowers",
+        "BecknerOnofri.Friedrichs.SmoothCosinePower",
+        "BecknerOnofri.Friedrichs.MixedFractionalIntertwining",
+        "BecknerOnofri.Friedrichs.MixedFractionalPaper"
+      ],
+      "verification": "Exact257 root build (8555 jobs), exact257 axiom audit, forbidden-token scan and current whole257 Comparator all passed. Final255–257 increment also passed. Both Comparators include default Lean kernel replay. Historical numbered update fields below describe superseded incomplete checkpoints.",
+      "auxiliary_targets": [
+        "BecknerOnofri.Target.smooth_fourier_moments",
+        "BecknerOnofri.Target.smooth_sobolev_domain",
+        "BecknerOnofri.Target.spatial_form_closability",
+        "BecknerOnofri.Target.angular_closed_form_conjugation",
+        "BecknerOnofri.Target.spatial_jacobi_spectral_identification",
+        "BecknerOnofri.Target.spatial_jacobi_selfadjoint",
+        "BecknerOnofri.Target.mixed_tensor_spatial_form_domain",
+        "BecknerOnofri.Target.mixed_tensor_spatial_operator",
+        "BecknerOnofri.Target.mixed_chebyshev_spatial_eigenvectors",
+        "BecknerOnofri.Target.mixed_spatial_form_closability",
+        "BecknerOnofri.Target.mixed_spatial_operator_closed",
+        "BecknerOnofri.Target.active_spatial_spectral_identification",
+        "BecknerOnofri.Target.active_spatial_selfadjoint",
+        "BecknerOnofri.Target.mixed_full_spatial_eigenvectors",
+        "BecknerOnofri.Target.mixed_coordinate_spectral_totality",
+        "BecknerOnofri.Target.periodic_full_hilbert_basis",
+        "BecknerOnofri.Target.mixed_spatial_spectral_identification",
+        "BecknerOnofri.Target.mixed_spatial_selfadjoint"
+      ],
+      "spatial_form_update_242": "Targets241–242 prove actual spatial one-dimensional form closability and closed-form conjugation for globally smooth representatives, with no spectral-domain premise. Mixed boundary/self-adjoint/fractional identification still incomplete. See SPATIAL_FORM_CORRESPONDENCE_20260926.md.",
+      "spatial_spectral_update_244": "Targets243–244 prove exact one-dimensional spatial/spectral graph equivalence and equality with the adjoint graph. Multidimensional mixed-boundary fractional realization remains open.",
+      "mixed_spatial_update_245": "Target245 proves tensor angular profiles belong to the actual mixed spatial form closure, with their actual gradients and singular-potential components. Product cutoffs and dominated convergence follow the manuscript domain route. Mixed spatial operator equation and fractional-power identification remain open.",
+      "mixed_spatial_update_247": "Targets246–247 prove the actual mixed tensor spatial operator equation against all closed-form tests, and actual spatial Chebyshev eigenvectors with eigenvalue sum_i n_i^2. Product-cutoff and coordinate integration-by-parts route preserved. Full self-adjoint spectral and fractional-power identification on the mixed space remains incomplete.",
+      "mixed_spatial_update_249": "Targets248–249 prove actual mixed form closability (first projection injective) and topological closedness of the spatial operator graph. Gradient uniqueness follows actual integration by parts and the distributional smooth-test fundamental lemma; singular potential multiplication is closed via AE subsequences. Full mixed-space self-adjoint spectral and fractional-power identification remains incomplete.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.9",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:positive-bernstein",
+      "kind": "lemma",
+      "title": "Positive Taylor expansion",
+      "source_line": 1393,
+      "section": "common",
+      "statement_tex": "\\label{lem:positive-bernstein}\n\nSuppose $f\\in C^\\infty([0,1]^{\\d})$ and\n\n$\\partial^\\alpha f\\ge0$ for every multi-index $\\alpha$, including\n\n$\\alpha=0$. Then\n\n\\begin{equation}\\label{eq:positive-taylor-series}\n f(y)=\\sum_{\\alpha\\in\\N_0^{\\d}}c_\\alpha y^\\alpha,\n \\qquad\n c_\\alpha=\\frac{\\partial^\\alpha f(0)}{\\alpha!}\\ge0,\n \\qquad \\sum_\\alpha c_\\alpha=f(1,\\ldots,1),\n\\end{equation}\n\nwhere the series converges uniformly on $[0,1]^\\d$.",
+      "statement_audit": "Exact closed-cube Taylor coefficients, nonnegativity, HasSum at every point including the boundary, total coefficient mass, and uniform convergence now have a dedicated closed_cube_positive_taylor Challenge target. Proof module built and axiom-audited; 178-target build and axiom audit passed; Comparator increment running.",
+      "proof_correspondence_audit": "Finite Bernstein polynomials have nonnegative coefficients; their coefficients converge to actual Taylor coefficients. Uniform Bernstein approximation and positive-series limit arguments identify the full closed-cube series. No analyticity hypothesis is assumed.",
+      "lean_targets": [
+        "BecknerOnofri.Target.closed_cube_positive_taylor"
+      ],
+      "lean_modules": [
+        "BecknerOnofri/ClosedCubeTaylor.lean",
+        "Legacy/BecknerOnofri/BernsteinPositiveCoefficients.lean"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.10",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:cosine-all",
+      "kind": "prop",
+      "title": "",
+      "source_line": 1451,
+      "section": "common",
+      "statement_tex": "\\label{prop:cosine-all}\n\nLet $\\d\\ge2$ and $\\lambda>0$, and let $(u,\\rho)$ be a smooth Euler pair satisfying \\eqref{eq:euler}, with $u$ separately even and nonincreasing in each angular coordinate on $[0,\\pi]$. Write $u(\\theta)=U(\\cos\\theta_1,\\ldots,\\cos\\theta_\\d)$. Then $\\partial_z^\\alpha U\\ge0$ on $[-1,1]^\\d$ for every nonzero multi-index $\\alpha$, and $\\rho$ has the following probability-mixture representation:\n\n\\begin{equation}\n \\rho(\\theta)=\\sum_{N\\in\\N_0^\\d}w_N\\prod_{i=1}^\\d h_{N_i}(\\theta_i),\\qquad\n h_n=\\binom{2n}{n}^{-1}4^n\\cos^{2n}(\\theta/2),\\quad\n w_N\\ge0,\\quad\\sum_Nw_N=1.\n \\label{eq:mixture}\n\\end{equation}",
+      "statement_audit": "Full raw smooth monotone Euler-pair statement implemented as target240, with no variational extremality, subcriticality or Fourier decay premise. Actual iterated Frechet derivatives on the closed cube [-1,1]^d, including repeated coordinates and boundary values, and normalized probability cosine mixture. Root build, exact-target axioms and incremental Comparator default-kernel replay passed.",
+      "proof_correspondence_audit": "Core Jacobi weighted Euler equation, strict kernel comparison, inactive-coordinate case, derivative induction and positive Taylor mixture route preserved. Raw smoothness supplies Fourier decay; exact affine derivative transport returns the conclusion to [-1,1]^d. Smooth profiles are constructed via Chebyshev/Fourier bounds rather than the source local endpoint inverse-function argument. Physical Friedrichs form-domain identification remains separate. See SMOOTH_EULER_COSINE_CORRESPONDENCE_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.smooth_monotone_euler_cosine"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.GeneralEuler.Regularity",
+        "BecknerOnofri.GeneralEuler.RawData",
+        "BecknerOnofri.GeneralEuler.CosineProfile",
+        "BecknerOnofri.GeneralEuler.UnitProfiles",
+        "BecknerOnofri.GeneralEuler.SpectralIntertwining",
+        "BecknerOnofri.GeneralEuler.WeightedProfiles",
+        "BecknerOnofri.GeneralEuler.WeightedEquation",
+        "BecknerOnofri.GeneralEuler.CriticalComparison",
+        "BecknerOnofri.GeneralEuler.HigherPartialSigns",
+        "BecknerOnofri.GeneralEuler.Mixture",
+        "BecknerOnofri.GeneralEuler.CubeAffineDerivatives",
+        "BecknerOnofri.GeneralEuler.Paper"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.11",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:selection-full-entropy-domain",
+      "kind": "lemma",
+      "title": "Entropy-preserving selection of subcritical minimizers",
+      "source_line": 1662,
+      "section": "common",
+      "statement_tex": "\\label{lem:selection-full-entropy-domain}\\label{cor:common-selection}\n\nLet $\\d\\ge2$ and $0<\\lambda<\\lambda_\\d$, and set\n\n\\begin{equation}\n F_\\lambda(\\rho)=\\Ent(\\rho)-\\frac\\lambda2\\Qcal_\\d(\\rho).\n\\end{equation}\n\n\\begin{enumerate}[(i)]\n\n\\item The functional $F_\\lambda$ attains its minimum among all probability densities of finite entropy. Every minimizer $\\rho$ is a smooth strictly positive Gibbs density.\n\n\\item For any minimizer $\\rho$, let $\\rho^\\star$ be obtained by successive Steiner rearrangements in each coordinate. Then $\\rho^\\star$ is a minimizer and\n\n\\begin{equation}\n F_\\lambda(\\rho^\\star)=F_\\lambda(\\rho),\\qquad\n \\Ent(\\rho^\\star)=\\Ent(\\rho).\n\\end{equation}\n\nWith $u^\\star=\\lambda K_\\d*\\rho^\\star$, the pair $(u^\\star,\\rho^\\star)$ is a smooth Euler pair satisfying \\eqref{eq:euler}. Both functions are separately even and nonincreasing in each angular coordinate on $[0,\\pi]$, and $u^\\star$ has mean zero.\n\n\\item The density $\\rho^\\star$ has the mixture representation \\eqref{eq:mixture}. Both $\\rho^\\star$ and $u^\\star$ have nonnegative Fourier coefficients. Moreover, $\\rho\\not\\equiv1$ implies $\\rho^\\star\\not\\equiv1$.\n\n\\end{enumerate}",
+      "statement_audit": "Canonical construction and all conclusions (ii)-(iii) implemented and built as target239, for every full finite-entropy minimizer; literal finite successive coordinate layer-cake rearrangements, AE representatives, identical entropy/value/distribution, prescribed smooth Gibbs/Green pair, mixture, both Fourier signs and nonuniformity. Part (i) follows existing attainment, full-domain extremizer correspondence and regularity. Target239 incremental Comparator passed with default Lean kernel replay.",
+      "proof_correspondence_audit": "Core finite successive canonical-coordinate route preserved. Restricted single-coordinate polarization closure is identified fiberwise with the literal layer-cake rearrangement; earlier-coordinate monotonicity survives. Actual L2 optimizer closedness, Gibbs/Green regularity, Jacobi-positive Taylor mixture and Euler Fourier signs complete the construction. AE-fiber Fubini removes representative assumptions. See CANONICAL_SELECTION_CORRESPONDENCE_20260926.md. Technical variational/regularity bridge differs as documented.",
+      "lean_targets": [
+        "BecknerOnofri.Target.prescribed_equimeasurable_selection",
+        "BecknerOnofri.Target.prescribed_canonical_selection",
+        "BecknerOnofri.Target.subcritical_dual_attainment",
+        "BecknerOnofri.Target.optimizer_smooth_kirkwood"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.PolarizationLpContinuity",
+        "BecknerOnofri.PrescribedPolarizationOrbit",
+        "BecknerOnofri.PrescribedSteinerSelection",
+        "BecknerOnofri.SteinerOptimizerMixture",
+        "BecknerOnofri.PrescribedSelectionPaper",
+        "BecknerOnofri.CanonicalSelectionFullDomain",
+        "BecknerOnofri.CanonicalSelectionFourier",
+        "BecknerOnofri.CanonicalSelectionPaper",
+        "BecknerOnofri.CanonicalOptimizerSelection",
+        "BecknerOnofri.SuccessiveCoordinateRearrangement",
+        "BecknerOnofri.CoordinateRearrangementAE",
+        "BecknerOnofri.CanonicalRearrangementClasses"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "2.12",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:scalar",
+      "kind": "prop",
+      "title": "",
+      "source_line": 1735,
+      "section": "low_dimension",
+      "statement_tex": "\\label{prop:scalar}\nFor $2\\le \\d\\le10$ and every $n\\ge1$,\n\\begin{equation}\n \\d H_n-\\lambda_\\d G_{\\d,n}>\\frac3{1100}.\n \\label{eq:scalar-result}\n\\end{equation}",
+      "statement_audit": "Built in LowScalarFull.scalar_gap: literal infinite lattice energy, strict 3/1100 gap, all n>=1 and all 2<=d<=10 in one theorem. Dedicated Challenge targets now configured, built, and axiom-audited; Comparator increment running.",
+      "proof_correspondence_audit": "Same Gaussian coefficient domination, Mellin/theta split, harmonic-Euler estimates and finite rational verification. This is an all-index result, not a finite numerical sample.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_scalar_gap"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.LowScalarDefinitions",
+        "BecknerOnofri.LowScalarFull"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "3.1",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:theta-integral-certificate",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 1882,
+      "section": "low_dimension",
+      "statement_tex": "\\label{lem:theta-integral-certificate}\nIt holds that $J_{10}\\le41/25$.",
+      "statement_audit": "Built in LowScalarFull.theta_integral_ten and theta_dimension_bound: actual improper theta integral, strict J10<41/25 and all positive dimensions <=10. Dedicated Challenge targets now configured, built, and axiom-audited; Comparator increment running.",
+      "proof_correspondence_audit": "Positive theta series, certified exponential/rational estimates, and explicit infinite-tail control. See Legacy/BecknerOnofri/ScalarAssembly.lean and ThetaBound.lean.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_theta_integral",
+        "BecknerOnofri.Target.low_theta_dimension_bound"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.LowScalarDefinitions",
+        "BecknerOnofri.LowScalarFull"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "3.2",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:hypergeometric",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 2069,
+      "section": "low_dimension",
+      "statement_tex": "\\label{lem:hypergeometric}\nFor $n,m\\in\\N_0$, let $L$ have distribution\n\\begin{equation}\\label{eq:hypergeometric-law}\n \\Pb(L=\\ell)=\n \\frac{\\binom n\\ell\\binom m\\ell}{\\binom{n+m}n},\n \\qquad 0\\le\\ell\\le\\min(n,m).\n\\end{equation}\nThen\n\\begin{equation}\\label{eq:hypergeometric-identity}\n a_n(j)a_m(j)=\\E[a_L(j)]\\qquad(j\\in\\Z).\n\\end{equation}\nMoreover,\n\\begin{equation}\\label{eq:harmonic-identity}\n H_n=2\\sum_{j\\ge1}\\frac{a_n(j)}j.\n\\end{equation}",
+      "statement_audit": "Built in LowScalarFull.hypergeometric_identity and harmonic_identity: explicit nonnegative normalized weights, support l<=min(n,m), all integer Fourier indices, and the source infinite harmonic HasSum with zero-support justification. Dedicated Challenge targets now configured, built, and axiom-audited; Comparator increment running.",
+      "proof_correspondence_audit": "Vandermonde identity and exact rational factorial/binomial algebra; real formulas follow by casts. Negative j is represented through the symmetric absolute index.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_hypergeometric_identity",
+        "BecknerOnofri.Target.low_harmonic_identity"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.LowScalarDefinitions",
+        "BecknerOnofri.LowScalarFull"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "3.3",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:circle-entropy",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 2168,
+      "section": "low_dimension",
+      "statement_tex": "\\label{lem:circle-entropy}\nFor every circle probability density $r$ with respect to $\\dd\\theta/(2\\pi)$,\n\\begin{equation}\\label{eq:circle-entropy}\n \\Ent(r)\\ge\\sum_{n\\ge1}\\frac{|\\wh r(n)|^2}{n}.\n\\end{equation}",
+      "statement_audit": "Matched and built auxiliary proof: every circle probability density, with extended entropy equal to the ordinary entropy when finite and top otherwise. The positive-frequency series is an ENNReal sum; no finite-entropy hypothesis. Registered in the 208-target configuration; full build and axiom audit passed. Full208 Comparator is running.",
+      "proof_correspondence_audit": "Finite-entropy case uses the independently proved one-dimensional Lebedev–Milin endpoint, then the conjugate positive/negative Fourier-frequency pairing. Infinite entropy is handled explicitly by the extended integral. This reuses the low-dimensional endpoint earlier in Lean than the source lemma; it is not a proof cycle.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_density_endpoint",
+        "BecknerOnofri.Target.low_circle_density",
+        "BecknerOnofri.Target.circle_entropy_full_domain"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.ExtendedEntropyDefinitions",
+        "BecknerOnofri.ExtendedEntropy",
+        "BecknerOnofri.CirclePositiveEnergy",
+        "BecknerOnofri.CircleEntropyExtended"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "3.4",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:equality",
+      "kind": "prop",
+      "title": "",
+      "source_line": 2210,
+      "section": "low_dimension",
+      "statement_tex": "\\label{prop:equality}\nFor $2\\le\\d\\le10$, equality in \\eqref{eq:collapse-entropy-full} holds only for the uniform density. Equality in the dual potential inequality, for real $u\\in H^{\\d/2}$, holds only for constants.",
+      "statement_audit": "Matched by low_density_rigidity and low_potential_rigidity for every 2<=d<=10 on full finite-entropy/raw critical-Sobolev domains.",
+      "proof_correspondence_audit": "Strict scalar mixture gap and endpoint closure give uniform density rigidity; exact Gibbs duality transfers equality to constant potentials.",
+      "lean_targets": [
+        "BecknerOnofri.Target.low_density_rigidity",
+        "BecknerOnofri.Target.low_potential_rigidity"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.LowDimensionConsequences",
+        "Legacy.BecknerOnofri.LowDimensionComplete"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "3.5",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section4-entropy-bound",
+      "kind": "prop",
+      "title": "",
+      "source_line": 2279,
+      "section": "eleven",
+      "statement_tex": "\\label{prop:section4-entropy-bound}\nThe periodized density \\(\\rho_*\\) satisfies\n\\begin{equation}\n \\Ent(\\rho_*)\n <\\frac{721}{50}+\\frac1{600}\n =\\frac{8653}{600}.\n \\label{eq:section4-entropy-upper-bound}\n\\end{equation}",
+      "statement_audit": "matched and Comparator verified: exact specified periodized profile, actual entropy integral, strict 8653/600 bound; no extra analytic premises",
+      "proof_correspondence_audit": "Euclidean entropy identity plus literal conditional entropy chain and lattice-label bound, exactly the core route in the manuscript.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_competitor_entropy",
+        "BecknerOnofri.Target.eleven_competitor_entropy_fine"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.1",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section4-periodization-entropy-identity",
+      "kind": "lemma",
+      "title": "Periodization and conditional entropy",
+      "source_line": 2292,
+      "section": "eleven",
+      "statement_tex": "\\label{lem:section4-periodization-entropy-identity}\nThe series in \\eqref{eq:section4-rho-star}, together with all of its derivatives, converges locally uniformly.  In particular, \\(\\rho_*\\) is a smooth, strictly positive probability density on \\(\\T^{11}\\).\n\nLet $X$ be a random vector in $\\R^{11}$ with density $\\eta_{1/5}$ and write\n\\begin{equation}\n X=Y+N,\n \\qquad\n Y\\in[-1/2,1/2)^{11},\n \\qquad\n N\\in\\Z^{11},\n \\label{eq:section4-lattice-label-decomposition}\n\\end{equation}\nwhere \\(Y\\) is the representative of \\(X\\) modulo \\(\\Z^{11}\\).  Then \\(Y\\) has density \\(\\rho_*\\), and\n\\begin{equation}\n \\Ent(\\rho_*)\n =\\Ent_{\\R^{11}}(\\eta_{1/5})+\\mathrm H_{\\mathrm{Sh}}(N\\mid Y),\n \\label{eq:section4-periodization-entropy-identity}\n\\end{equation}\nwhere\n\\begin{equation}\n \\Ent_{\\R^{11}}(f):=\\int_{\\R^{11}}f\\log f\\,\\dd x\n \\label{eq:section4-euclidean-entropy-definition}\n\\end{equation}\nand \\(\\mathrm H_{\\mathrm{Sh}}(N\\mid Y)\\) is the conditional Shannon entropy of the lattice label.",
+      "statement_audit": "matched for the exact profile: mass one, pointwise positivity, finite entropy, smoothness and literal conditional Shannon entropy identity all implemented and Comparator verified.",
+      "proof_correspondence_audit": "Lattice fundamental-domain unfolding and absolute-integral Fubini for the literal conditional probabilities. Smoothness is derived from the exact exponential Fourier decay and continuity of the periodization; no replacement representative is used. The original periodization series and all its derivative series converging locally uniformly are not separately asserted by a registered target. The sum is identified exactly and its smoothness is proved independently by Fourier decay; that alternative does not assert termwise convergence of the original derivative series.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_profile_mass",
+        "BecknerOnofri.Target.eleven_entropy_chain",
+        "BecknerOnofri.Target.eleven_profile_regular"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.2",
+      "statement_clause_coverage": "partial"
+    },
+    {
+      "source_label": "lem:section4-euclidean-entropy",
+      "kind": "lemma",
+      "title": "Euclidean entropy",
+      "source_line": 2363,
+      "section": "eleven",
+      "statement_tex": "\\label{lem:section4-euclidean-entropy}\nThe profile \\(\\eta\\) in \\eqref{eq:section4-eta} is a probability density and\n\\begin{equation}\n \\Ent_{\\R^{11}}(\\eta_{1/5})\n =\\log\\left(\\frac{3\\,5^{12}}{2^9\\pi^6}\\right)\n +\\frac{17897}{2520}\n <\\frac{721}{50}.\n \\label{eq:section4-euclidean-entropy}\n\\end{equation}",
+      "statement_audit": "matched: actual entropy integral, absolute integrability, exact expression and strict 721/50 bound; Comparator passed",
+      "proof_correspondence_audit": "Actual parameter differentiation under an integrable majorant; true log-Gamma derivatives and exact rational exponential bound. Auxiliary beta integral obtained by Gaussian/Gamma Tonelli rather than polar coordinates.",
+      "lean_targets": [
+        "BecknerOnofri.Target.student_beta_integral",
+        "BecknerOnofri.Target.eleven_euclidean_entropy"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.3",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section4-lattice-label-entropy",
+      "kind": "lemma",
+      "title": "Entropy of the integer shift",
+      "source_line": 2418,
+      "section": "eleven",
+      "statement_tex": "\\label{lem:section4-lattice-label-entropy}\nFor the random variables in \\eqref{eq:section4-lattice-label-decomposition},\n\\begin{equation}\n \\mathrm H_{\\mathrm{Sh}}(N\\mid Y)<\\frac1{600}.\n \\label{eq:section4-label-entropy-bound}\n\\end{equation}",
+      "statement_audit": "matched and Comparator verified: literal conditional Shannon integral, actual joint and coordinate laws, first moment, all summability conditions and strict 1/600 bound",
+      "proof_correspondence_audit": "Exact manuscript chain: marginal beta integral; tail probabilities and absolute first moment; zeta integral comparison and odd terms; normalized two-sided geometric reference; entropy subadditivity and nonnegative mutual information, with absolute-integral Fubini.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_coordinate_marginal",
+        "BecknerOnofri.Target.eleven_label_moment",
+        "BecknerOnofri.Target.eleven_coordinate_label_entropy",
+        "BecknerOnofri.Target.eleven_label_entropy_chain"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.4",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section4-profile-fourier-transform",
+      "kind": "lemma",
+      "title": "Fourier transform of the Euclidean profile",
+      "source_line": 2500,
+      "section": "eleven",
+      "statement_tex": "\\label{lem:section4-profile-fourier-transform}\nDefine\n\\begin{equation}\\label{eq:section4-profile-polynomial}\n P(z):=z^5+15z^4+105z^3+420z^2+945z+945,\\qquad z\\in\\R,\n\\end{equation}\nand\n\\begin{equation}\n \\Phi(z):=e^{-z}\\frac{P(z)}{945},\n \\qquad z\\geq0.\n \\label{eq:section4-Phi}\n\\end{equation}\nThen\n\\begin{equation}\\label{eq:section4-eta-fourier-transform}\n \\wh\\eta_{\\R^{11}}(\\xi)=\\Phi(2\\pi\\abs\\xi),\\qquad \\xi\\in\\R^{11},\n\\end{equation}\nand the torus Fourier coefficients of the periodization are\n\\begin{equation}\\label{eq:section4-rho-star-fourier}\n \\wh\\rho_*(k)=\\Phi\\left(\\frac{2\\pi}{5}\\abs k\\right)>0,\n \\qquad k\\in\\Z^{11}.\n\\end{equation}",
+      "statement_audit": "Matched: unscaled Euclidean eta formula, scaled profile formula and exact torus coefficient, including positivity. The unscaled formula is now separately built and registered as eleven_unscaled_fourier in the 205-target configuration.",
+      "proof_correspondence_audit": "Gamma-Gaussian subordination, absolutely integrable Fubini, half-integer Laplace evaluation, scaling constants, and fundamental-cube unfolding proved. The cited Bessel identity is rederived using reciprocal Gaussian substitution, dominated differentiation, and integration-by-parts recurrence.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_half_integer_laplace",
+        "BecknerOnofri.Target.eleven_euclidean_fourier",
+        "BecknerOnofri.Target.eleven_periodized_fourier",
+        "BecknerOnofri.Target.eleven_unscaled_fourier"
+      ],
+      "lean_modules": [
+        "HalfIntegerLaplace",
+        "StudentFourier",
+        "ElevenEuclideanFourier",
+        "ElevenPeriodizedFourier",
+        "ElevenUnscaledFourier"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "Earlier three-target Fourier Comparator passed. New unscaled module built with only permitted axioms; its current-config verification is pending.",
+      "source_number": "4.5",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "d11:prop:scalar",
+      "kind": "prop",
+      "title": "",
+      "source_line": 2558,
+      "section": "eleven",
+      "statement_tex": "\\label{d11:prop:scalar}\nSet $\\beta_0:=3543/200$. For every $n\\geq1$,\n\\begin{equation}\n 11H_n-\\frac{\\beta_0}{\\betas}G_{11,n}>\\frac1{2000}.\n \\label{d11:eq:gap}\n\\end{equation}",
+      "statement_audit": "Matched and built: every positive integer n and the actual infinite G_11,n sum, strict 1/2000 gap.",
+      "proof_correspondence_audit": "Same Gaussian/Mellin tail for n≥22, actual J_11<5/2, center constant and harmonic/Euler bounds. For n≤21 the full polynomial tail above squared radius 64 is included at the conservative weight 65^(-11/2), scale 2^40; source uses full degree and scale 2^96. Both retain the stated strict margin.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_scalar_finite",
+        "BecknerOnofri.Target.eleven_scalar_all",
+        "BecknerOnofri.Target.eleven_theta_integral"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.ElevenScalarFinite",
+        "BecknerOnofri.ElevenScalarFinite.Certificates",
+        "BecknerOnofri.ElevenGaussianHeat",
+        "BecknerOnofri.ElevenThetaIntegrability",
+        "BecknerOnofri.ElevenScalarTail",
+        "BecknerOnofri.ElevenThetaCertificate"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.6",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section4-local-uniqueness",
+      "kind": "lemma",
+      "title": "Local uniqueness of the uniform critical point",
+      "source_line": 2746,
+      "section": "eleven",
+      "statement_tex": "\\label{lem:section4-local-uniqueness}\nLet \\(0<\\be_0<\\betas\\).  There are an open interval \\(J\\) containing \\(\\be_0\\) and a neighborhood \\(U\\) of zero in the mean-zero space \\(H^{11}(\\T^{11})\\) such that, for every \\(\\be\\in J\\), the only \\(u\\in U\\) satisfying\n\\begin{equation}\n u=\\be\\,\\g*\\left(\\frac{e^u}{\\int e^u\\,\\dd\\muunif}-1\\right)\n \\label{eq:section4-local-Euler-map-equation}\n\\end{equation}\nis \\(u=0\\).",
+      "statement_audit": "Exact full raw H11 neighborhood and literal physical Green convolution equation are now implemented and built, with a dedicated eleven_local_uniqueness Challenge target in the passed 178-target build and axiom audit; Comparator increment running.",
+      "proof_correspondence_audit": "Same Euler map, Fourier multiplier inverse and Banach implicit-function theorem. Technical implementation uses the IFT on continuous potentials, then proves every H^d potential has an actual continuous representative with a norm bound and transfers the literal a.e. convolution equation. Thus the source H11 domain is recovered without an extra assumption. A separate inverse Sobolev-norm bound and arbitrary-Hs convergence of optimizing sequences are also proved.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_local_uniqueness"
+      ],
+      "lean_modules": [
+        "BecknerOnofri/RawEulerConvolution.lean",
+        "BecknerOnofri/RawSubspectralLocalUniqueness.lean",
+        "BecknerOnofri/FullSobolevEmbedding.lean",
+        "BecknerOnofri/SubspectralSobolevInverse.lean"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.7",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section4-first-order-coexistence",
+      "kind": "prop",
+      "title": "First-order coexistence at the global transition",
+      "source_line": 2781,
+      "section": "eleven",
+      "statement_tex": "\\label{prop:section4-first-order-coexistence}\nAt \\(\\be=\\betagm\\), the uniform density and at least one nonuniform smooth strictly positive density \\(\\rho_{\\mathrm{tr}}\\) are global minimizers of \\(\\Ec_{\\betagm}\\).  The Hessian at the uniform density is strictly positive: for every smooth mean-zero real \\(h\\),\n\\begin{equation}\n D^2\\Ec_{\\betagm}(1)[h,h]\n \\geq\\left(1-\\frac{\\betagm}{\\betas}\\right)\n \\int_{\\T^{11}}h^2\\,\\dd\\muunif.\n \\label{eq:section4-uniform-strict-hessian}\n\\end{equation}\nMoreover, \\(\\Pc_{11}\\) is not differentiable at \\(\\betagm\\), and \\(\\Cc_{11}\\) is not differentiable at \\(\\Azero(11)\\).",
+      "statement_audit": "All stated main conclusions and the explicit one-sided derivative signs are configured, built and axiom-audited. Current whole257 verification passed.",
+      "proof_correspondence_audit": "Same compactness/IFT and affine-support logic. L2 upper semicontinuity and uniform Wiener bootstrap implement the compactness upgrade; current proof does not literally formalize each displayed intermediate weak/strong H^(11/2), Vitali and H11 convergence assertion. This is a technical proof-route difference, not an extra hypothesis in the main result.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_uniform_hessian",
+        "BecknerOnofri.Target.eleven_coexistence",
+        "BecknerOnofri.Target.eleven_pressure_corner",
+        "BecknerOnofri.Target.eleven_defect_corner"
+      ],
+      "lean_modules": [
+        "BecknerOnofri/ElevenCoexistence.lean",
+        "BecknerOnofri/ElevenUniformHessian.lean",
+        "BecknerOnofri/ElevenPressureCorner.lean",
+        "BecknerOnofri/ElevenDefectCorner.lean",
+        "BecknerOnofri/ElevenDerivativeJumps.lean"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.8",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "d11:thm:interval",
+      "kind": "prop",
+      "title": "",
+      "source_line": 2931,
+      "section": "eleven",
+      "statement_tex": "\\label{d11:thm:interval}\nThe global transition satisfies\n\\begin{equation}\\label{d11:eq:interval}\n 17.715=\\frac{3543}{200}<\\beta_{\\mathrm{gm}}(11)\n       <\\frac{2063}{100}=20.630.\n\\end{equation}\nFor every $0\\le\\beta\\le3543/200$, the uniform density is the unique global minimizer of $\\Ec_\\beta$.\nThe density $\\rho_*$ in \\eqref{eq:section4-rho-star} satisfies\n\\begin{equation}\\label{d11:eq:upper}\n \\frac12\\Qcal_{11}(\\rho_*)>\\frac{14475384292906}{10^{12}}.\n\\end{equation}",
+      "statement_audit": "Matched and built: 3543/200 < beta_gm < 2063/100 < beta_s < 22; full finite-entropy uniform uniqueness through 3543/200; exact strict Fourier energy certificate. Current whole257 verification passed.",
+      "proof_correspondence_audit": "Strict lower endpoint now follows from nonuniform coexistence and previously established uniform uniqueness, exactly as the source.",
+      "lean_targets": [
+        "BecknerOnofri.Target.eleven_transition_interval",
+        "BecknerOnofri.Target.eleven_competitor_energy",
+        "BecknerOnofri.Target.eleven_uniform_unique"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "4.9",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:spectral-d12-base",
+      "kind": "prop",
+      "title": "",
+      "source_line": 2974,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:spectral-d12-base}\nFor every probability density $\\rho$ on $\\T^{12}$ with finite entropy,\n\\begin{equation}\\label{eq:spectral-d12-base}\n \\Ent(\\rho)\\ge\\frac12\\Qcal_{12}(\\rho),\n \\qquad \\Ent(\\rho)=\\frac12\\Qcal_{12}(\\rho)\\Longleftrightarrow\\rho=1\\quad\\muunif\\text{-a.e.}\n\\end{equation}",
+      "statement_audit": "Matched by density_endpoint and density_rigidity specialized to d=12, with full finite-entropy domain and exact equality characterization.",
+      "proof_correspondence_audit": "The completed entropy route constructs the scalar convex minorant, verifies spin certificates, transfers the circle remainder, excludes selected nonzero optimizers, and closes the full domain by heat regularization.",
+      "lean_targets": [
+        "BecknerOnofri.Target.density_endpoint",
+        "BecknerOnofri.Target.density_rigidity"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.1",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:spectral-subset-entropy",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 3006,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:spectral-subset-entropy}\nFor every finite-entropy probability density $\\rho$ on $\\T^\\d$ and every $1\\le r\\le \\d$,\n\\begin{equation}\\label{eq:spectral-entropy-r}\n \\Ent(\\rho)\\ge\\frac{\\d}{r\\binom{\\d}{r}}\\sum_{\\substack{I\\subseteq[\\d]\\\\|I|=r}}\\Ent(\\rho_I).\n\\end{equation}",
+      "statement_audit": "Matched and built on the full finite-entropy domain for all 1 ≤ r ≤ d, with the exact d/(r*choose(d,r)) coefficient and actual normalized Haar coordinate marginals. No continuity, pointwise positivity, boundedness or L2 assumption. Marginal entropy finiteness is proved, not assumed. Current whole257 verification passed.",
+      "proof_correspondence_audit": "The source cites general Shearer. Lean reconstructs it from conditional relative-entropy contraction and coordinate-chain increments, counts each coordinate choose(d-1,r-1) times, then extends by positive heat approximation, L1 marginal contraction, and Fatou lower semicontinuity. The exact binomial identity gives the manuscript normalization.",
+      "lean_targets": [
+        "BecknerOnofri.Target.coordinate_marginal_entropy",
+        "BecknerOnofri.Target.entropy_shearer_all_subsets"
+      ],
+      "lean_modules": [
+        "CoordinateMarginalDefinitions",
+        "EntropyShearer.Chain",
+        "EntropyShearer.AllSubsets",
+        "EntropyShearer.L1Marginal",
+        "EntropyShearer.L1Contraction",
+        "EntropyShearer.EntropyFatou",
+        "EntropyShearer.FiniteEntropy",
+        "EntropyShearer.PaperStatement"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "verification/shearer_paper_statement_build.log: build passed, permitted axioms only; new main-config checks pending.",
+      "source_number": "5.2",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:spectral-slice",
+      "kind": "lemma",
+      "title": "One-dimensional summation",
+      "source_line": 3019,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:spectral-slice}\nFor every real $p\\ge12$ and $a\\ge\\sqrt2$,\n\\begin{equation}\\label{eq:spectral-slice}\n a^{p-1}\\sum_{n\\in\\Z}(a^2+n^2)^{-p/2}\n \\le\\frac{311141}{342144}<1.\n\\end{equation}",
+      "statement_audit": "matched: real p≥12, a≥sqrt(2), actual infinite sum and exact rational margin; strict rational comparison proved separately",
+      "proof_correspondence_audit": "matched core route: Gamma/Mellin identity, Jacobi transform, monotonicity in p and a, p=12/a=sqrt(2) tail estimate",
+      "lean_targets": [
+        "BecknerOnofri.Target.spectral_slice"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.SpectralSlice",
+        "BecknerOnofri.SpectralSliceBase",
+        "BecknerOnofri.SpectralSliceBound"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.3",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:spectral-rectangle",
+      "kind": "lemma",
+      "title": "Rectangular lattice sums",
+      "source_line": 3041,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:spectral-rectangle}\nFor every integer $\\d\\ge12$ and every $R\\in\\N_0^\\d$,\n\\begin{equation}\\label{eq:spectral-rectangle}\n \\mathscr S_{\\d}(R)\\le\\frac1{\\d-1}\\sum_{i=1}^{\\d}\\mathscr S_{\\d-1}(R_{-i}).\n\\end{equation}",
+      "statement_audit": "Matched by rectangular_lattice for every d>=12 and every finite rectangle. A deleted coordinate is represented by setting its radius to zero, an equivalent embedded lower-dimensional lattice sum.",
+      "proof_correspondence_audit": "Finite rectangle induction, exact spectral slice bound and boundary terms.",
+      "lean_targets": [
+        "BecknerOnofri.Target.rectangular_lattice"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.4",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:spectral-marginal-energy",
+      "kind": "prop",
+      "title": "Energy comparison for cosine-power mixtures",
+      "source_line": 3135,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:spectral-marginal-energy}\nEvery density $\\rho$ of the form \\eqref{eq:mixture} in dimension $\\d\\ge12$ satisfies\n\\begin{equation}\\label{eq:spectral-energy-main}\n \\Qcal_{\\d}(\\rho)\\le\\frac1{\\d-1}\\sum_{i=1}^\\d\\Qcal_{\\d-1}(\\rho_{-i}).\n\\end{equation}\nMore generally, for integers $\\d\\ge r\\ge12$,\n\\begin{equation}\\label{eq:spectral-energy-r}\n \\Qcal_{\\d}(\\rho)\\le\\frac{\\d}{r\\binom{\\d}{r}}\n          \\sum_{\\substack{I\\subseteq[\\d]\\\\|I|=r}}\\Qcal_r(\\rho_I).\n\\end{equation}",
+      "statement_audit": "Matched and built: every normalized countable cosine-power mixture, no smoothness/entropy/uniform-majorant premise; codimension-one d>=12 including 12->11 and all d>=r>=12 subset averages with exact coefficients. Energies are extended nonnegative sums, including divergence; marginals are actual Haar integrals.",
+      "proof_correspondence_audit": "Core random-rectangle and dimension-twelve cube comparison preserved. Countable transfer is justified by nonnegative Fourier monotone limits, exact L1 tail mass, actual Haar marginal identification, and subset deletion counting. See MIXTURE_ENERGY_PROOF_CORRESPONDENCE_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.cosine_mixture_deletion_energy",
+        "BecknerOnofri.Target.cosine_mixture_subset_energy"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.MixtureMarginalEnergyPaper",
+        "BecknerOnofri.MixtureSubsetNormalized",
+        "BecknerOnofri.MixtureMarginalFourier",
+        "BecknerOnofri.CountableMixtureL1",
+        "BecknerOnofri.CountableMixtureSubsetMarginal",
+        "BecknerOnofri.MixtureEnergyStatementBridge"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "216-target full build passed (8140 jobs); all 216 exact-target axiom audits passed with only the permitted three axioms; eight-target Comparator pending.",
+      "source_number": "5.5",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:spectral-dimension-transfer",
+      "kind": "prop",
+      "title": "Transfer from dimension twelve",
+      "source_line": 3194,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:spectral-dimension-transfer}\nAssume the inequality in Proposition~\\ref{prop:spectral-d12-base}. Then, for every integer $\\d\\ge12$ and every finite-entropy probability density $\\rho$ on $\\T^\\d$,\n\\begin{equation}\\label{eq:spectral-transferred-density}\n \\Ent(\\rho)\\ge\\frac12\\Qcal_\\d(\\rho).\n\\end{equation}\nIf equality in dimension twelve holds only for the uniform density, then equality in \\eqref{eq:spectral-transferred-density} holds if and only if $\\rho=1$.",
+      "statement_audit": "Implemented in EndpointFromTwelve.density_endpoint_of_twelve_density on the full finite-entropy domain, with rigidity transfer in EndpointRigidity. No separate combined conditional target; unconditional endpoint/rigidity targets close the assumptions.",
+      "proof_correspondence_audit": "Codimension-one mixture energy and entropy comparison, induction from dimension twelve, actual Steiner selection and heat endpoint closure.",
+      "lean_targets": [
+        "BecknerOnofri.Target.density_endpoint",
+        "BecknerOnofri.Target.density_rigidity"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.7",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "cor:section5-high-endpoint",
+      "kind": "cor",
+      "title": "Spectral inequality and equality",
+      "source_line": 3228,
+      "section": "high_dimension",
+      "statement_tex": "\\label{cor:section5-high-endpoint}\nFor every $\\d\\ge12$ and every finite-entropy probability density $\\rho$ on $\\T^\\d$,\n\\begin{equation}\\label{eq:spectral-density-conclusion}\n \\Hr(\\rho\\mid\\muunif)\\ge\\frac12\\Qcal_\\d(\\rho),\n\\end{equation}\nwith equality only for $\\rho=1$. The dual potential inequality \\eqref{eq:spectral-potential-conclusion} has coefficient $\\As(\\d)$ and equality only for constants. Moreover, $\\betagm(\\d)=\\betas(\\d)$.",
+      "statement_audit": "Matched by unconditional full-domain density/potential endpoint and rigidity targets, and the exact spectral pressure threshold.",
+      "proof_correspondence_audit": "The conditional entropy assembly is instantiated in EntropyMainTheorems with the proved psi_le_gamma certificate; no numerical or analytic premise remains in these target statements.",
+      "lean_targets": [
+        "BecknerOnofri.Target.density_endpoint",
+        "BecknerOnofri.Target.density_rigidity",
+        "BecknerOnofri.Target.potential_endpoint",
+        "BecknerOnofri.Target.potential_rigidity",
+        "BecknerOnofri.Target.pressure_threshold"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.8",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:common-cubic",
+      "kind": "lemma",
+      "title": "Symmetry of maximizers",
+      "source_line": 3250,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:common-cubic}\nEvery smooth global maximizer \\(u\\in H_0^{\\d/2}(\\T^\\d)\\) of \\(\\Phi\\) with nonnegative Fourier coefficients satisfies\n\\begin{equation}\\label{eq:section5-signed-invariance}\n u(\\varepsilon_1x_{\\sigma(1)},\\ldots,\\varepsilon_\\d x_{\\sigma(\\d)})=u(x),\n \\qquad x\\in\\T^\\d,\\quad \\varepsilon\\in\\{-1,1\\}^\\d,\\quad \\sigma\\in\\mathfrak S_\\d.\n\\end{equation}",
+      "statement_audit": "Matched and built: every given smooth mean-zero critical-Sobolev optimizer with actual nonnegative real Fourier coefficients is pointwise invariant under all signed coordinate permutations. No selected-optimizer or Steiner premise. Proved in every positive dimension; includes the source dimension twelve.",
+      "proof_correspondence_audit": "Same coefficient maximum/minimum lattice, support-subgroup comparison, strict Ginibre covariance, transpositions, and coordinate reflections. The final wrapper identifies the original raw smooth representative, rather than assuming its symmetry. See COMMON_CUBIC_PROOF_CORRESPONDENCE_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.all_optimizer_cubic_symmetry"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.GeneralCoefficientReflections",
+        "BecknerOnofri.CommonCubicPaper",
+        "BecknerOnofri.InvolutiveMaximizerSymmetry"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "216-target full build passed (8140 jobs); all 216 exact-target axiom audits passed with only the permitted three axioms; eight-target Comparator pending.",
+      "source_number": "5.9",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section5-global-entropy-gap",
+      "kind": "prop",
+      "title": "Global entropy estimate",
+      "source_line": 3262,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:section5-global-entropy-gap}\nLet $\\rho$ be a smooth strictly positive probability density on $\\T^{12}$, invariant under coordinate permutations and of the form \\eqref{eq:mixture}. Suppose that\n\\begin{equation}\\label{eq:section5-global-shape}\n \\log\\rho(\\theta)=V(\\cos\\theta_1,\\ldots,\\cos\\theta_{12}),\\qquad\n V\\in C^\\infty([-1,1]^{12}),\\qquad \\partial_iV\\ge0,\\quad\\partial_i^2V\\ge0\\quad(1\\le i\\le12).\n\\end{equation}\nThen\n\\begin{equation}\\label{eq:section5-global-entropy-gap}\n \\Ent(\\rho)-\\frac12\\Qcal_{12}(\\rho)\\ge\\frac{\\widehat\\rho(e_1)^4}{250}.\n\\end{equation}\nMoreover, $\\widehat\\rho(e_1)\\ge0$, and $\\widehat\\rho(e_1)=0$ implies $\\rho=1$.",
+      "statement_audit": "Matched and registered: every raw smooth strictly positive symmetric probability cosine mixture, with a C∞ profile on the closed cosine cube and actual nonnegative first/second fderivWithin coordinate partials. Exact 1/250 quartic entropy deficit, first-mode reality/nonnegativity, and pointwise uniformity at zero. No optimizer, Euler equation, rapid Fourier decay, or majorant premise.",
+      "proof_correspondence_audit": "Same conditional circle gamma estimate, integrated entropy chain and Jensen bounds, cube/tail decomposition, exchangeable spin channel, certified convex minorant, and mixture rigidity. Conditional-circle smoothness is derived by compact parameter differentiation and exact Haar/closed-cube transport; all scalar and spin certificates are instantiated. See GLOBAL_SHAPE_ENTROPY_PROOF_CORRESPONDENCE_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.global_shape_entropy"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.GlobalShapeEntropyPaper",
+        "BecknerOnofri.GeneralShapeEntropyGap",
+        "BecknerOnofri.GeneralShapeFourierEntropy",
+        "BecknerOnofri.GeneralShapeChannelEntropy",
+        "BecknerOnofri.SmoothConditionalGamma",
+        "BecknerOnofri.SmoothConditionalRegularity",
+        "BecknerOnofri.CosineShapeCalculus"
+      ],
+      "verification": "Main217 build and exact axiom audit passed; forbidden-proof code scan clean; full source snapshot saved. New-target Comparator running; no final result.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.10",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section5-singular-fourier-tail",
+      "kind": "prop",
+      "title": "The singular Fourier tail",
+      "source_line": 3279,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:section5-singular-fourier-tail}\nEvery smooth probability density of the form \\eqref{eq:mixture} on $\\T^{12}$ satisfies\n\\begin{equation}\\label{eq:section5-global-tail-energy}\n \\frac12\\sum_{k\\notin\\{-1,0,1\\}^{12}}|k|^{-12}|\\widehat\\rho(k)|^2\n \\le\\sum_{i=1}^{12}\\left[\\frac{21}{1000}|\\widehat\\rho(2e_i)|^2\n +\\frac{27}{40}\\sum_{n\\ge3}\\frac{|\\widehat\\rho(ne_i)|^2}{n}\\right].\n\\end{equation}",
+      "statement_audit": "Matched and built: every smooth probability cosine-power mixture, with literal outside-cube weight and exact 21/1000 and 27/40 axis budgets. The scalar certificate and summable spatial majorant are proved, not assumed by the target.",
+      "proof_correspondence_audit": "Same hypergeometric product decomposition, scalar Mellin/tail certificate, finite correlated mixture transfer and countable limit. Continuity and nonnegative finite partial sums derive the majorant at the origin even when the initial mixture equality is only almost everywhere. See SINGULAR_TAIL_GENERALITY_20260926.md.",
+      "lean_targets": [
+        "BecknerOnofri.Target.smooth_mixture_singular_tail"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.ContinuousMixtureMajorant",
+        "BecknerOnofri.SingularFourierTailPaper",
+        "BecknerOnofri.EntropyTailCertifiedScalar",
+        "BecknerOnofri.EntropyTailCountableMixture"
+      ],
+      "verification": "Current 257-target checkpoint: Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "historical_verification": "216-target full build passed (8140 jobs); all 216 exact-target axiom audits passed with only the permitted three axioms; eight-target Comparator pending.",
+      "source_number": "5.11",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section5-spin-entropy",
+      "kind": "prop",
+      "title": "Entropy comparison and the finite-state inequality",
+      "source_line": 3297,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:section5-spin-entropy}\nThere exists a nonnegative increasing convex function $\\psi:[0,1]\\to\\R$, with $\\psi(t)=3t^4/40$ for $0\\le t\\le1/16$, such that:\n\\begin{enumerate}[(i)]\n\\item If $\\rho$ satisfies the hypotheses of Proposition~\\ref{prop:section5-global-entropy-gap}, then $\\nu_\\rho$ is an exchangeable probability measure with common spin mean $t:=\\widehat\\rho(e_1)$ and\n\\begin{equation}\\label{eq:section5-global-p0}\n \\nu_\\rho(\\sigma_1=\\cdots=\\sigma_{12}=-1)\\le2^{-12}.\n\\end{equation}\nMoreover,\n\\begin{equation}\\label{eq:section5-global-channel-entropy}\n \\Ent(\\rho)\\ge2\\Hr(\\nu_\\rho\\mid\\mu_{\\mathrm{spin}})+12\\psi(t)\n +\\sum_{i=1}^{12}\\left[\\frac{21}{1000}|\\widehat\\rho(2e_i)|^2\n +\\frac{27}{40}\\sum_{n\\ge3}\\frac{|\\widehat\\rho(ne_i)|^2}{n}\\right].\n\\end{equation}\n\\item Every exchangeable probability measure $\\nu$ on $\\{-1,1\\}^{12}$ with common spin mean $t\\in[0,1]$ and $\\nu(\\sigma_1=\\cdots=\\sigma_{12}=-1)\\le2^{-12}$ satisfies\n\\begin{equation}\\label{eq:section5-global-spin-final}\n 2\\Hr(\\nu\\mid\\mu_{\\mathrm{spin}})\n -\\sum_{r=1}^{12}\\binom{12}{r}\\frac{2^{r-1}}{r^6}\n \\left(\\E_\\nu\\left[\\prod_{i=1}^r\\sigma_i\\right]\\right)^2\n +12\\psi(t)\\ge\\frac{t^4}{250}.\n\\end{equation}\n\\end{enumerate}",
+      "statement_audit": "Matched and registered as target218: a single psi satisfies both universal clauses, for every original raw shape density and for every admissible exchangeable probability law on the full4096 configurations. Exact common mean, cap, entropy and Fourier weights; no optimality premise.",
+      "proof_correspondence_audit": "Source channel construction, conditional entropy chain/Jensen, cosine-moment tail, Krawtchouk/count reduction, supporting-parabola certificate and explicit scalar minorant. The reconstructed certificate is independently checked; it is not claimed byte-identical to the manuscript data.",
+      "lean_targets": [
+        "BecknerOnofri.Target.spin_channel_gamma_entropy",
+        "BecknerOnofri.Target.spin_mixture_feasible",
+        "BecknerOnofri.Target.spin_channel_symmetry",
+        "BecknerOnofri.Target.spin_exchangeable_entropy",
+        "BecknerOnofri.Target.spin_exchangeable_energy",
+        "BecknerOnofri.Target.global_spin_entropy"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.GlobalSpinEntropyPaper",
+        "BecknerOnofri.GeneralShapeFourierEntropy",
+        "BecknerOnofri.EntropyCertifiedWitness"
+      ],
+      "verification": "Main218 build and exact axiom audit passed; only permitted three axioms. Comparator increment running; no final result.",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.12",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-scalar-tail",
+      "kind": "lemma",
+      "title": "Scalar tail bound",
+      "source_line": 3451,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-scalar-tail}\nFor every integer $n\\ge0$, $T_n\\le R_n$.",
+      "statement_audit": "Matched by scalar_tail_all for every n>=0, with actual infinite lattice tail and the exact stated scalar budget.",
+      "proof_correspondence_audit": "Finite rational checking, monotone coefficient tails, Mellin/heat estimates and harmonic large-index bounds.",
+      "lean_targets": [
+        "BecknerOnofri.Target.scalar_tail_all"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.13",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-circle-remainder",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 3639,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-circle-remainder}\nOne has\n\\begin{equation}\\label{eq:section5-global-circle-remainder}\n \\Ent(p)-\\sum_{n\\ge1}\\frac{r_n^2}{n}\n \\ge\\sum_{n\\ge1}w_n(t)(r_{n+1}-tr_n)^2.\n\\end{equation}",
+      "statement_audit": "Matched by circle_entropy_remainder, including summability of the nonnegative remainder. The source context assumes smooth strictly positive even density; the target requires only C3 regularity plus continuity/positivity/evenness and mass one.",
+      "proof_correspondence_audit": "Actual Poisson flow, Hardy/outer factorization, Fisher dissipation and integration from the initial density to uniform measure.",
+      "lean_targets": [
+        "BecknerOnofri.Target.circle_entropy_remainder"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.14",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-convex-order",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 3720,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-convex-order}\nSuppose $p(\\theta)=e^{F(\\cos\\theta)}$ is a probability density, with $F$ smooth, increasing, and convex. Its first cosine moment $t=r_1$ is nonnegative, and\n\\begin{equation}\\label{eq:section5-global-moment-convex-order}\n r_2\\ge m_2(t),\\qquad |r_3-m_3(t)|\\le6(r_2-m_2(t)),\\qquad \\Ent(p)\\ge I(t).\n\\end{equation}",
+      "statement_audit": "Matched by circle_logconvex_comparison: actual first, second and third cosine moments, nonnegative first moment, and the entropy rate bound. Target needs continuous convex monotone F, covering the smooth source case.",
+      "proof_correspondence_audit": "Comparison with the actual von Mises/Bessel family, signed moment inequalities and entropy variational bound.",
+      "lean_targets": [
+        "BecknerOnofri.Target.circle_logconvex_comparison",
+        "BecknerOnofri.Target.circle_entropy_rate_lower"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.15",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-gamma-entropy",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 3768,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-gamma-entropy}\nUnder the hypotheses of Lemma~\\ref{lem:section5-global-convex-order},\n\\begin{equation}\\label{eq:section5-global-gamma-entropy}\n \\Ent(p)\\ge2I_B(t)+\\gamma(t)+\\frac\\varepsilon2r_2^2+\n c\\sum_{n\\ge3}\\frac{r_n^2}{n}.\n\\end{equation}",
+      "statement_audit": "Matched by circle_gamma_actual_density with the exact binary cost, gamma, 21/1000 second moment and 27/40 higher harmonic sum.",
+      "proof_correspondence_audit": "Combines the proved Poisson remainder, actual convex-order moment constraints, entropy rate and scalar minimization.",
+      "lean_targets": [
+        "BecknerOnofri.Target.circle_gamma_actual_density"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.16",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-small-gamma",
+      "kind": "lemma",
+      "title": "",
+      "source_line": 3794,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-small-gamma}\nFor $0\\le t\\le1/16$, $\\gamma(t)\\ge(3/40)t^4$.",
+      "statement_audit": "Matched by circle_gamma_small on the full closed interval 0<=t<=1/16 with exact coefficient 3/40.",
+      "proof_correspondence_audit": "Quartic entropy-rate bound and exact weighted scalar algebra; no sampled-value assumption.",
+      "lean_targets": [
+        "BecknerOnofri.Target.circle_gamma_small"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.17",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-global-curvature",
+      "kind": "lemma",
+      "title": "Finite rational curvature check",
+      "source_line": 3929,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-global-curvature}\nFor $p\\in\\mathscr P$ with positive entries and $\\sum_jq_j=0$, writing $m=\\sum_jx_jq_j$, one has\n\\begin{align}\n m=0&\\quad\\Longrightarrow\\quad q^TWq\\le\\frac9{10}\\sum_j\\frac{q_j^2}{p_j},\\label{eq:section5-global-fixed-curvature}\\\\\n q^TWq&\\le\\frac{19}{20}\\sum_j\\frac{q_j^2}{p_j}+350m^2.\\label{eq:section5-global-all-curvature}\n\\end{align}",
+      "statement_audit": "Matched by both spin curvature targets, with positive entries, zero-mass direction, fixed/free mean and exact constants 9/10, 19/20 and 350.",
+      "proof_correspondence_audit": "Exact finite count-space quadratic forms, matrix positivity and feasible-set bounds.",
+      "lean_targets": [
+        "BecknerOnofri.Target.spin_fixed_mean_curvature",
+        "BecknerOnofri.Target.spin_all_mean_curvature"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.18",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "cor:section5-global-parabola",
+      "kind": "cor",
+      "title": "Global supporting parabolas",
+      "source_line": 3971,
+      "section": "high_dimension",
+      "statement_tex": "\\label{cor:section5-global-parabola}\nLet $p\\in\\mathscr P_s$ have positive entries and let $\\lambda,\\eta\\in\\mathbb R$. If\n\\begin{equation}\n \\delta\\ge\\max_j\\left|2\\log(p_j/b_j)+2-2(Wp)_j-\\lambda-\\eta x_j\\right|,\n\\end{equation}\nthen for every $q\\in\\mathscr P_t$,\n\\begin{equation}\\label{eq:section5-global-parabola}\n F(q)\\ge F(p)+\\eta(t-s)-350(t-s)^2-5\\delta^2.\n\\end{equation}\nAlso, for $p,q\\in\\mathscr P_t$ with $p>0$,\n\\begin{equation}\\label{eq:section5-global-entropy-convexity}\n F(q)\\ge F(p)+\\ip*{\\nabla F(p),q-p}+\\frac15\\Hr(q\\mid p).\n\\end{equation}",
+      "statement_audit": "Matched by spin_supporting_parabola and spin_fixed_mean_entropy_convexity, including boundary q, positive reference p, actual gradient residual and exact constants.",
+      "proof_correspondence_audit": "Integration of the proved curvature bounds, relative entropy remainder and completing the scalar square.",
+      "lean_targets": [
+        "BecknerOnofri.Target.spin_supporting_parabola",
+        "BecknerOnofri.Target.spin_fixed_mean_entropy_convexity"
+      ],
+      "lean_modules": [],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.19",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "lem:section5-quartic-reduction",
+      "kind": "lemma",
+      "title": "Quartic reduced functional",
+      "source_line": 4175,
+      "section": "high_dimension",
+      "statement_tex": "\\label{lem:section5-quartic-reduction}\nFor $v$ as in \\eqref{eq:section5-first-shell-coordinates},\n\\begin{equation}\n \\int_{\\T^\\d}v^3\\,\\dd\\muunif=0.\n \\label{eq:section5-no-cubic-resonance}\n\\end{equation}\nThe homogeneous quadratic term in $w(1,v)$ is\n\\begin{equation}\n w_2(v)=\\frac12((2\\pi)^{-\\d}(-\\Delta)^{\\d/2}-\\Id)^{-1}P_{K^\\perp}(v^2).\n \\label{eq:section5-quadratic-slaving}\n\\end{equation}\nMoreover, as $(\\delta,r)\\to(0,0)$ with $r_j\\ge0$,\n\\begin{equation}\n \\Psi_{\\d,\\tau}(r)=\\delta S+Q_{4,\\d}(r)+O\\bigl(S^3+|\\delta|S^2\\bigr),\n \\label{eq:section5-reduced-expansion}\n\\end{equation}\nwhere\n\\begin{equation}\n Q_{4,\\d}(r)=a_\\d\\sum_{j=1}^\\d r_j^2+b_\\d\\sum_{1\\le i<j\\le\\d}r_ir_j,\n \\label{eq:section5-quartic-form}\n\\end{equation}\nwith $a_\\d$ and $b_\\d$ defined in \\eqref{eq:intro-kappa}.",
+      "statement_audit": "Exact continuous graph, Sobolev bounds and physical two-parameter quartic expansion:225. Exact Fourier quadratic slaving and both genuine all-real-s Hs cubic Taylor remainders on the same graph:235. Same-graph analyticity in every fixed physical Hs Hilbert norm is now closed by236.",
+      "proof_correspondence_audit": "Actual complementary Green inverse, analytic continuous-space IFT, Fourier resonance and Schur calculation, symmetry and parameter remainder estimates. C-space IFT plus Sobolev bootstrap is an explicit technical variant of the source H^s-space IFT. Target236 applies analytic IFT in the actual complete weighted Wiener Banach algebra; uniqueness and bounded physical Fourier-Hs embedding identify the same graph. This closes the stronger-topology analyticity step.",
+      "lean_targets": [
+        "BecknerOnofri.Target.first_shell_moments",
+        "BecknerOnofri.Target.local_continuous_quartic_reduction",
+        "BecknerOnofri.Target.local_sobolev_quadratic_slaving",
+        "BecknerOnofri.Target.local_sobolev_analytic_graph"
+      ],
+      "lean_modules": [],
+      "new_local_eleven_progress": "236 root build, exact axiom audit, scan, frozen snapshot and independent Comparator passed. Default kernel accepts the solution. Whole manuscript incomplete.",
+      "proof_correspondence_document": "source_audit/LOCAL_ELEVEN_QUARTIC_PROOF_CORRESPONDENCE_20260926.md",
+      "sobolev_slaving_document": "source_audit/SOBOLEV_QUADRATIC_SLAVING_CORRESPONDENCE_20260926.md",
+      "sobolev_analytic_correspondence_document": "source_audit/SOBOLEV_ANALYTIC_GRAPH_CORRESPONDENCE_20260926.md",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.20",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section5-local-branches",
+      "kind": "prop",
+      "title": "Local critical branches",
+      "source_line": 4263,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:section5-local-branches}\nFix $\\d\\ge11$. For each $1\\le n\\le\\d$, there is a real-analytic function $r_{\\d,n}(\\delta)$ near $\\delta=0$ with\n\\begin{equation}\n r_{\\d,n}(\\delta)=-\\frac{\\delta}{2a_\\d+b_\\d(n-1)}+O(\\delta^2).\n \\label{eq:section5-branch-amplitude}\n\\end{equation}\nFor $\\tau>1$ sufficiently close to one, the sufficiently small nonzero critical points of $\\Phi_{\\d,\\tau}$ are exactly\n\\begin{equation}\\label{eq:section5-branches-explicit}\n \\begin{aligned}\n u&=v_{\\delta,I,x_0}+w(\\tau,v_{\\delta,I,x_0}),\\\\\n v_{\\delta,I,x_0}(x)&:=2\\sqrt{r_{\\d,|I|}(\\delta)}\\sum_{j\\in I}\\cos\\bigl(2\\pi(x_j-x_{0,j})\\bigr),\n \\end{aligned}\n\\end{equation}\nwhere $\\varnothing\\ne I\\subseteq[\\d]$ and $x_0\\in\\T^\\d$. Thus $I=\\{j:z_j\\ne0\\}$, and each $I$ determines one branch modulo translations. Writing $n=|I|$, the value of the functional on that branch is\n\\begin{equation}\n \\Phi_{\\d,\\tau}^{(n)}=-\\frac{\\delta^2}{4q_{\\d,n}}+O(\\delta^3).\n \\label{eq:section5-n-branch-pressure}\n\\end{equation}\nEvery $q_{\\d,n}$ is negative. The branches with $n<\\d$ are saddles. The branch with $n=\\d$ is a Morse--Bott local maximizer modulo translations\\footnote{The Morse--Bott condition means that the critical points form a smooth manifold and the kernel of the Hessian at each point is exactly the tangent space to that manifold; see \\cite[Section~2.6]{Nicolaescu2011}. Here the manifold is the translation orbit, and the Hessian is strictly negative in the transverse directions.} and has the largest value of $\\Phi_{\\d,\\tau}$ among the nonuniform local branches.",
+      "statement_audit": "234 combines a single analytic r(d,n) and actual U_I family: raw Hs and continuous exhaustive classification, smooth Euler profiles, O(delta^3) physical energies, proper-support saddles, full-mode Morse–Bott local maxima in every Hs topology above d/2, and strict EReal energy ordering on one common positive-delta neighborhood.233 supplies uniform full-mode Sobolev profiles. Core branch conclusions are closed; Hs-valued graph analyticity is closed by236; explicit all-support active-eigenvalue asymptotics, negative signs and exact multiplicities are now closed by237.",
+      "proof_correspondence_audit": "Analytic coordinate and squared-difference division, nonzero factor, phase/permutation covariance, common inverse amplitude witness, full graph reconstruction follow the source core route. Scalar even-series factoring/inversion is a documented IFT variant. Saddle positive direction is the inactive-coordinate Hessian; negative direction uses the source complement spectral gap instead of additionally identifying every active Hessian eigenvalue. Target237 now also completes every active squared-amplitude Hessian: actual second derivative, Schwarz symmetry and analytic row identities, radial analytic division, parity remainder and physical-delta transfer. The entire matrix and eigenspace dimensions are proved, including n=1.",
+      "lean_targets": [
+        "BecknerOnofri.Target.local_quartic_signs",
+        "BecknerOnofri.Target.local_quartic_pressure_order",
+        "BecknerOnofri.Target.local_fullmode_stationary_hessian",
+        "BecknerOnofri.Target.local_supported_stationary_branch",
+        "BecknerOnofri.Target.local_supported_energy_family",
+        "BecknerOnofri.Target.local_equal_active_fourier_modes",
+        "BecknerOnofri.Target.local_supported_classification",
+        "BecknerOnofri.Target.local_proper_support_saddle",
+        "BecknerOnofri.Target.local_fullmode_morse_bott",
+        "BecknerOnofri.Target.local_stable_supported_classification",
+        "BecknerOnofri.Target.local_active_squared_hessian"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.QuarticSignsEleven",
+        "BecknerOnofri.LocalElevenCore.SubsetEnergyFamily",
+        "BecknerOnofri.LocalElevenCore.SubsetEnergyComparison",
+        "BecknerOnofri.ActiveSquaredHessianDefinitions",
+        "BecknerOnofri.LocalElevenCore.ActiveHessianTrustedBridge"
+      ],
+      "new_local_eleven_progress": "237 root build, exact target axiom audit, scan and independent default-kernel Comparator passed. Whole manuscript and full current Comparator incomplete.",
+      "proof_correspondence_document": "source_audit/STABLE_SUPPORTED_CLASSIFICATION_CORRESPONDENCE_20260926.md",
+      "fullmode_local_correspondence_document": "source_audit/FULL_MODE_LOCAL_MAXIMUM_CORRESPONDENCE_20260926.md",
+      "sobolev_slaving_update": "Both Hs cubic slaving remainders closed by235; Hs-valued graph analyticity closed by236; all-support active-Hessian formulas and multiplicities closed by237.",
+      "active_hessian_correspondence_document": "source_audit/ACTIVE_SQUARED_HESSIAN_CORRESPONDENCE_20260926.md",
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.21",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "prop:section5-global-onset",
+      "kind": "prop",
+      "title": "Global minimizers and pressure onset",
+      "source_line": 4361,
+      "section": "high_dimension",
+      "statement_tex": "\\label{prop:section5-global-onset}\nFix $\\d\\ge12$. There is $\\varepsilon_\\d>0$ such that, for\n\\begin{equation}\n \\betas(\\d)<\\be<\\betas(\\d)+\\varepsilon_\\d,\n \\label{eq:section5-onset-beta-range}\n\\end{equation}\nevery global minimizer of $\\Ec_\\be$ has density $\\rho_{\\be,x_0}=e^{u_{\\be,x_0}}/Z(u_{\\be,x_0})$, where $u_{\\be,x_0}$ belongs to the full $\\d$-mode branch \\eqref{eq:section5-full-branch-profile}. Moreover,\n\\begin{equation}\n \\Pc_\\d(\\be)=\\frac\\d{2\\kappa_\\d}\\left(1-\\frac{\\betas(\\d)}\\be\\right)^2\n +O_\\d\\bigl((\\be-\\betas(\\d))^3\\bigr)\n \\quad\\text{as }\\be\\downarrow\\betas(\\d).\n \\label{eq:section5-pressure-onset}\n\\end{equation}\nFor the order parameter from Theorem~\\ref{thm:intro-high-dimensional},\n\\begin{equation}\n M(\\rho)^2=\\sum_{|k|=1}|\\widehat\\rho(k)|^2,\n \\label{eq:section5-order-parameter}\n\\end{equation}\none has, uniformly over the translation orbit,\n\\begin{equation}\n M(\\rho_\\be)=\\sqrt{\\frac{2\\d}{\\kappa_\\d}}\\,\\delta^{1/2}+O_\\d(\\delta).\n \\label{eq:section5-order-parameter-onset}\n\\end{equation}",
+      "statement_audit": "Actual pressure onset, full orbit classification/all-Hs profile, literal complete |k|=1 shell and uniform first-shell density order-parameter asymptotic are now configured, built and axiom-audited. New onset targets await Comparator increment.",
+      "proof_correspondence_audit": "Global compactness plus endpoint rigidity puts all optimizers on the analytic branch. Uniform Fourier/Wiener bootstrap implements the source Sobolev regularity/compactness upgrade. Order parameter uses the exact Euler multiplier and the existing diagonal amplitude estimate; its constant is uniform over every global optimizer and translation, with no extra endpoint premise.",
+      "lean_targets": [
+        "BecknerOnofri.Target.first_shell_order_parameter",
+        "BecknerOnofri.Target.order_parameter_onset",
+        "BecknerOnofri.Target.full_branch_onset",
+        "BecknerOnofri.Target.pressure_onset"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.OrderParameterDefinitions",
+        "BecknerOnofri.OrderParameterOnset",
+        "BecknerOnofri.OrderParameterShell",
+        "BecknerOnofri.OnsetConsequences"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.22",
+      "statement_clause_coverage": "complete"
+    },
+    {
+      "source_label": "cor:section5-defect-onset",
+      "kind": "cor",
+      "title": "Quadratic vanishing of the coefficient defect",
+      "source_line": 4440,
+      "section": "high_dimension",
+      "statement_tex": "\\label{cor:section5-defect-onset}\nFor every $\\d\\ge12$,\n\\begin{equation}\n \\Cc_\\d(A)=\\frac\\d{2\\kappa_\\d}\\left(1-\\frac{A}{\\As(\\d)}\\right)^2\n +O_\\d\\left(\\left(1-\\frac{A}{\\As(\\d)}\\right)^3\\right)\n \\quad\\text{as }A\\uparrow\\As(\\d).\n \\label{eq:section5-defect-onset}\n\\end{equation}\nAt the pressure level,\n\\begin{equation}\n \\begin{gathered}\n \\Pc_\\d'(\\betas(\\d)-)=\\Pc_\\d'(\\betas(\\d)+)=0,\\qquad\n \\Pc_\\d''(\\betas(\\d)-)=0,\\\\\n \\Pc_\\d''(\\betas(\\d)+)=\\frac\\d{\\kappa_\\d\\betas(\\d)^2}>0.\n \\end{gathered}\n \\label{eq:section5-pressure-derivatives}\n\\end{equation}",
+      "statement_audit": "All conclusions of this corollary are now implemented: coefficient-defect cubic-error asymptotic, actual pressure derivative at the threshold, both first-derivative limits, both second-derivative limits, positive right curvature, and the two quantitative derivative expansions in the proof. Eight new source-facing targets including this work are being validated in the 197-target configuration.",
+      "proof_correspondence_audit": "Exact coefficient-pressure duality gives the coefficient expansion. The actual analytic Lyapunov–Schmidt branch energy is differentiated using power-series vanishing orders, inverse-parameter differentiation, and rigorously bounded quotients. This preserves the analytic-branch route, with a technical variation: the paper introduces an analytic remainder in delta, while Lean works in amplitude and controls inverse-parameter quotients. An independent existential analytic-delta remainder target is not asserted. No arbitrary big-O estimate is formally differentiated.",
+      "lean_targets": [
+        "BecknerOnofri.Target.coefficient_onset",
+        "BecknerOnofri.Target.pressure_derivative_at_threshold",
+        "BecknerOnofri.Target.pressure_first_derivative_limits",
+        "BecknerOnofri.Target.pressure_second_derivative_limits",
+        "BecknerOnofri.Target.pressure_first_derivative_expansion",
+        "BecknerOnofri.Target.pressure_second_derivative_expansion"
+      ],
+      "lean_modules": [
+        "BecknerOnofri.AnalyticDerivativeOrder",
+        "BecknerOnofri.BranchEnergyDerivatives",
+        "BecknerOnofri.AmplitudeDifferentiability",
+        "BecknerOnofri.SupercriticalEnergyDerivatives",
+        "BecknerOnofri.BranchFirstDerivativeRemainder",
+        "BecknerOnofri.BranchSecondDerivativeRemainder",
+        "BecknerOnofri.PressureSecondDerivative",
+        "BecknerOnofri.PressureDerivativeOnset",
+        "BecknerOnofri.PressureCurvatureOnset"
+      ],
+      "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+      "source_number": "5.23",
+      "statement_clause_coverage": "complete"
+    }
+  ],
+  "updated_utc": "2026-09-27T09:05:11.766823+00:00",
+  "statement_encoding_complete": true,
+  "proof_correspondence_complete": true,
+  "current_verification": "Exact257 build and axiom audit passed; full Comparator passed. Mode: macOS development adapter, default kernel replay, no Linux isolation.",
+  "reference_closure_audit": "source_audit/reference_audit_20260930/REPORT_ZH.md",
+  "literal_every_sentence_formalized": false,
+  "numbered_statement_clause_coverage": {
+    "complete": 50,
+    "partial": 1,
+    "partial_source_number": "4.2",
+    "scope": "The clauses of the 51 thm/lemma/prop/cor statements; does not count mathematical remarks or all proof sentences."
+  },
+  "other_numbered_statements": [
+    {
+      "number": "5.6",
+      "kind": "remark",
+      "label": "rem:spectral-energy-restriction",
+      "source_line": 3182,
+      "plain_summary": "说明 5.5 的混合条件不能删除，并给出反例。",
+      "statement_clause_coverage": "not_separately_formalized",
+      "status": "未列入已有形式化目标；源码检索未找到该反例的独立形式证明",
+      "note": "注记不属于此前枚举的 thm/lemma/prop/cor 环境，因此此前 51 项清单未包含它。所需的有条件能量比较已经证明。"
+    }
+  ],
+  "source_order_readable_inventory": "source_audit/reference_audit_20260930/PAPER_ORDER_ZH.md"
+}

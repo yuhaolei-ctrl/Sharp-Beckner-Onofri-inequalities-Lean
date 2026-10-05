@@ -1,0 +1,1574 @@
+{
+  "source_root": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917",
+  "policy": "All project module/namespace roots are prefixed Legacy. Green-kernel estimates generalize the dimension-ten image constant to a dimension-dependent finite constant. No axioms or placeholders added.",
+  "original_files": [
+    {
+      "module": "Legacy.BecknerOnofri.AngularCubeOrder",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularCubeOrder.lean",
+      "original_sha256": "5bdb2d82cc6354fbefd6162c0d29d0cbf76f874ba4210ad46c7f09725b099931",
+      "copied_sha256": "7d3b1997bd47cfc6d759d6e1bca347fe04d64942b95978dc45d6918d307c2cb5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularInactiveCoordinates",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularInactiveCoordinates.lean",
+      "original_sha256": "5c64dd5ed939d72dbb809694237d79ca165e560fa13622859224ae0e80b1eed3",
+      "copied_sha256": "f0256e21c94f28c33a437581b683d0f9a9bf8800a1ff48c7c61a53f5610c244b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularIndexCounts",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularIndexCounts.lean",
+      "original_sha256": "7c09b9db03726c58d46d8f1d841b69b33c42f8cda17e98f77cfe85c4c3d5025c",
+      "copied_sha256": "9086e78723969f4d797b8c462e7ac1cf8e8a3b6cf66120b09219e83617513a25",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularMixedL2",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularMixedL2.lean",
+      "original_sha256": "406370188bb48d69f9f62dbeae7c9bc68ef491e908de1588914abb048606bf33",
+      "copied_sha256": "4dc30fb2dd5b43331138fbbfe4e23ea14f8ffafec746e9b112fef6dffa8ef804",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularMixedTerms",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularMixedTerms.lean",
+      "original_sha256": "50d1ea7157752e9e9ed7b89d4314f01289ada2684794117005f5bdb935c5ec0b",
+      "copied_sha256": "be10694690f176cb59532a50f633b0e1b1f5cdf65d4bf25585a41d5dcb215137",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularPartialSigns",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularPartialSigns.lean",
+      "original_sha256": "cc4ea8a750968d170c5c6419b11d3f7149a5774f3491f3b3c492925ed33c267b",
+      "copied_sha256": "a1b5a6cec27c5f0d07064e2f2dea21f95652bba1baf58bf30d4524b7c6bfa9dd",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularPolynomialPositivity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularPolynomialPositivity.lean",
+      "original_sha256": "8f5e3f880a7bcdf1a7859ff8a2f2c2909b38ddad67ade5ccc1047669301e98f3",
+      "copied_sha256": "aedb3409d267e26bf1fcffbacf20c2bab51efd6cedeb05db7b1f1fd7c2b9c927",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.AngularSpectralIntertwining",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/AngularSpectralIntertwining.lean",
+      "original_sha256": "e5146615c54a15bdc29dd67b7292fc68f2ee68a906fea1708abcbdbe3bb278ec",
+      "copied_sha256": "d9a941b1360156d98eb492ed09df158cbdb77be96cf52ae2008302bc269af775",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.BernsteinPositiveCoefficients",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/BernsteinPositiveCoefficients.lean",
+      "original_sha256": "dae4e3b769717f1b9d8dd953c8d03be17d9a8acdaf087ba79e222a4e46ac0964",
+      "copied_sha256": "ec11fc334ad37c120bf0511bc8981657749fd9919761ba26e1947d3d056e4408",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.BoundedL2Multiplier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/BoundedL2Multiplier.lean",
+      "original_sha256": "69381ef510b0fa4741e10593fe0dc2539412b05e8f9efa954b52a57132da43a2",
+      "copied_sha256": "280832e7b8840455ed8aba88fbe2a77134c4699ef2d43cd816024d80796f3e59",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ChebyshevDerivativeBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ChebyshevDerivativeBound.lean",
+      "original_sha256": "388914eda254097a431d29441949e70521334a30891fe82988c1d2e5f3aafe8b",
+      "copied_sha256": "90cf436be9d5c81ce02840961233586cd9d6e5fbb540a13e464237bb51a8a7e6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ChebyshevMixedSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ChebyshevMixedSeries.lean",
+      "original_sha256": "b045d1e6c043931357ed57b8233baeab23abf9cf2ad5f04762fb801fe75942b7",
+      "copied_sha256": "f847171bd9dc5e1d12c64ea467e448b295dee087b61aaa29e55ee28cd2ee1e16",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ChebyshevProfileBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ChebyshevProfileBounds.lean",
+      "original_sha256": "bc8c87de54b5d9226bef5d796cc3f2070936edb300c3c03fc72bca41911c12ac",
+      "copied_sha256": "ddd83003b749f5142a5757dd60d6d19a3ec8d5a5e365602da8581f54e725f9c6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ChebyshevProfileDefs",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ChebyshevProfileDefs.lean",
+      "original_sha256": "8e955cebc02efa83711b52d3db3b2d009bdde1dcfbff7fade9439bf26444dec2",
+      "copied_sha256": "d986663d76eec6d14f13478d2f86a2f00438ba804d097f1b8297cd0062010370",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ChebyshevProfileIdentification",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ChebyshevProfileIdentification.lean",
+      "original_sha256": "4e547ce306c6ca5733838a3a9c5b0972a35ee1ffc2086b34f91b545e887a302e",
+      "copied_sha256": "5e953a99c2ec960d9657aa30a8306dc215267809e01e00b52fe9d3d88e14ed4c",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleBoundaryHeat",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleBoundaryHeat.lean",
+      "original_sha256": "5d19725675802a96d167fb50bebc6704ab1a5704de2072f1b2066352e996f405",
+      "copied_sha256": "296b0778a3297e0f178272f01791942afda93d2a576d708534c89d51dd5f206c",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleDirichletHeat",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleDirichletHeat.lean",
+      "original_sha256": "fcf3e85c06b8f935e481b92b5e6429360b949427687b7a7aef04397f1b89b164",
+      "copied_sha256": "1ac8ad46e84b6dc69cddc91a6220a5df99c6d07a9784dfb21d15ecedcae1b439",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatDerivative",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatDerivative.lean",
+      "original_sha256": "7accc294ca4144ef0f0dbea50bbca26e4cb2217ae47146bfbf9521cc9a382cc3",
+      "copied_sha256": "4648900134208d7c9ae2306274431ddf8543e07ff947eed824dc7462a0045131",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatDerivativeTail",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatDerivativeTail.lean",
+      "original_sha256": "dc4395ca2bb2e80d4cf1a43dcdd99786827a2c8a1971890fbe895a813cbe11a2",
+      "copied_sha256": "b3da8f55721b66a7df235b6abf1153069af04cedd83cf6c9a82dc1dea9c84461",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatGeometry",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatGeometry.lean",
+      "original_sha256": "882a6a5df79e4479ee1a772bb4935e3c0776c39c9b508d176a76b6bf95ae9f36",
+      "copied_sha256": "30775fc78d4a46851ffcc728b9f56bca4127d4787a736969197ed72957a34853",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatLargeTime",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatLargeTime.lean",
+      "original_sha256": "bc526d862adcfbd3c9d4c503b81179d383b6e239397b422361b32760e6fcc47c",
+      "copied_sha256": "b778c8f2952e438c4b3441c540886b354a56a3a46a1a94e23cff7c9b0ecad6e0",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatPoisson",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatPoisson.lean",
+      "original_sha256": "f7404ee86702ef0839327879ebc54c5c913e4af2301ca430d7bf9d95afe30eb9",
+      "copied_sha256": "5f5f0b498d348bcf8ac4ea41fff38a4c7668698fa98974c46cdbf04b5ea543b5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatPoissonAux",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatPoissonAux.lean",
+      "original_sha256": "acf8e632b2d8061b1808cc8b06b8084b1a3885873d71fa76304fe04da7fde5a2",
+      "copied_sha256": "39561e707efafc73965a1a15a71e6665b67e8ec2572f3490bc392bb1b08d42b3",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CircleHeatStrict",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CircleHeatStrict.lean",
+      "original_sha256": "864a926142f8d3efa80cdc7676d7e8475b1ab0c64db0ffaf4c1d24ac8759d481",
+      "copied_sha256": "25b09e062319418b0a460f88b14aeebe55e0e9a8124063f24f23350016ab9ff1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ClosedConvexSmoothSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ClosedConvexSmoothSeries.lean",
+      "original_sha256": "49a06bc9a442b2518817064c45c1b51c8be5fdcbe6da36b2a6d6ba524b0a2034",
+      "copied_sha256": "92dd0762580df597f91f61381685ceb0f6630de97f72c6c4dbe2507ab402f728",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ClosedIntervalDerivativeSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ClosedIntervalDerivativeSeries.lean",
+      "original_sha256": "3754392d399c7d231d3fb8848bf27e765972a0234045b8914a8e90d667e37497",
+      "copied_sha256": "2e7ec1fddae9c6337a180e68cfe5484b2fe09e0fa9fc22e8a56019097889d19b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CoordinatePolarization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CoordinatePolarization.lean",
+      "original_sha256": "aa2f7c32c0af1420cbdce475a87bf3769bf06336d7cdf63b6523f3429163fe53",
+      "copied_sha256": "2c3f347e158c12c0ea18f0cd8a7c6ae0e19adca93844aa4ae5d684444b5591e0",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CoordinateReflection",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CoordinateReflection.lean",
+      "original_sha256": "42e9dd5c13a0975f8feeb494c3e1989b2a43f0bb6c61560c97a89dabc10b8ba5",
+      "copied_sha256": "c543582aa0e71f0067e362b4f9ba7a5de0db0f4fd71c0b85b72ae54a9d7055b3",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CosineFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CosineFourier.lean",
+      "original_sha256": "e4a882ecde326ea807e1f98efa41febe89ea86cd638f5a4315287a9fd3aa1e2b",
+      "copied_sha256": "ed47596da5d5c492d51e664aabfdfda070e95ea974e48dd33bd195cd14d8cf95",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CosineMixture",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CosineMixture.lean",
+      "original_sha256": "c8d4002fd63806834f03c93c6a7928066d34fb9e5f0262f3122529f58958cfda",
+      "copied_sha256": "a51b7b04f6532d41cd02c799642981455b4302800a1b31d988af3688e1c12d46",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CosineMomentWeight",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CosineMomentWeight.lean",
+      "original_sha256": "86e8000f99d70ead9e34dcceb3db5b1211260700397144914dd4cb4489754064",
+      "copied_sha256": "f8a3ac04c7a13391bf20d940fcecb0b7575422677a27392ebecc1fd173b32bf2",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CountableCosineMixture",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CountableCosineMixture.lean",
+      "original_sha256": "9fc9d760efeed6f06b79a2b11fa3cb3a286db30ca5df615b825005fe9e82dbac",
+      "copied_sha256": "d6cbe5271e708bd53c620eb41a3e2a3fe4422eddce141aa4649c9ea87b810b6b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.CubeProfileMonotone",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/CubeProfileMonotone.lean",
+      "original_sha256": "5e7d52a9c95205880e9eb5f9e08a3bedb4a01649516b515cfa8072e43d85f873",
+      "copied_sha256": "aa7cf4715331c573dcbb68626a3a0ed88b516a8197de76ef00527a0553aac73d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.Endpoint",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/Endpoint.lean",
+      "original_sha256": "2c5e377f34b62e9bf54fde01b2c47d959da6516031fd6c9a659a21f6b0e26ef7",
+      "copied_sha256": "390f80b1ddb3a2b5dd8ed1774b10ddf882e6c024ecfc9ea29186a00a42e54ed9",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EndpointDensityFinitePotential",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EndpointDensityFinitePotential.lean",
+      "original_sha256": "b0974d4f669d5f933042d3a368a0e816c3ec82b0f367700088febab25a9be00d",
+      "copied_sha256": "3b7f39f8c84e60d4181b8a6f7bdc082e26466b8eeb0055de5a4d0f3bde6921c6",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EndpointDensityPotentialLimit",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EndpointDensityPotentialLimit.lean",
+      "original_sha256": "47cecc918b0eafc04eb40658f35065d44748a64c3f8652ef0808fb001ccf3957",
+      "copied_sha256": "b4b6f9ec8d5c8c35cd25a99ef5a921baae824cfea44610bb6ec3e8435a3e4a04",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EntropyVariationalEquality",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EntropyVariationalEquality.lean",
+      "original_sha256": "3ce4d0b2c1339961a28781c585c5e1a1f744804a952937660481430fa1514e90",
+      "copied_sha256": "42accfeeb88c15a05be8024de14d03b98aa2fa40841cb84051a339a127956f71",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerCosineProfile",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerCosineProfile.lean",
+      "original_sha256": "f4a87bb1bfa56f741e42fd2ee7556c8f7d1c467f3d68b0fc1ab8ae12a3fb0434",
+      "copied_sha256": "02244ec6d2e3af4e42f8423459df386b0af31fc35cd7cf85ee5eb98115ce9a57",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerCriticalComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerCriticalComparison.lean",
+      "original_sha256": "fc20add06178166f33259c0db586059f083ba40cc18bdcdfbead2bf1dd9dbe74",
+      "copied_sha256": "4b024fb92c0017ff0143531eaa773c66532465ca99018406fdfc295de50be0a9",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerHigherPartialSigns",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerHigherPartialSigns.lean",
+      "original_sha256": "d8babfd7a058df9d6475badd456cb1a46012b1051bde30c3332ef3554aad765e",
+      "copied_sha256": "23ef6c609767196c6c0e15df7a7b28936cdc511fb7f99ff7aa2e92962dc37313",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerUnitProfiles",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerUnitProfiles.lean",
+      "original_sha256": "23b5b94351b003c278c7698d35baa65d3a60f6f22a84e39bc84e7d2a480a8cb3",
+      "copied_sha256": "6c39721641023ba98539a41b5a341109d06b9c401995b7f3ce597aac193c7a72",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerWeightedEquation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerWeightedEquation.lean",
+      "original_sha256": "0f2bc2c26decd1c5664ab39e43fa2073aec988ffbc53c43c67bb78b680d883dd",
+      "copied_sha256": "eb4669ecae929cb08ad1bfb0ef874ddf353eee80ebe2c179f23661d42ace6839",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.EulerWeightedProfiles",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/EulerWeightedProfiles.lean",
+      "original_sha256": "07cf7d92f14900c7f2f9fd958816af4d36a25a910c76b95e0dda169dfa647b49",
+      "copied_sha256": "819a678a9c0ba462c59ef5c3ba6373e844803272a0310be6262e3786d59c510f",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ExponentialL2Continuity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ExponentialL2Continuity.lean",
+      "original_sha256": "12079d868532a9932891ba1514bfa1ec91d4137ee9be93019d9c362340647f3c",
+      "copied_sha256": "83171f158a07d47c153bf4eceafd07dfb7423e8a4335b8db9db55c3a5f402105",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ExponentialPartitionContinuity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ExponentialPartitionContinuity.lean",
+      "original_sha256": "c765853fb1af43d42c09cc7746fe2afdd4f0d1ee93eb2e9cb7ff8848189cb716",
+      "copied_sha256": "3f6973e299eafe9d76fb708d2a50ee8582520af3f379cd369194c7a4b3d524d5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.FiniteDifferenceCalculus",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/FiniteDifferenceCalculus.lean",
+      "original_sha256": "9ff6421e822853a5ae63734636fe886077e951f8db3c9c6c59637fb9f35e51b6",
+      "copied_sha256": "40c26df1bc71def0ebe91949c9dcaddd7d0b63147898700492a3f18693d0579f",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.FiniteDifferenceDefs",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/FiniteDifferenceDefs.lean",
+      "original_sha256": "8712290db224c27694c183a2c4ecf84033b99b6e5702716f3afb085dbbda5f00",
+      "copied_sha256": "a3487fa048e66f1dc779901cd7c8bf467abf7974c3ddcba72b7cd8f5ebdfcdd2",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.FiniteDifferenceMeanValue",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/FiniteDifferenceMeanValue.lean",
+      "original_sha256": "57a1c308386c282721db404fc4039b444b9ac8f5a6d9f76b671210a938de0044",
+      "copied_sha256": "a2393d83f22b9e245fdfa24d11083dff1f3ca0888c771fbb178c1f5f8a8d1095",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.FiniteDifferenceRecurrence",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/FiniteDifferenceRecurrence.lean",
+      "original_sha256": "a61c17ecaabb6bc184198ed28fa7b8afcbd792b7e7d60050dea7f693b497900f",
+      "copied_sha256": "024baf704fc3586eea6e14c21752f2de153832f243df4760026239f4285aedc8",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.FiniteDifferenceSmooth",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/FiniteDifferenceSmooth.lean",
+      "original_sha256": "7833e8681ec864ba7aa49ea195b8cfc478434fae2908c7a998d81b453fa0f529",
+      "copied_sha256": "d26a4a50d541a8579565a74987a0adf87c105d8e6b65abc686d82f91e20bac12",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GaussianCentral",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GaussianCentral.lean",
+      "original_sha256": "86d0f1fc3c3cdf9a073577c2b58807e3afa64598d3a011a395e09035eda710bc",
+      "copied_sha256": "d04660a9505b398f3215cf364ccf40606e830d235897993b6d1cae697f719332",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GaussianLattice",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GaussianLattice.lean",
+      "original_sha256": "8426cfeeca02586dbfcc9db1135df0ebfd00721619ae2274acd502c94cbacede",
+      "copied_sha256": "82fd2c82ab54e1e8661681534f444565adbed49be6e0fc249938b99f532374fb",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GaussianMellinTerm",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GaussianMellinTerm.lean",
+      "original_sha256": "363a6782b4bd22fe32106294ff1cac4335b4042ca02b36c16bf57e93e83926ef",
+      "copied_sha256": "2691febdb2932f941239bc3d6409263934b16fc1363b327d5819967d3c733bf4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GaussianRemainder",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GaussianRemainder.lean",
+      "original_sha256": "911959daf6f69ee5848cb315abc468f5732af0c4c17f73f8ae94621501c6aa74",
+      "copied_sha256": "b156ec7910fe8f5055de60c2b45ff80504e3ef3aafc4289e28943f9f4bf5e0ff",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GaussianTheta",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GaussianTheta.lean",
+      "original_sha256": "6adddfbb0ff712b30959d336339f70411ae538a2978a60ef25137cf1911a5d35",
+      "copied_sha256": "e7504fed274127a93f3b6f8a3826ae7c68f7aa4dbafa0030e512d6404307de5b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GibbsL2Continuity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GibbsL2Continuity.lean",
+      "original_sha256": "bd556b5076124f2f14eec91a5dc1dcc3e2693ce82e8d8efd9de77e5cb97159b9",
+      "copied_sha256": "0acdbedab884e5e4f96029bfa81de065bc0e46b69a2085c336fe2ed6b2067771",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenConvolutionJensen",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenConvolutionJensen.lean",
+      "original_sha256": "7ce1ede37db6ba856031fcb96e12fe85d56f818f315545dfcb90981c636cae42",
+      "copied_sha256": "e792fb00bbd3d8638ae34f787f91fa678c3c42afd86d36e42953b76f29a0850d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenDensityPotential",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenDensityPotential.lean",
+      "original_sha256": "c4e3bf1bcced29a27dc6f70e2ac435a768b0b0a3d9eb332af87b38698278cd24",
+      "copied_sha256": "ba0ac4d19f07cecef0b1dedd5dcf9d497d9ef5ca7f625c11e0f2479756c039b5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenDensityPotentialL2",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenDensityPotentialL2.lean",
+      "original_sha256": "622fa043de6d3d1182da16a21a90435742f9e583cd9d045e12af3782a470cddb",
+      "copied_sha256": "ed8ac888d8d0049973b5cfc8de28236edd4af133f34e9c8bad875bd12623c88b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenExponentialIntegrability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenExponentialIntegrability.lean",
+      "original_sha256": "ef851f17f61518870527b41d6061415c9d0aa5cafdb1f8cda6af04315b8d28f5",
+      "copied_sha256": "ad9713805ecd8fd63c3b64852afd8fab6892a7236f76921a1ae0303ad1b3a73e",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenHeatBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenHeatBounds.lean",
+      "original_sha256": "984b36eee222ed47b5ae4c8f1f0238262ff59a6bd1b0d5f18337d2d3a3de9fb8",
+      "copied_sha256": "4ae5eae3d32518c8b4028e4704d7882d9c3adee0774dfcc8846d9e967a2ef4d9",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenHeatFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenHeatFourier.lean",
+      "original_sha256": "42b0cb778931c08e0240931ae9ab66cb3d81f4d63f5ed0c627a958d9ae5adee9",
+      "copied_sha256": "47418981869f39c16142268ee6ad7056324514c7ba98bdfb8fe945139d191ad5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenHeatIntegrability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenHeatIntegrability.lean",
+      "original_sha256": "11b7d956370ad660c8a5bc80a39726e510e60dc4d2fa0c3528f4ae6f099a4913",
+      "copied_sha256": "5cb557d5300316a6fd958b15993f6c5b59aa2250a761d6c3d2afa42eca40ce67",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenHeatMeasurable",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenHeatMeasurable.lean",
+      "original_sha256": "1117e4904422e1e58dcdd4f76f06f3fca6c3c0965841d500b7fb4c792dae71ff",
+      "copied_sha256": "648ab93254fc3eccc64930ef42cad258f08ea3a31bc2e4d6b0f164596bc3f873",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenHeatPointwise",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenHeatPointwise.lean",
+      "original_sha256": "d8f84edbcc3a0e0e637bd1377770fd36975f2765bb7a9115eb366d31f86ca3bc",
+      "copied_sha256": "55c3b87bcd29f9c0d6021a8f688946973d22ab3bf3bb34e3616e35eadc6f80b8",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenPolarization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenPolarization.lean",
+      "original_sha256": "02880fbba8f5953cbbb8e2379394f6e22047ed4d3da63f39a41d2b99d5835dbb",
+      "copied_sha256": "8cc8917e8f31718cbf519b1f44e151ee965ad23013e121dd49821452e6be1734",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.GreenRoughEnergy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/GreenRoughEnergy.lean",
+      "original_sha256": "b099410af8879079f094e3d36a22c1936bf80ef527490b4c044b8cd2d5bb3de1",
+      "copied_sha256": "05bd15d9ac851708adf24802bd18af21f2ca50c0441aa940f36a7903c98d2c13",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.HeatDensityApproximation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/HeatDensityApproximation.lean",
+      "original_sha256": "ca38f0342590d4e2a76fffade5aa66c4ee3c8b8be1f383c030e91bd5efb66f43",
+      "copied_sha256": "4cbb5ed4397a8de9f6ab94be459bc084d9b4315499d23d94daa887f024c5922b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiAngular",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiAngular.lean",
+      "original_sha256": "0909d94d46b52f6c772455afab9e2353b547bec7a5358ac878e63a2a74b7dfd4",
+      "copied_sha256": "e0e18825703b8c43777169d1845e87c18b9bf169b4c55a07a73edfca1305e145",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiCircleHeat",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiCircleHeat.lean",
+      "original_sha256": "5dd2a44ad65d0794e895061ec0887bcedfd404cead54650a51032b12c7b55d52",
+      "copied_sha256": "e4c8774bd1d1a6ea909afbeb4f3957837aa5c6859eee856645a5c4ed2b87bed2",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiCompleteness",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiCompleteness.lean",
+      "original_sha256": "04e69bedccb8deaebe4699e2e0bde208fb83b93d1c2abf94fd93eaeade309b8a",
+      "copied_sha256": "50aed6f73b9b20c458717f91a76b3fe950c1dafcf44abff0c4f10026d4fc7bd4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiDerivativeBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiDerivativeBounds.lean",
+      "original_sha256": "84c33a6b6e3fe4244a8044388d86487fbc2a2ca75a55483d767ba3b27cc87b16",
+      "copied_sha256": "c4575bd1c2b1fff6ff85f5526146cfe258d693d03f7be996c0ed58f9927b4bbe",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiEigenfunctions",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiEigenfunctions.lean",
+      "original_sha256": "94cd683d3ba4760bae24fa9688efa31209782b4499ae0ba083340b405ec1dca9",
+      "copied_sha256": "a6a7f7f4b78900f786e1c9d0738020b0c730acf963a83333f3f0cde7c6822795",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatBounds.lean",
+      "original_sha256": "949a40629934756d40f54d5319f864c28887b96970fa330cd67518790c945a69",
+      "copied_sha256": "b40d141fe8a34eaf4f4fc4546d921a694ffc6d2472df724256a07cb41dd13f69",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatComparison.lean",
+      "original_sha256": "8065a5597f63de2d698f92ce7b216158dd28de4a22833da57759e6ce38b73506",
+      "copied_sha256": "78827006641f5bbfcf2af4cc353c6a5d5ec625c7c749a8440f236aefa47ce037",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatEquation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatEquation.lean",
+      "original_sha256": "332ea25962b4ee1b4b601cd07a8261eb33293b5bf37ecb6c884a63b2f4e635bb",
+      "copied_sha256": "bfaf3c97e989c1f6de7e005af49f8be82137f16f126a4e4a832d784f8bfe409f",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatFinite",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatFinite.lean",
+      "original_sha256": "44a4f5b3377d8b84b7c57a618238d81f966525998618b1093b424ac54c8bb612",
+      "copied_sha256": "4b2dfc191d926a0f044ac7be46f22177211ead7c62dd37dc218a304b694e8c58",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatFiniteComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatFiniteComparison.lean",
+      "original_sha256": "635f645ea8a9c2445905c888b706c0dca49425e467c15c62bdcbef502612bf65",
+      "copied_sha256": "a0f41bac3e497ee659099dbea7d31a7f3b27eb9c9d1e145aff16a6b8c34ca689",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatKernelAction",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatKernelAction.lean",
+      "original_sha256": "926f8b56134c9daa00f8519561fafb274da52eb35bab022ab1f90b98349a9f4f",
+      "copied_sha256": "47b2166d09f3ac93e7714e9602e5bcc1ac55cbfeb34a7784315b620708117fc9",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatNonnegative",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatNonnegative.lean",
+      "original_sha256": "4ddfb17ede6df877f5008eeb2470142969a8404f20382e637ea4e392e9575216",
+      "copied_sha256": "82dd3f3a1d4590c45416bc54f951633638e45d5b0b7dd0ff292c44c45897b040",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatSmooth",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatSmooth.lean",
+      "original_sha256": "2fdc77d1a83faf2a3d1ed70d2e393f929cd45a7f0ee3ce3ea309547c0eca57be",
+      "copied_sha256": "bcda946321804dcba7b110c0dba86dae9b4f30dd263dc4c2e084fbd81d7edbba",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiHeatStrictComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiHeatStrictComparison.lean",
+      "original_sha256": "6ddb088fce2fc45316a12aed81c16518f82184a79d1d4495cf5c32c4aeb1665a",
+      "copied_sha256": "731c04aa278fe3cdb594e517aade8a73f6130a87c81a9b5eaec40b1c44dfdd49",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiNeumann",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiNeumann.lean",
+      "original_sha256": "a80ab03bf62de0520a655afbd2669fac366e15cfd2b6001926964fff10248677",
+      "copied_sha256": "44d5facb5faec2c00496692b616cc96a4fc95deb99f5ae76e98bc3116d5f1f99",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiNormalizationBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiNormalizationBounds.lean",
+      "original_sha256": "4b96d061e3717f1b743bf042e361cb8c307a953c63bc45574857b216850eb53f",
+      "copied_sha256": "9871aa928c086800d9c3a480b12a72aa5dc7630e4d3b22662cacb4bc6cf20117",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiPolynomial",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiPolynomial.lean",
+      "original_sha256": "f38e10fa37db38e53367be166b0be25b81fb647cf20520cdd83b506c67824ebe",
+      "copied_sha256": "d230f46b61aca7539274900b978c34bd1f0afeea0c65e817f15d338f68b61ae1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorBasis",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorBasis.lean",
+      "original_sha256": "758a2a9c53853967febfb6c6ba2eedd8aa0026887e2dd53edaeae3a5bc7ecce1",
+      "copied_sha256": "1c405d811fcf56db15ef6dba6804a8a6575e51a69e6579eff64c5ea3ae5a5b48",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorCompleteness",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorCompleteness.lean",
+      "original_sha256": "3665bc2243064e2f726b51c3e07a7dc22ea84a7b84792364cc5d177a2c1d868c",
+      "copied_sha256": "e807d6f849be4cb23f6ca2de3a0d69ea6e32a6d9978baaf729fbb1af46aed60d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorHeatComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorHeatComparison.lean",
+      "original_sha256": "9456251bd71df1aa7fc468aecd5ddf20d809490aa7d8feae0a881cf0dfc7090d",
+      "copied_sha256": "ce6b1fcc8de5b5ef1993ab32af8db58de1aa10c07b92b472f6f8ea3f0ef1e0af",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorHeatKernel",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorHeatKernel.lean",
+      "original_sha256": "56e87c7136af52611e6c525c74d3e7f88995645c7d0720d1219184dcce38ae07",
+      "copied_sha256": "7719ca64703c46b10b85db3b8dd3325373f38c3768c6a1c45e3638540389d8f1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorHeatPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorHeatPairing.lean",
+      "original_sha256": "9c43b9fefe4061f03ce8d59c939e7fd4a349de1f41c06c35217a3391c79f2fe0",
+      "copied_sha256": "dd74dc4d7abffe5194bc3fa6913807e15d3c7688e02b927f344f6fb57e486e25",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorHeatStrictComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorHeatStrictComparison.lean",
+      "original_sha256": "ec01645204b0845c20f7ea20add6bbf4f81f815ba24f7c7be18237773e7b0144",
+      "copied_sha256": "3e37b0e18bee2e86fefea890da3358683965f819bda25efc8e1c3840bde6d384",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorKernel",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorKernel.lean",
+      "original_sha256": "b89da3c9fa77b3ef36e03d6af70fce9640c6918f415618ff0ea0d153e129760d",
+      "copied_sha256": "b1dd507e7c9bd58003983a7e18ab3068cf7ae79b5b29c94c76989e593d3f81d6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorMellinComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorMellinComparison.lean",
+      "original_sha256": "48dd9e7ee09afc23bbf5400edc1d3373ed6b31af5cd88400e9db29191955bf83",
+      "copied_sha256": "7db2e5e3f8a5aba3451d14637e36bc0f5e905bb769dbea6865e3f10eaeeb2967",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorMellinIntegrability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorMellinIntegrability.lean",
+      "original_sha256": "5b9b16a3d95b84ce2edfd8ab94d4934509122addb7157636257a2a3149108193",
+      "copied_sha256": "5f2e347fd7c5d97686561ac4531172f3c0fe1c66c951ca1e83a2db7c50587622",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorMellinKernel",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorMellinKernel.lean",
+      "original_sha256": "8b30c1b73172bfcd4fbc278a6353a526d21f5a11bdd6d45825d7bfcf03a21b2e",
+      "copied_sha256": "40f4447425a119139a9da0007188d21b6538e3b4e7f72fbc626a8c71b9555244",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.JacobiTensorSpectrum",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/JacobiTensorSpectrum.lean",
+      "original_sha256": "87ba193c863fa28d2b0c1b06eaf8a7f2cc18b4c06ddb4ca254dbeb74a46889c2",
+      "copied_sha256": "8b34c461974a60397fb231463be1276e8b01a31174f918b7170ecc133be1562c",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.LogGaussianIntegral",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/LogGaussianIntegral.lean",
+      "original_sha256": "864bae8805c11ee301bb672523f3cb4152635c51aa94cee76cb680fd4a376780",
+      "copied_sha256": "4b4b5bc1241d253058be0737ba43c3a597556677c8da1aa748f2d7d5af745fee",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.MixedBoundaryHeat",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/MixedBoundaryHeat.lean",
+      "original_sha256": "e955e37f7e592859cfe44ca24c9fe53aab0292f52b4c69fe59ccc3c11377c87c",
+      "copied_sha256": "4875af227337caa202c71cab63936a8f6f144bb225cb40d08fcc2e25abe6f02a",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.MixedExponentialCalculus",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/MixedExponentialCalculus.lean",
+      "original_sha256": "4f2813bbb25cc4fafb8f8354756afa276510e163b9794544dac69853b76e09aa",
+      "copied_sha256": "ff1bedc443a63e701fc0ab51111e4dc7c6db1247f188d0fb55851a16fda3e0b9",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.MixedExponentialDerivatives",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/MixedExponentialDerivatives.lean",
+      "original_sha256": "db261646230c753f9dda08878838c68b5ec994cbac44b8205ec5911571b476a5",
+      "copied_sha256": "479a625a37be4b5ef046284e729efc8f232bb38466733417a031cda6c96f6378",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.MixedExponentialPolynomial",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/MixedExponentialPolynomial.lean",
+      "original_sha256": "8feee59edcdd3ef3a0038b16821761d7a1c9eb2a76c5df713a2ccd4199c39b4f",
+      "copied_sha256": "e9f73fc310ed220b6fd32109d0ba91384bb2bb398d266b0e28058c171ec4b152",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.MixedExponentialTerms",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/MixedExponentialTerms.lean",
+      "original_sha256": "0655d166f06895c8c449f5f8deddad6f302cbc1a5b88403f6308a196a68985fb",
+      "copied_sha256": "53cebe8f6ce0709c0f15f9d8b5031bdbe4bbb9b4715ebe0038ae953e3bd4e4b1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.NormalizedExponentialPartials",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/NormalizedExponentialPartials.lean",
+      "original_sha256": "88e1ce4f61dd58c9a268442b4ef35a266bb78b2774b1ec0fe49953f3ff2889ef",
+      "copied_sha256": "e6aa04eec6718094af8e95e3924fbba93043f76cabfdbce35a1a33ce42c62988",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ParabolicComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ParabolicComparison.lean",
+      "original_sha256": "32fb3c8b41de3ff2b592cf770ef107a3f38af8d44a8da5185a1d1e36c9651cd7",
+      "copied_sha256": "8ee7ba9cdd751c13bb4510f17e8ad2d263d5fcfe269db2a06c008c7fa38bbcee",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationContinuous",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationContinuous.lean",
+      "original_sha256": "1277b4b65efab35cf02b7ee7964984a42d71691bcd86cfb077a6dc49ef9d2ad9",
+      "copied_sha256": "12c441e8377635050b851bf7dba74c65c14082926e5f0081b2f3ab357c25a271",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationDensity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationDensity.lean",
+      "original_sha256": "e2ce51d4fa5d3165d534653f4747a0e3711e0635a1e509f286f205b8a36f1fce",
+      "copied_sha256": "4befd8f7b05562bac10a7ae5f46e18fffe711f8f00022831f4a75ab0a75a067b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationIntegral",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationIntegral.lean",
+      "original_sha256": "1cccb3a9e05ab676a68b75dce6835b82f28169db8dd614356f763b21280dd2bd",
+      "copied_sha256": "bcb294f1cbf012c7c16f65bba8efd0a7807491b7525173650f13e8186fd8b889",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationMoment",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationMoment.lean",
+      "original_sha256": "f5d33ce018f58d26ec262c9fd5bc422e1bf17b6740ac7e1d14ce636f749ee0bf",
+      "copied_sha256": "10ea7ac7e0af5d6a13e70e1ecffcd0cfb5ebb2b79a863ad8d10b15e707be793c",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationPairing.lean",
+      "original_sha256": "d183e32bd95dcccacaef6bbd2ab38959597581779b94ae2518db9bdbc3c8823a",
+      "copied_sha256": "349fe5e3797ef020f44773d9d8fdc11b146b2ff8b9cc30a43333774a2976c690",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PolarizationSelection",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PolarizationSelection.lean",
+      "original_sha256": "6e121b973acc2237d8861d3840d2234ab6c18685192198adc2ea24459b7792a4",
+      "copied_sha256": "e190e9de3974e0e874b05e8b35607dd807b505805192fa016fbf84a3fe95e9a6",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositiveCosineRepresentation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositiveCosineRepresentation.lean",
+      "original_sha256": "b550b8c74ba2de7f8ed64731df553786550a2664adbc1dc1352bf2de7d4dc9c0",
+      "copied_sha256": "2bc6ee3901580a92adb8f959ee59c69094a4fdb70e63d041cb95199594e3083d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositiveKernelComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositiveKernelComparison.lean",
+      "original_sha256": "8abcb85287311e79d6db63dbb1bb9be4a24e0cf00fc947ecaa43e10fa9a92562",
+      "copied_sha256": "624da8afcab991169629c73c918fff818165339c64b0450e83b571c75131f936",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositiveKernelRayleigh",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositiveKernelRayleigh.lean",
+      "original_sha256": "61593c55f6d8b7e226118916e8a2b964d1049d1dad2803e368dee3c9e8901e4e",
+      "copied_sha256": "2f7f8b57d762aefc12063fafe6aee82a92309373bedb4cdaa8c8e219b655c5cf",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositiveKernelSpectrum",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositiveKernelSpectrum.lean",
+      "original_sha256": "60b9f036a2575554e617345b672ea593cdd6ef5f7ac073cd1e865320ee76cfad",
+      "copied_sha256": "2b1d23dceb7096d57b9738b2e2660dd185ac224563e2cd247aed24515e6288e5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositiveOperatorNeumann",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositiveOperatorNeumann.lean",
+      "original_sha256": "3c5cae34527f5a7b079f4e67b6251e61a7e0c65e990d196aacbfa94c2a2144ea",
+      "copied_sha256": "6d5c8b29e58121db89e7df720dea814744960738ef735ee486b07420c30ad721",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositivePolynomialLimit",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositivePolynomialLimit.lean",
+      "original_sha256": "2b3b95312ad5b2c93192bcee2b8a518cfb4f5c6262422128f85dc0ed7d8e109e",
+      "copied_sha256": "d40e110b599606383b4032ad0a2293b963bd7032c252fd07a4ffce7664ab6aa1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.PositivePolynomialLimitCore",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/PositivePolynomialLimitCore.lean",
+      "original_sha256": "9a2b296d18d922eeb0476de218f14032146fc767f3e1856e21fe3a4dc2199188",
+      "copied_sha256": "7c8d73eedbc82c3d9fd35eb2255b79fa5080a471b1cc549d95c4fe252ecb280e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ProfilePartialSymmetry",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ProfilePartialSymmetry.lean",
+      "original_sha256": "da81e9fb1fd694823088db98f85a95ad5b306cd0a396c5dd64f8b003959e0fa9",
+      "copied_sha256": "eb82dc581f54de4484b492540f2a87061ad8e1fe6ffb22b18e86b190ecc51164",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.RadialWiener",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/RadialWiener.lean",
+      "original_sha256": "d5382069287a3bdbfbe5baac0ab6a3b972fd66e4ddd252560b4307b51ca62760",
+      "copied_sha256": "8db3584be0eb22dabd3ecd06bdcc3ecf412ae1573c11e0980a123a322e246b95",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ShiftedGaussianBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ShiftedGaussianBound.lean",
+      "original_sha256": "576fc75ed66a82f45d32234f18b6a976a04f664e72ddc0546580e676e8322e89",
+      "copied_sha256": "b9e3e3799fecc60e59235ddd123908cb5f1ab8f4ebac9c6d740cdc69e0a5da0e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SmoothFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SmoothFourier.lean",
+      "original_sha256": "4d03700e1ef137d52c66082d9c76e061cce8d99a37eaa76e12034f8ac15443c1",
+      "copied_sha256": "419125ba583ac7e02b35a09584faed5b9c4f74f5df9f7a6920ae101cf5afe280",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SobolevCentering",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SobolevCentering.lean",
+      "original_sha256": "5fe138ecd372456f85e0c421e4ed7103edcf3aea7669372e3ce62cf70e0c8b13",
+      "copied_sha256": "02c18fc6b8838412066fe9788703b658b19ff65f5c4583ec06903c437afaba0e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SobolevDensityPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SobolevDensityPairing.lean",
+      "original_sha256": "9d2b0669bc895efc8933e62094b1a7c88cb82f8079c2c0297712e72ce13f91ec",
+      "copied_sha256": "fecb1ecb0dec2e1657fff9642984bce2b300e3f36b7033bbfbedc054cba34779",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SobolevScalar",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SobolevScalar.lean",
+      "original_sha256": "acb73bddbbb16ce9a109507d1ea5f6cb88604b7064b3ad8997c98ac2eb0e742e",
+      "copied_sha256": "5e52d6e51c1d66132cd810c0937c0586676132c2203eb618dbfadfc6659a0a7e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SpectralDiagonal",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SpectralDiagonal.lean",
+      "original_sha256": "72bf26ae0980f6f55b1173565609782ed3982a6754b5912f60cfb41060590ab0",
+      "copied_sha256": "80659f59ffaefbd8dc5aecef916e40dd9a40d95977f274c59844e499200bd166",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SpectralHeatCompact",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SpectralHeatCompact.lean",
+      "original_sha256": "a3c9d7b7abc716483d81d11769826f906ad99aac06b306e56137ae745dec421c",
+      "copied_sha256": "004f6055f1025f33d5c0d03833e2f25e634ed98304a5c9949a291af720dfb534",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SpectralHeatInverse",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SpectralHeatInverse.lean",
+      "original_sha256": "ffeacd3dbef962f476da93bd8ce061337aab91db393151b777286e20ed3d1287",
+      "copied_sha256": "51df8cae024543ae153d183e9287b5dd63f508d01b2e58f07adf178ab78f0eb7",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SpectralKernelRepresentation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SpectralKernelRepresentation.lean",
+      "original_sha256": "c53f8cc0a1b5d19979f93e9c00d5111a07562debf102776de7c4c13366c71f32",
+      "copied_sha256": "c92f68825fc5b6bb281466d2fcf44ce230715bd66a539c1fb3162a1652d71c31",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SpectralKernelTensor",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SpectralKernelTensor.lean",
+      "original_sha256": "1834d1d95eaa97803d6bcf13c5a71d285cba2e7ef42ddafc806fca147789f559",
+      "copied_sha256": "278ec0fbd6bafb390bce7a341c26e598c331234805f303b409c9ad9d59890e94",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SteinerFromPolarization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SteinerFromPolarization.lean",
+      "original_sha256": "6b394f33a2b9662163bb7641f17701cad2509a44f07fa229ce5c49c06d10569d",
+      "copied_sha256": "e7d50de8cbfa5f799173119da83351ba2003800e73b858c7fba5ca72a89c2aaf",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SteinerSelection",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SteinerSelection.lean",
+      "original_sha256": "16b65215a884d3fd383ee7f5fd0d3aa36b118b0c0a8a668b907738d77bb390bd",
+      "copied_sha256": "e586d81a9e4368d80c46a11296cdb7356d3b18bfbec1980b267fe26858e630e6",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalAttainment",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalAttainment.lean",
+      "original_sha256": "cf366fbe0bf17bd9a089fa3e2d7b20a9d386d6fedf02cd25f342a5ef5aa62c01",
+      "copied_sha256": "1683aae9388da4a482127031e774d5bc57707025b9e8b629581adf1c9b24928e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalAttainmentDefs",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalAttainmentDefs.lean",
+      "original_sha256": "1daff7c2c35e6800dfe02c46d837bd90bcfd6cc362de0d9516fa7d934f251867",
+      "copied_sha256": "e42f99c8654cb7ec1fea125fd56e8afc3071f06d5d16bca2399789debd2b1739",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalCounterexample",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalCounterexample.lean",
+      "original_sha256": "068a38e3b37eb8191921ebbb130ac80edd7db782d220d669deaa16d846822a5c",
+      "copied_sha256": "debd70b8d38233d17bd8a98ab07113ba7b984daddcb1ce5ac01bdce12a110468",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalDensityCompactness",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalDensityCompactness.lean",
+      "original_sha256": "678e58f115a9892c052524f341211bb6ba438496076a4b32ba84dd3757d8b573",
+      "copied_sha256": "f191b75e999767a18daf36a1bd91b9c771dea238fa5b3d95d37600263e1b85f1",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalDensityEuler",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalDensityEuler.lean",
+      "original_sha256": "2b9186a93ef8db089f49857fc2a57232f28472ac50c20c28c599c5bcb72c198c",
+      "copied_sha256": "449d657f2202fcc2201ac349508608404136e2c51bae0f8e90087b185c45f449",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalEuler",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalEuler.lean",
+      "original_sha256": "47ea5df30443636b77d055db3bc78db502b977749e93eedd82b6f66ab7280fe6",
+      "copied_sha256": "8274ab7143435c1189a143eda9a6c0a738ee7417b4431e0e11989b1fa7cbbff4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalEulerEnergy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalEulerEnergy.lean",
+      "original_sha256": "08a04a9af83ca82a411ed33a4c1274aaa0efc3dd46a75f06319fdeb5c0861212",
+      "copied_sha256": "3620445de2775bfbe6d734a76695a314db785353ddf3dd8c4884ecb3a6491016",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalExponentialBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalExponentialBounds.lean",
+      "original_sha256": "4fbdcbdbd2c0e58455c88a9157f7f9ce50cb36afbd6e0b22b4444e51043deaba",
+      "copied_sha256": "44d4faafb6af1423b5b6a2012339466ce16a4665cac7c6aa1052129fcf4ba529",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalFourierVariation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalFourierVariation.lean",
+      "original_sha256": "f6a8fb7b8b2adf8dafb6df49ded51706ceebe0796280a947e1061130c4ee3d3d",
+      "copied_sha256": "478e10fbe0d40ba2e0264ecf1e94058982b72122a4424e42f1a0b63119149fc5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalGibbs",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalGibbs.lean",
+      "original_sha256": "c8a7ebd8899cee723452b347b8d95c10c4d4ccf69227314e0dff1a27378b66d2",
+      "copied_sha256": "199645fdcbe6c00a9dc83dc0d968c6709cc5a053f90af4e802146e1b00900869",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalPrimalDual",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalPrimalDual.lean",
+      "original_sha256": "dff4845cb36cbad40cf92268ffe3f163ade0d7738dfeecedee453856073e08cb",
+      "copied_sha256": "6f42c10c304983923956170ca250017604e7fe53bde9f5794f18dcb7f0007382",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalRoughBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalRoughBound.lean",
+      "original_sha256": "7bc36744b3dc472c477f836ca3e4831ca5371ca2e357b759c81944bb3b394c0e",
+      "copied_sha256": "3f1ea69707059f3e5bfa47f655844cd14804b54fe02af79e06507a571013b7c7",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.SubcriticalWiener",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/SubcriticalWiener.lean",
+      "original_sha256": "37be6089e34498bdb33eda6345a37aa55ecfe49e690e4f2188df2de38cd96c37",
+      "copied_sha256": "cf1dc5fd9b1e5b487cf64b66d3dedb6c38a49bd0533bf47b02493d9ef2da50a6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TensorBernstein",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TensorBernstein.lean",
+      "original_sha256": "172bc2587c284743873a53e23facc0599a3224d43b4473c6d1dc60ebe4224339",
+      "copied_sha256": "566ffd4572627f3558dcd4af36032015f9cf26e7310d8d85be59368030e64143",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TensorBernsteinCoefficientLimits",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TensorBernsteinCoefficientLimits.lean",
+      "original_sha256": "b7a1bc92b3711a22a8dfd329d4db911d5e1b8c9dca85e6769609d16613dd9371",
+      "copied_sha256": "f497e9fc30af94895c2476e7c319db15452e5b3a858269bcb36251cb094cb4d7",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TensorBernsteinCoefficients",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TensorBernsteinCoefficients.lean",
+      "original_sha256": "260b4e59da4459d4599364d37e1c20f437518f825035a7a88e93e7d8d4a65b26",
+      "copied_sha256": "5da1c7e76f26e2a34d1bb953e12f1ba93a9c92d0c7e8ecf991e25456f20bf048",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TensorPolynomialDerivatives",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TensorPolynomialDerivatives.lean",
+      "original_sha256": "4fd3eb6990e64d0d8e6690c63d6df3ab2d24fb095901eaa897f80db1199cd716",
+      "copied_sha256": "ff3e1ef2c953af5fc26b3d16a6ba739656368ad2d661f137726e5a1907906bc6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ThetaDomination",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ThetaDomination.lean",
+      "original_sha256": "f958985dd6ebdd7ace7c47b201db2107471674b0b8097873d753468a8f5e2eca",
+      "copied_sha256": "c8d702d10921fd1234843044a7fa0dee433d6d557c83a877607d0c4333ab351d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.ThetaIntegrability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/ThetaIntegrability.lean",
+      "original_sha256": "df3e53f332e7bed29cd2673aa5c60ce8ba0f4d3fb23eb8efddad504274b848bf",
+      "copied_sha256": "04ac4973372e70f073cef7ea8ca8ab411c782fcc7a91030d5577913e94353ef8",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TorusHeatPolarization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TorusHeatPolarization.lean",
+      "original_sha256": "820a7469ee6a28c996e407a41cc2aa45cfc4594212ced46746b6ce29c52b11be",
+      "copied_sha256": "2852b339cd522cf9d34d95ef7eb90afc14c41e0018deeaccc96760bdcd4eca02",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TorusLogIntegrability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TorusLogIntegrability.lean",
+      "original_sha256": "4dc67c5b9861dfa8adf7ba20bc795c3d9ba42ef3c83bb850b314b5b85544da5a",
+      "copied_sha256": "2b8eff159d309e74119fdcb56113bb72dc950a1d6d65f736b95eec6275b25f69",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TorusSobolevCoefficients",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TorusSobolevCoefficients.lean",
+      "original_sha256": "28672333aeb6e4b572b0c6428754459e7e5033ae7d512641e003814a352812ea",
+      "copied_sha256": "b9e1b4904f3698172eb0666928cc4ecbe1453250d08dbe587e152d792f84f343",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TorusSobolevCompactness",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TorusSobolevCompactness.lean",
+      "original_sha256": "9ce2371f00c608a7f963f7cc01babfb23cdf496cffd5db5261de6be267b4ab8b",
+      "copied_sha256": "c683a1c3df913d157335c7014eee9685e6232efeb58e88f11f64de6b0adaa337",
+      "changed_beyond_namespace_prefix": true
+    },
+    {
+      "module": "Legacy.BecknerOnofri.TruncatedGibbs",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/TruncatedGibbs.lean",
+      "original_sha256": "948f7a3a7799e3838ca080c9b5b0ac600da50d61ac2137fc42afefd22bb9538a",
+      "copied_sha256": "b03abe3601bfb93dcb4b7004d6f204b61f6c5840e4b8c620b03ae8f5ed970175",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.UniformTail",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/UniformTail.lean",
+      "original_sha256": "f849b8b739da7081243b42a44c09635af1156a71aae5e6b6b11dd9e8bb5910d6",
+      "copied_sha256": "962d6ae64e76b511de1adae48f5e13e2d085ff7e6a53ab0af56085fccf5f0f65",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.WeightedKernelRepresentation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/WeightedKernelRepresentation.lean",
+      "original_sha256": "75860e45f6a7e4c1916a0a95e91be4951caaf7a3b19417c9fe6c729600d0b155",
+      "copied_sha256": "632d66adea68516c83b6d972c3e77fd30d02e4c099b57db250333802c5e0819d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.WeightedStrictComparison",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/WeightedStrictComparison.lean",
+      "original_sha256": "393065484a0ea0436606cda3b1da68ea6e33448ccc7fa865e3cb4cb986d60b04",
+      "copied_sha256": "b3d4c6ec8c3b170d6d4f699ea3f8ea4fc85a8afbc632c22690b7ff7a02e5fd36",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.WeightedWiener",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/WeightedWiener.lean",
+      "original_sha256": "711d4b6bf741707b211c11912a3cdbd86406e2e3be678b99b33882b2e0342b73",
+      "copied_sha256": "5e7ce7b2e9ed6bf30786f0dc262e88ea36ee451001dde362c1be01b4651a124d",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.WienerFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/WienerFourier.lean",
+      "original_sha256": "98bb8e2adfab471ba6f2545f95d16e1ae76da9a0779c4029053e43bc696c0b5e",
+      "copied_sha256": "4bcdf83e5e087ad927ad5c9b68c1758fc4903cf73a40717e50a8314202253a2f",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.WienerRepresentative",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/WienerRepresentative.lean",
+      "original_sha256": "88eb12fb2ac06edfa27135ade37d42782a220ad661ca9287d510993fa818c9e7",
+      "copied_sha256": "3df14717334cf088cd5569f55f86e68c5fbbe380a80ceaab32f61764d0ee6b44",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.BecknerOnofri.YoungGapLimit",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/BecknerOnofri/YoungGapLimit.lean",
+      "original_sha256": "116975a2e3ecff2dae4e17f6e2d8de47014884c45dee420fa1863fdae6b492fc",
+      "copied_sha256": "b587fdb6846a7bfe5c692b3263ee8664d03da900464b824216ed116d53e5b586",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.Binomial",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/Binomial.lean",
+      "original_sha256": "d5efb834b7cf1a34ad49c0033511d55b5b51cce7b3458e863e9a533033bdd5b2",
+      "copied_sha256": "270528ff6c0f25d7afe29b394a77e55de7a663820a3eac4b1e3335311004c6ff",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.BinomialCorrelated",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/BinomialCorrelated.lean",
+      "original_sha256": "8b6e2e1d5835a72c00e47d1f4629f468ac88a9d71f42fa23d59466632bf813ef",
+      "copied_sha256": "bfe43c17864ebe1c54b85c6a8b93816653bc88971a1a892fd7431d0a71dc5792",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.BinomialMixture",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/BinomialMixture.lean",
+      "original_sha256": "aa82ba959750bd672ef4a6e0bdde4029f0a19c4a0878200187bd379383f3a08e",
+      "copied_sha256": "5111d4a1435a36db1bc88044010de046aa6d957b0bf5ca02f5d41d9e6454a9ec",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.BinomialReal",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/BinomialReal.lean",
+      "original_sha256": "74d4a6ef506c248e37e26b811344eafbff6d9bd23797ce25d77c6ca65cfb2268",
+      "copied_sha256": "76eab18c0ae326918da07667bd61b9ca97474da3b009337fba6669c4e75ef203",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.CircleEntropy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/CircleEntropy.lean",
+      "original_sha256": "a30053dd267c7dbf8de30263647fe1e9a31a1fc330f4b81a2ed888a97c30d385",
+      "copied_sha256": "c345e281273ca40ba3c9accb0636ac9ebdf208ec05894fc9f4f46cf2b321b71b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.CosinePower",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/CosinePower.lean",
+      "original_sha256": "b0c0d6841c04e636f60065f2a83ec52a50d3dec805e2d708084882a6cee1a6ca",
+      "copied_sha256": "6a3868e93ecb60471e4bda383887699260ed99b48cca2763c9702bcaa083217e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.GaussianMajorant",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/GaussianMajorant.lean",
+      "original_sha256": "60b31b931e3433e9a537af9d84cd98e59a1babcb82afd024fb2c41b9b06290f8",
+      "copied_sha256": "debbe4e994b77db515e6341792aca95b8e35351e8df8298ca6036176b8db37b4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.D10.GaussianMajorantReal",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/D10/GaussianMajorantReal.lean",
+      "original_sha256": "ddf508eeef47a4a3905f3d5cabc3982fb0920554f772197922568e7da494c586",
+      "copied_sha256": "ab6e3a232b6f82f3b964fd837e8561b5ffa5c6587242a6444ae7c7f1873dc157",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.AbsolutePhysicalFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/AbsolutePhysicalFourier.lean",
+      "original_sha256": "960e6f17204691b7bb74c3c8cc33cbb84963f70800d1f74066d21054580ecadb",
+      "copied_sha256": "6e243578b87d8578b984d9fee9f1acd7a3930cabb4857b2133b882c79a7b8ddf",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.CertifiedExp",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/CertifiedExp.lean",
+      "original_sha256": "c28626872a965b388aabbeeab9030b7667002a8b57da18b7caa6643d7187feab",
+      "copied_sha256": "5bad180535c342a994bb5cb9a59d0c247714573553adbb77d59ce9bde9bebdd0",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.CoefficientEndpointReduction",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/CoefficientEndpointReduction.lean",
+      "original_sha256": "1ca2829e6ba5d9ac1fbeb6197062c2679db0e2faab35281ebb9633bb28769d53",
+      "copied_sha256": "eb065c4b23afbddf96a775932941bab30bfaf5df85ccf86e9c34f4dfffc6544e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.D3AxisCoefficient",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/D3AxisCoefficient.lean",
+      "original_sha256": "2d4f32e07baa9e183ec41d0a241de755e0aa2196ee8399ff0e776012ccfc65ee",
+      "copied_sha256": "3fb3d3fa20a7c2747ba64e076b7c0b8bad8f8fa5eb7b12e16b6d0c2bd06b9187",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.EndpointNormalization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/EndpointNormalization.lean",
+      "original_sha256": "f551acc5b8bae16e47f8a3dddf027f74597d8f8d704c0522e95dc5f90c7fd482",
+      "copied_sha256": "0213d13cf42d1988995404f0e4727c35b5765286ac66a71f0ac94f9c4d4b6b90",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.EndpointSharpness",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/EndpointSharpness.lean",
+      "original_sha256": "7f897f533bf2c4c871fb49efa96f021fe2b452d26cf892cc27bebc0365c9d134",
+      "copied_sha256": "3228308fa5f29d81fa35a51814d616c511ecea51e1f2160f3be948f72bb2f992",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.EndpointSharpnessHeat",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/EndpointSharpnessHeat.lean",
+      "original_sha256": "ff8034542cdb126c85071d365984f3f8df5e91dc4c246fb1fe4917181a383a1c",
+      "copied_sha256": "bb1df28449f068f1007e8a668a3976644b8c02a38776102d5afb8c85615cb566",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.EntropyVariational",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/EntropyVariational.lean",
+      "original_sha256": "57d94b033c94ae0c0839a7f033239e6bc087380292f0b6f4cd71e4d1c96f2b20",
+      "copied_sha256": "6f46ded0c684a508c4296af69850750f214da5a9105105a4ea9c6d4c26faba77",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.ExponentialLimit",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/ExponentialLimit.lean",
+      "original_sha256": "7ab9e5f0907e43ad5297b34806154e204d2c32a388d5cd23cb8d734844406225",
+      "copied_sha256": "2918a26bb81535c599df948fa3074a1cf63d233fcf17f5648bfae0713c8cb9ce",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.ExtendedEntropy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/ExtendedEntropy.lean",
+      "original_sha256": "ad6a39d55771bcbf5bd12fce7ec22a5ba433f1c16f4867a44f26704ee93f4936",
+      "copied_sha256": "4128bacbbc7f67c4109daa85c1766fc04d0fc95098207ac4b49586193b4055d3",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteAtomCoefficients",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteAtomCoefficients.lean",
+      "original_sha256": "4a371cd11b7a165babb2fe9159bf5d608ff06037f6962fafb8cb80e4a277640e",
+      "copied_sha256": "edcb48686b17b06acfe8e4fca2d0f976633a45055192a641bfc36b01d0fcfa68",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteAtomCriterion",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteAtomCriterion.lean",
+      "original_sha256": "9bbc8a1a9ecb11fbe55c6cde8d5f2bbf015a267b6d6d73e864cb9681a766c50d",
+      "copied_sha256": "5ea7427445b82f67d8e3543d81076b76a1295848663cf43afef6e3051415a5c5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteAtomEuler",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteAtomEuler.lean",
+      "original_sha256": "9aabd2896a448550bdbfd43a693a37859ea202a9ebfaa22984b5b0a6fd6469f7",
+      "copied_sha256": "a28e073b62cfd2f7fde3f1e53b541d9337532cca67af315c01549a09d654392c",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteAtomMonotonicity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteAtomMonotonicity.lean",
+      "original_sha256": "f7786b6937a4a9ba533a336d9554e9a1002d81f6cf0645ea46d18f0cef26e9b2",
+      "copied_sha256": "8572d304adffc85f1311dd1ef7df14e8ac7f882f5bdeeefae81b30ff1d704c0f",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteCone",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteCone.lean",
+      "original_sha256": "7988727fbe7c2654ca7ce364cf10dae65ee56ee053ca82e00e0614a85e7c05a9",
+      "copied_sha256": "be618d78c5871eddbb6d68e32a1c994c4b6a87f330e16f38b995cd6c8c62f03b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteConeTotal",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteConeTotal.lean",
+      "original_sha256": "9c8a539e7909e927673f8ceef97b59ff26dc37ad4177db96c5b310f7f1999425",
+      "copied_sha256": "a232237c5c9454d8a3a59e9086d8b5647d37807fc0295725cd48b59ce4eb56d3",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FiniteFeatureEntropy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FiniteFeatureEntropy.lean",
+      "original_sha256": "cbb29a3bdee1b106d37e546f7a0f05ee457a54261123c9f691adf0e028ff2232",
+      "copied_sha256": "896a3685fb510c6918fe19b11b07b6f92c0dce1e3b1a91294f4b64f42cfa05a6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FinitePhysicalBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FinitePhysicalBound.lean",
+      "original_sha256": "0f39b1fd2d2a0aa3c683fb14d2dce990565aafc1cd8fc5fbd07e6aa029034cac",
+      "copied_sha256": "f7ea26c5069b18f6363bb6d51ec18481463d554a990d372fd7d3b3cc71588e1b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FourierCoefficientCriterion",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FourierCoefficientCriterion.lean",
+      "original_sha256": "67fe04a36be6ab71d889276862b157be1dbe8b5d6e0eb757b05848b399903303",
+      "copied_sha256": "a591d8ab895fba3b507bc4665ceb190a21c763fd5193405686e346b37a117b2b",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FourierEntropy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FourierEntropy.lean",
+      "original_sha256": "8747ad3d32a79b410b1eb868b4a8e4c4211be9a907bba502242fd7fc17f0832e",
+      "copied_sha256": "2229c3358ddd4f1515086b468c5b2c2fba0374cff641bdf14d1a6f7170261534",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.FullSpectral",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/FullSpectral.lean",
+      "original_sha256": "3f69223162aa52c60985f9b1590dd9c3ec3f0a97c30a6db9e5951b92066b2286",
+      "copied_sha256": "38766b1701692b041ef9ec13429fa2ff0bbc7e5b446dd92eaaadcd95ebb0cc1a",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GlobalCoefficientCriterion",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GlobalCoefficientCriterion.lean",
+      "original_sha256": "d0f2e886a417452c6c7a57ef1cc051cc03bc06e1694f691a693e879930921bd9",
+      "copied_sha256": "1e334ad8a08d7632c4aafc2d67472571dfcc17a8feb9e8e48aa6495167f0839a",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenHeatEnergy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenHeatEnergy.lean",
+      "original_sha256": "875d6a4aec871a65934a5438290b8cc9ce5a4bb7ca4b78684b02059b83f9d6bf",
+      "copied_sha256": "a32f97fc0b791a719b3bf863510002c1f67d92c726fd67d70f0f09657bac1518",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenHeatLowerBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenHeatLowerBound.lean",
+      "original_sha256": "5d318ed3d24582c0f5548466362d7528df037634f0e62467a630817b07532e93",
+      "copied_sha256": "3caff4960e0bbe76cfcae61b783575b77223d2094ac6d4e28b30d54d4df2c8be",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenHeatRegularization",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenHeatRegularization.lean",
+      "original_sha256": "04cec4ff7fd27d6bc2376c7a9b5e318fc667ef9e4265d8245a7d1b3749a832a9",
+      "copied_sha256": "8726422fb5c76cc8d6bb4e9d21c751bc79ed22b16f6bd8dce68498ad5fd9f0d3",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenKernelApproximation",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenKernelApproximation.lean",
+      "original_sha256": "b2aecb0ef463100b25c3f80fb1809b36002d8c5d03c188013a14a73ea20bd1e5",
+      "copied_sha256": "b8949a72d68c0c4a1454a5046df47e5ef9aef7ddcdbcb43a4cde274ea93ad5ce",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenKernelReal",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenKernelReal.lean",
+      "original_sha256": "5c29b5d1edac15321b3393f2c00a3904a991020814863c09828abf3b94486727",
+      "copied_sha256": "85819810c8280cc19c79fe236e870bf19992b40147dab6135e2a8463cc9c40ab",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenLowerBound",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenLowerBound.lean",
+      "original_sha256": "ee7123e6830e18a0a111aab5feddc08906ba0e141eddacae4d90f148ddd19a58",
+      "copied_sha256": "0bd50694ad96e5e30afa2276436274fb0b80c44813f77bf06d06cc066d153b66",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenMellinMultiplier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenMellinMultiplier.lean",
+      "original_sha256": "81dc68296062799115cf051ec82119c9d79558bf6cbc8d026639932222c815ba",
+      "copied_sha256": "4a1534b35c6d4bb389b84b6e2fb9a1ee9b475de3fe010d99e84d98149d3af388",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenMellinPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenMellinPairing.lean",
+      "original_sha256": "b71a65ccf3fb64d8fad530e27601c4b0fca9814a11dbe87e2021704243474a39",
+      "copied_sha256": "b0cf89d63e703cbd23c35f8de31865d9a0cd92fe8f9e017b6cc091fce6ad1e14",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenMellinSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenMellinSeries.lean",
+      "original_sha256": "833c4a905a7bac8479a7f428c1cd754b4427752666d0e2e406785164ee98c083",
+      "copied_sha256": "e6d9ec1bda899f718711f3d6e7c19a2d26d6ec6792a297f9d2cd742837bf1fec",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenMultiplierSummability",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenMultiplierSummability.lean",
+      "original_sha256": "445c752b0cd6b7c53c1fea33f94b02cfda11965e32add6d883ee864dda2219fd",
+      "copied_sha256": "fdd2e96a63382469d89383f98990c8718adf3e872060c4739c5beddb7c491713",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GreenPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GreenPairing.lean",
+      "original_sha256": "2d4b72a03faefaa24c767751fdbaca0c44382263ebc7cd248733736f90c1f392",
+      "copied_sha256": "e189b4d4d0c9f0ba4240761680bb74ae8c9cb65368d05db881e0be70935a9b8e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.GridAliasing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/GridAliasing.lean",
+      "original_sha256": "e8b169e94ce93a9e8b3d1cf14c5a8959fb6b0c967b3084c1d69ea881b862eaeb",
+      "copied_sha256": "37251872898064b9290a80485c60341dda00007b571bbba7fa62de45ca54a606",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.IntegrableSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/IntegrableSeries.lean",
+      "original_sha256": "bbc2c3cb9a974f20187eb684772d47979a8b9b8a713897dc5c9385f63b0f1b5d",
+      "copied_sha256": "c6bb1b97830efece4adaf8e6585d93c2e8835d257a3f352b6f41c9e3f29999c1",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.NormalizedSpectral",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/NormalizedSpectral.lean",
+      "original_sha256": "944fb77ec9d7674558617a4e17d69c16adf7f4915b48c0a0df9973a9cbe37b14",
+      "copied_sha256": "c00ae152d2ab5b012800d0e87614404854b1245a7df6752bd4f49615e794f400",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.PhysicalFiniteFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/PhysicalFiniteFourier.lean",
+      "original_sha256": "c1e60c9d348ee8b598a69aca8d0c39bff9d8d02fe17fa661560740a518ee9084",
+      "copied_sha256": "d9935ad2e1c260c7301c678bd2726aa6806aaabf30955837312b84bbec4441d5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.PhysicalGreenL2",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/PhysicalGreenL2.lean",
+      "original_sha256": "5ccdd36ba2ce47b29c5b80900391c0e82686b163a105132a60c5a18d4bf774e0",
+      "copied_sha256": "ee0c519e7cc55a4fc208b941b33aaa79d4e784f4607173c13b29890413b9b2be",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.PositiveFourierAnalytic",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/PositiveFourierAnalytic.lean",
+      "original_sha256": "e6fae050e848e3555934d599dcaca41b19651a68f3cb471b2c63a2577e67f405",
+      "copied_sha256": "827c77103241c397ec73682e3057f0bb928a41929b311af1a31eb947720fa9f4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.PositiveFourierExponential",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/PositiveFourierExponential.lean",
+      "original_sha256": "a10d8a6b7c3762d854d1509c583a821b4739151c7b5a592f660172fca631e55c",
+      "copied_sha256": "a4b785e30124b674ed0def7e2c6c4fd58285a20d442832e4b1e9ab6fe09acf3e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.PositiveFourierSeries",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/PositiveFourierSeries.lean",
+      "original_sha256": "08d674d75a55f20a747ab904cab73d9ad903952a69ad06782ea7aa48da2c5f7c",
+      "copied_sha256": "dc34bd419471f0ad413d01a528f3221cf4b791a9b4f82e76457b192f8372a5b0",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.ScalarExponentialCoefficients",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/ScalarExponentialCoefficients.lean",
+      "original_sha256": "4dfd0205ba4b2ee8327292218bd5125329cfcf0c0644e109b2063053edcacb38",
+      "copied_sha256": "1cfadb65ec9232ad3f01837d61341872626d1b3f8cbb86487ffdc205f5283ff5",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.SpectralEntropy",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/SpectralEntropy.lean",
+      "original_sha256": "b949813ca242fd8bc5661a69eaa1661bf5a52ffceaa78020560c448da299b7d7",
+      "copied_sha256": "1122216be08ea38bd6c1eb31bb7886d835dff945eea7b28aa3886cfc58c79be0",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.TorusFourier",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/TorusFourier.lean",
+      "original_sha256": "bca72c78575aca35df0bb8ea58205679201654be42bde4600b37abb4189c42f7",
+      "copied_sha256": "3bd8cf6497e3bc168d42eed2ec266468eb0502ea8a7dc461d7a6428381e9fa2e",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.TorusHeatBounds",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/TorusHeatBounds.lean",
+      "original_sha256": "c38d1f222851b879f2c74b8d0728de49beb4c2141da20196b492adfa77c28849",
+      "copied_sha256": "5c0a1c80c0b1723bdc4194055ed9d67a86bc0777903fe3709f6b7f343de9cfc6",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.TorusHeatPairing",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/TorusHeatPairing.lean",
+      "original_sha256": "0d4dde9a185c9233fbafbb3a279de2290b64c9e1c262bb2f51c92c3b65d16cd2",
+      "copied_sha256": "3398b22d66edf988e20281f2fc35f3f7e9e30314d8f84df1273c360639ae3da4",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.TorusHeatPositivity",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/TorusHeatPositivity.lean",
+      "original_sha256": "5785aaafac1cd6a304d75f42bd7aa7db31ad8345412ae3ff377136fac271a7e7",
+      "copied_sha256": "ba2b94b07d49c1c0f79b5ec0e2b540bef48d9ead62b384a7217547e018d87863",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.WeightedConvolution",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/WeightedConvolution.lean",
+      "original_sha256": "014c22b0c9380edfd41b30a030c9b357d1efcb9d0227fa11ce41980545775674",
+      "copied_sha256": "9910ca71d602e543a7d262e4601ed109b66c31619b8ae0031f340cd6e1c71586",
+      "changed_beyond_namespace_prefix": false
+    },
+    {
+      "module": "Legacy.TorusEndpoint.WeightedPolynomial",
+      "original_path": "/private/tmp/beckner-le10-unzip-he_u2493/beckner_onofri_le10_20260917/TorusEndpoint/WeightedPolynomial.lean",
+      "original_sha256": "88b18c26fb88a7068b0ca2d7bb39b01d285f430733a6661e50a8bfae0611d7eb",
+      "copied_sha256": "4abccd0c989aa52f15c7767f12c58327a904f59b594045da88d0dbad1250bfa2",
+      "changed_beyond_namespace_prefix": false
+    }
+  ],
+  "new_files": [
+    {
+      "path": "Legacy/BecknerOnofri/ThetaDecayAllDimensions.lean",
+      "sha256": "b8f4645c75d502240323c7a6e3df4dbf49adddf77077de5ec1c876ea3f2b112f"
+    },
+    {
+      "path": "Legacy/BecknerOnofri/SobolevLatticeBoxes.lean",
+      "sha256": "1acf1281ee53485a6ba861026187445ab6c18ab1a9c086eca69aa42d88e7f6f4"
+    }
+  ],
+  "changed_beyond_namespace_prefix": [
+    "Legacy.BecknerOnofri.GreenExponentialIntegrability",
+    "Legacy.BecknerOnofri.GreenHeatBounds",
+    "Legacy.BecknerOnofri.GreenHeatIntegrability",
+    "Legacy.BecknerOnofri.GreenHeatPointwise",
+    "Legacy.BecknerOnofri.SubcriticalRoughBound",
+    "Legacy.BecknerOnofri.TorusSobolevCoefficients",
+    "Legacy.BecknerOnofri.TorusSobolevCompactness",
+    "Legacy.BecknerOnofri.PolarizationSelection",
+    "Legacy.BecknerOnofri.SteinerSelection",
+    "Legacy.BecknerOnofri.SubcriticalCounterexample",
+    "Legacy.BecknerOnofri.SubcriticalDensityCompactness",
+    "Legacy.BecknerOnofri.SubcriticalPrimalDual"
+  ],
+  "omitted_unneeded_modules": [
+    "Legacy.BecknerOnofri.LatticePolynomialSigned",
+    "Legacy.BecknerOnofri.FiniteWeights",
+    "Legacy.BecknerOnofri.FiniteScalarCore",
+    "Legacy.BecknerOnofri.LatticePolynomialFunctional",
+    "Legacy.BecknerOnofri.FiniteScalarSemantics",
+    "Legacy.BecknerOnofri.LatticePolynomialBridge",
+    "Legacy.D10.FiniteScalarCore",
+    "Legacy.D10.FiniteScalarSemantics"
+  ],
+  "cosine_representation_import_cleanup": "EulerUnitProfiles imports only PositiveCosineRepresentation and BernsteinPositiveCoefficients in place of the irrelevant LowDimensionMixtureEndpoint. No lowdim endpoint/scalar tables are imported by this extension."
+}

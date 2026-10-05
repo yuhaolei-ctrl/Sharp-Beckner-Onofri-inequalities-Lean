@@ -1,0 +1,117 @@
+{
+  "updated_utc": "2026-09-27T09:05:11.766823+00:00",
+  "configured_targets": 257,
+  "complete_formalization": true,
+  "statement_encoding_complete": true,
+  "proof_correspondence_complete": true,
+  "build": {
+    "status": "passed",
+    "count": 257,
+    "jobs": 8555,
+    "exit_code": 0,
+    "command": "./scripts/lake build Challenge Solution",
+    "log": "verification/full_manuscript_257_build.log"
+  },
+  "axiom_audit": {
+    "status": "passed",
+    "count": 257,
+    "exit_code": 0,
+    "command": "./scripts/lake env lean AxiomAuditFullManuscript.lean",
+    "log": "verification/full_manuscript_257_axioms.log",
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "source_scan": {
+    "status": "passed",
+    "log": "verification/full_manuscript_257_forbidden_scan.log",
+    "method": "Lean code tokens after removing nested comments and strings"
+  },
+  "comparator": {
+    "status": "passed",
+    "count": 257,
+    "configuration": "comparator.json",
+    "log": "verification/comparator_full_manuscript_257.log",
+    "exit_code_file": "verification/full_manuscript_257_comparator_exit_code.txt",
+    "exit_code": 0,
+    "default_kernel_replay_accepted": true,
+    "solution_accepted": true,
+    "session_id": 83130,
+    "mode": "official macOS development adapter; default Lean kernel replay; no Linux landrun isolation"
+  },
+  "fractional_increment": {
+    "status": "passed",
+    "count": 3,
+    "configuration": "comparator_fractional_increment.json",
+    "log": "verification/comparator_fractional_increment.log",
+    "exit_code_file": "verification/fractional_increment_exit_code.txt",
+    "exit_code": 0,
+    "default_kernel_replay_accepted": true,
+    "solution_accepted": true,
+    "session_id": 71562,
+    "mode": "official macOS development adapter; default Lean kernel replay; no Linux landrun isolation"
+  },
+  "historical_full_244": {
+    "status": "stopped_superseded",
+    "count": 244,
+    "configuration": "verification/full_manuscript_244/comparator.json",
+    "log": "verification/comparator_full_manuscript_244.log",
+    "exit_code_file": "verification/full_manuscript_244_comparator_exit_code.txt",
+    "exit_code": 143,
+    "default_kernel_replay_accepted": false,
+    "solution_accepted": false,
+    "session_id": 39501,
+    "mode": "official macOS development adapter; default Lean kernel replay; no Linux landrun isolation",
+    "reason": "Deliberately stopped duplicate whole244 run; current whole257 covers every target. Not counted as passed."
+  },
+  "supplemental_209_218": {
+    "status": "stopped_superseded",
+    "count": 10,
+    "configuration": "comparator_final_audit_gap.json",
+    "log": "verification/comparator_final_audit_gap.log",
+    "exit_code_file": "verification/final_audit_gap_exit_code.txt",
+    "exit_code": 143,
+    "default_kernel_replay_accepted": false,
+    "solution_accepted": false,
+    "session_id": 51394,
+    "mode": "official macOS development adapter; default Lean kernel replay; no Linux landrun isolation",
+    "reason": "Deliberately stopped duplicate209–218 run to prioritize whole257. Not counted as passed."
+  },
+  "source_audit": "source_audit/FULL_MANUSCRIPT_COVERAGE_20260925.json",
+  "fractional_correspondence": "source_audit/FRACTIONAL_FINAL_CORRESPONDENCE_20260927.md",
+  "next_actions": [],
+  "note": "Principal conclusions of all 51 labelled results and their required proof inputs implemented; technical substitutions and supporting assertions outside scope documented. The September 27 whole257 checkpoint accepted this identical proof/configuration. September 30 reference and semantic review is recorded separately.",
+  "formalization_scope": "Principal conclusions of the 51 labelled September 21 manuscript results and their required proof inputs; documented proof variants; not every sentence or general cited theorem.",
+  "literal_every_sentence_formalized": false,
+  "reference_closure_audit": "source_audit/reference_audit_20260930/REPORT_ZH.md",
+  "reference_closure_review": {
+    "review_date": "2026-09-30",
+    "manual_scope": "51 labelled conclusions, 51 citation occurrences, 31 cited references",
+    "manual_semantics_are_not_machine_decided": true,
+    "results": "source_audit/reference_audit_20260930/results.json",
+    "fresh_build_exit_code": 0,
+    "fresh_boundary_query_exit_code": 0,
+    "fresh_comparator_status": "stopped_redundant",
+    "proof_sources_changed": false,
+    "completed_utc": "2026-09-30T17:35:52.338520+00:00",
+    "structural_checks_passed": true,
+    "fresh_comparator_exit_code": 143,
+    "fresh_comparator_counted_as_passed": false,
+    "kernel_acceptance_basis": "Completed whole257 acceptance and byte-identical current proof/configuration",
+    "accepted_comparator_log": "verification/comparator_full_manuscript_257.log",
+    "build_log": "verification/reference_audit_20260930_build.log",
+    "boundary_query_log": "verification/reference_audit_20260930_boundaries.log",
+    "registered_axiom_records": 257,
+    "all_boundary_axiom_records": 263,
+    "proof_source_count": 4796,
+    "source_order_readable_inventory": "source_audit/reference_audit_20260930/PAPER_ORDER_ZH.md",
+    "numbered_statement_clause_coverage": {
+      "complete": 50,
+      "partial": 1,
+      "partial_source_number": "4.2"
+    },
+    "other_numbered_statement_not_separately_formalized": "remark 5.6"
+  }
+}

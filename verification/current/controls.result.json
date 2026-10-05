@@ -1,0 +1,8 @@
+{
+  "match": {
+    "exit_code": 0
+  },
+  "mismatch": {
+    "exit_code": 1
+  }
+}

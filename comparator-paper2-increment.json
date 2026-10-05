@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Paper2Challenge",
+  "solution_module": "Paper2Solution",
+  "theorem_names": [
+    "BecknerOnofri.Paper2.negativeSobolevEnergy_normalization",
+    "BecknerOnofri.Paper2.negativeSobolevEnergy_fourier",
+    "BecknerOnofri.Paper2.low_density_extended",
+    "BecknerOnofri.Paper2.high_density_extended",
+    "BecknerOnofri.Paper2.physicalSpectralPowerGraph_scaling"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

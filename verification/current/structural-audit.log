@@ -1,0 +1,9 @@
+{
+  "structural_audit": "passed",
+  "proof_files_scanned": 4799,
+  "registered_targets": 262,
+  "paper2_results": 51,
+  "changed_statement_bodies": 28,
+  "paper_bytes_verified": true,
+  "independent_semantic_certification": false
+}

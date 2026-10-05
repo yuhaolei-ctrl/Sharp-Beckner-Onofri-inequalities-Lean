@@ -1,0 +1,64 @@
+name = "beckner_onofri_ge12"
+version = "0.1.0"
+defaultTargets = ["Challenge", "Solution"]
+
+[[require]]
+name = "plausible"
+path = "vendor/plausible"
+
+[[require]]
+name = "LeanSearchClient"
+path = "vendor/LeanSearchClient"
+
+[[require]]
+name = "importGraph"
+path = "vendor/importGraph"
+
+[[require]]
+name = "proofwidgets"
+path = "vendor/proofwidgets"
+
+[[require]]
+name = "aesop"
+path = "vendor/aesop"
+
+[[require]]
+name = "Qq"
+path = "vendor/Qq"
+
+[[require]]
+name = "batteries"
+path = "vendor/batteries"
+
+[[require]]
+name = "Cli"
+path = "vendor/Cli"
+
+[[require]]
+name = "mathlib"
+path = "vendor/mathlib"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "BecknerOnofri"
+
+[[lean_lib]]
+name = "Legacy"
+
+[[lean_lib]]
+name = "Paper2Definitions"
+
+[[lean_lib]]
+name = "Paper2Proofs"
+
+[[lean_lib]]
+name = "Paper2Challenge"
+
+[[lean_lib]]
+name = "Paper2Solution"
+

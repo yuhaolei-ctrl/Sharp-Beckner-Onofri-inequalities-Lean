@@ -1,0 +1,72 @@
+{
+  "updated_utc": "2026-10-05T03:44:42.124040+00:00",
+  "paper2_complete": false,
+  "independent_semantic_review": "not_completed",
+  "baseline_build": {
+    "status": "passed",
+    "exit_code": 0,
+    "scope": 257,
+    "log": "current/build.log",
+    "cache_reused": true
+  },
+  "baseline_axioms": {
+    "status": "passed",
+    "scope": 257,
+    "log": "current/axioms257.log"
+  },
+  "historical_comparator": {
+    "status": "passed",
+    "date": "2026-09-27",
+    "scope": 257,
+    "current_baseline_source_bytes_match": true,
+    "log": "historical/comparator_full_manuscript_257.log",
+    "mode": "development; official kernel replay; no Linux isolation; Nanoda disabled"
+  },
+  "nanoda_baseline": {
+    "status": "running",
+    "scope": 257,
+    "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27"
+  },
+  "paper2_build": {
+    "status": "passed",
+    "exit_code": 0,
+    "scope": 262,
+    "jobs": 8559,
+    "log": "current/paper2-build.log",
+    "cache_reused": true
+  },
+  "paper2_comparator": {
+    "status": "not_run",
+    "scope": 262
+  },
+  "controls": {
+    "status": "passed",
+    "matching_true_statement": "accepted by Comparator, Nanoda and official kernel",
+    "different_true_statement": "rejected by Comparator with statement-mismatch diagnostic",
+    "logs": [
+      "current/control-match.log",
+      "current/control-mismatch.log"
+    ]
+  },
+  "open_obligations": [
+    "physical mixed-spatial coordinate/form/power transport for Lemma 2.9",
+    "literal derivative-series locally uniform convergence in Lemma 4.2",
+    "Remark 5.6 counterexample, outside the 51 formal result environments",
+    "displayed quantitative cutoff rate in the proof, if literal every-proof-claim coverage is desired"
+  ],
+  "paper2_axioms": {
+    "status": "running",
+    "scope": 262
+  },
+  "paper2_increment_comparator": {
+    "status": "running",
+    "scope": 5,
+    "configuration": "comparator-paper2-increment.json",
+    "mode": "development; official kernel; no Linux isolation"
+  },
+  "paper2_headers": {
+    "status": "passed",
+    "scope": 5,
+    "method": "literal declaration-header comparison; not Comparator"
+  }
+}

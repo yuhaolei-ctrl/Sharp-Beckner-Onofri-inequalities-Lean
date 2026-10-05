@@ -1,0 +1,7 @@
+.lake
+vendor/
+.tools/
+.DS_Store
+__pycache__/
+*.ndjson
+verification/runs/
