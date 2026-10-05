@@ -1,384 +1,41 @@
 {
-  "updated_utc": "2026-10-05T13:47:12.365975+00:00",
-  "manuscript_complete": true,
-  "independent_semantic_review": "not_completed",
-  "baseline_build": {
+  "registered_targets": 269,
+  "formal_results": 51,
+  "current_source": {
+    "manifest": "../SOURCE_MANIFEST.json",
+    "build": "passed",
+    "axioms": "passed",
+    "source_layout": "passed"
+  },
+  "published_certificate": {
+    "release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005",
+    "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+    "source_manifest": "certified-source-manifest.json",
+    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+  },
+  "official_comparator": {
     "status": "passed",
-    "exit_code": 0,
-    "scope": 257,
-    "log": "current/build.log",
-    "cache_reused": true
-  },
-  "baseline_axioms": {
-    "status": "passed",
-    "scope": 257,
-    "log": "current/axioms257.log"
-  },
-  "historical_comparator": {
-    "status": "passed",
-    "date": "2026-09-27",
-    "scope": 257,
-    "current_baseline_source_bytes_match": true,
-    "log": "historical/comparator_full_manuscript_257.log",
-    "mode": "development; official kernel replay; no Linux isolation; Nanoda disabled"
-  },
-  "nanoda_baseline": {
-    "status": "interrupted",
-    "scope": 257,
-    "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27",
-    "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
-  },
-  "manuscript_build": {
-    "status": "passed",
-    "scope": 269,
-    "exit_code": 0,
-    "jobs": 8568,
-    "log": "current/build269.log",
-    "cache_reused": true
-  },
-  "manuscript_comparator": {
-    "status": "passed",
-    "scope": 269,
-    "mode": "development; official kernel, statement and definition matching; no Linux isolation",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "exit_code": 0,
-    "finished_utc": "2026-10-05T09:49:48.926554+00:00",
-    "evidence_directory": "current/comparator-local",
-    "log": "current/comparator-local/comparator.log"
-  },
-  "controls": {
-    "status": "passed",
-    "matching_true_statement": "accepted by Comparator, Nanoda and official kernel",
-    "different_true_statement": "rejected by Comparator with statement-mismatch diagnostic",
-    "logs": [
-      "current/control-match.log",
-      "current/control-mismatch.log"
-    ]
-  },
-  "open_obligations": [],
-  "manuscript_axioms": {
-    "status": "passed",
-    "scope": 269,
-    "exact_target_names_verified": true,
-    "allowed_axioms": [
-      "Classical.choice",
-      "Quot.sound",
-      "propext"
-    ],
-    "log": "current/axioms269.log"
-  },
-  "manuscript_increment_comparator": {
-    "status": "interrupted",
-    "scope": 5,
-    "configuration": "comparator-increment.json",
-    "mode": "development; official kernel; no Linux isolation",
-    "reason": "Resource contention during continued proof development; no acceptance result. Final revision will be checked serially."
-  },
-  "manuscript_headers": {
-    "status": "passed",
-    "scope": 12,
-    "kind": "literal declaration headers plus compiled types; does not replace Comparator replay"
-  },
-  "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
-  "final_registered_targets": 269,
-  "continued_formalization": "All additions for the 51-result scope implemented, compiled and covered by complete official Comparator and independent con-ron verified-mode acceptance.",
-  "nanoda_final": {
-    "status": "failed_stack_overflow",
-    "scope": 269,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37266167712",
-    "run_id": 37266167712,
-    "platform": "GitHub-hosted ubuntu-24.04",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "exit_code": 134,
-    "worker_stack_bytes": 268435456
-  },
-  "proof_source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
-  "verification_workflow_commit": "5501918deae5853635550efb7a8cd74203c69f84",
-  "certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/verified-20261005",
-  "nanoda_attempts": [
-    {
-      "run_id": 37265985537,
-      "conclusion": "failure_before_kernel_check",
-      "reason": "Nanoda requires an existing pretty-printer destination; initializer fixed",
-      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37265985537",
-      "evidence_directory": "current/nanoda-attempt-37265985537"
-    },
-    {
-      "run_id": 37266167712,
-      "conclusion": "stack_overflow",
-      "exit_code": 134,
-      "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37266167712",
-      "evidence_directory": "current/nanoda-attempt-37266167712",
-      "elapsed": "1:07:44",
-      "max_rss_kib": 13158032,
-      "proof_rejection_diagnostic": false
-    },
-    {
-      "run_id": 37271984661,
-      "conclusion": "terminated",
-      "exit_code": 143,
-      "reason": "Termination cause unspecified in available GitHub logs; no mathematical rejection diagnostic",
-      "last_logged_declaration_indices": [
-        570476,
-        570241
-      ],
-      "evidence_directory": "current/nanoda-attempt-37271984661",
-      "artifacts_available": false
-    },
-    {
-      "run_id": 37284776024,
-      "conclusion": "terminated",
-      "exit_code": 143,
-      "reason": "Termination cause unspecified by GitHub; additional 8 GiB swap did not complete the check",
-      "last_logged_declaration_indices": [
-        570476,
-        570241
-      ],
-      "evidence_directory": "current/nanoda-attempt-37284776024",
-      "artifacts_available": false
-    },
-    {
-      "run_id": 37281025130,
-      "conclusion": "runner_lost_communication",
-      "exit_code": null,
-      "logs_available": false,
-      "artifacts_available": false,
-      "evidence_directory": "current/nanoda-attempt-37281025130"
-    }
-  ],
-  "historical_manuscript_source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
-  "comparator_export_replay": {
-    "status": "timed_out",
-    "scope": 269,
-    "driver": "verification/tools/ReplayExports.lean",
-    "upstream_algorithms_unchanged": true,
-    "run_id": 37267009000,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37267009000",
-    "workflow_commit": "716345b",
-    "reason": "GitHub job exceeded maximum execution time of 6h0m0s",
-    "evidence_directory": "current/comparator-hosted-timeout"
-  },
-  "nanoda_parallel_run": {
-    "run_id": 37269653434,
-    "status": "cancelled",
-    "scope": 269,
-    "num_threads": 4,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37269653434",
-    "same_proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "reason": "Same insufficient 256 MiB stack; preparing 1 GiB runtime and diagnostic traces"
-  },
-  "nanoda_runtime_control": {
-    "status": "passed",
-    "valid_declarations": 536,
-    "trace_indices_exactly_once": true,
-    "invalid_proof_rejected": true,
-    "worker_stack_bytes": 1073741824,
-    "evidence": "current/nanoda-runtime-control"
-  },
-  "nanoda_large_stack": {
-    "status": "terminated",
-    "run_id": 37271984661,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37271984661",
-    "scope": 269,
-    "worker_stack_bytes": 1073741824,
-    "num_threads": 2,
-    "workflow_commit": "a030913",
-    "exit_code": 143,
-    "proof_rejection_diagnostic": false,
-    "termination_reason": "Not specified by GitHub logs; all subsequent evidence steps were skipped"
-  },
-  "eink0rn": {
-    "status": "timed_out",
-    "run_id": 37272652155,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37272652155",
-    "scope": 269,
-    "checker_revision": "31a9e3a1347d0544e8362fabea0ac669b41afbbb",
-    "source_patch": null,
-    "controls": "passed: accepts valid proof; rejects altered proof",
-    "run_stage": "ended without complete acceptance",
-    "reason": "GitHub job exceeded maximum execution time of 6h0m0s",
-    "evidence_directory": "current/eink0rn-attempt-37272652155",
-    "last_reported_declaration_count": 522206,
-    "last_reported_declaration": "BecknerOnofri.HighDim.Spin.CandidateBatch0120.candidate1923._proof_1",
-    "checker_exit_code": null
-  },
-  "nanoda_single_worker_control": {
-    "status": "passed",
-    "worker_threads": 1,
-    "worker_stack_bytes": 1073741824,
-    "valid_declarations": 536,
-    "trace_indices_exactly_once": true,
-    "invalid_proof_rejected": true,
-    "evidence": "current/nanoda-single-worker-control"
-  },
-  "nanoda_single_worker": {
-    "status": "runner_lost_communication",
-    "run_id": 37281025130,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37281025130",
-    "worker_threads": 1,
-    "worker_stack_bytes": 1073741824,
-    "scope": 269,
-    "workflow_commit": "b10b843",
-    "reason": "GitHub: hosted runner lost communication with the server",
-    "exit_code": null,
-    "logs_available": false,
-    "artifacts_available": false,
-    "evidence_directory": "current/nanoda-attempt-37281025130"
-  },
-  "comparator_statement_matching": {
-    "status": "passed",
-    "scope": 269,
-    "reachable_definitions": "passed",
-    "axiom_dependencies": "passed",
-    "solution_declarations": 1029606,
-    "challenge_declarations": 47029,
-    "source": "Completed workflow log and artifact: current/comparator-hosted-timeout",
-    "run_id": 37267009000,
-    "official_kernel_replay": "hosted timed out; complete local replay separately passed"
-  },
-  "nanoda_swap_retry": {
-    "status": "terminated",
-    "run_id": 37284776024,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37284776024",
-    "worker_threads": 2,
-    "worker_stack_bytes": 1073741824,
-    "additional_swap_bytes": 8589934592,
-    "scope": 269,
-    "workflow_commit": "78ac701",
-    "resource_setup": "passed",
-    "exit_code": 143,
-    "termination_reason": "Not specified in GitHub logs; evidence steps skipped",
-    "artifacts_available": false,
-    "evidence_directory": "current/nanoda-attempt-37284776024",
-    "proof_rejection_diagnostic": false
-  },
-  "nanoda_local_final": {
-    "status": "interrupted",
-    "scope": 269,
-    "worker_threads": 2,
-    "worker_stack_bytes": 1073741824,
-    "platform": "macOS arm64",
-    "started_utc": "2026-10-05T09:58:40.668952+00:00",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "reason": "Stopped duplicate two-worker run after prolonged swapping; cloud checks continue",
-    "wrapper_exit_code": 1,
-    "requested_signal": "SIGTERM",
-    "evidence_directory": "current/nanoda-local-interrupted"
-  },
-  "lean4lean": {
-    "status": "deterministic_timeout",
-    "run_id": 37300200036,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300200036",
-    "checker_revision": "bce3448115f7819fc12d647fadd3bb090666637e",
-    "independent_design": false,
-    "controls": "valid accepted; damaged proof rejected with declaration type mismatch and pretty-printer diagnostics",
-    "scope": 269,
-    "evidence_directory": "current/lean4lean-attempt-37300200036",
-    "failed_declaration": "BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0177.e060903"
+    "mode": "local development mode; no Linux sandbox",
+    "targets": 269,
+    "evidence": "verification-evidence.tar.gz in the certificate release"
   },
   "con_ron": {
     "status": "passed",
-    "run_id": 37300905046,
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37300905046",
     "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
     "mode": "verified",
-    "source_patch": null,
-    "scope": 269,
-    "controls": "passed",
-    "run_stage": "completed full verified check",
-    "evidence_directory": "current/con-ron-hosted",
     "exit_code": 0,
-    "accepted_declaration_records": 1027308,
-    "named_declarations": 1029606,
-    "elapsed": "2:30:01",
-    "finished_utc": "2026-10-05T13:39:17Z",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76"
+    "accepted_declaration_records": 1027308
   },
-  "lean4lean_retry": {
-    "status": "cancelled_after_independent_acceptance",
-    "run_id": 37301154501,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37301154501",
-    "controls": "passed",
-    "fuel": {
-      "whnf": 10000000,
-      "whnfEager": 100000000,
-      "lazyDelta": 1000000
-    },
-    "scope": 269,
-    "reason": "Optional replay stopped after full official Comparator and independent con-ron acceptance were validated",
-    "finished_utc": "2026-10-05T13:44:05Z",
-    "independent_design": false,
-    "checker_exit_code": null,
-    "evidence_directory": "current/lean4lean-cancelled-37301154501"
-  },
-  "con_ron_local": {
-    "status": "interrupted_after_hosted_acceptance",
-    "scope": 269,
-    "worker_threads": 1,
-    "platform": "macOS arm64",
-    "checker_revision": "2e3486617cee878f796d8133c481e239696132fe",
-    "source_patch": null,
-    "mode": "verified",
-    "controls": "passed: valid proof exit 0; damaged proof exit 1",
-    "proof_export_sha256": "5c49eb455c7e931ada9e86dc1852612dac7c02f3ddb3430ba6a70133b76aec76",
-    "run_stage": "stopped as redundant after combined evidence validation passed",
-    "exit_code": -15,
-    "started_utc": "2026-10-05T12:05:26.949475+00:00",
-    "finished_utc": "2026-10-05T13:43:02.555717+00:00",
-    "last_progress_completed_checks": 580000,
-    "evidence_directory": "current/con-ron-local-interrupted",
-    "requested_signal": "SIGTERM"
-  },
-  "completion_scope": "The 51 labelled formal-result environments of the exact manuscript; documented proof-route and remark boundaries remain explicit.",
-  "final_evidence_validation": "current/final-kernel-validation.json",
-  "final_source_audit": "current/final-source-audit.json",
-  "natural_language_statement_review": {
-    "status": "implementer_review_completed",
-    "results": 51,
-    "changed_statement_bodies": 28,
-    "crosswalk": "../audit/statement_map.json",
-    "independent_reviewer_approval": false
-  },
-  "outside_completion_scope": [
-    "Remark 5.6 counterexample is not separately registered",
-    "The displayed cutoff O(delta^(2m-1)) proof estimate is replaced by proved form-norm convergence",
-    "Independent human semantic approval, Arena listing and a fresh-machine cold rebuild are not claimed"
-  ],
-  "previous_certificate_release": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/releases/tag/certificate-20261005-d561980",
-  "current_source_layout": {
-    "status": "passed",
-    "entrypoints": [
-      "Challenge.lean",
-      "Solution.lean"
-    ],
-    "registered_targets": 269,
-    "source_manifest_sha256": "8007f2430dfbeaa3801da85a9579a4946cebe107680c88e9fee8fed9d1c805b1",
-    "source_equivalence": "current/source-layout/layout-validation.json",
-    "build_and_axioms": "current/source-layout/results.json",
-    "frozen_replay_receipts_revalidated": "current/source-layout/frozen-evidence-validation.json",
-    "independent_replay_of_new_module_paths": false,
-    "internal_theorem_identifiers_preserved": true
-  },
-  "lean4lean_old_revision_rerun": {
-    "run_id": 37300200036,
-    "attempt": 2,
-    "status": "deterministic_timeout",
-    "evidence_directory": "current/lean4lean-old-revision-attempt2",
-    "reason": "Re-run jobs used the original revision with default fuel, not the corrected main workflow."
-  },
-  "lean4lean_current_retry": {
-    "run_id": 37356177464,
-    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37356177464",
-    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da",
-    "certificate_release": "verified-20261005",
+  "lean4lean": {
     "status": "in_progress",
-    "completed_prerequisites": [
-      "exact export identity",
-      "checker build",
-      "valid-proof acceptance",
-      "damaged-proof rejection"
-    ],
-    "full_replay_passed": false,
-    "note": "Full-corpus replay is running; no acceptance is claimed until actual success."
-  }
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37356177464",
+    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da"
+  },
+  "independent_natural_language_review": "not_completed",
+  "scope_exclusions": [
+    "Remark 5.6 counterexample is not separately registered",
+    "The displayed cutoff-rate estimate is replaced by proved form-norm convergence"
+  ],
+  "evidence_storage": "Full logs and historical attempts are available in GitHub Actions, the certificate release and historical commits; generated evidence is not tracked in the source tree."
 }

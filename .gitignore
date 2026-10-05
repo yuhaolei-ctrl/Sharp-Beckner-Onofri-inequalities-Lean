@@ -6,3 +6,10 @@ __pycache__/
 *.ndjson
 verification/runs/
 external-check/
+
+# Generated evidence and local working notes
+verification/current/
+verification/historical/
+audit/
+AUDIT_ZH.md
+EXTERNAL_REVIEW.md

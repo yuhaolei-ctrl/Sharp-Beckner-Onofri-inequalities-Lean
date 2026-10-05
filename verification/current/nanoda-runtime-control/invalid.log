@@ -1,7 +1,0 @@
-
-thread 'thread_1' panicked at src/tc.rs:969:71:
-assertion failed: self.def_eq(u, v)
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-
-thread 'main' panicked at src/tc.rs:187:26:
-A thread in `check_all_declars` panicked while being joined: Any { .. }

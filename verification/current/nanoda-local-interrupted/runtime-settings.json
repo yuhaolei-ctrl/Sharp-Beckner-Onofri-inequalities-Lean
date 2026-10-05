@@ -1,7 +1,0 @@
-{
-  "worker_stack_bytes": 1073741824,
-  "num_threads": 2,
-  "platform": "macOS arm64",
-  "source_revision": "4c544ed4099c8227f07d5de77ad1e69fb0740a27",
-  "patch_scope": "worker stack allocation and optional name traces; declaration checking rules unchanged"
-}

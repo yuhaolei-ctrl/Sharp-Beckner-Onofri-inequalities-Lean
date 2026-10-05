@@ -25,7 +25,7 @@ jobs:
           gh release download "$CERT_RELEASE" --pattern solution.ndjson.gz --pattern certificate-export.json --dir external-check
           python3 scripts/prepare_external_check.py | tee external-check/identity.log
           python3 scripts/audit_export_inventory.py external-check/solution.ndjson > external-check/solution-inventory.json
-          cmp external-check/solution-inventory.json verification/current/solution-inventory.json
+          cmp external-check/solution-inventory.json verification/solution-inventory.json
       - name: Build the unmodified Arena-pinned verified checker
         run: |
           set -o pipefail

@@ -1,9 +1,0 @@
-{
-  "finished_utc": "2026-10-05T05:24:30.551428+00:00",
-  "exit_code": 0,
-  "target_count": 269,
-  "definition_count": 21,
-  "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
-  "output_sha256": "610f9999ec6366dcfff9915a0e929357c6cb123038e58ff88b269325044ce93d",
-  "independent_semantic_review": false
-}

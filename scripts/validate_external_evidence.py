@@ -27,9 +27,9 @@ if not (args.nanoda or args.local_nanoda or args.eink0rn or args.con_ron or args
     parser.error('At least one completed independent-kernel receipt is required.')
 config = json.loads((root / 'verification/certified-comparator.json').read_text())
 manifest_hash = hashlib.sha256((root / 'verification/certified-source-manifest.json').read_bytes()).hexdigest()
-expected_proof = json.loads((root / 'verification/current/certificate-export.json').read_text())
-expected_challenge = json.loads((root / 'verification/current/challenge-export.json').read_text())
-inventory = json.loads((root / 'verification/current/solution-inventory.json').read_text())
+expected_proof = json.loads((root / 'verification/certificate-export.json').read_text())
+expected_challenge = json.loads((root / 'verification/challenge-export.json').read_text())
+inventory = json.loads((root / 'verification/solution-inventory.json').read_text())
 assert inventory['export_sha256'] == expected_proof['export_sha256']
 assert inventory['bytes'] == expected_proof['bytes']
 assert set(inventory['axioms']) == set(config['permitted_axioms'])

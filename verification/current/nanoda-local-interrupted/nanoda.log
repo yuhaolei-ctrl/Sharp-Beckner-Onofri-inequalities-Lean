@@ -1,3 +1,0 @@
-time: command terminated abnormally
-     4625.28 real      5221.11 user       992.64 sys
-time: sysctl kern.clockrate: Operation not permitted

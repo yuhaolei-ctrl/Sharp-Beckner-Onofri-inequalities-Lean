@@ -76,7 +76,7 @@ def validate():
     for snapshot, original in [('certified-comparator.json', 'comparator-paper2.json'),
                                ('certified-baseline-comparator.json', 'comparator.json')]:
         assert (ROOT / 'verification' / snapshot).read_bytes() == originals[original]
-    baseline = json.loads((ROOT / 'audit/baseline_source_manifest.json').read_text())
+    baseline = json.loads((ROOT / 'verification/baseline-source-manifest.json').read_text())
     for name, digest in baseline.items():
         assert sha(originals[name]) == digest, f'Frozen baseline changed: {name}'
     return {'source_layout': 'passed', 'current_source_files': len(expected),

@@ -36,8 +36,8 @@ def save(name, value):
 
 
 proof = root / 'external-check/solution.ndjson'
-record = json.loads((root / 'verification/current/certificate-export.json').read_text())
-inventory = json.loads((root / 'verification/current/solution-inventory.json').read_text())
+record = json.loads((root / 'verification/certificate-export.json').read_text())
+inventory = json.loads((root / 'verification/solution-inventory.json').read_text())
 config = json.loads((root / 'verification/certified-comparator.json').read_text())
 assert digest(proof) == record['export_sha256'] == inventory['export_sha256']
 assert proof.stat().st_size == record['bytes'] == inventory['bytes']
