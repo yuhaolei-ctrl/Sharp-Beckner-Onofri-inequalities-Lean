@@ -27,6 +27,14 @@ cargo build --release --locked --manifest-path .tools/nanoda/Cargo.toml
 python3 scripts/check_nanoda.py --binary .tools/nanoda/target/release/nanoda_bin
 ```
 
+The published certificate is also checked by the manual `independent-kernel.yml`
+GitHub Actions workflow on a separate Linux host. It verifies the source manifest,
+compressed and raw hashes, and actual presence of all 269 target declarations, then
+builds the pinned Nanoda checker. Its pretty-printer must resolve all registered
+target names after checking the complete export. The first CI attempt failed
+before kernel checking because its output file had not been initialized; that
+attempt and later outcomes remain visible in `STATUS.json` and Actions.
+
 The proof export is large. The script records source configuration, exact target
 list, exporter result, binary digest, export digest and checker exit code.
 The current `STATUS.json` distinguishes the actual baseline check from any
@@ -61,3 +69,38 @@ Arena's exporter/Lean version must be compatible with Lean 4.32.0; migrating
 this certificate to another toolchain requires a separate checked change.
 The descriptor is preparation for an external run, not a submitted or accepted
 Arena result. No Arena pull request or website entry has been created.
+
+## Replaying published exports without rebuilding the manuscript
+
+The certificate release also contains `challenge.ndjson.gz` and
+`challenge-export.json`. These are the exact challenge bytes exported by the
+full upstream Comparator run; both manifests identify the same proof-source
+commit and source digest.
+
+`comparator-replay.yml` validates both archives, pins Comparator, Lean4Checker
+and the exporter, and builds `verification/tools/ReplayExports.lean`. This small
+driver calls the upstream `compareAt`, `checkAxioms` and official-kernel `replay'`
+functions unchanged. It reads file streams instead of holding both exports as
+strings, and emits progress messages. This is a separate replay driver, not a
+claim that the upstream CLI was modified. It does not perform the optional
+Nanoda check; that is the separate independent-kernel workflow.
+
+The driver is checked on a matching true statement and a different true
+statement under the same name; results are in `current/replay-controls.json`.
+No successful control run substitutes for acceptance of the 269-target corpus.
+The public workflow logs distinguish the two runs.
+
+After downloading the four release assets to `external-check/`, with Lean
+4.32.0 on PATH:
+
+```sh
+python3 scripts/prepare_external_check.py
+python3 scripts/prepare_comparator_replay.py
+lake -d .tools/replay build replay-exports
+.tools/replay/.lake/build/bin/replay-exports comparator-paper2.json \
+  external-check/challenge.ndjson external-check/solution.ndjson
+```
+
+The source manifest, challenge and solution digests are checked before replay.
+The comparator library checks equality of reachable definitions, so a changed
+meaning cannot be hidden behind an unchanged theorem name.

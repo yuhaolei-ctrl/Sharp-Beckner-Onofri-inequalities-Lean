@@ -1,11 +1,8 @@
 {
-  "description": "Beckner\u2013Onofri: 257 baseline targets and 5 paper-2 bridges. Formal proof corpus only; not a claim of complete paper-2 semantic coverage.",
-  "url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean",
-  "ref": "main",
-  "rev": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
-  "pre-build": "python3 scripts/setup_dependencies.py",
-  "module": "Paper2Solution",
-  "export-decls": [
+  "module": "Paper2Challenge",
+  "arguments": [
+    "Paper2Challenge",
+    "--",
     "BecknerOnofri.Target.density_endpoint",
     "BecknerOnofri.Target.density_rigidity",
     "BecknerOnofri.Target.potential_endpoint",
@@ -274,7 +271,34 @@
     "BecknerOnofri.Paper2.physical_spectralPower_domain",
     "BecknerOnofri.Paper2.physical_measure_transport",
     "BecknerOnofri.Paper2.physical_form_transport",
-    "BecknerOnofri.Paper2.physical_potential"
+    "BecknerOnofri.Paper2.physical_potential",
+    "propext",
+    "Quot.sound",
+    "Classical.choice",
+    "Nat.add",
+    "Nat.sub",
+    "Nat.mul",
+    "Nat.pow",
+    "Nat.gcd",
+    "Nat.div",
+    "Nat.mod",
+    "Nat.beq",
+    "Nat.ble",
+    "Nat.land",
+    "Nat.lor",
+    "Nat.xor",
+    "Nat.shiftLeft",
+    "Nat.shiftRight",
+    "String.ofList"
   ],
-  "outcome": "accept"
+  "source_commit": "d561980e2b10e1c431e1a1656a025bd41e7270dd",
+  "source_manifest_sha256": "f7f23b1a9a2aeaafbbc61b1fa7e430fe0eb43ab3416413026df975a41fe71ff2",
+  "exporter_binary_sha256": "0f8da62eec908fc213ecde71d3850294ca57e84b6b911a9c9dd0c6ed396591bd",
+  "exit_code": 0,
+  "started_utc": "20261005T044947246186Z",
+  "export_sha256": "9a64bdde552e8a986bf892961d6207dac1ab6a5ab4008f62076f87a97e0464d1",
+  "bytes": 287219549,
+  "elapsed_seconds": 53.29460141691379,
+  "gzip_sha256": "03bda805d492ac862572fb344b1ef80ec07698e8b33d7f244a117c58994da25d",
+  "gzip_bytes": 46733007
 }
