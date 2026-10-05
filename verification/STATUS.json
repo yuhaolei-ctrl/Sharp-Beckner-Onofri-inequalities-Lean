@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T03:44:42.124040+00:00",
+  "updated_utc": "2026-10-05T03:49:55.870976+00:00",
   "paper2_complete": false,
   "independent_semantic_review": "not_completed",
   "baseline_build": {
@@ -55,8 +55,16 @@
     "displayed quantitative cutoff rate in the proof, if literal every-proof-claim coverage is desired"
   ],
   "paper2_axioms": {
-    "status": "running",
-    "scope": 262
+    "status": "passed",
+    "scope": 262,
+    "exit_code": 0,
+    "exact_target_set_verified": true,
+    "actual_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "log": "current/axioms262.log"
   },
   "paper2_increment_comparator": {
     "status": "running",
@@ -68,5 +76,7 @@
     "status": "passed",
     "scope": 5,
     "method": "literal declaration-header comparison; not Comparator"
-  }
+  },
+  "source_commit": "cf3a08c1e83494b0c0812df51bc228cb9e2a86fa",
+  "source_manifest_sha256": "ddd7b14db80bfc345b76b26a02e532def82ecda610996c1a49cfc0ad5b7c4d41"
 }
