@@ -104,6 +104,8 @@ jobs:
           settings = json.loads(Path('verification/nanoda-config.json').read_text())
           settings['num_threads'] = 1
           settings['unpermitted_axiom_hard_error'] = True
+          # Nanoda prints admitted axioms by default and requires a destination.
+          settings['pp_to_stdout'] = True
           config = out / 'controls-config.json'
           config.write_text(json.dumps(settings, indent=2) + '\n')
           results = []
