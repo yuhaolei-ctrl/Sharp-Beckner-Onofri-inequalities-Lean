@@ -1,7 +1,8 @@
 module
 
 public import BecknerOnofri.CircleGammaPsiPoly
-public import BecknerOnofri.CircleRateGlobal
+public import BecknerOnofri.CircleBesselInverse
+public import BecknerOnofri.CircleRateDefinitions
 
 @[expose] public section
 
@@ -20,6 +21,31 @@ set_option backward.isDefEq.respectTransparency false
 open Set
 namespace BecknerOnofri.HighDim.CircleScalar
 open GammaPoly
+
+section BesselCalculus
+open ContinuousGibbs GibbsTrialLower GinibreCovariance
+
+/-- `d/dh log I₀(2h) = 2 I₁(2h)/I₀(2h)`. -/
+theorem psi_log_bessel_derivative (h : ℝ) :
+    HasDerivAt (fun a : ℝ => Real.log (bessel 0 a)) (2*besselMoment 1 h) h := by
+  let w := (2:ℝ) • cosine (circleFrequency 1)
+  have hd := (hasFDerivAt_logPartitionReal (h • w)).comp_hasDerivAt h
+    ((hasDerivAt_id h).smul_const w)
+  change HasDerivAt (fun a : ℝ => logPartitionReal (a • w))
+    (weightedMean (h • w) (1 • w)) h at hd
+  simp only [one_smul,w,← trial_one_line,trial_logPartition,Nat.cast_one,one_mul,
+    map_smul,smul_eq_mul,trial_one_mean,Int.natAbs_one] at hd
+  simpa only [bessel_zero_eq,besselMoment_eq] using hd
+
+theorem psi_besselMoment_first_deriv_pos (h : ℝ) : 0 < deriv (besselMoment 1) h := by
+  have hd := besselRatio_covariance_derivative h 1
+  norm_num only [Int.natAbs_one] at hd
+  have hf : besselMoment 1=(fun a => besselRatio a 1) := funext (besselMoment_eq 1)
+  rw [hf]
+  rw [hd.deriv]
+  exact mul_pos (by norm_num) (first_cosine_variance_pos h)
+
+end BesselCalculus
 
 /-- The quintic `P` of the barrier. -/
 def barrierCoeffs : List ℚ := [1, -1/2, -1/12, -1/48, -1/10, 49/240]
@@ -222,7 +248,7 @@ theorem rateLower_le_rate {t : ℝ} (ht : 0 ≤ t) (ht1 : t < 1) : rateLower t �
       have h0 := besselMoment_nonneg 1 ha
       have h1 := besselMoment_one_lt_one ha
       nlinarith
-    have h := ((((hasDerivAt_id a).const_mul 2).mul hR).sub (log_bessel_derivative a)).sub
+    have h := ((((hasDerivAt_id a).const_mul 2).mul hR).sub (psi_log_bessel_derivative a)).sub
       ((rateLower_hasDerivAt hsq).comp a hR)
     have he : g = fun a => 2 * id a * besselMoment 1 a - Real.log (bessel 0 a) -
         (rateLower ∘ besselMoment 1) a := by
@@ -239,7 +265,7 @@ theorem rateLower_le_rate {t : ℝ} (ht : 0 ≤ t) (ht1 : t < 1) : rateLower t �
     have ha0 : 0 ≤ a := interior_subset ha
     have h1 := barrier_besselMoment_le a ha0
     have h2 := (besselMoment_first_derivative a).deriv
-    have h3 := besselMoment_first_deriv_pos a
+    have h3 := psi_besselMoment_first_deriv_pos a
     rw [h2] at h3
     exact mul_nonneg (by linarith) h3.le
   have hz : bessel 0 0 = 1 := by
