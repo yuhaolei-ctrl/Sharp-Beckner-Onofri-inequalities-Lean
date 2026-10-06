@@ -158,6 +158,14 @@ Where the formal proof differs from the printed one, the route is complete and c
 * **Proposition 5.12(ii), small means.** For `0 ≤ t ≤ 1/16` the formal proof uses an
   analytic estimate `F(p) + 12·(3/40)t⁴ ≥ t⁴/50` (with `ψ(t) ≥ 3t⁴/40` and the η-term `≥ 0`)
   instead of the origin jet and the Taylor-model cells below `1/16`.
+* **Lemma 5.20.** `𝓑(t) - t⁴/200` is enclosed on 127 consecutive cells of `[1/16, 0.99]` by
+  first-order Taylor models in fixed point (`2^{-100}`, outward rounding) with verified
+  exponential and logarithm; the manuscript uses order-4 Taylor models on 78 cells of
+  `[1/500, 0.99]` and the origin jet below `1/500`.
+* **Lemma 5.17.** The barrier comparison is carried out in the Bessel variable `h`
+  (`h̲(R(h)) ≤ h` by a first-contact argument) rather than for the inverse function; the
+  weight and entropy-tail bounds are compared with truncated series by Bernstein checks; the
+  `g₁` numerator is used in an unreduced form of degree 62.
 * **Proposition 5.10.** Both the selected-maximizer form used for Theorem 1.3
   (`SelectedNumericalModel.selected_entropy_gap`) and the general form for every density
   satisfying the shape hypotheses (`ShapeEntropy.global_shape_entropy`) are proved.

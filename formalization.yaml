@@ -157,7 +157,10 @@ fidelity:
     exactly below a truncation radius and bounds the remaining polynomial mass, instead of
     computing all coefficients; Proposition 5.12(ii) for small means t ≤ 1/16 uses an
     analytic small-mean estimate instead of the origin jet and the Taylor-model cells below
-    1/16, so Lemma 5.20 is formalized on [1/16, 0.99]; Lemma 3.6 is formalized at β = 2d,
+    1/16, so Lemma 5.20 is formalized on [1/16, 0.99], where it is certified by first-order
+    fixed-point Taylor models on 127 cells (the manuscript uses order-4 Taylor models on 78
+    cells); Lemma 5.17 compares the barrier in the Bessel variable and checks the weight and
+    entropy-tail bounds against truncated series by Bernstein coefficients; Lemma 3.6 is formalized at β = 2d,
     the case used in Proposition 3.7; in dimension 2 the finite scalar comparisons cover
     n = 1, 2, 3 and an analytic Gaussian estimate covers n ≥ 4; several low-dimensional
     certificates use the scale 2^40 instead of 2^80; J_10, J_11 and J_12 are bounded with

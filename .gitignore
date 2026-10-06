@@ -1,15 +1,16 @@
-.lake
-vendor/
-.tools/
-.DS_Store
-__pycache__/
-*.ndjson
-verification/runs/
-external-check/
 
 # Generated evidence and local working notes
-verification/current/
-verification/historical/
-audit/
+*.ndjson
+.DS_Store
+.lake
+.tools/
 AUDIT_ZH.md
 EXTERNAL_REVIEW.md
+Scratch/
+__pycache__/
+audit/
+external-check/
+vendor/
+verification/current/
+verification/historical/
+verification/runs/

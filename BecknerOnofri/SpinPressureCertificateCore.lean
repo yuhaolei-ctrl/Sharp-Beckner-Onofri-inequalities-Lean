@@ -3,14 +3,16 @@ module
 @[expose] public section
 
 /-!
-# Fixed-point Taylor models for Lemma 5.19 (lem:section5-scalar-pressure)
+# Fixed-point Taylor models for Lemma 5.20 (lem:section5-scalar-pressure)
 
 Computational core of the certificate for `t⁴/200 < 𝓑(t)` on `[1/16, 99/100]`.
 An interval `⟨lo, hi⟩` of integers stands for `[lo/2¹⁰⁰, hi/2¹⁰⁰]`; every operation rounds
-outward. A Taylor model on a cell `t = t₀ + s`, `|s| ≤ h`, is a list of interval
-coefficients of `1, s, …, s⁴` and an interval remainder multiplying `s⁵`, together with a
-validity flag. This file only contains the (kernel-reducible) algorithms; their soundness is
-proved in `SpinPressureCertificateSound*`.
+outward. On a cell `t = t₀ + s`, `|s| ≤ h`, a first-order Taylor model `⟨c₀, c₁, r, ok⟩`
+encloses a function `f` if, at every such `s`, `f(t₀ + s) = a₀ + a₁ s + ρ s²` with
+`a₀ ∈ c₀`, `a₁ ∈ c₁`, `ρ ∈ r` (when `ok`). Reciprocals, logarithms and exponentials are
+expanded to second order around the constant coefficient, with explicit remainders.
+This file only contains the kernel-reducible algorithms; their soundness is proved in
+`SpinPressureCertificateSound*`.
 -/
 
 namespace BecknerOnofri.HighDim.Spin.PressureCertificate
@@ -56,10 +58,8 @@ def inv (a : Iv) : Iv := ⟨fdiv (scale * scale) a.hi, cdiv (scale * scale) a.lo
 def divNat (a : Iv) (n : Nat) : Iv := ⟨fdiv a.lo n, cdiv a.hi n⟩
 /-- The magnitude `max |lo| |hi|` (in fixed point). -/
 def mag (a : Iv) : Int := max a.lo.natAbs a.hi.natAbs
-/-- Integer power by repeated products. -/
-def pow (a : Iv) : Nat → Iv
-  | 0 => one
-  | k + 1 => mul (pow a k) a
+/-- Enclosure `[0, mag²]` of the squares of the elements. -/
+def sq (a : Iv) : Iv := ⟨0, cdiv (a.mag * a.mag) scale⟩
 /-- Squaring of an interval containing a positive number. -/
 def sqPos (a : Iv) : Iv := ⟨fdiv (max a.lo 0 * max a.lo 0) scale, cdiv (a.hi * a.hi) scale⟩
 /-- Iterated `sqPos`. -/
@@ -71,207 +71,151 @@ end Iv
 
 /-! ### Exponential and logarithm of a fixed-point number -/
 
-/-- Number of halvings bringing `|m|/2¹⁰⁰` below `1/2` (efficiency only, not trusted). -/
+/-- Number of halvings bringing `|m|/2¹⁰⁰` below `1/64` (efficiency only, not trusted). -/
 def halvings (m : Int) : Nat → Nat
   | 0 => 0
-  | f + 1 => if m.natAbs ≤ scale / 2 then 0 else halvings (m / 2) f + 1
+  | f + 1 => if m.natAbs ≤ scale / 64 then 0 else halvings (m / 2) f + 1
 
 /-- Horner evaluation of `∑_{j<n} yʲ/j!` written as `1 + y/1 (1 + y/2 (⋯))`. -/
 def expHorner (y : Iv) : Nat → Nat → Iv
   | 0, _ => Iv.one
   | r + 1, j => Iv.add Iv.one (Iv.divNat (Iv.mul y (expHorner y r (j + 1))) j)
 
-/-- Number of Taylor terms used for the exponential of a reduced argument. -/
-def expTerms : Nat := 27
+/-- Upper bounds `⌈mⁿ⌉` of the powers of a fixed-point number. -/
+def powUp (m : Int) : Nat → Int
+  | 0 => scale
+  | n + 1 => cdiv (powUp m n * m) scale
 
-/-- Upper fixed-point bound for `|y|ⁿ (n+1)/(n! n)` with `n = 27`, given `mag y`. -/
-def expTail (my : Int) : Int :=
-  let pw := (List.replicate expTerms ()).foldl (fun p _ => cdiv (p * my) scale) scale
-  cdiv (pw * 28) (10888869450418352160768000000 * 27)
+/-- Upper fixed-point bound for `|y|¹⁴ · 15/(14! · 14)`, given `|y| ≤ m`. -/
+def expTail (m : Int) : Int := cdiv (powUp m 14 * 15) 1220496076800
 
-/-- Enclosure of `exp (m/2¹⁰⁰)`, together with a flag stating that the reduced argument
-satisfies `|y| ≤ 1`. -/
+/-- Enclosure of `exp (m/2¹⁰⁰)` with a flag stating that the reduced argument has
+`|y| ≤ 1`. -/
 def expPoint (m : Int) : Iv × Bool :=
   let k := halvings m 64
   let y : Iv := ⟨fdiv m (2 ^ k), cdiv m (2 ^ k)⟩
-  let h := expHorner y (expTerms - 1) 1
-  let e := expTail (Iv.mag y)
-  (Iv.sqIter ⟨h.lo - e, h.hi + e⟩ k, decide (Iv.mag y ≤ scale))
+  let h := expHorner y 13 1
+  let e := expTail y.mag
+  (Iv.sqIter ⟨h.lo - e, h.hi + e⟩ k, decide (y.mag ≤ scale))
 
 /-- Enclosure of `exp` on an interval, with a validity flag. -/
 def expIv (a : Iv) : Iv × Bool :=
-  let e₁ := expPoint a.lo
-  let e₂ := expPoint a.hi
-  (⟨e₁.1.lo, e₂.1.hi⟩, e₁.2 && e₂.2)
+  let e := expPoint a.lo
+  let w := a.hi - a.lo
+  (⟨e.1.lo, cdiv (e.1.hi * scale) (scale - w)⟩, e.2 && decide (0 ≤ w) && decide (w < scale))
 
 /-- `log 2 · 2¹⁰⁰`, only used for an unverified first approximation. -/
 def lnTwo : Int := 878668439483319573618263538048
 
-/-- Normalize `m > 0` to `m' ∈ [2¹⁰⁰, 2¹⁰¹)`, `m = m' 2^e` (approximately; untrusted). -/
+/-- Normalize `m > 0` to `m' ∈ [2¹⁰⁰, 2¹⁰¹)`, `m ≈ m' 2^e` (untrusted). -/
 def normalize (m : Int) (e : Int) : Nat → Int × Int
   | 0 => (m, e)
   | f + 1 =>
     if 2 * scale ≤ m then normalize (m / 2) (e + 1) f
     else if m < scale then normalize (m * 2) (e - 1) f else (m, e)
 
-/-- Horner sum for `∑_{i ≤ r} z²ⁱ/(2i+1)` (untrusted approximation). -/
+/-- Horner sum for `∑_{i < r} z²ⁱ/(2i+1)` (untrusted approximation). -/
 def atanhHorner (z2 : Int) : Nat → Int → Int
   | 0, acc => acc
   | r + 1, acc => atanhHorner z2 r (fdiv scale (2 * r + 1) + fdiv (z2 * acc) scale)
 
-/-- Untrusted approximation of `log (m/2¹⁰⁰) · 2¹⁰⁰`; it is only a candidate,
-checked afterwards with `expPoint`. -/
+/-- Untrusted approximation of `log (m/2¹⁰⁰) · 2¹⁰⁰`; it is only a candidate, checked
+afterwards with `expPoint`. -/
 def approxLog (m : Int) : Int :=
   let p := normalize m 0 256
   let z := fdiv ((p.1 - scale) * scale) (p.1 + scale)
   let z2 := fdiv (z * z) scale
   p.2 * lnTwo + 2 * fdiv (z * atanhHorner z2 27 0) scale
 
-/-- Slack added to the approximate logarithm before verification. -/
+/-- Slack `2⁻⁷⁰` (in fixed point) of the verified logarithm. -/
 def logSlack : Int := 1073741824
 
 /-- Verified enclosure of `log` on a positive interval, with a validity flag. -/
 def logIv (a : Iv) : Iv × Bool :=
-  let l₁ := approxLog a.lo - logSlack
-  let l₂ := approxLog a.hi + logSlack
-  let e₁ := expPoint l₁
-  let e₂ := expPoint l₂
-  (⟨l₁, l₂⟩, decide (0 < a.lo) && e₁.2 && e₂.2 && decide (e₁.1.hi ≤ a.lo) &&
-    decide (a.hi ≤ e₂.1.lo))
+  let L := approxLog a.lo
+  let e := expPoint L
+  (⟨L - logSlack, L + logSlack + cdiv ((a.hi - a.lo) * scale) a.lo⟩,
+    e.2 && decide (0 < a.lo) && decide (e.1.hi * scale ≤ a.lo * (scale + logSlack)) &&
+      decide (a.lo * scale ≤ e.1.lo * (scale + logSlack)) && decide (a.lo ≤ a.hi))
 
-/-! ### Polynomials with interval coefficients -/
+/-! ### First-order Taylor models -/
 
-/-- Sum of coefficient lists. -/
-def padd : List Iv → List Iv → List Iv
-  | [], q => q
-  | a :: p, [] => a :: p
-  | a :: p, b :: q => Iv.add a b :: padd p q
-
-/-- Product of coefficient lists. -/
-def pmul : List Iv → List Iv → List Iv
-  | [], _ => []
-  | a :: p, q => padd (q.map (Iv.mul a)) (Iv.zero :: pmul p q)
-
-/-- `∑ₖ pₖ wₖ`, where `wₖ` encloses `sᵏ⁺ⁱ` (the powers list starts at the `i`-th power). -/
-def prange : List Iv → List Iv → Iv
-  | a :: p, w :: ws => Iv.add (Iv.mul a w) (prange p ws)
-  | _, _ => Iv.zero
-
-/-- The polynomial degree of the Taylor models. -/
-def degree : Nat := 4
-
-/-- Data of a cell: the midpoint and enclosures of `sᵏ`, `k ≤ 10`, for `|s| ≤ h`. -/
+/-- Data of a cell: the midpoint and enclosures of `s` and `s²` for `|s| ≤ h`. -/
 structure Ctx where
   mid : Iv
-  pows : List Iv
-
-/-- Upper bounds `hᵏ`, `k < n`, in fixed point. -/
-def powBounds (H : Int) : Nat → Int → List Int
-  | 0, _ => []
-  | n + 1, p => p :: powBounds H n (cdiv (p * H) scale)
-
-/-- Enclosures of `sᵏ` for `|s| ≤ H/2¹⁰⁰`. -/
-def powRanges (H : Int) : List Iv :=
-  ((powBounds H 11 scale).zip (List.range 11)).map fun (p, k) =>
-    if k = 0 then Iv.one else if k % 2 = 0 then ⟨0, p⟩ else ⟨-p, p⟩
+  s1 : Iv
+  s2 : Iv
 
 /-- The cell `[lo/d, hi/d]`. -/
 def mkCtx (lo hi d : Int) : Ctx :=
-  ⟨Iv.ofRat (lo + hi) (2 * d), powRanges (cdiv ((hi - lo) * scale) (2 * d))⟩
+  let H := cdiv ((hi - lo) * scale) (2 * d)
+  ⟨Iv.ofRat (lo + hi) (2 * d), ⟨-H, H⟩, ⟨0, cdiv (H * H) scale⟩⟩
 
-/-! ### Taylor models -/
-
-/-- A Taylor model: coefficients, remainder (times `s⁵`) and a validity flag. -/
+/-- A model `c₀ + c₁ s + r s²` with a validity flag. -/
 structure TM where
-  c : List Iv
+  c0 : Iv
+  c1 : Iv
   r : Iv
   ok : Bool
 
 namespace TM
 
 /-- Constant model. -/
-def const (a : Iv) : TM := ⟨[a], Iv.zero, true⟩
+def const (a : Iv) : TM := ⟨a, Iv.zero, Iv.zero, true⟩
 /-- The identity `t = t₀ + s`. -/
-def var (x : Ctx) : TM := ⟨[x.mid, Iv.one], Iv.zero, true⟩
-/-- An invalid model. -/
-def bad : TM := ⟨[], Iv.zero, false⟩
+def var (x : Ctx) : TM := ⟨x.mid, Iv.one, Iv.zero, true⟩
 /-- Sum. -/
-def add (X Y : TM) : TM := ⟨padd X.c Y.c, Iv.add X.r Y.r, X.ok && Y.ok⟩
+def add (X Y : TM) : TM := ⟨X.c0.add Y.c0, X.c1.add Y.c1, X.r.add Y.r, X.ok && Y.ok⟩
 /-- Negation. -/
-def neg (X : TM) : TM := ⟨X.c.map Iv.neg, Iv.neg X.r, X.ok⟩
+def neg (X : TM) : TM := ⟨X.c0.neg, X.c1.neg, X.r.neg, X.ok⟩
 /-- Difference. -/
 def sub (X Y : TM) : TM := add X (neg Y)
 /-- Multiplication by an interval constant. -/
-def scal (a : Iv) (X : TM) : TM := ⟨X.c.map (Iv.mul a), Iv.mul a X.r, X.ok⟩
+def scal (a : Iv) (X : TM) : TM := ⟨a.mul X.c0, a.mul X.c1, a.mul X.r, X.ok⟩
+/-- Enclosure of the linear part `c₀ + c₁ s`. -/
+def lin (x : Ctx) (X : TM) : Iv := X.c0.add (X.c1.mul x.s1)
 /-- Enclosure of the values on the cell. -/
-def range (x : Ctx) (X : TM) : Iv :=
-  Iv.add (prange X.c x.pows) (Iv.mul X.r (x.pows.getD (degree + 1) Iv.zero))
-/-- Product, truncated at degree four. -/
+def range (x : Ctx) (X : TM) : Iv := (lin x X).add (X.r.mul x.s2)
+/-- Product. -/
 def mul (x : Ctx) (X Y : TM) : TM :=
-  let f := pmul X.c Y.c
-  let r := Iv.add (Iv.add (Iv.add (prange (f.drop (degree + 1)) x.pows)
-    (Iv.mul X.r (prange Y.c x.pows))) (Iv.mul Y.r (prange X.c x.pows)))
-    (Iv.mul (Iv.mul X.r Y.r) (x.pows.getD (degree + 1) Iv.zero))
-  ⟨f.take (degree + 1), r, X.ok && Y.ok⟩
-/-- Add an interval to the remainder. -/
-def addRem (X : TM) (R : Iv) : TM := ⟨X.c, Iv.add X.r R, X.ok⟩
-/-- Horner evaluation `c₀ + q (c₁ + q (⋯))` of constant coefficients at a model. -/
-def horner (x : Ctx) (q : TM) : List Iv → TM
-  | [] => const Iv.zero
-  | a :: cs => add (const a) (mul x q (horner x q cs))
-/-- The constant coefficient. -/
-def head (X : TM) : Iv := X.c.headD Iv.zero
-/-- Enclosure of `(X - X(0))/s` from the non-constant coefficients and remainder. -/
-def quotRange (x : Ctx) (rest : List Iv) (r : Iv) : Iv :=
-  Iv.add (prange rest x.pows) (Iv.mul r (x.pows.getD degree Iv.zero))
+  ⟨X.c0.mul Y.c0, (X.c0.mul Y.c1).add (X.c1.mul Y.c0),
+    (((X.c1.mul Y.c1).add (X.r.mul (lin x Y))).add (Y.r.mul (lin x X))).add
+      ((X.r.mul Y.r).mul x.s2), X.ok && Y.ok⟩
 
-/-- Reciprocal: `1/x = (1/α₀) ∑ (-q)ᵏ + (1/α₀) (-q)⁵/(1+q)`. -/
+/-- Reciprocal: `1/x = (1/α₀)(1 - q + q²/(1+q))`, `q = (x - α₀)/α₀ = s u`. -/
 def inv (x : Ctx) (X : TM) : TM :=
-  let a₀ := X.head
-  let i₀ := Iv.inv a₀
-  let rest := X.c.tail.map (Iv.mul i₀)
-  let r := Iv.mul i₀ X.r
-  let q : TM := ⟨Iv.zero :: rest, r, X.ok⟩
-  let U := quotRange x rest r
-  let V := range x q
-  let R := Iv.neg (Iv.mul (Iv.pow U 5) (Iv.inv (Iv.add Iv.one V)))
-  let s := horner x q [Iv.one, Iv.ofInt (-1), Iv.one, Iv.ofInt (-1), Iv.one]
-  let Y := scal i₀ (addRem s R)
-  ⟨Y.c, Y.r, Y.ok && decide (0 < a₀.lo) && decide (0 < scale + V.lo)⟩
+  let i₀ := X.c0.inv
+  let q₁ := X.c1.mul i₀
+  let qr := X.r.mul i₀
+  let U := q₁.add (qr.mul x.s1)
+  let V := (q₁.mul x.s1).add (qr.mul x.s2)
+  let R := U.sq.mul (Iv.one.add V).inv
+  let Y := scal i₀ ⟨Iv.one, q₁.neg, qr.neg.add R, true⟩
+  ⟨Y.c0, Y.c1, Y.r, X.ok && decide (0 < X.c0.lo) && decide (0 < scale + V.lo)⟩
 
-/-- Logarithm: `log x = log α₀ + ∑_{k ≤ 4} (-1)ᵏ⁻¹ qᵏ/k + s⁵ R`. -/
+/-- Logarithm: `log x = log α₀ + q - q²/2 + E`, `|E| ≤ |q|³/(1-|q|)`. -/
 def log (x : Ctx) (X : TM) : TM :=
-  let a₀ := X.head
-  let i₀ := Iv.inv a₀
-  let L := logIv a₀
-  let rest := X.c.tail.map (Iv.mul i₀)
-  let r := Iv.mul i₀ X.r
-  let q : TM := ⟨Iv.zero :: rest, r, X.ok⟩
-  let U := quotRange x rest r
-  let V := range x q
-  let mU := Iv.mag U
-  let mV := Iv.mag V
-  let B := (Iv.mul (Iv.mul (Iv.pow ⟨mU, mU⟩ 5) ⟨mV, mV⟩) (Iv.inv ⟨scale - mV, scale - mV⟩)).hi
-  let R := Iv.add (Iv.mul (Iv.pow U 5) (Iv.ofRat 1 5)) ⟨-B, B⟩
-  let s := horner x q [Iv.zero, Iv.one, Iv.ofRat (-1) 2, Iv.ofRat 1 3, Iv.ofRat (-1) 4]
-  let Y := add (const L.1) (addRem s R)
-  ⟨Y.c, Y.r, Y.ok && L.2 && decide (0 < a₀.lo) && decide (mV < scale)⟩
+  let i₀ := X.c0.inv
+  let L := logIv X.c0
+  let q₁ := X.c1.mul i₀
+  let qr := X.r.mul i₀
+  let U := q₁.add (qr.mul x.s1)
+  let V := (q₁.mul x.s1).add (qr.mul x.s2)
+  let mV := V.mag
+  let B := ((U.sq.mul ⟨mV, mV⟩).mul (Iv.inv ⟨scale - mV, scale - mV⟩)).hi
+  let R := (U.sq.divNat 2).neg.add ⟨-B, B⟩
+  ⟨L.1, q₁, qr.add R, X.ok && L.2 && decide (0 < X.c0.lo) && decide (mV < scale)⟩
 
-/-- Exponential: `exp x = exp α₀ (∑_{k ≤ 4} qᵏ/k! + s⁵ R)`. -/
+/-- Exponential: `exp x = exp α₀ (1 + q + q²/2 + E)`, `|E| ≤ 2|q|³/9`. -/
 def exp (x : Ctx) (X : TM) : TM :=
-  let a₀ := X.head
-  let E := expIv a₀
-  let rest := X.c.tail
-  let q : TM := ⟨Iv.zero :: rest, X.r, X.ok⟩
-  let U := quotRange x rest X.r
-  let V := range x q
-  let mU := Iv.mag U
-  let mV := Iv.mag V
-  let B := (Iv.mul (Iv.mul (Iv.pow ⟨mU, mU⟩ 5) ⟨mV, mV⟩) (Iv.ofRat 7 4320)).hi
-  let R := Iv.add (Iv.mul (Iv.pow U 5) (Iv.ofRat 1 120)) ⟨-B, B⟩
-  let s := horner x q [Iv.one, Iv.one, Iv.ofRat 1 2, Iv.ofRat 1 6, Iv.ofRat 1 24]
-  let Y := scal E.1 (addRem s R)
-  ⟨Y.c, Y.r, Y.ok && E.2 && decide (mV ≤ scale)⟩
+  let E := expIv X.c0
+  let U := X.c1.add (X.r.mul x.s1)
+  let V := (X.c1.mul x.s1).add (X.r.mul x.s2)
+  let mV := V.mag
+  let B := ((U.sq.mul ⟨mV, mV⟩).mul (Iv.ofRat 2 9)).hi
+  let R := (U.sq.divNat 2).add ⟨-B, B⟩
+  let Y := scal E.1 ⟨Iv.one, X.c1, X.r.add R, true⟩
+  ⟨Y.c0, Y.c1, Y.r, X.ok && E.2 && decide (mV ≤ scale)⟩
 
 /-- Sum of a list of models. -/
 def sum : List TM → TM
@@ -334,14 +278,32 @@ def weightedMomentData : List (List RatPair) :=
 /-- Enclosure of a rational pair. -/
 def ofPair (p : RatPair) : Iv := Iv.ofRat p.1 p.2
 
-/-- Powers `z, z², …, zⁿ` of a model (in this order). -/
+/-- Powers `p, p z, …, p zⁿ⁻¹` of a model. -/
 def powList (x : Ctx) (z : TM) : Nat → TM → List TM
   | 0, _ => []
   | n + 1, p => p :: powList x z n (TM.mul x p z)
 
-/-- `∑_s c_s m_s`. -/
+/-- The power `z^(n+1)` of a model. -/
+def powModel (x : Ctx) (z : TM) : Nat → TM
+  | 0 => z
+  | n + 1 => TM.mul x (powModel x z n) z
+
+/-- `∑_{i<n} F i`. -/
+def sumRange (n : Nat) (F : Nat → TM) : TM := TM.sum ((List.range n).map F)
+
+/-- `∑_{i<12} cᵢ mᵢ` for rational coefficients `cᵢ`. -/
 def linComb (cs : List RatPair) (ms : List TM) : TM :=
-  TM.sum ((cs.zip ms).map fun (c, m) => TM.scal (ofPair c) m)
+  sumRange 12 fun i => TM.scal (ofPair (cs.getD i (0, 1))) (ms.getD i (TM.const Iv.zero))
+
+/-- The moments `m_s = (4(1-t) zˢ + t⁵)/(4 - 4t + t⁵)`, `s = 1, …, 12`. -/
+def momentModels (x : Ctx) (pp t5 invDen z : TM) : List TM :=
+  (powList x z 12 z).map fun zr => TM.mul x (TM.add (TM.mul x pp zr) t5) invDen
+
+/-- The logarithm `log (q_j/b_j)`. -/
+def logRatioModel (common lp lm l12 : TM) (j : Nat) : TM :=
+  if j < 12 then
+    TM.add common (TM.add (TM.scal (Iv.ofInt j) lp) (TM.scal (Iv.ofInt (12 - j : Int)) lm))
+  else l12
 
 /-- The `j`-th summand `b_j exp(E_j)` of the pressure sum (eq:12-pressure-cancellation). -/
 def pressureTerm (x : Ctx) (t mu invTau lq : TM) (ms : List TM) (b xj : RatPair)
@@ -364,9 +326,10 @@ def scalarModel (x : Ctx) : TM :=
   let pp := TM.sub (TM.const (Iv.ofInt 4)) (TM.scal (Iv.ofInt 4) t)
   let den := TM.add pp t5
   let invDen := TM.inv x den
-  let zs := powList x z 12 z
-  let ms := zs.map fun zr => TM.mul x (TM.add (TM.mul x pp zr) t5) invDen
-  let energy := linComb weightData (ms.map fun m => TM.mul x m m)
+  let ms := momentModels x pp t5 invDen z
+  let energy := sumRange 12 fun i =>
+    TM.scal (ofPair (weightData.getD i (0, 1)))
+      (TM.mul x (ms.getD i (TM.const Iv.zero)) (ms.getD i (TM.const Iv.zero)))
   let half := TM.inv x (TM.sub (TM.const Iv.one) (TM.scal (Iv.ofRat 1 2) t2))
   let eta := TM.mul x (TM.mul x (TM.sub (TM.const Iv.one) t2)
     (TM.add (TM.scal (Iv.ofRat 9 20) t2) (TM.scal (Iv.ofRat 297 100) t8))) half
@@ -378,14 +341,11 @@ def scalarModel (x : Ctx) : TM :=
   let onez := TM.add (TM.const Iv.one) z
   let lp := TM.log x onez
   let lm := TM.log x (TM.sub (TM.const Iv.one) z)
-  let pz := (powList x onez 12 onez).getLastD TM.bad
-  let l12 := TM.sub (TM.log x (TM.add (TM.mul x pp pz) (TM.scal (Iv.ofInt 4096) t5))) logDen
-  let lqs := (List.range 12).map fun (j : Nat) =>
-    TM.add common (TM.add (TM.scal (Iv.ofInt j) lp) (TM.scal (Iv.ofInt (12 - j : Int)) lm))
-  let terms := ((((lqs ++ [l12]).zip referenceData).zip coordinateData).zip
-    weightedMomentData).map fun (((lq, b), xj), row) =>
-      pressureTerm x t mu invTau lq ms b xj row
-  let pressure := TM.sum terms
+  let l12 := TM.sub (TM.log x (TM.add (TM.mul x pp (powModel x onez 11))
+    (TM.scal (Iv.ofInt 4096) t5))) logDen
+  let pressure := sumRange 13 fun j =>
+    pressureTerm x t mu invTau (logRatioModel common lp lm l12 j) ms
+      (referenceData.getD j (0, 1)) (coordinateData.getD j (0, 1)) (weightedMomentData.getD j [])
   let psi := TM.add (TM.scal (Iv.ofRat 3 40) t4) (TM.scal (Iv.ofRat 33 200) t10)
   let onet := TM.add (TM.const Iv.one) t
   let onemt := TM.sub (TM.const Iv.one) t
