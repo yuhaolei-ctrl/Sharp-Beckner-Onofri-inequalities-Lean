@@ -28,14 +28,31 @@
     "accepted_declaration_records": 1027308
   },
   "lean4lean": {
-    "status": "in_progress",
+    "status": "incomplete_time_limit",
     "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37356177464",
-    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da"
+    "workflow_commit": "bb7f2aa5eac123254ec06b380759254edd63d7da",
+    "workflow_conclusion": "cancelled",
+    "reason": "GitHub job exceeded the maximum execution time of 6h0m0s",
+    "accepted": false,
+    "checker_exit_code": null,
+    "completed_at": "2026-10-06T00:28:34Z",
+    "evidence": "lean4lean-evidence artifact on the recorded run"
   },
   "independent_natural_language_review": "not_completed",
   "scope_exclusions": [
     "Remark 5.6 counterexample is not separately registered",
     "The displayed cutoff-rate estimate is replaced by proved form-norm convergence"
   ],
-  "evidence_storage": "Full logs and historical attempts are available in GitHub Actions, the certificate release and historical commits; generated evidence is not tracked in the source tree."
+  "evidence_storage": "Full logs and historical attempts are available in GitHub Actions, the certificate release and historical commits; generated evidence is not tracked in the source tree.",
+  "nanoda": {
+    "status": "incomplete_memory_pressure",
+    "run_url": "https://github.com/yuhaolei-ctrl/Sharp-Beckner-Onofri-inequalities-Lean/actions/runs/37382719375",
+    "workflow_commit": "c191a29a8a67b90a97677b693ddb6a7c8b3ffbdc",
+    "supervisor_exit_code": 75,
+    "checker_exit_code": -15,
+    "accepted": false,
+    "elapsed_seconds": 13840.71,
+    "peak_sampled_rss_bytes": 16109797376,
+    "evidence": "independent-kernel-evidence artifact on the recorded run"
+  }
 }

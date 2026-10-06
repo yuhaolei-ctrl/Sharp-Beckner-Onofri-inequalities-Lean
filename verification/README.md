@@ -57,6 +57,12 @@ workflow uses larger finite reduction limits and still requires valid-proof
 acceptance and damaged-proof rejection. Only a complete successful replay
 counts as acceptance. See [STATUS.json](STATUS.json) for recorded results.
 
+The latest Lean4Lean run (37356177464) was cancelled at GitHub's six-hour
+job limit. The latest Nanoda run (37382719375) stopped under measured memory
+pressure despite 8 GiB additional swap (supervisor exit 75; checker SIGTERM).
+Neither obtained complete acceptance; neither log records a rejection of the
+full proof. Repeating unchanged runs does not address these resource limits.
+
 ## Evidence
 
 Full logs belong in Actions artifacts or release assets, not in the source
