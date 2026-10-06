@@ -10,7 +10,7 @@ noncomputable section
 open scoped BigOperators
 namespace Legacy.BecknerOnofri.ExponentialWordSeries
 
-private theorem product_norm_summable {K ι : Type*} [RCLike K] {n : ℕ}
+theorem product_norm_summable {K ι : Type*} [RCLike K] {n : ℕ}
     (f : Fin n → ι → K) (hf : ∀ i, Summable (fun j => ‖f i j‖)) :
     Summable (fun j : Fin n → ι => ‖∏ i, f i (j i)‖) := by
   induction n with
@@ -20,7 +20,7 @@ private theorem product_norm_summable {K ι : Type*} [RCLike K] {n : ℕ}
     apply (Fin.consEquiv (fun _ : Fin (n+1) => ι)).summable_iff.mp
     simpa only [Function.comp_def,Fin.prod_univ_succ,Fin.consEquiv_apply,Fin.cons_zero,Fin.cons_succ] using hh
 
-private theorem product_tsum {K ι : Type*} [RCLike K] {n : ℕ}
+theorem product_tsum {K ι : Type*} [RCLike K] {n : ℕ}
     (f : Fin n → ι → K) (hf : ∀ i, Summable (fun j => ‖f i j‖)) :
     (∏ i, ∑' j : ι, f i j) = ∑' j : Fin n → ι, ∏ i, f i (j i) := by
   induction n with

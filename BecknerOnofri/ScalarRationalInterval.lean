@@ -34,7 +34,7 @@ theorem RationalInterval.contains_neg {a : RationalInterval} {x : ℝ}
   simp only [Contains,neg,Rat.cast_neg]
   exact ⟨neg_le_neg hx.2,neg_le_neg hx.1⟩
 
-private theorem mul_endpoints {a b x : ℝ} (hx : a≤x ∧ x≤b) (y : ℝ) :
+theorem mul_endpoints {a b x : ℝ} (hx : a≤x ∧ x≤b) (y : ℝ) :
     min (a*y) (b*y)≤x*y ∧ x*y≤max (a*y) (b*y) := by
   by_cases hy : 0≤y
   · exact ⟨(min_le_left _ _).trans (mul_le_mul_of_nonneg_right hx.1 hy),

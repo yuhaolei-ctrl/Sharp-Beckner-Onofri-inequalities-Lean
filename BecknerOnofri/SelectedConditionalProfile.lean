@@ -20,14 +20,14 @@ open ConditionalEntropy
 def logarithmicCosineProfile (u : TorusL2 12) (v : Fin 12 → ℝ) : ℝ :=
   ChebyshevProfile.profile (fourierIsometry 12 u) v - Real.log (partition u)
 
-private def toUnit (v : Fin 12 → ℝ) : Fin 12 → ℝ := fun j => (1 + v j)/2
+def toUnit (v : Fin 12 → ℝ) : Fin 12 → ℝ := fun j => (1 + v j)/2
 
-private theorem from_toUnit (v : Fin 12 → ℝ) : CubeProfileMonotone.fromUnitCube (toUnit v) = v := by
+theorem from_toUnit (v : Fin 12 → ℝ) : CubeProfileMonotone.fromUnitCube (toUnit v) = v := by
   funext j
   dsimp [CubeProfileMonotone.fromUnitCube, toUnit]
   ring
 
-private theorem toUnit_mem {v : Fin 12 → ℝ} (hv : v ∈ cosineCube 12) :
+theorem toUnit_mem {v : Fin 12 → ℝ} (hv : v ∈ cosineCube 12) :
     toUnit v ∈ FiniteDifferences.closedCube 12 := by
   constructor <;> intro j
   · change 0 ≤ (1 + v j)/2
@@ -35,7 +35,7 @@ private theorem toUnit_mem {v : Fin 12 → ℝ} (hv : v ∈ cosineCube 12) :
   · change (1 + v j)/2 ≤ 1
     linarith [hv.2 j]
 
-private theorem toUnit_interval {t : ℝ} (ht : t ∈ Icc (-1 : ℝ) 1) :
+theorem toUnit_interval {t : ℝ} (ht : t ∈ Icc (-1 : ℝ) 1) :
     (1+t)/2 ∈ Icc (0 : ℝ) 1 := by constructor <;> linarith [ht.1, ht.2]
 
 theorem selected_log_profile_shape {u : TorusL2 12} (hu : Selected u) :

@@ -16,7 +16,7 @@ open Legacy.TorusEndpoint Legacy.BecknerOnofri
 open TorusSobolev SubcriticalAttainment SubcriticalEuler
 open PositiveFourierSupport
 
-private theorem rough {d : ℕ} (hd : 0<d) :
+theorem rough {d : ℕ} (hd : 0<d) :
     RoughExponentialBound d (endpointConstant d/2)
       (GreenRoughEnergy.partition d (endpointConstant d/2)) := by
   have hC : 0<endpointConstant d := div_pos (Nat.cast_pos.mpr hd) (endpointSigma_pos hd)

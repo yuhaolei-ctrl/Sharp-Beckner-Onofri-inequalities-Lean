@@ -13,7 +13,7 @@ open Classical
 namespace BecknerOnofri.HighDim.QuadraticModes
 open ContinuousGibbs ContinuousFirstShell QuadraticSlaving
 
-private theorem conj_mul_norm (w : ℂ) : conj w*w = ((‖w‖^2:ℝ):ℂ) := by
+theorem conj_mul_norm (w : ℂ) : conj w*w = ((‖w‖^2:ℝ):ℂ) := by
   rw [← Complex.normSq_eq_conj_mul_self, Complex.normSq_eq_norm_sq]
 
 theorem assembly_cube_coefficient {d : ℕ} (z : Coordinates d) (i : Fin d) :

@@ -11,7 +11,7 @@ open scoped Topology
 namespace BecknerOnofri.HighDim.LocalEleven.SquaredReducedEnergy
 open AmplitudeLinearization ActiveAmplitudeFactor
 
-private theorem quadratic_remainder_sqrt {r F : ℝ → ℝ} {c : ℝ}
+theorem quadratic_remainder_sqrt {r F : ℝ → ℝ} {c : ℝ}
     (hr : AnalyticAt ℝ r 0) (hr0 : r 0=0)
     (hp : ∀ᶠ δ in 𝓝[>] (0:ℝ),0<r δ)
     (ho : (fun t => F t-c) =O[𝓝 (0:ℝ)] (fun t => ‖t‖^2)) :

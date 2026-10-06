@@ -17,18 +17,18 @@ namespace BecknerOnofri.AnalyticParameterDivision
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-private def axisProjection : E × ℝ →L[ℝ] E × ℝ :=
+def axisProjection : E × ℝ →L[ℝ] E × ℝ :=
   (ContinuousLinearMap.fst ℝ E ℝ).prod 0
 
-private theorem axisProjection_apply (v : E × ℝ) : axisProjection v = (v.1, 0) := rfl
+theorem axisProjection_apply (v : E × ℝ) : axisProjection v = (v.1, 0) := rfl
 
-private theorem axisProjection_norm_le (v : E × ℝ) : ‖axisProjection v‖ ≤ ‖v‖ := by
+theorem axisProjection_norm_le (v : E × ℝ) : ‖axisProjection v‖ ≤ ‖v‖ := by
   simpa [axisProjection_apply, Prod.norm_def] using norm_fst_le v
 
-private def slotMap {n : ℕ} (j : Fin (n+1)) (i : Fin n) : E × ℝ →L[ℝ] E × ℝ :=
+def slotMap {n : ℕ} (j : Fin (n+1)) (i : Fin n) : E × ℝ →L[ℝ] E × ℝ :=
   if j.succAbove i < j then ContinuousLinearMap.id ℝ (E × ℝ) else axisProjection
 
-private theorem slotMap_norm_le {n : ℕ} (j : Fin (n+1)) (i : Fin n) :
+theorem slotMap_norm_le {n : ℕ} (j : Fin (n+1)) (i : Fin n) :
     ‖slotMap (E := E) j i‖ ≤ 1 := by
   apply ContinuousLinearMap.opNorm_le_bound _ zero_le_one
   intro v
@@ -37,14 +37,14 @@ private theorem slotMap_norm_le {n : ℕ} (j : Fin (n+1)) (i : Fin n) :
   · simp
   · simpa only [one_mul] using axisProjection_norm_le v
 
-private def dividedTerm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
+def dividedTerm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (n : ℕ) (j : Fin (n+1)) : (E × ℝ) [×n]→L[ℝ] ℝ :=
   ((p (n+1)).curryMid j (0,1)).compContinuousLinearMap (slotMap j)
 
-private def dividedSeries (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ) :
+def dividedSeries (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ) :
     FormalMultilinearSeries ℝ (E × ℝ) ℝ := fun n => ∑ j : Fin (n+1), dividedTerm p n j
 
-private theorem dividedTerm_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
+theorem dividedTerm_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (n : ℕ) (j : Fin (n+1)) : ‖dividedTerm p n j‖ ≤ ‖p (n+1)‖ := by
   have hprod : (∏ i : Fin n, ‖slotMap (E := E) j i‖) ≤ 1 := by
     simpa using Finset.prod_le_prod₀ (fun i _ => norm_nonneg (slotMap (E := E) j i))
@@ -56,14 +56,14 @@ private theorem dividedTerm_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ
   exact (ContinuousMultilinearMap.norm_compContinuousLinearMap_le _ _).trans
     ((mul_le_mul hcur hprod (by positivity) (norm_nonneg _)).trans_eq (mul_one _))
 
-private theorem dividedSeries_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ) (n : ℕ) :
+theorem dividedSeries_norm (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ) (n : ℕ) :
     ‖dividedSeries p n‖ ≤ (n+1:ℝ) * ‖p (n+1)‖ := by
   calc
     _ ≤ ∑ j : Fin (n+1), ‖dividedTerm p n j‖ := norm_sum_le _ _
     _ ≤ ∑ _ : Fin (n+1), ‖p (n+1)‖ := Finset.sum_le_sum (fun j _ => dividedTerm_norm p n j)
     _ = _ := by simp
 
-private theorem dividedTerm_factor (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
+theorem dividedTerm_factor (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (n : ℕ) (j : Fin (n+1)) (v : E × ℝ) :
     v.2 * dividedTerm p n j (fun _ => v) = p (n+1)
       (fun i => if i < j then v else if j = i then v-axisProjection v else axisProjection v) := by
@@ -84,7 +84,7 @@ private theorem dividedTerm_factor (p : FormalMultilinearSeries ℝ (E × ℝ) �
     simp only [Fin.insertNth_apply_succAbove, slotMap, if_neg hji]
     split_ifs <;> rfl
 
-private theorem dividedSeries_factor (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
+theorem dividedSeries_factor (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (n : ℕ) (v : E × ℝ) :
     v.2 * dividedSeries p n (fun _ => v) =
       p (n+1) (fun _ => v) - p (n+1) (fun _ => axisProjection v) := by
@@ -94,7 +94,7 @@ private theorem dividedSeries_factor (p : FormalMultilinearSeries ℝ (E × ℝ)
   rw [dividedSeries, ContinuousMultilinearMap.sum_apply, Finset.mul_sum]
   simpa only [dividedTerm_factor, ContinuousMultilinearMap.coe_coe] using h.symm
 
-private theorem dividedSeries_radius_pos (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
+theorem dividedSeries_radius_pos (p : FormalMultilinearSeries ℝ (E × ℝ) ℝ)
     (hp : 0 < p.radius) : 0 < (dividedSeries p).radius := by
   obtain ⟨C, R, hC, hR, hbound⟩ := p.le_mul_pow_of_radius_pos hp
   let r : ℝ≥0 := ⟨(2*R)⁻¹, by positivity⟩

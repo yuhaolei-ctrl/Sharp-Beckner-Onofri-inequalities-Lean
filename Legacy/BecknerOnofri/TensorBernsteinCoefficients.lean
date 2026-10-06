@@ -15,7 +15,7 @@ namespace Legacy.BecknerOnofri.TensorBernsteinCoefficients
 open TensorBernstein
 set_option maxHeartbeats 800000
 
-private theorem coeff_one_sub_X_pow (n a : ℕ) :
+theorem coeff_one_sub_X_pow (n a : ℕ) :
     ((1-Polynomial.X : ℝ[X])^n).coeff a = (-1:ℝ)^a*(n.choose a:ℝ) := by
   have hp (k : ℕ) : (-(Polynomial.X : ℝ[X]))^k = (-1:ℝ)^k • Polynomial.X^k := by
     rw [← smul_pow, neg_one_smul]
@@ -46,7 +46,7 @@ theorem basis_coefficient (m j a : ℕ) :
   · have haj : a < j := Nat.lt_of_not_ge hja
     simp [Nat.choose_eq_zero_of_lt haj]
 
-private theorem basis_natDegree_le (m j : ℕ) : (bernsteinPolynomial ℝ m j).natDegree ≤ m := by
+theorem basis_natDegree_le (m j : ℕ) : (bernsteinPolynomial ℝ m j).natDegree ≤ m := by
   apply Polynomial.natDegree_le_iff_coeff_eq_zero.mpr
   intro a ha
   rw [basis_coefficient]
@@ -67,7 +67,7 @@ theorem basis_expansion {d : ℕ} (m j : ℕ) (i : Fin d) :
     ((m.choose a:ℝ)*(a.choose j:ℝ)*(-1:ℝ)^(a-j))*MvPolynomial.X i^a) (m+1)]
   simpa [bernsteinPolynomial] using he
 
-private theorem indicator_eq_iff {d m : ℕ} (alpha : Fin d →₀ ℕ) (a : Grid d m) :
+theorem indicator_eq_iff {d m : ℕ} (alpha : Fin d →₀ ℕ) (a : Grid d m) :
     alpha = Finsupp.indicator univ (fun i _ => (a i).val) ↔
       ∀ i, alpha i = (a i).val := by
   constructor
@@ -77,7 +77,7 @@ private theorem indicator_eq_iff {d m : ℕ} (alpha : Fin d →₀ ℕ) (a : Gri
     ext i
     simpa using h i
 
-private theorem coefficient_grid_expansion {d m : ℕ}
+theorem coefficient_grid_expansion {d m : ℕ}
     (c : Fin d → Fin (m+1) → ℝ) (alpha : Fin d →₀ ℕ)
     (ha : ∀ i, alpha i ≤ m) :
     (∑ a : Grid d m,
@@ -96,7 +96,7 @@ private theorem coefficient_grid_expansion {d m : ℕ}
     simp [hn]
   · simp
 
-private theorem coefficient_grid_expansion_outside {d m : ℕ}
+theorem coefficient_grid_expansion_outside {d m : ℕ}
     (c : Fin d → Fin (m+1) → ℝ) (alpha : Fin d →₀ ℕ)
     (ha : ¬ ∀ i, alpha i ≤ m) :
     (∑ a : Grid d m,
@@ -110,7 +110,7 @@ private theorem coefficient_grid_expansion_outside {d m : ℕ}
     exact ha (fun i => (h i).symm ▸ (a i).is_le)
   simp [hn]
 
-private theorem product_basis_expansion {d m : ℕ} (j : Grid d m) :
+theorem product_basis_expansion {d m : ℕ} (j : Grid d m) :
     (∏ i : Fin d, (MvPolynomial.C (m.choose (j i):ℝ) * MvPolynomial.X i^(j i).val *
       (1-MvPolynomial.X i)^(m-(j i).val))) =
     ∑ a : Grid d m, MvPolynomial.C
@@ -165,7 +165,7 @@ theorem polynomial_coefficient_outside {d : ℕ} (m : ℕ) (f : Cube d → ℝ)
   rw [hz, mul_zero]
 
 /-- Terms above the multiindex vanish, so the large tensor grid reduces to its rectangle. -/
-private theorem grid_sum_eq_difference {d m : ℕ} (alpha : Fin d →₀ ℕ)
+theorem grid_sum_eq_difference {d m : ℕ} (alpha : Fin d →₀ ℕ)
     (ha : ∀ i, alpha i ≤ m) (f : (Fin d → ℝ) → ℝ) :
     (∑ j : Grid d m,
       (∏ i, (-1:ℝ)^(alpha i-(j i).val)*((alpha i).choose (j i):ℝ)) *

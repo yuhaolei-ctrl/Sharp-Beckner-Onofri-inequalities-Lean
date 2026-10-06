@@ -30,10 +30,10 @@ local instance (d : ℕ) : (torusMeasure d).IsNegInvariant := by
   unfold torusMeasure
   infer_instance
 
-private def reflectContinuous {d : ℕ} (u : Space d) : Space d :=
+def reflectContinuous {d : ℕ} (u : Space d) : Space d :=
   ⟨fun x => u (-x), u.continuous.comp continuous_neg⟩
 
-private theorem reflectContinuous_norm_le {d : ℕ} (u : Space d) :
+theorem reflectContinuous_norm_le {d : ℕ} (u : Space d) :
     ‖reflectContinuous u‖ ≤ ‖u‖ := by
   apply (ContinuousMap.norm_le _ (norm_nonneg u)).mpr
   intro x
@@ -78,7 +78,7 @@ theorem normalized_reflection {d : ℕ} (u : Space d) :
     normalized (reflection d u) = reflection d (normalized u) := by
   simp only [normalized, partition_reflection, exponential_reflection, map_smul]
 
-private theorem character_neg_argument {d : ℕ} (k : Frequency d) (x : Torus d) :
+theorem character_neg_argument {d : ℕ} (k : Frequency d) (x : Torus d) :
     UnitAddTorus.mFourier k (-x) = UnitAddTorus.mFourier (-k) x := by
   simp only [UnitAddTorus.mFourier, ContinuousMap.coe_mk, Pi.neg_apply, fourier_apply,
     zsmul_neg, neg_zsmul]

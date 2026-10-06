@@ -181,7 +181,7 @@ theorem haar_radial_le_ball {d : ℕ} (F : ℝ → ℝ≥0∞) (hF : Measurable 
     change squareRadius (sineMap (inverseSine y)) = _
     rw [sine_inverse hy]
   rw [hs]
-  exact mul_le_mul_right' (ENNReal.ofReal_le_ofReal (jacobian_radial_bound hy)) _
+  exact mul_le_mul_left (ENNReal.ofReal_le_ofReal (jacobian_radial_bound hy)) _
 
 #print axioms haar_radial_le_ball
 

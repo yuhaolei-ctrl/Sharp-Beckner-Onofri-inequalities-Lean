@@ -18,7 +18,7 @@ theorem backward_norm_sq (f : Space) (n : ℕ) :
   rw [← real_inner_self_eq_norm_sq,lp.inner_eq_tsum]
   simp [pow_two]
 
-private theorem diagonal_sum (f : Space) (n : ℕ) :
+theorem diagonal_sum (f : Space) (n : ℕ) :
     (∑' p : ↥(Finset.antidiagonal n),(f (p.val.1+p.val.2+1))^2)=
       (n+1:ℝ)*(f (n+1))^2 := by
   have he (p : ↥(Finset.antidiagonal n)) : p.val.1+p.val.2=n :=

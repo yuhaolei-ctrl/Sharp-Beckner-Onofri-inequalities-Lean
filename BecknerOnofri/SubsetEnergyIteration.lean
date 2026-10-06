@@ -44,7 +44,7 @@ theorem subset_energy_iteration {α : Type*} [DecidableEq α]
           rw [← mul_assoc, ← mul_assoc, hcast]
           ac_rfl
       _ ≤ (((s.card-2).choose (r-1):ℕ):ℝ≥0∞) * ∑ i ∈ s, E (s.erase i) :=
-        mul_le_mul_left' (hstep s hlt) _
+        mul_le_mul_right (hstep s hlt) _
       _ = ∑ i ∈ s, (((s.card-2).choose (r-1):ℕ):ℝ≥0∞) * E (s.erase i) := by rw [mul_sum]
       _ ≤ ∑ i ∈ s, ∑ t ∈ (s.erase i).powersetCard r, E t := by
         apply sum_le_sum

@@ -48,7 +48,7 @@ theorem square_integral (f : RealL2 μ) : (∫ x, f x^2 ∂μ) = ‖f‖^2 := by
   rw [L2.inner_def]
   simp only [RCLike.inner_apply, conj_trivial, sq]
 
-private theorem weighted_measurable {K : α × α → ℝ} {φ : RealL2 μ}
+theorem weighted_measurable {K : α × α → ℝ} {φ : RealL2 μ}
     (h : SchurData μ K φ) (f : RealL2 μ) :
     AEStronglyMeasurable (weightedMajorant μ K φ f) (μ.prod μ) := by
   have hf := (Lp.aestronglyMeasurable f).comp_fst (ν:=μ)
@@ -57,7 +57,7 @@ private theorem weighted_measurable {K : α × α → ℝ} {φ : RealL2 μ}
   exact ((hf.aemeasurable.pow_const 2).div hp.aemeasurable).aestronglyMeasurable.mul
     (h.measurable.mul hq)
 
-private theorem weighted_nonnegative {K : α × α → ℝ} {φ : RealL2 μ}
+theorem weighted_nonnegative {K : α × α → ℝ} {φ : RealL2 μ}
     (h : SchurData μ K φ) (f : RealL2 μ) :
     ∀ᵐ z ∂μ.prod μ, 0 ≤ weightedMajorant μ K φ f z := by
   have hp : ∀ᵐ z ∂μ.prod μ, 0 < φ z.1 := Measure.quasiMeasurePreserving_fst.ae h.positive
@@ -65,7 +65,7 @@ private theorem weighted_nonnegative {K : α × α → ℝ} {φ : RealL2 μ}
   filter_upwards [hp,hq,h.nonnegative] with z hz hz' hk
   exact mul_nonneg (div_nonneg (sq_nonneg _) hz.le) (mul_nonneg hk hz'.le)
 
-private theorem weighted_slice_integral {K : α × α → ℝ} {φ : RealL2 μ}
+theorem weighted_slice_integral {K : α × α → ℝ} {φ : RealL2 μ}
     (h : SchurData μ K φ) (f : RealL2 μ) :
     ∀ᵐ x ∂μ, (∫ y, weightedMajorant μ K φ f (x,y) ∂μ) = f x^2 := by
   filter_upwards [h.positive,h.eigen] with x hp he

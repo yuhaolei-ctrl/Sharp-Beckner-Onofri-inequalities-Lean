@@ -127,9 +127,9 @@ def greenLiftRealLinear {d : ℕ} (hd : 0 < d) : realLpComplement d →ₗ[ℝ] 
     simp [ContinuousMap.smul_apply, Complex.real_smul]
 
 def greenLiftReal {d : ℕ} (hd : 0 < d) : realLpComplement d →L[ℝ] C(Torus d, ℝ) :=
-  (greenLiftRealLinear hd).mkContinuous ‖greenFourierVector d‖ (fun a => by
-    apply (ContinuousMap.norm_le _ (mul_nonneg (norm_nonneg _) (norm_nonneg _))).mpr
-    intro x
+  LinearMap.mkContinuous (E := realLpComplement d) (greenLiftRealLinear hd)
+    ‖greenFourierVector d‖ (fun a => by
+    refine (ContinuousMap.norm_le _ (by positivity)).mpr fun x => ?_
     exact (Complex.abs_re_le_norm _).trans (greenLiftComplexValue_bound d a.val.val x))
 
 theorem greenLiftReal_fourier {d : ℕ} (hd : 0 < d) (a : realLpComplement d) (k : Frequency d) :

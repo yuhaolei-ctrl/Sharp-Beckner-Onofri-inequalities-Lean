@@ -54,7 +54,7 @@ theorem sum_radiusLaw (n : ℕ) : ∑ r ∈ range (n+1), radiusLaw n r = 1 := by
   rw [sum_range_sub']
   simp [coeff_eq_zero (by omega : n < n+1)]
 
-private theorem filtered_telescope (b : ℕ → ℝ) (j n : ℕ) :
+theorem filtered_telescope (b : ℕ → ℝ) (j n : ℕ) :
     (∑ r ∈ range n, if j ≤ r then b r - b (r+1) else 0) =
       if j < n then b j - b n else 0 := by
   induction n with

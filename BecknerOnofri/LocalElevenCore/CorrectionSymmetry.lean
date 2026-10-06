@@ -26,7 +26,7 @@ theorem green_translation {d : ℕ} (hd : 0 < d) (a : Torus d) (u : Space d) :
   rw [coefficient_green hd, coefficient_translation, coefficient_translation, coefficient_green hd]
   ring
 
-private theorem translated_graph_dist {d : ℕ} (a : Torus d)
+theorem translated_graph_dist {d : ℕ} (a : Torus d)
     (x : ℝ × Coordinates d) (w : complement d) :
     dist ((x.1, phaseCoordinates a x.2), complementTranslation a w)
         ((1, (0 : Coordinates d)), (0 : complement d)) =

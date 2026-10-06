@@ -51,7 +51,7 @@ lemma partition_double {d : ℕ} (hd : 0 < d) (a : ℝ) :
       (∫ y, Real.exp (a*realGreen d (x-y)) ∂Legacy.TorusEndpoint.torusMeasure d) =
         ∫ y, Real.exp (a*realGreen d y) ∂Legacy.TorusEndpoint.torusMeasure d :=
     integral_sub_left_eq_self (fun y => Real.exp (a*realGreen d y)) _ x
-  simp only [he, integral_const, measureReal_univ_eq_one, one_smul]
+  simp only [he, integral_const, probReal_univ, one_smul]
   unfold GreenRoughEnergy.partition GreenRoughEnergy.kernel
   congr 1
   funext x

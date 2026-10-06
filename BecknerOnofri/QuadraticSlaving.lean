@@ -24,7 +24,7 @@ theorem pow_down {E : Type*} [NormedAddCommGroup E] :
 def sliceCorrection {d : ℕ} (hd : 12 ≤ d) (z : Coordinates d) : complement d := correction hd (1,z)
 def slicePotential {d : ℕ} (hd : 12 ≤ d) (z : Coordinates d) : Space d := potential hd (1,z)
 
-private theorem slice_tendsto (d : ℕ) :
+theorem slice_tendsto (d : ℕ) :
     Tendsto (fun z : Coordinates d => ((1:ℝ),z)) (𝓝 0) (𝓝 (1,0)) :=
   (continuous_const.prodMk continuous_id).continuousAt
 

@@ -10,9 +10,9 @@ for the integer-power majorant. -/
 
 namespace Legacy.D10
 
-private def quotient (x : ℚ) : ℚ := (1 - x) / (1 + x)
+def quotient (x : ℚ) : ℚ := (1 - x) / (1 + x)
 
-private theorem quotient_mul_le {x y : ℚ}
+theorem quotient_mul_le {x y : ℚ}
     (hx : 0 ≤ x) (hx' : x ≤ 1) (hy : 0 ≤ y) (hy' : y ≤ 1) :
     quotient (x * y) ≤ quotient x + quotient y := by
   have hd : quotient x + quotient y - quotient (x * y) =
@@ -33,7 +33,7 @@ private theorem quotient_mul_le {x y : ℚ}
     · positivity
   linarith
 
-private theorem quotient_pow_le {q : ℚ} (hq : 0 ≤ q) (hq' : q ≤ 1) (m : ℕ) :
+theorem quotient_pow_le {q : ℚ} (hq : 0 ≤ q) (hq' : q ≤ 1) (m : ℕ) :
     quotient (q ^ m) ≤ (m : ℚ) * quotient q := by
   induction m with
   | zero => simp [quotient]

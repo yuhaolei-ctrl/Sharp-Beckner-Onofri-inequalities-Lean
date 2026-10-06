@@ -34,7 +34,7 @@ def HasPositiveCosineMixture {d : ℕ} (f : Torus d → ℝ) : Prop :=
     Summable (fun n => w n * CosineMixture.tensor (N n) 0) ∧
     f = CosineMixtureApproximation.rho w N
 
-private theorem default_rough {d : ℕ} (hd : 0 < d) :
+theorem default_rough {d : ℕ} (hd : 0 < d) :
     RoughExponentialBound d (endpointConstant d / 2)
       (GreenRoughEnergy.partition d (endpointConstant d / 2)) := by
   have hC : 0 < endpointConstant d :=

@@ -20,7 +20,7 @@ open Legacy.BecknerOnofri.TorusSobolev
 variable (hminor : ∀ t∈Ico (0 : ℝ) 1,psi t≤CircleScalar.gamma t)
 include hminor
 
-private theorem selected_zero {u : TorusL2 12} (hu : SelectedNumericalModel.Selected u) : u=0 :=
+theorem selected_zero {u : TorusL2 12} (hu : SelectedNumericalModel.Selected u) : u=0 :=
   SelectedNumericalModel.selected_zero_of_entropy_certificates EntropyTail.scalarTail_le_budget
     psi psi_continuous.continuousOn (psi_convex.subset (subset_univ _) (convex_Icc _ _))
     hminor Spin.certified_global_spin_bound hu

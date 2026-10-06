@@ -93,7 +93,7 @@ end BecknerOnofri.HighDim.SelectedNumericalModel
 namespace BecknerOnofri.HighDim.ConditionalEntropy
 open EntropyShearer
 
-private theorem bounded_comp_Icc {d : ℕ} {u : Torus d → ℝ} (hu : BoundedMeasurable u)
+theorem bounded_comp_Icc {d : ℕ} {u : Torus d → ℝ} (hu : BoundedMeasurable u)
     {a b : ℝ} (hr : ∀ x, u x ∈ Icc a b) (ψ : ℝ → ℝ) (hc : ContinuousOn ψ (Icc a b)) :
     BoundedMeasurable (fun x => ψ (u x)) := by
   obtain ⟨C,hC⟩ := isCompact_Icc.bddAbove_image hc.norm

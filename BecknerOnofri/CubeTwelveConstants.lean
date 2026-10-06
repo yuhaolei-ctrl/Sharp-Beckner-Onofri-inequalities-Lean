@@ -14,9 +14,9 @@ open scoped BigOperators
 namespace BecknerOnofri.HighDim.CubeLatticeTail
 open IterationOmittedTail
 
-private def halfFactor (n : ℕ) : ℝ := ∏i∈Finset.range n, ((i:ℝ)+1/2)
+def halfFactor (n : ℕ) : ℝ := ∏i∈Finset.range n, ((i:ℝ)+1/2)
 
-private theorem gamma_nat_half (n : ℕ) :
+theorem gamma_nat_half (n : ℕ) :
     Real.Gamma ((n:ℝ)+1/2)=halfFactor n*Real.sqrt Real.pi := by
   induction n with
   | zero => simpa only [Nat.cast_zero,zero_add,halfFactor,Finset.range_zero,Finset.prod_empty,one_mul] using Real.Gamma_one_half_eq
@@ -26,67 +26,67 @@ private theorem gamma_nat_half (n : ℕ) :
     simp only [halfFactor,Finset.prod_range_succ]
     ring
 
-private theorem pi_nat_half (n : ℕ) :
+theorem pi_nat_half (n : ℕ) :
     Real.pi^((n:ℝ)+1/2)=Real.pi^n*Real.sqrt Real.pi := by
   rw [Real.rpow_add Real.pi_pos,Real.rpow_natCast,← Real.sqrt_eq_rpow]
 
-private def gammaRatio12 (j : ℕ) : ℝ :=
+def gammaRatio12 (j : ℕ) : ℝ :=
   Real.pi^((j:ℝ)/2)*Real.Gamma (12-(j:ℝ)/2)/Real.Gamma 12
 
-private theorem gamma_half_6 : Real.Gamma (13/2 : ℝ) = (10395/64)*Real.sqrt Real.pi := by
+theorem gamma_half_6 : Real.Gamma (13/2 : ℝ) = (10395/64)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 6
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_half_7 : Real.Gamma (15/2 : ℝ) = (135135/128)*Real.sqrt Real.pi := by
+theorem gamma_half_7 : Real.Gamma (15/2 : ℝ) = (135135/128)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 7
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_half_8 : Real.Gamma (17/2 : ℝ) = (2027025/256)*Real.sqrt Real.pi := by
+theorem gamma_half_8 : Real.Gamma (17/2 : ℝ) = (2027025/256)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 8
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_half_9 : Real.Gamma (19/2 : ℝ) = (34459425/512)*Real.sqrt Real.pi := by
+theorem gamma_half_9 : Real.Gamma (19/2 : ℝ) = (34459425/512)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 9
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_half_10 : Real.Gamma (21/2 : ℝ) = (654729075/1024)*Real.sqrt Real.pi := by
+theorem gamma_half_10 : Real.Gamma (21/2 : ℝ) = (654729075/1024)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 10
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_half_11 : Real.Gamma (23/2 : ℝ) = (13749310575/2048)*Real.sqrt Real.pi := by
+theorem gamma_half_11 : Real.Gamma (23/2 : ℝ) = (13749310575/2048)*Real.sqrt Real.pi := by
   have h:=gamma_nat_half 11
   norm_num [halfFactor,Finset.prod_range_succ] at h
   exact h
 
-private theorem gamma_int_7 : Real.Gamma (7:ℝ)=(720:ℝ) := by
+theorem gamma_int_7 : Real.Gamma (7:ℝ)=(720:ℝ) := by
   norm_num
 
-private theorem gamma_int_8 : Real.Gamma (8:ℝ)=(5040:ℝ) := by
+theorem gamma_int_8 : Real.Gamma (8:ℝ)=(5040:ℝ) := by
   norm_num
 
-private theorem gamma_int_9 : Real.Gamma (9:ℝ)=(40320:ℝ) := by
+theorem gamma_int_9 : Real.Gamma (9:ℝ)=(40320:ℝ) := by
   norm_num
 
-private theorem gamma_int_10 : Real.Gamma (10:ℝ)=(362880:ℝ) := by
+theorem gamma_int_10 : Real.Gamma (10:ℝ)=(362880:ℝ) := by
   norm_num
 
-private theorem gamma_int_11 : Real.Gamma (11:ℝ)=(3628800:ℝ) := by
+theorem gamma_int_11 : Real.Gamma (11:ℝ)=(3628800:ℝ) := by
   norm_num
 
-private theorem gamma_int_12 : Real.Gamma (12:ℝ)=(39916800:ℝ) := by
+theorem gamma_int_12 : Real.Gamma (12:ℝ)=(39916800:ℝ) := by
   norm_num
 
-private theorem gammaRatio12_0 : gammaRatio12 0=(1:ℝ)*Real.pi^0 := by
+theorem gammaRatio12_0 : gammaRatio12 0=(1:ℝ)*Real.pi^0 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (0:ℝ)=((0:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_12]
   ring
 
-private theorem gammaRatio12_1 : gammaRatio12 1=(88179/524288:ℝ)*Real.pi^1 := by
+theorem gammaRatio12_1 : gammaRatio12 1=(88179/524288:ℝ)*Real.pi^1 := by
   have hp:=pi_nat_half 0
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -95,12 +95,12 @@ private theorem gammaRatio12_1 : gammaRatio12 1=(88179/524288:ℝ)*Real.pi^1 := 
     _ = (88179/524288:ℝ)*Real.pi^0*(Real.sqrt Real.pi)^2 := by ring
     _ = _ := by rw [Real.sq_sqrt Real.pi_pos.le]; ring
 
-private theorem gammaRatio12_2 : gammaRatio12 2=(1/11:ℝ)*Real.pi^1 := by
+theorem gammaRatio12_2 : gammaRatio12 2=(1/11:ℝ)*Real.pi^1 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (1:ℝ)=((1:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_11,gamma_int_12]
   ring
 
-private theorem gammaRatio12_3 : gammaRatio12 3=(4199/262144:ℝ)*Real.pi^2 := by
+theorem gammaRatio12_3 : gammaRatio12 3=(4199/262144:ℝ)*Real.pi^2 := by
   have hp:=pi_nat_half 1
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -109,12 +109,12 @@ private theorem gammaRatio12_3 : gammaRatio12 3=(4199/262144:ℝ)*Real.pi^2 := b
     _ = (4199/262144:ℝ)*Real.pi^1*(Real.sqrt Real.pi)^2 := by ring
     _ = _ := by rw [Real.sq_sqrt Real.pi_pos.le]; ring
 
-private theorem gammaRatio12_4 : gammaRatio12 4=(1/110:ℝ)*Real.pi^2 := by
+theorem gammaRatio12_4 : gammaRatio12 4=(1/110:ℝ)*Real.pi^2 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (2:ℝ)=((2:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_10,gamma_int_12]
   ring
 
-private theorem gammaRatio12_5 : gammaRatio12 5=(221/131072:ℝ)*Real.pi^3 := by
+theorem gammaRatio12_5 : gammaRatio12 5=(221/131072:ℝ)*Real.pi^3 := by
   have hp:=pi_nat_half 2
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -123,12 +123,12 @@ private theorem gammaRatio12_5 : gammaRatio12 5=(221/131072:ℝ)*Real.pi^3 := by
     _ = (221/131072:ℝ)*Real.pi^2*(Real.sqrt Real.pi)^2 := by ring
     _ = _ := by rw [Real.sq_sqrt Real.pi_pos.le]; ring
 
-private theorem gammaRatio12_6 : gammaRatio12 6=(1/990:ℝ)*Real.pi^3 := by
+theorem gammaRatio12_6 : gammaRatio12 6=(1/990:ℝ)*Real.pi^3 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (3:ℝ)=((3:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_9,gamma_int_12]
   ring
 
-private theorem gammaRatio12_7 : gammaRatio12 7=(13/65536:ℝ)*Real.pi^4 := by
+theorem gammaRatio12_7 : gammaRatio12 7=(13/65536:ℝ)*Real.pi^4 := by
   have hp:=pi_nat_half 3
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -137,12 +137,12 @@ private theorem gammaRatio12_7 : gammaRatio12 7=(13/65536:ℝ)*Real.pi^4 := by
     _ = (13/65536:ℝ)*Real.pi^3*(Real.sqrt Real.pi)^2 := by ring
     _ = _ := by rw [Real.sq_sqrt Real.pi_pos.le]; ring
 
-private theorem gammaRatio12_8 : gammaRatio12 8=(1/7920:ℝ)*Real.pi^4 := by
+theorem gammaRatio12_8 : gammaRatio12 8=(1/7920:ℝ)*Real.pi^4 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (4:ℝ)=((4:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_8,gamma_int_12]
   ring
 
-private theorem gammaRatio12_9 : gammaRatio12 9=(13/491520:ℝ)*Real.pi^5 := by
+theorem gammaRatio12_9 : gammaRatio12 9=(13/491520:ℝ)*Real.pi^5 := by
   have hp:=pi_nat_half 4
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -151,12 +151,12 @@ private theorem gammaRatio12_9 : gammaRatio12 9=(13/491520:ℝ)*Real.pi^5 := by
     _ = (13/491520:ℝ)*Real.pi^4*(Real.sqrt Real.pi)^2 := by ring
     _ = _ := by rw [Real.sq_sqrt Real.pi_pos.le]; ring
 
-private theorem gammaRatio12_10 : gammaRatio12 10=(1/55440:ℝ)*Real.pi^5 := by
+theorem gammaRatio12_10 : gammaRatio12 10=(1/55440:ℝ)*Real.pi^5 := by
   norm_num only [gammaRatio12,Nat.cast_ofNat]
   rw [show (5:ℝ)=((5:ℕ):ℝ) by norm_num,Real.rpow_natCast,gamma_int_7,gamma_int_12]
   ring
 
-private theorem gammaRatio12_11 : gammaRatio12 11=(1/245760:ℝ)*Real.pi^6 := by
+theorem gammaRatio12_11 : gammaRatio12 11=(1/245760:ℝ)*Real.pi^6 := by
   have hp:=pi_nat_half 5
   norm_num at hp
   norm_num only [gammaRatio12,Nat.cast_ofNat]
@@ -167,7 +167,7 @@ private theorem gammaRatio12_11 : gammaRatio12 11=(1/245760:ℝ)*Real.pi^6 := by
 
 
 
-private def ratioRational12 (j : ℕ) : ℝ :=
+def ratioRational12 (j : ℕ) : ℝ :=
   match j with
   | 0 => (1:ℝ)*(355/113:ℝ)^0
   | 1 => (88179/524288:ℝ)*(355/113:ℝ)^1
@@ -183,7 +183,7 @@ private def ratioRational12 (j : ℕ) : ℝ :=
   | 11 => (1/245760:ℝ)*(355/113:ℝ)^6
   | _ => 0
 
-private theorem gammaRatio12_le {j : ℕ} (hj : j<12) : gammaRatio12 j≤ratioRational12 j := by
+theorem gammaRatio12_le {j : ℕ} (hj : j<12) : gammaRatio12 j≤ratioRational12 j := by
   have hpi : Real.pi≤(355/113:ℝ) := by linarith [Real.pi_lt_d20]
   interval_cases j
   · rw [gammaRatio12_0]
@@ -211,13 +211,13 @@ private theorem gammaRatio12_le {j : ℕ} (hj : j<12) : gammaRatio12 j≤ratioRa
   · rw [gammaRatio12_11]
     exact mul_le_mul_of_nonneg_left (pow_le_pow_left₀ Real.pi_pos.le hpi 6) (by norm_num : (0:ℝ)≤1/245760)
 
-private def tailFactor12 (R j : ℕ) : ℝ :=
+def tailFactor12 (R j : ℕ) : ℝ :=
   (((R+1:ℕ):ℝ)^((j:ℝ)-24)+((R+1:ℕ):ℝ)^((j:ℝ)-23)/(23-(j:ℝ)))
 
-private def rationalTail12 (R : ℕ) : ℝ :=
+def rationalTail12 (R : ℕ) : ℝ :=
   24*∑j∈Finset.range 12,((11:ℕ).choose j:ℝ)*ratioRational12 j*tailFactor12 R j
 
-private theorem explicitBound_twelve_eq (R : ℕ) :
+theorem explicitBound_twelve_eq (R : ℕ) :
     explicitBound 12 R=24*∑j∈Finset.range 12,((11:ℕ).choose j:ℝ)*gammaRatio12 j*tailFactor12 R j := by
   unfold explicitBound gammaRatio12 tailFactor12
   norm_num only [Nat.cast_ofNat,Nat.reduceSub]
@@ -228,7 +228,7 @@ private theorem explicitBound_twelve_eq (R : ℕ) :
     show (24:ℝ)-(j:ℝ)-1=23-(j:ℝ) by ring]
   ring
 
-private theorem explicitBound_twelve_le_rational (R : ℕ) :
+theorem explicitBound_twelve_le_rational (R : ℕ) :
     explicitBound 12 R≤rationalTail12 R := by
   rw [explicitBound_twelve_eq]
   apply mul_le_mul_of_nonneg_left _ (by norm_num : (0:ℝ)≤24)

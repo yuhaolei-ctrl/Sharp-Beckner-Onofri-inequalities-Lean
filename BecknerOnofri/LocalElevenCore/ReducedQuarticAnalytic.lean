@@ -26,7 +26,7 @@ open BecknerOnofri.HighDim.QuadraticSlaving hiding correction_quadratic_expansio
 open BecknerOnofri.HighDim.SlavedMoments hiding U U_eq U_fourth_error U_order U_second U_second_square_error U_third_error V VW_mean V_order W W_mean W_normalized_error W_order_one W_order_two W_quadraticPolynomial_mean log_graph_error mean_mul_assembly mean_mul_center
 open QuadraticModes QuadraticSlaving SlavedMoments ContinuousSymmetry
 
-private theorem mean_analytic_comp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+theorem mean_analytic_comp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {d : ℕ} {f : E → Space d} {x : E} (hf : AnalyticAt ℝ f x) :
     AnalyticAt ℝ (fun y => mean d (f y)) x :=
   ((mean d).analyticAt (f x)).comp (f := f) hf

@@ -118,13 +118,13 @@ theorem coefficient_synthesis {d : ℕ} (k j : Frequency d) (z : ℂ) :
   rw [coefficient_apply, toL2_synthesis, fourier_mode]
   simp [lp.single_apply, Pi.single_apply]
 
-private theorem axis_injective {d : ℕ} : Function.Injective (@axisFrequency d) := by
+theorem axis_injective {d : ℕ} : Function.Injective (@axisFrequency d) := by
   intro i j h
   by_contra hij
   have hh := congrFun h i
   simp [axisFrequency, hij] at hh
 
-private theorem axis_ne_neg {d : ℕ} (i j : Fin d) : axisFrequency i ≠ -axisFrequency j := by
+theorem axis_ne_neg {d : ℕ} (i j : Fin d) : axisFrequency i ≠ -axisFrequency j := by
   intro h
   have hh := congrFun h j
   by_cases hij : j = i <;> simp [axisFrequency, hij] at hh

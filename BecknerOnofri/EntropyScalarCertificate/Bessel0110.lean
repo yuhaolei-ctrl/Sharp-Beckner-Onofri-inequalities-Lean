@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.ScalarBesselRows
+import BecknerOnofri.EntropyScalarCertificate.Bessel0107  -- build lane: bounds parallel memory use
 
 @[expose] public section
 namespace BecknerOnofri.HighDim.ScalarCertificate.BesselBatch0110

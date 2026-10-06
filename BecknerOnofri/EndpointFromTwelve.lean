@@ -65,7 +65,7 @@ theorem half_strictly_subcritical {d : ℕ} (hd : 12 ≤ d) :
   apply (div_lt_iff₀ (by positivity : (0:ℝ) < 4*endpointConstant d)).mpr
   nlinarith
 
-private theorem actual_rough {d : ℕ} (hd : 0 < d) :
+theorem actual_rough {d : ℕ} (hd : 0 < d) :
     RoughExponentialBound d (endpointConstant d/2)
       (GreenRoughEnergy.partition d (endpointConstant d/2)) := by
   have hC : 0 < endpointConstant d :=

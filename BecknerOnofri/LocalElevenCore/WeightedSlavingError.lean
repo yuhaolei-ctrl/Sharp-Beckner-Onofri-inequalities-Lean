@@ -16,7 +16,7 @@ open ContinuousGibbs ContinuousFirstShell ContinuousComplement GreenLocalBranch 
 open GraphRegularity GraphWienerBounds WienerAlgebraBounds
 open BecknerOnofri.OnsetWienerBounds
 
-private lemma slice_tendsto' (d : ℕ) :
+lemma slice_tendsto' (d : ℕ) :
     Tendsto (fun z : Coordinates d => ((1:ℝ),z)) (𝓝 0) (𝓝 (1,0)) :=
   (continuous_const.prodMk continuous_id).continuousAt
 

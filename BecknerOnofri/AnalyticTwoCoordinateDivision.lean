@@ -34,9 +34,9 @@ theorem factor_unique {g h : E × ℝ → ℝ} {a : E}
     rw [mul_sub,hx,sub_self]
   exact (factor_zero (hg.sub hh) hz).mono fun _ h => sub_eq_zero.mp h
 
-private def swapScalars (x : (E × ℝ) × ℝ) : (E × ℝ) × ℝ := ((x.1.1,x.2),x.1.2)
+def swapScalars (x : (E × ℝ) × ℝ) : (E × ℝ) × ℝ := ((x.1.1,x.2),x.1.2)
 
-private theorem swapScalars_analytic (a : E) :
+theorem swapScalars_analytic (a : E) :
     AnalyticAt ℝ (swapScalars (E := E)) ((a,0),0) := by
   have h1 : AnalyticAt ℝ (fun x : (E × ℝ) × ℝ => x.1) ((a,0),0) := analyticAt_fst
   have h11 : AnalyticAt ℝ (fun x : (E × ℝ) × ℝ => x.1.1) ((a,0),0) :=
@@ -45,7 +45,7 @@ private theorem swapScalars_analytic (a : E) :
     analyticAt_snd.comp (f := fun x : (E × ℝ) × ℝ => x.1) h1
   exact (h11.prod analyticAt_snd).prod h12
 
-private theorem swapScalars_tendsto (a : E) :
+theorem swapScalars_tendsto (a : E) :
     Tendsto (swapScalars (E := E)) (𝓝 ((a,0),0)) (𝓝 ((a,0),0)) :=
   (swapScalars_analytic a).continuousAt.tendsto
 

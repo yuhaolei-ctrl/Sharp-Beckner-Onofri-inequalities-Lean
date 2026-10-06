@@ -10,16 +10,16 @@ open scoped BigOperators
 namespace Legacy.BecknerOnofri.CircleMilin
 open Legacy.TorusEndpoint Legacy.TorusEndpoint.FiniteCone Legacy.TorusEndpoint.FiniteAtomCoefficients
 
-private def frequency (j : ℕ) : Vec 1 := fun _ => j
-private def alphabet (n : ℕ) : List (Vec 1) := (List.range' 1 n).map frequency
+def frequency (j : ℕ) : Vec 1 := fun _ => j
+def alphabet (n : ℕ) : List (Vec 1) := (List.range' 1 n).map frequency
 
-private theorem frequency_injective : Function.Injective frequency := by
+theorem frequency_injective : Function.Injective frequency := by
   intro j k he
   have := congrFun he 0
   change (j : ℤ) = k at this
   exact_mod_cast this
 
-private theorem alphabet_pos (n : ℕ) : ∀ x ∈ alphabet n, LexPositive x := by
+theorem alphabet_pos (n : ℕ) : ∀ x ∈ alphabet n, LexPositive x := by
   intro x hx
   obtain ⟨j,hj,rfl⟩ := List.mem_map.mp hx
   have hp := List.left_le_of_mem_range' hj
@@ -29,12 +29,12 @@ private theorem alphabet_pos (n : ℕ) : ∀ x ∈ alphabet n, LexPositive x := 
   · intro i hi
     exact False.elim (by omega)
 
-private theorem alphabet_weight (n : ℕ) : ∀ x ∈ alphabet n, 0 < eval (frequency 1) x := by
+theorem alphabet_weight (n : ℕ) : ∀ x ∈ alphabet n, 0 < eval (frequency 1) x := by
   intro x hx
   have := Legacy.D10.CircleEntropy.positive_coordinate x (alphabet_pos n x hx)
   simpa [eval,frequency] using this
 
-private theorem sum_frequency (xs : List ℕ) : sumVec (xs.map frequency) = frequency xs.sum := by
+theorem sum_frequency (xs : List ℕ) : sumVec (xs.map frequency) = frequency xs.sum := by
   induction xs with
   | nil => rfl
   | cons j xs ih =>
@@ -42,7 +42,7 @@ private theorem sum_frequency (xs : List ℕ) : sumVec (xs.map frequency) = freq
     funext i
     simp [add,frequency]
 
-private theorem map_word_mem (n : ℕ) (xs : List ℕ) (hx : xs ∈ words n) :
+theorem map_word_mem (n : ℕ) (xs : List ℕ) (hx : xs ∈ words n) :
     xs.map frequency ∈ decompositions (alphabet n) (frequency 1) (frequency n) := by
   rw [mem_decompositions_iff _ _ _ (alphabet_weight n)]
   obtain ⟨hp, hs⟩ := (mem_words_iff _ _).mp hx
@@ -57,7 +57,7 @@ private theorem map_word_mem (n : ℕ) (xs : List ℕ) (hx : xs ∈ words n) :
     exact List.mem_range'.mpr ⟨j-1,by have := hp j hj; omega,by have := hp j hj; omega⟩
   · rw [sum_frequency,hs]
 
-private theorem words_surjective (n : ℕ) (ys : List (Vec 1))
+theorem words_surjective (n : ℕ) (ys : List (Vec 1))
     (hy : ys ∈ decompositions (alphabet n) (frequency 1) (frequency n)) :
     ∃ xs, xs ∈ words n ∧ xs.map frequency = ys := by
   obtain ⟨hm, hs⟩ := (mem_decompositions_iff _ _ _ (alphabet_weight n) _).mp hy
@@ -81,7 +81,7 @@ private theorem words_surjective (n : ℕ) (ys : List (Vec 1))
     rw [he,hs] at hsum
     exact (frequency_injective hsum).symm
 
-private theorem wordWeight_map (xs : List ℕ) :
+theorem wordWeight_map (xs : List ℕ) :
     wordWeight Legacy.D10.CircleEntropy.weight 1 (xs.map frequency) = qWord xs := by
   unfold wordWeight qWord
   simp only [List.length_map,Legacy.TorusEndpoint.scalarExpTerm,one_pow,one_div]

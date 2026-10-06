@@ -13,7 +13,7 @@ open scoped Topology ContDiff
 namespace Legacy.BecknerOnofri.JacobiHeatPositivity
 open JacobiEigenfunctions
 
-private theorem continuous_interval_integrable {f : ℝ→ℝ} (hf : Continuous f) :
+theorem continuous_interval_integrable {f : ℝ→ℝ} (hf : Continuous f) :
     Integrable f intervalMeasure :=
   hf.continuousOn.integrableOn_Icc.mono_set Ioo_subset_Icc_self
 

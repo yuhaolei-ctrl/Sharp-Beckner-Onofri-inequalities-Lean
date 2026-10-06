@@ -38,7 +38,7 @@ theorem logPartition_eq_centeredLogPartition {d : ℕ} (u : Space d) :
   rw [ENNReal.log_ofReal_of_pos (partition_pos _)]
   rfl
 
-private theorem norm_power_succ_isBigO (d n : ℕ) :
+theorem norm_power_succ_isBigO (d n : ℕ) :
     (fun u : Space d => ‖u‖ ^ (n+1)) =O[𝓝 0] (fun u => ‖u‖ ^ n) := by
   apply isBigO_iff.mpr
   refine ⟨1, ?_⟩
@@ -70,7 +70,7 @@ theorem expFifthRemainder_isBigO (d : ℕ) :
   simp only [zero_add, he]
   rfl
 
-private theorem centered_remainder_isBigO {d n : ℕ} {R : Space d → Space d}
+theorem centered_remainder_isBigO {d n : ℕ} {R : Space d → Space d}
     (hR : R =O[𝓝 0] (fun u => ‖u‖ ^ n)) :
     (fun u : Space d => mean d (R (center d u))) =O[𝓝 0] (fun u => ‖u‖ ^ n) := by
   have hid : (fun u : Space d => u) =O[𝓝 0] (fun u => ‖u‖) := (isBigO_refl _ _).norm_right

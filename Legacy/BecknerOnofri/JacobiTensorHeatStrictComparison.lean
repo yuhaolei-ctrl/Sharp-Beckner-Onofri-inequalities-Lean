@@ -12,11 +12,11 @@ open scoped Topology BigOperators
 namespace Legacy.BecknerOnofri.JacobiTensorHeatKernel
 open JacobiTensor JacobiHeatBounds JacobiHeatPositivity
 
-private theorem product_lt_of_right_positive {β : Type*} (F : Finset β) (f g : β→ℝ)
+theorem product_lt_of_right_positive {β : Type*} (F : Finset β) (f g : β→ℝ)
     (hf : ∀i∈F,0≤f i) (hg : ∀i∈F,0<g i) (hle : ∀i∈F,f i≤g i)
     (hlt : ∃i∈F,f i<g i) : ∏i∈F,f i < ∏i∈F,g i := by
   by_cases hp : ∀i∈F,0<f i
-  · exact Finset.prod_lt_prod hp hle hlt
+  · exact Finset.prod_lt_prod₀ hp hle hlt
   · push_neg at hp
     obtain ⟨i,hi,hfi⟩ := hp
     have hz : f i=0 := le_antisymm hfi (hf i hi)

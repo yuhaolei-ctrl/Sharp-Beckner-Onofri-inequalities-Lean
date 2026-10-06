@@ -11,7 +11,6 @@ namespace Legacy.BecknerOnofri.WeightedStrictComparison
 open MeasureTheory PositiveOperatorNeumann PositiveKernelRayleigh BoundedL2Multiplier
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} [IsFiniteMeasure μ]
 
-omit [IsFiniteMeasure μ] in
 theorem weighted_kernel_positive (w : Weight μ) {c : ℝ} (hc : 0 < c)
     (hw : ∀ᵐ x ∂μ, 0 < w.value x) {K : X × X → ℝ} (hK : ∀ᵐ z ∂μ.prod μ, 0 < K z) :
     ∀ᵐ z ∂μ.prod μ, 0 < w.kernel c K z := by

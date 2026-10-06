@@ -22,18 +22,18 @@ namespace Legacy.TorusEndpoint
 
 abbrev NonzeroFrequency (d : ℕ) := {k : Frequency d // k ≠ 0}
 
-private theorem positive_frequency_ne_zero {d : ℕ} (k : PositiveFrequency d) :
+theorem positive_frequency_ne_zero {d : ℕ} (k : PositiveFrequency d) :
     k.val ≠ (0 : Frequency d) := by
   intro h
   apply FiniteCone.positive_ne_zero k.property
   exact h
 
-private def positivePairToNonzero {d : ℕ} :
+def positivePairToNonzero {d : ℕ} :
     PositiveFrequency d ⊕ PositiveFrequency d → NonzeroFrequency d
   | Sum.inl k => ⟨k.val, positive_frequency_ne_zero k⟩
   | Sum.inr k => ⟨-k.val, neg_ne_zero.mpr (positive_frequency_ne_zero k)⟩
 
-private theorem positivePairToNonzero_injective {d : ℕ} :
+theorem positivePairToNonzero_injective {d : ℕ} :
     Function.Injective (positivePairToNonzero (d := d)) := by
   intro p q h
   have hv := congrArg Subtype.val h
@@ -67,7 +67,7 @@ private theorem positivePairToNonzero_injective {d : ℕ} :
       apply Subtype.ext
       exact neg_injective hv
 
-private theorem positivePairToNonzero_surjective {d : ℕ}
+theorem positivePairToNonzero_surjective {d : ℕ}
     (h_total : ∀ k : Frequency d, k ≠ 0 →
       FiniteCone.LexPositive k ∨ FiniteCone.LexPositive (-k)) :
     Function.Surjective (positivePairToNonzero (d := d)) := by
@@ -78,14 +78,14 @@ private theorem positivePairToNonzero_surjective {d : ℕ}
     apply Subtype.ext
     exact neg_neg k.val
 
-private noncomputable def positivePairEquivNonzero {d : ℕ}
+noncomputable def positivePairEquivNonzero {d : ℕ}
     (h_total : ∀ k : Frequency d, k ≠ 0 →
       FiniteCone.LexPositive k ∨ FiniteCone.LexPositive (-k)) :
     (PositiveFrequency d ⊕ PositiveFrequency d) ≃ NonzeroFrequency d :=
   Equiv.ofBijective positivePairToNonzero
     ⟨positivePairToNonzero_injective, positivePairToNonzero_surjective h_total⟩
 
-private theorem full_spectral_reindex {d : ℕ}
+theorem full_spectral_reindex {d : ℕ}
     (h_total : ∀ k : Frequency d, k ≠ 0 →
       FiniteCone.LexPositive k ∨ FiniteCone.LexPositive (-k))
     (rho : ProbabilityDensity d) (a : Frequency d → ℝ)

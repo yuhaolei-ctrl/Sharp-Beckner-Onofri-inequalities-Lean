@@ -17,11 +17,10 @@ open Legacy.BecknerOnofri.TorusSobolev Legacy.BecknerOnofri.HeatDensityApproxima
 lemma integral_norm_le_l2 {d : ℕ} (u : TorusL2 d) :
     (∫ x, ‖u x‖ ∂torusMeasure d) ≤ ‖u‖ := by
   have hu : AEStronglyMeasurable u (torusMeasure d) := Lp.aestronglyMeasurable u
-  rw [integral_norm_eq_lintegral_enorm hu, ← eLpNorm_one_eq_lintegral_enorm]
+  rw [integral_norm_eq_lintegral_enorm hu, ← eLpNorm_one_eq_lintegral_enorm hu]
   change (eLpNorm u 1 (torusMeasure d)).toReal ≤ (eLpNorm u 2 (torusMeasure d)).toReal
   exact ENNReal.toReal_mono (Lp.eLpNorm_ne_top u)
-    (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num : (1:ENNReal) ≤ 2)
-      (Lp.aestronglyMeasurable u))
+    (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num : (1:ENNReal) ≤ 2))
 
 theorem heat_l1_tendsto_of_memLp {d : ℕ} (ρ : Legacy.TorusEndpoint.ProbabilityDensity d)
     (hρ : MemLp ρ.value 2 (torusMeasure d))
@@ -68,11 +67,11 @@ theorem heat_tendstoInMeasure {d : ℕ} (ρ : Legacy.TorusEndpoint.ProbabilityDe
     (t : ℕ → ℝ) (ht : ∀ n, 0 < t n) (ht0 : Tendsto t atTop (𝓝 0)) :
     TendstoInMeasure (torusMeasure d) (fun n => heatValue ρ (t n)) atTop ρ.value := by
   apply tendstoInMeasure_of_tendsto_eLpNorm (p := 1) (by norm_num)
-    (fun n => (heatValue_integrable ρ (ht n)).aestronglyMeasurable) ρ.integrable.aestronglyMeasurable
   have h := ENNReal.continuous_ofReal.continuousAt.tendsto.comp (heat_l1_tendsto ρ t ht ht0)
   have he (n : ℕ) : ENNReal.ofReal (l1distance (heatValue ρ (t n)) ρ.value) =
       eLpNorm (heatValue ρ (t n)-ρ.value) 1 (torusMeasure d) := by
-    rw [eLpNorm_one_eq_lintegral_enorm]
+    rw [eLpNorm_one_eq_lintegral_enorm
+      (by exact ((heatValue_integrable ρ (ht n)).sub ρ.integrable).aestronglyMeasurable)]
     exact ofReal_integral_norm_eq_lintegral_enorm ((heatValue_integrable ρ (ht n)).sub ρ.integrable)
   simpa only [Function.comp_def,he,ENNReal.ofReal_zero] using! h
 

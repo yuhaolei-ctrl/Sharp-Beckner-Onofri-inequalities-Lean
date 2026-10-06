@@ -18,7 +18,7 @@ namespace BecknerOnofri.HighDim
 open Legacy.BecknerOnofri Legacy.TorusEndpoint
 open TorusSobolev SubcriticalAttainment SubcriticalEuler SmoothFourier SteinerSelection
 
-private theorem twelve_rough :
+theorem twelve_rough :
     RoughExponentialBound 12 (endpointConstant 12 / 2)
       (GreenRoughEnergy.partition 12 (endpointConstant 12 / 2)) := by
   have hC : 0 < endpointConstant 12 := div_pos (by norm_num) (endpointSigma_pos (by norm_num))

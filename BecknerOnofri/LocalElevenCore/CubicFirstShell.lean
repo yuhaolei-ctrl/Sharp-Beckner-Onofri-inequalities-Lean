@@ -20,7 +20,7 @@ open BecknerOnofri.HighDim.QuadraticModes hiding actual_quartic_coefficients act
 open BecknerOnofri.HighDim.QuadraticSlaving hiding correction_quadratic_expansion inverseGreen mean_slicePotential nonlinear_error_cubic normalized_error_cubic pow_down quadraticCorrection quadraticTerm_difference_cubic sliceCorrection sliceCorrection_coe_quadratic sliceCorrection_inverse sliceCorrection_quadratic slicePotential slicePotential_linear slicePotential_tendsto
 open ContinuousGibbs ContinuousFirstShell QuadraticSlaving
 
-private theorem conj_mul_norm (w : ℂ) : conj w*w = ((‖w‖^2:ℝ):ℂ) := by
+theorem conj_mul_norm (w : ℂ) : conj w*w = ((‖w‖^2:ℝ):ℂ) := by
   rw [← Complex.normSq_eq_conj_mul_self, Complex.normSq_eq_norm_sq]
 
 theorem assembly_cube_coefficient {d : ℕ} (z : Coordinates d) (i : Fin d) :

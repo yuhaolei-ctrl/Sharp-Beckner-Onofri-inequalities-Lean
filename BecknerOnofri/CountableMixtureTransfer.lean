@@ -21,7 +21,7 @@ theorem coeff_le_one (n j : ℕ) : binomialCoeffReal n j ≤ 1 := by
 
 theorem componentCoeff_le_one (N : Fin d → ℕ) (k : Frequency d) : componentCoeff N k ≤ 1 := by
   unfold componentCoeff binomialProduct
-  exact prod_le_one (fun _ _ => coeff_nonneg _ _) (fun _ _ => coeff_le_one _ _)
+  exact prod_le_one₀ (fun _ _ => coeff_nonneg _ _) (fun _ _ => coeff_le_one _ _)
 
 theorem summable_mixture_coeff (w : ℕ → ℝ) (N : ℕ → Fin d → ℕ)
     (hw : ∀ n, 0 ≤ w n) (hs : Summable w) (k : Frequency d) :

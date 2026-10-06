@@ -4,7 +4,4 @@ public import BecknerOnofri.VariationalCurveDefinitions
 
 @[expose] public section
 
-namespace BecknerOnofri.HighDim.VariationalCurves
-noncomputable def zeroDefectCoefficient (d : ℕ) : ℝ :=
-  spectralThreshold d/(2*globalTransition d*(2*Real.pi)^d)
-end BecknerOnofri.HighDim.VariationalCurves
+/-! `zeroDefectCoefficient` lives in `BecknerOnofri.Statement`. -/

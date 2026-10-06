@@ -37,21 +37,21 @@ lemma entropy_marginal_le_of_bounds {d : ℕ} (s : Finset (Fin d))
   rw [fullAvg_eq_avg s hρ.bounded]
   simpa only [relativeEntropy, entropyIntegral, Real.log_one, sub_zero] using h
 
-private def approximation {d : ℕ} (ρ : ProbabilityDensity d) (n : ℕ) : ProbabilityDensity d :=
+def approximation {d : ℕ} (ρ : ProbabilityDensity d) (n : ℕ) : ProbabilityDensity d :=
   Bridge.rawDensity (Legacy.BecknerOnofri.HeatDensityApproximation.heatDensity (Bridge.density ρ)
     (show (0:ℝ)<1/((n:ℝ)+1) by positivity))
 
-private lemma approximation_bounded {d : ℕ} (ρ : ProbabilityDensity d) (n : ℕ) :
+lemma approximation_bounded {d : ℕ} (ρ : ProbabilityDensity d) (n : ℕ) :
     PositiveBounded (approximation ρ n).value :=
   positiveBounded_of_continuous_pos
     (Legacy.BecknerOnofri.HeatDensityApproximation.heatValue_continuous _ (by positivity))
     (Legacy.BecknerOnofri.HeatDensityApproximation.heatValue_pos _ (by positivity))
 
-private lemma approximation_entropy_le {d : ℕ} (ρ : ProbabilityDensity d)
+lemma approximation_entropy_le {d : ℕ} (ρ : ProbabilityDensity d)
     (hρ : ρ.FiniteEntropy) (n : ℕ) : entropy (approximation ρ n) ≤ entropy ρ :=
   Legacy.BecknerOnofri.HeatDensityApproximation.heatDensity_entropy_le (Bridge.density ρ) hρ (by positivity)
 
-private lemma approximation_l1 {d : ℕ} (ρ : ProbabilityDensity d) :
+lemma approximation_l1 {d : ℕ} (ρ : ProbabilityDensity d) :
     Tendsto (fun n => ∫ x, ‖(approximation ρ n).value x-ρ.value x‖ ∂torusMeasure d) atTop (𝓝 0) :=
   HeatApproximation.heat_l1_tendsto (Bridge.density ρ) (fun n => 1/((n:ℝ)+1))
     (fun _ => by positivity) tendsto_one_div_add_atTop_nhds_zero_nat

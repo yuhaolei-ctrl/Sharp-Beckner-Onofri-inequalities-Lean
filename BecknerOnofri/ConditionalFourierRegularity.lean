@@ -17,7 +17,7 @@ namespace BecknerOnofri.HighDim.ConditionalEntropy
 open Legacy.TorusEndpoint Legacy.BecknerOnofri
 open RadialWiener SmoothFourier
 
-private theorem character_add {d : ℕ} (k : Frequency d) (x y : Torus d) :
+theorem character_add {d : ℕ} (k : Frequency d) (x y : Torus d) :
     UnitAddTorus.mFourier k (x + y) =
       UnitAddTorus.mFourier k x * UnitAddTorus.mFourier k y := by
   simp only [UnitAddTorus.mFourier, ContinuousMap.coe_mk, Pi.add_apply,

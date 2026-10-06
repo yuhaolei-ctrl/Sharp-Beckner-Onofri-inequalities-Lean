@@ -33,7 +33,7 @@ theorem heatGreen_average_coordinates_ae {d : ℕ} (hd : 0 < d) :
   apply ae_of_cell_except_coordinate_zeros
   · apply measurableSet_le (measurable_heatGreen d)
     exact ((Finset.measurable_sum _ (fun i _ =>
-      (measurable_heatGreen 1).comp (measurable_pi_lambda _ (fun _ => measurable_pi_apply i)))).div_const _).add_const _
+      (measurable_heatGreen 1).comp (Measurable.of_eval (fun _ => measurable_pi_apply i)))).div_const _).add_const _
   · intro x hx hzero
     exact heatGreen_average_coordinates_le hd x (centeredCell_coordinates hx) hzero
 

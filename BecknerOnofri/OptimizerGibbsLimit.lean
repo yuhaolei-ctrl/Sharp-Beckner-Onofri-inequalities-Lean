@@ -16,14 +16,14 @@ open Legacy.TorusEndpoint Legacy.BecknerOnofri
 open TorusSobolev SubcriticalAttainment SubcriticalEuler
 open EndpointDensityFinitePotential
 
-private theorem shifted_product_integrable {d : ℕ} (r : ProbabilityDensity d)
+theorem shifted_product_integrable {d : ℕ} (r : ProbabilityDensity d)
     (u : TorusL2 d) (hp : Integrable (fun x => r.value x*(u x).re) (torusMeasure d)) (ell : ℝ) :
     Integrable (fun x => r.value x*((u x).re-ell)) (torusMeasure d) := by
   convert hp.sub (r.integrable.mul_const ell) using 1
   funext x
   simp only [Pi.sub_apply,mul_sub]
 
-private theorem normalized_exp_integrable {d : ℕ} {b Ab : ℝ} (hR : RoughExponentialBound d b Ab)
+theorem normalized_exp_integrable {d : ℕ} {b Ab : ℝ} (hR : RoughExponentialBound d b Ab)
     (u : TorusL2 d) (hu : Admissible u) :
     Integrable (fun x => Real.exp ((u x).re-Real.log (partition u))) (torusMeasure d) := by
   have hZ := partition_pos hR hu

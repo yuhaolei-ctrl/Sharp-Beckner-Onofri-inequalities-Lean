@@ -18,7 +18,8 @@ lemma rho_summable_ae {d : ℕ} (w : ℕ → ℝ) (N : ℕ → Fin d → ℕ)
   have hi (n : ℕ) := (CosineMixture.tensor_integrable (N n)).const_mul (w n)
   have he (n : ℕ) : eLpNorm (fun x => w n * CosineMixture.tensor (N n) x) 1
       (torusMeasure d) = ENNReal.ofReal (w n) := by
-    rw [eLpNorm_one_eq_lintegral_enorm, ← ofReal_integral_norm_eq_lintegral_enorm (hi n)]
+    rw [eLpNorm_one_eq_lintegral_enorm (hi n).aestronglyMeasurable,
+      ← ofReal_integral_norm_eq_lintegral_enorm (hi n)]
     congr 1
     simp_rw [Real.norm_of_nonneg (mul_nonneg (hw n) (CosineMixture.tensor_nonneg _ _))]
     rw [integral_const_mul, CosineMixture.tensor_mass, mul_one]
@@ -27,8 +28,7 @@ lemma rho_summable_ae {d : ℕ} (w : ℕ → ℝ) (N : ℕ → Fin d → ℕ)
     simp_rw [he]
     rw [← ENNReal.ofReal_tsum_of_nonneg hw hs]
     exact ENNReal.ofReal_ne_top
-  have h := summable_norm_of_tsum_eLpNorm_ne_top (p := 1) le_rfl
-    (fun n => (hi n).aestronglyMeasurable) hb
+  have h := summable_norm_of_tsum_eLpNorm_ne_top (p := 1) le_rfl hb
   exact h.mono (fun x hx => hx.of_norm)
 
 lemma mixture_partial_l1_exact {d : ℕ} (w : ℕ → ℝ) (N : ℕ → Fin d → ℕ)

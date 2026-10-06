@@ -130,7 +130,8 @@ def realComplementLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
 /-- The real Banach-space inverse needed by the Lyapunov--Schmidt/IFT step. -/
 def realComplementContinuousLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
     (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : realLpComplement d ≃L[ℝ] realLpComplement d :=
-  (realComplementLinearEquiv hd hμ0 hμ2).toContinuousLinearEquivOfBounds 1 (16/15)
+  LinearEquiv.toContinuousLinearEquivOfBounds (E := realLpComplement d) (F := realLpComplement d)
+    (realComplementLinearEquiv hd hμ0 hμ2) 1 (16/15)
     (fun a => by
       change ‖lpComplementForward hd hμ0 hμ2 a.val‖ ≤ 1*‖a.val‖
       simpa only [one_mul] using lpComplementForward_norm_le hd hμ0 hμ2 a.val)

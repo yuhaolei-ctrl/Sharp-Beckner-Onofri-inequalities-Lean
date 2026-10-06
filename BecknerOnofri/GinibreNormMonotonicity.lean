@@ -60,7 +60,7 @@ theorem cosinePotential_smul {d : ℕ} {ι : Type*} [Fintype ι]
     c • cosinePotential a k=cosinePotential (fun i => c*a i) k := by
   simp only [cosinePotential,Finset.smul_sum,smul_smul]
 
-private theorem line_endpoint {d : ℕ} {ι : Type*} [Fintype ι]
+theorem line_endpoint {d : ℕ} {ι : Type*} [Fintype ι]
     (a b : ι → ℝ) (k : ι → Frequency d) :
     cosinePotential a k+(1:ℝ) • cosinePotential (fun i => b i-a i) k=cosinePotential b k := by
   rw [cosinePotential_line]

@@ -2,6 +2,7 @@ module
 
 public import Legacy.BecknerOnofri.ChebyshevProfileBounds
 public import Legacy.BecknerOnofri.SmoothFourier
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev.Basic
 
 @[expose] public section
 

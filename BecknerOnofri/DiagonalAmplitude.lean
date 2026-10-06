@@ -14,7 +14,7 @@ open scoped Topology
 namespace BecknerOnofri.HighDim.DiagonalScalarBranch
 open ContinuousGibbs ContinuousFirstShell ReducedCubicExpansion
 
-private structure BranchInterval {d : ℕ} (hd : 12 ≤ d) where
+structure BranchInterval {d : ℕ} (hd : 12 ≤ d) where
   radius : ℝ
   positive : 0 < radius
   strict : StrictMonoOn (parameter hd) (Icc 0 radius)
@@ -24,7 +24,7 @@ private structure BranchInterval {d : ℕ} (hd : 12 ≤ d) where
     (∀ s : ℝ, InSobolev s (branchPotential hd t)) ∧
     ReducedEquation.full d (parameter hd t) (branchPotential hd t) = 0
 
-private theorem localInterval_exists {d : ℕ} (hd : 12 ≤ d) : Nonempty (BranchInterval hd) := by
+theorem localInterval_exists {d : ℕ} (hd : 12 ≤ d) : Nonempty (BranchInterval hd) := by
   obtain ⟨s,hs,hm,hc⟩ := parameter_strictMonoOn hd
   obtain ⟨r,hr,hB⟩ := Metric.eventually_nhds_iff.mp
     ((parameter_lower_bound hd).and ((branchPotential_regular hd).and (branchPotential_full_zero hd)))
@@ -41,7 +41,7 @@ private theorem localInterval_exists {d : ℕ} (hd : 12 ≤ d) : Nonempty (Branc
   · intro t ht
     exact ⟨(hB (hdist ht)).2.1.1,(hB (hdist ht)).2.1.2,(hB (hdist ht)).2.2⟩
 
-private def localInterval {d : ℕ} (hd : 12 ≤ d) : BranchInterval hd :=
+def localInterval {d : ℕ} (hd : 12 ≤ d) : BranchInterval hd :=
   Classical.choice (localInterval_exists hd)
 
 def amplitudeRadius {d : ℕ} (hd : 12 ≤ d) : ℝ := (localInterval hd).radius
@@ -57,7 +57,7 @@ theorem upperParameter_gt_one {d : ℕ} (hd : 12 ≤ d) : 1 < upperParameter hd 
     ⟨le_rfl,(localInterval hd).positive.le⟩ ⟨(localInterval hd).positive.le,le_rfl⟩
     (localInterval hd).positive using 1 <;> first | rfl | simp
 
-private theorem amplitude_exists {d : ℕ} (hd : 12 ≤ d) {μ : ℝ}
+theorem amplitude_exists {d : ℕ} (hd : 12 ≤ d) {μ : ℝ}
     (hμ : μ ∈ Icc 1 (upperParameter hd)) :
     ∃ t : ℝ, t ∈ Icc 0 (amplitudeRadius hd) ∧ parameter hd t = μ := by
   apply intermediate_value_Icc (localInterval hd).positive.le (localInterval hd).continuous

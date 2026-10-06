@@ -12,10 +12,10 @@ open scoped BigOperators ComplexConjugate
 namespace BecknerOnofri.HighDim.ContinuousSymmetry
 open ContinuousGibbs ContinuousFirstShell
 
-private def translateContinuous {d : ℕ} (a : Torus d) (u : Space d) : Space d :=
+def translateContinuous {d : ℕ} (a : Torus d) (u : Space d) : Space d :=
   ⟨fun x => u (x-a), u.continuous.comp (continuous_id.sub continuous_const)⟩
 
-private theorem translateContinuous_norm_le {d : ℕ} (a : Torus d) (u : Space d) :
+theorem translateContinuous_norm_le {d : ℕ} (a : Torus d) (u : Space d) :
     ‖translateContinuous a u‖ ≤ ‖u‖ := by
   apply (ContinuousMap.norm_le _ (norm_nonneg u)).mpr
   intro x
@@ -94,12 +94,12 @@ theorem coefficient_translation {d : ℕ} (a : Torus d) (u : Space d) (k : Frequ
   rw [coefficient_eq_fourierCoeff, coefficient_eq_fourierCoeff]
   exact fourierCoeff_translate u a k
 
-private theorem mFourier_neg_argument {d : ℕ} (k : Frequency d) (a : Torus d) :
+theorem mFourier_neg_argument {d : ℕ} (k : Frequency d) (a : Torus d) :
     UnitAddTorus.mFourier k (-a) = UnitAddTorus.mFourier (-k) a := by
   simp only [UnitAddTorus.mFourier, ContinuousMap.coe_mk, Pi.neg_apply, fourier_apply,
     zsmul_neg, neg_zsmul]
 
-private theorem mFourier_sub_argument {d : ℕ} (k : Frequency d) (x a : Torus d) :
+theorem mFourier_sub_argument {d : ℕ} (k : Frequency d) (x a : Torus d) :
     UnitAddTorus.mFourier k (x-a) =
       UnitAddTorus.mFourier k x * UnitAddTorus.mFourier (-k) a := by
   rw [sub_eq_add_neg, mFourier_add_argument, mFourier_neg_argument]

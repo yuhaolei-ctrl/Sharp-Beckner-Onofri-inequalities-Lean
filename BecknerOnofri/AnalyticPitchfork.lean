@@ -27,7 +27,7 @@ structure Data where
 
 open AnalyticParameterDivision
 
-private theorem quotient_exists (D : Data) :
+theorem quotient_exists (D : Data) :
     ∃ q : ℝ × ℝ → ℝ, AnalyticAt ℝ q (1,0) ∧
       ∀ᶠ x in 𝓝 ((1,0) : ℝ × ℝ), D.residual x = x.2 * q x :=
   exists_analytic_factor (D.analytic) (D.axis)

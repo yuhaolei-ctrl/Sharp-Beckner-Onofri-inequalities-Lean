@@ -34,13 +34,13 @@ theorem kernel_memLp (d : ℕ) : MemLp (kernel d) 2 (torusMeasure d) :=
 theorem kernel_integrable (d : ℕ) : Integrable (kernel d) (torusMeasure d) :=
   (realGreen_integrable d).const_mul _
 
-private theorem sub_left_preserving {d : ℕ} (x : Torus d) :
+theorem sub_left_preserving {d : ℕ} (x : Torus d) :
     MeasurePreserving (fun y => x-y) (torusMeasure d) (torusMeasure d) := by
   letI : (torusMeasure d).IsAddLeftInvariant := by rw [torusMeasure_explicit]; infer_instance
   letI : (torusMeasure d).IsNegInvariant := by rw [torusMeasure_explicit]; infer_instance
   exact Measure.measurePreserving_sub_left _ x
 
-private theorem integral_sub_left {d : ℕ} (f : Torus d → ℝ) (x : Torus d) :
+theorem integral_sub_left {d : ℕ} (f : Torus d → ℝ) (x : Torus d) :
     (∫ y, f (x-y) ∂torusMeasure d) = ∫ y, f y ∂torusMeasure d := by
   letI : (torusMeasure d).IsAddLeftInvariant := by rw [torusMeasure_explicit]; infer_instance
   letI : (torusMeasure d).IsNegInvariant := by rw [torusMeasure_explicit]; infer_instance

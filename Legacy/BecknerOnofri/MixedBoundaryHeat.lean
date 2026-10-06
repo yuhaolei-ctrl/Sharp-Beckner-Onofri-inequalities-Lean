@@ -50,7 +50,7 @@ theorem kernel_lt_neumann {d : ℕ} {t : ℝ} (ht : 0 < t) (active : Finset (Fin
     (hactive : active.Nonempty) {x y : Fin d → ℝ}
     (hx : x ∈ interiorCube d) (hy : y ∈ interiorCube d) :
     kernel active t x y < neumannKernel t x y := by
-  apply Finset.prod_lt_prod (fun i _ => factor_pos ht active hx hy i)
+  apply Finset.prod_lt_prod₀ (fun i _ => factor_pos ht active hx hy i)
   · intro i _
     split_ifs
     · exact (dirichletPiHeat_lt_neumann ht _ _).le

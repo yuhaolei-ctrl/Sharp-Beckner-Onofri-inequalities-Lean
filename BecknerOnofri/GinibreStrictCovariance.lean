@@ -41,7 +41,7 @@ theorem sine_mul_sine {d : ℕ} (r s : Frequency d) :
     Complex.mul_re,Complex.conj_re,Complex.conj_im]
   ring
 
-private theorem frequency_double_ne_zero {d : ℕ} {k : Frequency d} (hk : k≠0) : k+k≠0 := by
+theorem frequency_double_ne_zero {d : ℕ} {k : Frequency d} (hk : k≠0) : k+k≠0 := by
   intro h
   apply hk
   funext i

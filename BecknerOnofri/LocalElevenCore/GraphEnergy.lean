@@ -44,7 +44,7 @@ theorem hasSum_pairing {d : ℕ} (f g : Space d) :
   rw [he] at hr
   simpa only [coefficient_apply, fourierIsometry_apply] using hr
 
-private theorem conj_mul_self_re (z : ℂ) : (conj z*z).re = ‖z‖^2 := by
+theorem conj_mul_self_re (z : ℂ) : (conj z*z).re = ‖z‖^2 := by
   rw [← Complex.normSq_eq_conj_mul_self]
   simp only [Complex.ofReal_re, Complex.normSq_eq_norm_sq]
 
@@ -92,7 +92,7 @@ theorem complement_fourier_euler {d : ℕ} (hd : 0 < d) (μ : ℝ) (z : Coordina
       ((1 / frequencyLength k^d : ℝ) : ℂ)) * coefficient k N) := by ring
     _ = _ := by rw [hinv, one_mul]
 
-private theorem weighted_norm_pairing {a b : ℂ} {lam μ : ℝ}
+theorem weighted_norm_pairing {a b : ℂ} {lam μ : ℝ}
     (he : (lam:ℂ)*a = (μ:ℂ)*b) : lam*‖a‖^2 = μ*(conj a*b).re := by
   have hh := congrArg Complex.re (congrArg (fun q : ℂ => conj a*q) he)
   have hl : conj a*((lam:ℂ)*a) = (lam:ℂ)*(conj a*a) := by ring

@@ -22,7 +22,7 @@ variable
       (Spin.mean q)^4/250 ≤ Spin.functional q+12*ψ (Spin.mean q))
 
 include hscalar ψ hc hcv hminor hspin
-private theorem selected_zero {u : TorusL2 12} (hu : Selected u) : u=0 :=
+theorem selected_zero {u : TorusL2 12} (hu : Selected u) : u=0 :=
   selected_zero_of_entropy_certificates hscalar ψ hc hcv hminor hspin hu
 
 theorem density_endpoint {d : ℕ} (hd : 12 ≤ d)

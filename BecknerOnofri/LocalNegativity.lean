@@ -44,7 +44,7 @@ lemma local_neighborhood_sum_bounds (t : Fin 12 → ℝ)
 
 lemma higher_real_aestronglyMeasurable (w : TorusL2 12) :
     AEStronglyMeasurable (fun x => (w x).re) (torusMeasure 12) :=
-  Complex.continuous_re.comp_aestronglyMeasurable (Lp.memLp w).1
+  Complex.continuous_re.comp_aestronglyMeasurable (Lp.memLp w).aestronglyMeasurable
 
 lemma localSplitPressure_preliminary_bound (t : Fin 12 → ℝ)
     (ht : ∀ i, 0 ≤ t i) (hta : ∀ i, t i ≤ 1 / 14)

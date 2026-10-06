@@ -42,13 +42,13 @@ lemma fullAvg_tendstoInMeasure {d : ℕ} (s : Finset (Fin d))
     squeeze_zero (fun n => integral_nonneg (fun x => norm_nonneg _))
       (fun n => fullAvg_l1_contraction s (r n).integrable ρ.integrable) hlim
   apply tendstoInMeasure_of_tendsto_eLpNorm (p := 1) (by norm_num)
-    (fun n => (fullMarginalDensity s (r n)).integrable.aestronglyMeasurable)
-    (fullMarginalDensity s ρ).integrable.aestronglyMeasurable
   have h := ENNReal.continuous_ofReal.continuousAt.tendsto.comp hl
   have he (n : ℕ) :
       ENNReal.ofReal (∫ x, ‖fullAvg s (r n).value x-fullAvg s ρ.value x‖ ∂torusMeasure d) =
       eLpNorm ((fullMarginalDensity s (r n)).value-(fullMarginalDensity s ρ).value) 1 (torusMeasure d) := by
-    rw [eLpNorm_one_eq_lintegral_enorm]
+    rw [eLpNorm_one_eq_lintegral_enorm
+      ((fullMarginalDensity s (r n)).integrable.sub
+        (fullMarginalDensity s ρ).integrable).aestronglyMeasurable]
     exact ofReal_integral_norm_eq_lintegral_enorm
       ((fullMarginalDensity s (r n)).integrable.sub (fullMarginalDensity s ρ).integrable)
   simpa only [Function.comp_def, he, ENNReal.ofReal_zero] using! h

@@ -44,7 +44,7 @@ theorem expCubicRemainder_isBigO (d : ℕ) :
   simp only [zero_add, he]
   rfl
 
-private theorem norm_sq_isBigO_norm (d : ℕ) :
+theorem norm_sq_isBigO_norm (d : ℕ) :
     (fun u : Space d => ‖u‖ ^ 2) =O[𝓝 0] (fun u => ‖u‖) := by
   apply isBigO_iff.mpr
   refine ⟨1, ?_⟩
@@ -65,7 +65,7 @@ theorem quadraticTerm_isBigO (d : ℕ) :
     simpa only [smul_eq_mul, pow_two] using hm.smul hc
   exact hc2.sub hmc
 
-private theorem mean_expCubicRemainder {d : ℕ} (u : Space d) :
+theorem mean_expCubicRemainder {d : ℕ} (u : Space d) :
     mean d (expCubicRemainder u) = partition u - (1 + mean d u + (1/2:ℝ) * mean d (u ^ 2)) := by
   simp only [expCubicRemainder, map_sub, map_add, map_smul, mean_one, smul_eq_mul, partition]
 

@@ -40,7 +40,7 @@ theorem spectralThreshold_add_two {d : ℕ} (hd : 0 < d) :
     Real.Gamma_add_one (by positivity : (d : ℝ) / 2 ≠ 0)]
   field_simp
 
-private theorem pi_six_bound : Real.pi ^ 6 < (1000000 : ℝ) / 729 := by
+theorem pi_six_bound : Real.pi ^ 6 < (1000000 : ℝ) / 729 := by
   have hp : Real.pi < (10 : ℝ) / 3 := by linarith [Real.pi_lt_d2]
   have hh : Real.pi ^ 6 < ((10 : ℝ) / 3) ^ 6 := by gcongr
   norm_num at hh

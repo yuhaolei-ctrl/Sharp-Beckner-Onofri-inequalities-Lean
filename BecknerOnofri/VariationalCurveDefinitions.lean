@@ -10,8 +10,6 @@ integral is proved separately on the full finite-entropy domain. -/
 noncomputable section
 namespace BecknerOnofri.HighDim.VariationalCurves
 
-def globalTransition (d : ℕ) : ℝ := sSup {β : ℝ | 0 ≤ β ∧ pressure d β = 0}
-
 def interaction {d : ℕ} (ρ : ProbabilityDensity d) : ℝ :=
   (∑' k, spectralTerm ρ k)/(2*spectralThreshold d)
 

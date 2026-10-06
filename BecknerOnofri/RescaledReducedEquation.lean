@@ -112,7 +112,7 @@ theorem scalarResidual_slice_order {d : ℕ} (hd : 12 ≤ d) (i : Fin d) (r : Am
   intro t
   ring
 
-private theorem scalarExtension_exists {d : ℕ} (hd : 12 ≤ d) (i : Fin d) :
+theorem scalarExtension_exists {d : ℕ} (hd : 12 ≤ d) (i : Fin d) :
     ∃ g : Amplitudes d × ℝ → ℝ, AnalyticAt ℝ g ((fun _ => 1),0) ∧
       ∀ᶠ x in 𝓝 ((fun _ => 1),(0:ℝ)), scalarResidual hd i x = x.2^3*g x :=
   exists_analytic_power_factor 3 (scalarResidual_analytic hd i (fun _ => 1))

@@ -26,7 +26,7 @@ open GraphHessian RawComplementGap
 
 open Legacy.BecknerOnofri.TorusSobolev
 
-private theorem potentialLp_add {d : ℕ} (f g : Torus d → ℝ)
+theorem potentialLp_add {d : ℕ} (f g : Torus d → ℝ)
     (hf : MemLp f 2 (torusMeasure d)) (hg : MemLp g 2 (torusMeasure d)) :
     Bridge.potentialLp (f+g) (hf.add hg) = Bridge.potentialLp f hf+Bridge.potentialLp g hg := by
   apply Lp.ext
@@ -34,7 +34,7 @@ private theorem potentialLp_add {d : ℕ} (f g : Torus d → ℝ)
     Bridge.potentialLp_ae g hg,Lp.coeFn_add (Bridge.potentialLp f hf) (Bridge.potentialLp g hg)] with x hfg hfx hgx ha
   simp only [hfg,ha,Pi.add_apply,hfx,hgx,Complex.ofReal_add]
 
-private theorem potentialLp_sub {d : ℕ} (f g : Torus d → ℝ)
+theorem potentialLp_sub {d : ℕ} (f g : Torus d → ℝ)
     (hf : MemLp f 2 (torusMeasure d)) (hg : MemLp g 2 (torusMeasure d)) :
     Bridge.potentialLp (f-g) (hf.sub hg) = Bridge.potentialLp f hf-Bridge.potentialLp g hg := by
   apply Lp.ext
@@ -54,11 +54,11 @@ theorem fourierCoeff_sub {d : ℕ} (f g : Torus d → ℝ)
   rw [← Bridge.potentialLp_fourier (f-g) (hf.sub hg),potentialLp_sub f g hf hg,
     map_sub,lp.coeFn_sub,Pi.sub_apply,Bridge.potentialLp_fourier,Bridge.potentialLp_fourier]
 
-private theorem norm_add_square_le (a b : ℂ) : ‖a+b‖^2 ≤ 2*(‖a‖^2+‖b‖^2) := by
+theorem norm_add_square_le (a b : ℂ) : ‖a+b‖^2 ≤ 2*(‖a‖^2+‖b‖^2) := by
   have h := norm_add_le a b
   nlinarith [norm_nonneg (a+b),norm_nonneg a,norm_nonneg b,sq_nonneg (‖a‖-‖b‖)]
 
-private theorem norm_sub_square_le (a b : ℂ) : ‖a-b‖^2 ≤ 2*(‖a‖^2+‖b‖^2) := by
+theorem norm_sub_square_le (a b : ℂ) : ‖a-b‖^2 ≤ 2*(‖a‖^2+‖b‖^2) := by
   simpa only [sub_eq_add_neg,norm_neg] using norm_add_square_le a (-b)
 
 theorem critical_add {d : ℕ} (f g : Torus d → ℝ)
@@ -97,7 +97,7 @@ theorem normalizedEnergyPairing_summable {d : ℕ} (hd : 0<d) (f g : Torus d →
   simp only [Real.norm_eq_abs,abs_mul,abs_of_nonneg hw]
   nlinarith [mul_le_mul_of_nonneg_left (hr.trans hb) hw]
 
-private theorem complex_norm_add_square (a b : ℂ) :
+theorem complex_norm_add_square (a b : ℂ) :
     ‖a+b‖^2=‖a‖^2+2*(conj a*b).re+‖b‖^2 := by
   simp only [Complex.sq_norm,Complex.normSq_apply,Complex.add_re,Complex.add_im,
     Complex.mul_re,Complex.conj_re,Complex.conj_im]

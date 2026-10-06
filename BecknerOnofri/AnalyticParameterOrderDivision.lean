@@ -13,7 +13,7 @@ open Filter Asymptotics
 open scoped Topology
 namespace BecknerOnofri.AnalyticParameterDivision
 
-private theorem scalar_division_order {f g : ℝ → ℝ} {N : ℕ}
+theorem scalar_division_order {f g : ℝ → ℝ} {N : ℕ}
     (hf : AnalyticAt ℝ f 0) (hg : AnalyticAt ℝ g 0)
     (he : ∀ᶠ t in 𝓝 (0:ℝ), f t=t*g t)
     (ho : f =O[𝓝 0] (fun t : ℝ => ‖t‖^(N+1))) :

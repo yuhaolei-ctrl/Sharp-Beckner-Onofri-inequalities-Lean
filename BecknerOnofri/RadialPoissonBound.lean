@@ -32,10 +32,10 @@ theorem nonzero_E1_summable {d : ℕ} {p y : ℝ} (hp : 0<p) (hy : 0≤y) (hy' :
       rw [gaussianVector_eq,neg_mul]
       exact div_le_div_of_nonneg_left (Real.exp_pos _).le hb hpr)
 
-private def finiteNonzero : Finset (NonzeroImage 12) :=
+def finiteNonzero : Finset (NonzeroImage 12) :=
   (CubeLatticeTail.cube 12 2).subtype (fun k=>k≠0)
 
-private def complementEquiv :
+def complementEquiv :
     ↥((finiteNonzero : Set (NonzeroImage 12))ᶜ) ≃ OmittedFrequency (CubeLatticeTail.cube 12 2) where
   toFun k := ⟨k.val.val,k.val.property,fun hk=>k.property (by simpa only [finiteNonzero,Finset.mem_coe,Finset.mem_subtype] using hk)⟩
   invFun k := ⟨⟨k.val,k.property.1⟩,fun hk=>k.property.2 (by simpa only [finiteNonzero,Finset.mem_coe,Finset.mem_subtype] using hk)⟩

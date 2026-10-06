@@ -5,6 +5,7 @@ public import BecknerOnofri.EntropyHeatCertificate.Exp0424
 public import BecknerOnofri.EntropyHeatCertificate.Exp0425
 public import BecknerOnofri.EntropyHeatCertificate.Exp0426
 public import BecknerOnofri.EntropyHeatCertificate.Exp0427
+import BecknerOnofri.EntropyHeatCertificate.Panels0235  -- build lane: bounds parallel memory use
 
 @[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.HeatCertificate.Panels0240

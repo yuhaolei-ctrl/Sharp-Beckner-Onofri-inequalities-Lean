@@ -31,7 +31,7 @@ theorem sum_weight {d : ℕ} (m : ℕ) (y : Cube d) : ∑ j : Grid d m, weight m
   rw [← Fintype.prod_sum (fun (i : Fin d) (k : Fin (m+1)) => bernstein m k (y i))]
   simp
 
-private theorem coordinate_moment {d m : ℕ} (i : Fin d) (a : Fin (m+1) → ℝ) (y : Cube d) :
+theorem coordinate_moment {d m : ℕ} (i : Fin d) (a : Fin (m+1) → ℝ) (y : Cube d) :
     (∑ j : Grid d m, a (j i) * weight m j y) =
       ∑ k : Fin (m+1), a k * bernstein m k (y i) := by
   have hp (j : Grid d m) : a (j i) * weight m j y =

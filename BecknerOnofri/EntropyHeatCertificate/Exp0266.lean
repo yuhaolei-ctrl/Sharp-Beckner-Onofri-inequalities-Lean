@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.EntropyExpRows
+import BecknerOnofri.EntropyHeatCertificate.Exp0263  -- build lane: bounds parallel memory use
 
 @[expose] public section
 namespace BecknerOnofri.HighDim.EntropyTail.ExpCertificate.Exp0266

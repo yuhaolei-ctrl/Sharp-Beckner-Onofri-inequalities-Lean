@@ -12,7 +12,7 @@ private theorem integral_Ioo_eq_interval (f : ℝ → ℝ) {a b : ℝ} (hab : a 
     (∫ t in Ioo a b, f t) = ∫ t in a..b, f t := by
   rw [intervalIntegral.integral_of_le hab, integral_Ioc_eq_integral_Ioo]
 
-private theorem change_integrand (s a t : ℝ) (ha : 0 < a) (hat : a < t) :
+theorem change_integrand (s a t : ℝ) (ha : 0 < a) (hat : a < t) :
     (t-a)^(s-1)*(Real.pi/t)^s =
       Real.pi^s * ((1-a/t)^(s-1)/(1-(1-a/t))) * (a/t^2) := by
   have ht : 0 < t := ha.trans hat

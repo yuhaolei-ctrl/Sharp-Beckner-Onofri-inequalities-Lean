@@ -14,7 +14,7 @@ namespace Legacy.BecknerOnofri.PositiveKernelRayleigh
 open PositiveOperatorNeumann
 variable {α : Type*} [MeasurableSpace α] (μ : Measure α) [SigmaFinite μ]
 
-private theorem pair_measurable {L : α × α → ℝ}
+theorem pair_measurable {L : α × α → ℝ}
     (hL : AEStronglyMeasurable L (μ.prod μ)) (f g : RealL2 μ) :
     AEStronglyMeasurable (fun z => L z*f z.1*g z.2) (μ.prod μ) :=
   (hL.mul (Lp.aestronglyMeasurable f).comp_fst).mul (Lp.aestronglyMeasurable g).comp_snd
@@ -110,7 +110,7 @@ theorem dominated_kernel_nonnegative_top (S : Operator μ) {K L : α × α → �
     (dominated_kernel_symmetric μ S hK hL hdom hs heq) hne
     (dominated_kernel_modulus μ S hK hL hn hdom heq)
 
-private theorem nonzero_not_ae_zero (f : RealL2 μ) (hf : f ≠ 0) :
+theorem nonzero_not_ae_zero (f : RealL2 μ) (hf : f ≠ 0) :
     ¬ (∀ᵐ x ∂μ, f x = 0) := by
   intro hh
   apply hf
@@ -119,7 +119,7 @@ private theorem nonzero_not_ae_zero (f : RealL2 μ) (hf : f ≠ 0) :
   simpa only [Pi.zero_apply,hx] using hz.symm
 
 /-- A nonzero L2 function cannot vanish in at least one coordinate of almost every pair. -/
-private theorem nonzero_pair (f : RealL2 μ) (hf : f ≠ 0) :
+theorem nonzero_pair (f : RealL2 μ) (hf : f ≠ 0) :
     ¬ (∀ᵐ z ∂μ.prod μ, f z.1 = 0 ∨ f z.2 = 0) := by
   intro hh
   have hn := nonzero_not_ae_zero μ f hf

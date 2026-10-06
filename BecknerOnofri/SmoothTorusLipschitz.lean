@@ -13,34 +13,34 @@ open Set
 open scoped NNReal
 namespace BecknerOnofri.HighDim
 
-private def nearestLift {d : ℕ} (x : Torus d) : Fin d → ℝ :=
+def nearestLift {d : ℕ} (x : Torus d) : Fin d → ℝ :=
   fun i => AddCircle.equivIoc 1 (-(1/2 : ℝ)) (x i)
 
-private lemma nearestLift_bounds {d : ℕ} (x : Torus d) (i : Fin d) :
+lemma nearestLift_bounds {d : ℕ} (x : Torus d) (i : Fin d) :
     -(1/2 : ℝ) < nearestLift x i ∧ nearestLift x i ≤ 1/2 := by
   have h := (AddCircle.equivIoc 1 (-(1/2 : ℝ)) (x i)).property
   exact ⟨h.1,by dsimp [nearestLift]; linarith [h.2]⟩
 
-private lemma nearestLift_coe {d : ℕ} (x : Torus d) :
+lemma nearestLift_coe {d : ℕ} (x : Torus d) :
     (fun i => (nearestLift x i : UnitAddCircle))=x := by
   funext i
   exact AddCircle.coe_equivIoc
 
-private lemma nearestLift_norm_coord {d : ℕ} (x : Torus d) (i : Fin d) :
+lemma nearestLift_norm_coord {d : ℕ} (x : Torus d) (i : Fin d) :
     ‖nearestLift x i‖=‖x i‖ := by
   have h := nearestLift_bounds x i
   have hc := congrFun (nearestLift_coe x) i
   rw [Real.norm_eq_abs,← hc]
   exact (PolarizationL1.circle_norm_small (abs_le.mpr ⟨h.1.le,h.2⟩)).symm
 
-private lemma nearestLift_norm {d : ℕ} (x : Torus d) : ‖nearestLift x‖=‖x‖ := by
+lemma nearestLift_norm {d : ℕ} (x : Torus d) : ‖nearestLift x‖=‖x‖ := by
   simp only [Pi.norm_def]
   congr 1
   apply Finset.sup_congr rfl
   intro i _
   exact Subtype.ext (nearestLift_norm_coord x i)
 
-private lemma nearestLift_norm_le {d : ℕ} (x : Torus d) : ‖nearestLift x‖≤1/2 := by
+lemma nearestLift_norm_le {d : ℕ} (x : Torus d) : ‖nearestLift x‖≤1/2 := by
   apply (pi_norm_le_iff_of_nonneg (by norm_num : (0:ℝ)≤1/2)).mpr
   intro i
   rw [Real.norm_eq_abs]

@@ -1,66 +1,204 @@
-{
-  "version": "v0.4",
-  "project": {
-    "name": "Sharp Beckner–Onofri inequalities on the flat torus",
-    "description": "A Lean development of sharp periodic Beckner–Onofri and logarithmic Hardy–Littlewood–Sobolev inequalities, their equality cases, and the exceptional first-order transition in dimension eleven. The Palomar adaptation separates the low-dimensional, high-dimensional, and dimension-eleven claims into three self-contained statement surfaces. This branch is under migration to Lean 4.35.0-rc2 and is not yet verified or ready for registration.",
-    "authors": [
-      "Yuhao Lei",
-      "Matthew Rosenzweig"
-    ],
-    "license": "Apache-2.0",
-    "responsible_maintainers": [
-      "Yuhao Lei",
-      "Matthew Rosenzweig"
-    ]
-  },
-  "classification": {
-    "arxiv": [
-      "math.AP",
-      "math.FA"
-    ],
-    "msc2020": [
-      "35A23",
-      "46E35"
-    ]
-  },
-  "sources": [
-    {
-      "title": "Sharp Beckner–Onofri inequalities on the flat torus: coefficients, defects, and phase transitions",
-      "authors": [
-        "Yuhao Lei",
-        "Matthew Rosenzweig"
-      ],
-      "type": "paper",
-      "relationship": "formalizes",
-      "note": "Manuscript dated 1 October 2026; source SHA-256 c65fcf8972bb53f49c34350cfd28975d757f67733d74ec7c3e9886eec0adcdc9. Proof routes differ in several finite certificates; see fidelity.divergences."
-    }
-  ],
-  "status": {
-    "scope": "Palomar/comparator-lowdim.json selects 9 low-dimensional claims; comparator-highdim.json selects 10 high-dimensional endpoint and onset claims; comparator-eleven.json selects 11 dimension-eleven claims. These are separate candidate entries. The larger development retains the original 269 targets corresponding to 51 manuscript results; not all are advertised by these three candidate entries. New-toolchain compilation and Palomar verification are pending. Remark 5.6 and the separate displayed cutoff-rate estimate are outside the original registered scope.",
-    "sorry_count": 0,
-    "sorry_in_definitions": 0,
-    "axioms": [
-      "propext",
-      "Quot.sound",
-      "Classical.choice"
-    ]
-  },
-  "automation": {
-    "methods": [
-      {
-        "method": "agent",
-        "framework": "OpenAI Codex",
-        "tool_setup": "AI-assisted Lean proof development, certificate generation, statement review, CI maintenance, and toolchain migration. Material earlier work is retained in Legacy/. The complete history of model identifiers and usage was not recorded."
-      }
-    ],
-    "notes": "Authors supplied the mathematical manuscript and directed the formalization. Finite arithmetic certificates are checked by the Lean kernel with proved semantic connections; externally computed values are not accepted as proof axioms."
-  },
-  "fidelity": {
-    "divergences": "The d=2 proof checks n=1,2,3 finitely and uses analytic estimates for n>=4; some certificates use scale 2^40 instead of 2^80, and the theta integral uses a rational Laplace bound rather than the manuscript quadrature grid. Additional original public statements still need strengthened exposure of integrability, smooth potential representatives, and pointwise uniformly convergent cosine mixtures. Those supporting statements are not separately advertised in these three initial entries."
-  },
-  "review": {
-    "status": "self-assessed",
-    "notes": "Agent-assisted source/statement review identified interface omissions recorded above. No independent human semantic review and no Palomar review or registration have been completed. Original frozen-certificate checks do not certify this migrated source."
-  },
-  "acknowledgements": "Mathlib and its dependencies, Lean, Comparator, lean4export, and external kernel-checking projects. Mathematical references and the original proof development retain their own provenance."
-}
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Sharp Beckner–Onofri inequalities on the flat torus"
+  description: >-
+    A Lean formalization of the sharp periodic Beckner–Onofri inequality and its
+    dual, the periodic logarithmic Hardy–Littlewood–Sobolev inequality, on the unit
+    flat torus R^d/Z^d, following the manuscript of Yuhao Lei and Matthew Rosenzweig.
+    The optimal additive defect C_d(A) in
+    log ∫ e^{u - mean u} ≤ A ‖u‖²_{Ḣ^{d/2}} + C_d(A) equals the pressure of the
+    attractive logarithmic gas at inverse temperature 1/(2 A c_d). For 1 ≤ d ≤ 10
+    the sharp zero-defect coefficient is the concentration coefficient 1/(4 d c_d),
+    with the conformal equality family on the circle and equality only for constants
+    when 2 ≤ d ≤ 10. For d ≥ 12 it is the first-Fourier-shell coefficient
+    1/(2 (2π)^d), with equality only for constants; just above the spectral threshold
+    the global minimizers form one full d-mode translation orbit and the pressure
+    detaches quadratically. In dimension eleven there is a first-order transition
+    strictly before spectral instability, 17.715 < β_gm(11) < 20.630 < β_s(11), with
+    coexisting uniform and nonuniform minimizers and corners in the pressure and in
+    the defect.
+  authors:
+    - "Yuhao Lei"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Yuhao Lei"
+
+classification:
+  arxiv: ["math.AP", "math.FA"]
+  msc2020: ["26D10", "46E35", "35A23", "82B26"]
+
+sources:
+  - title: "Sharp Beckner–Onofri inequalities on the flat torus: coefficients, defects, and phase transitions"
+    authors:
+      - "Yuhao Lei"
+      - "Matthew Rosenzweig"
+    type: "manuscript"
+    location: "Unpublished manuscript dated 1 October 2026; Theorems 1.1, 1.2 and 1.3"
+    relationship: "formalizes"
+    note: >-
+      Unpublished. Challenge.lean states Theorems 1.1, 1.2 and 1.3; CORRESPONDENCE.md
+      maps each of the manuscript's 51 numbered results to the library. Some finite
+      certificates follow a different but complete route; see fidelity.divergences.
+      Author endorsement: Yuhao Lei directed this formalization; Matthew Rosenzweig
+      has not yet been asked to review it.
+    license: "all rights reserved"
+    author_endorsement: "other"
+  - title: "An inequality"
+    authors:
+      - "N. A. Lebedev"
+      - "I. M. Milin"
+    type: "paper"
+    location: "Vestnik Leningrad. Univ. 20 (1965), no. 19, 157–158 (Russian)"
+    relationship: "background"
+    note: >-
+      The case d = 1 of Theorem 1.1 is the Lebedev–Milin inequality with its conformal
+      equality family. The manuscript cites it; the Lean development proves this case
+      itself and transcribes no statement from the source.
+    author_endorsement: "not-contacted"
+  - title: "One-dimensional symmetry of periodic minimizers for a mean field equation"
+    authors:
+      - "Chang-Shou Lin"
+      - "Marcello Lucia"
+    type: "paper"
+    id: "doi:10.2422/2036-2145.2007.2.03"
+    location: "Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) 6 (2007), 269–290"
+    relationship: "background"
+    note: >-
+      The square-torus case d = 2 of Theorem 1.1. The manuscript cites it; the Lean
+      development proves this case with the manuscript's common argument.
+    author_endorsement: "not-contacted"
+  - title: "The attractive log gas: stability, uniqueness, and propagation of chaos"
+    authors:
+      - "Antonin Chodron de Courcel"
+      - "Matthew Rosenzweig"
+      - "Sylvia Serfaty"
+    type: "paper"
+    id: "doi:10.1090/cams/55"
+    location: "Commun. Amer. Math. Soc. 5 (2025), 695–773"
+    relationship: "background"
+    note: >-
+      Introduces the concentration and first-shell obstructions and conjectures the
+      zero-defect range that Theorems 1.1 and 1.3 prove for d ≤ 10 and d ≥ 12 and
+      that Theorem 1.2 disproves for d = 11. Context only.
+    author_endorsement: "not-contacted"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Challenge.lean restates, using only Mathlib, every assertion of Theorems 1.1, 1.2
+    and 1.3 of the manuscript: the sharp inequalities in density and in potential
+    form, their sharpness and equality cases, the pressure and defect formulas and
+    thresholds, the dimension-eleven competitor, transition interval, coexistence,
+    local stability and corners, and for d ≥ 12 the onset branch with its pressure and
+    defect expansions. Rendering conventions: the negative Sobolev norm enters as
+    spectralEnergy ρ = (2π)^d ‖ρ‖²_{Ḣ^{-d/2}} and c_d through the spectral threshold
+    β_s(d) = (2π)^d/c_d; pressure and defect take values in the extended reals;
+    inequalities for arbitrary densities use an extended entropy equal to ∞ when
+    ρ log ρ is not integrable, while density equality cases assume finite entropy, as
+    in the manuscript; equalities of functions hold almost everywhere; the corners of
+    Theorem 1.2 are stated as finiteness near the threshold, non-differentiability, and
+    the one-sided pressure derivatives 0 = P'_- < P'_+; local stability is a lower
+    bound θ ∫ h² on the second derivative of the free energy along smooth mean-zero
+    perturbations of the uniform density. All 51 numbered results of the manuscript are
+    proved in the library (CORRESPONDENCE.md), but only Theorems 1.1–1.3 are compared
+    by Comparator. Not formalized: the counterexample of Remark 5.6, and the displayed
+    cutoff rate inside the proof of Lemma 2.9, where the library proves the closure
+    statement by form-norm convergence instead.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: []
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Agent-written Lean development, generated arithmetic certificates re-checked by
+        the Lean kernel through proved semantic bridges, and the migration to Lean 4.35
+        and the module system. Model identifiers were not recorded.
+      cost:
+        wall_time: "several weeks (September–October 2026)"
+        spend_usd: "not tracked"
+        hardware: "local machine and GitHub-hosted runners"
+      prompting_notes: >-
+        The author supplied the manuscript and directed the formalization result by
+        result.
+    - method: "agent"
+      models: ["claude-opus-5-5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Statement audit of the trusted surface against the manuscript, the Mathlib-only
+        Challenge and its Solution bridge, migration fixes, and the Palomar layout.
+      cost:
+        wall_time: "part of October 2026"
+        spend_usd: "subscription-based"
+        hardware: "local machine, API-only for inference"
+      prompting_notes: >-
+        The author asked for a Palomar-ready repository following registered examples,
+        with Comparator passing and the Challenge matching the manuscript's theorems.
+  spend_usd: "not tracked"
+  notes: >-
+    The manuscript was written by its two authors. The Lean development was produced by
+    AI agents under the direction of Yuhao Lei. No external computation is admitted as
+    an axiom: every finite certificate is re-checked by the Lean kernel.
+
+fidelity:
+  divergences: >-
+    Statements: see status.scope for the rendering conventions; none weakens a claim of
+    Theorems 1.1–1.3. Proofs: in dimension 2 the finite scalar comparisons cover
+    n = 1, 2, 3 and an analytic Gaussian estimate covers n ≥ 4 (the manuscript checks
+    n ≤ 21 and estimates n ≥ 22); several low-dimensional certificates use the scale
+    2^40 instead of 2^80; the theta integral J_10 is bounded with a rational Laplace
+    majorant instead of the manuscript's quadrature grid. The library statements of
+    three supporting results are weaker than printed, although the stronger forms are
+    proved internally: Lemma 3.2 does not restate integrability of its integrand,
+    Proposition 2.7 does not restate smoothness of the attaining potential, and
+    Proposition 2.11 states the cosine mixture almost everywhere. Remark 5.6 and the
+    displayed cutoff rate in the proof of Lemma 2.9 are not formalized.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    An agent-assisted audit (Claude Code) compared every definition reached by the
+    Challenge, and the statements of all 51 numbered results, with the manuscript
+    clause by clause, and checked for junk-value artefacts (a divergent tsum, toReal of
+    infinity, sSup of an unbounded set, deriv of a non-differentiable function). No
+    independent human review has been completed.
+
+alignment:
+  namespace: "BecknerOnofri"
+  statements:
+    - source: "Theorem 1.1, (1.22)–(1.24)"
+      lean: "BecknerOnofri.low_dim_entropy_inequality"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        With low_dim_beckner_onofri, low_dim_coefficient_sharp,
+        circle_beckner_onofri_eq_iff, circle_entropy_eq_iff, low_dim_entropy_eq_iff,
+        low_dim_beckner_onofri_eq_iff, low_dim_pressure_eq, low_dim_defect_eq and
+        low_dim_globalTransition.
+    - source: "Theorem 1.2, (1.26)–(1.28)"
+      lean: "BecknerOnofri.eleven_globalTransition_bounds"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        With eleven_competitor, eleven_spectral_pressure, eleven_coexistence,
+        eleven_uniform_hessian_pos, eleven_pressure_corner,
+        eleven_pressure_derivative_jump and eleven_defect_corner.
+    - source: "Theorem 1.3, (1.29)–(1.37)"
+      lean: "BecknerOnofri.high_dim_entropy_inequality"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        With high_dim_entropy_eq_iff, high_dim_beckner_onofri,
+        high_dim_beckner_onofri_eq_iff, high_dim_thresholds, kappa_pos,
+        high_dim_onset_branch, high_dim_pressure_onset and high_dim_defect_onset.
+
+acknowledgements: >-
+  Mathlib and its dependencies; Lean, its Comparator and lean4export, and the bundled
+  NanoDa and con-ron kernels.

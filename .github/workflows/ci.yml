@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches: [main, palomar]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  metadata:
+    name: Source requirements and metadata
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Lean source requirements (module headers, file sizes)
+        run: python3 scripts/check-lean-sources.py
+      - name: Challenge size and imports
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+          text = pathlib.Path("Challenge.lean").read_text(encoding="utf-8")
+          lines = text.count("\n") + int(bool(text) and not text.endswith("\n"))
+          size = len(text.encode())
+          bad = [m for m in re.findall(r"^(?:public )?import (\S+)", text, re.M)
+                 if not m.startswith("Mathlib.")]
+          print(f"Challenge.lean: {lines} lines, {size} bytes")
+          if lines > 1000 or size > 100 * 1024 or bad:
+              sys.exit(f"Challenge limits violated or non-Mathlib imports: {bad}")
+          PY
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+        with:
+          ruby-version: "3.3.12"
+      - name: formalization.yaml
+        run: ruby scripts/validate-formalization.rb
+
+  challenge:
+    name: Build the Challenge
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Build Challenge (imports only Mathlib)
+        run: lake build Challenge
+
+  solution:
+    # A cold build of the whole development takes several hours on a hosted runner;
+    # it runs on demand and on main, reusing the Lake cache between runs.
+    name: Build the Solution and run Comparator
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      LEAN_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Build Solution
+        run: lake build Solution
+      - name: Install bubblewrap for lake comparator's sandbox
+        run: |
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq bubblewrap >/dev/null
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Run lake comparator with the bundled kernels
+        run: ./scripts/verify-comparator.sh

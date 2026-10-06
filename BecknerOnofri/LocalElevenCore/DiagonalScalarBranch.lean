@@ -25,7 +25,7 @@ open RealDiagonalReduction
 
 open AnalyticParameterDivision
 
-private theorem quotient_exists {d : ℕ} (hd : 11 ≤ d) :
+theorem quotient_exists {d : ℕ} (hd : 11 ≤ d) :
     ∃ q : ℝ × ℝ → ℝ, AnalyticAt ℝ q (1,0) ∧
       ∀ᶠ x in 𝓝 ((1,0) : ℝ × ℝ), diagonalResidual hd x = x.2 * q x :=
   exists_analytic_factor (diagonalResidual_analytic hd) (diagonalResidual_axis hd)

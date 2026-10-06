@@ -14,19 +14,19 @@ open MeasureTheory
 open scoped BigOperators ENNReal
 namespace BecknerOnofri.HighDim
 
-private def signedFrequency (p : Bool × ℕ) : NonzeroFrequency 1 :=
+def signedFrequency (p : Bool × ℕ) : NonzeroFrequency 1 :=
   ⟨(fun _ => if p.1 then (p.2+1:ℤ) else -(p.2+1:ℤ)), by
     intro h
     have he := congrFun h 0
     rcases p with ⟨b,n⟩
     cases b <;> simp at he <;> omega⟩
 
-private lemma signedFrequency_injective : Function.Injective signedFrequency := by
+lemma signedFrequency_injective : Function.Injective signedFrequency := by
   rintro ⟨b,n⟩ ⟨c,m⟩ h
   have he := congrArg (fun k : NonzeroFrequency 1 => k.val 0) h
   cases b <;> cases c <;> simp [signedFrequency] at he ⊢ <;> omega
 
-private lemma signedFrequency_term (ρ : ProbabilityDensity 1) (p : Bool × ℕ) :
+lemma signedFrequency_term (ρ : ProbabilityDensity 1) (p : Bool × ℕ) :
     spectralTerm ρ (signedFrequency p) =
       ‖fourierCoeff ρ.value (fun _ => (p.2+1:ℤ))‖^2/(p.2+1:ℝ) := by
   rcases p with ⟨b,n⟩

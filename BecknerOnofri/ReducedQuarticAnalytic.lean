@@ -15,7 +15,7 @@ namespace BecknerOnofri.HighDim.ReducedQuarticExpansion
 open ContinuousGibbs ContinuousFirstShell ContinuousComplement GreenLocalBranch ReducedEquation
 open QuadraticModes QuadraticSlaving SlavedMoments ContinuousSymmetry
 
-private theorem mean_analytic_comp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+theorem mean_analytic_comp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {d : ℕ} {f : E → Space d} {x : E} (hf : AnalyticAt ℝ f x) :
     AnalyticAt ℝ (fun y => mean d (f y)) x :=
   ((mean d).analyticAt (f x)).comp (f := f) hf

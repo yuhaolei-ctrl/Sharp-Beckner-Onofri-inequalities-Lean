@@ -135,10 +135,10 @@ theorem selected_permutation_potential {u : TorusL2 12} (hu : Selected u)
   funext k
   exact selected_permutation_amplitude hu σ k
 
-private def signPoint {d : ℕ} (S : Finset (Fin d)) (x : Torus d) : Torus d :=
+def signPoint {d : ℕ} (S : Finset (Fin d)) (x : Torus d) : Torus d :=
   fun i => if i∈S then -x i else x i
 
-private theorem separately_even_signPoint {d : ℕ} (f : Torus d → ℝ)
+theorem separately_even_signPoint {d : ℕ} (f : Torus d → ℝ)
     (hf : ∀ i x,f (Function.update x i (-x i))=f x) (S : Finset (Fin d)) (x : Torus d) :
     f (signPoint S x)=f x := by
   classical

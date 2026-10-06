@@ -60,16 +60,16 @@ theorem evaluate_single (R : ℂ) (hR : R≠0) (n : ℤ) (a : ℂ) :
 theorem coefficient_evaluate (R : ℂ) (hR : R≠0) (p : Laurent) (n : ℤ) :
     coefficient n (evaluate R hR p)=R^n*p.coeff n := by
   induction p using AddMonoidAlgebra.induction_on with
-  | hM k =>
+  | of k =>
       change coefficient n (evaluate R hR (AddMonoidAlgebra.single k 1))=_
       rw [evaluate_single,map_smul,coefficient_fourier]
       by_cases hnk : n=k
       · subst n
         simp
       · simp [hnk,Ne.symm hnk]
-  | hadd p q hp hq =>
+  | add p q hp hq =>
       simp only [map_add,hp,hq,AddMonoidAlgebra.coeff_add,Finsupp.coe_add,Pi.add_apply,mul_add]
-  | hsmul a p hp =>
+  | smul a p hp =>
       simp only [map_smul,hp,AddMonoidAlgebra.coeff_smul,Finsupp.coe_smul,Pi.smul_apply,smul_eq_mul]
       ring
 

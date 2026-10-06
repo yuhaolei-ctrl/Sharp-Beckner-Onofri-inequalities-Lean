@@ -22,7 +22,7 @@ lemma quadraticCorrection_smul {d : ℕ} (hd : 11≤d) (t : ℝ) (z : Coordinate
   simp only [map_smul]
   rw [smul_comm (1/2:ℝ) (t^2)]
 
-private lemma norm_smul_cubic {d : ℕ} (z : Coordinates d) :
+lemma norm_smul_cubic {d : ℕ} (z : Coordinates d) :
     (fun t : ℝ => ‖t • z‖^3) =O[𝓝 (0:ℝ)] (fun t => ‖t‖^3) := by
   apply IsBigO.of_bound (‖z‖^3)
   exact Eventually.of_forall (fun t => by

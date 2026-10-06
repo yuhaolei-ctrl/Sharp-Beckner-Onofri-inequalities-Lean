@@ -1,4 +1,4 @@
-name = "beckner_onofri_ge12"
+name = "sharp_beckner_onofri"
 version = "0.1.0"
 defaultTargets = ["Challenge", "Solution"]
 
@@ -8,49 +8,15 @@ git = "https://github.com/leanprover-community/mathlib4.git"
 rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
 
 [[lean_lib]]
+name = "BecknerOnofri"
+globs = ["BecknerOnofri.+"]
+
+[[lean_lib]]
+name = "Legacy"
+globs = ["Legacy.+"]
+
+[[lean_lib]]
 name = "Challenge"
 
 [[lean_lib]]
 name = "Solution"
-
-[[lean_lib]]
-name = "BecknerOnofri"
-
-[[lean_lib]]
-name = "Legacy"
-
-[[lean_lib]]
-name = "Definitions"
-
-[[lean_lib]]
-name = "Proofs"
-
-[[lean_lib]]
-name = "Periodization"
-
-[[lean_lib]]
-name = "PhysicalMeasure"
-
-[[lean_lib]]
-name = "PhysicalLp"
-
-[[lean_lib]]
-name = "PeriodizationDefinitions"
-
-[[lean_lib]]
-name = "PhysicalCore"
-
-[[lean_lib]]
-name = "PhysicalForm"
-
-[[lean_lib]]
-name = "PhysicalOperator"
-
-[[lean_lib]]
-name = "PhysicalFractionalDefinitions"
-
-[[lean_lib]]
-name = "PhysicalFractional"
-
-[[lean_lib]]
-name = "Palomar"

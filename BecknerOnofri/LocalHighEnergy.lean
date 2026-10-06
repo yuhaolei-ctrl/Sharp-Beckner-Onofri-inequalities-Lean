@@ -68,7 +68,7 @@ lemma higher_real_sq_integral_le_energy (u : TorusL2 12) (hu : CriticalSobolev u
   calc
     _ ≤ ∫ x, ‖u x‖ ^ 2 ∂torusMeasure 12 := by
       apply integral_mono_of_nonneg (Filter.Eventually.of_forall (fun x => sq_nonneg _))
-        ((memLp_two_iff_integrable_sq_norm (Lp.memLp u).1).mp (Lp.memLp u))
+        ((memLp_two_iff_integrable_sq_norm (Lp.memLp u).aestronglyMeasurable).mp (Lp.memLp u))
       exact Filter.Eventually.of_forall (fun x => by
         change (u x).re ^ 2 ≤ ‖u x‖ ^ 2
         rw [Complex.sq_norm]

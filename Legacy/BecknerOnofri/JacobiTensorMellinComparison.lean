@@ -18,7 +18,7 @@ instance timeMeasure_neZero : NeZero timeMeasure := by
   have hh := congrArg (fun μ : Measure ℝ => μ Set.univ) h
   simp [timeMeasure] at hh
 
-private theorem integral_strict_mono {f g : ℝ → ℝ} (hf : Integrable f timeMeasure)
+theorem integral_strict_mono {f g : ℝ → ℝ} (hf : Integrable f timeMeasure)
     (hg : Integrable g timeMeasure) (hlt : ∀ᵐ t ∂timeMeasure, f t < g t) :
     (∫ t, f t ∂timeMeasure) < ∫ t, g t ∂timeMeasure := by
   have hle : f ≤ᵐ[timeMeasure] g := hlt.mono (fun _ h => h.le)

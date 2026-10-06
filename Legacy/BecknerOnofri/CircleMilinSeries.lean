@@ -12,7 +12,7 @@ open scoped BigOperators
 namespace Legacy.BecknerOnofri.CircleMilin
 open Legacy.TorusEndpoint ExponentialWordSeries
 
-private theorem word_zero {K : Type*} [RCLike K] (a : ℕ → K) (ha0 : a 0 = 0)
+theorem word_zero {K : Type*} [RCLike K] (a : ℕ → K) (ha0 : a 0 = 0)
     (xs : List ℕ) (hx : ¬ ∀ j ∈ xs, 0 < j) : word a xs = 0 := by
   have hz : 0 ∈ xs := by
     by_contra hh
@@ -22,7 +22,7 @@ private theorem word_zero {K : Type*} [RCLike K] (a : ℕ → K) (ha0 : a 0 = 0)
   have hm : (0 : K) ∈ xs.map a := List.mem_map.mpr ⟨0,hz,ha0⟩
   rw [word, List.prod_eq_zero_iff.mpr hm, mul_zero]
 
-private theorem fiber_word_sum {K : Type*} [RCLike K] (a : ℕ → K)
+theorem fiber_word_sum {K : Type*} [RCLike K] (a : ℕ → K)
     (ha0 : a 0 = 0) (n : ℕ) :
     (∑' xs : List.sum ⁻¹' {n}, word a xs) = ∑ xs ∈ words n, word a xs := by
   classical
@@ -76,7 +76,7 @@ theorem fullExponentialCoefficient_summable (a : ℕ → ℂ)
     (ha : Summable (fun j => ‖a j‖)) : Summable (fun k => ‖fullExponentialCoefficient a k‖) :=
   WienerFourier.grouped_norm_summable _ _ (word_norm_summable a ha)
 
-private theorem word_twist (a : ℕ → ℂ) (z : ℂ) (xs : List ℕ) :
+theorem word_twist (a : ℕ → ℂ) (z : ℂ) (xs : List ℕ) :
     word (fun j => a j*z^j) xs = complexWord a xs*z^xs.sum := by
   have hh : (xs.map (fun j => a j*z^j)).prod = (xs.map a).prod*z^xs.sum := by
     induction xs with

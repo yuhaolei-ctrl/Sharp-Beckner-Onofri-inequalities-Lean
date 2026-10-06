@@ -91,6 +91,6 @@
    "inputRev": "v4.35.0-rc2",
    "inherited": true,
    "configFile": "lakefile.toml"}],
- "name": "beckner_onofri_ge12",
+ "name": "sharp_beckner_onofri",
  "lakeDir": ".lake",
  "fixedToolchain": false}

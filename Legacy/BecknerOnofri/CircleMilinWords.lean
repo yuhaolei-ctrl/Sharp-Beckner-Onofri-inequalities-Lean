@@ -31,7 +31,7 @@ def bCoeff (a : ℕ → ℂ) (n : ℕ) : ℂ := ∑ xs ∈ words n, complexWord 
 def pCoeff (a : ℕ → ℂ) (n : ℕ) : ℝ := ∑ xs ∈ words n, pWord a xs
 def qCoeff (n : ℕ) : ℝ := ∑ xs ∈ words n, qWord xs
 
-private theorem length_le_sum {xs : List ℕ} (h : ∀ j ∈ xs, 0 < j) :
+theorem length_le_sum {xs : List ℕ} (h : ∀ j ∈ xs, 0 < j) :
     xs.length ≤ xs.sum := by
   induction xs with
   | nil => simp
@@ -41,7 +41,7 @@ private theorem length_le_sum {xs : List ℕ} (h : ∀ j ∈ xs, 0 < j) :
     simp only [List.length_cons, List.sum_cons]
     omega
 
-private theorem le_sum_of_mem {xs : List ℕ} {j : ℕ} (h : j ∈ xs) : j ≤ xs.sum := by
+theorem le_sum_of_mem {xs : List ℕ} {j : ℕ} (h : j ∈ xs) : j ≤ xs.sum := by
   induction xs with
   | nil => simp at h
   | cons k xs ih =>

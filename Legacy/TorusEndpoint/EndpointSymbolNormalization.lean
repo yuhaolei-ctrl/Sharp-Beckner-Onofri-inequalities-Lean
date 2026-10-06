@@ -27,7 +27,7 @@ theorem endpointSymbolConstant_pos {d : ℕ} (hd : 0 < d) :
     · exact Real.rpow_pos_of_pos (mul_pos (by norm_num) Real.pi_pos) _
   · norm_num
 
-private theorem endpoint_half_power_product (d : ℕ) :
+theorem endpoint_half_power_product (d : ℕ) :
     Real.pi ^ ((d : ℝ) / 2) * (4 * Real.pi) ^ ((d : ℝ) / 2) =
       (2 * Real.pi) ^ d := by
   have hbase : Real.pi * (4 * Real.pi) = (2 * Real.pi) ^ (2 : ℕ) := by ring

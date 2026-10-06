@@ -76,7 +76,7 @@ theorem evaluate_finite_zero_re_ge_one (t : ℝ) (N : ℕ) :
   simp only [← Complex.ofReal_one,← Complex.ofReal_add,← Complex.ofReal_prod,
     ← Complex.ofReal_mul,Complex.ofReal_re]
   have hp : 1≤∏ n∈Finset.range N,(1+qMode t n) :=
-    Finset.one_le_prod (fun n _ => by linarith [qMode_pos t n])
+    Finset.one_le_prod₀ (fun n _ => by linarith [qMode_pos t n])
   nlinarith
 
 theorem pairedProduct_zero_ne_zero {t : ℝ} (ht : 0<t) :

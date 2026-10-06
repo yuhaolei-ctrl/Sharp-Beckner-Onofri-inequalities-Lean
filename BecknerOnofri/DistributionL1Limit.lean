@@ -16,9 +16,9 @@ theorem inMeasure_of_l1 {α ι : Type*} [MeasurableSpace α] {μ : Measure α}
     (hc : Tendsto (fun n => ∫ x,‖f n x-h x‖ ∂μ) l (𝓝 0)) :
     TendstoInMeasure μ f l h := by
   apply tendstoInMeasure_of_tendsto_eLpNorm (p := 1) one_ne_zero
-    (fun n => (hf n).aestronglyMeasurable) hh.aestronglyMeasurable
   have he (n : ι) : eLpNorm (f n-h) 1 μ = ENNReal.ofReal (∫ x,‖f n x-h x‖ ∂μ) := by
-    rw [eLpNorm_one_eq_lintegral_enorm,← ofReal_integral_norm_eq_lintegral_enorm ((hf n).sub hh)]
+    rw [eLpNorm_one_eq_lintegral_enorm ((hf n).sub hh).aestronglyMeasurable,
+      ← ofReal_integral_norm_eq_lintegral_enorm ((hf n).sub hh)]
     rfl
   simp_rw [he]
   simpa only [Function.comp_def, ENNReal.ofReal_zero] using ENNReal.continuous_ofReal.continuousAt.tendsto.comp hc

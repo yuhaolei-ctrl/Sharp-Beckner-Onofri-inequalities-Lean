@@ -33,7 +33,7 @@ theorem cubicTerm_of_mean_zero {d : ℕ} {u : Space d} (hu : mean d u = 0) :
     cubicTerm u = (1/6:ℝ) • center d (u ^ 3) - ((1/2:ℝ) * mean d (u ^ 2)) • u := by
   simp only [cubicTerm, hu, zero_smul, sub_zero, center_eq_self_of_mean_zero hu]
 
-private theorem norm_succ_isBigO (d n : ℕ) :
+theorem norm_succ_isBigO (d n : ℕ) :
     (fun u : Space d => ‖u‖ ^ (n+1)) =O[𝓝 0] (fun u => ‖u‖ ^ n) := by
   apply isBigO_iff.mpr
   refine ⟨1, ?_⟩
@@ -74,7 +74,7 @@ theorem cubicTerm_isBigO (d : ℕ) : cubicTerm =O[𝓝 (0 : Space d)] (fun u => 
     simpa only [smul_eq_mul, ← pow_succ] using hm2.smul hc
   exact (hbase.sub hmQ).sub hmL
 
-private theorem mean_expQuarticRemainder {d : ℕ} (u : Space d) :
+theorem mean_expQuarticRemainder {d : ℕ} (u : Space d) :
     mean d (expQuarticRemainder u) =
       partition u - (1 + mean d u + (1/2:ℝ) * mean d (u ^ 2) + (1/6:ℝ) * mean d (u ^ 3)) := by
   simp only [expQuarticRemainder, map_sub, map_add, map_smul, mean_one, smul_eq_mul, partition]

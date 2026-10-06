@@ -48,10 +48,10 @@ theorem integral_pointPermutation {d : ℕ} (σ : Equiv.Perm (Fin d))
     (∫ x, f (pointPermutation σ x) ∂torusMeasure d) = ∫ x, f x ∂torusMeasure d :=
   (pointPermutation_measurePreserving σ).integral_comp' f
 
-private def permuteContinuous {d : ℕ} (σ : Equiv.Perm (Fin d)) (u : Space d) : Space d :=
+def permuteContinuous {d : ℕ} (σ : Equiv.Perm (Fin d)) (u : Space d) : Space d :=
   ⟨fun x => u (pointPermutation σ x), u.continuous.comp (pointPermutation_continuous σ)⟩
 
-private theorem permuteContinuous_norm_le {d : ℕ} (σ : Equiv.Perm (Fin d)) (u : Space d) :
+theorem permuteContinuous_norm_le {d : ℕ} (σ : Equiv.Perm (Fin d)) (u : Space d) :
     ‖permuteContinuous σ u‖ ≤ ‖u‖ := by
   apply (ContinuousMap.norm_le _ (norm_nonneg u)).mpr
   intro x
@@ -143,7 +143,7 @@ def frequencyPermutation {d : ℕ} (σ : Equiv.Perm (Fin d)) (k : Frequency d) :
     InFirstShell (frequencyPermutation σ k) ↔ InFirstShell k := by
   rw [← latticeSquare_eq_one_iff, latticeSquare_permutation, latticeSquare_eq_one_iff]
 
-private theorem mFourier_pointPermutation {d : ℕ} (σ : Equiv.Perm (Fin d))
+theorem mFourier_pointPermutation {d : ℕ} (σ : Equiv.Perm (Fin d))
     (k : Frequency d) (x : Torus d) :
     UnitAddTorus.mFourier k (pointPermutation σ x) =
       UnitAddTorus.mFourier (frequencyPermutation σ.symm k) x := by
@@ -178,7 +178,7 @@ theorem coordinates_permutation {d : ℕ} (σ : Equiv.Perm (Fin d)) (u : Space d
   ext i
   simp only [coordinates_apply, coefficient_permutation, frequencyPermutation_axis, permuteCoordinates]
 
-private theorem coefficient_projection {d : ℕ} (u : Space d) (k : Frequency d) :
+theorem coefficient_projection {d : ℕ} (u : Space d) (k : Frequency d) :
     coefficient k (projection d u) = if InFirstShell k then coefficient k u else 0 := by
   classical
   by_cases hk : InFirstShell k
@@ -304,7 +304,7 @@ theorem projectedEquation_permutation {d : ℕ} (hd : 0 < d) (σ : Equiv.Perm (F
   rw [he, green_permutation hd, complementMap_permutation]
   simp only [map_sub, map_smul]
 
-private theorem permuted_graph_dist {d : ℕ} (σ : Equiv.Perm (Fin d))
+theorem permuted_graph_dist {d : ℕ} (σ : Equiv.Perm (Fin d))
     (x : ℝ × Coordinates d) (w : complement d) :
     dist ((x.1, permuteCoordinates σ x.2), complementPermutation σ w)
         ((1, (0 : Coordinates d)), (0 : complement d)) =

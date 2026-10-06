@@ -29,7 +29,7 @@ theorem identDistrib_of_joint_l1 {α β : Type*} [MeasurableSpace α] [Measurabl
     { forall_aemeasurable := fun n => (hg n).aemeasurable
       aemeasurable_limit := hf₀.aemeasurable
       tendsto := by
-        convert! hfT.tendsto using 2 with n
+        refine (Filter.tendsto_congr fun n => ?_).mpr hfT.tendsto
         exact Subtype.ext (hD n).map_eq.symm }
   exact ⟨hf₀.aemeasurable,hg₀.aemeasurable,tendstoInDistribution_unique g hfT' hgT⟩
 

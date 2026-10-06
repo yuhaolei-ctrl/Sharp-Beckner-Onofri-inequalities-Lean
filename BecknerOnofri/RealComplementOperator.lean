@@ -136,7 +136,7 @@ theorem unscale_conjugate {d : ℕ} (s : ℝ) (a : FourierL2 d)
   intro k
   simp only [unscaleSobolev, sobolevScale_neg, ha k, map_mul, Complex.conj_ofReal]
 
-private theorem fourierCoeff_star_L2 {d : ℕ} (f : Lp ℂ 2 (torusMeasure d)) (k : Frequency d) :
+theorem fourierCoeff_star_L2 {d : ℕ} (f : Lp ℂ 2 (torusMeasure d)) (k : Frequency d) :
     UnitAddTorus.mFourierCoeff (star f : Lp ℂ 2 (torusMeasure d)) k =
       conj (UnitAddTorus.mFourierCoeff f (-k)) := by
   unfold UnitAddTorus.mFourierCoeff

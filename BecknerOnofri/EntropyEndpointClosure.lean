@@ -76,7 +76,7 @@ theorem density_endpoint_of_selected_zero (hzero : ∀ {u : TorusL2 12}, Selecte
   CosineMixtureTransfer.density_endpoint_of_twelve_density
     (twelve_density_endpoint_of_selected_zero hzero) hd r hr
 
-private lemma smoothGibbsValue_zero (x : Torus 12) : smoothGibbsValue (0 : TorusL2 12) x = 1 := by
+lemma smoothGibbsValue_zero (x : Torus 12) : smoothGibbsValue (0 : TorusL2 12) x = 1 := by
   simp [smoothGibbsValue, WienerFourier.representative, Legacy.TorusEndpoint.absoluteFourierSeries]
 
 /-- Entropy-preserving endpoint Steiner selection transfers the entropy rigidity to

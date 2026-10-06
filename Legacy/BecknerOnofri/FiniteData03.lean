@@ -1,6 +1,7 @@
 module
 
 public import Legacy.BecknerOnofri.FiniteScalarCore
+import Legacy.BecknerOnofri.FiniteData01  -- build lane: bounds parallel memory use
 
 @[expose] public section
 namespace Legacy.BecknerOnofri.FiniteScalar.Case03

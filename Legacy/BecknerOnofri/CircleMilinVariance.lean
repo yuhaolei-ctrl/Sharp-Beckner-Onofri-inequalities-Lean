@@ -8,7 +8,7 @@ noncomputable section
 open scoped BigOperators
 namespace Legacy.BecknerOnofri.CircleMilin
 
-private theorem reciprocal_prod_cancel (a : ℕ → ℂ) (xs : List ℕ)
+theorem reciprocal_prod_cancel (a : ℕ → ℂ) (xs : List ℕ)
     (hp : ∀ j ∈ xs, 0 < j) :
     (((xs.map (fun j : ℕ => (j : ℝ)⁻¹)).prod : ℝ) : ℂ) * wordValue a xs = (xs.map a).prod := by
   induction xs with
@@ -24,7 +24,7 @@ private theorem reciprocal_prod_cancel (a : ℕ → ℂ) (xs : List ℕ)
         (xs.map (fun j : ℕ => (j : ℂ) * a j)).prod := by ring
       _ = _ := by rw [inv_mul_cancel₀ hj]; simpa [mul_assoc] using congrArg (a j * ·) hi
 
-private theorem weighted_prod_norm (a : ℕ → ℂ) (xs : List ℕ)
+theorem weighted_prod_norm (a : ℕ → ℂ) (xs : List ℕ)
     (hp : ∀ j ∈ xs, 0 < j) :
     (xs.map (fun j : ℕ => (j : ℝ)*‖a j‖^2)).prod =
       (xs.map (fun j : ℕ => (j : ℝ)⁻¹)).prod * ‖wordValue a xs‖^2 := by
@@ -50,7 +50,7 @@ theorem pWord_eq (a : ℕ → ℂ) {n : ℕ} {xs : List ℕ} (hx : xs ∈ words 
   rw [weighted_prod_norm a xs ((mem_words_iff _ _).mp hx).1]
   ring
 
-private theorem weighted_variance {ι : Type*} (s : Finset ι) (q : ι → ℝ) (v : ι → ℂ) :
+theorem weighted_variance {ι : Type*} (s : Finset ι) (q : ι → ℝ) (v : ι → ℂ) :
     let b := ∑ i ∈ s, (q i : ℂ) * v i
     (∑ i ∈ s, q i*‖v i-b‖^2) =
       (∑ i ∈ s, q i*‖v i‖^2)-2*‖b‖^2+(∑ i ∈ s,q i)*‖b‖^2 := by

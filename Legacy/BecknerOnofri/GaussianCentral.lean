@@ -75,7 +75,7 @@ theorem constant_two : constant 2 = 1 := by
       exact ne_of_gt ht.1
     _ = 1 := by simp
 
-private theorem integral_sqrt_reciprocal :
+theorem integral_sqrt_reciprocal :
     (∫ z in (0:ℝ)..1, 1/(1+Real.sqrt z)) = 2-2*Real.log 2 := by
   have hg : Continuous (fun z : ℝ => 1/(1+Real.sqrt z)) :=
     continuous_const.div (continuous_const.add Real.continuous_sqrt)

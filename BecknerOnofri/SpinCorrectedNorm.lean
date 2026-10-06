@@ -58,7 +58,7 @@ theorem correcting_real_constraints :
     correctionV 0=1 ∧ correctionZ 0=0 ∧
     (∑ j : Count,correctionV j)=0 ∧ mean correctionV=0 ∧
     (∑ j : Count,correctionZ j)=0 ∧ mean correctionZ=1 := by
-  refine ⟨by norm_num [correctionV,correctionVQ],by norm_num [correctionZ,correctionZQ]; decide,?_,?_,?_,?_⟩
+  refine ⟨by norm_num [correctionV,correctionVQ],by norm_num [correctionZ,correctionZQ],?_,?_,?_,?_⟩
   · unfold correctionV
     exact_mod_cast correcting_vectors_constraints.1
   · unfold mean meanCoordinate correctionV

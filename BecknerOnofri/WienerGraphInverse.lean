@@ -16,7 +16,7 @@ local instance (d m : ℕ) : AddCommGroup (graph d m) :=
 local instance (d m : ℕ) : AddCommGroup (complementSpace d m) :=
   (inferInstance : NormedAddCommGroup (complementSpace d m)).toAddCommGroup
 
-private abbrev continuousEquiv {d : ℕ} (hd : 11≤d) :=
+abbrev continuousEquiv {d : ℕ} (hd : 11≤d) :=
   LocalEleven.continuousComplementContinuousLinearEquiv hd
     (by norm_num : (0:ℝ)≤1) (by norm_num : (1:ℝ)≤2)
 

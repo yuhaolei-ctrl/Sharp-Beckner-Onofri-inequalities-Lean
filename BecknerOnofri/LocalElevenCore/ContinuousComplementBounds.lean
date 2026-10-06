@@ -25,8 +25,7 @@ theorem continuousComplementFourier_norm_le {d : ℕ} (f : complement d) :
 
 theorem greenLiftReal_norm_le {d : ℕ} (hd : 0 < d) (a : realLpComplement d) :
     ‖greenLiftReal hd a‖ ≤ ‖greenFourierVector d‖ * ‖a‖ := by
-  apply (ContinuousMap.norm_le _ (mul_nonneg (norm_nonneg _) (norm_nonneg _))).mpr
-  intro x
+  refine (ContinuousMap.norm_le _ (by positivity)).mpr fun x => ?_
   exact (Complex.abs_re_le_norm _).trans (greenLiftComplexValue_bound d a.val.val x)
 
 theorem continuousComplementInverse_norm_le {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
