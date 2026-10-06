@@ -120,19 +120,48 @@ theorem low_dim_globalTransition (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) :
 
 A first-order transition strictly before spectral instability. -/
 
-/-- **Theorem 1.2, (1.26)–(1.27).** The periodized profile
-`ρ_*(x) = Σ_{n ∈ ℤ¹¹} 5¹¹ (122880/π⁶) (1 + 25|x + n|²)^{-11}` is a smooth, strictly
-positive probability density with `Ent(ρ_*) < 8653/600` and
-`(2π)¹¹/2 · ‖ρ_*‖²_{Ḣ^{-11/2}} > 14.475384292906`; here
+/-- **Theorem 1.2, (eq:intro-rho-star).** The normalizing constant of the Euclidean profile,
+`C₁₁ = Γ(11)/(π^{11/2} Γ(11/2))`, equals the constant `122880/π⁶` used in
+`Eleven.euclideanProfile`. -/
+theorem eleven_profile_constant :
+    Real.Gamma 11 / (Real.pi ^ ((11 : ℝ) / 2) * Real.Gamma (11 / 2)) = 122880 / Real.pi ^ 6 := by
+  have h11 : Real.Gamma 11 = 3628800 := by
+    rw [show (11 : ℝ) = (10 : ℕ) + 1 by norm_num, Real.Gamma_nat_eq_factorial]
+    norm_num [Nat.factorial]
+  have hhalf : Real.Gamma (11 / 2) = 945 / 32 * Real.sqrt Real.pi := by
+    have h (x : ℝ) (hx : 0 < x) := Real.Gamma_add_one hx.ne'
+    rw [show (11 / 2 : ℝ) = 9 / 2 + 1 by norm_num, h _ (by norm_num),
+      show (9 / 2 : ℝ) = 7 / 2 + 1 by norm_num, h _ (by norm_num),
+      show (7 / 2 : ℝ) = 5 / 2 + 1 by norm_num, h _ (by norm_num),
+      show (5 / 2 : ℝ) = 3 / 2 + 1 by norm_num, h _ (by norm_num),
+      show (3 / 2 : ℝ) = 1 / 2 + 1 by norm_num, h _ (by norm_num), Real.Gamma_one_half_eq]
+    ring
+  have hpow : Real.pi ^ ((11 : ℝ) / 2) = Real.pi ^ 5 * Real.sqrt Real.pi := by
+    rw [show (11 : ℝ) / 2 = (5 : ℕ) + 1 / 2 by norm_num, Real.rpow_add Real.pi_pos,
+      Real.rpow_natCast, Real.sqrt_eq_rpow]
+  have hs : Real.sqrt Real.pi * Real.sqrt Real.pi = Real.pi := Real.mul_self_sqrt Real.pi_pos.le
+  have hsp : 0 < Real.sqrt Real.pi := Real.sqrt_pos.mpr Real.pi_pos
+  rw [h11, hhalf, hpow]
+  field_simp
+  rw [Real.sq_sqrt Real.pi_pos.le]
+  ring
+
+/-- **Theorem 1.2, (eq:intro-d11-certificate).** The periodized profile
+`ρ_*(x) = Σ_{n ∈ ℤ¹¹} 5¹¹ C₁₁ (1 + 25|x + n|²)^{-11}` is a smooth, strictly positive probability
+density with `Ent(ρ_*) < 14.4088` and `(2π)¹¹/2 · ‖ρ_*‖²_{Ḣ^{-11/2}} > 14.4753`; here
 `(2π)¹¹ ‖ρ_*‖²_{Ḣ^{-11/2}} = spectralEnergy ρ_*`. -/
 theorem eleven_competitor :
     ∃ ρ : ProbabilityDensity 11, ρ.value = Eleven.periodizedProfile ∧
       SmoothOnTorus ρ.value ∧ (∀ x, 0 < ρ.value x) ∧ ρ.FiniteEntropy ∧
-      entropy ρ < (8653 : ℝ) / 600 ∧
-      ENNReal.ofReal (2 * ((14475384292906 : ℝ) / 10 ^ 12)) < spectralEnergy ρ := by
+      entropy ρ < (144088 : ℝ) / 10000 ∧
+      ENNReal.ofReal (2 * ((144753 : ℝ) / 10000)) < spectralEnergy ρ := by
   obtain ⟨ρ, hv, hfe, hs, hpos⟩ := Target.eleven_profile_regular
-  exact ⟨ρ, hv, hs, hpos, hfe, Target.eleven_competitor_entropy ρ hv,
-    Target.eleven_competitor_energy ρ hv⟩
+  refine ⟨ρ, hv, hs, hpos, hfe, ?_, ?_⟩
+  · have h := Target.eleven_competitor_entropy ρ hv
+    norm_num at h ⊢
+    exact h
+  · exact lt_of_le_of_lt (ENNReal.ofReal_le_ofReal (by norm_num))
+      (Target.eleven_competitor_energy ρ hv)
 
 /-- **Theorem 1.2, (1.28).** `C_11(A_s(11)) = P_11(β_s(11)) > 1/30`. -/
 theorem eleven_spectral_pressure :

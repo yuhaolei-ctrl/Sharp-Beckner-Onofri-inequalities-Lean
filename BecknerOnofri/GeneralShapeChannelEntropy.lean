@@ -20,7 +20,7 @@ theorem channel_entropy_finite {ρ : ProbabilityDensity 12} (D : Data ρ)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw ρ)) Spin.reference +
       (∑ i : Fin 12, ψ (∫ x, ρ.value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
       (21/1000) * (∑ i : Fin 12, (∫ x, ρ.value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2) +
-      (27/40) * (∑ i : Fin 12, ∑ n ∈ s,
+      (67/100) * (∑ i : Fin 12, ∑ n ∈ s,
         (∫ x, ρ.value x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
       entropy ρ := by
   have hi (i : Fin 12) := integrate_conditional_budget (positive_density D)
@@ -45,7 +45,7 @@ theorem channel_entropy {ρ : ProbabilityDensity 12} (D : Data ρ)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw ρ)) Spin.reference +
       (∑ i : Fin 12, ψ (∫ x, ρ.value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
       (21/1000) * (∑ i : Fin 12, (∫ x, ρ.value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2) +
-      (27/40) * (∑ i : Fin 12, ∑' n : ℕ,
+      (67/100) * (∑ i : Fin 12, ∑' n : ℕ,
         (∫ x, ρ.value x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
       entropy ρ := by
   let a := fun (i : Fin 12) (n : ℕ) =>
@@ -54,11 +54,11 @@ theorem channel_entropy {ρ : ProbabilityDensity 12} (D : Data ρ)
     (∑ i : Fin 12, ψ (∫ x, ρ.value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
     (21/1000) * (∑ i : Fin 12, (∫ x, ρ.value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2)
   have ha (i : Fin 12) (n : ℕ) : 0 ≤ a i n := by dsimp [a]; positivity
-  have hf (s : Finset ℕ) : A + (27/40) * (∑ n ∈ s, ∑ i : Fin 12, a i n) ≤ entropy ρ := by
+  have hf (s : Finset ℕ) : A + (67/100) * (∑ n ∈ s, ∑ i : Fin 12, a i n) ≤ entropy ρ := by
     rw [Finset.sum_comm]
     exact channel_entropy_finite D ψ hc hcv hminor s
   obtain ⟨hs,hb⟩ := nonnegative_budget_limit (fun n => ∑ i : Fin 12, a i n)
-    (fun n => Finset.sum_nonneg (fun i _ => ha i n)) A (entropy ρ) (27/40) (by norm_num) hf
+    (fun n => Finset.sum_nonneg (fun i _ => ha i n)) A (entropy ρ) (67/100) (by norm_num) hf
   have hi (i : Fin 12) : Summable (a i) :=
     hs.of_nonneg_of_le (ha i) (fun n => Finset.single_le_sum (fun j _ => ha j n) (Finset.mem_univ i))
   refine ⟨hi, ?_⟩

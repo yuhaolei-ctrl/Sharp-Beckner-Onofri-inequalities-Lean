@@ -1,7 +1,8 @@
 module
 
 public import BecknerOnofri.SpinChannelSymmetry
-public import BecknerOnofri.SpinChannelSmallMean
+public import BecknerOnofri.SpinChannelMean
+public import BecknerOnofri.SpinMixtureFeasibility
 public import BecknerOnofri.SelectedCubicSymmetry
 public import BecknerOnofri.EndpointDuality
 
@@ -41,14 +42,4 @@ theorem selected_spin_feasible {u : TorusL2 12} (hu : Selected u) :
     Spin.Feasible (Spin.countLaw (Spin.channelLaw (spinDensity hu))) :=
   Spin.channel_count_feasible (spinDensity hu) (spinDensity_mixture hu)
 
-theorem selected_spin_small_mean {u : TorusL2 12} (hu : Selected u) (t : ℝ)
-    (hm : (∫ x,(spinDensity hu).value x*(fourier 1 (x (0:Fin 12))).re ∂torusMeasure 12)=t)
-    (ht : 0≤t) (ht1 : t≤1/16) :
-    t^4/50≤Spin.functional (Spin.countLaw (Spin.channelLaw (spinDensity hu)))+
-      12*CircleScalar.gamma t :=
-  Spin.channel_small_mean_gamma (spinDensity hu) (spinDensity_mixture hu)
-    (selected_spin_exchangeable hu) t hm ht ht1
-
-#print axioms selected_spin_feasible
-#print axioms selected_spin_small_mean
 end BecknerOnofri.HighDim.SelectedNumericalModel

@@ -72,7 +72,7 @@ theorem channel_fourier_entropy {ρ : ProbabilityDensity 12} (D : Data ρ)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw ρ)) Spin.reference +
       12 * ψ (Spin.mean (Spin.countLaw (Spin.channelLaw ρ))) +
       (21/1000) * (∑ i : Fin 12, ‖HighDim.fourierCoeff ρ.value (Pi.single i (2 : ℤ))‖^2) +
-      (27/40) * (∑ i : Fin 12, ∑' n : ℕ,
+      (67/100) * (∑ i : Fin 12, ∑' n : ℕ,
         ‖HighDim.fourierCoeff ρ.value (Pi.single i (n+3 : ℤ))‖^2 / (n+3 : ℝ)) ≤
       HighDim.entropy ρ := by
   have h := channel_entropy D ψ hc hcv hminor

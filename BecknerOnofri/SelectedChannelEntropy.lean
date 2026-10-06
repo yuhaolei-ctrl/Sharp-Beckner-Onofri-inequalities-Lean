@@ -76,7 +76,7 @@ theorem selected_conditional_gamma_finite {u : TorusL2 12} (hu : Selected u)
     2 * Spin.binaryCost (conditionalCosineMoment (spinDensity hu).value i 1 x) +
       ψ (conditionalCosineMoment (spinDensity hu).value i 1 x) +
       (21/1000) * (conditionalCosineMoment (spinDensity hu).value i 2 x)^2 +
-      (27/40) * (∑ n ∈ s, (conditionalCosineMoment (spinDensity hu).value i (n+3) x)^2 / (n+3 : ℝ)) ≤
+      (67/100) * (∑ n ∈ s, (conditionalCosineMoment (spinDensity hu).value i (n+3) x)^2 / (n+3 : ℝ)) ≤
         conditionalEntropy (spinDensity hu).value i x := by
   obtain ⟨hc,hcv,hm⟩ := selected_log_profile_shape hu
   obtain ⟨F,hcF,hF,hmF,hrep⟩ := conditional_log_profile (logarithmicCosineProfile u)
@@ -108,11 +108,11 @@ theorem integrate_conditional_budget {f : Torus 12 → ℝ} (hf : PositiveBounde
     (hb : ∀ x,
       2 * Spin.binaryCost (conditionalCosineMoment f i 1 x) +
       ψ (conditionalCosineMoment f i 1 x) + (21/1000) * (conditionalCosineMoment f i 2 x)^2 +
-      (27/40) * (∑ n ∈ s, (conditionalCosineMoment f i (n+3) x)^2 / (n+3 : ℝ)) ≤ conditionalEntropy f i x) :
+      (67/100) * (∑ n ∈ s, (conditionalCosineMoment f i (n+3) x)^2 / (n+3 : ℝ)) ≤ conditionalEntropy f i x) :
     2 * (∫ x, f x * Spin.binaryCost (conditionalCosineMoment f i 1 x) ∂torusMeasure 12) +
       ψ (∫ x, f x * (fourier 1 (x i)).re ∂torusMeasure 12) +
       (21/1000) * (∫ x, f x * (fourier 2 (x i)).re ∂torusMeasure 12)^2 +
-      (27/40) * (∑ n ∈ s, (∫ x, f x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
+      (67/100) * (∑ n ∈ s, (∫ x, f x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
         ∫ x, f x * conditionalEntropy f i x ∂torusMeasure 12 := by
   let R := fun n => conditionalCosineMoment f i n
   let B := fun x => f x * Spin.binaryCost (R 1 x)
@@ -130,7 +130,7 @@ theorem integrate_conditional_budget {f : Torus 12 → ℝ} (hf : PositiveBounde
   have hent := (hf.bounded.mul (conditional_entropy_bounded hf i)).integrable
   have hmult (x : Torus 12) :
       2 * B x + P x + (21/1000) * Q 2 x +
-      (27/40) * (∑ n ∈ s, Q (n+3) x / (n+3 : ℝ)) ≤ f x * conditionalEntropy f i x := by
+      (67/100) * (∑ n ∈ s, Q (n+3) x / (n+3 : ℝ)) ≤ f x * conditionalEntropy f i x := by
     have h := mul_le_mul_of_nonneg_left (hb x) (hf.pos x).le
     dsimp only [B, P, Q, R]
     have ht : (∑ n ∈ s, f x * (conditionalCosineMoment f i (n+3) x)^2 / (n+3 : ℝ)) =
@@ -139,11 +139,11 @@ theorem integrate_conditional_budget {f : Torus 12 → ℝ} (hf : PositiveBounde
     rw [ht]
     nlinarith
   have h := integral_mono (((hB.const_mul 2).add hP).add ((hQ 2).const_mul (21/1000)) |>.add
-    (hsum.const_mul (27/40))) hent hmult
+    (hsum.const_mul (67/100))) hent hmult
   simp only [Pi.add_apply] at h
   rw [integral_add (f := fun x => 2 * B x + P x + (21/1000) * Q 2 x)
-    (g := fun x => (27/40) * ∑ n ∈ s, Q (n+3) x / (n+3 : ℝ)) (((hB.const_mul 2).add hP).add ((hQ 2).const_mul (21/1000)))
-    (hsum.const_mul (27/40)), integral_add (f := fun x => 2 * B x + P x) (g := fun x => (21/1000) * Q 2 x)
+    (g := fun x => (67/100) * ∑ n ∈ s, Q (n+3) x / (n+3 : ℝ)) (((hB.const_mul 2).add hP).add ((hQ 2).const_mul (21/1000)))
+    (hsum.const_mul (67/100)), integral_add (f := fun x => 2 * B x + P x) (g := fun x => (21/1000) * Q 2 x)
       ((hB.const_mul 2).add hP) ((hQ 2).const_mul (21/1000)),
     integral_add (f := fun x => 2 * B x) (g := P) (hB.const_mul 2) hP] at h
   simp only [integral_const_mul] at h
@@ -175,7 +175,7 @@ theorem selected_channel_entropy_finite {u : TorusL2 12} (hu : Selected u)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw (spinDensity hu))) Spin.reference +
       (∑ i : Fin 12, ψ (∫ x, (spinDensity hu).value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
       (21/1000) * (∑ i : Fin 12, (∫ x, (spinDensity hu).value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2) +
-      (27/40) * (∑ i : Fin 12, ∑ n ∈ s,
+      (67/100) * (∑ i : Fin 12, ∑ n ∈ s,
         (∫ x, (spinDensity hu).value x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
       entropy (spinDensity hu) := by
   have hi (i : Fin 12) := integrate_conditional_budget (spinDensity_positiveBounded hu)
@@ -220,7 +220,7 @@ theorem selected_channel_entropy {u : TorusL2 12} (hu : Selected u)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw (spinDensity hu))) Spin.reference +
       (∑ i : Fin 12, ψ (∫ x, (spinDensity hu).value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
       (21/1000) * (∑ i : Fin 12, (∫ x, (spinDensity hu).value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2) +
-      (27/40) * (∑ i : Fin 12, ∑' n : ℕ,
+      (67/100) * (∑ i : Fin 12, ∑' n : ℕ,
         (∫ x, (spinDensity hu).value x * (fourier (n+3 : ℤ) (x i)).re ∂torusMeasure 12)^2 / (n+3 : ℝ)) ≤
       entropy (spinDensity hu) := by
   let a := fun (i : Fin 12) (n : ℕ) =>
@@ -229,11 +229,11 @@ theorem selected_channel_entropy {u : TorusL2 12} (hu : Selected u)
     (∑ i : Fin 12, ψ (∫ x, (spinDensity hu).value x * (fourier 1 (x i)).re ∂torusMeasure 12)) +
     (21/1000) * (∑ i : Fin 12, (∫ x, (spinDensity hu).value x * (fourier 2 (x i)).re ∂torusMeasure 12)^2)
   have ha (i : Fin 12) (n : ℕ) : 0 ≤ a i n := by dsimp [a]; positivity
-  have hf (s : Finset ℕ) : A + (27/40) * (∑ n ∈ s, ∑ i : Fin 12, a i n) ≤ entropy (spinDensity hu) := by
+  have hf (s : Finset ℕ) : A + (67/100) * (∑ n ∈ s, ∑ i : Fin 12, a i n) ≤ entropy (spinDensity hu) := by
     rw [Finset.sum_comm]
     exact selected_channel_entropy_finite hu ψ hc hcv hminor s
   obtain ⟨hs,hb⟩ := nonnegative_budget_limit (fun n => ∑ i : Fin 12, a i n)
-    (fun n => Finset.sum_nonneg (fun i _ => ha i n)) A (entropy (spinDensity hu)) (27/40) (by norm_num) hf
+    (fun n => Finset.sum_nonneg (fun i _ => ha i n)) A (entropy (spinDensity hu)) (67/100) (by norm_num) hf
   have hi (i : Fin 12) : Summable (a i) :=
     hs.of_nonneg_of_le (ha i) (fun n => Finset.single_le_sum (fun j _ => ha j n) (Finset.mem_univ i))
   refine ⟨hi, ?_⟩
@@ -314,7 +314,7 @@ theorem selected_channel_fourier_entropy {u : TorusL2 12} (hu : Selected u)
     2 * Spin.relativeEntropy (Spin.countLaw (Spin.channelLaw (spinDensity hu))) Spin.reference +
       12 * ψ (Spin.mean (Spin.countLaw (Spin.channelLaw (spinDensity hu)))) +
       (21/1000) * (∑ i : Fin 12, ‖HighDim.fourierCoeff (spinDensity hu).value (Pi.single i (2 : ℤ))‖^2) +
-      (27/40) * (∑ i : Fin 12, ∑' n : ℕ,
+      (67/100) * (∑ i : Fin 12, ∑' n : ℕ,
         ‖HighDim.fourierCoeff (spinDensity hu).value (Pi.single i (n+3 : ℤ))‖^2 / (n+3 : ℝ)) ≤
       HighDim.entropy (spinDensity hu) := by
   have h := selected_channel_entropy hu ψ hc hcv hminor

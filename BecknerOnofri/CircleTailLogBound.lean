@@ -17,12 +17,12 @@ theorem two_log_le_self (z : ℝ) (hz : 0<z) : 2*Real.log z≤z := by
   nlinarith [sq_nonneg (Real.sqrt z-2)]
 
 theorem tail_log_comparison (t : ℝ) (ht : (999/1000:ℝ)≤t) (ht1 : t<1) :
-    Real.log ((1+t)/(1-t))<(13/40)*t/(1-t^2) := by
+    Real.log ((1+t)/(1-t))<(33/100)*t/(1-t^2) := by
   have ht0 : 0≤t := by linarith
   have hd : 0<1-t^2 := by nlinarith
   have hm : 0<1-t := by linarith
   let q := (1+t)/(1-t)
-  let A := (13/40)*t/(1-t^2)
+  let A := (33/100)*t/(1-t^2)
   have hq : 0<q := div_pos (by linarith) hm
   have hA : 0<A := div_pos (by linarith) hd
   have hs := Real.sq_sqrt hq.le
@@ -33,7 +33,7 @@ theorem tail_log_comparison (t : ℝ) (ht : (999/1000:ℝ)≤t) (ht1 : t<1) :
     dsimp [q]
     field_simp [hm.ne']
     ring
-  have hdenA : A^2*(1-t^2)^2=(13/40:ℝ)^2*t^2 := by
+  have hdenA : A^2*(1-t^2)^2=(33/100:ℝ)^2*t^2 := by
     dsimp [A]
     field_simp [hd.ne']
   have hp : (1+t)^3≤(8:ℝ) := by

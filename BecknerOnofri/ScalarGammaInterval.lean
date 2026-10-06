@@ -15,12 +15,12 @@ open CircleScalar Set
 /-- The source's gamma written in the Bessel parameter rather than the mean. -/
 def gammaAt (h : ℝ) : ℝ :=
   let t := besselMoment 1 h
-  (13/40)*rateAt h+(27/40)*t^2-2*Spin.binaryCost t+
-    candidateMinimum (633/2000) ((27/40)*weight 1 t) ((27/40)*weight 2 t)
+  (33/100)*rateAt h+(67/100)*t^2-2*Spin.binaryCost t+
+    candidateMinimum (157/500) ((67/100)*weight 1 t) ((67/100)*weight 2 t)
       (6-t) (6*besselMoment 2 h-besselMoment 3 h) (t^2) (besselMoment 2 h)
 
 def gammaBaseAt (h : ℝ) : ℝ :=
-  (13/40)*rateAt h+(27/40)*(besselMoment 1 h)^2-2*Spin.binaryCost (besselMoment 1 h)
+  (33/100)*rateAt h+(67/100)*(besselMoment 1 h)^2-2*Spin.binaryCost (besselMoment 1 h)
 
 theorem gammaAt_parameter {t : ℝ} (ht : 0≤t) (ht1 : t<1) :
     gammaAt (parameter t)=gamma t := by
@@ -40,7 +40,7 @@ theorem gammaBaseAt_derivative (h : ℝ) (ht : -1<besselMoment 1 h)
     convert he using 1 <;> try rfl
     simp only [id_eq]
     ring
-  have he := ((hi.const_mul (13/40)).add ((hm.pow 2).const_mul (27/40))).sub
+  have he := ((hi.const_mul (33/100)).add ((hm.pow 2).const_mul (67/100))).sub
     (((Spin.binaryCost_derivative (besselMoment 1 h) ht ht1).comp h hm).const_mul 2)
   convert he using 1 <;> try rfl
   dsimp [Spin.binaryCostSlope]

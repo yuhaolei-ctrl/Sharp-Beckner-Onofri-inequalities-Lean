@@ -9,7 +9,7 @@ namespace BecknerOnofri.HighDim.ScalarCertificate
 open CircleScalar EntropyLogCertificate
 
 def tailPointLower (b : MeanBracket) (z p m : CheckedLog) : ℚ :=
-  (13/40)*(2*b.lower*b.mean-z.upper)+(27/40)*b.mean^2-
+  (33/100)*(2*b.lower*b.mean-z.upper)+(67/100)*b.mean^2-
     ((1+b.mean)*p.upper+(1-b.mean)*m.upper)
 
 def tailPointCheck (b : MeanBracket) (u : CheckedBessel) (z p m : CheckedLog) (L : ℚ) : Bool :=

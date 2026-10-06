@@ -13,8 +13,8 @@ open Set
 namespace BecknerOnofri.HighDim.CircleScalar
 
 theorem gamma_constrained_minimum (t : ℝ) (ht : 0≤t) (ht1 : t<1) :
-    IsLeast ((fun a : ℝ => (13/40)*rate t+(27/40)*t^2-2*Spin.binaryCost t+
-      cost (633/2000) ((27/40)*weight 1 t) ((27/40)*weight 2 t)
+    IsLeast ((fun a : ℝ => (33/100)*rate t+(67/100)*t^2-2*Spin.binaryCost t+
+      cost (157/500) ((67/100)*weight 1 t) ((67/100)*weight 2 t)
         (6-t) (6*besselMoment 2 (parameter t)-besselMoment 3 (parameter t)) (t^2) a) ''
       Ici (besselMoment 2 (parameter t))) (gamma t) := by
   let m := besselMoment 2 (parameter t)
@@ -22,16 +22,16 @@ theorem gamma_constrained_minimum (t : ℝ) (ht : 0≤t) (ht1 : t<1) :
   have hb := weight_initial_lower 1 ht ht1
   have hc := weight_initial_lower 2 ht ht1
   norm_num at hb hc
-  obtain ⟨a,ha,he⟩ := candidateMinimum_attained (633/2000) ((27/40)*weight 1 t)
-    ((27/40)*weight 2 t) (6-t) L (t^2) m
+  obtain ⟨a,ha,he⟩ := candidateMinimum_attained (157/500) ((67/100)*weight 1 t)
+    ((67/100)*weight 2 t) (6-t) L (t^2) m
   constructor
   · refine ⟨a,ha,?_⟩
     unfold gamma
     dsimp [L,m] at he
     simpa only [he]
   · rintro x ⟨a,ha,rfl⟩
-    have he := candidateMinimum_le (633/2000) ((27/40)*weight 1 t)
-      ((27/40)*weight 2 t) (6-t) L (t^2) m a (by norm_num)
+    have he := candidateMinimum_le (157/500) ((67/100)*weight 1 t)
+      ((67/100)*weight 2 t) (6-t) L (t^2) m a (by norm_num)
       (by linarith) (by linarith) (by linarith) ha
     unfold gamma
     dsimp [L,m] at he

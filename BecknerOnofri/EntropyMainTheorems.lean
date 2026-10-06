@@ -1,12 +1,11 @@
 module
 
 public import BecknerOnofri.EntropyMinorantCompletion
-public import BecknerOnofri.EntropyCertifiedWitness
+public import BecknerOnofri.TwelveNumericalInputs
 
 @[expose] public section
 
-/-! Unconditional original targets, using the complete latest-route certificate.
-This generated module remains pending until ScalarCertifiedGlobal is checked. -/
+/-! Theorem 1.3 for `d ≥ 12`, from Lemma 5.17 and Lemma 5.19 (`TwelveNumericalInputs`). -/
 noncomputable section
 open MeasureTheory
 open scoped ENNReal BigOperators ContDiff
@@ -16,36 +15,36 @@ open HighDim
 theorem density_endpoint (d : ℕ) (hd : 12 ≤ d)
     (ρ : ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
     spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) := 
-  EntropyMinorantCompletion.density_endpoint ScalarCertificate.CertifiedMinorant.psi_le_gamma hd ρ hρ
+  EntropyMinorantCompletion.density_endpoint psi_le_gamma pressureScalar_gt hd ρ hρ
 
 theorem density_rigidity (d : ℕ) (hd : 12 ≤ d)
     (ρ : ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
     spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) ↔
       ρ.value =ᵐ[torusMeasure d] (fun _ => 1) := 
-  EntropyMinorantCompletion.density_rigidity ScalarCertificate.CertifiedMinorant.psi_le_gamma hd ρ hρ
+  EntropyMinorantCompletion.density_rigidity psi_le_gamma pressureScalar_gt hd ρ hρ
 
 theorem potential_endpoint (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     Integrable (fun x => Real.exp (centered u x)) (torusMeasure d) ∧
       logPartition u ≤ ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) := 
-  EntropyMinorantCompletion.potential_endpoint ScalarCertificate.CertifiedMinorant.psi_le_gamma hd u hu
+  EntropyMinorantCompletion.potential_endpoint psi_le_gamma pressureScalar_gt hd u hu
 
 theorem potential_rigidity (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
       ∃ c : ℝ, u =ᵐ[torusMeasure d] (fun _ => c) := 
-  EntropyMinorantCompletion.potential_rigidity ScalarCertificate.CertifiedMinorant.psi_le_gamma hd u hu
+  EntropyMinorantCompletion.potential_rigidity psi_le_gamma pressureScalar_gt hd u hu
 
 theorem pressure_threshold (d : ℕ) (hd : 12 ≤ d) :
     IsGreatest {β : ℝ | 0 ≤ β ∧ pressure d β = 0} (spectralThreshold d) := 
-  EntropyMinorantCompletion.pressure_threshold ScalarCertificate.CertifiedMinorant.psi_le_gamma hd
+  EntropyMinorantCompletion.pressure_threshold psi_le_gamma pressureScalar_gt hd
 
 theorem coefficient_threshold (d : ℕ) (hd : 12 ≤ d) :
     IsLeast {A : ℝ | 0 < A ∧ coefficientDefect d A = 0} (spectralCoefficient d) := 
-  EntropyMinorantCompletion.coefficient_threshold ScalarCertificate.CertifiedMinorant.psi_le_gamma hd
+  EntropyMinorantCompletion.coefficient_threshold psi_le_gamma pressureScalar_gt hd
 
 theorem full_branch_onset (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset d := 
-  EntropyMinorantCompletion.full_branch_onset ScalarCertificate.CertifiedMinorant.psi_le_gamma hd
+  EntropyMinorantCompletion.full_branch_onset psi_le_gamma pressureScalar_gt hd
 
 theorem pressure_onset (d : ℕ) (hd : 12 ≤ d) :
     ∃ ε C : ℝ, 0 < ε ∧ 0 ≤ C ∧
@@ -53,7 +52,7 @@ theorem pressure_onset (d : ℕ) (hd : 12 ≤ d) :
         ∃ p : ℝ, pressure d β = (p : EReal) ∧
           |p - (d : ℝ) / (2 * kappa d) * (1 - spectralThreshold d / β) ^ 2| ≤
             C * (β - spectralThreshold d) ^ 3 := 
-  EntropyMinorantCompletion.pressure_onset ScalarCertificate.CertifiedMinorant.psi_le_gamma hd
+  EntropyMinorantCompletion.pressure_onset psi_le_gamma pressureScalar_gt hd
 
 theorem coefficient_onset (d : ℕ) (hd : 12 ≤ d) :
     ∃ ε C : ℝ, 0 < ε ∧ ε < spectralCoefficient d ∧ 0 ≤ C ∧
@@ -61,7 +60,7 @@ theorem coefficient_onset (d : ℕ) (hd : 12 ≤ d) :
         ∃ c : ℝ, coefficientDefect d A = (c : EReal) ∧
           |c - (d : ℝ) / (2 * kappa d) * (1 - A / spectralCoefficient d) ^ 2| ≤
             C * (1 - A / spectralCoefficient d) ^ 3 := 
-  EntropyMinorantCompletion.coefficient_onset ScalarCertificate.CertifiedMinorant.psi_le_gamma hd
+  EntropyMinorantCompletion.coefficient_onset psi_le_gamma pressureScalar_gt hd
 
 #print axioms density_endpoint
 #print axioms density_rigidity

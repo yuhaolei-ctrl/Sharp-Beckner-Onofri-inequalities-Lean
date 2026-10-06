@@ -75,7 +75,7 @@ theorem eleven_label_entropy_of_moment (p : ℤ → ℝ)
     (hm : Summable (fun n : ℤ => p n*(n.natAbs:ℝ)))
     (hm_bound : (∑' n : ℤ, p n*(n.natAbs:ℝ)) < 83927/8121093750) :
     Summable (fun n => p n*Real.log (p n)) ∧
-      11 * (-(∑' n, p n*Real.log (p n))) < (1/600:ℝ) := by
+      11 * (-(∑' n, p n*Real.log (p n))) < (1/625:ℝ) := by
   have hh := entropy_le_geometric_moment p hp hps hm
     (by norm_num : (0:ℝ)<1/2^18) (by norm_num : (1:ℝ)/2^18<1)
   have hl : -Real.log ((1:ℝ)/2^18) = 18*Real.log 2 := by

@@ -15,8 +15,8 @@ noncomputable def parameter (t : ℝ) : ℝ := Function.invFun (besselMoment 1) 
 noncomputable def rate (t : ℝ) : ℝ :=
   2*parameter t*t-Real.log (bessel 0 (parameter t))
 noncomputable def gamma (t : ℝ) : ℝ :=
-  (13/40)*rate t+(27/40)*t^2-2*Spin.binaryCost t+
-    candidateMinimum (633/2000) ((27/40)*weight 1 t) ((27/40)*weight 2 t)
+  (33/100)*rate t+(67/100)*t^2-2*Spin.binaryCost t+
+    candidateMinimum (157/500) ((67/100)*weight 1 t) ((67/100)*weight 2 t)
       (6-t) (6*besselMoment 2 (parameter t)-besselMoment 3 (parameter t))
       (t^2) (besselMoment 2 (parameter t))
 end BecknerOnofri.HighDim.CircleScalar

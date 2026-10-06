@@ -43,16 +43,16 @@ theorem spectralThreshold_bounds :
   constructor <;> nlinarith
 
 theorem label_entropy_rational :
-    (11 : ℝ) * ((63/5) * (83927/8121093750) + 2^19/(2^36-1)) < 1/600 := by
+    (11 : ℝ) * ((63/5) * (83927/8121093750) + 2^19/(2^36-1)) < 1/625 := by
   norm_num
 
 theorem competitor_gap_rational :
-    (14475384292906 : ℝ)/10^12 - 8653/600 > 1/30 := by
+    (14475384292906 : ℝ)/10^12 - 18011/1250 > 1/30 := by
   norm_num
 
 theorem transition_quotient_rational :
     ((64 : ℝ)/945) * (104348/33215)^5 *
-      (7305164/10^6 + 17897/2520 + 1/600) / (14475384292906/10^12) < 2063/100 := by
+      (7305164/10^6 + 17897/2520 + 1/625) / (14475384292906/10^12) < 2063/100 := by
   norm_num
 
 theorem fourierPolynomial_pos {z : ℝ} (hz : 0 ≤ z) : 0 < fourierPolynomial z := by

@@ -43,7 +43,7 @@ theorem scalarHarmonic_tail (n : ℕ) :
 
 theorem scalarBudget_eq_axis_tail (n : ℕ) :
     scalarBudget n = 12*((21/500)*scalarCoefficient n 2+
-      (27/20)*∑' j : ℕ, scalarCoefficient n (j+3)/(j+3 : ℝ)) := by
+      (67/50)*∑' j : ℕ, scalarCoefficient n (j+3)/(j+3 : ℝ)) := by
   rw [scalarBudget, scalarHarmonic_tail]
   ring
 

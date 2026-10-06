@@ -12,14 +12,14 @@ noncomputable section
 namespace BecknerOnofri.HighDim.CircleScalar
 
 theorem source_quadratic_lower (t x : ℝ) :
-    (5697/34880:ℝ)*t^4≤(633/2000)*x^2+(27/80)*(x-t^2)^2 := by
+    (5697/34880:ℝ)*t^4≤(157/500)*x^2+(67/200)*(x-t^2)^2 := by
   nlinarith [sq_nonneg (x-(225/436:ℝ)*t^2)]
 
 theorem small_mean_cost_lower (t I B C D L x : ℝ)
     (ht : 0≤t) (ht1 : t≤1/16) (hI : t^2+t^4/4≤I)
-    (hB : (27/80:ℝ)≤B) (hC : 0≤C) :
-    (3/40:ℝ)*t^4≤(13/40)*I+(27/40)*t^2-2*Spin.binaryCost t+
-      cost (633/2000) B C D L (t^2) x := by
+    (hB : (67/200:ℝ)≤B) (hC : 0≤C) :
+    (3/40:ℝ)*t^4≤(33/100)*I+(67/100)*t^2-2*Spin.binaryCost t+
+      cost (157/500) B C D L (t^2) x := by
   have hu := Spin.binaryCost_quartic_upper ht (by linarith : t<1)
   have ht2 : t^2≤(1/256:ℝ) := by nlinarith
   have hd : 0<1-t^2 := by linarith
@@ -34,7 +34,7 @@ theorem small_mean_cost_lower (t I B C D L x : ℝ)
   have hs := source_quadratic_lower t x
   have hsq := mul_nonneg (sub_nonneg.mpr hB) (sq_nonneg (x-t^2))
   have hc := mul_nonneg hC (sq_nonneg (max 0 (L-D*x)))
-  have hi := mul_le_mul_of_nonneg_left hI (by norm_num : (0:ℝ)≤13/40)
+  have hi := mul_le_mul_of_nonneg_left hI (by norm_num : (0:ℝ)≤33/100)
   have hm : (3/40:ℝ)≤13/160+5697/34880-128/765 := by norm_num
   have htm := mul_le_mul_of_nonneg_right hm (pow_nonneg ht 4)
   unfold cost
@@ -42,10 +42,10 @@ theorem small_mean_cost_lower (t I B C D L x : ℝ)
 
 theorem small_mean_candidate_lower (t I B C D L m : ℝ)
     (ht : 0≤t) (ht1 : t≤1/16) (hI : t^2+t^4/4≤I)
-    (hB : (27/80:ℝ)≤B) (hC : 0≤C) :
-    (3/40:ℝ)*t^4≤(13/40)*I+(27/40)*t^2-2*Spin.binaryCost t+
-      candidateMinimum (633/2000) B C D L (t^2) m := by
-  obtain ⟨x,_,hx⟩ := candidateMinimum_attained (633/2000) B C D L (t^2) m
+    (hB : (67/200:ℝ)≤B) (hC : 0≤C) :
+    (3/40:ℝ)*t^4≤(33/100)*I+(67/100)*t^2-2*Spin.binaryCost t+
+      candidateMinimum (157/500) B C D L (t^2) m := by
+  obtain ⟨x,_,hx⟩ := candidateMinimum_attained (157/500) B C D L (t^2) m
   rw [← hx]
   exact small_mean_cost_lower t I B C D L x ht ht1 hI hB hC
 

@@ -68,12 +68,12 @@ theorem countable_mixture_tail_of_scalar
     (1/2 : ℝ)*(∑' k : Frequency 12,
       scalarTailWeight k*‖densityFourier (CosineMixtureApproximation.rho w N) k‖^2) ≤
       ∑ i : Fin 12, ((21/1000)*‖densityFourier (CosineMixtureApproximation.rho w N) (Pi.single i (2 : ℤ))‖^2+
-        (27/40)*∑' j : ℕ, ‖densityFourier (CosineMixtureApproximation.rho w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
+        (67/100)*∑' j : ℕ, ‖densityFourier (CosineMixtureApproximation.rho w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   have hl := (partial_weighted_energy_tendsto w N hw hs hSup scalarTailWeight
     (fun k => ⟨scalarTailWeight_nonneg k, scalarTailWeight_le_one k⟩)).const_mul (1/2 : ℝ)
   have hr := tendsto_finsetSum univ (fun i _ =>
     ((partial_fourier_sq_tendsto w N hw hs (Pi.single i (2 : ℤ))).const_mul (21/1000 : ℝ)).add
-      ((partial_axis_tail_tendsto w N hw hs hSup i).const_mul (27/40 : ℝ)))
+      ((partial_axis_tail_tendsto w N hw hs hSup i).const_mul (67/100 : ℝ)))
   exact le_of_tendsto_of_tendsto hl hr (Eventually.of_forall fun m =>
     finite_mixture_tail_of_scalar hscalar (range m) w N (fun n _ => hw n))
 

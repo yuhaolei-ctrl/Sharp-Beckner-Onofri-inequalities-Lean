@@ -9,7 +9,7 @@ namespace BecknerOnofri.HighDim.EntropyTail
 
 theorem scalarBudget_step (n : ℕ) :
     scalarBudget (n+1)-scalarBudget n =
-      12*(n:ℝ)*((27/40)*((n:ℝ)-1)+4*(21/500)) /
+      12*(n:ℝ)*((67/100)*((n:ℝ)-1)+4*(21/500)) /
         (((n:ℝ)+1)*((n:ℝ)+2)*((n:ℝ)+3)) := by
   simp only [scalarBudget_eq, tailBudget_step]
 

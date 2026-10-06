@@ -18,7 +18,7 @@ theorem tailBase_le_gamma (t : ℝ) (ht : 0≤t) (ht1 : t<1) : tailBase t≤gamm
   norm_num at hb0 hc0
   have hb : 0≤weight 1 t := by linarith
   have hc : 0≤weight 2 t := by linarith
-  have hx : 0≤cost (633/2000) ((27/40)*weight 1 t) ((27/40)*weight 2 t)
+  have hx : 0≤cost (157/500) ((67/100)*weight 1 t) ((67/100)*weight 2 t)
       (6-t) (6*besselMoment 2 (parameter t)-besselMoment 3 (parameter t)) (t^2) x := by
     unfold cost
     positivity

@@ -28,7 +28,7 @@ theorem conditional_gamma {d : ℕ} (V : (Fin d → ℝ) → ℝ)
     2 * Spin.binaryCost (conditionalCosineMoment f i 1 x) +
       CircleScalar.gamma (conditionalCosineMoment f i 1 x) +
       (21/1000) * (conditionalCosineMoment f i 2 x)^2 +
-      (27/40) * (∑' n : ℕ, (conditionalCosineMoment f i (n+3) x)^2 / (n+3 : ℝ)) ≤
+      (67/100) * (∑' n : ℕ, (conditionalCosineMoment f i (n+3) x)^2 / (n+3 : ℝ)) ≤
         conditionalEntropy f i x := by
   obtain ⟨F, hcF, hF, hmF, hprofile⟩ := conditional_log_profile V hc hconv hmono f hrep i x
   let p : Torus 1 → ℝ := fun z => conditionalDensity f i x (z 0)

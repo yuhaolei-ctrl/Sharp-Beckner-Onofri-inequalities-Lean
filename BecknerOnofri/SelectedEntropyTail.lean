@@ -19,7 +19,7 @@ theorem selected_tail_of_scalar
     (1/2 : ℝ)*(∑' k : Frequency 12,
       EntropyTail.scalarTailWeight k*‖HighDim.fourierCoeff (spinDensity hu).value k‖^2) ≤
       (21/1000)*(∑ i : Fin 12, ‖HighDim.fourierCoeff (spinDensity hu).value (Pi.single i (2 : ℤ))‖^2)+
-        (27/40)*(∑ i : Fin 12, ∑' j : ℕ,
+        (67/100)*(∑ i : Fin 12, ∑' j : ℕ,
           ‖HighDim.fourierCoeff (spinDensity hu).value (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   obtain ⟨w,N,hw,hm,hSup,he⟩ := spinDensity_mixture hu
   rw [he]

@@ -24,10 +24,10 @@ theorem tailBase_mono : MonotoneOn tailBase (Ico (999/1000) 1) := by
     apply besselMoment_first_strictMono.le_iff_le.mp
     rw [hRa,hRb]
     exact hab
-  let f : ℝ → ℝ := fun h => (13/40)*rateAt h+(27/40)*(besselMoment 1 h)^2-
+  let f : ℝ → ℝ := fun h => (33/100)*rateAt h+(67/100)*(besselMoment 1 h)^2-
     2*Spin.binaryCost (besselMoment 1 h)
   let f' : ℝ → ℝ := fun h => deriv (besselMoment 1) h*
-    ((13/20)*h+(27/20)*besselMoment 1 h-
+    ((33/50)*h+(67/50)*besselMoment 1 h-
       Real.log (1+besselMoment 1 h)+Real.log (1-besselMoment 1 h))
   have hd (h : ℝ) (hlo : -1<besselMoment 1 h) (hhi : besselMoment 1 h<1) :
       HasDerivAt f (f' h) h := by
@@ -37,7 +37,7 @@ theorem tailBase_mono : MonotoneOn tailBase (Ico (999/1000) 1) := by
       convert he using 1 <;> try rfl
       simp only [id_eq]
       ring
-    have he := ((hi.const_mul (13/40)).add ((hm.pow 2).const_mul (27/40))).sub
+    have he := ((hi.const_mul (33/100)).add ((hm.pow 2).const_mul (67/100))).sub
       (((Spin.binaryCost_derivative (besselMoment 1 h) hlo hhi).comp h hm).const_mul 2)
     convert he using 1 <;> try rfl
     dsimp [f',Spin.binaryCostSlope]
@@ -56,9 +56,9 @@ theorem tailBase_mono : MonotoneOn tailBase (Ico (999/1000) 1) := by
       Function.leftInverse_invFun besselMoment_first_strictMono.injective h
     have hp := parameter_lower hR0 hhi
     rw [hinv] at hp
-    have hc := mul_le_mul_of_nonneg_left hp (by norm_num : (0:ℝ)≤13/20)
-    have he : (13/20:ℝ)*(besselMoment 1 h/(2*(1-(besselMoment 1 h)^2)))=
-        (13/40)*besselMoment 1 h/(1-(besselMoment 1 h)^2) := by
+    have hc := mul_le_mul_of_nonneg_left hp (by norm_num : (0:ℝ)≤33/50)
+    have he : (33/50:ℝ)*(besselMoment 1 h/(2*(1-(besselMoment 1 h)^2)))=
+        (33/100)*besselMoment 1 h/(1-(besselMoment 1 h)^2) := by
       simp only [div_eq_mul_inv,mul_inv_rev]
       ring
     rw [he] at hc

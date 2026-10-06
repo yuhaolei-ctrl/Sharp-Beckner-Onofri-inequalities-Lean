@@ -20,7 +20,7 @@ theorem gamma_entropy_of_convex_profile (p : Torus 1 → ℝ) (hp : Continuous p
     (hF : ConvexOn ℝ (Icc (-1:ℝ) 1) F) (hinc : MonotoneOn F (Icc (-1:ℝ) 1))
     (hprofile : ∀ x,p x=Real.exp (F ((fourier 1 (x 0)).re))) :
     2*Spin.binaryCost (moment p 1)+gamma (moment p 1)+(21/1000)*(moment p 2)^2+
-      (27/40)*(∑' n : ℕ,(moment p (n+3))^2/(n+3:ℝ)) ≤
+      (67/100)*(∑' n : ℕ,(moment p (n+3))^2/(n+3:ℝ)) ≤
         ∫ x,p x*Real.log (p x) ∂torusMeasure 1 := by
   have hpos (x : Torus 1) : 0<p x := by rw [hprofile]; exact Real.exp_pos _
   have hcos (z : UnitAddCircle) : (fourier 1 (-z)).re=(fourier 1 z).re := by

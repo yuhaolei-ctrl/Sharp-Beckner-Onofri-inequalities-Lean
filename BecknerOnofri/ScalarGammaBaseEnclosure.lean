@@ -29,10 +29,10 @@ noncomputable def gammaBaseFunctionEnclosure {a b : ℝ}
   let c := FunctionEnclosure.const a b
   let one : FunctionEnclosure a b (fun _ => (1 : ℝ)) := (c 1).congr (fun _ => Rat.cast_one)
   let two : FunctionEnclosure a b (fun _ => (2 : ℝ)) := (c 2).congr (fun _ => Rat.cast_ofNat 2)
-  let c13 : FunctionEnclosure a b (fun _ => (13/40 : ℝ)) :=
-    (c (13/40)).congr (fun _ => by norm_num)
-  let c27 : FunctionEnclosure a b (fun _ => (27/40 : ℝ)) :=
-    (c (27/40)).congr (fun _ => by norm_num)
+  let c13 : FunctionEnclosure a b (fun _ => (33/100 : ℝ)) :=
+    (c (33/100)).congr (fun _ => by norm_num)
+  let c27 : FunctionEnclosure a b (fun _ => (67/100 : ℝ)) :=
+    (c (67/100)).congr (fun _ => by norm_num)
   let d13 : FunctionEnclosure a b (fun _ => (13/20 : ℝ)) :=
     (c (13/20)).congr (fun _ => by norm_num)
   let d27 : FunctionEnclosure a b (fun _ => (27/20 : ℝ)) :=

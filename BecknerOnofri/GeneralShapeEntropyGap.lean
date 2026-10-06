@@ -22,7 +22,7 @@ theorem tail_of_scalar
     (1/2 : ℝ)*(∑' k : Frequency 12,
       EntropyTail.scalarTailWeight k*‖HighDim.fourierCoeff ρ.value k‖^2) ≤
       (21/1000)*(∑ i : Fin 12, ‖HighDim.fourierCoeff ρ.value (Pi.single i (2 : ℤ))‖^2)+
-        (27/40)*(∑ i : Fin 12, ∑' j : ℕ,
+        (67/100)*(∑ i : Fin 12, ∑' j : ℕ,
           ‖HighDim.fourierCoeff ρ.value (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   obtain ⟨w,N,hw,hm,hSup,he⟩ := Data.mixture D
   rw [he]

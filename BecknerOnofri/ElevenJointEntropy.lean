@@ -60,7 +60,7 @@ lemma labelEntropy_subadditive :
   rw [label_product_cross_sum] at h
   exact h.2.trans_eq (by ring)
 
-lemma labelEntropy_lt : labelEntropy < (1/600:ℝ) :=
+lemma labelEntropy_lt : labelEntropy < (1/625:ℝ) :=
   labelEntropy_subadditive.2.trans_lt coordinateLabel_entropy_lt.2
 
 #print axioms labelEntropy_subadditive

@@ -49,7 +49,7 @@ theorem global_spin_entropy :
         2*(∑ σ : Spin.Configuration,Spin.channelLaw ρ σ*Real.log (Spin.channelLaw ρ σ/(1/4096)))+
           12*ψ (fourierCoeff ρ.value (Pi.single (0 : Fin 12) (1 : ℤ))).re+
           (∑ i : Fin 12,((21/1000)*‖fourierCoeff ρ.value (Pi.single i (2 : ℤ))‖^2+
-            (27/40)*∑' n : ℕ,‖fourierCoeff ρ.value (Pi.single i (n+3 : ℤ))‖^2/(n+3 : ℝ)))≤entropy ρ) ∧
+            (67/100)*∑' n : ℕ,‖fourierCoeff ρ.value (Pi.single i (n+3 : ℤ))‖^2/(n+3 : ℝ)))≤entropy ρ) ∧
       (∀ (ν : Spin.Configuration → ℝ), (∀ σ,0≤ν σ) →
         (∑ σ : Spin.Configuration,ν σ)=1 → Spin.Exchangeable ν →
         ν ∅≤1/4096 → ∀ t∈Icc (0 : ℝ) 1,

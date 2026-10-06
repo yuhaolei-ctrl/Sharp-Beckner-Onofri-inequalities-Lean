@@ -17,17 +17,17 @@ structure GammaEnclosureData (a b : ℝ) where
   weightTwo : FunctionEnclosure a b (fun h => weight 2 (besselMoment 1 h))
 
 def GammaEnclosureData.A {a b : ℝ} (_ : GammaEnclosureData a b) :
-    FunctionEnclosure a b (fun _ => (633/2000 : ℝ)) :=
-  (FunctionEnclosure.const a b (633/2000)).congr (fun _ => by norm_num)
+    FunctionEnclosure a b (fun _ => (157/500 : ℝ)) :=
+  (FunctionEnclosure.const a b (157/500)).congr (fun _ => by norm_num)
 def GammaEnclosureData.B {a b : ℝ} (d : GammaEnclosureData a b) :
-    FunctionEnclosure a b (fun h => (27/40)*weight 1 (besselMoment 1 h)) :=
-  (((FunctionEnclosure.const a b (27/40)).congr (fun _ => by norm_num)) :
-    FunctionEnclosure a b (fun _ => (27/40 : ℝ))).rmul d.weightOne
+    FunctionEnclosure a b (fun h => (67/100)*weight 1 (besselMoment 1 h)) :=
+  (((FunctionEnclosure.const a b (67/100)).congr (fun _ => by norm_num)) :
+    FunctionEnclosure a b (fun _ => (67/100 : ℝ))).rmul d.weightOne
 
 def GammaEnclosureData.C {a b : ℝ} (d : GammaEnclosureData a b) :
-    FunctionEnclosure a b (fun h => (27/40)*weight 2 (besselMoment 1 h)) :=
-  (((FunctionEnclosure.const a b (27/40)).congr (fun _ => by norm_num)) :
-    FunctionEnclosure a b (fun _ => (27/40 : ℝ))).rmul d.weightTwo
+    FunctionEnclosure a b (fun h => (67/100)*weight 2 (besselMoment 1 h)) :=
+  (((FunctionEnclosure.const a b (67/100)).congr (fun _ => by norm_num)) :
+    FunctionEnclosure a b (fun _ => (67/100 : ℝ))).rmul d.weightTwo
 
 def GammaEnclosureData.D {a b : ℝ} (d : GammaEnclosureData a b) :
     FunctionEnclosure a b (fun h => 6-besselMoment 1 h) :=

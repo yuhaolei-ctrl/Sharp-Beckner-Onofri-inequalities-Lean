@@ -38,7 +38,7 @@ theorem gamma_of_comparisons (p : Torus 1 → ℝ) (hp : Continuous p)
     (hb : |moment p 3-besselMoment 3 (parameter (moment p 1))|≤
       6*(moment p 2-besselMoment 2 (parameter (moment p 1)))) :
     2*Spin.binaryCost (moment p 1)+gamma (moment p 1)+(21/1000)*(moment p 2)^2+
-      (27/40)*(∑' n : ℕ,(moment p (n+3))^2/(n+3:ℝ)) ≤
+      (67/100)*(∑' n : ℕ,(moment p (n+3))^2/(n+3:ℝ)) ≤
         ∫ x,p x*Real.log (p x) ∂torusMeasure 1 := by
   have hsq : (moment p 1)^2<1 := (CircleFisher.smooth_fisher_lower_bound p hp hpos he hm hsmooth).1
   have ht1 : moment p 1<1 := by nlinarith

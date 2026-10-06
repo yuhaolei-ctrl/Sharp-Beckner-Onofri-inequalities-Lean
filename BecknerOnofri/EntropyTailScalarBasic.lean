@@ -72,7 +72,7 @@ theorem scalarTail_le_budget_small {n : ℕ} (hn : n ≤ 1) : scalarTail n ≤ s
 
 theorem tailBudget_step (n : ℕ) :
     tailBudget (n+1)-tailBudget n =
-      12*(n:ℝ)*((27/40)*((n:ℝ)-1)+4*(21/500)) /
+      12*(n:ℝ)*((67/100)*((n:ℝ)-1)+4*(21/500)) /
         (((n:ℝ)+1)*((n:ℝ)+2)*((n:ℝ)+3)) := by
   rw [tailBudget, tailBudget, first_coefficient, first_coefficient,
     second_coefficient, second_coefficient, harmonic_succ]
@@ -85,7 +85,7 @@ theorem tailBudget_step (n : ℕ) :
 
 theorem tailBudget_strict_step (n : ℕ) (hn : 1 ≤ n) : tailBudget n < tailBudget (n+1) := by
   have hn' : (1 : ℝ) ≤ n := by exact_mod_cast hn
-  have hpos : 0 < 12*(n:ℝ)*((27/40)*((n:ℝ)-1)+4*(21/500)) /
+  have hpos : 0 < 12*(n:ℝ)*((67/100)*((n:ℝ)-1)+4*(21/500)) /
         (((n:ℝ)+1)*((n:ℝ)+2)*((n:ℝ)+3)) := by
     apply div_pos
     · apply mul_pos

@@ -84,7 +84,7 @@ lemma coordinateLabelMoment_lt : coordinateLabelMoment < (83927/8121093750:ℝ) 
 
 lemma coordinateLabel_entropy_lt :
     Summable (fun n : ℤ => coordinateLabelProbability n*Real.log (coordinateLabelProbability n)) ∧
-      11 * (-(∑' n : ℤ, coordinateLabelProbability n*Real.log (coordinateLabelProbability n))) < (1/600:ℝ) :=
+      11 * (-(∑' n : ℤ, coordinateLabelProbability n*Real.log (coordinateLabelProbability n))) < (1/625:ℝ) :=
   CountableShannon.eleven_label_entropy_of_moment coordinateLabelProbability
     coordinateLabelProbability_nonneg coordinateLabelProbability_hasSum coordinateLabel_abs_moment.1
     coordinateLabelMoment_lt

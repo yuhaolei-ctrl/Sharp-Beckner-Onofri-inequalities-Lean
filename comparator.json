@@ -12,6 +12,7 @@
     "BecknerOnofri.low_dim_pressure_eq",
     "BecknerOnofri.low_dim_defect_eq",
     "BecknerOnofri.low_dim_globalTransition",
+    "BecknerOnofri.eleven_profile_constant",
     "BecknerOnofri.eleven_competitor",
     "BecknerOnofri.eleven_spectral_pressure",
     "BecknerOnofri.eleven_globalTransition_bounds",

@@ -439,16 +439,22 @@ theorem low_dim_globalTransition (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) :
 
 A first-order transition strictly before spectral instability. -/
 
-/-- **Theorem 1.2, (1.26)–(1.27).** The periodized profile
-`ρ_*(x) = Σ_{n ∈ ℤ¹¹} 5¹¹ (122880/π⁶) (1 + 25|x + n|²)^{-11}` is a smooth, strictly
-positive probability density with `Ent(ρ_*) < 8653/600` and
-`(2π)¹¹/2 · ‖ρ_*‖²_{Ḣ^{-11/2}} > 14.475384292906`; here
+/-- **Theorem 1.2, (eq:intro-rho-star).** The normalizing constant of the Euclidean profile,
+`C₁₁ = Γ(11)/(π^{11/2} Γ(11/2))`, equals the constant `122880/π⁶` used in
+`Eleven.euclideanProfile`. -/
+theorem eleven_profile_constant :
+    Real.Gamma 11 / (Real.pi ^ ((11 : ℝ) / 2) * Real.Gamma (11 / 2)) = 122880 / Real.pi ^ 6 := by
+  sorry
+
+/-- **Theorem 1.2, (eq:intro-d11-certificate).** The periodized profile
+`ρ_*(x) = Σ_{n ∈ ℤ¹¹} 5¹¹ C₁₁ (1 + 25|x + n|²)^{-11}` is a smooth, strictly positive probability
+density with `Ent(ρ_*) < 14.4088` and `(2π)¹¹/2 · ‖ρ_*‖²_{Ḣ^{-11/2}} > 14.4753`; here
 `(2π)¹¹ ‖ρ_*‖²_{Ḣ^{-11/2}} = spectralEnergy ρ_*`. -/
 theorem eleven_competitor :
     ∃ ρ : ProbabilityDensity 11, ρ.value = Eleven.periodizedProfile ∧
       SmoothOnTorus ρ.value ∧ (∀ x, 0 < ρ.value x) ∧ ρ.FiniteEntropy ∧
-      entropy ρ < (8653 : ℝ) / 600 ∧
-      ENNReal.ofReal (2 * ((14475384292906 : ℝ) / 10 ^ 12)) < spectralEnergy ρ := by
+      entropy ρ < (144088 : ℝ) / 10000 ∧
+      ENNReal.ofReal (2 * ((144753 : ℝ) / 10000)) < spectralEnergy ρ := by
   sorry
 
 /-- **Theorem 1.2, (1.28).** `C_11(A_s(11)) = P_11(β_s(11)) > 1/30`. -/

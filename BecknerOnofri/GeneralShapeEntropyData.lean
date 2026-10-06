@@ -52,7 +52,7 @@ lemma conditional_gamma_finite (ψ : ℝ → ℝ)
     2*Spin.binaryCost (conditionalCosineMoment ρ.value i 1 x)+
       ψ (conditionalCosineMoment ρ.value i 1 x)+
       (21/1000)*(conditionalCosineMoment ρ.value i 2 x)^2+
-      (27/40)*(∑ n∈s,(conditionalCosineMoment ρ.value i (n+3) x)^2/(n+3 : ℝ))≤
+      (67/100)*(∑ n∈s,(conditionalCosineMoment ρ.value i (n+3) x)^2/(n+3 : ℝ))≤
       conditionalEntropy ρ.value i x := by
   obtain ⟨F,hc,hcv,hm,hr⟩ := conditional_log_profile D.profile D.continuous_profile
     D.convex_profile D.monotone_profile ρ.value D.representation i x

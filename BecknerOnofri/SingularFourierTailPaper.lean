@@ -2,7 +2,7 @@ module
 
 public import BecknerOnofri.ContinuousMixtureMajorant
 public import BecknerOnofri.EntropyTailCountableMixture
-public import BecknerOnofri.EntropyTailCertifiedScalar
+public import BecknerOnofri.EntropyTailLarge
 
 @[expose] public section
 
@@ -17,7 +17,7 @@ theorem smooth_mixture_singular_tail (ρ : ProbabilityDensity 12)
     (hs : SmoothOnTorus ρ.value) (hρ : IsCountableCosineMixture ρ) :
     (1/2 : ℝ)*(∑' k : Frequency 12,scalarTailWeight k*‖fourierCoeff ρ.value k‖^2) ≤
       ∑ i : Fin 12,((21/1000)*‖fourierCoeff ρ.value (Pi.single i (2 : ℤ))‖^2+
-        (27/40)*∑' j : ℕ,‖fourierCoeff ρ.value (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
+        (67/100)*∑' j : ℕ,‖fourierCoeff ρ.value (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   obtain ⟨w,N,hw,hm,he⟩ := hρ
   have he' : ρ.value =ᵐ[torusMeasure 12] Legacy.BecknerOnofri.CosineMixtureApproximation.rho w N := he
   have hSup := CosineMixtureTransfer.mixture_majorant_of_continuous ρ.value

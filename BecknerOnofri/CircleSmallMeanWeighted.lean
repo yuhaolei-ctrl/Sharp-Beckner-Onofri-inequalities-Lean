@@ -12,8 +12,8 @@ namespace BecknerOnofri.HighDim.CircleScalar
 
 theorem small_mean_weighted_candidate_lower (t I m₂ m₃ : ℝ)
     (ht : 0≤t) (ht1 : t≤1/16) (hI : t^2+t^4/4≤I) :
-    (3/40:ℝ)*t^4≤(13/40)*I+(27/40)*t^2-2*Spin.binaryCost t+
-      candidateMinimum (633/2000) ((27/40)*weight 1 t) ((27/40)*weight 2 t)
+    (3/40:ℝ)*t^4≤(33/100)*I+(67/100)*t^2-2*Spin.binaryCost t+
+      candidateMinimum (157/500) ((67/100)*weight 1 t) ((67/100)*weight 2 t)
         (6-t) (6*m₂-m₃) (t^2) m₂ := by
   have hb := weight_initial_lower 1 ht (by linarith : t<1)
   have hc := weight_initial_lower 2 ht (by linarith : t<1)

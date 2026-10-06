@@ -10,7 +10,7 @@ namespace BecknerOnofri.HighDim.EntropyTail
 
 def rationalScalarBudget (n : ℕ) : ℚ :=
   12*((21/500)*((n : ℚ)*(n-1)/((n+1)*(n+2)))+
-    (27/40)*(harmonic n-2*(n : ℚ)/(n+1)-((n : ℚ)*(n-1)/((n+1)*(n+2)))))
+    (67/100)*(harmonic n-2*(n : ℚ)/(n+1)-((n : ℚ)*(n-1)/((n+1)*(n+2)))))
 
 theorem scalarBudget_eq_rational (n : ℕ) : scalarBudget n = (rationalScalarBudget n : ℝ) := by
   rw [scalarBudget_eq, tailBudget, first_coefficient, second_coefficient]

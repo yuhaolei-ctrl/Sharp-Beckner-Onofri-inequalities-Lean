@@ -48,7 +48,7 @@ theorem latentAverage_axis_tail {α : Type*} (s : Finset α) (w : α → ℝ) (N
 theorem latentAverage_budget {α : Type*} (s : Finset α) (w : α → ℝ) (N : α → Fin 12 → ℕ) :
     latentAverage s w N (fun L => (1/12 : ℝ)*∑ i : Fin 12, scalarBudget (L i)) =
       ∑ i : Fin 12, ((21/500)*‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (2 : ℤ))‖^2+
-        (27/20)*∑' j : ℕ, ‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
+        (67/50)*∑' j : ℕ, ‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   simp_rw [scalarBudget_eq_axis_tail, ← mul_sum]
   norm_num only [show (1/12 : ℝ)*12=1 by norm_num, ← mul_assoc, one_mul]
   rw [latentAverage_sum]
@@ -64,7 +64,7 @@ theorem finite_mixture_tail_of_scalar {α : Type*}
     (s : Finset α) (w : α → ℝ) (N : α → Fin 12 → ℕ) (hw : ∀ a ∈ s, 0 ≤ w a) :
     (1/2 : ℝ)*(∑' k : Frequency 12, scalarTailWeight k*‖densityFourier (CosineMixture.mixture s w N) k‖^2) ≤
       ∑ i : Fin 12, ((21/1000)*‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (2 : ℤ))‖^2+
-        (27/40)*∑' j : ℕ, ‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
+        (67/100)*∑' j : ℕ, ‖densityFourier (CosineMixture.mixture s w N) (Pi.single i (j+3 : ℤ))‖^2/(j+3 : ℝ)) := by
   have h := (finite_mixture_tail_comparison s w N hw).trans
     (latentAverage_mono s w N hw (fun L => mul_le_mul_of_nonneg_left
       (sum_le_sum (fun i _ => hscalar (L i))) (by norm_num : (0 : ℝ) ≤ 1/12)))

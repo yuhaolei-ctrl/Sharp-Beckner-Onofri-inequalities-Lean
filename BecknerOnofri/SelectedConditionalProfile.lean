@@ -91,7 +91,7 @@ theorem selected_conditional_gamma {u : TorusL2 12} (hu : Selected u)
     2 * Spin.binaryCost (conditionalCosineMoment (spinDensity hu).value i 1 x) +
       CircleScalar.gamma (conditionalCosineMoment (spinDensity hu).value i 1 x) +
       (21/1000) * (conditionalCosineMoment (spinDensity hu).value i 2 x)^2 +
-      (27/40) * (∑' n : ℕ, (conditionalCosineMoment (spinDensity hu).value i (n+3) x)^2 / (n+3 : ℝ)) ≤
+      (67/100) * (∑' n : ℕ, (conditionalCosineMoment (spinDensity hu).value i (n+3) x)^2 / (n+3 : ℝ)) ≤
         conditionalEntropy (spinDensity hu).value i x := by
   obtain ⟨hc,hcv,hm⟩ := selected_log_profile_shape hu
   exact conditional_gamma (logarithmicCosineProfile u) hc hcv hm _

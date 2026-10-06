@@ -97,20 +97,23 @@ lemma conditionalLabelEntropy_le_labelEntropy : conditionalLabelEntropy ≤ labe
   rw [labelLogIntegrand_series_integral] at hint
   exact neg_le_neg hint
 
-lemma conditionalLabelEntropy_lt : conditionalLabelEntropy < (1/600:ℝ) :=
+lemma conditionalLabelEntropy_lt : conditionalLabelEntropy < (1/625:ℝ) :=
   conditionalLabelEntropy_le_labelEntropy.trans_lt labelEntropy_lt
 
-lemma competitor_entropy_bound : entropy competitorDensity < (8653/600:ℝ) := by
+lemma competitor_entropy_bound : entropy competitorDensity < (18011/1250:ℝ) := by
   rw [periodization_entropy_identity]
-  linarith [euclideanProfile_entropy_lt, conditionalLabelEntropy_lt]
+  have h := euclideanProfile_entropy_fine
+  have h2 := conditionalLabelEntropy_lt
+  norm_num at h h2 ⊢
+  linarith
 
 lemma competitor_entropy_fine : entropy competitorDensity <
-    (7305164/10^6 + 17897/2520 + 1/600:ℝ) := by
+    (7305164/10^6 + 17897/2520 + 1/625:ℝ) := by
   rw [periodization_entropy_identity]
   linarith [euclideanProfile_entropy_fine, conditionalLabelEntropy_lt]
 
 theorem competitor_entropy (ρ : ProbabilityDensity 11) (hρ : ρ.value = periodizedProfile) :
-    entropy ρ < (8653/600:ℝ) := by
+    entropy ρ < (18011/1250:ℝ) := by
   have he : entropy ρ = entropy competitorDensity := by unfold entropy; rw [hρ]; rfl
   rw [he]
   exact competitor_entropy_bound

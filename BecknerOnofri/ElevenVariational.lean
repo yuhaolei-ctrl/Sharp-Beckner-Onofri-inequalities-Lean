@@ -49,7 +49,7 @@ theorem pressureValue_eq_real (β : ℝ) (ρ : ProbabilityDensity 11)
 
 /-- The numerical competitor gap implies the actual supremum lower bound. -/
 theorem spectral_pressure_of_competitor (ρ : ProbabilityDensity 11)
-    (hρ : ρ.FiniteEntropy) (he : entropy ρ < (8653 : ℝ)/600)
+    (hρ : ρ.FiniteEntropy) (he : entropy ρ < (18011 : ℝ)/1250)
     (hq : ENNReal.ofReal (2*((14475384292906 : ℝ)/10^12)) < spectralEnergy ρ) :
     (1/30 : EReal) < pressure 11 (spectralThreshold 11) := by
   rw [energy_eq_ofReal ρ hρ] at hq
@@ -100,7 +100,7 @@ theorem transition_le_trial_quotient (ρ : ProbabilityDensity 11)
 20.630, using the same explicitly certified trial quotient as the paper. -/
 theorem transition_lt_of_competitor (ρ : ProbabilityDensity 11)
     (hρ : ρ.FiniteEntropy)
-    (he : entropy ρ < (7305164 : ℝ)/10^6 + 17897/2520 + 1/600)
+    (he : entropy ρ < (7305164 : ℝ)/10^6 + 17897/2520 + 1/625)
     (hq : ENNReal.ofReal (2*((14475384292906 : ℝ)/10^12)) < spectralEnergy ρ) :
     globalTransition < (2063 : ℝ)/100 := by
   rw [energy_eq_ofReal ρ hρ] at hq
@@ -117,9 +117,9 @@ theorem transition_lt_of_competitor (ρ : ProbabilityDensity 11)
     nlinarith
   have hm := mul_lt_mul_of_pos_left he (by positivity : 0 < 2 * spectralThreshold 11)
   have hm' := mul_lt_mul_of_pos_right hsig
-    (by norm_num : (0 : ℝ) < 2 * (7305164/10^6 + 17897/2520 + 1/600))
+    (by norm_num : (0 : ℝ) < 2 * (7305164/10^6 + 17897/2520 + 1/625))
   have hc : (2 : ℝ) * ((64 : ℝ)/945 * (104348/33215)^5) *
-      (7305164/10^6 + 17897/2520 + 1/600) <
+      (7305164/10^6 + 17897/2520 + 1/625) <
       (2063/100) * (2 * (14475384292906/10^12)) := by norm_num
   nlinarith
 

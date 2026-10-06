@@ -26,7 +26,7 @@ def scalarTail (n : ℕ) : ℝ :=
 
 def scalarBudget (n : ℕ) : ℝ :=
   12*((21/500)*scalarCoefficient n 2+
-    (27/40)*((harmonic n : ℝ)-2*scalarCoefficient n 1-scalarCoefficient n 2))
+    (67/100)*((harmonic n : ℝ)-2*scalarCoefficient n 1-scalarCoefficient n 2))
 
 /-- The weighted Gaussian sum over the complement of the frequency cube. -/
 def gaussianTail (η : ℝ) : ℝ :=
