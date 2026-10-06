@@ -16,7 +16,7 @@ open Legacy.D10
 
 def tailBudget (n : ℕ) : ℝ :=
   12*((21/500)*binomialCoeffReal n 2+
-    (27/40)*((harmonic n:ℝ)-2*binomialCoeffReal n 1-binomialCoeffReal n 2))
+    (67/100)*((harmonic n:ℝ)-2*binomialCoeffReal n 1-binomialCoeffReal n 2))
 
 theorem first_coefficient (n : ℕ) : binomialCoeffReal n 1=(n:ℝ)/(n+1) := by
   have h := binomialCoeff_step n 0 (Nat.zero_le n)
@@ -44,8 +44,10 @@ theorem second_coefficient (n : ℕ) :
   field_simp at h'
   nlinarith
 
+/-- The lower bound `R_n ≥ 12 c H_n - 12 (3c - ε)` used for large indices
+in Lemma 5.13, with `c = 67/100` and `ε = 21/500`. -/
 theorem tailBudget_harmonic_lower (n : ℕ) :
-    (81/10:ℝ)*((harmonic n:ℝ)-3)≤tailBudget n := by
+    (201/25:ℝ)*(harmonic n:ℝ)-2952/125≤tailBudget n := by
   have h1 := CosineMixtureTransfer.coeff_le_one n 1
   have h2 := CosineMixtureTransfer.coeff_le_one n 2
   have h2p := binomialCoeff_nonneg n 2
@@ -55,34 +57,5 @@ theorem tailBudget_harmonic_lower (n : ℕ) :
   unfold tailBudget
   nlinarith
 
-theorem harmonic_hundred_lower : (5187/1000:ℝ)<(harmonic 100:ℝ) := by
-  have h : (5187/1000:ℚ)<harmonic 100 := by decide +kernel
-  have hh := Rat.cast_lt (K:=ℝ).mpr h
-  norm_num only [Rat.cast_div,Rat.cast_ofNat] at hh
-  exact hh
-
-theorem log_hundred_one_upper : Real.log 101<(4617/1000:ℝ) := by
-  rw [Real.log_lt_iff_lt_exp (by norm_num)]
-  apply lt_of_lt_of_le _ (Real.sum_le_exp_of_nonneg (by norm_num : (0:ℝ)≤4617/1000) 24)
-  norm_num [Finset.sum_range_succ,Nat.factorial_succ]
-
-theorem harmonic_log_gap {n : ℕ} (hn : 100≤n) :
-    Real.log ((n:ℝ)+1)+(57/100:ℝ)<(harmonic n:ℝ) := by
-  have h := Real.strictMono_eulerMascheroniSeq.monotone hn
-  simp only [Real.eulerMascheroniSeq,Nat.cast_ofNat] at h
-  have h100 := harmonic_hundred_lower
-  have hlog := log_hundred_one_upper
-  norm_num at h
-  linarith
-
-/-- Covers every n≥100, not merely the last finite row. -/
-theorem tailBudget_log_lower {n : ℕ} (hn : 100≤n) :
-    (81/10:ℝ)*Real.log ((n:ℝ)+1/2)-19683/1000<tailBudget n := by
-  have hg := harmonic_log_gap hn
-  have hm : Real.log ((n:ℝ)+1/2)≤Real.log ((n:ℝ)+1) :=
-    Real.log_le_log (by positivity) (by linarith)
-  have hb := tailBudget_harmonic_lower n
-  nlinarith
-
-#print axioms tailBudget_log_lower
+#print axioms tailBudget_harmonic_lower
 end BecknerOnofri.HighDim.EntropyTail
