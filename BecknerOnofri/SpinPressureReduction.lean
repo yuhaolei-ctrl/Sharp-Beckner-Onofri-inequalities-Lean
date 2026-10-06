@@ -11,10 +11,10 @@ public import BecknerOnofri.JensenRemainder
 /-!
 # Reduction of the finite-state inequality to one scalar function
 
-On the slice `𝓟_t`, Lemma 5.18 makes `F - (7/25) H(·|b)` convex. With the explicit reference
+On the slice `𝓟_t`, Lemma 5.19 makes `F - (7/25) H(·|b)` convex. With the explicit reference
 law `q(t)`, the Bregman identity for relative entropy and the Gibbs variational principle give
 `G_t(p) ≥ 𝓑(t)` for every `p ∈ 𝓟_t` (manuscript, the paragraph "One explicit reference law"
-before Lemma 5.19).
+before Lemma 5.20).
 -/
 
 noncomputable section

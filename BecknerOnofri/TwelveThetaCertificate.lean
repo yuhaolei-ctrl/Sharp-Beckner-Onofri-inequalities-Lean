@@ -8,11 +8,11 @@ public import BecknerOnofri.ExponentialIntegralBound
 
 /-! # The dimension-twelve theta certificate
 
-Lemma 3.2 (lem:theta-integral-certificate) for `d = 12`: `J_12 < 3.29`.
+Lemma 3.3 (lem:theta-integral-certificate) for `d = 12`: `J_12 < 3.29`.
 
 For `r ≥ 1` we use `ϑ(πr) - 1 ≤ q e^{-π(r-1)}` with `q = 2e^{-π}/(1-e^{-3π})`, expand
 `(1 + q e^{-π(r-1)})^12 - 1` binomially, integrate the `r^5` part exactly and bound the `r⁻¹`
-part by Lemma 3.1. Numerically `e^{-π} < 0.04322` and `π > 3.1415` are enough. All infinite
+part by Lemma 3.2. Numerically `e^{-π} < 0.04322` and `π > 3.1415` are enough. All infinite
 series and improper integrals keep their mathematical meanings. -/
 
 noncomputable section
@@ -162,7 +162,7 @@ theorem rationalUpper_lt : rationalUpper < 329 / 100 := by
   norm_num [rationalUpper, base, expBound, rate, laplacePolynomial, e1Majorant,
     Finset.sum_range_succ, Nat.choose, Nat.factorial]
 
-/-- Lemma 3.2 (lem:theta-integral-certificate), `J_12 < 3.29`: the full dimension-twelve
+/-- Lemma 3.3 (lem:theta-integral-certificate), `J_12 < 3.29`: the full dimension-twelve
 improper theta integral, with its rational certificate completely discharged. -/
 theorem thetaIntegral_lt : thetaIntegral realTheta 12 < 329 / 100 := by
   have hi : IntegrableOn (fun r => ∑ j ∈ Finset.range 12, row j r) (Ici (1 : ℝ)) :=

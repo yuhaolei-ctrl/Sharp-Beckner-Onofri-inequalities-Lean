@@ -8,7 +8,7 @@ public import Mathlib.Tactic
 
 /-! # An elementary bound for the exponential integral
 
-Lemma 3.1 (lem:E1-bound): for `x > 0`,
+Lemma 3.2 (lem:E1-bound): for `x > 0`,
 `e^x ∫_1^∞ e^{-x r}/r dr < g(x)` with `g(x) = (x²+5x+2)/(x(x²+6x+6))`.
 
 The proof is derivative-free in the sense of the paper: `g - 1/y - g' = ρ > 0`, so the
@@ -20,7 +20,7 @@ open MeasureTheory Set Filter Topology
 
 namespace BecknerOnofri.HighDim.ThetaElementary
 
-/-- The rational majorant `g(x) = (x²+5x+2)/(x(x²+6x+6))` of Lemma 3.1. -/
+/-- The rational majorant `g(x) = (x²+5x+2)/(x(x²+6x+6))` of Lemma 3.2. -/
 def e1Majorant (x : ℝ) : ℝ := (x ^ 2 + 5 * x + 2) / (x * (x ^ 2 + 6 * x + 6))
 
 /-- The defect `ρ(y) = 12/(y²(y²+6y+6)²) = g(y) - 1/y - g'(y)`. -/
@@ -52,7 +52,7 @@ theorem hasDerivAt_e1Majorant {y : ℝ} (hy : 0 < y) :
   field_simp
   ring
 
-/-- The antiderivative `r ↦ -e^{-x(r-1)} g(xr)` used in Lemma 3.1. -/
+/-- The antiderivative `r ↦ -e^{-x(r-1)} g(xr)` used in Lemma 3.2. -/
 def e1Primitive (x r : ℝ) : ℝ := -(Real.exp (-x * (r - 1)) * e1Majorant (x * r))
 
 /-- The derivative of `e1Primitive x`, namely `e^{-x(r-1)} (1/r + x ρ(xr))`. -/
@@ -129,7 +129,7 @@ theorem inv_mul_exp_integrableOn {x : ℝ} (hx : 0 < x) :
   rw [mul_add, mul_comm (Real.exp _) r⁻¹]
   linarith
 
-/-- Lemma 3.1 (lem:E1-bound), shifted form:
+/-- Lemma 3.2 (lem:E1-bound), shifted form:
 `∫_1^∞ r⁻¹ e^{-x(r-1)} dr < g(x)` for `x > 0`. -/
 theorem integral_inv_mul_exp_lt {x : ℝ} (hx : 0 < x) :
     ∫ r in Ici (1 : ℝ), r⁻¹ * Real.exp (-x * (r - 1)) < e1Majorant x := by
@@ -162,12 +162,12 @@ theorem integral_inv_mul_exp_lt {x : ℝ} (hx : 0 < x) :
   rw [integral_Ici_eq_integral_Ioi]
   linarith
 
-/-- Lemma 3.1 (lem:E1-bound), non-strict shifted form used in the theta certificate. -/
+/-- Lemma 3.2 (lem:E1-bound), non-strict shifted form used in the theta certificate. -/
 theorem integral_inv_mul_exp_le {x : ℝ} (hx : 0 < x) :
     ∫ r in Ici (1 : ℝ), r⁻¹ * Real.exp (-x * (r - 1)) ≤ e1Majorant x :=
   (integral_inv_mul_exp_lt hx).le
 
-/-- Lemma 3.1 (lem:E1-bound), as stated in the paper:
+/-- Lemma 3.2 (lem:E1-bound), as stated in the paper:
 `e^x ∫_1^∞ e^{-xr}/r dr < (x²+5x+2)/(x(x²+6x+6))` for `x > 0`. -/
 theorem exp_mul_integral_exp_div_lt {x : ℝ} (hx : 0 < x) :
     Real.exp x * ∫ r in Ioi (1 : ℝ), Real.exp (-x * r) / r <

@@ -1,0 +1,142 @@
+module
+
+public import BecknerOnofri.LocalElevenGap
+public import BecknerOnofri.RealComplementOperator
+
+@[expose] public section
+
+/-! Real Fourier Hilbert inverse for the actual local equation, including d=11. -/
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+open MeasureTheory
+open scoped BigOperators ENNReal ComplexConjugate
+namespace BecknerOnofri.HighDim.LocalEleven
+theorem complementLinearized_norm_bound {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) {a : Frequency d → ℂ}
+    (ha : ComplementSupported a) (k : Frequency d) :
+    ‖complementLinearized μ a k‖ ≤ ‖a k‖ := by
+  by_cases hk : ComplementFrequency k
+  · have hgap := complement_linearized_gap hd hμ0 hμ2 hk
+    have heig := complement_eigenvalue_ge_thirtytwo hd hk
+    have heig0 : 0 < frequencyLength k ^ d := by linarith
+    have hdiv : 0 ≤ μ / frequencyLength k ^ d := div_nonneg hμ0 heig0.le
+    have hnon : 0 ≤ 1 - μ / frequencyLength k ^ d := by linarith
+    simp only [complementLinearized, norm_mul, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_nonneg hnon]
+    exact mul_le_of_le_one_left (norm_nonneg _) (by linarith)
+  · simp [complementLinearized, ha k hk]
+
+def lpComplementForward {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) : lpComplement d := by
+  let b : FourierL2 d := ⟨complementLinearized μ (a.val : Frequency d → ℂ),
+    (lp.memℓp a.val).mono' (complementLinearized_norm_bound hd hμ0 hμ2 a.property)⟩
+  exact ⟨b, complementLinearized_supported μ a.property⟩
+
+def lpComplementInverse {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) : lpComplement d := by
+  let b : FourierL2 d := ⟨complementInverse μ (a.val : Frequency d → ℂ),
+    ((lp.memℓp a.val).norm.const_mul (16/15:ℝ)).mono
+      (complementInverse_norm_bound hd hμ0 hμ2 (a.val : Frequency d → ℂ))⟩
+  exact ⟨b, complementInverse_supported μ (a.val : Frequency d → ℂ)⟩
+
+@[simp] theorem lpComplementForward_apply {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) (k : Frequency d) :
+    (lpComplementForward hd hμ0 hμ2 a).val k =
+      ((1 - μ / frequencyLength k ^ d : ℝ):ℂ) * a.val k := rfl
+
+@[simp] theorem lpComplementInverse_apply {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) (k : Frequency d) :
+    (lpComplementInverse hd hμ0 hμ2 a).val k =
+      (complementInverseMultiplier μ k : ℂ) * a.val k := rfl
+
+theorem lpComplementForward_norm_le {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) :
+    ‖lpComplementForward hd hμ0 hμ2 a‖ ≤ ‖a‖ := by
+  change ‖(lpComplementForward hd hμ0 hμ2 a).val‖ ≤ ‖a.val‖
+  exact lp.norm_mono (by norm_num : (2:ℝ≥0∞) ≠ 0)
+    (complementLinearized_norm_bound hd hμ0 hμ2 a.property)
+
+theorem lpComplementInverse_norm_le {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : lpComplement d) :
+    ‖lpComplementInverse hd hμ0 hμ2 a‖ ≤ (16/15:ℝ)*‖a‖ := by
+  have h : ‖(lpComplementInverse hd hμ0 hμ2 a).val‖ ≤ ‖((16/15:ℂ) • a.val)‖ := by
+    apply lp.norm_mono (by norm_num : (2:ℝ≥0∞) ≠ 0)
+    intro k
+    have h := complementInverse_norm_bound hd hμ0 hμ2 (a.val : Frequency d → ℂ) k
+    change ‖complementInverse μ (a.val : Frequency d → ℂ) k‖ ≤ ‖(16/15:ℂ)*a.val k‖
+    norm_num only [norm_mul, norm_div, Complex.norm_ofNat]
+    exact h
+  norm_num only [norm_smul, norm_div, Complex.norm_ofNat] at h
+  exact h
+
+/-- Genuine linear equivalence of the closed Fourier ℓ² complement. -/
+def lpComplementLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : lpComplement d ≃ₗ[ℂ] lpComplement d where
+  toFun := lpComplementForward hd hμ0 hμ2
+  invFun := lpComplementInverse hd hμ0 hμ2
+  left_inv a := by
+    apply Subtype.ext
+    apply lp.ext
+    funext k
+    exact congrFun (complementInverse_left hd hμ0 hμ2 a.property) k
+  right_inv a := by
+    apply Subtype.ext
+    apply lp.ext
+    funext k
+    exact congrFun (complementInverse_right hd hμ0 hμ2 a.property) k
+  map_add' a b := by
+    apply Subtype.ext
+    apply lp.ext
+    funext k
+    simp [lpComplementForward_apply, mul_add]
+  map_smul' c a := by
+    apply Subtype.ext
+    apply lp.ext
+    funext k
+    simp [lpComplementForward_apply, mul_left_comm]
+
+/-- Bounded continuous inverse on an actual complete Hilbert space, with
+forward norm ≤1 and inverse norm ≤16/15 uniformly in 0≤μ≤2 and d≥12. -/
+def lpComplementContinuousLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : lpComplement d ≃L[ℂ] lpComplement d :=
+  (lpComplementLinearEquiv hd hμ0 hμ2).toContinuousLinearEquivOfBounds 1 (16/15)
+    (fun a => by
+      change ‖lpComplementForward hd hμ0 hμ2 a‖ ≤ 1*‖a‖
+      simpa only [one_mul] using lpComplementForward_norm_le hd hμ0 hμ2 a)
+    (fun a => lpComplementInverse_norm_le hd hμ0 hμ2 a)
+
+def realComplementForward {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : realLpComplement d) : realLpComplement d :=
+  ⟨lpComplementForward hd hμ0 hμ2 a.val, complementLinearized_conjugate μ a.property⟩
+
+def realComplementInverse {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) (a : realLpComplement d) : realLpComplement d :=
+  ⟨lpComplementInverse hd hμ0 hμ2 a.val, complementInverse_conjugate μ a.property⟩
+
+def realComplementLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : realLpComplement d ≃ₗ[ℝ] realLpComplement d where
+  toFun := realComplementForward hd hμ0 hμ2
+  invFun := realComplementInverse hd hμ0 hμ2
+  left_inv a := by apply Subtype.ext; exact (lpComplementLinearEquiv hd hμ0 hμ2).left_inv a.val
+  right_inv a := by apply Subtype.ext; exact (lpComplementLinearEquiv hd hμ0 hμ2).right_inv a.val
+  map_add' a b := by
+    apply Subtype.ext
+    exact (lpComplementLinearEquiv hd hμ0 hμ2).map_add a.val b.val
+  map_smul' c a := by
+    apply Subtype.ext
+    exact (lpComplementLinearEquiv hd hμ0 hμ2).map_smul_of_tower c a.val
+
+/-- The real Banach-space inverse needed by the Lyapunov--Schmidt/IFT step. -/
+def realComplementContinuousLinearEquiv {d : ℕ} (hd : 11 ≤ d) {μ : ℝ}
+    (hμ0 : 0 ≤ μ) (hμ2 : μ ≤ 2) : realLpComplement d ≃L[ℝ] realLpComplement d :=
+  LinearEquiv.toContinuousLinearEquivOfBounds (E := realLpComplement d) (F := realLpComplement d)
+    (realComplementLinearEquiv hd hμ0 hμ2) 1 (16/15)
+    (fun a => by
+      change ‖lpComplementForward hd hμ0 hμ2 a.val‖ ≤ 1*‖a.val‖
+      simpa only [one_mul] using lpComplementForward_norm_le hd hμ0 hμ2 a.val)
+    (fun a => lpComplementInverse_norm_le hd hμ0 hμ2 a.val)
+
+
+#print axioms realComplementContinuousLinearEquiv
+end BecknerOnofri.HighDim.LocalEleven

@@ -9,7 +9,7 @@ public import Mathlib.Analysis.SpecialFunctions.Arsinh
 @[expose] public section
 
 /-!
-# A Jensen remainder (Lemma 5.20, lem:section5-jensen-remainder)
+# A Jensen remainder (Lemma 5.18, lem:section5-jensen-remainder)
 
 For `0 ≤ t < 1` and `s ∈ [0,1]`, the Bregman gaps of `ψ` and of the binary entropy `I_B`
 satisfy `D_ψ(s,t) ≥ η(t) D_{I_B}(s,t)`. Taking expectations gives
@@ -370,7 +370,7 @@ theorem jensenGapHessian_nonpos_iff {t s : ℝ} (hs0 : 0 ≤ s) (hs1 : s < 1) :
     have := mul_pos h1s hc
     linarith
 
-/-- **Lemma 5.20**, pointwise form: `D_ψ(s,t) ≥ η(t) D_{I_B}(s,t)` for `0 ≤ t < 1`,
+/-- **Lemma 5.18**, pointwise form: `D_ψ(s,t) ≥ η(t) D_{I_B}(s,t)` for `0 ≤ t < 1`,
 `0 ≤ s ≤ 1`. -/
 theorem jensenGap_nonneg {t s : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) (hs0 : 0 ≤ s) (hs1 : s ≤ 1) :
     0 ≤ jensenGap t s := by

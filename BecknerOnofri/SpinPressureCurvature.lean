@@ -5,7 +5,7 @@ public import BecknerOnofri.SpinNormEstimate
 @[expose] public section
 
 /-!
-# Curvature on slices of fixed mean (Lemma 5.18, manuscript 2026-10-06)
+# Curvature on slices of fixed mean (Lemma 5.19, manuscript 2026-10-06)
 
 This file proves `lem:section5-global-curvature` with the constants of the manuscript dated
 2026-10-06: the vertex maximum is below `6/7`, the corrector `v = e₀ - (12/11)e₁ + (1/11)e₁₂`
@@ -95,7 +95,7 @@ theorem sqrt_six_sevenths_lt : Real.sqrt (6/7) < 13/14 := by
   rw [Real.sqrt_lt' (by norm_num)]
   norm_num
 
-/-- The corrected seminorm estimate of Lemma 5.18:
+/-- The corrected seminorm estimate of Lemma 5.19:
 `√(qᵀWq) ≤ √(6/7) y + K |q₀|` with `K = 15/8 + (13/14)(13/11) = 1831/616`. -/
 theorem corrected_seminorm_bound_sharp (q : Count → ℝ) (hmass : (∑ j : Count, q j) = 0)
     (hmean : mean q = 0) :
@@ -143,7 +143,7 @@ theorem curvature_cauchy_sharp (y a S : ℝ) (hS : y^2 + 4096 * a^2 ≤ S) :
   have hS0 : 0 ≤ y^2 + 4096 * a^2 := by positivity
   nlinarith [mul_le_mul_of_nonneg_right hk hS0]
 
-/-- Lemma 5.18 (lem:section5-global-curvature), eq:section5-global-fixed-curvature:
+/-- Lemma 5.19 (lem:section5-global-curvature), eq:section5-global-fixed-curvature:
 `qᵀWq ≤ (43/50) Σ q_j²/p_j` for mass-zero, mean-zero `q` and positive feasible `p`. -/
 theorem fixed_mean_curvature_sharp {p q : Count → ℝ}
     (hp : Feasible p) (hpos : ∀ j, 0 < p j)

@@ -14,7 +14,7 @@ For the selected density `ρ_u` of a maximizer, with `t = \hat ρ(e_1)`,
 `Ent(ρ) - (2π)^{12}/2 ‖ρ‖²_{\dot H^{-6}} ≥ t⁴/200`. The ingredients are Lemma 5.13 (the scalar
 tail, proved), Proposition 5.11 (the singular Fourier tail), Proposition 5.12(i) (conditional
 entropy with the Jensen remainder) and Proposition 5.12(ii) (the finite-state inequality).
-Lemma 5.17 (`ψ ≤ γ`) and the numerical part of Lemma 5.19 enter as explicit hypotheses until
+Lemma 5.17 (`ψ ≤ γ`) and the numerical part of Lemma 5.20 enter as explicit hypotheses until
 their certificates are attached.
 -/
 
@@ -88,7 +88,7 @@ theorem selected_entropy_gap
   unfold Spin.penalized Spin.functional at hspin
   linarith
 
-/-- The selected maximizer vanishes (Proposition 5.9 for `d = 12`). -/
+/-- The selected maximizer vanishes (Proposition 5.1 via Proposition 5.10). -/
 theorem selected_zero
     (hminor : ∀ t ∈ Ico (0 : ℝ) 1, Spin.psi t ≤ CircleScalar.gamma t)
     (hB : ∀ t ∈ Icc (1 / 16 : ℝ) (99 / 100), t ^ 4 / 200 < Spin.pressureScalar t)

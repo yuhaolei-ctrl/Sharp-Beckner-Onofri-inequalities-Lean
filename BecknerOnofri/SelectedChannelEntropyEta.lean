@@ -11,7 +11,7 @@ public import BecknerOnofri.JensenRemainder
 # Proposition 5.12(i): conditional entropy with a Jensen remainder
 
 The one-coordinate estimates of Lemma 5.15–5.17 are integrated against the density. In place
-of convexity of `ψ`, Lemma 5.20 gives
+of convexity of `ψ`, Lemma 5.18 gives
 `E ψ(t_i) ≥ ψ(t) + η(t) (E I_B(t_i) - I_B(t))`, and the discrete entropy chain rule bounds
 `∑_i E I_B(t_i)` below by the spin relative entropy (eq:section5-global-channel-entropy).
 -/
@@ -25,7 +25,7 @@ open scoped BigOperators
 namespace BecknerOnofri.HighDim.ConditionalEntropy
 open EntropyShearer
 
-/-- Lemma 5.20 integrated against a probability density, with `S` the conditional mean. -/
+/-- Lemma 5.18 integrated against a probability density, with `S` the conditional mean. -/
 theorem conditional_jensen_remainder {d : ℕ} {f : Torus d → ℝ}
     (hf : PositiveBounded f) (hm : (∫ x, f x ∂torusMeasure d) = 1) (i : Fin d)
     (hr : ∀ x, conditionalCosineMoment f i 1 x ∈ Ico (0 : ℝ) 1) :

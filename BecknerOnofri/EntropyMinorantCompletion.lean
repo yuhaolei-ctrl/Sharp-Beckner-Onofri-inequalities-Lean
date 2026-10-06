@@ -8,7 +8,7 @@ public import BecknerOnofri.EndpointPackage
 @[expose] public section
 
 /-! The high-dimensional results of Theorem 1.3, conditional on Lemma 5.17 (`ψ ≤ γ`) and the
-numerical part of Lemma 5.19 (`𝓑(t) > t⁴/200` on `[1/16, 0.99]`). The unconditional versions
+numerical part of Lemma 5.20 (`𝓑(t) > t⁴/200` on `[1/16, 0.99]`). The unconditional versions
 are in `EntropyMainTheorems`. -/
 noncomputable section
 open MeasureTheory Set

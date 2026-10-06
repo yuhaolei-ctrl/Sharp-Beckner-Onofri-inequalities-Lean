@@ -5,7 +5,7 @@ public import BecknerOnofri.TwelveNumericalInputs
 
 @[expose] public section
 
-/-! Theorem 1.3 for `d ≥ 12`, from Lemma 5.17 and Lemma 5.19 (`TwelveNumericalInputs`). -/
+/-! Theorem 1.3 for `d ≥ 12`, from Lemma 5.17 and Lemma 5.20 (`TwelveNumericalInputs`). -/
 noncomputable section
 open MeasureTheory
 open scoped ENNReal BigOperators ContDiff

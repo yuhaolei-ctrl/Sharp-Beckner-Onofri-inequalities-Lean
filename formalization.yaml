@@ -35,12 +35,12 @@ sources:
       - "Yuhao Lei"
       - "Matthew Rosenzweig"
     type: "manuscript"
-    location: "Unpublished manuscript dated 1 October 2026; Theorems 1.1, 1.2 and 1.3"
+    location: "Unpublished manuscript, version of 6 October 2026; Theorems 1.1, 1.2 and 1.3"
     relationship: "formalizes"
     note: >-
       Unpublished. Challenge.lean states Theorems 1.1, 1.2 and 1.3; CORRESPONDENCE.md
-      maps each of the manuscript's 51 numbered results to the library. Some finite
-      certificates follow a different but complete route; see fidelity.divergences.
+      maps the manuscript's numbered results to the library. Some finite certificates
+      follow a different but complete route; see fidelity.divergences.
       Author endorsement: Yuhao Lei directed this formalization; Matthew Rosenzweig
       has not yet been asked to review it.
     license: "all rights reserved"
@@ -102,11 +102,13 @@ status:
     Theorem 1.2 are stated as finiteness near the threshold, non-differentiability, and
     the one-sided pressure derivatives 0 = P'_- < P'_+; local stability is a lower
     bound θ ∫ h² on the second derivative of the free energy along smooth mean-zero
-    perturbations of the uniform density. All 51 numbered results of the manuscript are
-    proved in the library (CORRESPONDENCE.md), but only Theorems 1.1–1.3 are compared
-    by Comparator. Not formalized: the counterexample of Remark 5.6, and the displayed
-    cutoff rate inside the proof of Lemma 2.9, where the library proves the closure
-    statement by form-norm convergence instead.
+    perturbations of the uniform density; the Euclidean profile of Theorem 1.2 uses
+    C_11 = 122880/π^6, and eleven_profile_constant proves C_11 = Γ(11)/(π^{11/2}Γ(11/2)).
+    The numbered results of the manuscript have counterparts in the library
+    (BecknerOnofri/PaperResults.lean, CORRESPONDENCE.md), but only Theorems 1.1–1.3 are
+    compared by Comparator. Not formalized: the counterexample of Remark 5.6, and the
+    displayed cutoff rate inside the proof of Lemma 2.9, where the library proves the
+    closure statement by form-norm convergence instead.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: []
@@ -132,7 +134,9 @@ automation:
       framework: "Claude Code"
       tool_setup: >-
         Statement audit of the trusted surface against the manuscript, the Mathlib-only
-        Challenge and its Solution bridge, migration fixes, and the Palomar layout.
+        Challenge and its Solution bridge, migration fixes, the Palomar layout, and the
+        dimension-twelve proof of the 6 October 2026 version (Lemmas 3.2, 3.3 for d = 12,
+        5.13, 5.17–5.20 and Propositions 5.10–5.12) with its kernel-checked certificates.
       cost:
         wall_time: "part of October 2026"
         spend_usd: "subscription-based"
@@ -149,23 +153,26 @@ automation:
 fidelity:
   divergences: >-
     Statements: see status.scope for the rendering conventions; none weakens a claim of
-    Theorems 1.1–1.3. Proofs: in dimension 2 the finite scalar comparisons cover
-    n = 1, 2, 3 and an analytic Gaussian estimate covers n ≥ 4 (the manuscript checks
-    n ≤ 21 and estimates n ≥ 22); several low-dimensional certificates use the scale
-    2^40 instead of 2^80; the theta integral J_10 is bounded with a rational Laplace
-    majorant instead of the manuscript's quadrature grid. The library statements of
-    three supporting results are weaker than printed, although the stronger forms are
-    proved internally: Lemma 3.2 does not restate integrability of its integrand,
-    Proposition 2.7 does not restate smoothness of the attaining potential, and
-    Proposition 2.11 states the cosine mixture almost everywhere. Remark 5.6 and the
-    displayed cutoff rate in the proof of Lemma 2.9 are not formalized.
+    Theorems 1.1–1.3. Proofs: Lemma 5.13 for 3 ≤ n ≤ 50 computes the shell coefficients
+    exactly below a truncation radius and bounds the remaining polynomial mass, instead of
+    computing all coefficients; Proposition 5.12(ii) for small means t ≤ 1/16 uses an
+    analytic small-mean estimate instead of the origin jet and the Taylor-model cells below
+    1/16, so Lemma 5.20 is formalized on [1/16, 0.99]; Lemma 3.6 is formalized at β = 2d,
+    the case used in Proposition 3.7; in dimension 2 the finite scalar comparisons cover
+    n = 1, 2, 3 and an analytic Gaussian estimate covers n ≥ 4; several low-dimensional
+    certificates use the scale 2^40 instead of 2^80; J_10, J_11 and J_12 are bounded with
+    rational Laplace majorants. The library statements of two supporting results are
+    weaker than printed, although the stronger forms are proved internally: Proposition 2.7
+    does not restate smoothness of the attaining potential, and Proposition 2.11 states
+    the cosine mixture almost everywhere. Remark 5.6 and the displayed cutoff rate in the
+    proof of Lemma 2.9 are not formalized.
 
 review:
   status: "self-assessed"
   reviewers: []
   notes: >-
     An agent-assisted audit (Claude Code) compared every definition reached by the
-    Challenge, and the statements of all 51 numbered results, with the manuscript
+    Challenge, and the statements of the numbered results, with the manuscript
     clause by clause, and checked for junk-value artefacts (a divergent tsum, toReal of
     infinity, sSup of an unbounded set, deriv of a non-differentiable function). No
     independent human review has been completed.
@@ -173,7 +180,7 @@ review:
 alignment:
   namespace: "BecknerOnofri"
   statements:
-    - source: "Theorem 1.1, (1.22)–(1.24)"
+    - source: "Theorem 1.1, eq:intro-low-primal–eq:intro-low-coefficient-consequence"
       lean: "BecknerOnofri.low_dim_entropy_inequality"
       module: "Challenge"
       status: "proved"
@@ -182,15 +189,16 @@ alignment:
         circle_beckner_onofri_eq_iff, circle_entropy_eq_iff, low_dim_entropy_eq_iff,
         low_dim_beckner_onofri_eq_iff, low_dim_pressure_eq, low_dim_defect_eq and
         low_dim_globalTransition.
-    - source: "Theorem 1.2, (1.26)–(1.28)"
+    - source: "Theorem 1.2, eq:intro-rho-star–eq:intro-d11-threshold"
       lean: "BecknerOnofri.eleven_globalTransition_bounds"
       module: "Challenge"
       status: "proved"
       note: >-
-        With eleven_competitor, eleven_spectral_pressure, eleven_coexistence,
+        With eleven_profile_constant, eleven_competitor, eleven_spectral_pressure,
+        eleven_coexistence,
         eleven_uniform_hessian_pos, eleven_pressure_corner,
         eleven_pressure_derivative_jump and eleven_defect_corner.
-    - source: "Theorem 1.3, (1.29)–(1.37)"
+    - source: "Theorem 1.3, eq:intro-kappa–eq:intro-C-onset"
       lean: "BecknerOnofri.high_dim_entropy_inequality"
       module: "Challenge"
       status: "proved"

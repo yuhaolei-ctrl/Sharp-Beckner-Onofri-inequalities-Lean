@@ -12,7 +12,7 @@ public import Mathlib.Analysis.Complex.ExponentialBounds
 
 For every exchangeable spin law with count vector `p ∈ 𝓟_t`, `G_t(p) ≥ t⁴/200`.
 
-* For `1/16 ≤ t ≤ 0.99` we use `G_t(p) ≥ 𝓑(t)` and Lemma 5.19, `𝓑(t) > t⁴/200`.
+* For `1/16 ≤ t ≤ 0.99` we use `G_t(p) ≥ 𝓑(t)` and Lemma 5.20, `𝓑(t) > t⁴/200`.
 * For `0.99 ≤ t ≤ 1` we use the high-mean bound (eq:section5-spin-large-mean-bound).
 * For `0 ≤ t ≤ 1/16` we use the analytic small-mean estimate `SpinSmallMean`, which gives
   `F(p) + 12 · (3/40) t⁴ ≥ t⁴/50`. This replaces the manuscript's origin-jet argument for
@@ -99,7 +99,7 @@ theorem penalized_large_mean {t : ℝ} (ht : 99 / 100 ≤ t) (ht1 : t ≤ 1) {p 
   unfold penalized
   linarith
 
-/-- **Proposition 5.12(ii)** (prop:section5-spin-entropy (ii)), given Lemma 5.19 on
+/-- **Proposition 5.12(ii)** (prop:section5-spin-entropy (ii)), given Lemma 5.20 on
 `[1/16, 0.99]`: every `p ∈ 𝓟_t`, `0 ≤ t ≤ 1`, satisfies `G_t(p) ≥ t⁴/200`. -/
 theorem finite_state_inequality_of_pressure
     (hB : ∀ t ∈ Icc (1 / 16 : ℝ) (99 / 100), t ^ 4 / 200 < pressureScalar t)
