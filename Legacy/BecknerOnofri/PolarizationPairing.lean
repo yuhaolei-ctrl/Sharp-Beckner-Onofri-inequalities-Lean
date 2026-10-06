@@ -100,7 +100,8 @@ theorem fourPoint_polarize_eq_of_fixed_right {d : ℕ} (i : Fin d) (a : ℝ) (K 
   have he := congrArg (fun r : ℝ => 2*K x y*f y*r) hpair
   nlinarith only [he]
 
-/-- A genuine pointwise four-point inequality, valid also on the two fixed coordinate hyperplanes. -/
+/-- A genuine pointwise four-point inequality, valid also on the two fixed coordinate hyperplanes.
+-/
 theorem fourPoint_polarize_le {d : ℕ} (i : Fin d) (a : ℝ) (K : Torus d → Torus d → ℝ)
     (hK : ∀ x y, K (reflection i a x) (reflection i a y) = K x y)
     (hmono : ∀ x ∈ halfTorus i a, ∀ y ∈ halfTorus i a, K x (reflection i a y) ≤ K x y)

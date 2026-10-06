@@ -40,7 +40,8 @@ theorem nonlinear_graph_derivative_axis {d : ℕ} (hd : 12 ≤ d) :
   have h' := (coordinates d).hasFDerivAt.comp (μ,0) h
   convert! h' using 1 <;> simp
 
-/-- For every nearby parameter, the complete real derivative is exactly (1−μ) times first-shell projection. -/
+/-- For every nearby parameter, the complete real derivative is exactly (1−μ) times first-shell
+projection. -/
 theorem reduced_derivative_axis {d : ℕ} (hd : 12 ≤ d) :
     ∀ᶠ μ in 𝓝 (1:ℝ), HasFDerivAt (𝕜 := ℝ) (reduced hd)
       ((1-μ) • ContinuousLinearMap.snd ℝ ℝ (Coordinates d)) (μ,0) := by

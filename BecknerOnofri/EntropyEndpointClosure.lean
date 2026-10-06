@@ -69,7 +69,8 @@ theorem twelve_density_endpoint_of_selected_zero (hzero : ∀ {u : TorusL2 12}, 
   change (1 / 2 : ℝ) * fourierEnergy (Bridge.density r) ≤ entropy r at hb
   linarith
 
-/-- All dimensions d≥12 are reduced to exactly the stated d=12 vanishing of selected maximizers. No certificate assertion is part of this theorem. -/
+/-- All dimensions d≥12 are reduced to exactly the stated d=12 vanishing of selected maximizers. No
+certificate assertion is part of this theorem. -/
 theorem density_endpoint_of_selected_zero (hzero : ∀ {u : TorusL2 12}, Selected u → u=0)
     {d : ℕ} (hd : 12 ≤ d) (r : ProbabilityDensity d) (hr : r.FiniteEntropy) :
     spectralEnergy r ≤ ENNReal.ofReal (2 * entropy r) :=

@@ -103,7 +103,8 @@ theorem angular_conjugation (m : ℕ) {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f
   rw [hc]
   ring
 
-/-- The actual Jacobi differential expression agrees with the already-proved formal polynomial one. -/
+/-- The actual Jacobi differential expression agrees with the already-proved formal polynomial one.
+-/
 theorem jacobi_eval (m : ℕ) (p : Polynomial ℝ) (x : ℝ) :
     jacobi m (fun y => p.eval y) x = (JacobiPolynomial.jacobi m p).eval x := by
   have hd : deriv (fun y => p.eval y) = fun y => p.derivative.eval y := funext (fun y => p.deriv (x := y))

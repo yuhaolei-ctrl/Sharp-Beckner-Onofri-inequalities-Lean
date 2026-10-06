@@ -40,7 +40,8 @@ theorem inverseGreen_factor {d : ℕ} (hd : 12 ≤ d) (f : Space d) :
   rw [green_complementMap (by omega)]
   rfl
 
-/-- The quadratic Taylor term of the actual implicit correction is exactly the source's slaved mode. -/
+/-- The quadratic Taylor term of the actual implicit correction is exactly the source's slaved mode.
+-/
 theorem quadraticCorrection_eq_resolvent {d : ℕ} (hd : 12 ≤ d) (z : Coordinates d) :
     quadraticCorrection hd z = (1/2:ℝ) • resolvent hd (quadraticSource z) := by
   unfold quadraticCorrection

@@ -12,7 +12,8 @@ open scoped Topology BigOperators
 namespace Legacy.BecknerOnofri.JacobiTensorHeatKernel
 open JacobiTensor
 
-/-- Joint measurability uses the actual countable spectral series, including at nonpositive times. -/
+/-- Joint measurability uses the actual countable spectral series, including at nonpositive times.
+-/
 theorem kernel_joint_measurable {d : ℕ} (a : Index d) :
     Measurable (fun p : ℝ × (Space d × Space d) => kernel a p.1 p.2.1 p.2.2) := by
   unfold kernel JacobiHeatBounds.heatKernel

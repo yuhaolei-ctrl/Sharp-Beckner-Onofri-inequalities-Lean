@@ -33,7 +33,7 @@ open scoped ComplexConjugate
 The sharp coefficient is the concentration coefficient `A_c(d) = 1/(4 d c_d)`, and
 `β_gm(d) = β_c(d) = 2d`. -/
 
-/-- **Theorem 1.1, (1.23).** For `1 ≤ d ≤ 10` and every probability density `ρ`,
+/-- **Theorem 1.1, (eq:intro-low-dual).** For `1 ≤ d ≤ 10` and every probability density `ρ`,
 `Ent(ρ) ≥ d c_d ‖ρ‖²_{Ḣ^{-d/2}}`. Since `c_d ‖ρ‖²_{Ḣ^{-d/2}} = spectralEnergy ρ / β_s(d)`,
 this is `(d/β_s(d)) · spectralEnergy ρ ≤ Ent(ρ)`, with `Ent(ρ) = ∞` allowed. -/
 theorem low_dim_entropy_inequality (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
@@ -43,8 +43,8 @@ theorem low_dim_entropy_inequality (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
   have h := Paper2.low_density_extended d hd hd10 ρ
   rwa [Paper2.negativeSobolevEnergy_normalization] at h
 
-/-- **Theorem 1.1, (1.22).** For `1 ≤ d ≤ 10` and every `u ∈ H^{d/2}(𝕋ᵈ)`, `e^{u-ū}` is
-integrable and `log ∫ e^{u - ū} dm_d ≤ A_c(d) ‖u‖²_{Ḣ^{d/2}}`. -/
+/-- **Theorem 1.1, (eq:intro-low-primal).** For `1 ≤ d ≤ 10` and every `u ∈ H^{d/2}(𝕋ᵈ)`, `e^{u-ū}`
+is integrable and `log ∫ e^{u - ū} dm_d ≤ A_c(d) ‖u‖²_{Ḣ^{d/2}}`. -/
 theorem low_dim_beckner_onofri (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     Integrable (fun x => Real.exp (centered u x)) (torusMeasure d) ∧
@@ -59,8 +59,8 @@ theorem low_dim_coefficient_sharp (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) :
   Target.low_coefficient_sharp d hd hd10
 
 /-- **Theorem 1.1, equality for `d = 1` (potentials).** For `u ∈ H^{1/2}(𝕋)`, equality holds
-in (1.22) exactly for `u = -2 log |1 - ā e^{2πix}| + c` with `|a| < 1`, `c ∈ ℝ`
-(the family (1.19)), up to a null set. -/
+in (eq:intro-low-primal) exactly for `u = -2 log |1 - ā e^{2πix}| + c` with `|a| < 1`, `c ∈ ℝ`
+(the family (eq:intro-circle-extremizers)), up to a null set. -/
 theorem circle_beckner_onofri_eq_iff (u : Torus 1 → ℝ) (hu : InCriticalSobolev u) :
     logPartition u = ((collapseCoefficient 1 * potentialEnergy u : ℝ) : EReal) ↔
       ∃ a : ℂ, ‖a‖ < 1 ∧ ∃ c : ℝ,
@@ -68,8 +68,8 @@ theorem circle_beckner_onofri_eq_iff (u : Torus 1 → ℝ) (hu : InCriticalSobol
   Target.low_circle_potential u hu
 
 /-- **Theorem 1.1, equality for `d = 1` (densities).** For a finite-entropy density on the
-circle, equality holds in (1.23) exactly for the Poisson kernels
-`ρ_a(x) = (1 - |a|²)/|e^{2πix} - a|²` with `|a| < 1` (the family (1.20)). -/
+circle, equality holds in (eq:intro-low-dual) exactly for the Poisson kernels
+`ρ_a(x) = (1 - |a|²)/|e^{2πix} - a|²` with `|a| < 1` (the family (eq:intro-circle-poisson)). -/
 theorem circle_entropy_eq_iff (ρ : ProbabilityDensity 1) (hρ : ρ.FiniteEntropy) :
     (((1 : ℝ) / spectralThreshold 1 : ℝ) : EReal) * (spectralEnergy ρ).toEReal =
         (entropy ρ : EReal) ↔
@@ -78,7 +78,7 @@ theorem circle_entropy_eq_iff (ρ : ProbabilityDensity 1) (hρ : ρ.FiniteEntrop
   Target.low_circle_density ρ hρ
 
 /-- **Theorem 1.1, equality for `2 ≤ d ≤ 10` (densities).** For a finite-entropy density,
-equality holds in (1.23) only for `ρ ≡ 1`. -/
+equality holds in (eq:intro-low-dual) only for `ρ ≡ 1`. -/
 theorem low_dim_entropy_eq_iff (d : ℕ) (hd : 2 ≤ d) (hd10 : d ≤ 10)
     (ρ : ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
     (((d : ℝ) / spectralThreshold d : ℝ) : EReal) * (spectralEnergy ρ).toEReal =
@@ -86,27 +86,27 @@ theorem low_dim_entropy_eq_iff (d : ℕ) (hd : 2 ≤ d) (hd10 : d ≤ 10)
       ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
   Target.low_density_rigidity d hd hd10 ρ hρ
 
-/-- **Theorem 1.1, equality for `2 ≤ d ≤ 10` (potentials).** Equality holds in (1.22) only
-for constant `u`. -/
+/-- **Theorem 1.1, equality for `2 ≤ d ≤ 10` (potentials).** Equality holds in (eq:intro-low-primal)
+only for constant `u`. -/
 theorem low_dim_beckner_onofri_eq_iff (d : ℕ) (hd : 2 ≤ d) (hd10 : d ≤ 10)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     logPartition u = ((collapseCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
       ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c :=
   Target.low_potential_rigidity d hd hd10 u hu
 
-/-- **(1.24).** For `1 ≤ d ≤ 10` the pressure vanishes up to `β_c(d) = 2d` and is infinite
-beyond it. -/
+/-- **(eq:intro-low-coefficient-consequence).** For `1 ≤ d ≤ 10` the pressure vanishes up to `β_c(d)
+= 2d` and is infinite beyond it. -/
 theorem low_dim_pressure_eq (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) (β : ℝ) :
     pressure d β = if β ≤ 2 * (d : ℝ) then 0 else ⊤ :=
   Target.low_pressure_formula d hd hd10 β
 
-/-- **(1.24).** For `1 ≤ d ≤ 10` the defect vanishes for `A ≥ A_c(d)` and is infinite
-for `A < A_c(d)`; in particular `C_d(A_c(d)) = 0`. -/
+/-- **(eq:intro-low-coefficient-consequence).** For `1 ≤ d ≤ 10` the defect vanishes for `A ≥
+A_c(d)` and is infinite for `A < A_c(d)`; in particular `C_d(A_c(d)) = 0`. -/
 theorem low_dim_defect_eq (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) (A : ℝ) :
     coefficientDefect d A = if collapseCoefficient d ≤ A then 0 else ⊤ :=
   Target.low_coefficient_formula d hd hd10 A
 
-/-- **(1.24).** For `1 ≤ d ≤ 10`, `β_gm(d) = β_c(d) = 2d`. -/
+/-- **(eq:intro-low-coefficient-consequence).** For `1 ≤ d ≤ 10`, `β_gm(d) = β_c(d) = 2d`. -/
 theorem low_dim_globalTransition (d : ℕ) (hd : 1 ≤ d) (hd10 : d ≤ 10) :
     VariationalCurves.globalTransition d = 2 * (d : ℝ) := by
   have hd0 : 0 < d := hd
@@ -163,13 +163,13 @@ theorem eleven_competitor :
   · exact lt_of_le_of_lt (ENNReal.ofReal_le_ofReal (by norm_num))
       (Target.eleven_competitor_energy ρ hv)
 
-/-- **Theorem 1.2, (1.28).** `C_11(A_s(11)) = P_11(β_s(11)) > 1/30`. -/
+/-- **Theorem 1.2, (eq:intro-d11-threshold).** `C_11(A_s(11)) = P_11(β_s(11)) > 1/30`. -/
 theorem eleven_spectral_pressure :
     coefficientDefect 11 (spectralCoefficient 11) = pressure 11 (spectralThreshold 11) ∧
       (1 / 30 : EReal) < pressure 11 (spectralThreshold 11) :=
   ⟨Target.eleven_spectral_pressure.2, Target.eleven_spectral_pressure.1⟩
 
-/-- **Theorem 1.2, (1.28).** `17.715 < β_gm(11) < 20.630 < β_s(11) < 22`. -/
+/-- **Theorem 1.2, (eq:intro-d11-threshold).** `17.715 < β_gm(11) < 20.630 < β_s(11) < 22`. -/
 theorem eleven_globalTransition_bounds :
     (3543 : ℝ) / 200 < VariationalCurves.globalTransition 11 ∧
       VariationalCurves.globalTransition 11 < 2063 / 100 ∧
@@ -232,14 +232,14 @@ theorem eleven_defect_corner :
 The sharp coefficient is the first-shell coefficient `A_s(d) = 1/(2(2π)^d)`,
 `β_gm(d) = β_s(d)`, and the pressure detaches quadratically above `β_s(d)`. -/
 
-/-- **Theorem 1.3, (1.30).** For `d ≥ 12` and every probability density `ρ`,
+/-- **Theorem 1.3, (eq:intro-high-dual).** For `d ≥ 12` and every probability density `ρ`,
 `Ent(ρ) ≥ (2π)^d/2 · ‖ρ‖²_{Ḣ^{-d/2}} = spectralEnergy ρ / 2`, with `Ent(ρ) = ∞` allowed. -/
 theorem high_dim_entropy_inequality (d : ℕ) (hd : 12 ≤ d) (ρ : ProbabilityDensity d) :
     ((1 / 2 : ℝ) : EReal) * (spectralEnergy ρ).toEReal ≤ extendedEntropy ρ := by
   have h := Paper2.high_density_extended d hd ρ
   rwa [Paper2.negativeSobolevEnergy_normalization] at h
 
-/-- **Theorem 1.3, equality in (1.30).** For `d ≥ 12` and a finite-entropy density,
+/-- **Theorem 1.3, equality in (eq:intro-high-dual).** For `d ≥ 12` and a finite-entropy density,
 `spectralEnergy ρ = 2 Ent(ρ)` if and only if `ρ ≡ 1`. -/
 theorem high_dim_entropy_eq_iff (d : ℕ) (hd : 12 ≤ d)
     (ρ : ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
@@ -247,7 +247,7 @@ theorem high_dim_entropy_eq_iff (d : ℕ) (hd : 12 ≤ d)
       ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
   Target.density_rigidity d hd ρ hρ
 
-/-- **Theorem 1.3, (1.31).** For `d ≥ 12` and every `u ∈ H^{d/2}(𝕋ᵈ)`, `e^{u-ū}` is
+/-- **Theorem 1.3, (eq:intro-high-primal).** For `d ≥ 12` and every `u ∈ H^{d/2}(𝕋ᵈ)`, `e^{u-ū}` is
 integrable and `log ∫ e^{u - ū} dm_d ≤ A_s(d) ‖u‖²_{Ḣ^{d/2}}`. -/
 theorem high_dim_beckner_onofri (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
@@ -255,16 +255,16 @@ theorem high_dim_beckner_onofri (d : ℕ) (hd : 12 ≤ d)
       logPartition u ≤ ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) :=
   Target.potential_endpoint d hd u hu
 
-/-- **Theorem 1.3, equality in (1.31).** Equality holds only for constant `u`. -/
+/-- **Theorem 1.3, equality in (eq:intro-high-primal).** Equality holds only for constant `u`. -/
 theorem high_dim_beckner_onofri_eq_iff (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
       ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c :=
   Target.potential_rigidity d hd u hu
 
-/-- **Theorem 1.3, (1.32).** For `d ≥ 12`, `β_s(d)` is the largest coupling with zero
-pressure, `A_s(d)` is the least coefficient with zero defect, and therefore
-`β_gm(d) = β_s(d)` and `A_gm(d) = A_s(d)`. -/
+/-- **Theorem 1.3, (eq:intro-high-threshold).** For `d ≥ 12`, `β_s(d)` is the largest coupling with
+zero pressure, `A_s(d)` is the least coefficient with zero defect, and therefore `β_gm(d) = β_s(d)`
+and `A_gm(d) = A_s(d)`. -/
 theorem high_dim_thresholds (d : ℕ) (hd : 12 ≤ d) :
     IsGreatest {β : ℝ | 0 ≤ β ∧ pressure d β = 0} (spectralThreshold d) ∧
       IsLeast {A : ℝ | 0 < A ∧ coefficientDefect d A = 0} (spectralCoefficient d) ∧
@@ -284,22 +284,22 @@ theorem high_dim_thresholds (d : ℕ) (hd : 12 ≤ d) :
   rw [hgt]
   field_simp
 
-/-- **(1.29).** `κ_d = -(2a_d + (d - 1) b_d) > 0` for every `d ≥ 12`. -/
+/-- **(eq:intro-kappa).** `κ_d = -(2a_d + (d - 1) b_d) > 0` for every `d ≥ 12`. -/
 theorem kappa_pos (d : ℕ) (hd : 12 ≤ d) : 0 < kappa d :=
   Target.kappa_positive d hd
 
-/-- **Theorem 1.3, (1.33)–(1.35).** There is `ε_d > 0` and a family `U_β` such that for
-`β_s(d) < β < β_s(d) + ε_d`: `U_β` is a smooth stationary potential with all `d`
+/-- **Theorem 1.3, (eq:intro-onset-range)–(eq:intro-onset-branch).** There is `ε_d > 0` and a family
+`U_β` such that for `β_s(d) < β < β_s(d) + ε_d`: `U_β` is a smooth stationary potential with all `d`
 coordinate first-shell modes active, lying on a Morse–Bott maximum orbit of the potential
-functional; global minimizers of `𝓔_β` exist; and the global minimizers are exactly the
-Gibbs densities `e^{U_β(· - x₀)}/∫ e^{U_β}` of the translates. Moreover, for each fixed
-`s ≥ 0`, `U_β(· - x₀) = 2√(δ/κ_d) Σ_j cos(2π(x_j - x₀_j)) + O_{H^s}(δ)` uniformly in `x₀`,
-where `δ = 1 - β_s(d)/β`. -/
+functional; global minimizers of `𝓔_β` exist; and the global minimizers are exactly the Gibbs
+densities `e^{U_β(· - x₀)}/∫ e^{U_β}` of the translates. Moreover, for each fixed `s ≥ 0`, `U_β(· -
+x₀) = 2√(δ/κ_d) Σ_j cos(2π(x_j - x₀_j)) + O_{H^s}(δ)` uniformly in `x₀`, where `δ = 1 - β_s(d)/β`.
+-/
 theorem high_dim_onset_branch (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset d :=
   Target.full_branch_onset d hd
 
-/-- **Theorem 1.3, (1.36).** `P_d(β) = (d/(2κ_d)) (1 - β_s(d)/β)² + O((β - β_s(d))³)`
-as `β ↓ β_s(d)`, with the pressure finite there. -/
+/-- **Theorem 1.3, (eq:intro-pressure-onset).** `P_d(β) = (d/(2κ_d)) (1 - β_s(d)/β)² + O((β -
+β_s(d))³)` as `β ↓ β_s(d)`, with the pressure finite there. -/
 theorem high_dim_pressure_onset (d : ℕ) (hd : 12 ≤ d) :
     ∃ ε C : ℝ, 0 < ε ∧ 0 ≤ C ∧
       ∀ β : ℝ, spectralThreshold d < β → β < spectralThreshold d + ε →
@@ -308,7 +308,7 @@ theorem high_dim_pressure_onset (d : ℕ) (hd : 12 ≤ d) :
             C * (β - spectralThreshold d) ^ 3 :=
   Target.pressure_onset d hd
 
-/-- **Theorem 1.3, (1.37).** `C_d(A) = (d/(2κ_d)) (1 - A/A_s(d))² + O((1 - A/A_s(d))³)`
+/-- **Theorem 1.3, (eq:intro-C-onset).** `C_d(A) = (d/(2κ_d)) (1 - A/A_s(d))² + O((1 - A/A_s(d))³)`
 as `A ↑ A_s(d)`, with the defect finite there. -/
 theorem high_dim_defect_onset (d : ℕ) (hd : 12 ≤ d) :
     ∃ ε C : ℝ, 0 < ε ∧ ε < spectralCoefficient d ∧ 0 ≤ C ∧

@@ -71,7 +71,8 @@ theorem linear_term_zero {a c : ℝ} (h : ∀ t : ℝ, a*t ≤ c*t^2) : a = 0 :=
   field_simp at hh
   nlinarith
 
-/-- All complex Fourier test parameters are obtained from real admissible trigonometric variations. -/
+/-- All complex Fourier test parameters are obtained from real admissible trigonometric variations.
+-/
 theorem maximizer_mode_equation {d : ℕ} {b Ab A : ℝ} (hR : RoughExponentialBound d b Ab)
     {u : TorusL2 d} (hu : Admissible u)
     (hmax : ∀ v : TorusL2 d, Admissible v → functional A v ≤ functional A u)

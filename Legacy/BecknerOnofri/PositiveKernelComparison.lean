@@ -43,7 +43,8 @@ theorem integral_abs_pair_eq {L : α × α → ℝ}
   filter_upwards [hf,hg,hn] with z hf hg hn
   simp only [hf,hg,abs_mul,abs_of_nonneg hn]
 
-/-- Schur also bounds the integral of the pointwise absolute value, not only the integral's modulus. -/
+/-- Schur also bounds the integral of the pointwise absolute value, not only the integral's modulus.
+-/
 theorem kernel_abs_integral_le {K : α × α → ℝ} {φ : RealL2 μ}
     (hK : SchurData μ K φ) (f g : RealL2 μ) :
     (∫ z, |K z*f z.1*g z.2| ∂μ.prod μ) ≤ (‖f‖^2+‖g‖^2)/2 := by
@@ -97,7 +98,8 @@ theorem dominated_kernel_symmetric (S : Operator μ) {K L : α × α → ℝ} {�
   rw [hz]
   ring
 
-/-- Actual nonnegative top eigenvectors exist for every nonzero compact dominated kernel operator. -/
+/-- Actual nonnegative top eigenvectors exist for every nonzero compact dominated kernel operator.
+-/
 theorem dominated_kernel_nonnegative_top (S : Operator μ) {K L : α × α → ℝ} {φ : RealL2 μ}
     (hK : SchurData μ K φ) (hL : AEStronglyMeasurable L (μ.prod μ))
     (hn : ∀ᵐ z ∂μ.prod μ, 0 ≤ L z)

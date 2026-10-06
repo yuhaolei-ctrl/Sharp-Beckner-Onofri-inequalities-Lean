@@ -69,7 +69,8 @@ theorem pairingIntegrand_integrable_bounded {d : ℕ} (K : Torus d → Torus d �
   change Integrable (fun p : Torus d × Torus d => K p.1 p.2*f p.1*f p.2) _
   simpa only [Function.uncurry_def, mul_assoc] using! h
 
-/-- For bounded measurable kernels and actual L¹ functions, all product-integrability obligations are discharged. -/
+/-- For bounded measurable kernels and actual L¹ functions, all product-integrability obligations
+are discharged. -/
 theorem pairing_polarize_le_bounded {d : ℕ} (i : Fin d) (a : ℝ) (K : Torus d → Torus d → ℝ)
     (hmeas : Measurable (Function.uncurry K)) {C : ℝ} (hC : ∀ x y, ‖K x y‖ ≤ C)
     (hK : ∀ x y, K (reflection i a x) (reflection i a y) = K x y)

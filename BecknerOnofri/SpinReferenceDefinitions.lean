@@ -35,7 +35,8 @@ def refShift (t : ℝ) : ℝ := t - t ^ 5 / 4
 /-- The atom weight `a = t⁵/(4-4t+t⁵)` of the reference law (eq:section5-spin-reference). -/
 def refAtom (t : ℝ) : ℝ := t ^ 5 / (4 - 4 * t + t ^ 5)
 
-/-- The reference law `q_j = (1-a) b_j (1+z)^j (1-z)^{12-j} + a 1_{j=12}`, (eq:section5-spin-reference). -/
+/-- The reference law `q_j = (1-a) b_j (1+z)^j (1-z)^{12-j} + a 1_{j=12}`,
+(eq:section5-spin-reference). -/
 def refLaw (t : ℝ) (j : Count) : ℝ :=
   (1 - refAtom t) * productProbability (refShift t) j + if j = 12 then refAtom t else 0
 

@@ -80,7 +80,8 @@ theorem log_partition_support {d : ℕ} {b Ab : ℝ} (hR : RoughExponentialBound
   rw [integral_sub (gibbsValue_product_integrable hR hu v) (gibbsValue_product_integrable hR hu u)]
   linarith
 
-/-- At a genuine global maximizer, the Gibbs pairing is controlled by the actual energy difference. -/
+/-- At a genuine global maximizer, the Gibbs pairing is controlled by the actual energy difference.
+-/
 theorem maximizer_variation_inequality {d : ℕ} {b Ab A : ℝ} (hR : RoughExponentialBound d b Ab)
     {u : TorusL2 d} (hu : Admissible u)
     (hmax : ∀ v : TorusL2 d, Admissible v → functional A v ≤ functional A u)

@@ -314,7 +314,8 @@ theorem mean_assembly {d : ℕ} (z : Coordinates d) : mean d (assembly d z) = 0 
   rw [← projection_assembly z]
   exact mean_projection _
 
-/-- Exact real-space decomposition into a constant, all first-shell modes, and the closed complement. -/
+/-- Exact real-space decomposition into a constant, all first-shell modes, and the closed
+complement. -/
 theorem decomposition {d : ℕ} (u : Space d) :
     u = meanProjection d u + assembly d (coordinates d u) + (complementMap d u : Space d) := by
   rw [assembly_coordinates, complementMap_coe, complementProjection_apply]

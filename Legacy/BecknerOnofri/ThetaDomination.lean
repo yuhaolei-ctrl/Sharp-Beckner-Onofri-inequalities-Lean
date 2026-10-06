@@ -100,7 +100,8 @@ theorem integrableOn_thetaIntegrand {theta : ℝ → ℝ} {d : ℕ} (hd : d ≤ 
   rw [Real.norm_eq_abs, abs_of_nonneg (thetaIntegrand_nonneg hr (htheta r hr))]
   exact thetaIntegrand_le_tenth hd hr (htheta r hr)
 
-/-- Dimension reduction using only dimension-ten integrability and lower-dimensional measurability. -/
+/-- Dimension reduction using only dimension-ten integrability and lower-dimensional measurability.
+-/
 theorem thetaIntegral_le_tenth_of_measurable {theta : ℝ → ℝ} {d : ℕ} (hd : d ≤ 10)
     (htheta : ∀ r ∈ Ici (1 : ℝ), 1 ≤ theta (Real.pi * r))
     (hmeas : AEStronglyMeasurable (thetaIntegrand theta d) (volume.restrict (Ici (1 : ℝ))))

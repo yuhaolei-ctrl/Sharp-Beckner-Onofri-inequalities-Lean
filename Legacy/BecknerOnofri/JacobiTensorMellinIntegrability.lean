@@ -45,7 +45,8 @@ theorem gamma_majorant_integrable {d : ℕ} (a : Index d) (ha : a ≠ 0) {s : �
   congr 2
   ring
 
-/-- Positivity moves both absolute values to the L2 inputs; the heat norm supplies the time majorant. -/
+/-- Positivity moves both absolute values to the L2 inputs; the heat norm supplies the time
+majorant. -/
 theorem weighted_pair_integrable {d : ℕ} (a : Index d) (ha : a ≠ 0) {s : ℝ} (hs : 0 < s)
     (f g : TensorL2 d) :
     Integrable (fun p : ℝ × (Space d × Space d) => integrand a s p.1 p.2*f p.2.1*g p.2.2)

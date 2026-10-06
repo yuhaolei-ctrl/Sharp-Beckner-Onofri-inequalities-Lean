@@ -89,7 +89,8 @@ theorem assembly_quadraticCorrection_coefficient {d : ℕ} (hd : 12 ≤ d)
   simp only [one_div, mul_inv_rev]
   ring
 
-/-- The genuine cubic term, including the actual quadratic graph correction, has the source's coefficients. -/
+/-- The genuine cubic term, including the actual quadratic graph correction, has the source's
+coefficients. -/
 theorem actual_reduced_cubic_coefficient {d : ℕ} (hd : 12 ≤ d)
     (z : Coordinates d) (i : Fin d) :
     coefficient (axisFrequency i)
