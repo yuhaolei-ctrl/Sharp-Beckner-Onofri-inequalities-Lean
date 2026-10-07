@@ -89,7 +89,7 @@ lake build Challenge Solution
 ```
 
 On a machine with 16 GB of memory set `LEAN_NUM_THREADS=4` to limit the number of parallel
-jobs; the files that check finite certificates need up to about 3 GB each.
+jobs.
 
 Comparator checks that `Solution` proves exactly the statements of `Challenge` with the
 permitted axioms, replaying the proofs through Lean's kernel and the toolchain's bundled
@@ -98,6 +98,11 @@ NanoDa and con-ron kernels (Linux, with `bubblewrap` installed):
 ```sh
 ./scripts/verify-comparator.sh
 ```
+
+A full local Comparator run (Apple M-series, 10 cores) takes about 15 minutes. On the export
+of all 28 theorems, con-ron needs about 3 GB with one worker and about 1.5 GB more per
+additional worker (about 12 GB with 8 workers); NanoDa (4 threads) needs about 7 GB and
+100 seconds.
 
 `python3 scripts/check-lean-sources.py` checks the Palomar source requirements (every
 Lean file uses the module system and has at most 10,000 lines), and
