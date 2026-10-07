@@ -26,8 +26,12 @@ def ratQ (p : RatPair) : ℚ := (p.1 : ℚ) / (p.2 : ℚ)
 theorem ratVal_eq (p : RatPair) : ratVal p = ((ratQ p : ℚ) : ℝ) := by
   simp [ratVal, ratQ]
 
+/-! The two identities involving `w_s` are proved by `norm_num` case by case rather than by
+kernel evaluation: the NanoDa kernel is very slow on some of these rational normalizations. -/
+
 theorem weightData_eq : ∀ i : Order, ratQ (weightData.getD i (0, 1)) = weightQ i := by
-  decide +kernel
+  intro i
+  fin_cases i <;> norm_num [ratQ, weightData, weightQ, Nat.choose]
 
 theorem referenceData_eq : ∀ j : Count, ratQ (referenceData.getD j (0, 1)) = referenceQ j := by
   decide +kernel
@@ -36,9 +40,12 @@ theorem coordinateData_eq :
     ∀ j : Count, ratQ (coordinateData.getD j (0, 1)) = meanCoordinateQ j := by
   decide +kernel
 
+set_option maxHeartbeats 0 in
 theorem weightedMomentData_eq : ∀ j : Count, ∀ i : Order,
     ratQ ((weightedMomentData.getD j []).getD i (0, 1)) = weightQ i * momentQ i j := by
-  decide +kernel
+  intro j i
+  fin_cases j <;> fin_cases i <;>
+    norm_num [ratQ, weightedMomentData, weightQ, momentQ, Finset.sum_range_succ, Nat.choose]
 
 theorem momentQ_last : ∀ i : Order, momentQ i 12 = 1 := by decide +kernel
 
