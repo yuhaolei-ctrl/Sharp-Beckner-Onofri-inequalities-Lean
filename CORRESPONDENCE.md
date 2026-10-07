@@ -166,6 +166,10 @@ Where the formal proof differs from the printed one, the route is complete and c
   (`h̲(R(h)) ≤ h` by a first-contact argument) rather than for the inverse function; the
   weight and entropy-tail bounds are compared with truncated series by Bernstein checks; the
   `g₁` numerator is used in an unreduced form of degree 62.
+* **Joint spin moments on count classes** (used for eq:section5-global-cube-energy and
+  eq:section5-spin-count-identities). `∑_{|σ|=j} ∏_{i∈S} σ_i` is read off from the generating
+  function `∏_i (x + c_i) = (x-1)^{|S|}(x+1)^{12-|S|}`; only the binomial coefficients are
+  checked numerically, not the `2^{12}` configurations.
 * **Proposition 5.10.** Both the selected-maximizer form used for Theorem 1.3
   (`SelectedNumericalModel.selected_entropy_gap`) and the general form for every density
   satisfying the shape hypotheses (`ShapeEntropy.global_shape_entropy`) are proved.

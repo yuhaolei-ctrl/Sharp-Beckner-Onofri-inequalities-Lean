@@ -43,8 +43,8 @@ theorem chain_cover {d : ℤ} :
 
 theorem cells_chain : chain 204800 cells 3244032 = true := by decide +kernel
 
-theorem cells_all : (cells.all fun c => checkCell c.1 c.2 cellDen) = true := by
-  simp only [cells, List.all_append, cells00_check, cells01_check, cells02_check, cells03_check, cells04_check, cells05_check, cells06_check, cells07_check, cells08_check, cells09_check, cells10_check, cells11_check, cells12_check, cells13_check, cells14_check, cells15_check, Bool.and_self]
+theorem cells_all : (cells.all fun c => checkCell c.1 c.2 cellDen) = true :=
+  List.all_eq_true.mpr cells_check
 
 /-- **Lemma 5.20** (lem:section5-scalar-pressure) on `[1/16, 0.99]`: `𝓑(t) > t⁴/200`. -/
 theorem pressureScalar_gt_cells (t : ℝ) (ht : t ∈ Icc (1 / 16 : ℝ) (99 / 100)) :
@@ -58,7 +58,7 @@ theorem pressureScalar_gt_cells (t : ℝ) (ht : t ∈ Icc (1 / 16 : ℝ) (99 / 1
   · obtain ⟨c, hc, hc1, hc2⟩ := chain_cover cells 204800 3244032 cells_chain t h1 h2
     exact checkCell_sound (List.all_eq_true.mp cells_all c hc) ⟨hc1, hc2⟩
       (by linarith [ht.1]) (by linarith [ht.2])
-  · have hc : ((204800 : ℤ), (211394 : ℤ)) ∈ cells := by simp [cells, cells00]
+  · have hc : ((204800 : ℤ), (211394 : ℤ)) ∈ cells := by simp [cells]
     refine checkCell_sound (List.all_eq_true.mp cells_all _ hc) ⟨h1.le, ?_⟩
       (by linarith [ht.1]) (by linarith [ht.2])
     rw [← h1]
