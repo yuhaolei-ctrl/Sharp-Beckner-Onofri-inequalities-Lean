@@ -75,9 +75,14 @@ jobs:
       - name: Build Solution
         run: lake build Solution
       - name: Install bubblewrap for lake comparator's sandbox
+        timeout-minutes: 15
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update -qq >/dev/null
-          sudo apt-get install -y -qq bubblewrap >/dev/null
+          sudo apt-get -o DPkg::Lock::Timeout=300 update -q
+          sudo apt-get -o DPkg::Lock::Timeout=300 install -y -q --no-install-recommends bubblewrap
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          bwrap --version
       - name: Run lake comparator with the bundled kernels
+        timeout-minutes: 150
         run: ./scripts/verify-comparator.sh
