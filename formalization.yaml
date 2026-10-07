@@ -21,9 +21,11 @@ project:
     the defect.
   authors:
     - "Yuhao Lei"
+    - "Matthew Rosenzweig"
   license: "Apache-2.0"
   responsible_maintainers:
     - "Yuhao Lei"
+    - "Matthew Rosenzweig"
 
 classification:
   arxiv: ["math.AP", "math.FA"]
