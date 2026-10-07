@@ -158,8 +158,8 @@ fidelity:
     of Lemma 2.12's rearrangement, prove Proposition 3.7 without Lemmas 2.1 and 2.12, and
     obtain Proposition 5.23 from the full diagonal branch without classifying the other
     branches of Proposition 5.22; Lemma 5.13 for 3 ≤ n ≤ 50 computes the shell coefficients
-    exactly below a truncation radius and bounds the remaining polynomial mass, instead of
-    computing all coefficients; the finite scalar checks of Propositions 3.1 and 4.6 use
+    exactly below the truncation radius 3n + 10 instead of the manuscript's Q = 150, and
+    uses the exact value for n = 2; the finite scalar checks of Propositions 3.1 and 4.6 use
     eq:finite-scalar-truncation with Q = 64 instead of Q = 80; Proposition 5.12(ii) for small means t ≤ 1/16 uses an
     analytic small-mean estimate instead of the origin jet and the Taylor-model cells below
     1/16, so Lemma 5.20 is formalized on [1/16, 0.99], where it is certified by first-order

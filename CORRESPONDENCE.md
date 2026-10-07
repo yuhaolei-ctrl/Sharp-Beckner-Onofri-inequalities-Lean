@@ -153,10 +153,10 @@ including the larger route differences in Propositions 3.7, 5.1, 5.7 and 5.23. I
 above, "used by Theorems 1.1–1.3" names the declarations the main proofs actually go
 through, where these differ from the paper-form counterparts.
 
-* **Lemma 5.13.** For `3 ≤ n ≤ 50` the shell coefficients `p_q` are computed exactly for
-  `q < 3n + 10` and the remaining mass `(Σ_j C(2n,n+|j|))^{12} - Σ_{q<Q} p_q` is charged the
-  weight `Q^{-6}`; the manuscript computes all `p_q`. The bound for `n = 2` is the exact
-  rational value. For `n > 50` the proof is the manuscript's.
+* **Lemma 5.13.** The manuscript bounds `G_{12,n}` for `2 ≤ n ≤ 50` by
+  eq:finite-scalar-truncation with `Q = 150`. The formal proof uses the same truncation with
+  the cutoff `Q = 3n + 10` for `3 ≤ n ≤ 50`, and the exact rational value for `n = 2`. For
+  `n > 50` the proof is the manuscript's.
 * **Lemma 3.3 (d = 12).** The decay rate `π` is replaced by `3.1415 ≤ π` and `e^{-π}` by
   `0.04322`; the resulting rational bound is `3.2859 < 3.29`.
 * **Proposition 5.12(ii), small means.** For `0 ≤ t ≤ 1/16` the formal proof uses an
