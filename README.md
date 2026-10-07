@@ -67,6 +67,7 @@ declarations (Lean v4.35.0-rc2 toolchain, 7 October 2026):
 | `BecknerOnofri/`, `Legacy/` | The proof development |
 | `BecknerOnofri/PaperResults.lean` | Lean counterparts of the numbered results of the paper |
 | `CORRESPONDENCE.md` | Paper-to-Lean map and every difference between printed and formal statements |
+| `PROOF_AUDIT.md` | Where the Lean proofs follow the paper's proofs and where they take another route |
 | `comparator.json`, `formalization.yaml` | Configuration for Comparator and the Palomar registry |
 
 ## Computer-assisted steps

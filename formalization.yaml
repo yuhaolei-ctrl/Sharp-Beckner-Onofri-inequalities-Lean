@@ -153,7 +153,11 @@ automation:
 fidelity:
   divergences: >-
     Statements: see status.scope for the rendering conventions; none weakens a claim of
-    Theorems 1.1–1.3. Proofs: Lemma 5.13 for 3 ≤ n ≤ 50 computes the shell coefficients
+    Theorems 1.1–1.3. Proofs (PROOF_AUDIT.md compares every proof with the paper's): the
+    main proofs select symmetric optimizers by polarization on the potential side instead
+    of Lemma 2.12's rearrangement, prove Proposition 3.7 without Lemmas 2.1 and 2.12, and
+    obtain Proposition 5.23 from the full diagonal branch without classifying the other
+    branches of Proposition 5.22; Lemma 5.13 for 3 ≤ n ≤ 50 computes the shell coefficients
     exactly below a truncation radius and bounds the remaining polynomial mass, instead of
     computing all coefficients; the finite scalar checks of Propositions 3.1 and 4.6 use
     eq:finite-scalar-truncation with Q = 64 instead of Q = 80; Proposition 5.12(ii) for small means t ≤ 1/16 uses an

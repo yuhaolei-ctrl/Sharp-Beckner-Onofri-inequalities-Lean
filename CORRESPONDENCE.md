@@ -56,30 +56,30 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 
 | Result | Label | Lean declarations |
 |---|---|---|
-| Lemma 2.1 (Finite entropy controls the logarithmic interaction) | `lem:section2-finite-entropy-energy` | `BecknerOnofri.PaperResult.finite_entropy_energy`, `BecknerOnofri.PaperResult.finite_entropy_physical_bound`, `BecknerOnofri.PaperResult.heat_regularization_smooth`, `BecknerOnofri.PaperResult.heat_interaction_limit`, `BecknerOnofri.PaperResult.heat_entropy_limit`, `BecknerOnofri.PaperResult.heat_l1_limit` |
+| Lemma 2.1 (Finite entropy controls the logarithmic interaction) | `lem:section2-finite-entropy-energy` | `BecknerOnofri.PaperResult.finite_entropy_energy`, `BecknerOnofri.PaperResult.finite_entropy_physical_bound`, `BecknerOnofri.PaperResult.heat_regularization_smooth`, `BecknerOnofri.PaperResult.heat_interaction_limit`, `BecknerOnofri.PaperResult.heat_entropy_limit`, `BecknerOnofri.PaperResult.heat_l1_limit`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.finiteEntropy_spectralTerm_summable`, `BecknerOnofri.HighDim.heat_fourierEnergy_tendsto`, `Legacy.BecknerOnofri.HeatDensityApproximation.heatDensity_entropy_le` |
 | Proposition 2.2 (Exact coefficient–pressure duality) | `prop:section2-coefficient-pressure-duality` | `BecknerOnofri.PaperResult.pressure_duality`, `BecknerOnofri.PaperResult.pressure_smooth_sup` |
 | Lemma 2.3 (Concentration and first-shell tests) | `lem:section2-universal-obstructions` | `BecknerOnofri.PaperResult.pressure_concentration_divergence`, `BecknerOnofri.PaperResult.coefficient_concentration_divergence`, `BecknerOnofri.PaperResult.critical_adams_bound`, `BecknerOnofri.PaperResult.pressure_at_collapse_finite`, `BecknerOnofri.PaperResult.coefficient_at_collapse_finite`, `BecknerOnofri.PaperResult.pressure_sharpness`, `BecknerOnofri.PaperResult.coefficient_sharpness` |
 | Proposition 2.4 (Basic geometry of the pressure and defect) | `prop:section2-basic-curve-geometry` | `BecknerOnofri.PaperResult.general_pressure_geometry`, `BecknerOnofri.PaperResult.general_coefficient_geometry`, `BecknerOnofri.PaperResult.interaction_physical_positive`, `BecknerOnofri.PaperResult.general_transition_quotient`, `BecknerOnofri.Target.general_pressure_zero_set`, `BecknerOnofri.PaperResult.general_coefficient_zero_set`, `BecknerOnofri.Target.general_threshold_bounds` |
-| Lemma 2.5 (Primal–dual gap identities) | `prop:section2-gap-identities` | `BecknerOnofri.PaperResult.finite_entropy_green_potential`, `BecknerOnofri.PaperResult.primal_gap_identity`, `BecknerOnofri.PaperResult.dual_gap_identity` |
-| Corollary 2.6 (Extremizer correspondence and Euler–Lagrange equation) | `cor:section2-extremizer-correspondence` | `BecknerOnofri.PaperResult.primal_extremizer_correspondence`, `BecknerOnofri.PaperResult.dual_extremizer_correspondence`, `BecknerOnofri.PaperResult.optimizer_euler_equation`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood` |
-| Proposition 2.7 (Subcritical attainment and regularity) | `prop:section2-subcritical-attainment` | `BecknerOnofri.PaperResult.subcritical_dual_attainment`, `BecknerOnofri.PaperResult.primal_extremizer_correspondence`, `BecknerOnofri.PaperResult.dual_extremizer_correspondence`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood` |
+| Lemma 2.5 (Primal–dual gap identities) | `prop:section2-gap-identities` | `BecknerOnofri.PaperResult.finite_entropy_green_potential`, `BecknerOnofri.PaperResult.primal_gap_identity`, `BecknerOnofri.PaperResult.dual_gap_identity`; used by Theorems 1.1–1.3: `Legacy.BecknerOnofri.SubcriticalPrimalDual.dual_le_gibbs`, `Legacy.BecknerOnofri.SubcriticalPrimalDual.density_le_dual` |
+| Corollary 2.6 (Extremizer correspondence and Euler–Lagrange equation) | `cor:section2-extremizer-correspondence` | `BecknerOnofri.PaperResult.primal_extremizer_correspondence`, `BecknerOnofri.PaperResult.dual_extremizer_correspondence`, `BecknerOnofri.PaperResult.optimizer_euler_equation`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.OptimizerDuality.minimizer_iff_continuous_optimizer`, `BecknerOnofri.HighDim.OptimizerDuality.gibbs_minimizer_of_continuous_optimizer`, `Legacy.BecknerOnofri.EndpointPotential.gibbs_equality_of_potential_equality` |
+| Proposition 2.7 (Subcritical attainment and regularity) | `prop:section2-subcritical-attainment` | `BecknerOnofri.PaperResult.subcritical_dual_attainment`, `BecknerOnofri.PaperResult.primal_extremizer_correspondence`, `BecknerOnofri.PaperResult.dual_extremizer_correspondence`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.ContinuousOptimizers.exists_continuous_optimizer`, `BecknerOnofri.GenericAttainment.exists_subcritical_optimizer`, `Legacy.BecknerOnofri.SubcriticalAttainment.coercivity` |
 | Lemma 2.8 (Circle rearrangement) | `lem:circle-rearrangement` | `BecknerOnofri.PaperResult.circle_rearrangement` |
-| Lemma 2.9 | `lem:fractional` | `BecknerOnofri.PaperResult.fractional_intertwining`, `BecknerOnofri.Paper2.physical_fractional_intertwining`, `BecknerOnofri.Paper2.physical_operatorGraph_transport`, `BecknerOnofri.Paper2.physical_spectralPower_domain`, `BecknerOnofri.Paper2.physical_measure_transport`, `BecknerOnofri.Paper2.physical_form_transport`, `BecknerOnofri.Paper2.physical_potential` |
-| Lemma 2.10 (Positive Taylor expansion) | `lem:positive-bernstein` | `BecknerOnofri.PaperResult.closed_cube_positive_taylor` |
-| Proposition 2.11 | `prop:cosine-all` | `BecknerOnofri.PaperResult.smooth_monotone_euler_cosine` |
-| Lemma 2.12 (Entropy-preserving selection of subcritical minimizers) | `lem:selection-full-entropy-domain` | `BecknerOnofri.PaperResult.prescribed_equimeasurable_selection`, `BecknerOnofri.PaperResult.prescribed_canonical_selection`, `BecknerOnofri.PaperResult.subcritical_dual_attainment`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood` |
+| Lemma 2.9 | `lem:fractional` | `BecknerOnofri.PaperResult.fractional_intertwining`, `BecknerOnofri.Paper2.physical_fractional_intertwining`, `BecknerOnofri.Paper2.physical_operatorGraph_transport`, `BecknerOnofri.Paper2.physical_spectralPower_domain`, `BecknerOnofri.Paper2.physical_measure_transport`, `BecknerOnofri.Paper2.physical_form_transport`, `BecknerOnofri.Paper2.physical_potential`; used by Theorems 1.1–1.3: `Legacy.BecknerOnofri.AngularSpectralIntertwining.inverse_intertwining`, `Legacy.BecknerOnofri.AngularSpectralIntertwining.maximizer_inverse_equation` |
+| Lemma 2.10 (Positive Taylor expansion) | `lem:positive-bernstein` | `BecknerOnofri.PaperResult.closed_cube_positive_taylor`; used by Theorems 1.1–1.3: `BecknerOnofri.GenericCosineRepresentation.positive_profile_mixture` |
+| Proposition 2.11 | `prop:cosine-all` | `BecknerOnofri.PaperResult.smooth_monotone_euler_cosine`; used by Theorems 1.1–1.3: `BecknerOnofri.GenericCosineRepresentation.steiner_maximizer_mixture`, `BecknerOnofri.GenericCosineRepresentation.steiner_maximizer_mixedPartials` |
+| Lemma 2.12 (Entropy-preserving selection of subcritical minimizers) | `lem:selection-full-entropy-domain` | `BecknerOnofri.PaperResult.prescribed_equimeasurable_selection`, `BecknerOnofri.PaperResult.prescribed_canonical_selection`, `BecknerOnofri.PaperResult.subcritical_dual_attainment`, `BecknerOnofri.PaperResult.optimizer_smooth_kirkwood`; used by Theorems 1.1–1.3: `Legacy.BecknerOnofri.SteinerSelection.exists_steiner_maximizer`, `BecknerOnofri.GenericAttainment.exists_steiner_optimizer`, `BecknerOnofri.EndpointRigidity.Selection.exists_steiner_equality` |
 
 ## Section 3: dimensions two through ten
 
 | Result | Label | Lean declarations |
 |---|---|---|
-| Proposition 3.1 | `prop:scalar` | `BecknerOnofri.PaperResult.low_scalar_gap` |
-| Lemma 3.2 | `lem:E1-bound` | `BecknerOnofri.PaperResult.e1_bound` |
+| Proposition 3.1 | `prop:scalar` | `BecknerOnofri.PaperResult.low_scalar_gap`; used by Theorems 1.1–1.3: `Legacy.BecknerOnofri.GaussianScalarTail.all_indices_lattice_gap`, `Legacy.BecknerOnofri.GaussianScalarTwo.all_indices_lattice_gap` |
+| Lemma 3.2 | `lem:E1-bound` | `BecknerOnofri.PaperResult.e1_bound`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.ThetaElementary.integral_inv_mul_exp_le`, `Legacy.BecknerOnofri.LaplaceReciprocal.integral_upper` |
 | Lemma 3.3 | `lem:theta-integral-certificate` | `BecknerOnofri.PaperResult.low_theta_integral`, `BecknerOnofri.PaperResult.low_theta_dimension_bound`, `BecknerOnofri.PaperResult.eleven_theta_integral`, `BecknerOnofri.PaperResult.twelve_theta_integral` |
-| Lemma 3.4 | `lem:hypergeometric` | `BecknerOnofri.PaperResult.low_hypergeometric_identity`, `BecknerOnofri.PaperResult.low_harmonic_identity` |
+| Lemma 3.4 | `lem:hypergeometric` | `BecknerOnofri.PaperResult.low_hypergeometric_identity`, `BecknerOnofri.PaperResult.low_harmonic_identity`; used by Theorems 1.1–1.3: `Legacy.D10.hypergeometric_product_real`, `Legacy.D10.binomialCoeffReal_harmonic` |
 | Lemma 3.5 | `lem:circle-entropy` | `BecknerOnofri.PaperResult.low_density_endpoint`, `BecknerOnofri.Target.low_circle_density`, `BecknerOnofri.PaperResult.circle_entropy_full_domain` |
 | Lemma 3.6 (Free energy of mixtures) | `lem:mixture-transfer` | `BecknerOnofri.PaperResult.mixture_transfer` (at β = 2d) |
-| Proposition 3.7 | `prop:equality` | `BecknerOnofri.Target.low_density_rigidity`, `BecknerOnofri.Target.low_potential_rigidity` |
+| Proposition 3.7 | `prop:equality` | `BecknerOnofri.Target.low_density_rigidity`, `BecknerOnofri.Target.low_potential_rigidity`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.LowDimension.density_bound`, `Legacy.BecknerOnofri.endpoint_through_ten` |
 
 ## Section 4: dimension eleven
 
@@ -91,7 +91,7 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 | Lemma 4.4 (Entropy of the integer shift) | `lem:section4-lattice-label-entropy` | `BecknerOnofri.PaperResult.eleven_coordinate_marginal`, `BecknerOnofri.PaperResult.eleven_label_moment`, `BecknerOnofri.PaperResult.eleven_coordinate_label_entropy`, `BecknerOnofri.PaperResult.eleven_label_entropy_chain` |
 | Lemma 4.5 (Fourier transform of the Euclidean profile) | `lem:section4-profile-fourier-transform` | `BecknerOnofri.PaperResult.eleven_half_integer_laplace`, `BecknerOnofri.PaperResult.eleven_euclidean_fourier`, `BecknerOnofri.PaperResult.eleven_periodized_fourier`, `BecknerOnofri.PaperResult.eleven_unscaled_fourier` |
 | Proposition 4.6 | `d11:prop:scalar` | `BecknerOnofri.PaperResult.eleven_scalar_finite`, `BecknerOnofri.PaperResult.eleven_scalar_all`, `BecknerOnofri.PaperResult.eleven_theta_integral` |
-| Lemma 4.7 (Local uniqueness of the uniform critical point) | `lem:section4-local-uniqueness` | `BecknerOnofri.PaperResult.eleven_local_uniqueness` |
+| Lemma 4.7 (Local uniqueness of the uniform critical point) | `lem:section4-local-uniqueness` | `BecknerOnofri.PaperResult.eleven_local_uniqueness`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.SubspectralLocalUniqueness.local_unique` |
 | Proposition 4.8 (First-order coexistence at the global transition) | `prop:section4-first-order-coexistence` | `BecknerOnofri.Target.eleven_uniform_hessian`, `BecknerOnofri.Target.eleven_coexistence`, `BecknerOnofri.Target.eleven_pressure_corner`, `BecknerOnofri.Target.eleven_defect_corner` |
 | Proposition 4.9 | `d11:thm:interval` | `BecknerOnofri.Target.eleven_transition_interval`, `BecknerOnofri.Target.eleven_competitor_energy`, `BecknerOnofri.PaperResult.eleven_uniform_unique` |
 
@@ -99,17 +99,17 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 
 | Result | Label | Lean declarations |
 |---|---|---|
-| Proposition 5.1 | `prop:spectral-d12-base` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity` |
-| Lemma 5.2 | `lem:spectral-subset-entropy` | `BecknerOnofri.PaperResult.coordinate_marginal_entropy`, `BecknerOnofri.PaperResult.entropy_shearer_all_subsets` |
+| Proposition 5.1 | `prop:spectral-d12-base` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.EntropyEndpointClosure.twelve_density_endpoint_of_selected_zero`, `BecknerOnofri.HighDim.EntropyEndpointClosure.twelve_legacy_uniform_of_selected_zero`, `BecknerOnofri.HighDim.SelectedNumericalModel.selected_zero` |
+| Lemma 5.2 | `lem:spectral-subset-entropy` | `BecknerOnofri.PaperResult.coordinate_marginal_entropy`, `BecknerOnofri.PaperResult.entropy_shearer_all_subsets`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.EntropyShearer.deletion_of_continuous_pos` |
 | Lemma 5.3 (One-dimensional summation) | `lem:spectral-slice` | `BecknerOnofri.PaperResult.spectral_slice` |
 | Lemma 5.4 (Rectangular lattice sums) | `lem:spectral-rectangle` | `BecknerOnofri.PaperResult.rectangular_lattice` |
-| Proposition 5.5 (Energy comparison for cosine-power mixtures) | `prop:spectral-marginal-energy` | `BecknerOnofri.PaperResult.cosine_mixture_deletion_energy`, `BecknerOnofri.PaperResult.cosine_mixture_subset_energy` |
-| Proposition 5.7 (Transfer from dimension twelve) | `prop:spectral-dimension-transfer` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity` |
+| Proposition 5.5 (Energy comparison for cosine-power mixtures) | `prop:spectral-marginal-energy` | `BecknerOnofri.PaperResult.cosine_mixture_deletion_energy`, `BecknerOnofri.PaperResult.cosine_mixture_subset_energy`; used by Theorems 1.1–1.3: `BecknerOnofri.CosineMixtureTransfer.countable_mixture_comparison` |
+| Proposition 5.7 (Transfer from dimension twelve) | `prop:spectral-dimension-transfer` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity`; used by Theorems 1.1–1.3: `BecknerOnofri.CosineMixtureTransfer.density_endpoint_from_twelve`, `BecknerOnofri.CosineMixtureTransfer.mixture_endpoint_from_twelve`, `BecknerOnofri.EndpointRigidity.uniform_from_twelve` |
 | Corollary 5.8 (Spectral inequality and equality) | `cor:section5-high-endpoint` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity`, `BecknerOnofri.Target.potential_endpoint`, `BecknerOnofri.Target.potential_rigidity`, `BecknerOnofri.Target.pressure_threshold` |
-| Lemma 5.9 (Symmetry of maximizers) | `lem:common-cubic` | `BecknerOnofri.PaperResult.all_optimizer_cubic_symmetry` |
-| Proposition 5.10 (Global entropy estimate) | `prop:section5-global-entropy-gap` | `BecknerOnofri.PaperResult.global_entropy_gap` |
-| Proposition 5.11 (The singular Fourier tail) | `prop:section5-singular-fourier-tail` | `BecknerOnofri.PaperResult.smooth_mixture_singular_tail` |
-| Proposition 5.12 (Entropy comparison and the finite-state inequality) | `prop:section5-spin-entropy` | `BecknerOnofri.PaperResult.channel_entropy`, `BecknerOnofri.PaperResult.finite_state_inequality`, `BecknerOnofri.PaperResult.spin_mixture_feasible`, `BecknerOnofri.PaperResult.spin_channel_symmetry`, `BecknerOnofri.PaperResult.spin_exchangeable_entropy`, `BecknerOnofri.PaperResult.spin_exchangeable_energy` |
+| Lemma 5.9 (Symmetry of maximizers) | `lem:common-cubic` | `BecknerOnofri.PaperResult.all_optimizer_cubic_symmetry`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.CosineCoefficientLattice.maximizer_permutation_coefficients` |
+| Proposition 5.10 (Global entropy estimate) | `prop:section5-global-entropy-gap` | `BecknerOnofri.PaperResult.global_entropy_gap`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.SelectedNumericalModel.selected_entropy_gap` |
+| Proposition 5.11 (The singular Fourier tail) | `prop:section5-singular-fourier-tail` | `BecknerOnofri.PaperResult.smooth_mixture_singular_tail`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.EntropyTail.countable_mixture_tail_of_scalar`, `BecknerOnofri.HighDim.SelectedNumericalModel.selected_tail_of_scalar` |
+| Proposition 5.12 (Entropy comparison and the finite-state inequality) | `prop:section5-spin-entropy` | `BecknerOnofri.PaperResult.channel_entropy`, `BecknerOnofri.PaperResult.finite_state_inequality`, `BecknerOnofri.PaperResult.spin_mixture_feasible`, `BecknerOnofri.PaperResult.spin_channel_symmetry`, `BecknerOnofri.PaperResult.spin_exchangeable_entropy`, `BecknerOnofri.PaperResult.spin_exchangeable_energy`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.SelectedNumericalModel.selected_channel_entropy_eta`, `BecknerOnofri.HighDim.Spin.finite_state_inequality_of_pressure` |
 | Lemma 5.13 (Scalar tail bound) | `lem:section5-global-scalar-tail` | `BecknerOnofri.PaperResult.scalar_tail_bound` |
 | Lemma 5.14 | `lem:section5-global-circle-remainder` | `BecknerOnofri.PaperResult.circle_entropy_remainder` |
 | Lemma 5.15 | `lem:section5-global-convex-order` | `BecknerOnofri.PaperResult.circle_logconvex_comparison`, `BecknerOnofri.PaperResult.circle_entropy_rate_lower` |
@@ -119,8 +119,8 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 | Lemma 5.19 (Curvature on slices of fixed mean) | `lem:section5-global-curvature` | `BecknerOnofri.PaperResult.fixed_mean_curvature` |
 | Lemma 5.20 | `lem:section5-scalar-pressure` | `BecknerOnofri.PaperResult.scalar_pressure`, `BecknerOnofri.PaperResult.pressure_reduction` |
 | Lemma 5.21 (Quartic reduced functional) | `lem:section5-quartic-reduction` | `BecknerOnofri.PaperResult.first_shell_moments`, `BecknerOnofri.PaperResult.local_continuous_quartic_reduction`, `BecknerOnofri.PaperResult.local_sobolev_quadratic_slaving`, `BecknerOnofri.PaperResult.local_sobolev_analytic_graph` |
-| Proposition 5.22 (Local critical branches) | `prop:section5-local-branches` | `BecknerOnofri.PaperResult.local_quartic_signs`, `BecknerOnofri.PaperResult.local_quartic_pressure_order`, `BecknerOnofri.PaperResult.local_fullmode_stationary_hessian`, `BecknerOnofri.PaperResult.local_supported_stationary_branch`, `BecknerOnofri.PaperResult.local_supported_energy_family`, `BecknerOnofri.PaperResult.local_equal_active_fourier_modes`, `BecknerOnofri.PaperResult.local_supported_classification`, `BecknerOnofri.PaperResult.local_proper_support_saddle`, `BecknerOnofri.PaperResult.local_fullmode_morse_bott`, `BecknerOnofri.PaperResult.local_stable_supported_classification`, `BecknerOnofri.PaperResult.local_active_squared_hessian` |
-| Proposition 5.23 (Global minimizers and pressure onset) | `prop:section5-global-onset` | `BecknerOnofri.PaperResult.first_shell_order_parameter`, `BecknerOnofri.PaperResult.order_parameter_onset`, `BecknerOnofri.Target.full_branch_onset`, `BecknerOnofri.Target.pressure_onset` |
+| Proposition 5.22 (Local critical branches) | `prop:section5-local-branches` | `BecknerOnofri.PaperResult.local_quartic_signs`, `BecknerOnofri.PaperResult.local_quartic_pressure_order`, `BecknerOnofri.PaperResult.local_fullmode_stationary_hessian`, `BecknerOnofri.PaperResult.local_supported_stationary_branch`, `BecknerOnofri.PaperResult.local_supported_energy_family`, `BecknerOnofri.PaperResult.local_equal_active_fourier_modes`, `BecknerOnofri.PaperResult.local_supported_classification`, `BecknerOnofri.PaperResult.local_proper_support_saddle`, `BecknerOnofri.PaperResult.local_fullmode_morse_bott`, `BecknerOnofri.PaperResult.local_stable_supported_classification`, `BecknerOnofri.PaperResult.local_active_squared_hessian`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.DiagonalScalarBranch.parameter_analytic`, `BecknerOnofri.HighDim.FullBranchHessian.physical_hessian_nonpos_kernel`, `BecknerOnofri.HighDim.PhysicalNormalCoercivity.physical_normalCoercivity` |
+| Proposition 5.23 (Global minimizers and pressure onset) | `prop:section5-global-onset` | `BecknerOnofri.PaperResult.first_shell_order_parameter`, `BecknerOnofri.PaperResult.order_parameter_onset`, `BecknerOnofri.Target.full_branch_onset`, `BecknerOnofri.Target.pressure_onset`; used by Theorems 1.1–1.3: `BecknerOnofri.HighDim.LocalOrbitClassification.stationary_branch_orbit`, `BecknerOnofri.HighDim.LocalReducedEnergyUpper.nonnegative_energy_upper`, `BecknerOnofri.HighDim.DiagonalScalarBranch.pressure_onset_lower_bound` |
 | Corollary 5.24 (Quadratic vanishing of the coefficient defect) | `cor:section5-defect-onset` | `BecknerOnofri.Target.coefficient_onset`, `BecknerOnofri.PaperResult.pressure_derivative_at_threshold`, `BecknerOnofri.PaperResult.pressure_first_derivative_limits`, `BecknerOnofri.PaperResult.pressure_second_derivative_limits`, `BecknerOnofri.PaperResult.pressure_first_derivative_expansion`, `BecknerOnofri.PaperResult.pressure_second_derivative_expansion` |
 
 Remark 5.6 (a counterexample for arbitrary densities) is not formalized.
@@ -147,7 +147,11 @@ Remark 5.6 (a counterexample for arbitrary densities) is not formalized.
 
 ## Proof routes
 
-Where the formal proof differs from the printed one, the route is complete and checked:
+Where the formal proof differs from the printed one, the route is complete and checked.
+[`PROOF_AUDIT.md`](PROOF_AUDIT.md) compares the structure of every proof with the paper's,
+including the larger route differences in Propositions 3.7, 5.1, 5.7 and 5.23. In the tables
+above, "used by Theorems 1.1–1.3" names the declarations the main proofs actually go
+through, where these differ from the paper-form counterparts.
 
 * **Lemma 5.13.** For `3 ≤ n ≤ 50` the shell coefficients `p_q` are computed exactly for
   `q < 3n + 10` and the remaining mass `(Σ_j C(2n,n+|j|))^{12} - Σ_{q<Q} p_q` is charged the
@@ -180,7 +184,7 @@ Where the formal proof differs from the printed one, the route is complete and c
 * **Lower dimensions.** In dimension 2 the finite scalar comparisons cover `n = 1, 2, 3`
   and an analytic Gaussian estimate covers `n ≥ 4`; several low-dimensional certificates use
   the scale `2^40` instead of `2^80`; `J_10` and `J_11` are bounded with rational Laplace
-  majorants (with the weight `r^{-1} ≤ 1`).
+  majorants; for `J_11` the weight `r^{-1}` is bounded by `1` instead of using Lemma 3.2.
 
 All finite arithmetic is checked by the Lean kernel (`decide +kernel`) and connected to the
 real statements by proved lemmas; no external computation is assumed.
