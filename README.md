@@ -67,8 +67,11 @@ mathematical meaning. The conventions are:
 
 Every finite computation of the manuscript is checked by the Lean kernel through
 `decide +kernel` on a Boolean checker with a proved soundness lemma; no `native_decide` and
-no external computation is used. In dimension twelve these are:
+no external computation is used. The main ones are:
 
+* Propositions 3.1 and 4.6, $1\le n\le21$: the coefficients $p_q$, $q\le64$, of
+  $(b+2\sum_j\binom{2n}{n+j}z^{j^2})^d$ are computed by truncated convolution and the
+  remaining mass $4^{dn}-\sum_q p_q$ is charged the weight $65^{-d/2}$ ($3\le d\le11$).
 * Lemma 5.13, $3\le n\le50$: the shell polynomial $(b+2\sum_j\binom{2n}{n+j}z^{j^2})^{12}$ is
   computed exactly below a truncation radius, and the remaining polynomial mass is charged
   the weight $Q^{-6}$; $n>50$ follows from the Gaussian bound with $J_{12}<3.29$.

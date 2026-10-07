@@ -173,6 +173,10 @@ Where the formal proof differs from the printed one, the route is complete and c
 * **Proposition 5.10.** Both the selected-maximizer form used for Theorem 1.3
   (`SelectedNumericalModel.selected_entropy_gap`) and the general form for every density
   satisfying the shape hypotheses (`ShapeEntropy.global_shape_entropy`) are proved.
+* **Propositions 3.1 and 4.6, finite indices.** The bound eq:finite-scalar-truncation is
+  used with `Q = 64` instead of `Q = 80`. The coefficients `p_q`, `q ≤ 64`, are computed in
+  the kernel by truncated convolution of coefficient lists, and the remaining mass is
+  charged the weight `65^{-d/2}`.
 * **Lower dimensions.** In dimension 2 the finite scalar comparisons cover `n = 1, 2, 3`
   and an analytic Gaussian estimate covers `n ≥ 4`; several low-dimensional certificates use
   the scale `2^40` instead of `2^80`; `J_10` and `J_11` are bounded with rational Laplace

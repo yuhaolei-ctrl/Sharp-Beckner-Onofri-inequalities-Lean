@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.EntropyTailTwo
+public import BecknerOnofri.TruncatedConvolution
 
 @[expose] public section
 
@@ -20,122 +21,12 @@ for `G_{12,n}`, so it suffices for `T_n < R_n`.
 
 namespace BecknerOnofri.HighDim.EntropyTail.ExactTail
 
-open Polynomial Finset
-
-/-! ### Truncated convolution on coefficient lists -/
-
-/-- Add the list `l`, shifted by `e`, to `acc`, discarding entries beyond `acc.length`. -/
-def shiftAdd (e : ℕ) (acc l : List ℕ) : List ℕ :=
-  List.zipWith (· + ·) acc (List.replicate e 0 ++ l ++ List.replicate acc.length 0)
-
-/-- Multiply the truncated coefficient list `a` by `∑ c X^e` over `base`. -/
-def mulBase (Q : ℕ) (base : List (ℕ × ℕ)) (a : List ℕ) : List ℕ :=
-  base.foldl (fun acc ec => shiftAdd ec.1 acc (a.map (ec.2 * ·))) (List.replicate Q 0)
-
-/-- The coefficients of `(∑ c X^e)^k` below `Q`. -/
-def powBase (Q : ℕ) (base : List (ℕ × ℕ)) : ℕ → List ℕ
-  | 0 => (List.range Q).map fun q => if q = 0 then 1 else 0
-  | k + 1 => mulBase Q base (powBase Q base k)
+open Polynomial Finset BecknerOnofri.TruncatedConvolution
 
 /-- The terms `(j², w_j C(2n, n+j))`, `0 ≤ j ≤ r`, of the shell polynomial of radius `r`
 with index `n`, where `w_0 = 1` and `w_j = 2` for `j ≥ 1`. -/
 def shellTerms (n r : ℕ) : List (ℕ × ℕ) :=
   (List.range (r + 1)).map fun j => (j ^ 2, (if j = 0 then 1 else 2) * (2 * n).choose (n + j))
-
-/-- The polynomial `∑ c X^e` over a list of terms. -/
-noncomputable def termPolynomial (base : List (ℕ × ℕ)) : ℕ[X] :=
-  (base.map fun ec => monomial ec.1 ec.2).sum
-
-lemma length_shiftAdd (e : ℕ) (acc l : List ℕ) : (shiftAdd e acc l).length = acc.length := by
-  simp [shiftAdd]
-  omega
-
-lemma getD_shifted (e : ℕ) (l : List ℕ) (m q : ℕ) :
-    (List.replicate e 0 ++ l ++ List.replicate m 0).getD q 0 =
-      if e ≤ q then l.getD (q - e) 0 else 0 := by
-  split_ifs with he
-  · by_cases hl : q < e + l.length
-    · rw [List.getD_append _ _ _ _ (by simpa using hl),
-        List.getD_append_right _ _ _ _ (by simpa using he), List.length_replicate]
-    · rw [List.getD_append_right _ _ _ _ (by simp; omega),
-        List.getD_eq_default l 0 (by omega)]
-      by_cases hm : q - (List.replicate e 0 ++ l).length < m
-      · exact List.getD_replicate 0 hm
-      · exact List.getD_eq_default _ _ (by simp at hm ⊢; omega)
-  · rw [List.getD_append _ _ _ _ (by simp; omega), List.getD_append _ _ _ _ (by simp; omega),
-      List.getD_replicate 0 (by omega)]
-
-lemma getD_shiftAdd (e : ℕ) (acc l : List ℕ) {q : ℕ} (hq : q < acc.length) :
-    (shiftAdd e acc l).getD q 0 =
-      acc.getD q 0 + if e ≤ q then l.getD (q - e) 0 else 0 := by
-  rw [List.getD_eq_getElem _ _ (by rw [length_shiftAdd]; exact hq), List.getD_eq_getElem _ _ hq]
-  simp only [shiftAdd, List.getElem_zipWith]
-  congr 1
-  rw [← getD_shifted e l acc.length q, List.getD_eq_getElem]
-
-lemma foldl_shiftAdd (Q : ℕ) (a : List ℕ) (base : List (ℕ × ℕ)) (acc : List ℕ)
-    (hacc : acc.length = Q) :
-    (base.foldl (fun acc ec => shiftAdd ec.1 acc (a.map (ec.2 * ·))) acc).length = Q ∧
-    ∀ q < Q, (base.foldl (fun acc ec => shiftAdd ec.1 acc (a.map (ec.2 * ·))) acc).getD q 0 =
-      acc.getD q 0 + (base.map fun ec => if ec.1 ≤ q then ec.2 * a.getD (q - ec.1) 0 else 0).sum := by
-  induction base generalizing acc with
-  | nil => simpa using hacc
-  | cons ec base ih =>
-    obtain ⟨h1, h2⟩ := ih (shiftAdd ec.1 acc (a.map (ec.2 * ·)))
-      (by rw [length_shiftAdd, hacc])
-    refine ⟨h1, fun q hq => ?_⟩
-    simp only [List.foldl_cons, List.map_cons, List.sum_cons]
-    rw [h2 q hq, getD_shiftAdd _ _ _ (by omega), add_assoc]
-    congr 2
-    split_ifs
-    · simpa using List.getD_map a 0 (n := q - ec.1) (ec.2 * ·)
-    · rfl
-
-lemma coeff_termPolynomial_mul (base : List (ℕ × ℕ)) (P : ℕ[X]) (q : ℕ) :
-    (termPolynomial base * P).coeff q =
-      (base.map fun ec => if ec.1 ≤ q then ec.2 * P.coeff (q - ec.1) else 0).sum := by
-  induction base with
-  | nil => simp [termPolynomial]
-  | cons ec base ih =>
-    simp only [termPolynomial, List.map_cons, List.sum_cons, add_mul, coeff_add] at ih ⊢
-    rw [ih, ← C_mul_X_pow_eq_monomial, mul_assoc, coeff_C_mul, coeff_X_pow_mul']
-    split_ifs <;> simp
-
-/-- Terms of exponent at least `Q` do not affect the coefficients below `Q`. -/
-lemma sum_filter_small (base : List (ℕ × ℕ)) (Q : ℕ) (f : ℕ × ℕ → ℕ)
-    (hf : ∀ ec, Q ≤ ec.1 → f ec = 0) :
-    ((base.filter fun ec => ec.1 < Q).map f).sum = (base.map f).sum := by
-  induction base with
-  | nil => rfl
-  | cons ec base ih =>
-    by_cases h : ec.1 < Q
-    · simp [h, ih]
-    · simp [h, ih, hf ec (by omega)]
-
-theorem powBase_spec (Q : ℕ) (base : List (ℕ × ℕ)) (k : ℕ) :
-    (powBase Q (base.filter fun ec => ec.1 < Q) k).length = Q ∧
-    ∀ q < Q, (powBase Q (base.filter fun ec => ec.1 < Q) k).getD q 0 =
-      (termPolynomial base ^ k).coeff q := by
-  induction k with
-  | zero =>
-    refine ⟨by simp [powBase], fun q hq => ?_⟩
-    rw [List.getD_eq_getElem _ _ (by simpa [powBase] using hq)]
-    simp [powBase, coeff_one]
-  | succ k ih =>
-    obtain ⟨hl, hc⟩ := ih
-    obtain ⟨h1, h2⟩ := foldl_shiftAdd Q (powBase Q (base.filter fun ec => ec.1 < Q) k)
-      (base.filter fun ec => ec.1 < Q) (List.replicate Q 0) (by simp)
-    refine ⟨h1, fun q hq => ?_⟩
-    simp only [powBase, mulBase]
-    rw [h2 q hq, pow_succ', coeff_termPolynomial_mul]
-    rw [List.getD_replicate 0 hq, zero_add]
-    rw [sum_filter_small base Q _ (fun ec h => by split_ifs <;> omega)]
-    congr 1
-    apply List.map_congr_left
-    intro ec _
-    split_ifs with he
-    · rw [hc _ (by omega)]
-    · rfl
 
 /-! ### The inverse sixth moment of a polynomial with natural coefficients -/
 
@@ -379,24 +270,63 @@ theorem cubeSum_lower {n : ℕ} :
 /-- Truncation radius used for index `n`. -/
 def radius (n : ℕ) : ℕ := 3 * n + 10
 
+/-- Upper bound for `∑_{q ≥ 1} p_q q^{-6}` over the coefficients `p_q` of `(∑ c X^e)^{12}`,
+`∑ c X^e` given by the list of terms `T`: the coefficients below `Q` exactly, and the
+remaining mass with the weight `Q^{-6}`. -/
+def fullUpperOf (T : List (ℕ × ℕ)) (Q : ℕ) : ℚ :=
+  let p := powBase Q (T.filter fun ec => ec.1 < Q) 12
+  listInverseSixth p + (((T.map Prod.snd).sum ^ 12 : ℕ) - (p.sum : ℚ)) / (Q : ℚ) ^ 6
+
+/-- `∑_q p_q q^{-6}` over the coefficients below `13` of `(∑ c X^e)^{12}`. -/
+def cubeLowerOf (T : List (ℕ × ℕ)) : ℚ :=
+  listInverseSixth (powBase 13 (T.filter fun ec => ec.1 < 13) 12)
+
 /-- Upper bound for `b^{12} G_{12,n} = ∑_{q ≥ 1} p_q q^{-6}`. -/
-def fullUpper (n : ℕ) : ℚ :=
-  let p := powBase (radius n) ((shellTerms n n).filter fun ec => ec.1 < radius n) 12
-  listInverseSixth p +
-    ((((shellTerms n n).map Prod.snd).sum ^ 12 : ℕ) - (p.sum : ℚ)) / (radius n : ℚ) ^ 6
+def fullUpper (n : ℕ) : ℚ := fullUpperOf (shellTerms n n) (radius n)
 
 /-- Exact value of `b^{12} C_n`, the cube contribution (all its exponents are below `13`). -/
-def cubeLower (n : ℕ) : ℚ :=
-  listInverseSixth (powBase 13 ((shellTerms n 1).filter fun ec => ec.1 < 13) 12)
+def cubeLower (n : ℕ) : ℚ := cubeLowerOf (shellTerms n 1)
 
 /-- The rational value of `R_n`. -/
 def budgetRat (n : ℕ) : ℚ :=
   12 * ((21 / 500) * Legacy.D10.binomialCoeff n 2 + (67 / 100) *
     (harmonic n - 2 * Legacy.D10.binomialCoeff n 1 - Legacy.D10.binomialCoeff n 2))
 
+/-! The checker computes binomial coefficients from factorials, which the kernel evaluates
+with big-number arithmetic, instead of unfolding the recursion of `Nat.choose`. -/
+
+/-- `C(n, k)` for `k ≤ n`, computed from factorials. -/
+def factorialChoose (n k : ℕ) : ℕ := n.factorial / (k.factorial * (n - k).factorial)
+
+lemma factorialChoose_eq {n k : ℕ} (h : k ≤ n) : factorialChoose n k = n.choose k :=
+  (Nat.choose_eq_factorial_div_factorial h).symm
+
+/-- `shellTerms` with factorial binomial coefficients. -/
+def shellTermsFast (n r : ℕ) : List (ℕ × ℕ) :=
+  (List.range (r + 1)).map fun j =>
+    (j ^ 2, (if j = 0 then 1 else 2) * factorialChoose (2 * n) (n + j))
+
+lemma shellTermsFast_eq {n r : ℕ} (h : r ≤ n) : shellTermsFast n r = shellTerms n r := by
+  unfold shellTermsFast shellTerms
+  refine List.map_congr_left fun j hj => ?_
+  rw [factorialChoose_eq (by simp at hj; omega)]
+
+/-- `budgetRat` with factorial binomial coefficients. -/
+def budgetRatFast (n : ℕ) : ℚ :=
+  let b : ℚ := factorialChoose (2 * n) n
+  12 * ((21 / 500) * (factorialChoose (2 * n) (n + 2) / b) + (67 / 100) *
+    (harmonic n - 2 * (factorialChoose (2 * n) (n + 1) / b) -
+      factorialChoose (2 * n) (n + 2) / b))
+
+lemma budgetRatFast_eq {n : ℕ} (h : 2 ≤ n) : budgetRatFast n = budgetRat n := by
+  simp only [budgetRatFast, budgetRat, Legacy.D10.binomialCoeff,
+    factorialChoose_eq (by omega : n + 2 ≤ 2 * n), factorialChoose_eq (by omega : n + 1 ≤ 2 * n),
+    factorialChoose_eq (by omega : n ≤ 2 * n)]
+
 /-- The finite check for one index. -/
 def check (n : ℕ) : Bool :=
-  decide (fullUpper n - cubeLower n < budgetRat n * ((2 * n).choose n : ℚ) ^ 12)
+  decide (fullUpperOf (shellTermsFast n n) (radius n) - cubeLowerOf (shellTermsFast n 1) <
+    budgetRatFast n * (factorialChoose (2 * n) n : ℚ) ^ 12)
 
 lemma inverseSixthFrom_eq (l : List ℕ) (q : ℕ) :
     inverseSixthFrom q l = ∑ i ∈ range l.length, (l.getD i 0 : ℚ) / ((q + i : ℕ) : ℚ) ^ 6 := by
@@ -426,7 +356,7 @@ theorem fullUpper_spec (n : ℕ) :
     inverseSixthNat (shellPolynomial n n ^ 12) ≤ fullUpper n := by
   obtain ⟨hl, hc⟩ := powBase_spec (radius n) (shellTerms n n) 12
   have h := inverseSixthNat_le_upper (shellPolynomial n n ^ 12) (Q := radius n) (by unfold radius; omega)
-  unfold fullUpper
+  unfold fullUpper fullUpperOf
   simp only
   rw [listInverseSixth_eq _ _ _ hl hc, list_sum_eq _ _ _ hl hc, ← shellPolynomial_eval_one]
   simpa [eval_pow, shellPolynomial] using h
@@ -434,7 +364,7 @@ theorem fullUpper_spec (n : ℕ) :
 theorem cubeLower_spec (n : ℕ) :
     cubeLower n ≤ inverseSixthNat (shellPolynomial n 1 ^ 12) := by
   obtain ⟨hl, hc⟩ := powBase_spec 13 (shellTerms n 1) 12
-  unfold cubeLower
+  unfold cubeLower cubeLowerOf
   rw [listInverseSixth_eq _ _ _ hl hc]
   exact lower_le_inverseSixthNat _ 13
 
@@ -442,20 +372,21 @@ theorem budgetRat_cast (n : ℕ) : (budgetRat n : ℝ) = scalarBudget n := by
   rw [scalarBudget_eq, tailBudget]
   simp [budgetRat, Legacy.D10.binomialCoeffReal]
 
-theorem scalarTail_lt_of_check {n : ℕ} (hn : 1 ≤ n) (h : check n = true) :
+theorem scalarTail_lt_of_check {n : ℕ} (hn : 2 ≤ n) (h : check n = true) :
     scalarTail n < scalarBudget n := by
   have hc := of_decide_eq_true h
+  rw [shellTermsFast_eq le_rfl, shellTermsFast_eq (by omega), budgetRatFast_eq hn,
+    factorialChoose_eq (by omega)] at hc
+  change fullUpper n - cubeLower n < budgetRat n * ((2 * n).choose n : ℚ) ^ 12 at hc
   have hb : (0 : ℚ) < ((2 * n).choose n : ℚ) ^ 12 := by
     have := Nat.choose_pos (n := 2 * n) (k := n) (by omega)
     positivity
-  rw [scalarTail_eq_shell hn, ← budgetRat_cast]
+  rw [scalarTail_eq_shell (by omega), ← budgetRat_cast]
   apply Rat.cast_lt.mpr
   rw [div_lt_iff₀ hb]
   linarith [fullUpper_spec n, cubeLower_spec n]
 
 /-! ### The finite range `3 ≤ n ≤ 50` -/
-
-
 
 theorem check_3 : check 3 = true := by decide +kernel
 theorem check_4 : check 4 = true := by decide +kernel
