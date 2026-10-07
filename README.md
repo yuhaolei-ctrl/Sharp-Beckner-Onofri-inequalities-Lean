@@ -11,7 +11,7 @@ The paper finds the sharp coefficient $A$ and the optimal defect $C_d(A)$ in the
 Beckner–Onofri inequality on the unit torus $\mathbb{T}^d$,
 
 $$
-\log \int_{\mathbb{T}^d} e^{u-\bar u}\, dm \le A\, \lVert u \rVert_{\dot H^{d/2}}^2 + C_d(A),
+\log \int_{\mathbb{T}^d} e^{u-\bar u}\, dm \le A \lVert u \rVert_{\dot H^{d/2}}^2 + C_d(A),
 $$
 
 and in its dual, the periodic logarithmic Hardy–Littlewood–Sobolev inequality.
