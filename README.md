@@ -45,6 +45,19 @@ that `Solution` proves exactly the statements of `Challenge` and replays every p
 three independent kernels: Lean's own kernel, NanoDa and con-ron. A full run takes about
 15 minutes on a 10-core machine. On a 16 GB machine, set `LEAN_NUM_THREADS=4` for the build.
 
+`./scripts/extra-kernels.sh` replays the same proofs in two more kernels, con-leche
+(from which con-ron was ported) and Lean4Lean. All five kernels are rated sound and complete by the
+[Lean Kernel Arena](https://arena.lean-lang.org/). Each accepted all of the roughly 71,300 exported
+declarations (Lean v4.35.0-rc2 toolchain, 7 October 2026):
+
+| Kernel | Run by | Time | Memory |
+|---|---|---|---|
+| Lean (official) | Comparator | part of the 15-minute run | under 7 GB |
+| NanoDa | Comparator | 2 min | 7 GB |
+| con-ron | Comparator | 9 min with 1 worker | 3 GB with 1 worker |
+| con-leche | `extra-kernels.sh` | 5 min with 6 workers | 6.5 GB |
+| Lean4Lean | `extra-kernels.sh` | 11 min | 2 GB |
+
 ## Repository layout
 
 | Path | Contents |
