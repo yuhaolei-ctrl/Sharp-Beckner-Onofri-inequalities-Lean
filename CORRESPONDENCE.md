@@ -85,7 +85,7 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 
 | Result | Label | Lean declarations |
 |---|---|---|
-| Proposition 4.1 | `prop:section4-entropy-bound` | `BecknerOnofri.Target.eleven_competitor_entropy`, `BecknerOnofri.PaperResult.eleven_competitor_entropy_fine` |
+| Proposition 4.1 | `prop:section4-entropy-bound` | `BecknerOnofri.Target.eleven_competitor_entropy`, `BecknerOnofri.HighDim.Eleven.competitor_entropy_fine` |
 | Lemma 4.2 (Periodization and conditional entropy) | `lem:section4-periodization-entropy-identity` | `BecknerOnofri.PaperResult.eleven_profile_mass`, `BecknerOnofri.PaperResult.eleven_entropy_chain`, `BecknerOnofri.Target.eleven_profile_regular`, `BecknerOnofri.Paper2.periodization_derivatives_locally_uniform` |
 | Lemma 4.3 (Euclidean entropy) | `lem:section4-euclidean-entropy` | `BecknerOnofri.PaperResult.student_beta_integral`, `BecknerOnofri.PaperResult.eleven_euclidean_entropy` |
 | Lemma 4.4 (Entropy of the integer shift) | `lem:section4-lattice-label-entropy` | `BecknerOnofri.PaperResult.eleven_coordinate_marginal`, `BecknerOnofri.PaperResult.eleven_label_moment`, `BecknerOnofri.PaperResult.eleven_coordinate_label_entropy`, `BecknerOnofri.PaperResult.eleven_label_entropy_chain` |
@@ -99,13 +99,13 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 
 | Result | Label | Lean declarations |
 |---|---|---|
-| Proposition 5.1 | `prop:spectral-d12-base` | `BecknerOnofri.PaperResult.density_endpoint`, `BecknerOnofri.PaperResult.density_rigidity` |
+| Proposition 5.1 | `prop:spectral-d12-base` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity` |
 | Lemma 5.2 | `lem:spectral-subset-entropy` | `BecknerOnofri.PaperResult.coordinate_marginal_entropy`, `BecknerOnofri.PaperResult.entropy_shearer_all_subsets` |
 | Lemma 5.3 (One-dimensional summation) | `lem:spectral-slice` | `BecknerOnofri.PaperResult.spectral_slice` |
 | Lemma 5.4 (Rectangular lattice sums) | `lem:spectral-rectangle` | `BecknerOnofri.PaperResult.rectangular_lattice` |
 | Proposition 5.5 (Energy comparison for cosine-power mixtures) | `prop:spectral-marginal-energy` | `BecknerOnofri.PaperResult.cosine_mixture_deletion_energy`, `BecknerOnofri.PaperResult.cosine_mixture_subset_energy` |
-| Proposition 5.7 (Transfer from dimension twelve) | `prop:spectral-dimension-transfer` | `BecknerOnofri.PaperResult.density_endpoint`, `BecknerOnofri.PaperResult.density_rigidity` |
-| Corollary 5.8 (Spectral inequality and equality) | `cor:section5-high-endpoint` | `BecknerOnofri.PaperResult.density_endpoint`, `BecknerOnofri.PaperResult.density_rigidity`, `BecknerOnofri.PaperResult.potential_endpoint`, `BecknerOnofri.PaperResult.potential_rigidity`, `BecknerOnofri.PaperResult.pressure_threshold` |
+| Proposition 5.7 (Transfer from dimension twelve) | `prop:spectral-dimension-transfer` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity` |
+| Corollary 5.8 (Spectral inequality and equality) | `cor:section5-high-endpoint` | `BecknerOnofri.Target.density_endpoint`, `BecknerOnofri.Target.density_rigidity`, `BecknerOnofri.Target.potential_endpoint`, `BecknerOnofri.Target.potential_rigidity`, `BecknerOnofri.Target.pressure_threshold` |
 | Lemma 5.9 (Symmetry of maximizers) | `lem:common-cubic` | `BecknerOnofri.PaperResult.all_optimizer_cubic_symmetry` |
 | Proposition 5.10 (Global entropy estimate) | `prop:section5-global-entropy-gap` | `BecknerOnofri.PaperResult.global_entropy_gap` |
 | Proposition 5.11 (The singular Fourier tail) | `prop:section5-singular-fourier-tail` | `BecknerOnofri.PaperResult.smooth_mixture_singular_tail` |
@@ -120,8 +120,8 @@ result is proved. Result numbers follow that version; labels are the LaTeX label
 | Lemma 5.20 | `lem:section5-scalar-pressure` | `BecknerOnofri.PaperResult.scalar_pressure`, `BecknerOnofri.PaperResult.pressure_reduction` |
 | Lemma 5.21 (Quartic reduced functional) | `lem:section5-quartic-reduction` | `BecknerOnofri.PaperResult.first_shell_moments`, `BecknerOnofri.PaperResult.local_continuous_quartic_reduction`, `BecknerOnofri.PaperResult.local_sobolev_quadratic_slaving`, `BecknerOnofri.PaperResult.local_sobolev_analytic_graph` |
 | Proposition 5.22 (Local critical branches) | `prop:section5-local-branches` | `BecknerOnofri.PaperResult.local_quartic_signs`, `BecknerOnofri.PaperResult.local_quartic_pressure_order`, `BecknerOnofri.PaperResult.local_fullmode_stationary_hessian`, `BecknerOnofri.PaperResult.local_supported_stationary_branch`, `BecknerOnofri.PaperResult.local_supported_energy_family`, `BecknerOnofri.PaperResult.local_equal_active_fourier_modes`, `BecknerOnofri.PaperResult.local_supported_classification`, `BecknerOnofri.PaperResult.local_proper_support_saddle`, `BecknerOnofri.PaperResult.local_fullmode_morse_bott`, `BecknerOnofri.PaperResult.local_stable_supported_classification`, `BecknerOnofri.PaperResult.local_active_squared_hessian` |
-| Proposition 5.23 (Global minimizers and pressure onset) | `prop:section5-global-onset` | `BecknerOnofri.PaperResult.first_shell_order_parameter`, `BecknerOnofri.PaperResult.order_parameter_onset`, `BecknerOnofri.PaperResult.full_branch_onset`, `BecknerOnofri.PaperResult.pressure_onset` |
-| Corollary 5.24 (Quadratic vanishing of the coefficient defect) | `cor:section5-defect-onset` | `BecknerOnofri.PaperResult.coefficient_onset`, `BecknerOnofri.PaperResult.pressure_derivative_at_threshold`, `BecknerOnofri.PaperResult.pressure_first_derivative_limits`, `BecknerOnofri.PaperResult.pressure_second_derivative_limits`, `BecknerOnofri.PaperResult.pressure_first_derivative_expansion`, `BecknerOnofri.PaperResult.pressure_second_derivative_expansion` |
+| Proposition 5.23 (Global minimizers and pressure onset) | `prop:section5-global-onset` | `BecknerOnofri.PaperResult.first_shell_order_parameter`, `BecknerOnofri.PaperResult.order_parameter_onset`, `BecknerOnofri.Target.full_branch_onset`, `BecknerOnofri.Target.pressure_onset` |
+| Corollary 5.24 (Quadratic vanishing of the coefficient defect) | `cor:section5-defect-onset` | `BecknerOnofri.Target.coefficient_onset`, `BecknerOnofri.PaperResult.pressure_derivative_at_threshold`, `BecknerOnofri.PaperResult.pressure_first_derivative_limits`, `BecknerOnofri.PaperResult.pressure_second_derivative_limits`, `BecknerOnofri.PaperResult.pressure_first_derivative_expansion`, `BecknerOnofri.PaperResult.pressure_second_derivative_expansion` |
 
 Remark 5.6 (a counterexample for arbitrary densities) is not formalized.
 
@@ -138,8 +138,8 @@ Remark 5.6 (a counterexample for arbitrary densities) is not formalized.
 | Theorem 1.3, onset | `O_{H^s}(δ)` for every fixed `s`, uniformly in `x₀` | explicit constants for each `s ≥ 0`, uniformly in `x₀`; the branch is also a Morse–Bott local maximum of the potential functional |
 | Lemma 3.3 | `J_d ≤ …` for convergent integrals | strict bounds `J_10 < 1.64`, `J_11 < 5/2`, `J_12 < 3.29` for Bochner integrals; integrability is proved separately |
 | Lemma 3.6 | every `β > 0` | the case `β = 2d`, as used in Proposition 3.7 |
-| Proposition 2.7 | the attaining potential is smooth | the smooth representative is proved in `BecknerOnofri.RawOptimizerCorrespondence` but not restated |
-| Proposition 2.11 | pointwise cosine mixture | almost-everywhere identity; the pointwise form is proved in `BecknerOnofri.GenericCosineRepresentation` |
+| Proposition 2.7 | the attaining potential is smooth | the smooth representative is proved in `BecknerOnofri/RawOptimizerCorrespondence.lean` but not restated |
+| Proposition 2.11 | pointwise cosine mixture | almost-everywhere identity; the pointwise form is proved in `BecknerOnofri/GenericCosineRepresentation.lean` |
 | Proposition 5.12(i) | Fourier sums over `n ≥ 3` | the same, as `tsum`s together with their summability |
 | Lemma 5.18 | `E ψ(S) - ψ(t) ≥ η(t)(E I_B(S) - I_B(t))` | the pointwise Bregman inequality `D_ψ(s,t) ≥ η(t) D_{I_B}(s,t)`, integrated in `ConditionalEntropy.conditional_jensen_remainder` |
 | Lemma 5.20 | `0 < t ≤ 0.99` | `1/16 ≤ t ≤ 0.99`; the range `t ≤ 1/16` of Proposition 5.12(ii) is covered by the analytic small-mean estimate `Spin.small_mean_spin_inequality` |
