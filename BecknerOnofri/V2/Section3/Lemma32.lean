@@ -1,6 +1,6 @@
 module
 
-public import BecknerOnofri.V2.Section3.CircleCase
+public import BecknerOnofri.V2.Section3.CircleBound
 
 @[expose] public section
 
