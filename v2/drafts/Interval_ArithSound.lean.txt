@@ -1,0 +1,4 @@
+Superseded draft.  The sorry-free version is BecknerOnofri/V2/Interval/ArithSound.lean
+(together with Coherent, JetSound, ProgSound, CheckSound, Certificate, Final, Tests in the same
+directory).  The original draft contained one `sorry` (log series bound), now proved there as
+`log_series_bounds`, `log2Iv_mem`, `logCore_mem`, `logPoint_mem`, `Iv.log_mem`.
