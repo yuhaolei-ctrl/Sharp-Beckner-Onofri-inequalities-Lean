@@ -1,0 +1,54 @@
+import Lean
+open Lean Meta Elab Command
+
+/-! Dependency trace tool (not part of the library; rename to `.lean` to run with `lake env lean`).
+
+Usage: put `import <modules containing the targets>` above, then
+`run_cmd traceDeps #[`Name1, `Name2] "outfile.tsv" ["Forbidden.Module.Prefix", ...]`.
+For every target it writes: transitive constant count, the axioms used, and the list of constants
+whose declaring module starts with a forbidden prefix (old endpoint modules), with one example path
+for each. -/
+
+partial def constsOf (e : Environment) (n : Name) : Array Name :=
+  match e.find? n with
+  | none => #[]
+  | some ci =>
+    let t := ci.type.getUsedConstants
+    let v := match ci with
+      | .defnInfo d => d.value.getUsedConstants
+      | .thmInfo d => d.value.getUsedConstants
+      | .opaqueInfo d => d.value.getUsedConstants
+      | _ => #[]
+    (t ++ v)
+
+def moduleOf (e : Environment) (n : Name) : String :=
+  match e.getModuleIdxFor? n with
+  | some i => (e.header.moduleNames[i.toNat]!).toString
+  | none => "<current>"
+
+def traceDeps (targets : Array Name) (out : String) (forbidden : List String) : CommandElabM Unit := do
+  let e ← getEnv
+  let mut text := "target\tn_constants\taxioms\tforbidden_hits\n"
+  for t in targets do
+    -- BFS with parent pointers
+    let mut seen : NameMap Name := {}
+    let mut queue : Array Name := #[t]
+    seen := seen.insert t Name.anonymous
+    let mut i := 0
+    let mut axs : Array Name := #[]
+    let mut hits : Array (Name × String) := #[]
+    while i < queue.size do
+      let n := queue[i]!
+      i := i + 1
+      match e.find? n with
+      | some (.axiomInfo _) => axs := axs.push n
+      | _ => pure ()
+      let m := moduleOf e n
+      if forbidden.any (fun p => m.startsWith p) then hits := hits.push (n, m)
+      for c in constsOf e n do
+        unless seen.contains c do
+          seen := seen.insert c n
+          queue := queue.push c
+    let fmtHits := String.intercalate ";" (hits.toList.map fun (n, m) => s!"{n}@{m}")
+    text := text ++ s!"{t}\t{queue.size}\t{axs.toList}\t{fmtHits}\n"
+  IO.FS.writeFile out text
