@@ -104,7 +104,7 @@ theorem quadraticCorrection_apply {d : ℕ} (hd : 11 ≤ d) (z : Coordinates d) 
 
 
 /-- The point of the torus with real coordinates `t`. -/
-def lift {d : ℕ} (t : Fin d → ℝ) : Torus d := fun j => ((t j : ℝ) : UnitAddCircle)
+def cosLift {d : ℕ} (t : Fin d → ℝ) : Torus d := fun j => ((t j : ℝ) : UnitAddCircle)
 
 /-- First-shell coordinates of the leading term `2 √r Σ_j cos (2π (x_j - s_j))`:
 `z_j = √r e^{-2π i s_j}`. -/
@@ -123,9 +123,9 @@ theorem exp_mul_I_eq (θ : ℝ) :
   apply Complex.ext <;> simp [Complex.exp_ofReal_mul_I_re, Complex.exp_ofReal_mul_I_im]
 
 theorem leading_mul_fourier {d : ℕ} (r : ℝ) (s t : Fin d → ℝ) (i : Fin d) :
-    leadingCoordinates r s i * fourier 1 (lift (fun j => t j + s j) i) =
+    leadingCoordinates r s i * fourier 1 (cosLift (fun j => t j + s j) i) =
       ⟨Real.sqrt r * Real.cos (2 * Real.pi * t i), Real.sqrt r * Real.sin (2 * Real.pi * t i)⟩ := by
-  unfold leadingCoordinates lift
+  unfold leadingCoordinates cosLift
   rw [fourier_one_lift, mul_assoc, ← Complex.exp_add]
   have : (-(2 * Real.pi * s i : ℝ) : ℂ) * Complex.I + ((2 * Real.pi * (t i + s i) : ℝ) : ℂ) * Complex.I
       = ((2 * Real.pi * t i : ℝ) : ℂ) * Complex.I := by
@@ -135,13 +135,13 @@ theorem leading_mul_fourier {d : ℕ} (r : ℝ) (s t : Fin d → ℝ) (i : Fin d
 
 
 theorem term_eval {d : ℕ} {r : ℝ} (hr : 0 ≤ r) (s t : Fin d → ℝ) (i j : Fin d) :
-    term (leadingCoordinates r s) (lift (fun j => t j + s j)) i j =
+    term (leadingCoordinates r s) (cosLift (fun j => t j + s j)) i j =
       if i = j then r / ((2 : ℝ) ^ d - 1) * Real.cos (4 * Real.pi * t i)
       else 2 * r / ((2 : ℝ) ^ ((d : ℝ) / 2) - 1) *
         (Real.cos (2 * Real.pi * t i) * Real.cos (2 * Real.pi * t j)) := by
   have hsq : Real.sqrt r * Real.sqrt r = r := Real.mul_self_sqrt hr
   set z := leadingCoordinates r s with hz
-  set x := lift (fun j => t j + s j) with hx
+  set x := cosLift (fun j => t j + s j) with hx
   by_cases hij : i = j
   · subst hij
     have h1 : z i * z i * (fourier 1 (x i) * fourier 1 (x i)) =
@@ -189,7 +189,7 @@ theorem offDiag_sum_eq {d : ℕ} (g : Fin d → Fin d → ℝ) (hg : ∀ i j, g 
 
 /-- The leading term `v = Σ_j 2 √r cos (2π (x_j - s_j))`, evaluated at `x = t + s`. -/
 theorem assembly_leading_apply {d : ℕ} (r : ℝ) (s t : Fin d → ℝ) :
-    (assembly d (leadingCoordinates r s) : Space d) (lift (fun j => t j + s j)) =
+    (assembly d (leadingCoordinates r s) : Space d) (cosLift (fun j => t j + s j)) =
       2 * Real.sqrt r * ∑ j, Real.cos (2 * Real.pi * t j) := by
   rw [assembly_apply]
   simp only [ContinuousMap.coe_sum, Finset.sum_apply, synthesis_apply, mFourier_axis,
@@ -206,7 +206,7 @@ the quadratic slaving term `w_2(v) = ½ (D - Id)^{-1} P_{K^⊥}(v²)` satisfies,
 theorem cosine_correction_display {d : ℕ} (hd : 11 ≤ d) {r : ℝ} (hr : 0 ≤ r)
     (s t : Fin d → ℝ) :
     ((quadraticCorrection hd (leadingCoordinates r s) : complement d) : Space d)
-        (lift (fun j => t j + s j)) =
+        (cosLift (fun j => t j + s j)) =
       r / ((2 : ℝ) ^ d - 1) * ∑ j, Real.cos (4 * Real.pi * t j) +
       4 * r / ((2 : ℝ) ^ ((d : ℝ) / 2) - 1) *
         ∑ i, ∑ j ∈ Finset.Ioi i, Real.cos (2 * Real.pi * t i) * Real.cos (2 * Real.pi * t j) := by
@@ -227,14 +227,14 @@ theorem cosine_correction_display {d : ℕ} (hd : 11 ≤ d) {r : ℝ} (hr : 0 �
   ring
 
 
-/-- Surjectivity of `lift`. -/
-theorem exists_lift {d : ℕ} (x : Torus d) : ∃ t : Fin d → ℝ, lift t = x := by
+/-- Surjectivity of `cosLift`. -/
+theorem exists_cosLift {d : ℕ} (x : Torus d) : ∃ t : Fin d → ℝ, cosLift t = x := by
   choose t ht using fun j => QuotientAddGroup.mk_surjective (x j)
   exact ⟨t, funext fun j => ht j⟩
 
-theorem lift_add {d : ℕ} (t s : Fin d → ℝ) : lift (fun j => t j + s j) = lift t + lift s := by
+theorem cosLift_add {d : ℕ} (t s : Fin d → ℝ) : cosLift (fun j => t j + s j) = cosLift t + cosLift s := by
   funext j
-  simp [lift]
+  simp [cosLift]
 
 /-- Leading first-shell coordinates `z_j = √r e^{-2π i x_{0,j}}` for a base point `x₀` of the
 torus, so that `assembly d z (x + x₀) = 2 √r Σ_j cos (2π x_j)`. -/
@@ -242,9 +242,9 @@ def leadingCoordinatesT {d : ℕ} (r : ℝ) (x₀ : Torus d) : Coordinates d :=
   fun j => (Real.sqrt r : ℂ) * conj (fourier 1 (x₀ j))
 
 theorem leadingCoordinatesT_lift {d : ℕ} (r : ℝ) (s : Fin d → ℝ) :
-    leadingCoordinatesT r (lift s) = leadingCoordinates r s := by
+    leadingCoordinatesT r (cosLift s) = leadingCoordinates r s := by
   funext j
-  unfold leadingCoordinatesT leadingCoordinates lift
+  unfold leadingCoordinatesT leadingCoordinates cosLift
   have h : conj (((2 * Real.pi * s j : ℝ) : ℂ) * Complex.I) =
       (-(2 * Real.pi * s j : ℝ) : ℂ) * Complex.I := by
     rw [map_mul, Complex.conj_ofReal, Complex.conj_I]; ring
@@ -265,11 +265,11 @@ theorem fourier_re_lift (n : ℤ) (t : ℝ) :
   rw [this, Complex.exp_ofReal_mul_I_re]
 
 theorem displayW2_lift {d : ℕ} (r : ℝ) (t : Fin d → ℝ) :
-    displayW2 r (lift t) =
+    displayW2 r (cosLift t) =
       r / ((2 : ℝ) ^ d - 1) * ∑ j, Real.cos (4 * Real.pi * t j) +
       4 * r / ((2 : ℝ) ^ ((d : ℝ) / 2) - 1) *
         ∑ i, ∑ j ∈ Finset.Ioi i, Real.cos (2 * Real.pi * t i) * Real.cos (2 * Real.pi * t j) := by
-  unfold displayW2 lift
+  unfold displayW2 cosLift
   simp only [fourier_re_lift]
   congr 3
   · funext j; congr 1; push_cast; ring
@@ -281,18 +281,18 @@ term evaluated at the leading first-shell term `v = 2 √r Σ_j cos (2π (x_j - 
 theorem cosine_correction_torus {d : ℕ} (hd : 11 ≤ d) {r : ℝ} (hr : 0 ≤ r) (x₀ x : Torus d) :
     ((quadraticCorrection hd (leadingCoordinatesT r x₀) : complement d) : Space d) (x + x₀) =
       displayW2 r x := by
-  obtain ⟨s, rfl⟩ := exists_lift x₀
-  obtain ⟨t, rfl⟩ := exists_lift x
-  rw [← lift_add, leadingCoordinatesT_lift, cosine_correction_display hd hr, displayW2_lift]
+  obtain ⟨s, rfl⟩ := exists_cosLift x₀
+  obtain ⟨t, rfl⟩ := exists_cosLift x
+  rw [← cosLift_add, leadingCoordinatesT_lift, cosine_correction_display hd hr, displayW2_lift]
 
 /-- The leading term itself: `v (x + x₀) = 2 √r Σ_j cos (2π x_j)`. -/
 theorem leading_term_torus {d : ℕ} {r : ℝ} (x₀ x : Torus d) :
     (assembly d (leadingCoordinatesT r x₀) : Space d) (x + x₀) =
       2 * Real.sqrt r * ∑ j, (fourier 1 (x j)).re := by
-  obtain ⟨s, rfl⟩ := exists_lift x₀
-  obtain ⟨t, rfl⟩ := exists_lift x
-  rw [← lift_add, leadingCoordinatesT_lift, assembly_leading_apply]
-  simp only [lift, fourier_re_lift]
+  obtain ⟨s, rfl⟩ := exists_cosLift x₀
+  obtain ⟨t, rfl⟩ := exists_cosLift x
+  rw [← cosLift_add, leadingCoordinatesT_lift, assembly_leading_apply]
+  simp only [cosLift, fourier_re_lift]
   congr 2
   funext j; congr 1; push_cast; ring
 
