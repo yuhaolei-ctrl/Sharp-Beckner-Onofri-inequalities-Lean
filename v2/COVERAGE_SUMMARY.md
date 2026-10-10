@@ -2,96 +2,59 @@
 
 Generated 2026-10-10 01:01 UTC by the v2 ledger worker (G16 part 1) from `IMPLEMENTATION_STATUS.csv` (82 rows: S001-S058 and U01-U24) and the worker notes under `thread_state/workers/`. The numbered ids S001-S058 are the rows of the CSV (not S001-S082).
 
-## 1. Counts per column
-
-Counts are by the leading value of each cell; the parenthetical text of the cell says how and on what.
+## 1. Counts per column (updated 2026-10-10 after gluing the finite checks)
 
 ### statement_alignment
 
 | value | all 82 | S rows (58) | U rows (24) |
 |---|---|---|---|
-| matches | 50 | 35 | 15 |
-| matches-with-difference | 19 | 15 | 4 |
-| conditional | 13 | 8 | 5 |
-| not-formalized | 0 | 0 | 0 |
-| unknown - not audited | 0 | 0 | 0 |
+| conditional | 4 | 0 | 4 |
+| matches | 58 | 42 | 16 |
+| matches-with-difference | 20 | 16 | 4 |
 
 ### proof_route_alignment
 
 | value | all 82 | S rows (58) | U rows (24) |
 |---|---|---|---|
-| written-route | 26 | 18 | 8 |
-| route-difference | 51 | 38 | 13 |
 | partial | 5 | 2 | 3 |
-| not-formalized | 0 | 0 | 0 |
-| unknown - not audited | 0 | 0 | 0 |
+| route-difference | 51 | 38 | 13 |
+| written-route | 26 | 18 | 8 |
 
 ### lean_compilation
 
 | value | all 82 | S rows (58) | U rows (24) |
 |---|---|---|---|
-| compiled | 80 | 57 | 23 |
-| not-compiled | 2 | 1 | 1 |
+| compiled | 82 | 58 | 24 |
 
 ### axiom_kernel_check
 
 | value | all 82 | S rows (58) | U rows (24) |
 |---|---|---|---|
-| standard-3-axioms | 41 | 28 | 13 |
-| not-checked | 41 | 30 | 11 |
+| standard-3-axioms | 82 | 58 | 24 |
 
-Module-level compilation state recomputed when this file was generated (V2 sources versus `.lake` oleans): 214 V2 modules built, 4 stale by mtime, 5 without olean.
-
-- Without olean: `IntervalKernel.Cells3`, `IntervalKernel.Cells3_4`, `IntervalKernel.Cells3_5`, `IntervalKernel.Cells3_6`, `IntervalKernel.Cells3_7`
-- Olean older than source (stale by mtime only): `Rearrangement.Comparison`, `Section3.Defs`, `Section3.Discharge`, `Section3.Lemma31`
+Compilation: `lake build BecknerOnofri` (the whole library including all 224 V2 modules and V2.IntervalKernel) exits 0 (logs/10_full_library_build.log). Axioms: a scan with `Lean.collectAxioms` of all 5406 declarations in the 219 V2 modules that declare something finds only propext, Classical.choice, Quot.sound (logs/11_v2_axiom_scan.txt); the 95 non-V2 declarations named in the ledger are checked in logs/14_nonv2_listed_axioms.tsv. Neither check says anything about statement or route alignment.
 
 ## 2. Facts fixed by the owner
 
-a. **Conditional on hc1/hc2/hc3.** The d>=12 endpoint, Theorem 1.3, and every declaration consuming Interval's scalar certificate take `hc1 hc2 hc3 : forall k < row_i.count, row_i.checkCell k = true` (row1/row2/row3) as hypotheses; they are conditional on hc1/hc2/hc3 (Lemma 5.21 `ScalarBounds`), discharged only when V2.IntervalKernel.Cells{1,2,3} are glued in. Rows marked so: S003, S033, S040, S042, S044, S053, S056, S057, U21.
+a. **Finite checks.** `Assembly.*`, `Final.*_of_checks`, `Interval.family_scalar_bounds` and `Interval.scalar_certificate` still take `ScalarBounds` or `hc1 hc2 hc3` as hypotheses. These are proved by the kernel in `V2.IntervalKernel.Cells1/2/3` (`IntervalKernel.hc1/hc2/hc3`; 32 + 64 + 64 = 160 cells) and used in `V2.Final.Unconditional`, whose declarations have the Challenge statement shapes with no extra hypotheses. The former conditional rows S003, S033, S040, S042, S044, S053, S056, S057, U21 are therefore updated.
 b. **Section 3 module-level taint.** `theorem_1_1_written` is declaration-level clean, but the module-level import closure still reaches Legacy `LowDimensionMixtureEndpoint` via `MixtureEnergyStatementBridge -> ...` (Section3/RESOLUTION.md). This is stated on every Section 3 row: S001, S017, S018, S019, S020, S021, S022, S023.
 c. **Eleven coexistence.** Lemma 4.8 (S031), Prop 4.9 (S032), the strict part of Prop 4.1 (S024) and Theorem 1.2 (S002) reach the old `HighDim.Eleven.coexistence` (route difference); the same chain feeds U07.
 d. **A.1 twelve-square identity** is proved by modular-form uniqueness (Matt's decision 2026-10-09: route difference); the written Weierstrass / Jacobi-triple-product steps stay open (rows S045, U09).
 e. **Eleven competitor bound.** The Challenge `eleven_competitor` bound is 14.4088 (= 18011/1250) and differs from the manuscript's 8653/600 (rows S002, S025); both statements are proved (`eleven_competitor_written` carries the manuscript bound).
 
-## 3. Rows that are not-formalized, partial or conditional
-
-A row appears when its statement is not-formalized or conditional, its proof route is not-formalized or partial, or its module is not compiled. No row has the value not-formalized in a leading position; the set is therefore conditional / partial / not-compiled.
+## 3. Rows that are conditional, partial or otherwise open
 
 | id | source label | owner | flags |
 |---|---|---|---|
-| S003 | thm:intro-high-dimensional | G15 | statement=conditional |
 | S012 | lem:coordinate-rearranged-minimizer | G02 | route=partial |
 | S026 | lem:section4-periodization-entropy-identity | G05 | route=partial |
-| S033 | prop:spectral-d12-base | G14 | statement=conditional |
-| S040 | cor:section5-high-endpoint | G14 | statement=conditional |
-| S042 | prop:section5-global-entropy-gap | G14 | statement=conditional |
-| S044 | prop:section5-spin-entropy | G14 | statement=conditional |
-| S053 | d12-spin-lem:scalar | G13 | statement=conditional, compilation=not-compiled |
-| S056 | prop:section5-global-onset | G15 | statement=conditional |
-| S057 | cor:section5-defect-onset | G15 | statement=conditional |
 | U03 | eq:section2-all-exponential-moments | G02 | statement=conditional |
 | U04 | lem:coordinate-rearrangement | G02 | route=partial |
 | U09 | subsec:appendix-scalar-tail | G07 | statement=conditional |
-| U21 | d12-spin-eq:three | G13 | statement=conditional, compilation=not-compiled |
 | U23 | prop:section5-global-onset | G15 | statement=conditional, route=partial |
 | U24 | sec:common-reduction | G16 | statement=conditional, route=partial |
 
-- **S003** (`thm:intro-high-dimensional`): Glue IntervalKernel.hc1/hc2/hc3 into Final (no unconditional scalarBounds exists); decide whether Assembly/Final should consume spectral_dimension_transfer_written; N0 (H^s analytic IFT), explicit cos formula (5.full-branch-w2), Morse-Bott manifold clause.
-- **S012** (`lem:coordinate-rearranged-minimizer`): O1 (AESuccessiveSteiner cannot replace MeasSuccessive in general; exists_meas_chain supplies it for Lipschitz starts); eq:coordinate-minimizer-gap not reproved; docstring reference to coordinate_minimizer_gap dangling.
-- **S026** (`lem:section4-periodization-entropy-identity`): Random-variable-level chain rule / subadditivity; identification of JointLaw.shannonEntropy with the old labelEntropy (optional).
-- **S033** (`prop:spectral-d12-base`): Supply ScalarBounds unconditionally (IntervalKernel gluing).
-- **S040** (`cor:section5-high-endpoint`): IntervalKernel gluing; written-route transfer.
-- **S042** (`prop:section5-global-entropy-gap`): IntervalKernel gluing; cube-energy identity taken from the legacy Spin module.
-- **S044** (`prop:section5-spin-entropy`): Chain 5.12(i) + 5.12(ii) into t^4/250 <= ... is assembled in Assembly.global_entropy_gap (S042); IntervalKernel gluing.
-- **S053** (`d12-spin-lem:scalar`): Glue IntervalKernel.hc1/hc2/hc3 into Final (an unconditional ScalarBounds does not exist yet); axiom check of IntervalKernel declarations; Cells3 chunks must finish building.
-- **S056** (`prop:section5-global-onset`): N0; continuity of the pressure on (0,2d) (not needed in the formalized route); IntervalKernel gluing for the inputs.
-- **S057** (`cor:section5-defect-onset`): IntervalKernel gluing; identification of the 11- and 12-version amplitudes (not needed).
-- **U03** (`eq:section2-all-exponential-moments`): Replace circle_heatInteraction_entropy by a d = 1 proof independent of endpoint_through_ten, or consume CriticalAdamsInput as a hypothesis; state eq:section2-all-exponential-moments as a declaration if it is required downstream.
-- **U04** (`lem:coordinate-rearrangement`): Reconcile the dangling coordinate_minimizer_gap docstring reference; confirm that MeasSuccessive implies the statement used by Section3 (O1).
-- **U09** (`subsec:appendix-scalar-tail`): Written Weierstrass / Eisenstein / Jacobi-triple-product derivation (W2, W5, W6, W9 in the infrastructure note) not formalized; the finite final elimination is present as theta12_elimination.
-- **U21** (`d12-spin-eq:three`): Finish the IntervalKernel build and glue Cells{1,2,3} into Final.
-- **U23** (`prop:section5-global-onset`): N0; Morse-Bott manifold clause of P8; explicit cos formula (5.full-branch-w2).
-- **U24** (`sec:common-reduction`): Prove the three named Props independently or expose them as explicit hypotheses of the final theorems; the finite ledger is a minimum checklist, not a proof-step inventory.
+Open items per row are in `remaining_obligations` of `IMPLEMENTATION_STATUS.csv`.
 
 ## 4. Rows that could not be determined
 
