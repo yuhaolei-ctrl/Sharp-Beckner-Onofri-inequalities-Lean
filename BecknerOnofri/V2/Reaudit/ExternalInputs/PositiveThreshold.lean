@@ -2,9 +2,9 @@ module
 
 public import BecknerOnofri.V2.Vocab.Section2Bridge
 public import BecknerOnofri.V2.Vocab.ExternalInputs
-public import BecknerOnofri.V2.Final.Unconditional
-public import BecknerOnofri.V2.Final.Low
-public import BecknerOnofri.V2.Final.Eleven
+public import BecknerOnofri.V2.Reaudit.SpinChannel.WrittenEndpoint
+public import BecknerOnofri.V2.Reaudit.Mixtures.Assembly
+public import BecknerOnofri.V2.Reaudit.Final.Section4
 
 @[expose] public section
 
@@ -16,7 +16,8 @@ The repository does **not** reprove CdCRS Thm 3.  What it has is
 
 * `positiveThreshold_of_globalTransition_pos`: the Prop is *equivalent* to `0 < β_gm(d)` (take
   `β₀ = β_gm(d)`; `P_d(β_gm) = 0` is the competitor inequality), and
-* the v2 final theorems, which determine `β_gm(d)` exactly or bound it from below:
+* the route-aligned final theorems of the second pass (`Reaudit.Mixtures`, `Reaudit.Final.Section4`,
+`Reaudit.SpinChannel.WrittenEndpoint`), which determine `β_gm(d)` exactly or bound it from below:
   `β_gm(d) = 2d` for `1 ≤ d ≤ 10`, `3543/200 < β_gm(11)`, `β_gm(d) = β_s(d)` for `d ≥ 12`.
 
 Consequently `positiveThreshold d` below is a theorem for every `d ≥ 1` -- **as a corollary of the main
@@ -46,14 +47,14 @@ theorem positiveThreshold_iff {d : ℕ} (hd : 0 < d) :
 /-- `0 < β_gm(d)` for every `d ≥ 1`, from the v2 final theorems (`d ≤ 10`, `d = 11`, `d ≥ 12`). -/
 theorem globalTransition_pos_final {d : ℕ} (hd : 0 < d) : 0 < VariationalCurves.globalTransition d := by
   by_cases h10 : d ≤ 10
-  · rw [BecknerOnofri.V2.Final.low_dim_globalTransition d hd h10]
+  · rw [BecknerOnofri.V2.Reaudit.Mixtures.low_dim_globalTransition d hd h10]
     exact mul_pos two_pos (Nat.cast_pos.mpr hd)
   by_cases h11 : d = 11
   · subst h11
-    have := (BecknerOnofri.V2.Final.eleven_globalTransition_bounds).1
+    have := (BecknerOnofri.V2.Reaudit.Final.eleven_globalTransition_bounds_route).1
     exact lt_trans (by norm_num) this
   · have h12 : 12 ≤ d := by omega
-    rw [(BecknerOnofri.V2.Final.Unconditional.high_dim_thresholds d h12).2.2.1]
+    rw [(BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_thresholds_written d h12).2.2.1]
     exact spectralThreshold_pos' hd
 
 /-- **`eq:section2-positive-threshold-input`** for every `d ≥ 1`, as a corollary of the final theorems. -/

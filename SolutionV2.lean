@@ -6,6 +6,7 @@ Authors: Yuhao Lei, Matthew Rosenzweig
 module
 
 public import BecknerOnofri.V2.Final.All
+public import BecknerOnofri.V2.Reaudit.Final.All
 public import BecknerOnofri.V2.Assembly.All
 public import BecknerOnofri.V2.Eleven.All
 public import BecknerOnofri.V2.Transfer.WrittenTransfer
@@ -309,7 +310,7 @@ theorem prop_4_1 :
           ρ.value =ᵐ[torusMeasure 11] fun _ => 1) ∧
     (∀ ρ : ProbabilityDensity 11, ρ.value = Eleven.periodizedProfile →
       ENNReal.ofReal (2 * ((14475384292906 : ℝ) / 10 ^ 12)) < spectralEnergy ρ) := by
-  obtain ⟨h1, h2, h3⟩ := BecknerOnofri.V2.Eleven.prop41
+  obtain ⟨h1, h2, h3⟩ := BecknerOnofri.V2.Reaudit.Final.prop41_route
   refine ⟨h1, fun β hβ hβ' => ?_, fun ρ hρ => ?_⟩
   · have hfin : (uniformDensity 11).FiniteEntropy := by
       simp [ProbabilityDensity.FiniteEntropy, uniformDensity]
@@ -328,7 +329,7 @@ theorem eleven_competitor_written :
       SmoothOnTorus ρ.value ∧ (∀ x, 0 < ρ.value x) ∧ ρ.FiniteEntropy ∧
       entropy ρ < (8653 : ℝ) / 600 ∧
       ENNReal.ofReal (2 * ((144753 : ℝ) / 10000)) < spectralEnergy ρ := by
-  exact BecknerOnofri.V2.Final.eleven_competitor_written
+  exact BecknerOnofri.V2.Reaudit.Final.eleven_competitor_written_route
 
 /-- **Proposition 4.9 (`prop:section4-first-order-coexistence`).** At `β = β_gm(11)` the uniform
 density and at least one nonuniform smooth strictly positive density are global minimizers of
@@ -350,10 +351,10 @@ theorem prop_4_9 :
         (VariationalCurves.globalTransition 11) ∧
     ¬ DifferentiableAt ℝ (fun A => (coefficientDefect 11 A).toReal)
         (VariationalCurves.zeroDefectCoefficient 11) := by
-  exact ⟨BecknerOnofri.V2.Final.eleven_coexistence,
-    BecknerOnofri.V2.Final.eleven_uniform_hessian_pos,
-    BecknerOnofri.V2.Final.eleven_pressure_corner.2,
-    BecknerOnofri.V2.Final.eleven_defect_corner.2⟩
+  exact ⟨BecknerOnofri.V2.Reaudit.Final.eleven_coexistence_route,
+    BecknerOnofri.V2.Reaudit.Final.eleven_uniform_hessian_pos_route,
+    BecknerOnofri.V2.Reaudit.Final.eleven_pressure_corner_route.2,
+    BecknerOnofri.V2.Reaudit.Final.eleven_defect_corner_route.2⟩
 
 /-! ## Section 5: the spectral inequality in dimensions `d ≥ 12` -/
 
@@ -444,7 +445,7 @@ theorem prop_5_11 (ρ : ProbabilityDensity 12) (hs : SmoothOnTorus ρ.value)
           2 / 15 * ‖fourierCoeff ρ.value (Pi.single i (3 : ℤ))‖ ^ 2 +
           27 / 40 * ∑' j : ℕ,
             ‖fourierCoeff ρ.value (Pi.single i ((j : ℤ) + 4))‖ ^ 2 / ((j : ℝ) + 4)) := by
-  exact BecknerOnofri.V2.Mixture.singular_fourier_tail ρ hs hρ
+  exact BecknerOnofri.V2.Reaudit.Mixtures.singular_fourier_tail_direct ρ hs hρ
 
 /-- **Proposition 5.12(i) (`prop:section5-spin-entropy`).**  If `ρ` satisfies the hypotheses of
 Proposition 5.10, then the channel law `ν_ρ` is an exchangeable probability measure on `{-1,1}¹²`
@@ -478,7 +479,7 @@ theorem prop_5_12_i (ρ : ProbabilityDensity 12) (hs : SmoothOnTorus ρ.value)
         (27 / 40) * ∑' n : ℕ,
           ‖fourierCoeff ρ.value (Pi.single i ((n : ℤ) + 4))‖ ^ 2 / ((n : ℝ) + 4)) ≤
       entropy ρ := by
-  exact BecknerOnofri.V2.Channel.spin_entropy_comparison_i ρ hs hp hperm hmix V hV hlog h1 h2
+  exact BecknerOnofri.V2.Reaudit.SpinChannel.spin_entropy_comparison_i_joint ρ hs hp hperm hmix V hV hlog h1 h2
 
 /-- **Proposition 5.12(ii) (`prop:section5-spin-entropy`, eq:section5-global-spin-final).**  Every
 exchangeable probability measure `ν` on `{-1,1}¹²` with common spin mean `t ∈ [0,1]` and
@@ -546,7 +547,7 @@ theorem lemma_5_20 {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1)
     V2Vocab.Family.famF t -
         (30 / 7 : ℝ) * V2Vocab.Family.famResidVar t ≤
       V2Vocab.Spin.functional q + 12 * V2Vocab.Circle.psi t := by
-  exact BecknerOnofri.V2.FiniteState.family_variance_comparison ht0 ht1 hq he
+  exact BecknerOnofri.V2.Reaudit.ScalarBridges.perturb_printed ht0 ht1 hq he
 
 /-- **Lemma 5.21 (`d12-spin-lem:scalar`, computer-assisted scalar bounds).** For the explicit
 family and its residual, `f(t) ≥ t⁴/10` (strict for `t > 0`), `𝒱(t) ≤ t⁴/50` and

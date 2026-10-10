@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.V2.Interval.ZeroJets
 public import BecknerOnofri.V2.FiniteState.FamilyComparison
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.VarianceChain
 
 @[expose] public section
 
@@ -58,6 +59,6 @@ theorem family_variance_comparison_of_checks
     (hc3 : ∀ k < row3.count, row3.checkCell k = true)
     {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 99 / 100) {q : Count → ℝ} (hq : FeasibleAt t q) :
     famF t - (30 / 7 : ℝ) * famResidVar t ≤ functional q + 12 * psiV2 t :=
-  family_variance_comparison ht0 (by linarith) hq (family_scalar_bounds hc1 hc2 hc3 t ht0 ht1).2.2
+  Reaudit.ScalarBridges.perturb_printed ht0 (by linarith) hq (family_scalar_bounds hc1 hc2 hc3 t ht0 ht1).2.2
 
 end BecknerOnofri.V2.Interval

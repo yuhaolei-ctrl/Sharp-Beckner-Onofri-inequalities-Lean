@@ -1,0 +1,40 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "SolutionRoute",
+  "theorem_names": [
+    "BecknerOnofri.low_dim_entropy_inequality",
+    "BecknerOnofri.low_dim_beckner_onofri",
+    "BecknerOnofri.low_dim_coefficient_sharp",
+    "BecknerOnofri.circle_beckner_onofri_eq_iff",
+    "BecknerOnofri.circle_entropy_eq_iff",
+    "BecknerOnofri.low_dim_entropy_eq_iff",
+    "BecknerOnofri.low_dim_beckner_onofri_eq_iff",
+    "BecknerOnofri.low_dim_pressure_eq",
+    "BecknerOnofri.low_dim_defect_eq",
+    "BecknerOnofri.low_dim_globalTransition",
+    "BecknerOnofri.eleven_profile_constant",
+    "BecknerOnofri.eleven_competitor",
+    "BecknerOnofri.eleven_spectral_pressure",
+    "BecknerOnofri.eleven_globalTransition_bounds",
+    "BecknerOnofri.eleven_coexistence",
+    "BecknerOnofri.eleven_uniform_hessian_pos",
+    "BecknerOnofri.eleven_pressure_corner",
+    "BecknerOnofri.eleven_pressure_derivative_jump",
+    "BecknerOnofri.eleven_defect_corner",
+    "BecknerOnofri.high_dim_entropy_inequality",
+    "BecknerOnofri.high_dim_entropy_eq_iff",
+    "BecknerOnofri.high_dim_beckner_onofri",
+    "BecknerOnofri.high_dim_beckner_onofri_eq_iff",
+    "BecknerOnofri.high_dim_thresholds",
+    "BecknerOnofri.kappa_pos",
+    "BecknerOnofri.high_dim_onset_branch",
+    "BecknerOnofri.high_dim_pressure_onset",
+    "BecknerOnofri.high_dim_defect_onset"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

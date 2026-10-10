@@ -26,3 +26,6 @@ name = "ChallengeV2"
 
 [[lean_lib]]
 name = "SolutionV2"
+
+[[lean_lib]]
+name = "SolutionRoute"

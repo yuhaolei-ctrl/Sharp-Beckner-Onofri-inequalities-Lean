@@ -4,6 +4,8 @@ public import BecknerOnofri.V2.Assembly.CountForm
 public import BecknerOnofri.V2.Channel.Prop512
 public import BecknerOnofri.V2.Channel.CountLaw
 public import BecknerOnofri.V2.Mixture.Countable
+public import BecknerOnofri.V2.Reaudit.Mixtures.CountableTail
+public import BecknerOnofri.V2.Reaudit.SpinChannel.Prop512Joint
 public import BecknerOnofri.SpinCubeEnergy
 public import BecknerOnofri.EntropyEnergySpectral
 public import BecknerOnofri.EntropyMixtureRigidity
@@ -117,12 +119,12 @@ theorem global_gap_of_count (c : ℝ)
   have hc : Continuous ρ.value := UniformFourier.smooth_continuous hs
   have hmixP := hasPositiveMixture ρ hs hmix
   obtain ⟨⟨hex, hnn, hmass, -, hmean⟩, hcap, -, hent⟩ :=
-    spin_entropy_comparison_i ρ hs hp hperm hmix V hV hlog h1 h2
+    Reaudit.SpinChannel.spin_entropy_comparison_i_joint ρ hs hp hperm hmix V hV hlog h1 h2
   have ht := firstCoefficient_mem_Icc ρ hs hmix
   have hfinal := spin_final_ii c hcount hex hnn hmass ht hmean hcap
   have hcube := Spin.cube_half_energy_eq_quadratic ρ hmixP hex
   have hsplit := EntropyTail.fullFourierEnergy_split hc
-  have htail := Mixture.singular_fourier_tail ρ hs hmix
+  have htail := BecknerOnofri.V2.Reaudit.Mixtures.singular_fourier_tail_direct ρ hs hmix
   have hT : (∑' k : Frequency 12, EntropyTail.scalarTailWeight k * ‖fourierCoeff ρ.value k‖ ^ 2) =
       ∑' k : Fin 12 → ℤ, (cube12ᶜ).indicator
         (fun k => (latticeNorm k ^ 12)⁻¹ * ‖HighDim.fourierCoeff ρ.value k‖ ^ 2) k :=
@@ -165,7 +167,7 @@ theorem axis_coefficient_eq_zero (ρ : ProbabilityDensity 12) (hs : SmoothOnToru
     Legacy.TorusEndpoint.densityFourier ρ.value (axisFrequency i) = 0 := by
   have hc : Continuous ρ.value := UniformFourier.smooth_continuous hs
   obtain ⟨⟨-, -, -, -, hmean⟩, -, -, -⟩ :=
-    spin_entropy_comparison_i ρ hs hp hperm hmix V hV hlog h1 h2
+    Reaudit.SpinChannel.spin_entropy_comparison_i_joint ρ hs hp hperm hmix V hV hlog h1 h2
   have hrep : ∀ x, ρ.value x = Real.exp (V (cosineVector x)) :=
     fun x => by rw [← hlog x, Real.exp_log (hp x)]
   have heven := rep_even hrep

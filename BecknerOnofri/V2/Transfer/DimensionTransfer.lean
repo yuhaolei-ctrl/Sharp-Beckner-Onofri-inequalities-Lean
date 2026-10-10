@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.EndpointRigidity.RawDensity
 public import BecknerOnofri.MixtureMarginalEnergyPaper
 public import BecknerOnofri.EntropyShearer.PaperStatement
+public import BecknerOnofri.V2.Reaudit.Mixtures.DirectTransfer
 
 @[expose] public section
 
@@ -51,7 +52,7 @@ theorem spectral_marginal_energy_deletion {d : ℕ} (hd : 12 ≤ d)
     (ρ : ProbabilityDensity d) (hρ : IsCountableCosineMixture ρ) :
     spectralEnergy ρ ≤ ENNReal.ofReal (1 / ((d : ℝ) - 1)) *
       ∑ i : Fin d, inversePowerEnergy (d - 1) (coordinateMarginal ρ (Finset.univ.erase i)) :=
-  CosineMixtureTransfer.cosine_mixture_deletion_energy hd ρ hρ
+  BecknerOnofri.V2.Reaudit.Mixtures.spectral_marginal_energy_deletion_direct hd ρ hρ
 
 /-- **Proposition 5.5**, second display (all `r`-subsets, `d ≥ r ≥ 12`). -/
 theorem spectral_marginal_energy_subset {d r : ℕ} (hr : 12 ≤ r) (hrd : r ≤ d)
@@ -59,7 +60,7 @@ theorem spectral_marginal_energy_subset {d r : ℕ} (hr : 12 ≤ r) (hrd : r ≤
     spectralEnergy ρ ≤ ENNReal.ofReal ((d : ℝ) / ((r : ℝ) * (d.choose r : ℝ))) *
       ∑ I ∈ (Finset.univ : Finset (Fin d)).powersetCard r,
         inversePowerEnergy r (coordinateMarginal ρ I) :=
-  CosineMixtureTransfer.cosine_mixture_subset_energy hr hrd ρ hρ
+  BecknerOnofri.V2.Reaudit.Mixtures.spectral_marginal_energy_subset_direct hr hrd ρ hρ
 
 /-- The vanishing step of the equality case of Proposition 5.7 (`eq:spectral-equality-conclusion`):
 if every `r`-marginal of a cosine-power mixture has vanishing (nonnegative) Fourier contributions,

@@ -1,6 +1,6 @@
 module
 
-public import BecknerOnofri.V2.Final.Eleven
+public import BecknerOnofri.V2.Reaudit.Final.Section4
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ theorem eleven_competitor_printed :
       entropy ρ < (8653 : ℝ) / 600 ∧
       (14475384292906 : ℝ) / 10 ^ 12 <
         (2 * Real.pi) ^ 11 / 2 * (negSobolevEnergy ρ.value).toReal := by
-  have h := V2.Eleven.theorem_1_2.1
+  have h := theorem_1_2_route.1
   refine ⟨V2.Eleven.rhoStar, V2.Eleven.rhoStar_value, h.2.2.1, h.2.2.2.1, h.2.1, ?_, h.2.2.2.2.2⟩
   rw [entropy_eq_toReal_torusEntropy _ h.2.1]
   exact h.2.2.2.2.1

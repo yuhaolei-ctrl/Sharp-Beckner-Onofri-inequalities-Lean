@@ -6,6 +6,7 @@ public import BecknerOnofri.V2.FiniteState.EntropyConvexity
 public import BecknerOnofri.V2.FiniteState.OriginOrthogonality
 public import BecknerOnofri.V2.FiniteState.FamilyVariance
 public import BecknerOnofri.V2.Circle.Psi
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.VarianceChain
 
 @[expose] public section
 
@@ -154,7 +155,7 @@ theorem psiV2_zero : psiV2 0 = 0 := by simp [psiV2]
 theorem count_form_mid (hsc : ScalarBounds) {t : ℝ} (ht0 : 0 < t) (h99 : t ≤ 99 / 100)
     {q : Count → ℝ} (hq : FeasibleAt t q) : t ^ 4 / 70 < functional q + 12 * psiV2 t := by
   obtain ⟨⟨hf, hfs⟩, hv, he⟩ := hsc t ht0.le h99
-  have hcmp := family_variance_comparison ht0.le (by linarith) hq he
+  have hcmp := Reaudit.ScalarBridges.perturb_printed ht0.le (by linarith) hq he
   have hfs' := hfs ht0
   linarith
 

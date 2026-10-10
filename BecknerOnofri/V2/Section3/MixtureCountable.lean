@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.V2.Section3.MixtureFinite
 public import BecknerOnofri.MixtureEnergyStatementBridge
+public import BecknerOnofri.V2.Reaudit.Mixtures.ChainRule
 
 @[expose] public section
 
@@ -110,7 +111,7 @@ theorem mixture_energy_gap (hd2 : 2 ≤ d) (hd10 : d ≤ 10) (ρ : ProbabilityDe
   have hd0 : 0 < d := by omega
   have hdR : (0 : ℝ) < d := by exact_mod_cast hd0
   have hs : Summable w := hm.summable
-  obtain ⟨hsum, hA⟩ := axis_marginal_bound hd0 ρ hρ
+  obtain ⟨hsum, hA⟩ := BecknerOnofri.V2.Reaudit.Mixtures.axis_marginal_bound_chain hd0 ρ hρ
   set A : ℝ := ∑ i : Fin d, ∑' j, axisTerm ρ i j with hAdef
   have hc : 0 < 2 * Legacy.BecknerOnofri.endpointConstant d := by
     unfold Legacy.BecknerOnofri.endpointConstant

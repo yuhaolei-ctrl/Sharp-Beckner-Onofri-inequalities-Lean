@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.FiniteState.OriginRegression
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.OriginReflection
 
 @[expose] public section
 
@@ -169,32 +170,14 @@ theorem famEntropy_eq (t : ℝ) : relativeEntropy (famLaw t) reference =
   have := (reference_pos j).ne'
   field_simp
 
-/-- `E_b ℓ² = 144 E_b x² = 12`. -/
-theorem sum_reference_ell_sq : ∑ j : Count, reference j * famEll j ^ 2 = 12 := by
-  have e : ∀ j : Count, reference j * famEll j ^ 2 =
-      ((Nat.choose 12 j.val : ℕ) : ℝ) / 4096 * (2 * (j.val : ℝ) - 12) ^ 2 := by
-    intro j; rw [reference_eq]; unfold famEll; ring
-  simp_rw [e]
-  rw [Fin.sum_univ_eq_sum_range
-    (fun j : ℕ => ((Nat.choose 12 j : ℕ) : ℝ) / 4096 * (2 * (j : ℝ) - 12) ^ 2) 13]
-  simp only [Finset.sum_range_succ, Finset.sum_range_zero]
-  norm_num [Nat.choose]
+/-- `E_b ℓ² = 144 E_b x² = 12` (fair independent spins, `ScalarBridges.sum_reference_ell_sq_spins`). -/
+theorem sum_reference_ell_sq : ∑ j : Count, reference j * famEll j ^ 2 = 12 :=
+  Reaudit.ScalarBridges.sum_reference_ell_sq_spins
 
 /-- Reflection `j ↦ 12 - j` kills the cubic coefficient. -/
 theorem sum_reference_cubic : ∑ j : Count,
-    reference j * (famEll j * famD2 j - famEll j ^ 3 / 6) = 0 := by
-  have e : ∀ j : Count, reference j * (famEll j * famD2 j - famEll j ^ 3 / 6) =
-      ((Nat.choose 12 j.val : ℕ) : ℝ) / 4096 *
-        ((2 * (j.val : ℝ) - 12) * ((32 / 31) * (2 * ((j.val : ℝ) - 6) ^ 2 - 6)) -
-          (2 * (j.val : ℝ) - 12) ^ 3 / 6) := by
-    intro j; rw [reference_eq]; unfold famEll famD2; ring
-  simp_rw [e]
-  rw [Fin.sum_univ_eq_sum_range
-    (fun j : ℕ => ((Nat.choose 12 j : ℕ) : ℝ) / 4096 *
-        ((2 * (j : ℝ) - 12) * ((32 / 31) * (2 * ((j : ℝ) - 6) ^ 2 - 6)) -
-          (2 * (j : ℝ) - 12) ^ 3 / 6)) 13]
-  simp only [Finset.sum_range_succ, Finset.sum_range_zero]
-  norm_num [Nat.choose]
+    reference j * (famEll j * famD2 j - famEll j ^ 3 / 6) = 0 :=
+  Reaudit.ScalarBridges.sum_reference_cubic_reflection
 
 theorem sum_reference_ratio_sub_one_eventually :
     ∀ᶠ t in 𝓝 (0 : ℝ), ∑ j : Count, reference j * (famRatio j t - 1) = 0 := by
