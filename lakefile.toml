@@ -20,3 +20,9 @@ name = "Challenge"
 
 [[lean_lib]]
 name = "Solution"
+
+[[lean_lib]]
+name = "ChallengeV2"
+
+[[lean_lib]]
+name = "SolutionV2"

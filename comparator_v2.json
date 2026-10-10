@@ -1,0 +1,27 @@
+{
+  "challenge_module": "ChallengeV2",
+  "solution_module": "SolutionV2",
+  "theorem_names": [
+    "BecknerOnofri.V2Surface.prop_4_1",
+    "BecknerOnofri.V2Surface.prop_4_9",
+    "BecknerOnofri.V2Surface.eleven_competitor_written",
+    "BecknerOnofri.V2Surface.prop_5_1",
+    "BecknerOnofri.V2Surface.prop_5_7",
+    "BecknerOnofri.V2Surface.cor_5_8",
+    "BecknerOnofri.V2Surface.prop_5_10",
+    "BecknerOnofri.V2Surface.prop_5_11",
+    "BecknerOnofri.V2Surface.prop_5_12_i",
+    "BecknerOnofri.V2Surface.prop_5_12_ii",
+    "BecknerOnofri.V2Surface.lemma_5_13",
+    "BecknerOnofri.V2Surface.twelve_square_identity",
+    "BecknerOnofri.V2Surface.lemma_5_16",
+    "BecknerOnofri.V2Surface.lemma_5_20",
+    "BecknerOnofri.V2Surface.lemma_5_21"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
