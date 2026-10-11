@@ -1,7 +1,8 @@
 module
 
 public import BecknerOnofri.GreenHilbertContinuous
-public import BecknerOnofri.ContinuousOptimizers
+public import BecknerOnofri.OnsetContinuousNorm
+public import BecknerOnofri.GreenCritical
 
 @[expose] public section
 

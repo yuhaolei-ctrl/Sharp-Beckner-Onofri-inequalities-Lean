@@ -1,7 +1,6 @@
 module
 
 public import BecknerOnofri.LocalElevenContinuousInverse
-public import BecknerOnofri.GreenLocalBranch
 public import BecknerOnofri.ContinuousComplement
 
 @[expose] public section
@@ -15,8 +14,6 @@ noncomputable section
 set_option backward.isDefEq.respectTransparency false
 open scoped Topology
 namespace BecknerOnofri.HighDim.LocalEleven.GreenLocalBranch
-
-open BecknerOnofri.HighDim.GreenLocalBranch hiding correction correction_analytic correction_axis correction_base correction_derivative_zero correction_quadratic correction_solves correction_unique exists_analytic_complement green_assembly green_first_complement_zero linearPart_eq zero_axis_of_unique
 
 open ContinuousGibbs ContinuousFirstShell ContinuousComplement
 

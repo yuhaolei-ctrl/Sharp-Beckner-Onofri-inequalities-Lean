@@ -1,8 +1,6 @@
 module
 
 public import BecknerOnofri.V2.Reaudit.Sobolev.Space
-public import BecknerOnofri.ReducedEquation
-public import BecknerOnofri.GreenPairing
 
 @[expose] public section
 
@@ -125,6 +123,27 @@ def Hs.greenH (d : ℕ) (s : ℝ) [SobolevIndex d s] : Hs d s →L[ℝ] Hs d s :
 
 @[simp] theorem Hs.greenH_val (u : Hs d s) : (Hs.greenH d s u).val = greenContinuous d u.val := rfl
 
+/-- The mean of the continuous Green function applied to any `u` vanishes (the zero Fourier coefficient
+of `greenContinuous d u` is `0`). Proved here from `coefficient_green` so that this module does not
+depend on the legacy reduction modules. -/
+theorem mean_greenContinuous {d : ℕ} (hd : 0 < d) (u : Space d) :
+    mean d (greenContinuous d u) = 0 := by
+  apply Complex.ofReal_injective
+  rw [← coefficient_zero, coefficient_green hd]
+  simp
+
+/-- The Green operator annihilates constants. -/
+theorem greenContinuous_one {d : ℕ} (hd : 0 < d) : greenContinuous d (1 : Space d) = 0 := by
+  apply coefficient_ext
+  intro k
+  rw [coefficient_green hd, map_zero]
+  by_cases hk : k = 0
+  · simp [hk]
+  · have hc : coefficient k (1 : Space d) = 0 := by
+      change coefficient k (ContinuousMap.const (Torus d) 1) = 0
+      rw [coefficient_const, if_neg hk]
+    simp [hc]
+
 theorem Hs.coeff_greenH (u : Hs d s) (k : Frequency d) :
     coefficient k (Hs.greenH d s u).val =
       ((if k = 0 then 0 else 1 / frequencyLength k ^ d : ℝ) : ℂ) * coefficient k u.val :=
@@ -134,13 +153,13 @@ theorem Hs.norm_greenH_le : ‖Hs.greenH d s‖ ≤ 1 :=
   Hs.norm_restrictCLM_le _ _ _ _
 
 theorem Hs.meanCLM_greenH (u : Hs d s) : Hs.meanCLM d s (Hs.greenH d s u) = 0 := by
-  have := ReducedEquation.mean_green (SobolevIndex.hd d s) u.val
+  have := mean_greenContinuous (SobolevIndex.hd d s) u.val
   simpa using this
 
 @[simp] theorem Hs.greenH_one : Hs.greenH d s 1 = 0 := by
   apply Hs.ext
   simp only [Hs.greenH_val, Hs.val_one, Hs.val_zero]
-  exact BecknerOnofri.HighDim.GreenPairing.green_one (SobolevIndex.hd d s)
+  exact greenContinuous_one (SobolevIndex.hd d s)
 
 /-! ## The exponential and the normalized Gibbs map on `H^s` -/
 
@@ -270,7 +289,7 @@ def Hs.eulerMap (μ : ℝ) (u : Hs d s) : Hs d s := u - μ • Hs.greenH d s (Hs
 
 theorem Hs.val_eulerMap (μ : ℝ) (u : Hs d s) :
     (Hs.eulerMap μ u).val = u.val - μ • greenContinuous d (normalized u.val - 1) := by
-  simp [Hs.eulerMap, Hs.val_gibbs, BecknerOnofri.HighDim.GreenPairing.green_one (SobolevIndex.hd d s)]
+  simp [Hs.eulerMap, Hs.val_gibbs, greenContinuous_one (SobolevIndex.hd d s)]
 
 @[simp] theorem Hs.eulerMap_zero (μ : ℝ) : Hs.eulerMap μ (0 : Hs d s) = 0 := by
   apply Hs.ext

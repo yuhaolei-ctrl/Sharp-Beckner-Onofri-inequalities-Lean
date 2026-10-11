@@ -2,6 +2,8 @@ module
 
 public import BecknerOnofri.LatticeSobolevSummability
 public import BecknerOnofri.FullSobolevEmbedding
+public import BecknerOnofri.ContinuousRepresentative
+public import BecknerOnofri.OnsetRaw
 
 @[expose] public section
 

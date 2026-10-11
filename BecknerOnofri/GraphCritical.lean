@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.GreenCritical
+public import BecknerOnofri.ReducedEquation
 public import BecknerOnofri.QuadraticModes
 
 @[expose] public section

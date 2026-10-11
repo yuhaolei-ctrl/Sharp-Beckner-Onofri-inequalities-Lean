@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.ContinuousComplement
 public import BecknerOnofri.ContinuousComplementInverse
 public import BecknerOnofri.AnalyticAxisBound
+public import BecknerOnofri.V2.Reaudit.Sobolev.CorrectionFromSobolev
 
 @[expose] public section
 
@@ -46,8 +47,11 @@ theorem linearPart_eq {d : ℕ} (hd : 0 < d) :
   apply Subtype.ext
   exact complementProjection_eq_self (greenContinuous_mem_complement hd w)
 
-/-- The complete first-shell parameter space is d complex coordinates; the map
-is obtained from the actual analytic Gibbs map and the proved Green inverse. -/
+/-- The complete first-shell parameter space is d complex coordinates; the map is the analytic graph
+of the Sobolev implicit-function theorem on `K^⊥ ⊂ H^d` (manuscript Section 5,
+`subsec:section5-lyapunov-schmidt`), viewed in the continuous functions; see
+`V2.Reaudit.Sobolev.exists_analytic_complement_sobolev`.  (This replaces the earlier proof by the
+implicit-function theorem on continuous functions, `ContinuousComplement.exists_analytic_solution`.) -/
 theorem exists_analytic_complement {d : ℕ} (hd : 12 ≤ d) :
     ∃ ψ : ℝ × Coordinates d → complement d,
       AnalyticAt ℝ ψ (1, 0) ∧ ψ (1, 0) = 0 ∧
@@ -55,12 +59,8 @@ theorem exists_analytic_complement {d : ℕ} (hd : 12 ≤ d) :
       (∀ᶠ x in 𝓝 (1, (0 : Coordinates d)),
         projectedEquation (greenContinuous d) (x, ψ x) = 0) ∧
       (∀ᶠ x in 𝓝 ((1, (0 : Coordinates d)), (0 : complement d)),
-        projectedEquation (greenContinuous d) x = 0 ↔ ψ x.1 = x.2) := by
-  apply exists_analytic_solution (greenContinuous d) (green_first_complement_zero (by omega))
-    (continuousComplementContinuousLinearEquiv hd (by norm_num : (0:ℝ) ≤ 1)
-      (by norm_num : (1:ℝ) ≤ 2))
-  rw [linearPart_eq (by omega)]
-  exact continuousComplementContinuousLinearEquiv_one hd
+        projectedEquation (greenContinuous d) x = 0 ↔ ψ x.1 = x.2) :=
+  BecknerOnofri.V2.Reaudit.Sobolev.exists_analytic_complement_sobolev (by omega)
 
 /-- Local uniqueness forces the complementary correction to vanish on the
 uniform branch for every nearby value of the parameter. -/

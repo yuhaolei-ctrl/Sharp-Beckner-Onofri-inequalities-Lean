@@ -1,7 +1,8 @@
 module
 
 public import BecknerOnofri.ContinuousComplementInverse
-public import BecknerOnofri.ReducedEquation
+public import BecknerOnofri.ContinuousComplement
+public import BecknerOnofri.AnalyticAxisBound
 
 @[expose] public section
 

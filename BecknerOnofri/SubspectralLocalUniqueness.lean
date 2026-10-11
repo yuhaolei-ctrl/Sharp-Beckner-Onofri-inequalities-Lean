@@ -1,6 +1,8 @@
 module
 
 public import BecknerOnofri.SubspectralResolvent
+public import BecknerOnofri.GraphWienerBounds
+public import BecknerOnofri.ReducedEquation
 public import Mathlib.Analysis.Calculus.ImplicitContDiff
 
 @[expose] public section

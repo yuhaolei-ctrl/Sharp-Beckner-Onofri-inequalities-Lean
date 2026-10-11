@@ -1,7 +1,6 @@
 module
 
 public import BecknerOnofri.GreenCritical
-public import BecknerOnofri.GraphWienerBounds
 
 @[expose] public section
 

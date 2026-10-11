@@ -1,7 +1,6 @@
 module
 
 public import BecknerOnofri.UniformFourierHessian
-public import BecknerOnofri.ReducedEquation
 
 @[expose] public section
 
