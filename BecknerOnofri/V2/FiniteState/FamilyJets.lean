@@ -10,7 +10,9 @@ public import BecknerOnofri.V2.FiniteState.JetCalculus
 
 Source: Appendix A.3, "Behavior at zero": `a = t + O(t^10)`, `λ = O(t^10)`,
 `ω = t²/31 + O(t⁴)` and `p_j/b_j = 1 + 12 x_j t + 66 (32/31) A_{2,j} t² + O(t³)`
-(`d12-spin-eq:pexpansion`), here with remainders `O(t³)`, which is all that is used.
+(`d12-spin-eq:pexpansion`).  The printed expansions of `a`, `λ`, `ω` are proved as
+`famBias_sub_isBigO_ten`, `famLam_isBigO_ten`, `famOmega_sub_isBigO_four`; the jets below
+(remainder `O(t³)`, which is all that is used) are derived from them.
 -/
 
 noncomputable section
@@ -20,35 +22,44 @@ open scoped BigOperators
 namespace BecknerOnofri.V2.FiniteState
 open BecknerOnofri.HighDim.Spin
 
-theorem famBias_jet : Jet2 famBias 0 1 0 := by
-  unfold Jet2
-  have h : (fun t : ℝ => famBias t - (0 + 1 * t + 0 * t ^ 2)) =
-      fun t : ℝ => -(9 / 2) * t ^ 10 * (1 - t) := by
+/-- Printed (Appendix A.3, "Behavior at zero"): `a(t) = t + O(t¹⁰)` (exact:
+`a(t) - t = -(9/2) t¹⁰ (1 - t)`). -/
+theorem famBias_sub_isBigO_ten : (fun t => famBias t - t) =O[𝓝 0] fun t : ℝ => t ^ 10 := by
+  have h : (fun t : ℝ => famBias t - t) = fun t : ℝ => -(9 / 2) * (t ^ 10 * (1 - t)) := by
     funext t; unfold famBias famL; ring
   rw [h]
-  have h1 : (fun t : ℝ => t ^ 10 * (1 - t)) =O[𝓝 0] fun t : ℝ => t ^ 3 := by
-    have := (isBigO_pow_pow (by norm_num : 3 ≤ 10)).mul
-      (isBigO_poly2 1 (-1) 0)
-    exact this.congr (fun t => by ring) (fun t => by ring)
-  have := h1.const_mul_left (-(9 / 2))
-  refine this.congr_left ?_
-  intro t; ring
+  have h1 : (fun t : ℝ => t ^ 10 * (1 - t)) =O[𝓝 0] fun t : ℝ => t ^ 10 := by
+    have hb : (fun t : ℝ => 1 - t) =O[𝓝 0] fun _ : ℝ => (1 : ℝ) :=
+      Filter.Tendsto.isBigO_one ℝ (c := 1 - 0) ((by fun_prop : Continuous fun t : ℝ => 1 - t).tendsto 0)
+    simpa using (isBigO_refl (fun t : ℝ => t ^ 10) (𝓝 0)).mul hb
+  exact h1.const_mul_left _
 
-theorem famLam_isBigO : famLam =O[𝓝 0] fun t : ℝ => t ^ 3 := by
+/-- Printed: `λ(t) = O(t¹⁰)`. -/
+theorem famLam_isBigO_ten : famLam =O[𝓝 0] fun t : ℝ => t ^ 10 := by
   have hc : ContinuousAt (fun t : ℝ => (1 + famL t)⁻¹) 0 := by
     apply ContinuousAt.inv₀
     · unfold famL; fun_prop
     · simp [famL]
   have hb : (fun t : ℝ => (1 + famL t)⁻¹) =O[𝓝 0] fun _ : ℝ => (1 : ℝ) :=
     Filter.Tendsto.isBigO_one ℝ (c := (1 + famL 0)⁻¹) hc.tendsto
-  have h1 : famL =O[𝓝 0] fun t : ℝ => t ^ 3 := by
+  have h1 : famL =O[𝓝 0] fun t : ℝ => t ^ 10 := by
     have : famL = fun t : ℝ => (9 / 2) * t ^ 10 := by funext t; rfl
     rw [this]
-    exact (isBigO_pow_pow (by norm_num : 3 ≤ 10)).const_mul_left _
+    exact (isBigO_refl (fun t : ℝ => t ^ 10) (𝓝 0)).const_mul_left _
   have := h1.mul hb
   refine this.congr' ?_ ?_
   · exact Filter.Eventually.of_forall fun t => by simp [famLam, div_eq_mul_inv]
   · exact Filter.Eventually.of_forall fun t => by simp
+
+/-- The second-order jet of `a` is the printed expansion `a = t + O(t¹⁰)` truncated to `O(t³)`. -/
+theorem famBias_jet : Jet2 famBias 0 1 0 := by
+  unfold Jet2
+  refine (famBias_sub_isBigO_ten.trans (isBigO_pow_pow (by norm_num : 3 ≤ 10))).congr_left ?_
+  intro t; ring
+
+/-- `λ = O(t³)`, from the printed `λ = O(t¹⁰)`. -/
+theorem famLam_isBigO : famLam =O[𝓝 0] fun t : ℝ => t ^ 3 :=
+  famLam_isBigO_ten.trans (isBigO_pow_pow (by norm_num : 3 ≤ 10))
 
 theorem famLam_jet : Jet2 famLam 0 0 0 := Jet2.of_isBigO famLam_isBigO
 
@@ -57,7 +68,10 @@ def famOmegaDen (t : ℝ) : ℝ := famP (t ^ 2) * (1 - t) + t ^ 4 / 10
 
 theorem famOmegaDen_zero : famOmegaDen 0 = 31 := by simp [famOmegaDen, famP]
 
-theorem famOmega_jet : Jet2 famOmega 0 0 (1 / 31) := by
+/-- Printed: `ω(t) = t²/31 + O(t⁴)`; the exact identity `ω(t) - t²/31 = t⁴ Q(t)` with `Q`
+continuous at `0` underlies it. -/
+theorem famOmega_sub_isBigO_four :
+    (fun t => famOmega t - t ^ 2 / 31) =O[𝓝 0] fun t : ℝ => t ^ 4 := by
   have hcont : Continuous famOmegaDen := by unfold famOmegaDen famP; fun_prop
   set Q : ℝ → ℝ := fun t => ((1 - t) * (32 - 12 * t ^ 4) - t ^ 2 / 10) / (31 * famOmegaDen t)
     with hQ
@@ -71,10 +85,8 @@ theorem famOmega_jet : Jet2 famOmega 0 0 (1 / 31) := by
     have : Tendsto famOmegaDen (𝓝 0) (𝓝 31) := by
       simpa [famOmegaDen_zero] using hcont.tendsto 0
     exact this.eventually_ne (by norm_num)
-  have h4 : (fun t : ℝ => t ^ 4 * Q t) =O[𝓝 0] fun t : ℝ => t ^ 3 := by
-    have := (isBigO_pow_pow (by norm_num : 3 ≤ 4)).mul hQb
-    simpa using this
-  unfold Jet2
+  have h4 : (fun t : ℝ => t ^ 4 * Q t) =O[𝓝 0] fun t : ℝ => t ^ 4 := by
+    simpa using (isBigO_refl (fun t : ℝ => t ^ 4) (𝓝 0)).mul hQb
   refine h4.congr' ?_ Filter.EventuallyEq.rfl
   filter_upwards [hne] with t ht
   have e : famOmega t = t ^ 2 * (1 - t) / famOmegaDen t := rfl
@@ -82,6 +94,12 @@ theorem famOmega_jet : Jet2 famOmega 0 0 (1 / 31) := by
   field_simp
   simp only [famOmegaDen, famP]
   ring
+
+/-- The second-order jet of `ω` is the printed expansion `ω = t²/31 + O(t⁴)` truncated to `O(t³)`. -/
+theorem famOmega_jet : Jet2 famOmega 0 0 (1 / 31) := by
+  unfold Jet2
+  refine (famOmega_sub_isBigO_four.trans (isBigO_pow_pow (by norm_num : 3 ≤ 4))).congr_left ?_
+  intro t; ring
 
 theorem famNu_div_reference (t : ℝ) (j : Count) :
     famNu t j / reference j =

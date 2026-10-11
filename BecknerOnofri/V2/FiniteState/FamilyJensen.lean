@@ -3,6 +3,8 @@ module
 public import BecknerOnofri.V2.FiniteState.FamilyFeasible
 public import Mathlib.Analysis.Convex.Mul
 public import Mathlib.Analysis.Convex.Jensen
+public import Mathlib.Analysis.Convex.Deriv
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
 @[expose] public section
 
@@ -13,16 +15,15 @@ The manuscript (Appendix A.3, proof of `d12-spin-lem:feasible`) writes
 `ν_0/b_0 = ∏_{k=0}^{11} (χ(1-a)+2k)/(χ+k)`, uses `log(1+u) ≤ u`, and applies Jensen's inequality
 for the twelve integers `0,…,11` to the concave map `y ↦ (y-χa)/(χ+y)`, with mean `11/2`.
 
-This file follows that route.  One small difference: concavity is obtained from the convexity of
-`y ↦ (χ+y)⁻¹` on `[0,∞)` (`convexOn_zpow (-1)` translated by `χ`), writing
-`(y-c)/(χ+y) = 1 - (χ+c)(χ+y)⁻¹`, instead of computing the second derivative
-`-2χ(1+a)/(χ+y)³`.  The earlier tangent-line proof (`FamilyBounds`) is kept as an independent
-cross-check; the theorems here have distinct names.
+This file follows that route: concavity of `y ↦ (y-c)/(χ+y)` on `[0,∞)` is obtained from the
+second derivative `-2(χ+c)/(χ+y)³ < 0` (`concaveOn_of_deriv2_nonpos`), with `c = χa`.  The earlier
+tangent-line proof (`FamilyBounds.sum_tangent`) is kept as an independent cross-check; the theorems
+here have distinct names.
 -/
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
-open scoped BigOperators
+open scoped BigOperators Topology
 open Set
 namespace BecknerOnofri.V2.FiniteState
 open BecknerOnofri.HighDim.Spin
@@ -31,21 +32,54 @@ open BecknerOnofri.HighDim.Spin
 (second derivative `-2(χ+c)/(χ+y)³ < 0`). -/
 theorem concaveOn_ratio {χ c : ℝ} (hχ : 0 < χ) (hc : 0 < χ + c) :
     ConcaveOn ℝ (Ici (0 : ℝ)) (fun y => (y - c) / (χ + y)) := by
-  have h1 : ConvexOn ℝ (Ici (0 : ℝ)) (fun y : ℝ => (χ + y) ^ (-1 : ℤ)) := by
-    have := (convexOn_zpow (𝕜 := ℝ) (-1)).translate_right χ
-    refine this.subset ?_ (convex_Ici 0)
+  set f : ℝ → ℝ := fun y => (y - c) / (χ + y) with hf
+  have hd1 : ∀ y : ℝ, 0 < χ + y → HasDerivAt f ((χ + c) / (χ + y) ^ 2) y := by
     intro y hy
-    show 0 < χ + y
-    have : (0 : ℝ) ≤ y := hy
+    have hu : HasDerivAt (fun y : ℝ => χ + y) 1 y := (hasDerivAt_id y).const_add χ
+    have hn : HasDerivAt (fun y : ℝ => y - c) 1 y := (hasDerivAt_id y).sub_const c
+    have := hn.div hu hy.ne'
+    convert this using 1
+    field_simp
+    ring
+  have hd2 : ∀ y : ℝ, 0 < χ + y →
+      HasDerivAt (fun y : ℝ => (χ + c) / (χ + y) ^ 2) (-2 * (χ + c) / (χ + y) ^ 3) y := by
+    intro y hy
+    have hu : HasDerivAt (fun y : ℝ => χ + y) 1 y := (hasDerivAt_id y).const_add χ
+    have hu2 : HasDerivAt (fun y : ℝ => (χ + y) ^ 2) (((2 : ℕ) : ℝ) * (χ + y) ^ (2 - 1) * 1) y :=
+      hu.pow 2
+    have hne : (χ + y) ^ 2 ≠ 0 := pow_ne_zero 2 hy.ne'
+    have := (hasDerivAt_const y (χ + c)).div hu2 hne
+    convert this using 1
+    field_simp
+    ring
+  have hev : ∀ x : ℝ, 0 < χ + x →
+      deriv f =ᶠ[𝓝 x] fun y => (χ + c) / (χ + y) ^ 2 := by
+    intro x hx
+    have hopen : IsOpen {y : ℝ | 0 < χ + y} :=
+      isOpen_lt continuous_const (continuous_const.add continuous_id)
+    filter_upwards [hopen.mem_nhds (show x ∈ {y : ℝ | 0 < χ + y} from hx)] with y hy
+    exact (hd1 y hy).deriv
+  have hpos : ∀ x ∈ Ici (0 : ℝ), 0 < χ + x := fun x hx => by
+    have : (0 : ℝ) ≤ x := hx
     linarith
-  have h2 := ((h1.smul hc.le).neg)
-  have h3 := h2.add (concaveOn_const (1 : ℝ) (convex_Ici (0 : ℝ)))
-  refine h3.congr (fun y hy => ?_)
-  have hy' : (0 : ℝ) ≤ y := hy
-  have : 0 < χ + y := by linarith
-  simp only [Pi.add_apply, Pi.neg_apply, smul_eq_mul]
-  field_simp
-  ring
+  apply concaveOn_of_deriv2_nonpos (convex_Ici 0)
+  · intro x hx
+    exact (hd1 x (hpos x hx)).continuousAt.continuousWithinAt
+  · intro x hx
+    rw [interior_Ici] at hx
+    exact (hd1 x (hpos x (le_of_lt hx))).differentiableAt.differentiableWithinAt
+  · intro x hx
+    rw [interior_Ici] at hx
+    exact ((hd2 x (hpos x (le_of_lt hx))).differentiableAt.congr_of_eventuallyEq
+      (hev x (hpos x (le_of_lt hx)))).differentiableWithinAt
+  · intro x hx
+    rw [interior_Ici] at hx
+    have hx' := hpos x (le_of_lt hx)
+    show deriv (deriv f) x ≤ 0
+    rw [(hev x hx').deriv_eq, (hd2 x hx').deriv]
+    apply div_nonpos_of_nonpos_of_nonneg
+    · linarith
+    · positivity
 
 /-- Jensen's inequality for the twelve integers `0,…,11` (mean `11/2`). -/
 theorem sum_jensen {χ c : ℝ} (hχ : 0 < χ) (hc : 0 < χ + c) :

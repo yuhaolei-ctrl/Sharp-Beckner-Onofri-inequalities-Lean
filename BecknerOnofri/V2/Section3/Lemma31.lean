@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.Section3.Defs
+public import BecknerOnofri.V2.Reaudit.Attainment.Main
 
 @[expose] public section
 
@@ -65,7 +66,7 @@ theorem entropy_bound_of_minimizing_mixtures (hd : 0 < d) (hmix : SmoothMixtureI
     have : β * kernelConstant d / 2 * N = S / 2 + d * kernelConstant d * N / 2 := by
       rw [hβdef]; field_simp
     rw [this]; linarith
-  obtain ⟨ρs, hρs⟩ := OptimizerDuality.exists_minimizer hd hβ hβd
+  obtain ⟨ρs, hρs⟩ := (Reaudit.Attainment.subcritical_attainment hd hβ hβd).2.1
   obtain ⟨η, u, -, hηmin, -, -, -, -, hsm, hηpos, -, -, -, -, -, -, -, hηmix, -, -⟩ :=
     PrescribedSelection.canonical_selection hd β hβ hβd ρs hρs
   have hle := hηmin.2 ρ hρ
@@ -200,8 +201,9 @@ theorem entropy_equality_uniform (hd : 0 < d)
     ρ.value =ᵐ[torusMeasure d] (fun _ => 1) := by
   have hd' : (0 : ℝ) < d := by exact_mod_cast hd
   have hmin := isGlobalMinimizer_of_equality hd hfull ρ hρ heq
-  obtain ⟨⟨q, hq, hqs, hqpos⟩, -, -⟩ :=
-    OptimizerDuality.minimizer_smooth_positive_kirkwood hd (by positivity : 0 < 2 * (d : ℝ)) ρ hmin
+  obtain ⟨q, hq, hqs, hqpos⟩ :=
+    (Reaudit.Attainment.attained_extremizers_regular hd (by positivity : 0 < 2 * (d : ℝ))
+      (Or.inr ⟨ρ, hmin⟩)).2.2.1 ρ hmin
   let ρq := densityOfSmooth ρ hq hqs hqpos
   have hae : ρ.value =ᵐ[torusMeasure d] ρq.value := hq
   have h := entropy_equality_uniform_smooth hd hfull hstrict ρq hqs (by

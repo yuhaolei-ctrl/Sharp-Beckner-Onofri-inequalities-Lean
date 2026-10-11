@@ -2,6 +2,7 @@ module
 
 public import Legacy.BecknerOnofri.JacobiHeatKernelAction
 public import Legacy.BecknerOnofri.AngularPolynomialPositivity
+public import BecknerOnofri.V2.Reaudit.HeatKernel.LegacyReplacement
 
 @[expose] public section
 
@@ -13,14 +14,13 @@ open scoped Topology ContDiff
 namespace Legacy.BecknerOnofri.JacobiHeatPositivity
 open JacobiEigenfunctions JacobiHeatBounds
 
-/-- The complete actual Jacobi heat kernel is nonnegative on the open Dirichlet interval. -/
+/-- The complete actual Jacobi heat kernel is nonnegative on the open Dirichlet interval.
+Proved from the positive-resolvent comparison `BecknerOnofri.V2.Reaudit.HeatKernel` (U05/S015); the
+former parabolic-maximum-principle proof is no longer used. -/
 theorem heatKernel_nonnegative_interior {m : ℕ} (hm : 0<m) {t x y : ℝ}
     (ht : 0<t) (hx : x∈Icc 0 Real.pi) (hy : y∈Ioo 0 Real.pi) :
-    0≤heatKernel m t x y := by
-  apply nonnegative_of_angularPolynomial_tests m (heatKernel_continuous_right m ht x) _ hy
-  intro p hp
-  rw [heatKernel_polynomial m hm p ht x]
-  exact polynomialHeat_nonnegative hm p hp ht.le hx
+    0≤heatKernel m t x y :=
+  BecknerOnofri.V2.Reaudit.HeatKernel.Engine.heatKernel_nonnegative_interior_V2 hm ht hx hy
 
 /-- The positivity extends to the closed interval using the proved spectral zero boundary. -/
 theorem heatKernel_nonnegative {m : ℕ} (hm : 0<m) {t x y : ℝ}

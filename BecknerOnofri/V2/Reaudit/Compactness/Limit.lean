@@ -18,7 +18,10 @@ with `A_gm > A_s > A_crit`, and let `u_n` maximize the dual functional at `A_n` 
    `L²`, almost everywhere (`eq:section4-uniform-compactness`; here: `realSobolevBall_isCompact`, then
    a.e. convergence of a further `L²` subsequence);
 3. uniform exponential moments for each `p > 1` (`eq:section4-uniform-exponential-p-bound`;
-   here: the rough exponential bound `RoughExponentialBound`, giving the same finiteness);
+   here: the hypothesis `RoughExponentialBound d b Ab`, which for the callers in `TransitionLimit` is
+   *the printed critical Adams inequality applied to `p u`*: `ExternalInputs.roughExponentialBound_of_criticalAdams`
+   with `b = endpointConstant d`, `1/(4b) = A_crit(d)` in the energy normalization, and `Ab = exp B_d`;
+   `p^2 E/(4b) + log Ab` is the printed bound `B_d + A_crit p^2 ‖u‖^2`);
 4. uniform integrability and Vitali: `∫ e^{u_n} → ∫ e^{u_0}` (`eq:section4-vitali-exponential`);
 5. weak lower semicontinuity of the quadratic norm and the value convergence show that `u_0` is a
    maximizer at `A_gm` (`eq:section4-limit-is-maximizer`);

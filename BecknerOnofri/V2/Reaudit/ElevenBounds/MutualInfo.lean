@@ -164,6 +164,19 @@ theorem H_Sh_N_given_Y_le_of_chain (hX : Measurable X) (hlaw : P.map X = lawEta)
   rw [chain_rule_rv hX hlaw]
   linarith [mutualInfo_nonneg hX hlaw]
 
+/-- **`eq:section4-label-entropy-subadditivity` for the random variables `N`, `Y`, with the first step
+proved as printed** (chain rule and nonnegativity of the mutual information,
+`H_Sh_N_given_Y_le_of_chain`): `H_Sh(N|Y) ≤ H_Sh(N) ≤ ∑_{j=1}^{11} H_Sh(N_j) = 11 H_Sh(N_1)`.
+The statement is that of `label_entropy_chain_rv` (`LabelChain`), whose first step goes through the
+repository's explicit-sum comparison `conditionalLabelEntropy_le_labelEntropy`. -/
+theorem label_entropy_chain_rv_printed (hX : Measurable X) (hlaw : P.map X = lawEta) :
+    condShannon P (rvN X) (rvY X) ≤ shannonEntropy (P.map (rvN X)) ∧
+      shannonEntropy (P.map (rvN X)) ≤ ∑ j : Fin 11, shannonEntropy (P.map (rvNj X j)) ∧
+      ∑ j : Fin 11, shannonEntropy (P.map (rvNj X j)) = 11 * shannonEntropy (P.map (rvNj X 0)) := by
+  refine ⟨H_Sh_N_given_Y_le_of_chain hX hlaw, H_Sh_N_le_sum hX hlaw, ?_⟩
+  simp_rw [H_Sh_Nj_eq hX hlaw]
+  simp
+
 end RV
 
 end BecknerOnofri.V2.Reaudit.ElevenBounds

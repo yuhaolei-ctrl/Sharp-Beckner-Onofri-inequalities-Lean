@@ -8,6 +8,7 @@ public import BecknerOnofri.RawOptimizerCorrespondence
 public import BecknerOnofri.PrescribedSelectionDefinitions
 public import BecknerOnofri.OptimizerDuality
 public import BecknerOnofri.SmoothTorusLipschitz
+public import BecknerOnofri.V2.Reaudit.Attainment.Main
 
 @[expose] public section
 
@@ -314,11 +315,17 @@ strictly positive, `η = e^{u}/∫e^{u}` for the smooth mean-zero potential `u =
 (Euler relation in Fourier variables), and both `η` and `u` are separately even and nonincreasing
 in each coordinate on `[0,1/2]`.
 
-Route: `eq:coordinate-free-energy-comparison` is `rearranged_pressureValue_ge` (written route);
-smoothness/positivity/Gibbs form of the new minimizer is the repository's attained-extremizer
-regularity (`continuous_optimizer_of_minimizer`, `raw_optimizer_euler`, Corollary 2.6), used instead
-of the relative-entropy computation `eq:coordinate-minimizer-gap` (see `coordinate_minimizer_gap`
-for that identity). -/
+Route: `eq:coordinate-free-energy-comparison` is `rearranged_pressureValue_ge` (written route).
+Once the energy comparison has shown that `η` is a minimizer (`hηmin`), smoothness, positivity and
+the Gibbs form of `η` are the regularity of every attained minimizer, Corollary
+`cor:section2-extremizer-correspondence` (iii), in the `Reaudit.Attainment` package
+(`Reaudit.Attainment.densityMinimizer_regularity`), together with the Fourier form of the potential
+identity (`Reaudit.Attainment.fourierCoeff_densityPotential`).  This replaces the printed route through the
+relative-entropy computation `eq:coordinate-minimizer-gap` (`H_r(r | ρ_{u_r}) = 0`), which is not
+formalized separately: the two gap identities of Section 2 are `Reaudit.Attainment.coefficientValue_gap` and
+`Reaudit.Attainment.densityValue_gap` (`GapIdentities.lean`), and they enter through `densityMinimizer_regularity`.
+The smooth starting minimizer is `Reaudit.Attainment.exists_smooth_positive_minimizer`
+(`exists_rearranged_minimizer_of_attainment` below composes it with this lemma). -/
 theorem coordinate_rearranged_minimizer (hd : 0 < d) {β : ℝ} (hβ : 0 < β)
     (ρ : ProbabilityDensity d) (hρ : IsGlobalMinimizer β ρ) (hρs : SmoothOnTorus ρ.value) :
     ∃ (η : ProbabilityDensity d) (u : Torus d → ℝ),
@@ -363,40 +370,74 @@ theorem coordinate_rearranged_minimizer (hd : 0 < d) {β : ℝ} (hβ : 0 < β)
       (OptimizerDuality.minimizer_value_eq_pressure hρ).symm
   have hee : spectralEnergy η = spectralEnergy ρ :=
     le_antisymm (spectralEnergy_le_of_pressureValue_le hd hβ ρ η hρf hηf hent' hpv.le) he
-  obtain ⟨u, hu, hm, hus, -, hmax, hg⟩ := OptimizerDuality.continuous_optimizer_of_minimizer hd hβ η hηmin
+  -- regularity of the attained minimizer `η` (Corollary 2.6 (iii), package `Attainment`)
+  have hA0 : 0 < Gap.coefficient d β := Gap.coefficient_pos hd hβ
+  have hback := Reaudit.Attainment.coefficient_coefficient hd hβ
+  obtain ⟨u, hug, hus, hm, -, -, hg⟩ := Reaudit.Attainment.densityMinimizer_regularity hd hA0 η
+    (by rw [hback]; exact hηmin)
+  rw [hback] at hug
+  have hu : InCriticalSobolev u :=
+    (Gap.inCriticalSobolev_congr hug).2 (Gap.densityPotential_regular hd hβ η hηf).1
   have hgc : Continuous g := g.continuous
+  obtain ⟨K', hK'⟩ := hus.exists_lipschitz
+  let uC : ContinuousGibbs.Space d := ⟨u, hK'.continuous⟩
   have hnc : Continuous (normalizedGibbs u) := by
-    obtain ⟨K', hK'⟩ := (OptimizerDuality.normalizedGibbs_smooth u hus).exists_lipschitz
-    exact hK'.continuous
+    obtain ⟨K'', hK''⟩ := (Reaudit.Attainment.normalizedGibbs_smooth hus).exists_lipschitz
+    exact hK''.continuous
   have hgu : η.value = normalizedGibbs u := Measure.eq_of_ae_eq hg hgc hnc
   have hgpos : ∀ x, 0 < η.value x := by
     intro x
     rw [hgu]
-    rw [← ContinuousGibbs.normalized_apply]
-    exact ContinuousGibbs.normalized_pos u x
+    have := ContinuousGibbs.normalized_pos uC x
+    rwa [ContinuousGibbs.normalized_apply] at this
   have hst : PrescribedSelection.CoordinateSteiner η.value :=
     ⟨fun i x => (hgS i (List.mem_finRange i)).1 x, fun x i => (hgS i (List.mem_finRange i)).2 x⟩
-  refine ⟨η, u, hch, hηmin, he, hee, hid, hent, hent', hpv, hgu, ?_, hgpos, hus, hm, hu, ?_,
+  refine ⟨η, u, hch, hηmin, he, hee, hid, hent, hent', hpv, hgu, ?_, hgpos, hus, hm, hu, hug,
     ?_, hst, ?_⟩
-  · rw [hgu]; exact OptimizerDuality.normalizedGibbs_smooth u hus
-  · have h := OptimizerDuality.continuous_optimizer_green hd hβ u hu hm hmax
-    rw [← hgu] at h
-    exact h
+  · rw [hgu]; exact Reaudit.Attainment.normalizedGibbs_smooth hus
   · intro k
-    have h := OptimizerDuality.raw_optimizer_euler hd hβ u hu hm hmax k
-    rw [← hgu] at h
-    exact h
+    have h := Reaudit.Attainment.fourierCoeff_densityPotential hd hβ η hηf k.property
+    rw [← congrFun (fourierCoeff_congr_ae' hug) k.val] at h
+    simpa only [Complex.ofReal_pow] using h
   · exact Legacy.BecknerOnofri.SteinerSelection.steiner_of_normalized_exp
-      (ContinuousGibbs.partition_pos u) (by
+      (ContinuousGibbs.partition_pos uC) (by
         have h := hst
         rw [hgu] at h
         change Legacy.BecknerOnofri.SteinerSelection.Steiner
           (fun x => Real.exp (u x) / (∫ y, Real.exp (u y) ∂torusMeasure d)) at h
-        simpa only [ContinuousGibbs.partition, ContinuousGibbs.mean_apply,
-          ContinuousGibbs.exponential_apply] using h)
+        simp only [ContinuousGibbs.partition, ContinuousGibbs.mean_apply,
+          ContinuousGibbs.exponential_apply]
+        exact h)
+
+/-- **Lemma 2.9 (`lem:coordinate-rearranged-minimizer`) as printed** (rows S012, U04), composed from
+the smooth initial minimizer of the `Attainment` package
+(`Reaudit.Attainment.exists_smooth_positive_minimizer`, Proposition `prop:section2-subcritical-attainment`)
+and the wrapper `coordinate_rearranged_minimizer`.
+
+For `0 < β < 2d` there is a smooth strictly positive minimizer `r` of the free energy such that `r`
+and its mean-zero potential `u_r = β g ∗ r` are separately even and nonincreasing in each coordinate
+(`CoordinateSteiner`).  Here `r` is the canonical successive rearrangement `η` of the smooth initial
+minimizer (`MeasSuccessive`, with equal entropy, energy and distribution), `u_r` is the smooth
+representative of `Gap.densityPotential β r`, and `r = normalizedGibbs u`. -/
+theorem coordinate_rearranged_minimizer_printed (hd : 0 < d) {β : ℝ} (hβ : 0 < β)
+    (hβd : β < 2 * (d : ℝ)) :
+    ∃ (ρ₀ r : ProbabilityDensity d) (u : Torus d → ℝ),
+      IsGlobalMinimizer β ρ₀ ∧ SmoothOnTorus ρ₀.value ∧ (∀ x, 0 < ρ₀.value x) ∧
+      MeasSuccessive ρ₀.value r.value ∧ IsGlobalMinimizer β r ∧
+      IdentDistrib r.value ρ₀.value (torusMeasure d) (torusMeasure d) ∧
+      entropy r = entropy ρ₀ ∧ spectralEnergy r = spectralEnergy ρ₀ ∧
+      SmoothOnTorus r.value ∧ (∀ x, 0 < r.value x) ∧ r.value = normalizedGibbs u ∧
+      SmoothOnTorus u ∧ MeanZero u ∧ u =ᵐ[torusMeasure d] Gap.densityPotential β r.value ∧
+      PrescribedSelection.CoordinateSteiner r.value ∧ PrescribedSelection.CoordinateSteiner u := by
+  obtain ⟨ρ₀, hρ₀, hρ₀s, hρ₀p⟩ := Reaudit.Attainment.exists_smooth_positive_minimizer hd hβ hβd
+  obtain ⟨η, u, hch, hηmin, -, hee, hid, -, hent, -, hgu, hηs, hηpos, hus, hm, -, hug, -, hst, hstu⟩ :=
+    coordinate_rearranged_minimizer hd hβ ρ₀ hρ₀ hρ₀s
+  exact ⟨ρ₀, η, u, hρ₀, hρ₀s, hρ₀p, hch, hηmin, hid, hent, hee, hηs, hηpos, hgu, hus, hm, hug,
+    hst, hstu⟩
 
 #print axioms MeasChain.density
 #print axioms exists_meas_chain
 #print axioms coordinate_rearranged_minimizer
+#print axioms coordinate_rearranged_minimizer_printed
 
 end BecknerOnofri.V2.Rearrangement

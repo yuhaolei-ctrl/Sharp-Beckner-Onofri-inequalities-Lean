@@ -4,6 +4,7 @@ public import BecknerOnofri.V2.Rearrangement.CoordinateSplit
 public import BecknerOnofri.V2.Vocab.HomEntropyTorus
 public import BecknerOnofri.V2.Vocab.HomEntropyIdent
 public import BecknerOnofri.CircleRearrangementTrustedBridge
+public import BecknerOnofri.V2.Reaudit.Obstruction.CircleAligned
 public import BecknerOnofri.CoordinateRearrangementDefinitions
 
 @[expose] public section
@@ -57,7 +58,7 @@ theorem fiber_identDistrib_of_step (i : Fin d) {r s : Torus d → ℝ}
   have hN : ∀ᵐ x ∂torusMeasure d, ∀ᵐ z ∂torusMeasure 1, 0 ≤ circleFiber i r x z :=
     Measure.ae_ae_of_ae_prod (hF.quasiMeasurePreserving.ae hr0)
   filter_upwards [hI, hN, hstep] with x h1 h2 h3 B hB
-  obtain ⟨-, -, -, -, hid, -⟩ := Circle.circle_rearrangement (circleFiber i r x) (circleFiber i r x)
+  obtain ⟨hid, -⟩ := Reaudit.Obstruction.circle_rearrangement_aligned (circleFiber i r x) (circleFiber i r x)
     h1 h1 h2 h2 (fun _ => 0) (C := 0) (fun _ => le_rfl) (fun _ => le_rfl) (fun _ _ _ => le_rfl)
   have e1 := hid.measure_mem_eq hB
   have e2 : torusMeasure 1 (Circle.realRearrange (circleFiber i r x) ⁻¹' B) =

@@ -4,6 +4,10 @@ public import Mathlib.Analysis.SpecialFunctions.Exp
 public import Mathlib.Analysis.Complex.Exponential
 public import Mathlib.Algebra.BigOperators.Ring.Finset
 public import Mathlib.Tactic
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Pow
+public import Mathlib.Analysis.Calculus.Deriv.Add
+public import Mathlib.Analysis.Calculus.Deriv.Inv
 
 @[expose] public section
 
@@ -25,17 +29,50 @@ def famChi (t : ℝ) : ℝ := 31 / t ^ 2 - 32 + 12 * t ^ 4 + t ^ 2 / (10 * (1 - 
 def famP (u : ℝ) : ℝ := 31 - 32 * u + 12 * u ^ 3
 def famOmega (t : ℝ) : ℝ := t ^ 2 * (1 - t) / (famP (t ^ 2) * (1 - t) + t ^ 4 / 10)
 
-/-- Maximum of `t^9 (1-t)` is `9^9/10^10` (at `t = 9/10`): exact factorisation with a double
-root and a positive-coefficient cofactor.  Verified by exact rational polynomial division. -/
+/-- Maximum of `t^9 (1-t)` is `9^9/10^10` (at `t = 9/10`), by calculus as printed: on `[0,1]` the
+derivative of `φ(t) = t^9 (1-t)` is `t^8 (9 - 10 t)`, so `φ` increases on `[0,9/10]` and decreases on
+`[9/10,1]`; for `t > 1` the left-hand side is negative. -/
 theorem pow9_mul_one_sub_le {t : ℝ} (ht : 0 ≤ t) : t ^ 9 * (1 - t) ≤ 9 ^ 9 / 10 ^ 10 := by
-  have hq : 0 ≤ (4782969 / 100000000 : ℝ) + (531441 / 5000000) * t + (177147 / 1000000) * t ^ 2 +
-      (6561 / 25000) * t ^ 3 + (729 / 2000) * t ^ 4 + (243 / 500) * t ^ 5 + (63 / 100) * t ^ 6 +
-      (4 / 5) * t ^ 7 + t ^ 8 := by positivity
-  have hid : (9 ^ 9 / 10 ^ 10 : ℝ) - t ^ 9 * (1 - t) = (t - 9 / 10) ^ 2 *
-      ((4782969 / 100000000 : ℝ) + (531441 / 5000000) * t + (177147 / 1000000) * t ^ 2 +
-      (6561 / 25000) * t ^ 3 + (729 / 2000) * t ^ 4 + (243 / 500) * t ^ 5 + (63 / 100) * t ^ 6 +
-      (4 / 5) * t ^ 7 + t ^ 8) := by ring
-  nlinarith [mul_nonneg (sq_nonneg (t - 9 / 10)) hq]
+  set φ : ℝ → ℝ := fun t => t ^ 9 * (1 - t) with hφ
+  have hd : ∀ x : ℝ, HasDerivAt φ (x ^ 8 * (9 - 10 * x)) x := by
+    intro x
+    have h : HasDerivAt (fun t : ℝ => t ^ 9 * (1 - t))
+        (((9 : ℕ) : ℝ) * x ^ (9 - 1) * (1 - id x) + x ^ 9 * -1) x :=
+      (hasDerivAt_pow 9 x).mul ((hasDerivAt_id x).const_sub 1)
+    refine h.congr_deriv ?_
+    simp
+    ring
+  have hcont : Continuous φ := by fun_prop
+  have hdiff : Differentiable ℝ φ := fun x => (hd x).differentiableAt
+  have hmono : MonotoneOn φ (Set.Icc 0 (9 / 10)) := by
+    apply monotoneOn_of_deriv_nonneg (convex_Icc _ _) hcont.continuousOn hdiff.differentiableOn
+    intro x hx
+    rw [interior_Icc] at hx
+    rw [(hd x).deriv]
+    have : 0 ≤ x ^ 8 := by positivity
+    have : 0 ≤ 9 - 10 * x := by linarith [hx.2]
+    positivity
+  have hanti : AntitoneOn φ (Set.Icc (9 / 10) 1) := by
+    apply antitoneOn_of_deriv_nonpos (convex_Icc _ _) hcont.continuousOn hdiff.differentiableOn
+    intro x hx
+    rw [interior_Icc] at hx
+    rw [(hd x).deriv]
+    have : 0 ≤ x ^ 8 := by positivity
+    have : 9 - 10 * x ≤ 0 := by linarith [hx.1]
+    exact mul_nonpos_of_nonneg_of_nonpos (by positivity) this
+  have hval : φ (9 / 10) = 9 ^ 9 / 10 ^ 10 := by simp only [hφ]; norm_num
+  by_cases h1 : t ≤ 1
+  · by_cases h : t ≤ 9 / 10
+    · calc φ t ≤ φ (9 / 10) := hmono ⟨ht, h⟩ ⟨by norm_num, le_refl _⟩ h
+        _ = _ := hval
+    · push Not at h
+      calc φ t ≤ φ (9 / 10) := hanti ⟨le_refl _, by norm_num⟩ ⟨h.le, h1⟩ h.le
+        _ = _ := hval
+  · push Not at h1
+    have h2 : t ^ 9 * (1 - t) ≤ 0 :=
+      mul_nonpos_of_nonneg_of_nonpos (by positivity) (by linarith)
+    have h3 : (0 : ℝ) ≤ 9 ^ 9 / 10 ^ 10 := by positivity
+    linarith
 
 theorem famL_mul_one_sub_le {t : ℝ} (ht : 0 ≤ t) : famL t * (1 - t) ≤ t / 5 := by
   have h := pow9_mul_one_sub_le ht
@@ -54,26 +91,66 @@ theorem famBias_bounds {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1) :
   unfold famBias
   constructor <;> linarith
 
-/-- `t χ(t) ≥ 11` on `(0,1)`.  The cubic cofactor is `k(t) = 31+20t-12t²-12t³-12t⁴-12t⁵`:
-`31 - 11 t - 32 t² + 12 t⁶ = (1-t) k(t)`. -/
+/-- The middle expression `31/t - 32t + 12t⁵` of the printed chain. -/
+def midExpr (t : ℝ) : ℝ := 31 / t - 32 * t + 12 * t ^ 5
+
+/-- Its derivative `-31/t² - 32 + 60t⁴` is at most `-3` on `(0,1]`. -/
+theorem midExpr_hasDerivAt {t : ℝ} (ht : t ≠ 0) :
+    HasDerivAt midExpr (-31 / t ^ 2 - 32 + 60 * t ^ 4) t := by
+  have h1 : HasDerivAt (fun t : ℝ => 31 / t) (-31 / t ^ 2) t := by
+    have := (hasDerivAt_inv ht).const_mul 31
+    convert this using 1
+    · ext x; simp [div_eq_mul_inv]
+    · field_simp
+  have h2 : HasDerivAt (fun t : ℝ => 32 * t) 32 t := by
+    simpa using (hasDerivAt_id t).const_mul 32
+  have h3 : HasDerivAt (fun t : ℝ => 12 * t ^ 5) (60 * t ^ 4) t := by
+    have := (hasDerivAt_pow 5 t).const_mul 12
+    convert this using 1
+    ring
+  have := (h1.sub h2).add h3
+  unfold midExpr
+  convert this using 1
+
+theorem midExpr_deriv_le {t : ℝ} (ht0 : 0 < t) (ht1 : t ≤ 1) :
+    -31 / t ^ 2 - 32 + 60 * t ^ 4 ≤ -3 := by
+  have h2 : t ^ 2 ≤ 1 := by nlinarith
+  have h4 : t ^ 4 ≤ 1 := by
+    have : t ^ 4 = (t ^ 2) ^ 2 := by ring
+    rw [this]; nlinarith [sq_nonneg t]
+  have h31 : -31 / t ^ 2 ≤ -31 := by
+    rw [div_le_iff₀ (by positivity)]
+    nlinarith
+  linarith
+
+/-- `31/t - 32t + 12t⁵ ≥ 11` on `(0,1]`: the expression is nonincreasing (derivative `≤ -3`) with
+value `11` at `t = 1`. -/
+theorem midExpr_ge {t : ℝ} (ht0 : 0 < t) (ht1 : t ≤ 1) : 11 ≤ midExpr t := by
+  have hanti : AntitoneOn midExpr (Set.Ioc 0 1) := by
+    apply antitoneOn_of_deriv_nonpos (convex_Ioc _ _)
+    · intro x hx
+      exact (midExpr_hasDerivAt hx.1.ne').continuousAt.continuousWithinAt
+    · intro x hx
+      rw [interior_Ioc] at hx
+      exact (midExpr_hasDerivAt hx.1.ne').differentiableAt.differentiableWithinAt
+    · intro x hx
+      rw [interior_Ioc] at hx
+      rw [(midExpr_hasDerivAt hx.1.ne').deriv]
+      have := midExpr_deriv_le hx.1 hx.2.le
+      linarith
+  have h := hanti ⟨ht0, ht1⟩ ⟨by norm_num, le_refl _⟩ ht1
+  have h1 : midExpr 1 = 11 := by unfold midExpr; norm_num
+  linarith
+
+/-- `t χ(t) ≥ 11` on `(0,1)`, by the printed calculus argument: `t χ(t) = 31/t - 32t + 12t⁵ +
+t³/(10(1-t)) ≥ 31/t - 32t + 12t⁵ ≥ 11`. -/
 theorem t_mul_famChi_ge {t : ℝ} (ht0 : 0 < t) (ht1 : t < 1) : 11 ≤ t * famChi t := by
   have h1t : 0 < 1 - t := by linarith
-  have e1 : t * famChi t - 11 =
-      (1 - t) * (31 + 20 * t - 12 * t ^ 2 - 12 * t ^ 3 - 12 * t ^ 4 - 12 * t ^ 5) / t +
-        t ^ 3 / (10 * (1 - t)) := by
-    unfold famChi
+  have e : t * famChi t = midExpr t + t ^ 3 / (10 * (1 - t)) := by
+    unfold famChi midExpr
     field_simp
-    ring
-  have p2 : t ^ 2 ≤ t := by nlinarith
-  have p3 : t ^ 3 ≤ t ^ 2 := pow_le_pow_of_le_one ht0.le ht1.le (by norm_num)
-  have p4 : t ^ 4 ≤ t ^ 2 := pow_le_pow_of_le_one ht0.le ht1.le (by norm_num)
-  have p5 : t ^ 5 ≤ t ^ 2 := pow_le_pow_of_le_one ht0.le ht1.le (by norm_num)
-  have hk : 0 ≤ 31 + 20 * t - 12 * t ^ 2 - 12 * t ^ 3 - 12 * t ^ 4 - 12 * t ^ 5 := by nlinarith
-  have : 0 ≤ t * famChi t - 11 := by
-    rw [e1]
-    have := div_nonneg (mul_nonneg h1t.le hk) ht0.le
-    have := div_nonneg (pow_nonneg ht0.le 3) (by positivity : (0 : ℝ) ≤ 10 * (1 - t))
-    positivity
+  have hnn : 0 ≤ t ^ 3 / (10 * (1 - t)) := by positivity
+  have h11 := midExpr_ge ht0 ht1.le
   linarith
 
 theorem famChi_pos {t : ℝ} (ht0 : 0 < t) (ht1 : t < 1) : 0 < famChi t := by
@@ -90,16 +167,31 @@ theorem famChi_mul_bias_ge {t : ℝ} (ht0 : 0 < t) (ht1 : t < 1) : 44 / 5 ≤ fa
   -- χ a ≥ χ · 4t/5 = (4/5)(tχ) ≥ 44/5
   nlinarith [mul_le_mul_of_nonneg_left h2 hχ.le]
 
+/-- `P(u) = 31 - 32u + 12u³ = 31(1-u)³ + 61u(1-u)² + 29u²(1-u) + 11u³`: the positive form
+(eq `d12-spin-eq:positiveP`) printed in the proof of Lemma `d12-spin-lem:feasible`. -/
+theorem positiveP_identity (u : ℝ) :
+    famP u = 31 * (1 - u) ^ 3 + 61 * u * (1 - u) ^ 2 + 29 * u ^ 2 * (1 - u) + 11 * u ^ 3 := by
+  unfold famP; ring
+
+/-- `P(u) > 0` for `0 ≤ u ≤ 1`, read off from the positive form. -/
+theorem famP_pos {u : ℝ} (hu0 : 0 ≤ u) (hu1 : u ≤ 1) : 0 < famP u := by
+  rw [positiveP_identity]
+  have h : 0 ≤ 1 - u := by linarith
+  rcases hu0.eq_or_lt with h0 | h0
+  · subst h0; norm_num
+  · have : 0 < 11 * u ^ 3 := by positivity
+    have : 0 ≤ 31 * (1 - u) ^ 3 := by positivity
+    have : 0 ≤ 61 * u * (1 - u) ^ 2 := by positivity
+    have : 0 ≤ 29 * u ^ 2 * (1 - u) := by positivity
+    linarith
+
 /-- `ω(t) = 1/χ(t)` (`d12-spin-eq:h`): the stable rational form agrees with the reciprocal. -/
 theorem famOmega_mul_famChi {t : ℝ} (ht0 : 0 < t) (ht1 : t < 1) : famOmega t * famChi t = 1 := by
   have h1t : 0 < 1 - t := by linarith
   have hP : 0 < famP (t ^ 2) * (1 - t) + t ^ 4 / 10 := by
-    have hb : 0 < 31 * (1 - t ^ 2) ^ 3 + 61 * t ^ 2 * (1 - t ^ 2) ^ 2 + 29 * t ^ 4 * (1 - t ^ 2) + 11 * t ^ 6 := by
-      have : 0 < 1 - t ^ 2 := by nlinarith
-      positivity
-    have hid : famP (t ^ 2) = 31 * (1 - t ^ 2) ^ 3 + 61 * t ^ 2 * (1 - t ^ 2) ^ 2 +
-        29 * t ^ 4 * (1 - t ^ 2) + 11 * t ^ 6 := by unfold famP; ring
-    rw [hid]; positivity
+    have hu1 : t ^ 2 ≤ 1 := by nlinarith
+    have := famP_pos (sq_nonneg t) hu1
+    positivity
   have hchi : famChi t = (famP (t ^ 2) * (1 - t) + t ^ 4 / 10) / (t ^ 2 * (1 - t)) := by
     unfold famChi famP
     field_simp

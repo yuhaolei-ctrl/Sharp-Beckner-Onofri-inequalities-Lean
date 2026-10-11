@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.Reaudit.Compactness.TransitionLimit
+public import BecknerOnofri.V2.Reaudit.ElevenBounds.Quantitative
 
 @[expose] public section
 
@@ -13,7 +14,9 @@ minimizers of `ℰ_{β_gm}`*, together with the printed formula `ρ_tr = e^{u_0}
 (`eq:section4-strong-critical-Sobolev`) which the printed proof establishes on the way.
 
 The logical order of the manuscript (decisions, X3 and U07) is: non-strict lower bound
-(`Eleven.transition_lower`, used only through `Eleven.transition_pos`) -> competitor upper bound
+(`Eleven.transition_lower`, used only through `Eleven.transition_pos`; it is proved from the quantitative
+latent-mass gap, `ElevenBounds.pressure_zero_quantitative`, not from the legacy endpoint theorem)
+-> competitor upper bound
 (`Eleven.transition_upper`) -> local uniqueness in `H^{11}` (`Sobolev.local_uniqueness_raw`) ->
 coexistence (here) -> **only afterwards** the strict lower bound `3543/200 < β_gm`
 (`strict_lower_of_coexistence_manuscript`). -/
@@ -116,7 +119,7 @@ theorem strict_lower_of_coexistence_manuscript :
   by_contra hn
   have hb : Eleven.globalTransition ≤ (3543 : ℝ) / 200 := le_of_not_gt hn
   obtain ⟨ρ, hmin, -, -, hnon⟩ := coexistence.2
-  exact hnon ((Eleven.uniform_unique Eleven.globalTransition Eleven.transition_pos.le hb ρ
-    hmin.1).mp hmin)
+  exact hnon ((ElevenBounds.uniform_unique_quantitative Eleven.globalTransition
+    Eleven.transition_pos.le hb ρ hmin.1).mp hmin)
 
 end BecknerOnofri.V2.Reaudit.Compactness

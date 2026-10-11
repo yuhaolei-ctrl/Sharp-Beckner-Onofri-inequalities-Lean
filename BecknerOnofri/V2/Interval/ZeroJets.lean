@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.V2.Interval.FamilyBridge
 public import BecknerOnofri.V2.FiniteState.OriginVanishing
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.OriginBridge
 
 @[expose] public section
 
@@ -12,7 +13,9 @@ If `A` is a coherent jet on a set `S` with unique differentiability, then the `n
 of `A x` is `(n!)⁻¹` times the `n`-th derivative within `S` of the zeroth coefficient.  Applied to
 the chains of `f` and `𝒱` of the first row on `[0, 1/8]`, whose zeroth coefficients are `famF` and
 `famResidVar` (`P1_registers`), the vanishing of the first four derivatives at `0`
-(`famF_origin_vanishing`, `famResidVar_origin_vanishing`) gives `hzf` and `hzv`.
+gives `hzf` and `hzv`.  The vanishings are taken from the printed origin summary
+`ScalarBridges.origin_summary_printed` (`eq:section5-origin-summary`: analyticity at `0`,
+`e_j = O(t³)`, `𝒱 = O(t⁶)`, `f = O(t⁴)`, hence `f^{(k)}(0) = 𝒱^{(k)}(0) = 0` for `k ≤ 3`).
 -/
 
 namespace BecknerOnofri.V2.Interval
@@ -79,8 +82,15 @@ theorem family_zero_jets (hc1 : ∀ k < row1.count, row1.checkCell k = true) :
   have hv : ∀ s ∈ Set.Icc (0 : ℝ) (1 / 8), coeff 0 (chain P1.1 P1.2.v s) = famResidVar s :=
     fun s hs => (regVal_eq_coeff0 P1.1 P1.2.v s).symm.trans
       (P1_registers hs.1 (lt_of_le_of_lt hs.2 (by norm_num))).2.1
-  obtain ⟨f0, f1, f2, f3⟩ := famF_origin_vanishing
-  obtain ⟨v0, v1, v2, v3⟩ := famResidVar_origin_vanishing
+  obtain ⟨_, _, hvan⟩ := Reaudit.ScalarBridges.origin_summary_printed
+  have f0 : iteratedDeriv 0 famF 0 = 0 := hvan.1 0 (by norm_num)
+  have f1 : iteratedDeriv 1 famF 0 = 0 := hvan.1 1 (by norm_num)
+  have f2 : iteratedDeriv 2 famF 0 = 0 := hvan.1 2 (by norm_num)
+  have f3 : iteratedDeriv 3 famF 0 = 0 := hvan.1 3 (by norm_num)
+  have v0 : iteratedDeriv 0 famResidVar 0 = 0 := hvan.2 0 (by norm_num)
+  have v1 : iteratedDeriv 1 famResidVar 0 = 0 := hvan.2 1 (by norm_num)
+  have v2 : iteratedDeriv 2 famResidVar 0 = 0 := hvan.2 2 (by norm_num)
+  have v3 : iteratedDeriv 3 famResidVar 0 = 0 := hvan.2 3 (by norm_num)
   refine ⟨fun n hn => ?_, fun n hn => ?_⟩
   · interval_cases n
     · exact cf'.coeff_eq_zero hS h0 hf (famF_contDiffAt _) f0

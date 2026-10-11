@@ -4,7 +4,7 @@ public import BecknerOnofri.V2.Reaudit.Sobolev.GibbsMap
 public import BecknerOnofri.QuadraticModes
 public import BecknerOnofri.LocalElevenContinuousInverse
 public import BecknerOnofri.ContinuousComplement
-public import BecknerOnofri.LocalElevenCore.GreenLocalBranch
+public import BecknerOnofri.LocalElevenCore.GreenLocalBranchCore
 
 @[expose] public section
 

@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.LocalElevenCore.WeightedCubicExponentialTail
 public import BecknerOnofri.LocalElevenCore.GraphWienerBounds
+public import BecknerOnofri.LocalElevenCore.WienerProductCore
 
 @[expose] public section
 
@@ -13,19 +14,6 @@ open ContinuousGibbs ContinuousFirstShell GraphRegularity GraphWienerBounds
 open WeightedCubicExponentialTail WeightedExponentialRemainder
 open Legacy.TorusEndpoint Legacy.BecknerOnofri.WienerFourier Legacy.BecknerOnofri.RadialWiener
 open Legacy.BecknerOnofri.WeightedWiener BecknerOnofri.OnsetWienerBounds
-
-lemma coefficient_product {d : ℕ} (u v : Space d)
-    (hu : Summable (fun k => ‖coefficient k u‖))
-    (hv : Summable (fun k => ‖coefficient k v‖)) (k : Frequency d) :
-    coefficient k (u*v)=convolution (fun k => coefficient k u) (fun k => coefficient k v) k := by
-  have he : absoluteFourierSeries (convolution (fun k => coefficient k u) (fun k => coefficient k v))=
-      fun x => (u x:ℂ)*(v x:ℂ) := by
-    funext x
-    rw [convolution_series _ _ hu hv,series_eq u hu,series_eq v hv]
-  rw [← absoluteFourierSeries_coefficient _ (convolution_norm_summable _ _ hu hv),he,
-    coefficient_integral]
-  simp only [UnitAddTorus.mFourierCoeff,smul_eq_mul,ContinuousMap.mul_apply,Complex.ofReal_mul]
-  rfl
 
 lemma radial_mul {d : ℕ} (m : ℕ) (u v : Space d) (hu : Radial m u) (hv : Radial m v) :
     Radial m (u*v) := by

@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Section3.Lemma31
 public import BecknerOnofri.V2.Section3.CircleCase
 public import BecknerOnofri.VariationalExtendedConvexity
+public import BecknerOnofri.V2.Reaudit.Obstruction.ConcentrationObstruction
 
 @[expose] public section
 
@@ -96,7 +97,7 @@ theorem collapse_isLeast (hd : 0 < d)
   refine ⟨fun u hu => (potential_bound_of_full hd hfull u hu).2, fun A hA => ?_⟩
   by_contra hlt
   have hlt := not_le.mp hlt
-  have htop := coefficientDefect_below_collapse hd hlt
+  have htop := Reaudit.Obstruction.coefficientDefect_eq_top_of_lt_critical hd hlt
   have hle : coefficientDefect d A ≤ 0 := by
     unfold coefficientDefect
     refine iSup₂_le fun u hu => ?_
@@ -116,7 +117,7 @@ theorem pressure_formula (hd : 0 < d)
   · exact le_antisymm
       ((VariationalCurves.pressure_monotone hd h).trans
         (pressure_two_d_eq_zero_of_full hd hfull).le) (pressure_nonneg d β)
-  · exact pressure_above_collapse hd (not_le.mp h)
+  · exact Reaudit.Obstruction.pressure_eq_top_of_critical_lt hd (not_le.mp h)
 
 /-- `β_gm(d) = 2d` (`= β_c(d)`). -/
 theorem globalTransition_eq (hd : 0 < d)
@@ -126,6 +127,6 @@ theorem globalTransition_eq (hd : 0 < d)
   refine IsGreatest.csSup_eq ⟨⟨by positivity, pressure_two_d_eq_zero_of_full hd hfull⟩, ?_⟩
   rintro β ⟨-, hβ⟩
   by_contra hlt
-  rw [pressure_above_collapse hd (not_le.mp hlt)] at hβ
+  rw [Reaudit.Obstruction.pressure_eq_top_of_critical_lt hd (not_le.mp hlt)] at hβ
   exact EReal.top_ne_zero hβ
 end BecknerOnofri.V2.Section3

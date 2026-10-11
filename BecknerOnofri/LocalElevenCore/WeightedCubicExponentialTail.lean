@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.WeightedExponentialTaylorTail
 public import BecknerOnofri.LocalElevenCore.WeightedExponentialRemainder
+public import BecknerOnofri.LocalElevenCore.WienerProductCore
 
 @[expose] public section
 
@@ -14,15 +15,6 @@ open ContinuousGibbs ContinuousFirstShell GraphRegularity WeightedExponentialRem
 open Legacy.TorusEndpoint Legacy.BecknerOnofri.WienerFourier
 open Legacy.BecknerOnofri.WeightedWiener Legacy.BecknerOnofri.RadialWiener
 open BecknerOnofri.OnsetWienerBounds
-
-lemma series_eq {d : ℕ} (u : Space d) (hu : Summable (fun k => ‖coefficient k u‖)) :
-    absoluteFourierSeries (fun k => coefficient k u) = fun x => (u x : ℂ) := by
-  haveI : (Legacy.TorusEndpoint.torusMeasure d).IsOpenPosMeasure := by
-    rw [Legacy.TorusEndpoint.torusMeasure_explicit]
-    infer_instance
-  exact Measure.eq_of_ae_eq
-    ((representative_ae_eq (toL2 d u) hu).trans (toL2_ae u))
-    (representative_continuous (toL2 d u) hu) (Complex.continuous_ofReal.comp u.continuous)
 
 lemma coefficient_power {d : ℕ} (u : Space d) (hu : Summable (fun k => ‖coefficient k u‖))
     (n : ℕ) (k : Frequency d) : coefficient k (u^n)=

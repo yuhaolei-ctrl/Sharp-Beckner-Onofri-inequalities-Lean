@@ -5,6 +5,7 @@ public import BecknerOnofri.OnsetCompactness
 public import BecknerOnofri.V2.Onset.Bootstrap
 public import BecknerOnofri.V2.Onset.FirstStep
 public import BecknerOnofri.OptimizerEulerPaper
+public import BecknerOnofri.V2.Reaudit.ExternalInputs.RoughFromAdams
 
 @[expose] public section
 
@@ -12,8 +13,9 @@ public import BecknerOnofri.OptimizerEulerPaper
 
 For `μ` near `1` (i.e. `β = μ β_s` near `β_s`) every continuous global maximizer `u` of the dual
 functional satisfies uniform bounds on the critical energy and on `∫ ρ_u²`, `ρ_u = e^u/Z(u)`.
-The proof uses the rough exponential estimate with a coefficient strictly below `1/2`
-(`OnsetCompactness.exists_rough_gap`) and `Z ≥ 1`. -/
+The proof uses the rough exponential estimate with a coefficient strictly below `1/2`, obtained from
+the printed sharp critical Adams inequality (`Reaudit.ExternalInputs.exists_rough_gap_of_adams`, i.e.
+`ExternalInputs.criticalAdams` with `b = endpointConstant d`), and `Z ≥ 1`. -/
 
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
@@ -74,7 +76,10 @@ theorem uniform_density_bound {d : ℕ} (hd : 12 ≤ d) :
       ∫ x, (normalizedGibbs (fun y => u y) x) ^ 2 ∂torusMeasure d ≤ M ∧
         criticalEnergy (toL2 d u) ≤ E := by
   have hd0 : 0 < d := by omega
-  obtain ⟨b, Ab, hb, hR, hgap⟩ := OnsetCompactness.exists_rough_gap hd
+  -- `eq:section5-onset-uniform-bounds`: the rough exponential estimate with exponent
+  -- `b = endpointConstant d`, i.e. the printed sharp critical Adams inequality
+  -- `eq:section2-critical-adams` (`ExternalInputs.criticalAdams`).
+  obtain ⟨b, Ab, hb, hR, hgap⟩ := Reaudit.ExternalInputs.exists_rough_gap_of_adams hd
   have hσ : 0 < spectralThreshold d := Legacy.TorusEndpoint.endpointSigma_pos hd0
   set a0 : ℝ := (1 / (4 * b) + 1 / 2) / 2 with ha0
   have ha0gt : 1 / (4 * b) < a0 := by rw [ha0]; linarith

@@ -3,6 +3,7 @@ module
 public import Legacy.D10.GaussianMajorant
 public import Legacy.D10.BinomialReal
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.GaussianBinomial
 
 @[expose] public section
 
@@ -17,20 +18,17 @@ theorem binomialCoeffReal_power_majorant (n k : ℕ) :
   exact H
 
 /-- The Gaussian form used in the Mellin/theta bound, with the precise
-parameter `log (1 + 1/n)` from the proof manuscript. -/
+parameter `log (1 + 1/n)` from the proof manuscript.
+
+Proved along the printed route of Lemma `lem:gaussian-binomial` (positive artanh series,
+`BecknerOnofri.V2.Reaudit.ScalarBridges.gaussian_binomial_printed`); the earlier rational
+subadditivity induction (`binomialCoeff_gaussian`, `binomialCoeffReal_power_majorant`) is no
+longer used here. -/
 theorem binomialCoeffReal_gaussian (n k : ℕ) (hn : 0 < n) :
     binomialCoeffReal n k ≤
       Real.exp (-Real.log (1 + 1 / (n : ℝ)) * (k : ℝ) ^ 2) := by
-  have hn' : (0 : ℝ) < n := Nat.cast_pos.mpr hn
-  have hq : Real.exp (-Real.log (1 + 1 / (n : ℝ))) = (n : ℝ) / (n + 1) := by
-    rw [Real.exp_neg, Real.exp_log (by positivity)]
-    field_simp
-  have he : ((n : ℝ) / (n + 1)) ^ (k ^ 2) =
-      Real.exp (-Real.log (1 + 1 / (n : ℝ)) * (k : ℝ) ^ 2) := by
-    rw [← hq, ← Real.exp_nat_mul]
-    congr 1
-    push_cast
-    ring
-  exact he ▸ binomialCoeffReal_power_majorant n k
+  have h := BecknerOnofri.V2.Reaudit.ScalarBridges.gaussian_binomial_printed n hn (k : ℤ)
+  rw [BecknerOnofri.V2.Reaudit.ScalarBridges.binomA_natCast, ← binomialCoeffReal_formula] at h
+  simpa using h
 
 end Legacy.D10

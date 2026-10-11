@@ -2,7 +2,8 @@ module
 
 public import BecknerOnofri.V2.Eleven.Estimates
 public import BecknerOnofri.OptimizerDuality
-public import BecknerOnofri.CanonicalSelectionFullDomain
+public import BecknerOnofri.V2.Reaudit.Attainment.Main
+public import BecknerOnofri.V2.Reaudit.Mixtures.Selection
 public import BecknerOnofri.ContinuousMixtureMajorant
 public import BecknerOnofri.EndpointDuality
 public import BecknerOnofri.ElevenMixture
@@ -28,6 +29,13 @@ and **the lower transition bound obtained here is non-strict** (`3543/200 ≤ β
   (`= Ent - β/(2β_s) (2π)^{11}‖ρ‖²`).  It is a *hypothesis* of `uniform_unique_of_gap`.
 * `smoothMixtureGap11` discharges the hypothesis from the repository's mixture chain
   (`ElevenMixture`/`ElevenStrictMixture`, route difference below), so that `uniform_unique` is unconditional.
+
+Selection and attainment (REAUDIT S016, S009, S010): `Efree_beta0_nonneg` and `uniform_of_Efree_nonpos` obtain the
+minimizer from `Reaudit.Attainment.subcritical_attainment` (direct method) and the canonical rearranged
+minimizer from the written-route wrapper `Reaudit.Mixtures.canonical_selection_written`
+(`coordinate_rearranged_minimizer` and `cosine_representation`), not from the polarization-closure
+`PrescribedSelection.canonical_selection` nor `OptimizerDuality.exists_minimizer`.  The statement of
+`CanonicalSelection 11` is the same.
 
 Route differences: the manuscript's gap is `E_{β_0}(ρ) ≥ (1/44000) Σ_i P(L_i ≥ 1)` for the latent
 hypergeometric variables `L`; the repository's chain gives `E_{β_0}(ρ) ≥ w_a² (latent weight) (1/22000)/2 > 0`
@@ -137,9 +145,10 @@ theorem Efree_beta0_nonneg (σ : ProbabilityDensity 11) (hσ : σ.FiniteEntropy)
   have hneg : Efree beta0 σ < 0 := not_le.mp hneg
   have h0 : (0 : ℝ) < beta0 := by unfold beta0; norm_num
   have h22 : beta0 < 2 * ((11 : ℕ) : ℝ) := by unfold beta0; norm_num
-  obtain ⟨ρs, hρs⟩ := OptimizerDuality.exists_minimizer (d := 11) (by norm_num) h0 h22
+  obtain ⟨ρs, hρs⟩ :=
+    (Reaudit.Attainment.subcritical_attainment (d := 11) (by norm_num) h0 h22).2.1
   obtain ⟨η, u, -, hηmin, -, -, -, -, hηs, hηpos, -, -, -, -, -, -, -, hηmix, -, -⟩ :=
-    PrescribedSelection.canonical_selection (d := 11) (by norm_num) beta0 h0 h22 ρs hρs
+    Reaudit.Mixtures.canonical_selection_written (d := 11) (by norm_num) beta0 h0 h22 ρs hρs
   have hle := (Efree_le_iff beta0 η σ hηmin.1 hσ).1 (hηmin.2 σ hσ)
   by_cases hnon : η.value =ᵐ[torusMeasure 11] (fun _ => 1)
   · have hu : η.value =ᵐ[torusMeasure 11] (uniformDensity 11).value := hnon
@@ -160,7 +169,7 @@ theorem uniform_of_Efree_nonpos (ρ : ProbabilityDensity 11) (hρ : ρ.FiniteEnt
     rw [Efree_le_iff beta0 ρ σ hρ hσ]
     exact hle.trans (Efree_beta0_nonneg hgap σ hσ)
   obtain ⟨η, u, -, hηmin, -, -, hpv, -, hηs, hηpos, -, -, -, -, -, -, -, hηmix, -, hηnon⟩ :=
-    PrescribedSelection.canonical_selection (d := 11) (by norm_num) beta0 h0 h22 ρ hmin
+    Reaudit.Mixtures.canonical_selection_written (d := 11) (by norm_num) beta0 h0 h22 ρ hmin
   have hE : Efree beta0 η = Efree beta0 ρ := by
     have h1 := Efree_eq_neg_pressureValue beta0 η hηmin.1
     have h2 := Efree_eq_neg_pressureValue beta0 ρ hρ

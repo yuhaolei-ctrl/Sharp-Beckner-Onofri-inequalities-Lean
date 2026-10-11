@@ -1,7 +1,7 @@
 module
 
 public import BecknerOnofri.GeneralSobolevEmbedding
-public import BecknerOnofri.LocalElevenCore.WienerAlgebraBounds
+public import BecknerOnofri.LocalElevenCore.WienerProductCore
 public import BecknerOnofri.OnsetRaw
 public import BecknerOnofri.V2.Onset.YoungSeq
 

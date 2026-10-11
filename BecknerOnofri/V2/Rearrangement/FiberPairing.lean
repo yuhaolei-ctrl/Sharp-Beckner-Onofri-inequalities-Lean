@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Rearrangement.HeatCircle
 public import BecknerOnofri.V2.Rearrangement.CoordinateSplit
 public import BecknerOnofri.CircleRearrangementTrustedBridge
+public import BecknerOnofri.V2.Reaudit.Obstruction.CircleAligned
 public import BecknerOnofri.CoordinateRearrangementDefinitions
 public import Legacy.BecknerOnofri.TorusHeatPolarization
 
@@ -162,7 +163,7 @@ theorem interaction_le_of_rearr {τ : ℝ} (hτ : 0 < τ) {f g f' g' : Torus 1 �
     (hg' : Circle.realRearrange g =ᵐ[torusMeasure 1] g') :
     Circle.interaction (circleHeat τ) f g ≤ Circle.interaction (circleHeat τ) f' g' := by
   obtain ⟨C, hC⟩ := circleHeat_bounded hτ
-  obtain ⟨-, -, -, -, -, -, -, -, h, -⟩ := Circle.circle_rearrangement f g hf hg hf0 hg0
+  obtain ⟨-, -, h, -⟩ := Reaudit.Obstruction.circle_rearrangement_aligned f g hf hg hf0 hg0
     (circleHeat τ) (C := C) (circleHeat_nonneg hτ) hC
     (fun x y hxy => circleHeat_radial_antitone hτ hxy)
   exact h.trans_eq (interaction_congr hf' hg')

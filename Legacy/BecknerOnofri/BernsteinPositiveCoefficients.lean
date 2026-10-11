@@ -4,6 +4,7 @@ public import Legacy.BecknerOnofri.FiniteDifferenceSmooth
 public import Legacy.BecknerOnofri.FiniteDifferenceMeanValue
 public import Legacy.BecknerOnofri.TensorBernsteinCoefficientLimits
 public import Legacy.BecknerOnofri.PositivePolynomialLimit
+public import BecknerOnofri.V2.Reaudit.HeatKernel.PositiveBernstein
 
 @[expose] public section
 
@@ -76,27 +77,28 @@ theorem taylorCoefficient_nonneg {d : ℕ} {f : Space d → ℝ}
     (hpos : NonnegativeMixedPartials f) (a : Index d) : 0 ≤ taylorCoefficient f a :=
   div_nonneg (hpos _ _ (by simp [closedCube])) (Finset.prod_nonneg (fun _ _ => Nat.cast_nonneg _))
 
-/-- The positive Taylor series equals the function at every point of the closed cube. -/
+/-- The positive Taylor series equals the function at every point of the closed cube.
+
+Proved by the printed route of Lemma `lem:positive-bernstein` (radial absolute monotonicity,
+`BecknerOnofri.V2.Reaudit.HeatKernel.positive_bernstein_multiindex`); the tensor Bernstein
+polynomials are not used for this statement. -/
 theorem positiveTaylor_hasSum {d : ℕ} {f : Space d → ℝ}
     (hf : ContDiffOn ℝ ∞ f (closedCube d)) (hpos : NonnegativeMixedPartials f)
     (y : TensorBernstein.Cube d) :
     HasSum (fun a => taylorCoefficient f a * PositivePolynomialLimit.monomialValue a y)
-      (restriction f y) := by
-  exact PositivePolynomialLimit.hasSum_representation
-    (fun m a => coefficient_nonneg hf hpos (Nat.succ_pos m) a)
-    (fun m => TensorBernstein.polynomial_eval_one (Nat.succ_ne_zero m) (restriction f))
-    (coefficient_succ_tendsto hf) (restriction_continuous hf)
-    ((TensorBernstein.polynomial_succ_uniform (restriction f) (restriction_continuous hf)).tendsto_at) y
+      (restriction f y) :=
+  (BecknerOnofri.V2.Reaudit.HeatKernel.positive_bernstein_multiindex hf
+    (fun _ x hx => hpos _ x hx)).2.2.1 y
 
-/-- The sum of the nonnegative Taylor coefficients is exactly the value at the corner. -/
+/-- The sum of the nonnegative Taylor coefficients is exactly the value at the corner.
+
+Proved by the printed route of Lemma `lem:positive-bernstein`
+(`BecknerOnofri.V2.Reaudit.HeatKernel.positive_bernstein_multiindex`). -/
 theorem positiveTaylor_mass {d : ℕ} {f : Space d → ℝ}
     (hf : ContDiffOn ℝ ∞ f (closedCube d)) (hpos : NonnegativeMixedPartials f) :
-    HasSum (taylorCoefficient f) (f 1) := by
-  exact PositivePolynomialLimit.coefficient_hasSum_mass
-    (fun m a => coefficient_nonneg hf hpos (Nat.succ_pos m) a)
-    (fun m => TensorBernstein.polynomial_eval_one (Nat.succ_ne_zero m) (restriction f))
-    (coefficient_succ_tendsto hf) (restriction_continuous hf)
-    ((TensorBernstein.polynomial_succ_uniform (restriction f) (restriction_continuous hf)).tendsto_at)
+    HasSum (taylorCoefficient f) (f 1) :=
+  (BecknerOnofri.V2.Reaudit.HeatKernel.positive_bernstein_multiindex hf
+    (fun _ x hx => hpos _ x hx)).2.1
 
 /-- Uniform convergence holds on the whole closed cube, including its boundary. -/
 theorem positiveTaylor_uniform {d : ℕ} {f : Space d → ℝ}

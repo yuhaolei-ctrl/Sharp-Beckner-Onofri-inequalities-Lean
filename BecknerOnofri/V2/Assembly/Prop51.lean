@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Assembly.GlobalGap
 public import BecknerOnofri.V2.Transfer.All
 public import BecknerOnofri.CanonicalSelectionFullDomain
+public import BecknerOnofri.V2.Reaudit.Mixtures.Selection
 public import BecknerOnofri.GeneralEuler.Paper
 public import BecknerOnofri.OptimizerDuality
 public import BecknerOnofri.OptimizerEulerPaper
@@ -24,7 +25,7 @@ The dimension-twelve inequality `Ent(ρ) ≥ (2π)^12/2 ‖ρ‖²_{Ḣ^{-6}}` f
 Written proof (followed): the functional `Ent - ½ (2π)^12‖ρ‖²` attains its minimum (Lemma 2.13,
 `OptimizerDuality.exists_minimizer`); the minimum is at most zero by the uniform competitor; from any
 minimizer Lemma 2.13 supplies a smooth positive selected minimizer `ρ_u` with the same entropy
-(`PrescribedSelection.canonical_selection`); Proposition 2.12 gives the global shape and the mixture
+(`Reaudit.Mixtures.canonical_selection_written`, the written-route wrapper of the same `CanonicalSelection 12`; REAUDIT S016); Proposition 2.12 gives the global shape and the mixture
 (`GeneralEulerBridge.cosine_representation`); `u` maximizes `Φ`, so Lemma 5.9 gives permutation
 invariance (`Transfer.common_cubic_symmetry`); Proposition 5.10 (`global_entropy_gap`) gives
 `0 ≥ Ent(ρ_u) - ½E(ρ_u) = -Φ(u) ≥ ρ̂_u(e_1)⁴/250 ≥ 0`; thus `ρ_u = 1`; entropy preservation makes the
@@ -114,7 +115,7 @@ theorem minimizer_uniform (hsc : ScalarBounds) (ρ : ProbabilityDensity 12)
   have hβd : spectralThreshold 12 < 2 * ((12 : ℕ) : ℝ) := by
     simpa using spectralThreshold_twelve_lt
   obtain ⟨η, u, -, hη, -, hent, hpv, hgu, hηs, hηp, hus, hu, -, hm, -, -, hstu, hmix, hnn, hnon⟩ :=
-    PrescribedSelection.canonical_selection hd (spectralThreshold 12) hβ hβd ρ hρ
+    Reaudit.Mixtures.canonical_selection_written hd (spectralThreshold 12) hβ hβd ρ hρ
   -- `u` is a dual maximizer
   obtain ⟨u', -, hm', -, -, hmax', hg'⟩ :=
     OptimizerDuality.continuous_optimizer_of_minimizer hd hβ η hη
@@ -205,8 +206,8 @@ theorem spectral12_lt : spectralThreshold 12 < 2 * ((12 : ℕ) : ℝ) := by
 theorem exists_zero_minimizer (hsc : ScalarBounds) :
     ∃ ρ₀ : ProbabilityDensity 12, IsGlobalMinimizer (spectralThreshold 12) ρ₀ ∧
       pressureValue (spectralThreshold 12) ρ₀ = 0 := by
-  obtain ⟨ρ₀, hρ₀⟩ := OptimizerDuality.exists_minimizer (by norm_num : 0 < 12) spectral12_pos
-    spectral12_lt
+  obtain ⟨ρ₀, hρ₀⟩ := (BecknerOnofri.V2.Reaudit.Attainment.subcritical_attainment
+    (by norm_num : 0 < 12) spectral12_pos spectral12_lt).2.1
   have hu := minimizer_uniform hsc ρ₀ hρ₀
   have he : ρ₀.value =ᵐ[torusMeasure 12] (uniformDensity 12).value := hu
   exact ⟨ρ₀, hρ₀, by rw [OptimizerDuality.pressureValue_congr_ae he, pressureValue_uniform_spectral]⟩

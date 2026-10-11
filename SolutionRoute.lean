@@ -253,7 +253,7 @@ densities `e^{U_β(· - x₀)}/∫ e^{U_β}` of the translates. Moreover, for ea
 x₀) = 2√(δ/κ_d) Σ_j cos(2π(x_j - x₀_j)) + O_{H^s}(δ)` uniformly in `x₀`, where `δ = 1 - β_s(d)/β`.
 -/
 theorem high_dim_onset_branch (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset d :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_onset_branch_written d hd
+  BecknerOnofri.V2.Reaudit.Final.Onset.high_dim_onset_branch_route d hd
 
 /-- **Theorem 1.3, (eq:intro-pressure-onset).** `P_d(β) = (d/(2κ_d)) (1 - β_s(d)/β)² + O((β -
 β_s(d))³)` as `β ↓ β_s(d)`, with the pressure finite there. -/
@@ -263,7 +263,7 @@ theorem high_dim_pressure_onset (d : ℕ) (hd : 12 ≤ d) :
         ∃ p : ℝ, pressure d β = (p : EReal) ∧
           |p - (d : ℝ) / (2 * kappa d) * (1 - spectralThreshold d / β) ^ 2| ≤
             C * (β - spectralThreshold d) ^ 3 :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_pressure_onset_written d hd
+  BecknerOnofri.V2.Reaudit.Final.Onset.high_dim_pressure_onset_route d hd
 
 /-- **Theorem 1.3, (eq:intro-C-onset).** `C_d(A) = (d/(2κ_d)) (1 - A/A_s(d))² + O((1 - A/A_s(d))³)`
 as `A ↑ A_s(d)`, with the defect finite there. -/
@@ -273,6 +273,6 @@ theorem high_dim_defect_onset (d : ℕ) (hd : 12 ≤ d) :
         ∃ c : ℝ, coefficientDefect d A = (c : EReal) ∧
           |c - (d : ℝ) / (2 * kappa d) * (1 - A / spectralCoefficient d) ^ 2| ≤
             C * (1 - A / spectralCoefficient d) ^ 3 :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_defect_onset_written d hd
+  BecknerOnofri.V2.Reaudit.Final.Onset.high_dim_defect_onset_route d hd
 
 end BecknerOnofri

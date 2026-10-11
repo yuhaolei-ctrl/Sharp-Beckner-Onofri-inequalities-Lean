@@ -32,9 +32,9 @@ bodies = {
  'high_dim_beckner_onofri_eq_iff': S+'high_dim_beckner_onofri_eq_iff_written d hd u hu',
  'high_dim_thresholds': S+'high_dim_thresholds_written d hd',
  'kappa_pos': 'BecknerOnofri.V2.Final.kappa_pos d hd',
- 'high_dim_onset_branch': S+'high_dim_onset_branch_written d hd',
- 'high_dim_pressure_onset': S+'high_dim_pressure_onset_written d hd',
- 'high_dim_defect_onset': S+'high_dim_defect_onset_written d hd',
+ 'high_dim_onset_branch': F+'Onset.high_dim_onset_branch_route d hd',
+ 'high_dim_pressure_onset': F+'Onset.high_dim_pressure_onset_route d hd',
+ 'high_dim_defect_onset': F+'Onset.high_dim_defect_onset_route d hd',
 }
 out = src
 # header

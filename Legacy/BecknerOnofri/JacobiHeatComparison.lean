@@ -2,6 +2,7 @@ module
 
 public import Legacy.BecknerOnofri.JacobiHeatNonnegative
 public import Legacy.BecknerOnofri.JacobiHeatFiniteComparison
+public import BecknerOnofri.V2.Reaudit.HeatKernel.LegacyReplacement
 
 @[expose] public section
 
@@ -104,23 +105,13 @@ theorem polynomialHeat_le_dirichlet_action {m : ℕ} (hm : 0<m) (p : Polynomial 
   rw [hi]
   exact hfinite.trans hr
 
-/-- Quantitative actual kernel comparison. No assumed positivity or heat-kernel order is used. -/
+/-- Quantitative actual kernel comparison, now proved from the positive-resolvent comparison of
+`BecknerOnofri.V2.Reaudit.HeatKernel` (U05/S015); the former parabolic-maximum-principle proof
+(`polynomialHeat_le_dirichlet_action` and the finite-truncation comparison) is no longer used here. -/
 theorem heatKernel_le_decayed_dirichlet {m : ℕ} (hm : 0<m) {t x y : ℝ}
     (ht : 0<t) (hx : x∈Icc 0 Real.pi) (hy : y∈Ioo 0 Real.pi) :
-    heatKernel m t x y≤Real.exp (-potentialBottom m*t)*heatKernel 1 t x y := by
-  apply sub_nonneg.mp
-  apply nonnegative_of_angularPolynomial_tests m
-    ((continuous_const.mul (heatKernel_continuous_right 1 ht x)).sub
-      (heatKernel_continuous_right m ht x)) _ hy
-  intro p hp
-  have hg : Integrable (angularPolynomial m p) intervalMeasure :=
-    (angularPolynomial_memLp m p).integrable (by norm_num)
-  have hi1 := (heatKernel_mul_integrable 1 ht x hg).const_mul (Real.exp (-potentialBottom m*t))
-  have him := heatKernel_mul_integrable m ht x hg
-  change 0≤∫y,(Real.exp (-potentialBottom m*t)*heatKernel 1 t x y-heatKernel m t x y)*angularPolynomial m p y ∂intervalMeasure
-  simp_rw [sub_mul,mul_assoc]
-  rw [integral_sub hi1 him,integral_const_mul,heatKernel_polynomial m hm p ht x]
-  exact sub_nonneg.mpr (polynomialHeat_le_dirichlet_action hm p hp ht hx)
+    heatKernel m t x y≤Real.exp (-potentialBottom m*t)*heatKernel 1 t x y :=
+  BecknerOnofri.V2.Reaudit.HeatKernel.Engine.heatKernel_le_decayed_dirichlet_V2 hm ht hx hy
 
 #print axioms polynomialHeat_le_dirichlet_action
 #print axioms heatKernel_le_decayed_dirichlet

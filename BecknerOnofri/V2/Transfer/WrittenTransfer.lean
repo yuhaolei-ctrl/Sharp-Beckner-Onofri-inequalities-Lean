@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Transfer.DimensionTransfer
 public import BecknerOnofri.V2.Transfer.Transport
 public import BecknerOnofri.V2.Rearrangement.Comparison
+public import BecknerOnofri.V2.Reaudit.Attainment.Main
 public import BecknerOnofri.GeneralEuler.Paper
 public import BecknerOnofri.OptimizerDuality
 public import BecknerOnofri.SubcriticalGap
@@ -84,7 +85,8 @@ theorem exists_mixture_ge {d : ℕ} (hd : 12 ≤ d) (ρ : ProbabilityDensity d) 
       pressureValue (spectralThreshold d) ρ ≤ pressureValue (spectralThreshold d) η := by
   have hd0 : 0 < d := by omega
   have hβ : 0 < spectralThreshold d := spectralThreshold_pos hd0
-  obtain ⟨ρ0, h0⟩ := OptimizerDuality.exists_minimizer hd0 hβ (spectral_subcritical_gap hd)
+  obtain ⟨ρ0, h0⟩ := (BecknerOnofri.V2.Reaudit.Attainment.subcritical_attainment hd0 hβ
+    (spectral_subcritical_gap hd)).2.1
   obtain ⟨η, hmix, hc, hmin, -, hpv⟩ := mixture_of_minimizer hd0 hβ ρ0 h0
   exact ⟨η, hmix, hc, hmin, (h0.2 ρ hρ).trans_eq hpv.symm⟩
 

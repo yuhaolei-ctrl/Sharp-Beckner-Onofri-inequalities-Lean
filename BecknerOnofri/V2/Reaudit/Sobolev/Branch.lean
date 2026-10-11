@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.Reaudit.Sobolev.Reduction
+public import BecknerOnofri.V2.Reaudit.Sobolev.CorrectionFromSobolev
 public import BecknerOnofri.LocalElevenCore.SobolevQuadraticTrustedBridge
 public import BecknerOnofri.LocalElevenCore.QuarticTrustedBridge
 public import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
@@ -13,9 +14,11 @@ public import BecknerOnofri.LocalElevenCore.ComplexFirstShellMoments
 in the Banach algebra `H^s`.
 
 * Stage D (`graph_toComplement`): the `H^s` graph, viewed in `C(𝕋^d)` through the inclusion
-  `HsC.toComplement`, coincides near `(1, 0)` with the continuous-function graph
-  `LocalEleven.GreenLocalBranch.correction`.  The proof checks that `(x, ι w(x))` solves the
-  continuous projected equation and applies the local uniqueness of the continuous graph.
+  `HsC.toComplement`, coincides near `(1, 0)` with
+  `LocalEleven.GreenLocalBranch.correction`.  Since `correction` is now *defined* as the Sobolev
+  graph for `s = d` (`CorrectionFromSobolev.lean`), for `s = d` this is a restatement
+  (`graph_toComplement_self`); for general `s > d/2` it follows from the uniqueness clause of
+  `correction` (`correction_unique`).
 * `graph_quadratic` is the native `H^s` statement `D_v w(τ, 0) = 0`, i.e.
   `w = O(‖z‖² + |τ-1| ‖z‖)` in the `H^s` norm.
 * `section5_quartic_reduction` assembles the three assertions of the lemma. -/
@@ -30,17 +33,11 @@ open BecknerOnofri.HighDim ContinuousGibbs ContinuousFirstShell ContinuousComple
 
 variable {d : ℕ} {s : ℝ} [SobolevIndex d s]
 
-/-! ## Compatibility with the continuous-function equation -/
+/-! ## Compatibility with the continuous-function equation
 
-/-- The inclusion `H^s_{K^⊥} → C(𝕋^d)_{K^⊥}` intertwines the `H^s` complement equation with the
-continuous projected equation. -/
-theorem toComplement_complementEq (τ : ℝ) (z : Coordinates d) (w : HsC d s) :
-    HsC.toComplement d s (complementEq d s τ z w) =
-      projectedEquation (greenContinuous d) ((τ, z), HsC.toComplement d s w) := by
-  unfold complementEq projectedEquation
-  rw [map_sub, map_smul, Hs.toComplement_complMap]
-  congr 2
-  rw [Hs.greenH_val, Hs.val_sub, Hs.val_gibbs, Hs.val_one, Hs.reconstructionH_val]
+`toComplement_complementEq` (the inclusion `H^s_{K^⊥} → C(𝕋^d)_{K^⊥}` intertwines the `H^s`
+complement equation with the continuous projected equation) now lives in
+`CorrectionFromSobolev.lean`, below `GreenLocalBranch`. -/
 
 /-! ## Stage D: identification with the continuous-function graph -/
 
@@ -65,6 +62,12 @@ theorem graph_toComplement (hd11 : 11 ≤ d) :
       (x, HsC.toComplement d s (graph hd11 x)) = 0 := by
     rw [← toComplement_complementEq, hs, map_zero]
   exact (hu.mp h0).symm
+
+/-- For `s = d` the continuous-function graph `GreenLocalBranch.correction` *is* the Sobolev graph
+`HsC.toComplement ∘ graph` (definitionally): the identification is a restatement. -/
+theorem graph_toComplement_self [SobolevIndex d (d : ℝ)] (hd11 : 11 ≤ d) (x : ℝ × Coordinates d) :
+    HsC.toComplement d (d : ℝ) (graph hd11 x) = LocalEleven.GreenLocalBranch.correction hd11 x :=
+  rfl
 
 /-- The reconstructed potential is the same function for the two graphs. -/
 theorem reconstructionH_graph (hd11 : 11 ≤ d) :

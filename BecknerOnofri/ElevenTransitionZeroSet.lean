@@ -2,6 +2,8 @@ module
 
 public import BecknerOnofri.ElevenTrialConsequences
 public import BecknerOnofri.ElevenUniform
+public import BecknerOnofri.V2.Reaudit.ElevenBounds.Quantitative
+public import BecknerOnofri.V2.Reaudit.ExternalInputs.PositiveThresholdIndependent
 
 @[expose] public section
 
@@ -34,10 +36,19 @@ lemma zero_parameters_bounded : BddAbove {β : ℝ | 0 ≤ β ∧ pressure 11 β
     lt_trans (by change ((0:ℝ):EReal) < ((1/30:ℝ):EReal); exact EReal.coe_lt_coe_iff.mpr (by norm_num)) hp
   exact this.not_ge h
 
+/-- The non-strict lower bound `3543/200 ≤ β_gm(11)`.  Printed order (`d11:thm:interval`): it is the
+first step, obtained from the quantitative latent-mass gap (`d11:eq:mixture-gap`) through the
+uniform-minimizer property for `β ≤ 3543/200`, i.e. `pressure 11 β = 0` there
+(`V2.Reaudit.ElevenBounds.pressure_zero_quantitative`); it does not use coexistence, the upper bound, or
+the legacy endpoint theorem `ElevenUniform.pressure_zero_below`. -/
 lemma transition_lower : (3543:ℝ)/200 ≤ globalTransition :=
-  le_csSup zero_parameters_bounded ⟨by norm_num, pressure_zero_below le_rfl⟩
+  le_csSup zero_parameters_bounded
+    ⟨by norm_num, V2.Reaudit.ElevenBounds.pressure_zero_quantitative _ (by norm_num) le_rfl⟩
 
-lemma transition_pos : 0 < globalTransition := lt_of_lt_of_le (by norm_num) transition_lower
+/-- `β_gm(11) > 0`: the independent positive-threshold input of Section 2
+(`eq:section2-positive-threshold-input`, proved from the sharp critical Adams inequality). -/
+lemma transition_pos : 0 < globalTransition :=
+  V2.Reaudit.ExternalInputs.globalTransition_pos_independent (by norm_num)
 
 lemma pressure_eq_zero_iff_nonpos (β : ℝ) :
     pressure 11 β = 0 ↔ ∀ (ρ : ProbabilityDensity 11), ρ.FiniteEntropy →

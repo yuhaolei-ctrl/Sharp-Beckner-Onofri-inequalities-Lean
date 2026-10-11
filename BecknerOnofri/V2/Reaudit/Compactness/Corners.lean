@@ -133,7 +133,7 @@ theorem pressure_right_derivative_positive : ∃ s : ℝ, 0 < s ∧
   refine ⟨s, hs, ?_⟩
   rw [pressureReal_convex.rightDeriv_eq_sInf_slope_of_mem_interior transition_interior]
   apply le_csInf
-  · obtain ⟨y, hy, h22⟩ := exists_between (Eleven.transition_upper.trans
+  · obtain ⟨y, hy, h22⟩ := exists_between (transition_lt_2063.trans
       (show (2063 : ℝ) / 100 < 22 by norm_num))
     exact ⟨slope Eleven.pressureReal Eleven.globalTransition y, y,
       ⟨⟨Eleven.transition_pos.trans hy, h22⟩, hy⟩, rfl⟩

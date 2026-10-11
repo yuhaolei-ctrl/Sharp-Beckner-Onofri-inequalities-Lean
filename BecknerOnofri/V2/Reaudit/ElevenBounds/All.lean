@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.GapParam
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.LatentGap
+public import BecknerOnofri.V2.Reaudit.ElevenBounds.Quantitative
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.Interval
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.LabelChain
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.MutualInfo

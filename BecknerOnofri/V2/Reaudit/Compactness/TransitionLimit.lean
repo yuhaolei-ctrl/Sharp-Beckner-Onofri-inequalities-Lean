@@ -4,6 +4,8 @@ public import BecknerOnofri.V2.Reaudit.Compactness.GibbsL2
 public import BecknerOnofri.V2.Reaudit.Compactness.EulerSobolev
 public import BecknerOnofri.V2.Reaudit.Sobolev.LocalUniqueness
 public import BecknerOnofri.ElevenTransitionSequence
+public import BecknerOnofri.V2.Eleven.Estimates
+public import BecknerOnofri.V2.Reaudit.ExternalInputs.RoughFromAdams
 public import BecknerOnofri.ContinuousOptimizerFromL2
 public import BecknerOnofri.VariationalCurveConvexity
 public import Mathlib.Analysis.Convex.Continuous
@@ -51,9 +53,14 @@ theorem pressureReal_convex : ConvexOn ℝ (Set.Ioo 0 22) Eleven.pressureReal :=
 theorem pressureReal_at_transition : Eleven.pressureReal Eleven.globalTransition = 0 := by
   simp only [Eleven.pressureReal, Eleven.pressure_at_transition, EReal.toReal_zero]
 
+/-- `β_gm(11) < 2063/100`: the printed competitor bound (`V2.Eleven.transition_upper`, applied to the
+periodized profile). -/
+theorem transition_lt_2063 : Eleven.globalTransition < 2063 / 100 :=
+  BecknerOnofri.V2.Eleven.transition_upper HighDim.Eleven.competitorDensity rfl
+
 /-- The transition lies in `(0, 22)`: non-strict lower bound, then the competitor upper bound. -/
 theorem transition_mem_Ioo : Eleven.globalTransition ∈ Set.Ioo (0 : ℝ) 22 :=
-  ⟨Eleven.transition_pos, Eleven.transition_upper.trans (by norm_num)⟩
+  ⟨Eleven.transition_pos, transition_lt_2063.trans (by norm_num)⟩
 
 /-- `eq:section4-pressure-limit-zero`: `P_11(β_n) → P_11(β_gm) = 0` along any `β_n → β_gm`
 (finite and convex on `(0,22)`, hence continuous). -/
@@ -114,7 +121,7 @@ theorem transition_limit :
       Tendsto (fun n => criticalEnergy (toL2 11 (u (ψ n)) - U₀)) atTop (𝓝 0) := by
   have hσ : 0 < spectralThreshold 11 := spectralThreshold_pos (d := 11) (by norm_num)
   have hβs : Eleven.globalTransition < spectralThreshold 11 :=
-    Eleven.transition_upper.trans Eleven.spectralThreshold_bounds.1
+    transition_lt_2063.trans Eleven.spectralThreshold_bounds.1
   choose u hu hm hmax hfull hnz using Eleven.exists_nonzero_optimizer
   set β : ℕ → ℝ := Eleven.transitionCoupling with hβdef
   let A : ℕ → ℝ := fun n => spectralThreshold 11 / (2 * β n)
@@ -128,7 +135,9 @@ theorem transition_limit :
   have hM : ∀ n (V : TorusL2 11), Admissible V →
       functional (A n) V ≤ functional (A n) (toL2 11 (u n)) := fun n V hV =>
     toL2_optimizer (by norm_num) _ _ (hu n) (hm n) (hmax n) V hV
-  obtain ⟨b, Ab, hb, hR, hgapb⟩ := Eleven.eleven_rough_gap
+  -- `eq:section4-uniform-exponential-p-bound`: the exponential moments come from the printed
+  -- sharp critical Adams inequality `eq:section2-critical-adams` (`ExternalInputs.criticalAdams`)
+  obtain ⟨b, Ab, hb, hR, hgapb⟩ := ExternalInputs.eleven_rough_gap_of_adams
   -- the value of the maximizer is the pressure
   have hvalue : ∀ n, functional (A n) (toL2 11 (u n)) = Eleven.pressureReal (β n) := by
     intro n
@@ -193,7 +202,7 @@ theorem transition_limit :
       refine squeeze_zero (fun n => Real.sqrt_nonneg _) (fun n => (hbound n).2) hc
     -- Lemma 4.8 (local uniqueness in `H^{11}`) forces `u_n = 0`
     obtain ⟨ε, hε, hloc⟩ := Sobolev.local_uniqueness_raw Eleven.transition_pos
-      (Eleven.transition_upper.trans Eleven.spectralThreshold_bounds.1)
+      (transition_lt_2063.trans Eleven.spectralThreshold_bounds.1)
     have hbclose : ∀ᶠ n in atTop, |β (ψ n) - Eleven.globalTransition| < ε := by
       have := (Eleven.transitionCoupling_limit.comp hψ.tendsto_atTop)
       rw [Metric.tendsto_nhds] at this

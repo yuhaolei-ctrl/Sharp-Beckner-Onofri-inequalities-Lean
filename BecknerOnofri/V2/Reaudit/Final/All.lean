@@ -2,12 +2,16 @@ module
 
 public import BecknerOnofri.V2.Reaudit.Final.Section4
 public import BecknerOnofri.V2.Reaudit.Final.ManuscriptStatements
+public import BecknerOnofri.V2.Reaudit.Final.Onset
 public import BecknerOnofri.V2.Reaudit.Mixtures.Assembly
 public import BecknerOnofri.V2.Reaudit.SpinChannel.WrittenEndpoint
 public import BecknerOnofri.V2.Reaudit.SpinChannel.Prop512Joint
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.FeasibleCalculus
 public import BecknerOnofri.V2.Reaudit.ExternalInputs.CircleLM
 public import BecknerOnofri.V2.Reaudit.ExternalInputs.PositiveThreshold
 public import BecknerOnofri.V2.Reaudit.ExternalInputs.CriticalAdams
+public import BecknerOnofri.V2.Reaudit.ExternalInputs.PositiveThresholdPrint
+public import BecknerOnofri.V2.Reaudit.ExternalInputs.PositiveThresholdIndependent
 
 @[expose] public section
 

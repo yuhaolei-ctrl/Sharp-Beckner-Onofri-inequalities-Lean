@@ -23,14 +23,18 @@ theorem binomialZ_nonneg (n : ℕ) (j : ℤ) : 0 ≤ binomialZ n j := by
   simpa only [Rat.cast_zero, binomialZ, Legacy.D10.binomialCoeffReal] using
     (Rat.cast_le (K := ℝ)).mpr (Legacy.D10.binomialCoeff_nonneg n j.natAbs)
 
+/-- Lemma 3.5 (`lem:gaussian-binomial`) for `j ∈ ℤ`: `a_n(j) ≤ exp(-log(1+1/n) j²)`.  Proved along
+the printed artanh route, including symmetry in `j`, `a_n(0) = 1` and vanishing outside the support
+(`BecknerOnofri.V2.Reaudit.ScalarBridges.gaussian_binomial_printed`). -/
 theorem binomialZ_gaussian (n : ℕ) (hn : 0 < n) (j : ℤ) :
     binomialZ n j ≤ Real.exp (-Real.log (1+1/(n : ℝ)) * (j : ℝ)^2) := by
-  have habs : (j.natAbs : ℝ)^2 = (j : ℝ)^2 := by
-    have h := Int.natCast_natAbs j
-    have hr := congrArg (fun z : ℤ => (z : ℝ)) h
-    simp only [Int.cast_natCast, Int.cast_abs] at hr
-    rw [hr, sq_abs]
-  simpa only [binomialZ, habs] using Legacy.D10.binomialCoeffReal_gaussian n j.natAbs hn
+  have h := BecknerOnofri.V2.Reaudit.ScalarBridges.gaussian_binomial_printed n hn j
+  rw [BecknerOnofri.V2.Reaudit.ScalarBridges.binomA_eq_scalarCoefficient] at h
+  have e : binomialZ n j = BecknerOnofri.HighDim.EntropyTail.scalarCoefficient n j.natAbs := by
+    unfold binomialZ BecknerOnofri.HighDim.EntropyTail.scalarCoefficient
+    exact Legacy.D10.binomialCoeffReal_formula n j.natAbs
+  rw [e]
+  exact h
 
 noncomputable def gaussian {d : ℕ} (a : ℝ) (k : Frequency d) : ℝ :=
   Real.exp (-a * radiusSq k)

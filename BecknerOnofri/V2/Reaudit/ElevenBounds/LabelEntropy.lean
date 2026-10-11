@@ -130,7 +130,7 @@ variables of `eq:section4-lattice-label-decomposition`: `H_Sh(N|Y) < 1/600`, by 
 `H_Sh(N|Y) ≤ H_Sh(N) ≤ 11 H_Sh(N_1) < 1/600`. -/
 theorem condShannon_lt_printed (hX : Measurable X) (hlaw : P.map X = lawEta) :
     condShannon P (rvN X) (rvY X) < 1 / 600 := by
-  obtain ⟨h1, h2, h3⟩ := label_entropy_chain_rv hX hlaw
+  obtain ⟨h1, h2, h3⟩ := label_entropy_chain_rv_printed hX hlaw
   have := eleven_H_Sh_rvNj_lt hX hlaw
   linarith
 

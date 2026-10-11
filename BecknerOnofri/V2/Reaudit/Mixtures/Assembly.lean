@@ -2,6 +2,11 @@ module
 
 public import BecknerOnofri.V2.Reaudit.Mixtures.Selection
 public import BecknerOnofri.V2.Reaudit.Mixtures.PrintedGap
+public import BecknerOnofri.V2.Reaudit.Attainment.Main
+public import BecknerOnofri.V2.Reaudit.Obstruction.ConcentrationObstruction
+public import BecknerOnofri.V2.Reaudit.Obstruction.UniversalUnconditional
+public import BecknerOnofri.V2.Reaudit.Obstruction.PrintedEntropy
+public import BecknerOnofri.V2.Reaudit.Obstruction.CircleAligned
 public import BecknerOnofri.V2.Section3.Lemma31
 public import BecknerOnofri.V2.Section3.FinalCore
 public import BecknerOnofri.V2.Section3.CircleBound
@@ -76,7 +81,7 @@ theorem entropy_bound_of_minimizing_mixtures_aligned (hd : 0 < d) (hmix : Smooth
     have : β * kernelConstant d / 2 * N = S / 2 + d * kernelConstant d * N / 2 := by
       rw [hβdef]; field_simp
     rw [this]; linarith
-  obtain ⟨ρs, hρs⟩ := OptimizerDuality.exists_minimizer hd hβ hβd
+  obtain ⟨ρs, hρs⟩ := (Attainment.subcritical_attainment hd hβ hβd).2.1
   obtain ⟨η, u, -, hηmin, -, -, -, -, hsm, hηpos, -, -, -, -, -, -, -, hηmix, -, -⟩ :=
     canonical_selection_written hd β hβ hβd ρs hρs
   have hle := hηmin.2 ρ hρ
@@ -287,6 +292,17 @@ theorem low_dim_entropy_inequality (hd : 1 ≤ d) (hd10 : d ≤ 10) (ρ : Probab
   rw [← h1]
   exact hext
 
+/-- **Theorem 1.1, (eq:intro-low-dual), with the entropy exactly as printed** (row U01): the same
+inequality with the right side the printed `Ent_μ(f) = ∫ f log f dμ - (∫ f dμ) log (∫ f dμ)` of
+`eq:section2-relative-entropy` (`Obstruction.printedEntropy`), identified with the repository's
+`extendedEntropy` by `Obstruction.printedEntropy_torus_density`. -/
+theorem low_dim_entropy_inequality_printedEntropy (hd : 1 ≤ d) (hd10 : d ≤ 10)
+    (ρ : ProbabilityDensity d) :
+    (((d : ℝ) / spectralThreshold d : ℝ) : EReal) * (spectralEnergy ρ).toEReal ≤
+      Obstruction.printedEntropy (torusMeasure d) ρ.value := by
+  rw [Obstruction.printedEntropy_torus_density]
+  exact low_dim_entropy_inequality d hd hd10 ρ
+
 /-- **Theorem 1.1, (eq:intro-low-primal).**  Statement as in `Challenge.low_dim_beckner_onofri`. -/
 theorem low_dim_beckner_onofri (hd : 1 ≤ d) (hd10 : d ≤ 10)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
@@ -345,8 +361,10 @@ theorem low_dim_pressure_eq (hd : 1 ≤ d) (hd10 : d ≤ 10) (β : ℝ) :
 
 /-- **(eq:intro-low-coefficient-consequence).**  Statement as in `Challenge.low_dim_defect_eq`.
 `theorem_1_1_aligned` only gives `C_d(A_c(d)) = 0`; the formula for all `A` follows by antitonicity of
-`C_d` and `0 ≤ C_d` (above `A_c`) and `HighDim.coefficientDefect_below_collapse` (below `A_c`),
-the latter being the concentration lemma (Lemma 2.3), also used in `Section3.collapse_isLeast`. -/
+`C_d` and `0 ≤ C_d` (above `A_c`) and `Obstruction.coefficientDefect_eq_top_of_lt_critical` (below
+`A_c`), the latter being the concentration obstruction of `lem:section2-universal-obstructions` (i)
+(row S006; it replaces `HighDim.coefficientDefect_below_collapse`), also used in
+`Section3.collapse_isLeast`. -/
 theorem low_dim_defect_eq (hd : 1 ≤ d) (hd10 : d ≤ 10) (A : ℝ) :
     coefficientDefect d A = if collapseCoefficient d ≤ A then 0 else ⊤ := by
   have hd0 : 0 < d := hd
@@ -355,7 +373,7 @@ theorem low_dim_defect_eq (hd : 1 ≤ d) (hd10 : d ≤ 10) (A : ℝ) :
     calc coefficientDefect d A ≤ coefficientDefect d (collapseCoefficient d) :=
           coefficientDefect_antitone hd0 h
       _ = 0 := (theorem_1_1_aligned hd hd10).2.2.2.2.2.1
-  · exact coefficientDefect_below_collapse hd0 (not_le.mp h)
+  · exact Obstruction.coefficientDefect_eq_top_of_lt_critical hd0 (not_le.mp h)
 
 /-- **(eq:intro-low-coefficient-consequence).**  Statement as in `Challenge.low_dim_globalTransition`. -/
 theorem low_dim_globalTransition (hd : 1 ≤ d) (hd10 : d ≤ 10) :
