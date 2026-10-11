@@ -325,7 +325,9 @@ relative-entropy computation `eq:coordinate-minimizer-gap` (`H_r(r | ρ_{u_r}) =
 formalized separately: the two gap identities of Section 2 are `Reaudit.Attainment.coefficientValue_gap` and
 `Reaudit.Attainment.densityValue_gap` (`GapIdentities.lean`), and they enter through `densityMinimizer_regularity`.
 The smooth starting minimizer is `Reaudit.Attainment.exists_smooth_positive_minimizer`
-(`exists_rearranged_minimizer_of_attainment` below composes it with this lemma). -/
+(`coordinate_rearranged_minimizer_printed` below composes it with this lemma; the final-chain declarations
+`Reaudit.Mixtures.exists_smooth_positive_representative` and `Reaudit.Mixtures.canonical_selection_written`
+perform the same composition for a given minimizer). -/
 theorem coordinate_rearranged_minimizer (hd : 0 < d) {β : ℝ} (hβ : 0 < β)
     (ρ : ProbabilityDensity d) (hρ : IsGlobalMinimizer β ρ) (hρs : SmoothOnTorus ρ.value) :
     ∃ (η : ProbabilityDensity d) (u : Torus d → ℝ),
