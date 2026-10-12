@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.Reaudit.Final.All
+public import BecknerOnofri.V2.Reaudit.Final.ManuscriptLemmas2
 
 @[expose] public section
 
@@ -8,9 +9,11 @@ public import BecknerOnofri.V2.Reaudit.Final.All
 
 Each theorem below states, as one conjunction, every assertion of the corresponding printed theorem of
 the manuscript (SHA-256 1a3b8bdb...), and is proved from the route-aligned declarations.  The
-Challenge-shaped regression targets are unchanged; these are added next to them.  Theorem 1.2 is `theorem_1_2_printed`, built from
-`Final.theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`, both printed constants) and
-`eleven_competitor_written_route`. -/
+Challenge-shaped regression targets are unchanged; these are added next to them.  Theorem 1.2 is `theorem_1_2_printed` (statement
+`V2.Eleven.theorem_1_2` together with `V2.Final.eleven_competitor_written`, both printed constants), assembled
+directly from `prop41_route`, `prop49_route` and the printed-route bounds. Theorem 1.3 is `theorem_1_3_printed`,
+whose threshold and inequality assertions are read off from `high_endpoint_printed`
+(`cor:section5-high-endpoint`). -/
 
 noncomputable section
 open MeasureTheory Filter
@@ -104,11 +107,11 @@ theorem theorem_1_3_printed (d : ℕ) (hd : 12 ≤ d) :
           |c - (d : ℝ) / (2 * kappa d) * (1 - A / spectralCoefficient d) ^ 2| ≤
             C * (1 - A / spectralCoefficient d) ^ 3) ∧
     type_of% (Onset.onset_manuscript d hd) :=
-  ⟨fun ρ => SpinChannel.high_dim_entropy_inequality_written d hd ρ,
-    fun ρ hρ => SpinChannel.high_dim_entropy_eq_iff_written d hd ρ hρ,
-    fun u hu => SpinChannel.high_dim_beckner_onofri_written d hd u hu,
-    fun u hu => SpinChannel.high_dim_beckner_onofri_eq_iff_written d hd u hu,
-    SpinChannel.high_dim_thresholds_written d hd,
+  ⟨fun ρ => high_dim_entropy_inequality_printed d hd ρ,
+    fun ρ hρ => ((high_endpoint_printed d hd).1 ρ hρ).2,
+    fun u hu => ⟨((high_endpoint_printed d hd).2.1 u hu).1, ((high_endpoint_printed d hd).2.1 u hu).2.1⟩,
+    fun u hu => ((high_endpoint_printed d hd).2.1 u hu).2.2,
+    high_dim_thresholds_printed d hd,
     V2.Final.kappa_pos d hd,
     Onset.high_dim_onset_branch_route d hd,
     Onset.high_dim_pressure_onset_route d hd,
@@ -143,8 +146,7 @@ theorem spectral_pressure_gt_thirtieth_printed :
 certificate `eq:intro-d11-certificate` (entropy bound `Ent(ρ_*) < 8653/600` and `2·144753/10000 < ‖ρ_*‖²`),
 along the route of the print: Proposition 4.1 (`d11:thm:interval`) in the printed order, the lattice-label
 and shell-expansion bounds, and Proposition 4.9 (`prop:section4-first-order-coexistence`) from the
-compactness argument, as assembled in `theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`) and
-`eleven_competitor_written_route`. -/
+compactness argument (`prop41_route`, `prop49_route`). -/
 theorem theorem_1_2_printed :
     type_of% V2.Eleven.theorem_1_2 ∧ type_of% V2.Final.eleven_competitor_written := by
   have hv := prop41_route

@@ -339,11 +339,64 @@ theorem prop_spectral_marginal_energy_printed :
 
 /-! ## Row S040: `cor:section5-high-endpoint` -/
 
+/-- **`cor:section5-high-endpoint`** (row S040), all assertions used by Theorem 1.3: the density inequality
+with its equality case, the potential inequality with its equality case, the zero-pressure set
+`{P_d = 0}` has greatest element `β_s(d)`, `β_gm(d) = β_s(d)`, and the zero-defect set has least element
+`A_s(d)`.  The proof follows the printed one: `β_s` has zero pressure by the dual form of the density
+inequality, and `P_d(β) > 0` for `β > β_s` (respectively `C_d(A) > 0` for `A < A_s`) is the first-shell
+obstruction of `lem:section2-universal-obstructions`. -/
+theorem high_endpoint_printed (d : ℕ) (hd : 12 ≤ d) :
+    (∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
+      spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) ∧
+        (spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) ↔
+          ρ.value =ᵐ[torusMeasure d] fun _ => 1)) ∧
+    (∀ u : Torus d → ℝ, InCriticalSobolev u →
+      Integrable (fun x => Real.exp (centered u x)) (torusMeasure d) ∧
+        logPartition u ≤ ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ∧
+        (logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
+          ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c)) ∧
+    IsGreatest {β : ℝ | 0 ≤ β ∧ pressure d β = 0} (spectralThreshold d) ∧
+    VariationalCurves.globalTransition d = spectralThreshold d ∧
+    IsLeast {A : ℝ | 0 < A ∧ coefficientDefect d A = 0} (spectralCoefficient d) := by
+  have hd0 : 0 < d := by omega
+  have hdens := SpinChannel.spectral_high_density_written V2.Final.Unconditional.scalarBounds hd
+  have hE : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
+      spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) := fun ρ hρ => (hdens ρ hρ).1
+  have hR : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
+      spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) → ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
+    fun ρ hρ h => ((hdens ρ hρ).2).mp h
+  have hσ := spectralThreshold_pos hd0
+  have hAs : 0 < spectralCoefficient d := by unfold spectralCoefficient; positivity
+  -- `β_s` has zero pressure: dual form of the density inequality
+  have hmem : pressure d (spectralThreshold d) = 0 := by
+    rw [pressure_eq_coefficientDefect hd0 hσ]
+    have he : spectralThreshold d / (2 * spectralThreshold d * (2 * Real.pi) ^ d) =
+        spectralCoefficient d := by
+      unfold spectralCoefficient
+      field_simp
+    rw [he]
+    exact coefficientDefect_spectral_zero_of_primal hd0
+      (fun u hu => (potential_endpoint_of_density hd0 hE u hu).2)
+  have hobs := Obstruction.universal_obstructions hd0
+  have hgreat : IsGreatest {β : ℝ | 0 ≤ β ∧ pressure d β = 0} (spectralThreshold d) := by
+    refine ⟨⟨hσ.le, hmem⟩, fun β hβ => ?_⟩
+    by_contra hlt
+    have hpos := hobs.2.2.2.1 β (lt_of_not_ge hlt)
+    rw [hβ.2] at hpos
+    exact lt_irrefl _ hpos
+  refine ⟨fun ρ hρ => hdens ρ hρ, fun u hu => ?_, hgreat, hgreat.csSup_eq, ?_⟩
+  · obtain ⟨hi, hle⟩ := potential_endpoint_of_density hd0 hE u hu
+    exact ⟨hi, hle, potential_rigidity_of_density hd0 hE hR u hu⟩
+  · refine ⟨⟨hAs, coefficientDefect_spectral_zero_of_primal hd0
+      (fun u hu => (potential_endpoint_of_density hd0 hE u hu).2)⟩, fun A hA => ?_⟩
+    by_contra hlt
+    have hpos := hobs.2.2.2.2 A (lt_of_not_ge hlt)
+    rw [hA.2] at hpos
+    exact lt_irrefl _ hpos
+
 /-- **`cor:section5-high-endpoint`** (row S040) as printed: for `d ≥ 12`, the density inequality
 `Ent(ρ) ≥ (2π)^d/2 ‖ρ‖²` with equality only for `ρ = 1`; the dual potential inequality with
-coefficient `A_s(d)` and equality only for constants; and `β_gm(d) = β_s(d)`.  The threshold identity
-follows the printed proof: `β_s ∈ {P_d = 0}` from the density inequality, and `P_d(β) > 0` for
-`β > β_s` from the first-shell obstruction of `lem:section2-universal-obstructions`. -/
+coefficient `A_s(d)` and equality only for constants; and `β_gm(d) = β_s(d)`. -/
 theorem cor_section5_high_endpoint_printed (d : ℕ) (hd : 12 ≤ d) :
     (∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
       spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) ∧
@@ -354,43 +407,32 @@ theorem cor_section5_high_endpoint_printed (d : ℕ) (hd : 12 ≤ d) :
         logPartition u ≤ ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ∧
         (logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
           ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c)) ∧
-    VariationalCurves.globalTransition d = spectralThreshold d := by
-  have hd0 : 0 < d := by omega
-  have hdens := SpinChannel.spectral_high_density_written V2.Final.Unconditional.scalarBounds hd
-  have hE : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
-      spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) := fun ρ hρ => (hdens ρ hρ).1
-  have hR : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
-      spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) → ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
-    fun ρ hρ h => ((hdens ρ hρ).2).mp h
-  -- `β_s` has zero pressure: dual form of the density inequality
-  have hσ := spectralThreshold_pos hd0
-  have hmem : pressure d (spectralThreshold d) = 0 := by
-    rw [pressure_eq_coefficientDefect hd0 hσ]
-    have he : spectralThreshold d / (2 * spectralThreshold d * (2 * Real.pi) ^ d) =
-        spectralCoefficient d := by
-      unfold spectralCoefficient
-      field_simp
-    rw [he]
-    exact coefficientDefect_spectral_zero_of_primal hd0
-      (fun u hu => (potential_endpoint_of_density hd0 hE u hu).2)
-  refine ⟨fun ρ hρ => hdens ρ hρ, fun u hu => ?_, le_antisymm ?_ ?_⟩
-  · obtain ⟨hi, hle⟩ := potential_endpoint_of_density hd0 hE u hu
-    exact ⟨hi, hle, potential_rigidity_of_density hd0 hE hR u hu⟩
-  · -- every `β` with zero pressure is at most `β_s`: first-shell obstruction
-    have hobs := (Obstruction.universal_obstructions hd0).2.2.2.1
-    have hmemS : spectralThreshold d ∈ {β : ℝ | 0 ≤ β ∧ pressure d β = 0} := ⟨hσ.le, hmem⟩
-    refine csSup_le ⟨_, hmemS⟩ fun β hβ => ?_
-    by_contra hlt
-    have hpos := hobs β (lt_of_not_ge hlt)
-    rw [hβ.2] at hpos
-    exact lt_irrefl _ hpos
-  · have hobs := (Obstruction.universal_obstructions hd0).2.2.2.1
-    have hmemS : spectralThreshold d ∈ {β : ℝ | 0 ≤ β ∧ pressure d β = 0} := ⟨hσ.le, hmem⟩
-    refine le_csSup ⟨spectralThreshold d, fun β hβ => ?_⟩ hmemS
-    by_contra hlt
-    have hpos := hobs β (lt_of_not_ge hlt)
-    rw [hβ.2] at hpos
-    exact lt_irrefl _ hpos
+    VariationalCurves.globalTransition d = spectralThreshold d :=
+  ⟨(high_endpoint_printed d hd).1, (high_endpoint_printed d hd).2.1,
+    (high_endpoint_printed d hd).2.2.2.1⟩
+
+/-! ### The assertions of Theorem 1.3 that are read off from `cor:section5-high-endpoint` -/
+
+theorem high_dim_entropy_inequality_printed (d : ℕ) (hd : 12 ≤ d) (ρ : ProbabilityDensity d) :
+    ((1 / 2 : ℝ) : EReal) * (spectralEnergy ρ).toEReal ≤ extendedEntropy ρ := by
+  refine V2.Final.ereal_le_extendedEntropy (by omega) ρ _ fun hρ => ?_
+  have h := (high_endpoint_printed d hd).1 ρ hρ |>.1
+  have hfin : spectralEnergy ρ ≠ ⊤ := finiteEntropy_spectralEnergy_ne_top (by omega) ρ hρ
+  have h2 : (spectralEnergy ρ).toReal ≤ 2 * entropy ρ :=
+    (ENNReal.le_ofReal_iff_toReal_le hfin (by have := entropy_nonneg ρ hρ; positivity)).1 h
+  linarith
+
+theorem high_dim_thresholds_printed (d : ℕ) (hd : 12 ≤ d) :
+    IsGreatest {β : ℝ | 0 ≤ β ∧ pressure d β = 0} (spectralThreshold d) ∧
+      IsLeast {A : ℝ | 0 < A ∧ coefficientDefect d A = 0} (spectralCoefficient d) ∧
+      VariationalCurves.globalTransition d = spectralThreshold d ∧
+      VariationalCurves.zeroDefectCoefficient d = spectralCoefficient d := by
+  obtain ⟨-, -, hg, hgt, hA⟩ := high_endpoint_printed d hd
+  have hs : spectralThreshold d ≠ 0 := (spectralThreshold_pos (by omega)).ne'
+  refine ⟨hg, hA, hgt, ?_⟩
+  unfold VariationalCurves.zeroDefectCoefficient spectralCoefficient
+  rw [hgt]
+  field_simp
 
 /-! ## Row S044: the function `ψ` of `prop:section5-spin-entropy` -/
 
@@ -411,7 +453,10 @@ theorem prop_section5_psi_properties :
 #print axioms lem_positive_bernstein_printed
 #print axioms lem_positive_bernstein_tensor_route
 #print axioms prop_spectral_marginal_energy_printed
+#print axioms high_endpoint_printed
 #print axioms cor_section5_high_endpoint_printed
+#print axioms high_dim_entropy_inequality_printed
+#print axioms high_dim_thresholds_printed
 #print axioms prop_section5_psi_properties
 
 end V2.Reaudit.Final

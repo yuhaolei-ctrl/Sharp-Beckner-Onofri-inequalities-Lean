@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Onset.Smallness
 public import BecknerOnofri.V2.Onset.Exclusion
 public import BecknerOnofri.PressureDuality
+public import BecknerOnofri.V2.Reaudit.Obstruction.UniversalObstructions
 public import BecknerOnofri.GlobalPressureOnset
 public import BecknerOnofri.LocalElevenCore.SupportedFullIdentification
 public import BecknerOnofri.LocalElevenCore.StableSupportedClassification
@@ -42,7 +43,8 @@ theorem eq_of_ae_eq {d : ℕ} (f g : Space d) (h : ⇑f =ᵐ[torusMeasure d] ⇑
   exact ContinuousMap.ext fun x =>
     congrFun ((Continuous.ae_eq_iff_eq (torusMeasure d) f.continuous g.continuous).mp h) x
 
-/-- Above the spectral threshold a global optimizer is nonzero (the pressure is positive). -/
+/-- Above the spectral threshold a global optimizer is nonzero (the pressure is positive: the first-shell
+assertion of `lem:section2-universal-obstructions`). -/
 theorem optimizer_ne_zero {d : ℕ} (hd : 0 < d) {μ : ℝ} (hμ : 1 < μ) (u : Space d)
     (hu : InCriticalSobolev ⇑u)
     (hmax : ∀ v : Torus d → ℝ, InCriticalSobolev v →
@@ -53,7 +55,7 @@ theorem optimizer_ne_zero {d : ℕ} (hd : 0 < d) {μ : ℝ} (hμ : 1 < μ) (u : 
   have hσ : 0 < spectralThreshold d := Legacy.TorusEndpoint.endpointSigma_pos hd
   have hβ : 0 < μ * spectralThreshold d := mul_pos (by linarith) hσ
   have hp := GlobalPressureOnset.optimizer_pressure hd hβ _ hu hmax
-  have hpos := pressure_pos_of_spectral_lt hd (β := μ * spectralThreshold d)
+  have hpos := (V2.Reaudit.Obstruction.universal_obstructions hd).2.2.2.1 (μ * spectralThreshold d)
     (by nlinarith)
   rw [hp] at hpos
   have h0 : dualFunctional (μ * spectralThreshold d) ⇑(0 : Space d) = 0 := dual_zero _

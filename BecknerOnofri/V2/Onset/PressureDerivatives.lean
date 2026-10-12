@@ -17,8 +17,8 @@ public import Mathlib.Analysis.Calculus.Deriv.CompMul
 
 The statements of `OnsetConsequences`, `PressureDerivativeOnset`, `PressureCurvatureOnset` and
 `PressureSecondDerivative`, rebuilt without importing those endpoint modules: the only inputs are the
-interface hypotheses `OnsetEndpointInputs d` (through `pressure_threshold_of_density` and the bridges
-to `CoefficientEndpoint`/`DensityRigidity`) together with the clean `DiagonalScalarBranch`,
+interface hypotheses `OnsetEndpointInputs d` (the zero pressure at `β_s` is the dual form of the density
+inequality, as in the proof of `cor:section5-high-endpoint`) together with the clean `DiagonalScalarBranch`,
 `SupercriticalEnergyDerivatives`, `BranchFirstDerivativeRemainder` and
 `BranchSecondDerivativeRemainder` declarations. -/
 
@@ -51,7 +51,18 @@ theorem pressure_zero_below_v2 {d : ℕ} (hd : 12 ≤ d) (E : OnsetEndpointInput
     (hβ : β ≤ spectralThreshold d) : pressure d β = 0 := by
   apply le_antisymm _ (pressure_nonneg _ _)
   have h := pressure_monotone_v2 (d := d) (by omega) hβ
-  rwa [(pressure_threshold_of_density (by omega) E.inequality).1.2] at h
+  have hd0 : 0 < d := by omega
+  have hσ := spectralThreshold_pos hd0
+  have hmem : pressure d (spectralThreshold d) = 0 := by
+    rw [pressure_eq_coefficientDefect hd0 hσ]
+    have he : spectralThreshold d / (2 * spectralThreshold d * (2 * Real.pi) ^ d) =
+        spectralCoefficient d := by
+      unfold spectralCoefficient
+      field_simp
+    rw [he]
+    exact coefficientDefect_spectral_zero_of_primal hd0
+      (fun u hu => (potential_endpoint_of_density hd0 E.inequality u hu).2)
+  rwa [hmem] at h
 
 /-- Near the threshold, the (real part of the) pressure is the explicit supercritical energy.
 The optimizer is the one of the Sobolev-smallness / second-variation route (`branch_eventually_optimizer_v2`),
