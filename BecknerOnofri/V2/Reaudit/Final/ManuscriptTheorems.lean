@@ -8,9 +8,9 @@ public import BecknerOnofri.V2.Reaudit.Final.All
 
 Each theorem below states, as one conjunction, every assertion of the corresponding printed theorem of
 the manuscript (SHA-256 1a3b8bdb...), and is proved from the route-aligned declarations.  The
-Challenge-shaped regression targets are unchanged; these are added next to them.  Theorem 1.2 is
-`Final.theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`, both printed constants) together with
-`eleven_competitor_printed`. -/
+Challenge-shaped regression targets are unchanged; these are added next to them.  Theorem 1.2 is `theorem_1_2_printed`, built from
+`Final.theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`, both printed constants) and
+`eleven_competitor_written_route`. -/
 
 noncomputable section
 open MeasureTheory Filter
@@ -116,6 +116,16 @@ theorem theorem_1_3_printed (d : ℕ) (hd : 12 ≤ d) :
     Onset.onset_manuscript d hd⟩
 
 
+/-- **Theorem 1.2** (`thm:intro-d11`), every assertion of the printed statement, together with the
+certificate `eq:intro-d11-certificate` (entropy bound `Ent(ρ_*) < 8653/600` and `2·144753/10000 < ‖ρ_*‖²`),
+along the route of the print: Proposition 4.1 (`d11:thm:interval`) in the printed order, the lattice-label
+and shell-expansion bounds, and Proposition 4.9 (`prop:section4-first-order-coexistence`) from the
+compactness argument, as assembled in `theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`) and
+`eleven_competitor_written_route`. -/
+theorem theorem_1_2_printed :
+    type_of% V2.Eleven.theorem_1_2 ∧ type_of% V2.Final.eleven_competitor_written :=
+  ⟨theorem_1_2_route, eleven_competitor_written_route⟩
+
 /-- **Lemma `lem:section2-universal-obstructions`, all five assertions as printed** (with `0 ≤` and finiteness
 of the defect at the concentration coefficient): the pressure is infinite beyond `2d`, the defect is
 infinite below `A_c(d)`, it is finite and nonnegative at `A_c(d)`, and the pressure and the defect are
@@ -133,6 +143,7 @@ theorem lem_section2_universal_obstructions (d : ℕ) (hd : 1 ≤ d) :
 #print axioms lem_section2_universal_obstructions
 
 #print axioms theorem_1_1_printed
+#print axioms theorem_1_2_printed
 #print axioms theorem_1_3_printed
 
 end V2.Reaudit.Final

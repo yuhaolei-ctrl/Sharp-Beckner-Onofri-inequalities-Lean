@@ -8,6 +8,7 @@ public import BecknerOnofri.V2.Reaudit.ShellMargins.LowScalarGap
 public import BecknerOnofri.V2.Reaudit.Mixtures.PrintedGap
 public import BecknerOnofri.V2.Rearrangement.Comparison
 public import BecknerOnofri.V2.Reaudit.Attainment.Main
+public import BecknerOnofri.V2.Reaudit.Attainment.Pairing
 
 @[expose] public section
 
@@ -26,7 +27,8 @@ of a root.  Rows:
 * S004 (`lem:section2-finite-entropy-energy`): `lem_section2_finite_entropy_energy`;
 * S022 (`lem:theta-integral-certificate`): `lem_theta_integral_certificate_printed`;
 * S023 (`prop:equality`): `prop_equality_root`;
-* S012 (`lem:coordinate-rearranged-minimizer`): `lem_coordinate_rearranged_minimizer_root`. -/
+* S012 (`lem:coordinate-rearranged-minimizer`): `lem_coordinate_rearranged_minimizer_root`;
+* S016 (`lem:selection-full-entropy-domain`): `lem_selection_full_entropy_domain_printed`. -/
 
 noncomputable section
 open MeasureTheory Filter
@@ -53,53 +55,39 @@ theorem lem_section2_critical_adams {d : ℕ} (hd : 0 < d) :
     (V2.Vocab.criticalAdamsInput_iff hd).1 (ExternalInputs.criticalAdams hd)⟩
 
 /-- **`eq:section2-all-exponential-moments`** (row U03): `e^{p|u|} ∈ L¹(𝕋^d)` for every
-`u ∈ H^{d/2}` and every `1 ≤ p < ∞`.  Proof as printed: `e^{p|u|} ≤ e^{pu} + e^{-pu}` and
-`eq:section2-critical-adams` applied to `pu` and `-pu`. -/
+`u ∈ H^{d/2}` and every `1 ≤ p < ∞`.  Proof as in the manuscript: `e^{p|u|} ≤ e^{pu} + e^{-pu}` and
+the rough exponential estimate `lem:section2-rough-exponential` applied to `u` and to `-u`
+(`Attainment.integrable_exp_mul_abs`, which rests on `GenericAttainment.rough_bound`); the sharp
+critical Adams inequality is not used.  The constant `ū` is removed first, since `|u| ≤ |ū| + |u - ū|`. -/
 theorem lem_section2_all_exponential_moments {d : ℕ} (hd : 0 < d) {u : Torus d → ℝ}
-    (hu : InCriticalSobolev u) {p : ℝ} (_hp : 1 ≤ p) :
+    (hu : InCriticalSobolev u) {p : ℝ} (hp : 1 ≤ p) :
     Integrable (fun x => Real.exp (p * |u x|)) (torusMeasure d) := by
-  -- `e^{s u}` is integrable for every real `s`, from the critical Adams estimate applied to `s u`.
-  have key : ∀ s : ℝ, Integrable (fun x => Real.exp (s * u x)) (torusMeasure d) := by
-    intro s
-    have hv : InCriticalSobolev (fun x => s * u x) :=
-      Attainment.inCriticalSobolev_const_mul s hu
-    obtain ⟨B, hB⟩ := ExternalInputs.criticalAdams hd
-    have h1 := hB _ hv
-    have hmeas : AEStronglyMeasurable (fun x => Real.exp (centered (fun x => s * u x) x))
-        (torusMeasure d) := by
-      have hc : AEStronglyMeasurable (centered (fun x => s * u x)) (torusMeasure d) :=
-        (hv.1.aestronglyMeasurable.sub aestronglyMeasurable_const)
-      exact Real.continuous_exp.comp_aestronglyMeasurable hc
-    have hfin : (∫⁻ x, ENNReal.ofReal (Real.exp (centered (fun x => s * u x) x)) ∂torusMeasure d)
-        < ⊤ := by
-      by_contra hcon
-      have htop : (∫⁻ x, ENNReal.ofReal (Real.exp (centered (fun x => s * u x) x))
-          ∂torusMeasure d) = ⊤ := not_lt_top_iff.mp hcon
-      unfold logPartition at h1
-      rw [htop, ENNReal.log_top] at h1
-      exact EReal.coe_ne_top _ (top_le_iff.mp h1)
-    have hint : Integrable (fun x => Real.exp (centered (fun x => s * u x) x)) (torusMeasure d) :=
-      ⟨hmeas, (hasFiniteIntegral_iff_ofReal
-        (ae_of_all _ fun x => (Real.exp_pos _).le)).2 hfin⟩
-    refine (hint.mul_const (Real.exp (∫ y, s * u y ∂torusMeasure d))).congr
-      (Filter.Eventually.of_forall fun x => ?_)
-    simp only [centered, ← Real.exp_add]
-    congr 1
-    ring
+  have hc : InCriticalSobolev (centered u) := Attainment.inCriticalSobolev_centered hu
+  have hm : MeanZero (centered u) := Attainment.meanZero_centered hu.1
+  have h := Attainment.integrable_exp_mul_abs hd hc hm p
   have hmeas : AEStronglyMeasurable (fun x => Real.exp (p * |u x|)) (torusMeasure d) :=
     Real.continuous_exp.comp_aestronglyMeasurable
       ((hu.1.aestronglyMeasurable.norm.const_mul p).congr
         (Filter.Eventually.of_forall fun x => by simp))
-  refine ((key p).add (key (-p))).mono' hmeas (Filter.Eventually.of_forall fun x => ?_)
-  rw [Real.norm_eq_abs, abs_of_pos (Real.exp_pos _)]
-  simp only [Pi.add_apply]
-  have e1 := Real.exp_pos (p * u x)
-  have e2 := Real.exp_pos ((-p) * u x)
-  rcases abs_cases (u x) with ⟨h, _⟩ | ⟨h, _⟩
-  · rw [h]
-    linarith
-  · rw [h, show p * -u x = (-p) * u x by ring]
-    linarith
+  refine (h.const_mul (Real.exp (p * |∫ y, u y ∂torusMeasure d|))).mono' hmeas
+    (Filter.Eventually.of_forall fun x => ?_)
+  rw [Real.norm_eq_abs, abs_of_pos (Real.exp_pos _), ← Real.exp_add]
+  refine Real.exp_le_exp.2 ?_
+  have h1 : |u x| ≤ |∫ y, u y ∂torusMeasure d| + |centered u x| := by
+    have := abs_add_le (∫ y, u y ∂torusMeasure d) (centered u x)
+    have e : (∫ y, u y ∂torusMeasure d) + centered u x = u x := by simp [centered]
+    rwa [e] at this
+  nlinarith
+
+/-! ## Row S016 -/
+
+/-- **`lem:selection-full-entropy-domain`** (row S016), `d ≥ 2`, `0 < β < 2d`: existence of a global
+minimizer of `ℰ_β`, smoothness, strict positivity and the Gibbs/Euler form of every minimizer, and the
+entropy-preserving canonical selection of a coordinatewise even and nonincreasing minimizer that is a
+countable cosine mixture with nonnegative Fourier coefficients.  The Lean statement is stated for `d ≥ 1`. -/
+theorem lem_selection_full_entropy_domain_printed {d : ℕ} (hd : 2 ≤ d) :
+    type_of% (V2.Reaudit.Mixtures.selection_full_entropy_domain_written (d := d) (by omega)) :=
+  V2.Reaudit.Mixtures.selection_full_entropy_domain_written (by omega)
 
 /-! ## Row S007 -/
 
@@ -224,6 +212,7 @@ theorem lem_coordinate_rearranged_minimizer_root (d : ℕ) (hd : 0 < d) {β : �
 
 #print axioms lem_section2_critical_adams
 #print axioms lem_section2_all_exponential_moments
+#print axioms lem_selection_full_entropy_domain_printed
 #print axioms lem_section2_weak_beckner_onofri
 #print axioms eq_section2_positive_threshold_input
 #print axioms section2_globalTransition_pos

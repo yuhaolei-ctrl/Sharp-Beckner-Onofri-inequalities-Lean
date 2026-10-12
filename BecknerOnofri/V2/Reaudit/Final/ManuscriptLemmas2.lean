@@ -76,15 +76,33 @@ theorem coefficient_zero_iff_printed {d : ℕ} (hd : 0 < d) {A : ℝ} (hA : 0 < 
     div_le_iff₀ (by positivity : 0 < 2*VariationalCurves.globalTransition d*(2*Real.pi)^d)]
   constructor <;> intro h <;> nlinarith
 
+/-- `β_gm(d) ≤ min{β_c(d), β_s(d)}` (first half of `eq:section2-threshold-upper-bounds`), as in the print:
+`lem:section2-universal-obstructions` gives `P_d = +∞` beyond `2d` and `P_d > 0` beyond `β_s(d)`, while
+`P_d(β_gm) = 0`. -/
+theorem transition_upper_bounds_printed {d : ℕ} (hd : 0 < d) :
+    VariationalCurves.globalTransition d ≤ min (2*(d:ℝ)) (spectralThreshold d) := by
+  have hU := Obstruction.universal_obstructions hd
+  have hz : pressure d (VariationalCurves.globalTransition d) = 0 :=
+    (VariationalCurves.pressure_zero_iff hd _).mpr le_rfl
+  refine le_min ?_ ?_
+  · by_contra hn
+    have h := hU.1 _ (lt_of_not_ge hn)
+    rw [hz] at h
+    exact (by simp : (0 : EReal) ≠ ⊤) h
+  · by_contra hn
+    have h := hU.2.2.2.1 _ (lt_of_not_ge hn)
+    rw [hz] at h
+    exact lt_irrefl _ h
+
 /-- `A₀(d) ≥ max{A_crit(d), A_s(d)}` (second half of `eq:section2-threshold-upper-bounds`): the proof
-of `VariationalCurves.coefficient_lower_bounds` with `β_gm > 0` from the positive-threshold input;
-the first half `β_gm ≤ min{β_c, β_s}` is `VariationalCurves.transition_upper_bounds`. -/
+of `VariationalCurves.coefficient_lower_bounds` with `β_gm > 0` from the positive-threshold input and
+the first half `β_gm ≤ min{β_c, β_s}` from `transition_upper_bounds_printed`. -/
 theorem coefficient_lower_bounds_printed {d : ℕ} (hd : 0 < d) :
     max (collapseCoefficient d) (spectralCoefficient d) ≤ VariationalCurves.zeroDefectCoefficient d := by
   have hσ := spectralThreshold_pos hd
   have hT := globalTransition_pos_printed hd
   have hp : 0 < (2*Real.pi)^d := by positivity
-  have hb := VariationalCurves.transition_upper_bounds hd
+  have hb := transition_upper_bounds_printed hd
   have hc := hb.trans (min_le_left _ _)
   have hs := hb.trans (min_le_right _ _)
   apply max_le
@@ -131,7 +149,7 @@ theorem prop_section2_basic_curve_geometry {d : ℕ} (hd : 0 < d) :
     VariationalCurves.transition_quotient hd,
     fun β _ => VariationalCurves.pressure_zero_iff hd β,
     fun _ hA => coefficient_zero_iff_printed hd hA,
-    VariationalCurves.transition_upper_bounds hd,
+    transition_upper_bounds_printed hd,
     coefficient_lower_bounds_printed hd⟩
 
 /-! ## Row S011: `lem:circle-rearrangement` -/
@@ -156,15 +174,18 @@ theorem lem_circle_rearrangement_printed_full {f g F G : Legacy.TorusEndpoint.To
   have h := circle_rearrangement_printed hf hg hf0 hg0 hF hG q hq0 hqC hq
   exact ⟨h.1, h.2.1, h.2.2⟩
 
-/-- **`lem:circle-rearrangement`**, Step 1 of the printed proof: the symmetric decreasing rearrangement of
-a nonnegative integrable function on the circle exists and is unique up to null sets. -/
+/-- **`lem:circle-rearrangement`**: the symmetric decreasing rearrangement of an integrable function on the
+circle is unique up to null sets (Step 1 of the printed proof: superlevel sets are centered arcs) and
+exists (Step 5 of the printed proof: the `L¹` limit of the Lipschitz rearrangements of Step 4,
+`exists_rearrangement_limit`; the hypothesis `0 ≤ f` is not needed for existence). -/
 theorem circle_symmDecrRearr_exists_unique {f : Legacy.TorusEndpoint.Torus 1 → ℝ}
     (hf : Integrable f (Legacy.TorusEndpoint.torusMeasure 1))
-    (hf0 : ∀ᵐ x ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ f x) :
+    (_hf0 : ∀ᵐ x ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ f x) :
     (∃ F, Obstruction.IsSymmDecrRearr f F) ∧
       ∀ F G, Obstruction.IsSymmDecrRearr f F → Obstruction.IsSymmDecrRearr f G →
         F =ᵐ[Legacy.TorusEndpoint.torusMeasure 1] G :=
-  ⟨Obstruction.exists_symmDecrRearr hf hf0, fun _ _ hF hG => hF.ae_unique hG⟩
+  ⟨(PolarizationL1.exists_rearrangement_limit hf).elim fun F hF => ⟨F, hF.identDistrib hf, hF.radial⟩,
+    fun _ _ hF hG => hF.ae_unique hG⟩
 
 /-- **`eq:circle-rearr-lipschitz`** (row S011, Step 4 of the printed proof): for Lipschitz `f, g` on the
 circle there are continuous `F, G`, equimeasurable with `f, g` and even and nonincreasing in the
@@ -333,14 +354,41 @@ theorem cor_section5_high_endpoint_printed (d : ℕ) (hd : 12 ≤ d) :
           ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c)) ∧
     VariationalCurves.globalTransition d = spectralThreshold d := by
   have hd0 : 0 < d := by omega
-  obtain ⟨h1, h2, hthr, -, -⟩ := SpinChannel.high_endpoint_written d hd
-  refine ⟨h1, h2, le_antisymm ?_ hthr.csSup_eq.ge⟩
-  have hobs := (Obstruction.universal_obstructions hd0).2.2.2.1
-  refine csSup_le hthr.nonempty fun β hβ => ?_
-  by_contra hlt
-  have hpos := hobs β (lt_of_not_ge hlt)
-  rw [hβ.2] at hpos
-  exact lt_irrefl _ hpos
+  have hdens := SpinChannel.spectral_high_density_written V2.Final.Unconditional.scalarBounds hd
+  have hE : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
+      spectralEnergy ρ ≤ ENNReal.ofReal (2 * entropy ρ) := fun ρ hρ => (hdens ρ hρ).1
+  have hR : ∀ ρ : ProbabilityDensity d, ρ.FiniteEntropy →
+      spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) → ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
+    fun ρ hρ h => ((hdens ρ hρ).2).mp h
+  -- `β_s` has zero pressure: dual form of the density inequality
+  have hσ := spectralThreshold_pos hd0
+  have hmem : pressure d (spectralThreshold d) = 0 := by
+    rw [pressure_eq_coefficientDefect hd0 hσ]
+    have he : spectralThreshold d / (2 * spectralThreshold d * (2 * Real.pi) ^ d) =
+        spectralCoefficient d := by
+      unfold spectralCoefficient
+      field_simp
+    rw [he]
+    exact coefficientDefect_spectral_zero_of_primal hd0
+      (fun u hu => (potential_endpoint_of_density hd0 hE u hu).2)
+  refine ⟨fun ρ hρ => hdens ρ hρ, fun u hu => ?_, le_antisymm ?_ ?_⟩
+  · obtain ⟨hi, hle⟩ := potential_endpoint_of_density hd0 hE u hu
+    exact ⟨hi, hle, potential_rigidity_of_density hd0 hE hR u hu⟩
+  · -- every `β` with zero pressure is at most `β_s`: first-shell obstruction
+    have hobs := (Obstruction.universal_obstructions hd0).2.2.2.1
+    have hmemS : spectralThreshold d ∈ {β : ℝ | 0 ≤ β ∧ pressure d β = 0} := ⟨hσ.le, hmem⟩
+    refine csSup_le ⟨_, hmemS⟩ fun β hβ => ?_
+    by_contra hlt
+    have hpos := hobs β (lt_of_not_ge hlt)
+    rw [hβ.2] at hpos
+    exact lt_irrefl _ hpos
+  · have hobs := (Obstruction.universal_obstructions hd0).2.2.2.1
+    have hmemS : spectralThreshold d ∈ {β : ℝ | 0 ≤ β ∧ pressure d β = 0} := ⟨hσ.le, hmem⟩
+    refine le_csSup ⟨spectralThreshold d, fun β hβ => ?_⟩ hmemS
+    by_contra hlt
+    have hpos := hobs β (lt_of_not_ge hlt)
+    rw [hβ.2] at hpos
+    exact lt_irrefl _ hpos
 
 /-! ## Row S044: the function `ψ` of `prop:section5-spin-entropy` -/
 
