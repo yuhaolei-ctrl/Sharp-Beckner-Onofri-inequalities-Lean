@@ -116,6 +116,29 @@ theorem theorem_1_3_printed (d : ℕ) (hd : 12 ≤ d) :
     Onset.onset_manuscript d hd⟩
 
 
+/-- `C_11(A_s) = P_11(β_s) > 1/30` (first display of `eq:intro-d11-threshold`) from the two printed
+certificates: the entropy bound `Ent(ρ_*) < 8653/600` (`ElevenBounds.torusEntropy_bound_printed`) and the
+shell-expansion energy bound `(2π)^{11}/2 ‖ρ_*‖² > 14475384292906/10^{12}`
+(`ElevenBounds.energy_bound_via_shells`), inserted into the free energy of the competitor `ρ_*` at `β_s`:
+`P_11(β_s) ≥ (2π)^{11}/2 ‖ρ_*‖² − Ent(ρ_*) > 579/40 − 8653/600 = 4/75 > 1/30`. -/
+theorem spectral_pressure_gt_thirtieth_printed :
+    (((1 : ℝ) / 30 : ℝ) : EReal) < pressure 11 (spectralThreshold 11) := by
+  have h := V2.Eleven.rhoStar_value
+  have hρ := V2.Eleven.finiteEntropy_of_value_eq _ h
+  have hv := HighDim.Eleven.pressureValue_le_pressure (spectralThreshold 11) V2.Eleven.rhoStar hρ
+  rw [V2.Eleven.pressureValue_eq_real_ms (by norm_num) _ _ hρ] at hv
+  have hcs := V2.Vocab.kernelConstant_mul_spectralThreshold (d := 11) (by norm_num)
+  have e : spectralThreshold 11 * V2.Vocab.kernelConstant 11 / 2 *
+      (V2.Vocab.negSobolevEnergy V2.Eleven.rhoStar.value).toReal =
+        (2 * Real.pi) ^ 11 / 2 * (V2.Vocab.negSobolevEnergy V2.Eleven.rhoStar.value).toReal := by
+    rw [mul_comm (spectralThreshold 11), hcs]
+  rw [e] at hv
+  refine lt_of_lt_of_le ?_ hv
+  have h1 := ElevenBounds.energy_bound_via_shells _ h
+  have h2 := ElevenBounds.torusEntropy_bound_printed _ h
+  have h3 : (579 : ℝ) / 40 < 14475384292906 / 10 ^ 12 := by norm_num
+  exact EReal.coe_lt_coe_iff.mpr (by linarith)
+
 /-- **Theorem 1.2** (`thm:intro-d11`), every assertion of the printed statement, together with the
 certificate `eq:intro-d11-certificate` (entropy bound `Ent(ρ_*) < 8653/600` and `2·144753/10000 < ‖ρ_*‖²`),
 along the route of the print: Proposition 4.1 (`d11:thm:interval`) in the printed order, the lattice-label
@@ -124,7 +147,8 @@ compactness argument, as assembled in `theorem_1_2_route` (statement `V2.Eleven.
 `eleven_competitor_written_route`. -/
 theorem theorem_1_2_printed :
     type_of% V2.Eleven.theorem_1_2 ∧ type_of% V2.Final.eleven_competitor_written :=
-  ⟨theorem_1_2_route, eleven_competitor_written_route⟩
+  ⟨⟨theorem_1_2_route.1, ⟨theorem_1_2_route.2.1.1, spectral_pressure_gt_thirtieth_printed⟩,
+    theorem_1_2_route.2.2⟩, eleven_competitor_written_route⟩
 
 /-- **Lemma `lem:section2-universal-obstructions`, all five assertions as printed** (with `0 ≤` and finiteness
 of the defect at the concentration coefficient): the pressure is infinite beyond `2d`, the defect is

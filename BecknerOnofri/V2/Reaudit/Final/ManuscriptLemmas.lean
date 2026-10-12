@@ -28,7 +28,8 @@ of a root.  Rows:
 * S022 (`lem:theta-integral-certificate`): `lem_theta_integral_certificate_printed`;
 * S023 (`prop:equality`): `prop_equality_root`;
 * S012 (`lem:coordinate-rearranged-minimizer`): `lem_coordinate_rearranged_minimizer_root`;
-* S016 (`lem:selection-full-entropy-domain`): `lem_selection_full_entropy_domain_printed`. -/
+* S016 (`lem:selection-full-entropy-domain`): `lem_selection_full_entropy_domain_printed`;
+* S015/U05 (`prop:cosine-all`): `prop_cosine_all_printed`. -/
 
 noncomputable section
 open MeasureTheory Filter
@@ -88,6 +89,15 @@ countable cosine mixture with nonnegative Fourier coefficients.  The Lean statem
 theorem lem_selection_full_entropy_domain_printed {d : ℕ} (hd : 2 ≤ d) :
     type_of% (V2.Reaudit.Mixtures.selection_full_entropy_domain_written (d := d) (by omega)) :=
   V2.Reaudit.Mixtures.selection_full_entropy_domain_written (by omega)
+
+/-- **`prop:cosine-all`** (rows S015, U05).  For `d ≥ 2` (the Lean statement holds for `d ≥ 1`) and `β > 0`,
+every smooth mean-zero coordinatewise even and nonincreasing `u` whose Gibbs density `ρ` satisfies the Euler
+relation `|k|^d û(k) = (β/β_s) ρ̂(k)` (`k ≠ 0`) is a smooth function `U` of the cosines `cos (2π xᵢ)`, all of
+whose nonempty mixed partial derivatives are nonnegative on `[-1,1]^d`, and `ρ` is a countable mixture of
+products of the densities `hₙ = binom(2n,n)⁻¹ 4ⁿ cos^{2n}(π x)` with nonnegative weights of total mass one. -/
+theorem prop_cosine_all_printed {d : ℕ} (hd : 2 ≤ d) :
+    type_of% (HighDim.GeneralEulerBridge.cosine_representation (d := d) (by omega)) :=
+  HighDim.GeneralEulerBridge.cosine_representation (by omega)
 
 /-! ## Row S007 -/
 
@@ -213,6 +223,7 @@ theorem lem_coordinate_rearranged_minimizer_root (d : ℕ) (hd : 0 < d) {β : �
 #print axioms lem_section2_critical_adams
 #print axioms lem_section2_all_exponential_moments
 #print axioms lem_selection_full_entropy_domain_printed
+#print axioms prop_cosine_all_printed
 #print axioms lem_section2_weak_beckner_onofri
 #print axioms eq_section2_positive_threshold_input
 #print axioms section2_globalTransition_pos

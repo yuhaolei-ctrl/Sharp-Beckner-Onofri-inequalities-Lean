@@ -119,8 +119,8 @@ theorem coefficient_lower_bounds_printed {d : ℕ} (hd : 0 < d) :
 
 /-- **`prop:section2-basic-curve-geometry`** (row S007), every assertion, for every `d ≥ 1`:
 `P_d` is convex, nondecreasing and nonnegative on `[0, 2d]`; `C_d` is convex, nonincreasing and
-nonnegative on `(0, ∞)`; `β_gm(d)` is the infimum of the entropy/interaction quotients over the
-non-uniform finite-entropy densities; `P_d(β) = 0 ⇔ 0 ≤ β ≤ β_gm(d)`; `C_d(A) = 0 ⇔ A ≥ A₀(d)`;
+nonnegative on `(0, ∞)`; `β_gm(d)` is the infimum of `2 Ent(ρ) / (c_d ‖ρ‖²_{Ḣ^{-d/2}})` over the
+finite-entropy densities with `0 < Ent(ρ) < ∞` (`eq:section2-beta-gm-quotient`, as printed); `P_d(β) = 0 ⇔ 0 ≤ β ≤ β_gm(d)`; `C_d(A) = 0 ⇔ A ≥ A₀(d)`;
 `β_gm ≤ min{β_c, β_s}` and `A₀ ≥ max{A_crit, A_s}`. -/
 theorem prop_section2_basic_curve_geometry {d : ℕ} (hd : 0 < d) :
     (MonotoneOn (pressure d) (Set.Icc 0 (2*(d:ℝ))) ∧
@@ -134,7 +134,9 @@ theorem prop_section2_basic_curve_geometry {d : ℕ} (hd : 0 < d) :
         coefficientDefect d (a*A+b*B) ≤
           (a:EReal)*coefficientDefect d A+(b:EReal)*coefficientDefect d B) ∧
     VariationalCurves.globalTransition d =
-      sInf (VariationalCurves.entropyInteractionQuotients d) ∧
+      sInf {q | ∃ ρ : ProbabilityDensity d, ρ.FiniteEntropy ∧ 0 < (torusEntropy ρ.value).toReal ∧
+        q = 2 * (torusEntropy ρ.value).toReal /
+          (kernelConstant d * (negSobolevEnergy ρ.value).toReal)} ∧
     (∀ β : ℝ, 0 ≤ β → (pressure d β = 0 ↔ β ≤ VariationalCurves.globalTransition d)) ∧
     (∀ A : ℝ, 0 < A → (coefficientDefect d A = 0 ↔ VariationalCurves.zeroDefectCoefficient d ≤ A)) ∧
     VariationalCurves.globalTransition d ≤ min (2*(d:ℝ)) (spectralThreshold d) ∧
@@ -146,7 +148,7 @@ theorem prop_section2_basic_curve_geometry {d : ℕ} (hd : 0 < d) :
       fun A _ => HighDim.coefficientDefect_nonneg d A,
       fun A _ B _ a b ha hb hab =>
         VariationalCurves.coefficient_convex_combination hd A B a b ha hb hab⟩,
-    VariationalCurves.transition_quotient hd,
+    globalTransition_eq_manuscript_quotient hd,
     fun β _ => VariationalCurves.pressure_zero_iff hd β,
     fun _ hA => coefficient_zero_iff_printed hd hA,
     transition_upper_bounds_printed hd,
