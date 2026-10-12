@@ -200,8 +200,9 @@ theorem prop_equality_root (d : ℕ) (hd2 : 2 ≤ d) (hd10 : d ≤ 10) :
         (torusEntropy ρ.value).toReal → ρ.value =ᵐ[torusMeasure d] fun _ => 1) ∧
     (∀ u : Torus d → ℝ, InCriticalSobolev u →
       logPartition u = ((collapseCoefficient d * potentialEnergy u : ℝ) : EReal) →
-        ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c) :=
-  V2.Reaudit.Mixtures.prop_equality_printed hd2 hd10
+        ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c) :=   by
+  obtain ⟨h1, h2⟩ := V2.Reaudit.Mixtures.prop_3_7_aligned hd2 hd10
+  exact ⟨fun ρ hρ h => (h1 ρ hρ).1 h, fun u hu h => (h2 u hu).1 h⟩
 
 /-! ## Row S012 -/
 
