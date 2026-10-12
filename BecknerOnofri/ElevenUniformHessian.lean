@@ -47,12 +47,12 @@ lemma uniformHessian_eq (β : ℝ) (h : Space 11) :
   dsimp [c, E]
   ring
 
-theorem uniform_hessian :
+theorem uniform_hessian_of_upper (hup : globalTransition < (2063:ℝ)/100) :
     0 < 1-globalTransition/spectralThreshold 11 ∧
     ∀ h : Torus 11 → ℝ, SmoothOnTorus h → MeanZero h →
       (1-globalTransition/spectralThreshold 11)*(∫ x, (h x)^2 ∂torusMeasure 11) ≤
         uniformHessian globalTransition h := by
-  refine ⟨transition_spectral_gap, fun h hs _hm => ?_⟩
+  refine ⟨hessian_gap_of_transition_upper hup, fun h hs _hm => ?_⟩
   let H : Space 11 := ⟨h, UniformFourier.smooth_continuous hs⟩
   change _ ≤ uniformHessian globalTransition H
   rw [uniformHessian_eq]
@@ -63,6 +63,14 @@ theorem uniform_hessian :
   dsimp only [H, ContinuousMap.coe_mk] at *
   linarith
 
+theorem uniform_hessian :
+    0 < 1-globalTransition/spectralThreshold 11 ∧
+    ∀ h : Torus 11 → ℝ, SmoothOnTorus h → MeanZero h →
+      (1-globalTransition/spectralThreshold 11)*(∫ x, (h x)^2 ∂torusMeasure 11) ≤
+        uniformHessian globalTransition h :=
+  uniform_hessian_of_upper transition_upper
+
 #print axioms uniformHessian_eq
+#print axioms uniform_hessian_of_upper
 #print axioms uniform_hessian
 end BecknerOnofri.HighDim.Eleven

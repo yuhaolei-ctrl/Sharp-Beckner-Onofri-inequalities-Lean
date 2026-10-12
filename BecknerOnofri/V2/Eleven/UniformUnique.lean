@@ -10,6 +10,7 @@ public import BecknerOnofri.ElevenMixture
 public import BecknerOnofri.ElevenStrictMixture
 public import BecknerOnofri.ElevenScalarFinite
 public import BecknerOnofri.ElevenScalarTail
+public import BecknerOnofri.V2.Reaudit.ShellMargins.RetainedShell
 
 @[expose] public section
 
@@ -66,13 +67,15 @@ Existing certified chain: `n ≤ 21` is `ScalarFinite.finite_scalar_gap` (ration
 certificate), all `n ≥ 1` is `ScalarTail.all_scalar_gap` (Gaussian estimate with the theta bound). -/
 theorem scalar_gap {n : ℕ} (hn : 1 ≤ n) :
     (1 : ℝ) / 2000 < 11 * (harmonic n : ℝ) -
-      beta0 / spectralThreshold 11 * HighDim.Eleven.scalarEnergy n :=
-  HighDim.Eleven.ScalarTail.all_scalar_gap hn
+      beta0 / spectralThreshold 11 * HighDim.Eleven.scalarEnergy n := by
+  by_cases h : n ≤ 21
+  · exact (BecknerOnofri.V2.Reaudit.ShellMargins.d11_scalar_gap_finite_direct hn h).2
+  · exact HighDim.Eleven.ScalarTail.tail_scalar_gap (by omega)
 
 theorem scalar_gap_finite {n : ℕ} (hn : 1 ≤ n) (hn21 : n ≤ 21) :
     (1 : ℝ) / 2000 < 11 * (harmonic n : ℝ) -
       beta0 / spectralThreshold 11 * HighDim.Eleven.scalarEnergy n :=
-  HighDim.Eleven.ScalarFinite.finite_scalar_gap hn hn21
+  (BecknerOnofri.V2.Reaudit.ShellMargins.d11_scalar_gap_finite_direct hn hn21).2
 
 /-! ## The hypothesis taken from Section 3 -/
 

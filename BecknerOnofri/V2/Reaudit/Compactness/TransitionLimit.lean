@@ -6,6 +6,7 @@ public import BecknerOnofri.V2.Reaudit.Sobolev.LocalUniqueness
 public import BecknerOnofri.ElevenTransitionSequence
 public import BecknerOnofri.V2.Eleven.Estimates
 public import BecknerOnofri.V2.Reaudit.ExternalInputs.RoughFromAdams
+public import BecknerOnofri.V2.Reaudit.ElevenBounds.UpperBound
 public import BecknerOnofri.ContinuousOptimizerFromL2
 public import BecknerOnofri.VariationalCurveConvexity
 public import Mathlib.Analysis.Convex.Continuous
@@ -53,10 +54,11 @@ theorem pressureReal_convex : ConvexOn ℝ (Set.Ioo 0 22) Eleven.pressureReal :=
 theorem pressureReal_at_transition : Eleven.pressureReal Eleven.globalTransition = 0 := by
   simp only [Eleven.pressureReal, Eleven.pressure_at_transition, EReal.toReal_zero]
 
-/-- `β_gm(11) < 2063/100`: the printed competitor bound (`V2.Eleven.transition_upper`, applied to the
-periodized profile). -/
+/-- `β_gm(11) < 2063/100`: the printed competitor bound for the periodized profile `ρ_*`, with the entropy bound
+through the lattice-label random variables and the energy bound through the shell expansion
+(`ElevenBounds.transition_upper_written`). -/
 theorem transition_lt_2063 : Eleven.globalTransition < 2063 / 100 :=
-  BecknerOnofri.V2.Eleven.transition_upper HighDim.Eleven.competitorDensity rfl
+  BecknerOnofri.V2.Reaudit.ElevenBounds.transition_upper_written HighDim.Eleven.competitorDensity rfl
 
 /-- The transition lies in `(0, 22)`: non-strict lower bound, then the competitor upper bound. -/
 theorem transition_mem_Ioo : Eleven.globalTransition ∈ Set.Ioo (0 : ℝ) 22 :=
@@ -122,7 +124,7 @@ theorem transition_limit :
   have hσ : 0 < spectralThreshold 11 := spectralThreshold_pos (d := 11) (by norm_num)
   have hβs : Eleven.globalTransition < spectralThreshold 11 :=
     transition_lt_2063.trans Eleven.spectralThreshold_bounds.1
-  choose u hu hm hmax hfull hnz using Eleven.exists_nonzero_optimizer
+  choose u hu hm hmax hfull hnz using Eleven.exists_nonzero_optimizer_of_upper transition_lt_2063
   set β : ℕ → ℝ := Eleven.transitionCoupling with hβdef
   let A : ℕ → ℝ := fun n => spectralThreshold 11 / (2 * β n)
   let A₀ : ℝ := spectralThreshold 11 / (2 * Eleven.globalTransition)
@@ -141,7 +143,7 @@ theorem transition_limit :
   -- the value of the maximizer is the pressure
   have hvalue : ∀ n, functional (A n) (toL2 11 (u n)) = Eleven.pressureReal (β n) := by
     intro n
-    have h1 := OptimizerDuality.pressure_eq_dual (by norm_num) (Eleven.transitionCoupling_pos n) (u n)
+    have h1 := OptimizerDuality.pressure_eq_dual (by norm_num) (Eleven.transitionCoupling_pos_of_upper transition_lt_2063 n) (u n)
       (hu n) (hmax n)
     rw [dualFunctional_eq_toL2 (by norm_num) _ (u n) (hu n) (hm n)] at h1
     unfold Eleven.pressureReal
@@ -214,8 +216,8 @@ theorem transition_limit :
     have hzero := hloc (β (ψ n)) (u (ψ n)) hn1 (hbound n).1 (hm (ψ n)) hn2
       (eulerEq_of_full (by norm_num) _ _ (hfull (ψ n)))
     exact hnz (ψ n) (eq_zero_of_ae_zero _ hzero)
-  refine ⟨β, u, U₀, ψ, hψ, fun n => Eleven.transitionCoupling_bounds n,
-    Eleven.transitionCoupling_limit, fun n => Eleven.transitionCoupling_pressure_pos n,
+  refine ⟨β, u, U₀, ψ, hψ, Eleven.transitionCoupling_bounds_of_upper transition_lt_2063,
+    Eleven.transitionCoupling_limit, Eleven.transitionCoupling_pressure_pos_of_upper transition_lt_2063,
     fun n => ⟨hu n, hm n, hnz n, hfull n, hmax n⟩, hU₀adm, hne, hmaxlim, hlim, hstrong⟩
 
 end BecknerOnofri.V2.Reaudit.Compactness

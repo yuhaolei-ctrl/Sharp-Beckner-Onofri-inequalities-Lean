@@ -18,10 +18,10 @@ open Legacy.BecknerOnofri.TorusSobolev Legacy.BecknerOnofri.SubcriticalAttainmen
 def transitionCoupling (n : ℕ) : ℝ :=
   globalTransition+(spectralThreshold 11-globalTransition)/2*(1/((n:ℝ)+1))
 
-lemma transitionCoupling_bounds (n : ℕ) :
+lemma transitionCoupling_bounds_of_upper (hup : globalTransition < (2063:ℝ)/100) (n : ℕ) :
     globalTransition < transitionCoupling n ∧ transitionCoupling n < spectralThreshold 11 := by
   have hgap : 0 < spectralThreshold 11-globalTransition :=
-    sub_pos.mpr (transition_upper.trans spectralThreshold_bounds.1)
+    sub_pos.mpr (hup.trans spectralThreshold_bounds.1)
   have hn : (1:ℝ) ≤ (n:ℝ)+1 := by linarith [Nat.cast_nonneg (α := ℝ) n]
   have hi : 0 < 1/((n:ℝ)+1) := by positivity
   have hi1 : 1/((n:ℝ)+1) ≤ 1 := (div_le_one (by positivity)).mpr hn
@@ -30,19 +30,31 @@ lemma transitionCoupling_bounds (n : ℕ) :
   · exact lt_add_of_pos_right _ (mul_pos (by linarith) hi)
   · nlinarith
 
+lemma transitionCoupling_bounds (n : ℕ) :
+    globalTransition < transitionCoupling n ∧ transitionCoupling n < spectralThreshold 11 :=
+  transitionCoupling_bounds_of_upper transition_upper n
+
+lemma transitionCoupling_pos_of_upper (hup : globalTransition < (2063:ℝ)/100) (n : ℕ) :
+    0 < transitionCoupling n :=
+  transition_pos.trans (transitionCoupling_bounds_of_upper hup n).1
+
 lemma transitionCoupling_pos (n : ℕ) : 0 < transitionCoupling n :=
-  transition_pos.trans (transitionCoupling_bounds n).1
+  transitionCoupling_pos_of_upper transition_upper n
 
 lemma transitionCoupling_limit : Tendsto transitionCoupling atTop (𝓝 globalTransition) := by
   have h := (tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ)).const_mul
     ((spectralThreshold 11-globalTransition)/2)
   convert! h.const_add globalTransition using 1 <;> simp only [mul_zero, add_zero]
 
-lemma transitionCoupling_pressure_pos (n : ℕ) : 0 < pressure 11 (transitionCoupling n) := by
+lemma transitionCoupling_pressure_pos_of_upper (hup : globalTransition < (2063:ℝ)/100) (n : ℕ) :
+    0 < pressure 11 (transitionCoupling n) := by
   apply lt_of_le_of_ne (pressure_nonneg _ _)
   intro hz
-  exact (transitionCoupling_bounds n).1.not_ge
-    ((pressure_zero_iff (transitionCoupling_pos n).le).mp hz.symm)
+  exact (transitionCoupling_bounds_of_upper hup n).1.not_ge
+    ((pressure_zero_iff (transitionCoupling_pos_of_upper hup n).le).mp hz.symm)
+
+lemma transitionCoupling_pressure_pos (n : ℕ) : 0 < pressure 11 (transitionCoupling n) :=
+  transitionCoupling_pressure_pos_of_upper transition_upper n
 
 lemma eleven_rough_gap :
     ∃ b Ab : ℝ, 0 < b ∧ RoughExponentialBound 11 b Ab ∧ 1/(4*b) < (1/2:ℝ) := by
@@ -66,23 +78,31 @@ lemma normalized_coefficient_gt_half {β : ℝ} (hβ : 0 < β) (hb : β < spectr
   apply (lt_div_iff₀ (by positivity : 0 < 2*β)).mpr
   linarith
 
-lemma exists_nonzero_optimizer (n : ℕ) :
+lemma exists_nonzero_optimizer_of_upper (hup : globalTransition < (2063:ℝ)/100) (n : ℕ) :
     ∃ u : Space 11, InCriticalSobolev u ∧ MeanZero u ∧
       (∀ v : Torus 11 → ℝ, InCriticalSobolev v →
         dualFunctional (transitionCoupling n) v ≤ dualFunctional (transitionCoupling n) u) ∧
       ReducedEquation.full 11 (transitionCoupling n/spectralThreshold 11) u = 0 ∧ u ≠ 0 := by
   have hb : transitionCoupling n < 2*(11:ℝ) := by
-    have hh := (transitionCoupling_bounds n).2.trans spectralThreshold_bounds.2
+    have hh := (transitionCoupling_bounds_of_upper hup n).2.trans spectralThreshold_bounds.2
     norm_num at *
     exact hh
   obtain ⟨u,hu,hm,_,_,_,hmax,hfull⟩ := exists_continuous_optimizer (d := 11) (by norm_num)
-    (transitionCoupling_pos n) hb
+    (transitionCoupling_pos_of_upper hup n) hb
   refine ⟨u,hu,hm,hmax,hfull,?_⟩
   intro he
-  have hp := transitionCoupling_pressure_pos n
-  rw [OptimizerDuality.pressure_eq_dual (by norm_num) (transitionCoupling_pos n) u hu hmax] at hp
+  have hp := transitionCoupling_pressure_pos_of_upper hup n
+  rw [OptimizerDuality.pressure_eq_dual (by norm_num) (transitionCoupling_pos_of_upper hup n) u hu hmax] at hp
   rw [dualFunctional_eq_toL2 (by norm_num) _ u hu hm, he, map_zero] at hp
   simpa using hp
 
+lemma exists_nonzero_optimizer (n : ℕ) :
+    ∃ u : Space 11, InCriticalSobolev u ∧ MeanZero u ∧
+      (∀ v : Torus 11 → ℝ, InCriticalSobolev v →
+        dualFunctional (transitionCoupling n) v ≤ dualFunctional (transitionCoupling n) u) ∧
+      ReducedEquation.full 11 (transitionCoupling n/spectralThreshold 11) u = 0 ∧ u ≠ 0 :=
+  exists_nonzero_optimizer_of_upper transition_upper n
+
+#print axioms exists_nonzero_optimizer_of_upper
 #print axioms exists_nonzero_optimizer
 end BecknerOnofri.HighDim.Eleven

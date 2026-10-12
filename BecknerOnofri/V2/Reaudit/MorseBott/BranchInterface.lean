@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Reaudit.MorseBott.BranchRemainder
 public import BecknerOnofri.GlobalOptimizerClassification
 public import BecknerOnofri.GlobalPressureOnset
+public import BecknerOnofri.V2.Onset.Assembly
 
 @[expose] public section
 
@@ -86,46 +87,76 @@ theorem common_branch_interface_beta {d : ℕ} (hd : 12 ≤ d) :
   rw [hon, hmul] at hβ
   exact hβ
 
-/-- **Pressure on the common branch** (conditional on the same two endpoint hypotheses as
-`GlobalOptimizerClassification.branch_eventually_optimizer`): the pressure of the global problem is
-`(d/(2κ_d)) δ² + δ³ R(δ)` with the analytic `R` of `common_branch_interface`. -/
-theorem pressure_common_branch_form {d : ℕ} (hd : 12 ≤ d)
-    (hEndpoint : BecknerOnofri.EndpointRigidity.CoefficientEndpoint d (1 / 2))
-    (hRigidity : BecknerOnofri.OnsetCompactness.DensityRigidity d) :
+/-- The physical derivative-family potential of the `11 ≤ d` (Core) family is, near `β_s`, the
+profile-family branch `SupportedFamily.branch univ (1 - β_s/β)` (via `full_branch_identification`). -/
+theorem physicalCore_eq_branch {d : ℕ} (hd : 12 ≤ d) :
+    ∀ᶠ β in 𝓝[>] (spectralThreshold d),
+      (LocalEleven.DiagonalScalarBranch.physicalPotential (by omega : 11 ≤ d) β :
+          ContinuousGibbs.Space d) =
+        LocalEleven.SupportedFamily.branch (by omega : 11 ≤ d) Finset.univ (onsetDelta d β) := by
+  have hd11 : 11 ≤ d := by omega
+  have hd0 : 0 < d := by omega
+  have hσ : spectralThreshold d ≠ 0 := (spectralThreshold_pos hd0).ne'
+  filter_upwards [(LocalEleven.DiagonalScalarBranch.normalized_parameter_tendsto hd11).eventually
+    (LocalEleven.SupportedFamily.full_branch_identification hd11)] with β hβ
+  have : 1 - 1 / (β / spectralThreshold d) = onsetDelta d β := by
+    unfold onsetDelta; rw [one_div_div]
+  rw [this] at hβ
+  exact hβ.symm
+
+/-- The physical branch of the `11 ≤ d` (Core) family is the raw dual maximizer near `β_s`, from the
+Sobolev smallness / second-variation route of `V2/Onset` (manuscript `prop:section5-global-onset`);
+the only hypothesis is `OnsetEndpointInputs d` (Corollary 5.8). -/
+theorem physical_branch_optimizer_v2 {d : ℕ} (hd : 12 ≤ d) (E : V2.Onset.OnsetEndpointInputs d) :
+    ∀ᶠ β in 𝓝[>] (spectralThreshold d),
+      InCriticalSobolev (LocalEleven.DiagonalScalarBranch.physicalPotential (by omega : 11 ≤ d) β) ∧
+      MeanZero (LocalEleven.DiagonalScalarBranch.physicalPotential (by omega : 11 ≤ d) β) ∧
+      ∀ v : Torus d → ℝ, InCriticalSobolev v →
+        dualFunctional β v ≤
+          dualFunctional β (LocalEleven.DiagonalScalarBranch.physicalPotential (by omega : 11 ≤ d) β) := by
+  have hσ := (spectralThreshold_pos (by omega : 0 < d)).ne'
+  have hh := (LocalEleven.DiagonalScalarBranch.normalized_parameter_tendsto
+    (by omega : 11 ≤ d)).eventually (V2.Onset.branch_eventually_optimizer_v2 hd E)
+  simpa only [div_mul_cancel₀ _ hσ, LocalEleven.DiagonalScalarBranch.physicalPotential] using hh
+
+/-- **Pressure on the common branch** (conditional on `OnsetEndpointInputs d`, the inputs of
+Corollary 5.8): the pressure of the global problem is `(d/(2κ_d)) δ² + δ³ R(δ)` with the analytic `R`
+of `common_branch_interface`.  The optimizer identification is the one of `V2/Onset`
+(`physical_branch_optimizer_v2`). -/
+theorem pressure_common_branch_form {d : ℕ} (hd : 12 ≤ d) (E : V2.Onset.OnsetEndpointInputs d) :
     ∃ R : ℝ → ℝ, AnalyticAt ℝ R 0 ∧ ∀ᶠ β in 𝓝[>] (spectralThreshold d),
       pressure d β =
         (((d : ℝ) / (2 * kappa d) * onsetDelta d β ^ 2 +
           onsetDelta d β ^ 3 * R (onsetDelta d β) : ℝ) : EReal) := by
   obtain ⟨R, hR, hform⟩ := common_branch_interface_beta hd
   refine ⟨R, hR, ?_⟩
-  filter_upwards [hform, GlobalOptimizerClassification.physical_branch_optimizer hd hEndpoint
-    hRigidity, self_mem_nhdsWithin] with β ⟨hid, hdual⟩ hopt hβ
+  filter_upwards [hform, physicalCore_eq_branch hd, physical_branch_optimizer_v2 hd E,
+    self_mem_nhdsWithin] with β ⟨_, hdual⟩ hcore hopt hβ
   have hσ := spectralThreshold_pos (by omega : 0 < d)
   have hβpos : 0 < β := hσ.trans hβ
-  rw [GlobalPressureOnset.optimizer_pressure (by omega) hβpos _ hopt.1 hopt.2.2, hid, hdual]
+  rw [GlobalPressureOnset.optimizer_pressure (by omega) hβpos _ hopt.1 hopt.2.2, hcore, hdual]
 
-/-- **Global minimizers are the translation orbit of the profile-family branch.**  Combined with the
-existing classification (stated on the derivative family), the identification gives: the global
-minimizing densities near onset are exactly the Gibbs densities of the translates of
-`SupportedFamily.branch univ (1 - β_s/β)`, the branch of `(5.full-branch-profile)`.
-(Conditional on the same two endpoint hypotheses as the existing classification.) -/
+/-- **Global minimizers are the translation orbit of the profile-family branch.**  The classification
+is `V2.Onset.physical_density_classification_v2` (stated on the `11 ≤ d` derivative family), transported
+to the branch `SupportedFamily.branch univ (1 - β_s/β)` of `(5.full-branch-profile)`.
+(Conditional on `OnsetEndpointInputs d`.) -/
 theorem minimizers_are_profile_branch_orbit {d : ℕ} (hd : 12 ≤ d)
-    (hEndpoint : BecknerOnofri.EndpointRigidity.CoefficientEndpoint d (1 / 2))
-    (hRigidity : BecknerOnofri.OnsetCompactness.DensityRigidity d) :
+    (E : V2.Onset.OnsetEndpointInputs d) :
     ∀ᶠ β in 𝓝[>] (spectralThreshold d),
       (∃ ρ : ProbabilityDensity d, IsGlobalMinimizer β ρ) ∧
       (∀ ρ : ProbabilityDensity d, IsGlobalMinimizer β ρ ↔
         ∃ a : Torus d, ρ.value =ᵐ[torusMeasure d] normalizedGibbs (translate
           (LocalEleven.SupportedFamily.branch (by omega : 11 ≤ d) Finset.univ (onsetDelta d β) :
             ContinuousGibbs.Space d) a)) := by
-  obtain ⟨R, -, hform⟩ := common_branch_interface_beta hd
-  filter_upwards [hform, GlobalOptimizerClassification.physical_density_classification hd hEndpoint
-    hRigidity] with β ⟨hid, _⟩ hcl
-  rw [← hid]
+  filter_upwards [physicalCore_eq_branch hd, V2.Onset.physical_density_classification_v2 hd E]
+    with β hcore hcl
+  rw [← hcore]
   exact hcl
 
 #print axioms common_branch_interface
 #print axioms common_branch_interface_beta
+#print axioms physicalCore_eq_branch
+#print axioms physical_branch_optimizer_v2
 #print axioms pressure_common_branch_form
 #print axioms minimizers_are_profile_branch_orbit
 

@@ -81,7 +81,7 @@ theorem defect_right_derivative :
 theorem defect_convex_neighborhood : ∃ ε : ℝ, 0 < ε ∧
     ConvexOn ℝ (Ioo (Eleven.zeroDefectCoefficient - ε) (Eleven.zeroDefectCoefficient + ε))
       Eleven.defectReal := by
-  obtain ⟨ε, hε, -, hfin⟩ := Eleven.defect_finite_neighborhood
+  obtain ⟨ε, hε, -, hfin⟩ := Eleven.defect_finite_neighborhood_of_upper transition_lt_2063
   refine ⟨ε, hε, defect_toReal_convexOn (by norm_num) (convex_Ioo _ _) (fun A hA => ?_)⟩
   exact hfin A (abs_lt.mpr ⟨by linarith [hA.1], by linarith [hA.2]⟩)
 
@@ -190,14 +190,14 @@ theorem defect_corner :
       ∀ A : ℝ, |A - Eleven.zeroDefectCoefficient| < ε →
         coefficientDefect 11 A = (Eleven.defectReal A : EReal)) ∧
     ¬ DifferentiableAt ℝ Eleven.defectReal Eleven.zeroDefectCoefficient := by
-  refine ⟨Eleven.defect_finite_neighborhood, ?_⟩
+  refine ⟨Eleven.defect_finite_neighborhood_of_upper transition_lt_2063, ?_⟩
   obtain ⟨s, hs, hline⟩ := exists_negative_defect_support
   apply not_differentiable_of_two_supports hs.ne Eleven.defectReal_at_transition
-  · filter_upwards [Eleven.defect_finite_eventually] with A hA
+  · filter_upwards [Eleven.defect_finite_eventually_of_upper transition_lt_2063] with A hA
     have h := coefficientDefect_nonneg 11 A
     rw [hA] at h
     exact_mod_cast h
-  · filter_upwards [Eleven.defect_finite_eventually] with A hA
+  · filter_upwards [Eleven.defect_finite_eventually_of_upper transition_lt_2063] with A hA
     have h := hline A
     rw [hA] at h
     exact_mod_cast h
@@ -215,7 +215,7 @@ theorem defect_left_derivative_negative : ∃ s : ℝ, s < 0 ∧
   obtain ⟨s, hs, hline⟩ := exists_negative_defect_support
   refine ⟨s, hs, le_of_tendsto hlim ?_⟩
   filter_upwards [self_mem_nhdsWithin,
-      Eleven.defect_finite_eventually.filter_mono nhdsWithin_le_nhds] with A hA hf
+      (Eleven.defect_finite_eventually_of_upper transition_lt_2063).filter_mono nhdsWithin_le_nhds] with A hA hf
   have h := hline A
   rw [hf] at h
   have hr := EReal.coe_le_coe_iff.mp h
@@ -261,7 +261,7 @@ theorem prop49_manuscript :
     (∃ q : ℝ, q < 0 ∧
       HasDerivWithinAt Eleven.defectReal q (Iio Eleven.zeroDefectCoefficient) Eleven.zeroDefectCoefficient ∧
       HasDerivWithinAt Eleven.defectReal 0 (Ioi Eleven.zeroDefectCoefficient) Eleven.zeroDefectCoefficient) :=
-  ⟨coexistence, Eleven.uniform_hessian, pressure_corner, defect_corner, pressure_derivative_jump,
+  ⟨coexistence, Eleven.uniform_hessian_of_upper transition_lt_2063, pressure_corner, defect_corner, pressure_derivative_jump,
     defect_derivative_jump⟩
 
 end BecknerOnofri.V2.Reaudit.Compactness

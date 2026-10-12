@@ -2,6 +2,7 @@ module
 
 public import BecknerOnofri.LocalElevenCore.SubsetEnergyAlgebra
 public import BecknerOnofri.AnalyticPitchforkPositive
+public import BecknerOnofri.V2.Reaudit.SobolevQuartic.CoreBridge
 
 @[expose] public section
 
@@ -47,7 +48,7 @@ theorem supported_energy_expansion {d : ℕ} (hd : 11≤d) (I : Finset (Fin d))
       (line I).continuous.continuousAt.comp (hr.continuousAt.sqrt)
     have h := (hμ.prodMk hz).tendsto.mono_left (nhdsWithin_le_nhds (s := Set.Ioi (0:ℝ)))
     simpa only [hr0,Real.sqrt_zero,map_zero,sub_zero,div_one] using h
-  have hmain := ((physicalReducedEnergy_quartic_paper hd).comp_tendsto ht)
+  have hmain := ((physicalReducedEnergy_quartic_paper_native hd).comp_tendsto ht)
   have hnorm : (fun δ => squaredAmplitude (line I (Real.sqrt (r δ))))
       =ᶠ[𝓝[>] (0:ℝ)] (fun δ => n*r δ) := by
     filter_upwards [hp] with δ hp

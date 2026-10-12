@@ -1,6 +1,7 @@
 module
 
 public import BecknerOnofri.V2.FiniteState.FamilyComparison
+public import BecknerOnofri.V2.Reaudit.ScalarBridges.FeasibleCalculus
 public import BecknerOnofri.V2.FiniteState.VarianceComparison
 public import BecknerOnofri.V2.FiniteState.ExpBound
 public import Mathlib.MeasureTheory.Integral.Bochner.Basic
@@ -316,7 +317,11 @@ for every `j`, then every `q ∈ 𝒫_t` satisfies
 theorem perturb_printed {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) {q : Count → ℝ}
     (hq : FeasibleAt t q) (he : ∀ j : Count, -(1 / 4 : ℝ) ≤ famResid t j) :
     famF t - (30 / 7 : ℝ) * famResidVar t ≤ functional q + 12 * psiV2 t := by
-  have h := perturb_generic (famLaw_feasibleAt_of_nonneg_beta ht0 ht1)
+  have hfeas : FeasibleAt t (famLaw t) := by
+    rcases ht0.eq_or_lt with h0 | h0
+    · subst h0; exact famLaw_feasibleAt_of_nonneg_beta ht0 ht1
+    · exact (feasible_printed h0 ht1).1.2.1
+  have h := perturb_generic hfeas
     (famLaw_pos_of_nonneg ht0 ht1) hq he
   have hF : famF t = functional (famLaw t) + 12 * psiV2 t := rfl
   have hV : famResidVar t = ∑ j : Count, famLaw t j * gradResid t (famLaw t) j ^ 2 := rfl

@@ -38,25 +38,15 @@ the term `1/600` is the lattice-label entropy bound of `lem:section4-lattice-lab
 (`ElevenBounds.condShannon_lt_printed`, random-variable form with the chain rule). -/
 theorem periodized_entropy_fine_route (ρ : ProbabilityDensity 11)
     (h : ρ.value = HighDim.Eleven.periodizedProfile) :
-    (torusEntropy ρ.value).toReal < 7305164 / 10 ^ 6 + 17897 / 2520 + 1 / 600 := by
-  have hρ := V2.Eleven.finiteEntropy_of_value_eq ρ h
-  rw [← entropy_eq_toReal_torusEntropy ρ hρ]
-  obtain ⟨hid, -⟩ := ElevenBounds.entropy_bound_via_rv
-    (P := V2.Eleven.JointLaw.lawEta) (X := (id : (Fin 11 → ℝ) → Fin 11 → ℝ)) ρ h
-    measurable_id (V2.Eleven.JointLaw.canonical_space.1)
-  have h2 := ElevenBounds.condShannon_lt_printed
-    (P := V2.Eleven.JointLaw.lawEta) (X := (id : (Fin 11 → ℝ) → Fin 11 → ℝ))
-    measurable_id (V2.Eleven.JointLaw.canonical_space.1)
-  rw [hid]
-  linarith [V2.Eleven.euclidean_entropy_fine]
+    (torusEntropy ρ.value).toReal < 7305164 / 10 ^ 6 + 17897 / 2520 + 1 / 600 :=
+  ElevenBounds.periodized_entropy_fine_written ρ h
 
 /-- `β_gm(11) < 2063/100`, from the printed competitor bounds (entropy through the label random
 variables, energy through the full shell expansion). -/
 theorem transition_upper_route (ρ : ProbabilityDensity 11)
     (h : ρ.value = HighDim.Eleven.periodizedProfile) :
     VariationalCurves.globalTransition 11 < 2063 / 100 :=
-  V2.Eleven.globalTransition_lt_of_competitor ρ (V2.Eleven.finiteEntropy_of_value_eq ρ h)
-    (periodized_entropy_fine_route ρ h) (ElevenBounds.energy_bound_via_shells ρ h)
+  ElevenBounds.transition_upper_written ρ h
 
 /-- **Proposition 4.9** (`prop:section4-first-order-coexistence`): coexistence with strong
 convergence, Hessian, corners and derivative jumps, along the compactness argument of the print. -/

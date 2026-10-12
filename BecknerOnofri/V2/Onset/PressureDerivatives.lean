@@ -6,6 +6,7 @@ public import BecknerOnofri.BranchFirstDerivativeRemainder
 public import BecknerOnofri.SupercriticalEnergyDerivatives
 public import BecknerOnofri.QuadraticOnsetDerivative
 public import BecknerOnofri.OrderParameterOnset
+public import BecknerOnofri.V2.Reaudit.MorseBott.OrderParameterV2
 public import BecknerOnofri.GlobalOptimizerClassification
 public import BecknerOnofri.FiniteEntropyEnergy
 public import Mathlib.Analysis.Calculus.Deriv.CompMul
@@ -52,16 +53,21 @@ theorem pressure_zero_below_v2 {d : ℕ} (hd : 12 ≤ d) (E : OnsetEndpointInput
   have h := pressure_monotone_v2 (d := d) (by omega) hβ
   rwa [(pressure_threshold_of_density (by omega) E.inequality).1.2] at h
 
-/-- Near the threshold, the (real part of the) pressure is the explicit supercritical energy. -/
+/-- Near the threshold, the (real part of the) pressure is the explicit supercritical energy.
+The optimizer is the one of the Sobolev-smallness / second-variation route (`branch_eventually_optimizer_v2`),
+transported to the derivative-family branch through the profile branch
+(`full_branch_identification`, `common_branch_interface`). -/
 lemma pressure_eq_supercritical_v2 {d : ℕ} (hd : 12 ≤ d) (E : OnsetEndpointInputs d) :
     ∀ᶠ μ in 𝓝[>] (1 : ℝ), (pressure d (μ * spectralThreshold d)).toReal = supercriticalEnergy hd μ := by
-  have hE := E.inequality.toCoefficientEndpoint
-  have hR := E.rigidity.toDensityRigidity E.inequality
-  filter_upwards [GlobalOptimizerClassification.branch_eventually_optimizer hd hE hR,
-    supercriticalEnergy_coe hd, self_mem_nhdsWithin] with μ hm he hp
+  obtain ⟨R, -, hroot⟩ := V2.Reaudit.MorseBott.common_branch_interface hd
+  filter_upwards [branch_eventually_optimizer_v2 hd E,
+    LocalEleven.SupportedFamily.full_branch_identification (by omega : 11 ≤ d), hroot,
+    supercriticalEnergy_coe hd, self_mem_nhdsWithin] with μ hm hcore hr he hp
   have hβ : 0 < μ * spectralThreshold d :=
     mul_pos (by change 1 < μ at hp; linarith) (spectralThreshold_pos (by omega))
-  rw [GlobalPressureOnset.optimizer_pressure (by omega) hβ _ hm.1 hm.2.2, he, EReal.toReal_coe]
+  dsimp only at hm
+  rw [GlobalPressureOnset.optimizer_pressure (by omega) hβ _ hm.1 hm.2.2, ← hcore, ← hr.1, he,
+    EReal.toReal_coe]
 
 lemma second_deriv_scaled_v2 (f : ℝ → ℝ) (c x : ℝ) :
     deriv (deriv (fun y => f (c * y))) x = c ^ 2 * deriv (deriv f) (c * x) := by
@@ -232,8 +238,7 @@ theorem order_parameter_onset_v2 {d : ℕ} (hd : 12 ≤ d) (E : OnsetEndpointInp
       ∀ ρ : ProbabilityDensity d, IsGlobalMinimizer β ρ →
         |firstShellOrderParameter ρ.value -
           Real.sqrt (2 * (d : ℝ) / kappa d) * Real.sqrt (onsetDelta d β)| ≤ C * onsetDelta d β :=
-  OrderParameterOnset.all_minimizers_bound hd E.inequality.toCoefficientEndpoint
-    (E.rigidity.toDensityRigidity E.inequality)
+  V2.Reaudit.MorseBott.all_minimizers_bound_v2 hd E
 
 #print axioms pressure_derivative_at_threshold_v2
 #print axioms pressure_second_derivative_right_v2

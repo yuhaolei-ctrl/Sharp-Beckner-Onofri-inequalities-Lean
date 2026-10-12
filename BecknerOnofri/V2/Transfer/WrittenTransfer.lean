@@ -58,8 +58,9 @@ theorem mixture_of_minimizer {d : ℕ} (hd : 0 < d) {β : ℝ} (hβ : 0 < β)
     (ρ : ProbabilityDensity d) (hρ : IsGlobalMinimizer β ρ) :
     ∃ η : ProbabilityDensity d, IsCountableCosineMixture η ∧ Continuous η.value ∧
       IsGlobalMinimizer β η ∧ entropy η = entropy ρ ∧ pressureValue β η = pressureValue β ρ := by
-  obtain ⟨⟨q, hq, hqs, hqpos⟩, -, -⟩ :=
-    OptimizerDuality.minimizer_smooth_positive_kirkwood hd hβ ρ hρ
+  obtain ⟨q, hq, hqs, hqpos⟩ :=
+    (BecknerOnofri.V2.Reaudit.Attainment.attained_extremizers_regular hd hβ (Or.inr ⟨ρ, hρ⟩)).2.2.1
+      ρ hρ
   let ρq := densityOfSmooth' ρ hq hqs hqpos
   have hae : ρ.value =ᵐ[torusMeasure d] ρq.value := hq
   have hρq : IsGlobalMinimizer β ρq := (OptimizerDuality.minimizer_congr_ae hae β).1 hρ
@@ -85,10 +86,26 @@ theorem exists_mixture_ge {d : ℕ} (hd : 12 ≤ d) (ρ : ProbabilityDensity d) 
       pressureValue (spectralThreshold d) ρ ≤ pressureValue (spectralThreshold d) η := by
   have hd0 : 0 < d := by omega
   have hβ : 0 < spectralThreshold d := spectralThreshold_pos hd0
-  obtain ⟨ρ0, h0⟩ := (BecknerOnofri.V2.Reaudit.Attainment.subcritical_attainment hd0 hβ
-    (spectral_subcritical_gap hd)).2.1
-  obtain ⟨η, hmix, hc, hmin, -, hpv⟩ := mixture_of_minimizer hd0 hβ ρ0 h0
-  exact ⟨η, hmix, hc, hmin, (h0.2 ρ hρ).trans_eq hpv.symm⟩
+  -- Lemma 2.9 as printed: a smooth positive minimizer `ρ0` (Proposition 2.7 (Attainment)) and its
+  -- coordinate rearrangement `r`, with the Gibbs/cosine data of `r`.
+  obtain ⟨ρ0, r, u, h0, -, -, -, hmin, -, -, -, -, -, hgu, hus, hm, hug, -, hstu⟩ :=
+    BecknerOnofri.V2.Rearrangement.coordinate_rearranged_minimizer_printed hd0 hβ
+      (spectral_subcritical_gap hd)
+  have heuler : ∀ k : NonzeroFrequency d, (frequencyLength k.val ^ d : ℂ) * fourierCoeff u k.val =
+      (spectralThreshold d / spectralThreshold d : ℝ) * fourierCoeff r.value k.val := by
+    intro k
+    have h := BecknerOnofri.V2.Reaudit.Attainment.fourierCoeff_densityPotential hd0 hβ r hmin.1
+      k.property
+    rw [← congrFun (BecknerOnofri.V2.Rearrangement.fourierCoeff_congr_ae' hug) k.val] at h
+    simpa only [Complex.ofReal_pow] using h
+  obtain ⟨U, -, -, -, hmix⟩ := GeneralEulerBridge.cosine_representation hd0 (spectralThreshold d) hβ u r
+    hus hm hstu hgu heuler
+  have hrs : SmoothOnTorus r.value := by rw [hgu]; exact Reaudit.Attainment.normalizedGibbs_smooth hus
+  obtain ⟨K, hK⟩ := hrs.exists_lipschitz
+  have hpv : pressureValue (spectralThreshold d) r = pressureValue (spectralThreshold d) ρ0 :=
+    (OptimizerDuality.minimizer_value_eq_pressure hmin).trans
+      (OptimizerDuality.minimizer_value_eq_pressure h0).symm
+  exact ⟨r, hmix, hK.continuous, hmin, (h0.2 ρ hρ).trans_eq hpv.symm⟩
 
 /-! ## The pressure functional at the spectral coupling in real form -/
 

@@ -43,29 +43,38 @@ lemma defect_at_transition : coefficientDefect 11 zeroDefectCoefficient = 0 := b
 lemma defectReal_at_transition : defectReal zeroDefectCoefficient = 0 := by
   simp only [defectReal, defect_at_transition, EReal.toReal_zero]
 
-lemma defect_finite_eventually : ∀ᶠ A in 𝓝 zeroDefectCoefficient,
-    coefficientDefect 11 A = (defectReal A:EReal) := by
+lemma defect_finite_eventually_of_upper (hup : globalTransition < (2063:ℝ)/100) :
+    ∀ᶠ A in 𝓝 zeroDefectCoefficient, coefficientDefect 11 A = (defectReal A:EReal) := by
   have hcont : ContinuousAt couplingOf zeroDefectCoefficient := by
     unfold couplingOf
     fun_prop (disch := positivity [zeroDefectCoefficient_pos])
   have hlim : Tendsto couplingOf (𝓝 zeroDefectCoefficient) (𝓝 globalTransition) := by
     simpa only [couplingOf_transition] using hcont.tendsto
   have hJ : Ioo (0:ℝ) 22 ∈ 𝓝 globalTransition := isOpen_Ioo.mem_nhds
-    ⟨transition_pos, transition_upper.trans (by norm_num)⟩
+    ⟨transition_pos, hup.trans (by norm_num)⟩
   filter_upwards [hlim.eventually hJ, isOpen_Ioi.mem_nhds zeroDefectCoefficient_pos] with A hb hA
   have h := pressure_eq_real hb.1.le hb.2
   rw [← defect_pressure hA] at h
   exact (EReal.coe_toReal (by rw [h]; exact EReal.coe_ne_top _)
     (by rw [h]; exact EReal.coe_ne_bot _)).symm
 
-lemma defect_finite_neighborhood : ∃ ε : ℝ, 0 < ε ∧ ε < zeroDefectCoefficient ∧
+lemma defect_finite_eventually : ∀ᶠ A in 𝓝 zeroDefectCoefficient,
+    coefficientDefect 11 A = (defectReal A:EReal) :=
+  defect_finite_eventually_of_upper transition_upper
+
+lemma defect_finite_neighborhood_of_upper (hup : globalTransition < (2063:ℝ)/100) : ∃ ε : ℝ, 0 < ε ∧ ε < zeroDefectCoefficient ∧
     ∀ A : ℝ, |A-zeroDefectCoefficient| < ε → coefficientDefect 11 A = (defectReal A:EReal) := by
-  obtain ⟨δ,hδ,hball⟩ := Metric.mem_nhds_iff.mp defect_finite_eventually
+  obtain ⟨δ,hδ,hball⟩ := Metric.mem_nhds_iff.mp (defect_finite_eventually_of_upper hup)
   refine ⟨min δ (zeroDefectCoefficient/2), lt_min hδ (by positivity [zeroDefectCoefficient_pos]),
     lt_of_le_of_lt (min_le_right _ _) (by linarith [zeroDefectCoefficient_pos]), ?_⟩
   intro A hA
   exact hball (show A ∈ Metric.ball zeroDefectCoefficient δ from
     lt_of_lt_of_le hA (min_le_left _ _))
 
+lemma defect_finite_neighborhood : ∃ ε : ℝ, 0 < ε ∧ ε < zeroDefectCoefficient ∧
+    ∀ A : ℝ, |A-zeroDefectCoefficient| < ε → coefficientDefect 11 A = (defectReal A:EReal) :=
+  defect_finite_neighborhood_of_upper transition_upper
+
+#print axioms defect_finite_neighborhood_of_upper
 #print axioms defect_finite_neighborhood
 end BecknerOnofri.HighDim.Eleven

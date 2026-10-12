@@ -10,5 +10,6 @@ public import BecknerOnofri.V2.Reaudit.ElevenBounds.LabelEntropy
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.EntropyBound
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.ShellExpansion
 public import BecknerOnofri.V2.Reaudit.ElevenBounds.Bessel
+public import BecknerOnofri.V2.Reaudit.ElevenBounds.UpperBound
 
 @[expose] public section

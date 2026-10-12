@@ -109,8 +109,10 @@ theorem spectralEnergy_eq_tsum_shell (ρ : ProbabilityDensity 11)
     (tsum_subtype_eq_of_support_subset hs).symm
   have he (k : Frequency 11) : g k = ENNReal.ofReal (Shell.weight (sqNorm 11 k)) := by
     dsimp only [g, Shell.weight]
+    have hpos := HighDim.Eleven.periodizedProfile_fourier_pos k
+    rw [HighDim.Eleven.periodizedProfile_fourier, Complex.ofReal_re, frequencyLength_eq_sqrt] at hpos
     rw [hρ, HighDim.Eleven.periodizedProfile_fourier, frequencyLength_eq_sqrt]
-    simp only [Complex.norm_real, Real.norm_eq_abs, sq_abs]
+    simp only [Complex.norm_real, Real.norm_of_nonneg hpos.le]
   rw [← ht]
   simp_rw [he]
   rw [tsum_frequency_eq_tsum_shell 11 (fun q => ENNReal.ofReal (Shell.weight q))]

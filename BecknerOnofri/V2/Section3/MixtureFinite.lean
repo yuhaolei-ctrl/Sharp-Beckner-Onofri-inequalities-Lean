@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.V2.Section3.Marginal
 public import BecknerOnofri.ExtendedMixtureEnergy
 public import BecknerOnofri.LowScalarFull
+public import BecknerOnofri.V2.Reaudit.ShellMargins.LowScalarGap
 public import BecknerOnofri.EntropyTailScalarBasic
 public import Legacy.BecknerOnofri.MixedBinomialComparison
 
@@ -196,7 +197,7 @@ theorem index_scalar (hd2 : 2 ≤ d) (hd10 : d ≤ 10) (n : ℕ) :
   rcases Nat.eq_zero_or_pos n with rfl | hn
   · rw [← HighDim.LowScalar.energy_eq_legacy, energy_zero]
     simp
-  · have h := HighDim.LowScalar.scalar_gap d n hd2 hd10 hn
+  · have h := BecknerOnofri.V2.Reaudit.ShellMargins.low_scalar_gap d n hd2 hd10 hn
     rw [endpoint_two_eq, HighDim.LowScalar.energy_eq_legacy] at h
     have h1 : (if 1 ≤ n then (1 : ℝ) else 0) = 1 := by simp; omega
     rw [h1]

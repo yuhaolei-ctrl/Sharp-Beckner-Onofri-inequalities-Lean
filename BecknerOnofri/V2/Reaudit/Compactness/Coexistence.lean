@@ -17,7 +17,7 @@ The logical order of the manuscript (decisions, X3 and U07) is: non-strict lower
 (`Eleven.transition_lower`, used only through `Eleven.transition_pos`; it is proved from the quantitative
 latent-mass gap, `ElevenBounds.pressure_zero_quantitative`, not from the legacy endpoint theorem)
 -> competitor upper bound
-(`Eleven.transition_upper`) -> local uniqueness in `H^{11}` (`Sobolev.local_uniqueness_raw`) ->
+(`ElevenBounds.transition_upper_written`) -> local uniqueness in `H^{11}` (`Sobolev.local_uniqueness_raw`) ->
 coexistence (here) -> **only afterwards** the strict lower bound `3543/200 < β_gm`
 (`strict_lower_of_coexistence_manuscript`). -/
 

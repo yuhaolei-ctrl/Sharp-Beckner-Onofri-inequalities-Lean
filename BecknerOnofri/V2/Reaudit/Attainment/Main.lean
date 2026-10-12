@@ -100,7 +100,7 @@ theorem subcritical_attainment_of_adams (hd : 0 < d) (hAd : CriticalAdamsAboveTh
     obtain ⟨v, -, hvs, -, -, hvp, hρv⟩ := densityMinimizer_regularity hd hA0 ρ hρ
     exact ⟨normalizedGibbs v, hρv, normalizedGibbs_smooth hvs, hvp⟩
   · intro u hu
-    obtain ⟨v, hvu, hvs, -⟩ := maximizer_regularity hd hA0 hu
+    obtain ⟨-, v, hvu, hvs, -⟩ := maximizer_regularity_system hd hA0 hu
     exact ⟨v, hvu, hvs⟩
 
 /-- **Proposition 2.7 under the printed critical Adams inequality** `CriticalAdamsInput d`
@@ -156,7 +156,7 @@ theorem attained_extremizers_regular (hd : 0 < d) {β : ℝ} (hβ0 : 0 < β)
     obtain ⟨v, -, hvs, -, -, hvp, hρv⟩ := densityMinimizer_regularity hd hA0 ρ hρ
     exact ⟨normalizedGibbs v, hρv, normalizedGibbs_smooth hvs, hvp⟩
   · intro u hu
-    obtain ⟨v, hvu, hvs, -⟩ := maximizer_regularity hd hA0 hu
+    obtain ⟨-, v, hvu, hvs, -⟩ := maximizer_regularity_system hd hA0 hu
     exact ⟨v, hvu, hvs⟩
 
 /-- **Smooth initial minimizer for the coordinate rearrangement** (`lem:coordinate-rearranged-minimizer`,

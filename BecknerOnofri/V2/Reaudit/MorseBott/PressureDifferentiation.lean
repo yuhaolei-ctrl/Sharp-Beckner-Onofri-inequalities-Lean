@@ -188,15 +188,14 @@ theorem deriv_expansions_of_remainder {σ a : ℝ} (hσ : 0 < σ) {R : ℝ → �
     rw [h]
     ring
 
-/-- **`cor:section5-defect-onset`, pressure level, from the analytic remainder.**  Under the two
-endpoint hypotheses already used by the existing classification, the pressure has the form
+/-- **`cor:section5-defect-onset`, pressure level, from the analytic remainder.**  Under the endpoint
+inputs `OnsetEndpointInputs d` (Corollary 5.8), the pressure has the form
 `(d/(2κ_d)) δ² + δ³ R(δ)` with `R` analytic and, differentiating that identity,
 `P' = (d/(κ_d β_s)) δ + O(δ²)`, `P'' = d/(κ_d β_s²) + O(δ)` as `β ↓ β_s`, `δ = 1 - β_s/β`
 (display `(5.pressure-differentiation)`); in particular the right limits in
 `(5.pressure-derivatives)`. -/
 theorem pressure_differentiation_from_remainder {d : ℕ} (hd : 12 ≤ d)
-    (hEndpoint : BecknerOnofri.EndpointRigidity.CoefficientEndpoint d (1 / 2))
-    (hRigidity : BecknerOnofri.OnsetCompactness.DensityRigidity d) :
+    (E : V2.Onset.OnsetEndpointInputs d) :
     ∃ R : ℝ → ℝ, AnalyticAt ℝ R 0 ∧
       (∀ᶠ β in 𝓝[>] (spectralThreshold d), (pressure d β).toReal =
         (d : ℝ) / (2 * kappa d) * onsetDelta d β ^ 2 + onsetDelta d β ^ 3 * R (onsetDelta d β)) ∧
@@ -209,7 +208,7 @@ theorem pressure_differentiation_from_remainder {d : ℕ} (hd : 12 ≤ d)
       Tendsto (deriv (fun γ => (pressure d γ).toReal)) (𝓝[>] (spectralThreshold d)) (𝓝 0) ∧
       Tendsto (deriv (deriv (fun γ => (pressure d γ).toReal))) (𝓝[>] (spectralThreshold d))
         (𝓝 ((d : ℝ) / (kappa d * spectralThreshold d ^ 2))) := by
-  obtain ⟨R, hR, hform⟩ := pressure_common_branch_form hd hEndpoint hRigidity
+  obtain ⟨R, hR, hform⟩ := pressure_common_branch_form hd E
   unfold onsetDelta at hform ⊢
   have hσ : 0 < spectralThreshold d := spectralThreshold_pos (by omega : 0 < d)
   have hk : kappa d ≠ 0 := (kappa_pos d hd).ne'

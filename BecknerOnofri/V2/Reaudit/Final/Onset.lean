@@ -1,11 +1,12 @@
 module
 
 public import BecknerOnofri.V2.Reaudit.MorseBott.FullBranch
+public import BecknerOnofri.V2.Reaudit.Final.OnsetBranches
 public import BecknerOnofri.V2.Reaudit.MorseBott.PressureDifferentiation
 public import BecknerOnofri.V2.Reaudit.MorseBott.CosineCorrection
 public import BecknerOnofri.V2.Reaudit.SpinChannel.WrittenEndpoint
 public import BecknerOnofri.OnsetTransfer
-public import BecknerOnofri.OrderParameterOnset
+public import BecknerOnofri.V2.Reaudit.MorseBott.OrderParameterV2
 
 @[expose] public section
 
@@ -15,7 +16,9 @@ The three high-dimensional onset statements of `Challenge.lean` are derived here
 route-aligned pieces of the second pass, not from the earlier conditional onset chain:
 
 * the endpoint inputs of Proposition 5.24 are the conclusions of Corollary 5.8 proved along the
-  written dimension transfer (`SpinChannel.onsetEndpointInputs_written`);
+  written dimension transfer (`SpinChannel.onsetEndpointInputs_written`); the global minimizers are
+  classified by the Sobolev-smallness / second-variation route of `V2/Onset`
+  (`V2.Onset.physical_density_classification_v2`);
 * the branch is the full-support branch of the profile family `(5.full-branch-profile)`,
   `SupportedFamily.branch univ (1 - β_s/β)`, whose Morse--Bott structure is the embedded critical
   manifold `MorseBott.EmbeddedCriticalOrbit` (Proposition 5.23);
@@ -38,14 +41,6 @@ open scoped Topology
 namespace BecknerOnofri.V2.Reaudit.Final.Onset
 
 open BecknerOnofri.HighDim BecknerOnofri.HighDim.LocalEleven
-
-/-- The hypotheses of the legacy onset infrastructure, discharged by Corollary 5.8 along the written
-dimension transfer. -/
-theorem endpoint_hypotheses {d : ℕ} (hd : 12 ≤ d) :
-    BecknerOnofri.EndpointRigidity.CoefficientEndpoint d (1 / 2) ∧
-      BecknerOnofri.OnsetCompactness.DensityRigidity d := by
-  have E := SpinChannel.onsetEndpointInputs_written hd
-  exact ⟨E.inequality.toCoefficientEndpoint, E.rigidity.toDensityRigidity E.inequality⟩
 
 /-- `β ↦ 1 - β_s/β` maps `(β_s, ∞)` near `β_s` into `(0, ∞)` near `0`. -/
 theorem onsetDelta_tendsto {d : ℕ} (hd : 0 < d) :
@@ -80,8 +75,8 @@ theorem high_dim_pressure_onset_route (d : ℕ) (hd : 12 ≤ d) :
         ∃ p : ℝ, pressure d β = (p : EReal) ∧
           |p - (d : ℝ) / (2 * kappa d) * (1 - spectralThreshold d / β) ^ 2| ≤
             C * (β - spectralThreshold d) ^ 3 := by
-  obtain ⟨hEnd, hRig⟩ := endpoint_hypotheses hd
-  obtain ⟨R, hR, hform⟩ := MorseBott.pressure_common_branch_form hd hEnd hRig
+  obtain ⟨R, hR, hform⟩ :=
+    MorseBott.pressure_common_branch_form hd (SpinChannel.onsetEndpointInputs_written hd)
   have hσ : 0 < spectralThreshold d := spectralThreshold_pos (by omega)
   -- `R` is bounded on a neighbourhood of `0`
   obtain ⟨r, hr, hRb⟩ : ∃ r : ℝ, 0 < r ∧ ∀ t : ℝ, |t| < r → |R t| ≤ |R 0| + 1 := by
@@ -148,17 +143,11 @@ two parametrizations of the branch. -/
 theorem high_dim_onset_branch_route (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset d := by
   have hd11 : 11 ≤ d := by omega
   have hd0 : 0 < d := by omega
-  obtain ⟨hEnd, hRig⟩ := endpoint_hypotheses hd
+  have E := SpinChannel.onsetEndpointInputs_written hd
   have hphys : ∀ᶠ β in 𝓝[>] (spectralThreshold d),
       SupportedFamily.branch hd11 Finset.univ (onsetDelta d β) =
-        DiagonalScalarBranch.physicalPotential hd11 β := by
-    have hσ : spectralThreshold d ≠ 0 := (spectralThreshold_pos hd0).ne'
-    filter_upwards [(DiagonalScalarBranch.normalized_parameter_tendsto hd11).eventually
-      (SupportedFamily.full_branch_identification hd11)] with β hβ
-    have : 1 - 1 / (β / spectralThreshold d) = onsetDelta d β := by
-      unfold onsetDelta; rw [one_div_div]
-    rw [this] at hβ
-    exact hβ
+        DiagonalScalarBranch.physicalPotential hd11 β :=
+    (MorseBott.physicalCore_eq_branch hd).mono fun β h => h.symm
   have hMB : ∀ᶠ β in 𝓝[>] (spectralThreshold d),
       FullModeMorseBott β
         (SupportedFamily.branch hd11 Finset.univ (onsetDelta d β) : Torus d → ℝ) := by
@@ -168,7 +157,7 @@ theorem high_dim_onset_branch_route (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset 
         FullModeMorseBott ((1 / (1 - δ)) * spectralThreshold d)
           (SupportedFamily.branch hd11 Finset.univ δ) := by
       have hdpos : (0 : ℝ) < d := by exact_mod_cast hd0
-      exact (MorseBott.full_branch_embedded_orbit hd11 (s := (d : ℝ)) (by linarith)).mono
+      exact ((prop_section5_local_branches d hd11).2.2.2.2.2.2.1 (d : ℝ) (by linarith)).mono
         fun δ ⟨_, hmb, _⟩ => hmb
     filter_upwards [(onsetDelta_tendsto hd0).eventually hMB0,
       self_mem_nhdsWithin] with β hβ hβ'
@@ -182,7 +171,7 @@ theorem high_dim_onset_branch_route (d : ℕ) (hd : 12 ≤ d) : FullBranchOnset 
       (∀ ρ : ProbabilityDensity d, IsGlobalMinimizer β ρ ↔
         ∃ a : Torus d, ρ.value =ᵐ[torusMeasure d] normalizedGibbs (translate
           (SupportedFamily.branch hd11 Finset.univ (onsetDelta d β) : Torus d → ℝ) a)) := by
-    filter_upwards [hphys, hMB, MorseBott.minimizers_are_profile_branch_orbit hd hEnd hRig]
+    filter_upwards [hphys, hMB, MorseBott.minimizers_are_profile_branch_orbit hd E]
       with β hid hmb hmin
     exact ⟨by rw [hid], hmb, hmin⟩
   obtain ⟨r, hr, hBall⟩ := Metric.mem_nhdsWithin_iff.mp hAll
@@ -264,13 +253,13 @@ theorem onset_manuscript (d : ℕ) (hd : 12 ≤ d) :
     (∀ᶠ β in 𝓝[>] (spectralThreshold d),
       (HighDim.DiagonalScalarBranch.physicalPotential hd β : ContinuousGibbs.Space d) =
         SupportedFamily.branch (by omega : 11 ≤ d) Finset.univ (onsetDelta d β)) := by
-  obtain ⟨hEnd, hRig⟩ := endpoint_hypotheses hd
+  have E := SpinChannel.onsetEndpointInputs_written hd
   refine ⟨fun s hs => ?_, fun δ hδ x₀ x => MorseBott.cosine_correction_kappa (by omega) hδ x₀ x,
-    MorseBott.minimizers_are_profile_branch_orbit hd hEnd hRig,
-    MorseBott.pressure_differentiation_from_remainder hd hEnd hRig,
-    OrderParameterOnset.all_minimizers_bound hd hEnd hRig,
+    MorseBott.minimizers_are_profile_branch_orbit hd E,
+    MorseBott.pressure_differentiation_from_remainder hd E,
+    MorseBott.all_minimizers_bound_v2 hd E,
     (MorseBott.common_branch_interface_beta hd).elim fun R h => h.2.mono fun β h => h.1⟩
-  exact MorseBott.full_branch_embedded_orbit (by omega) hs
+  exact (prop_section5_local_branches d (by omega)).2.2.2.2.2.2.1 s hs
 
 /-! ## Statement identity with the earlier conditional chain -/
 

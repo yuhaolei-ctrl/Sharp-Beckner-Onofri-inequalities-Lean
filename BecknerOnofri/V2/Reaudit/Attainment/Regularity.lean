@@ -227,4 +227,22 @@ theorem kirkwoodMonroe_of_maximizer (hd : 0 < d) {A : ℝ} (hA : 0 < A) {u : Tor
   exact hg.trans (Gap.gibbs_congr hae)
 
 
+/-- Euler-Lagrange system, regularity, positivity and the Kirkwood-Monroe equation for one
+extremizing potential: the three assertions of `cor:section2-extremizer-correspondence` (iii). -/
+theorem maximizer_regularity_system (hd : 0 < d) {A : ℝ} (hA : 0 < A) {u : Torus d → ℝ}
+    (hmax : IsCoefficientMaximizer d A u) :
+    (∀ k : Frequency d,
+      (((2 * Real.pi * frequencyLength k : ℝ) : ℂ)) ^ d * fourierCoeff u k =
+        (((2 * A * kernelConstant d)⁻¹ * kernelConstant d : ℝ) : ℂ) *
+          fourierCoeff (fun x => normalizedGibbs u x - 1) k) ∧
+    ∃ v : Torus d → ℝ, v =ᵐ[torusMeasure d] u ∧ SmoothOnTorus v ∧ MeanZero v ∧
+      SmoothOnTorus (normalizedGibbs v) ∧ (∀ x, 0 < normalizedGibbs v x) ∧
+      normalizedGibbs v =ᵐ[torusMeasure d] normalizedGibbs u ∧
+      normalizedGibbs v =ᵐ[torusMeasure d]
+        normalizedGibbs (Gap.densityPotential (Gap.coefficient d A)
+          (fun y => normalizedGibbs v y - 1)) := by
+  obtain ⟨v, hvu, hvs, hvm, hs, hp, hg⟩ := maximizer_regularity hd hA hmax
+  exact ⟨euler_lagrange_of_maximizer hd hA hmax, v, hvu, hvs, hvm, hs, hp, hg,
+    kirkwoodMonroe_of_maximizer hd hA hmax hvu⟩
+
 end BecknerOnofri.V2.Reaudit.Attainment

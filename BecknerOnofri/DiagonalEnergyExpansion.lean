@@ -3,6 +3,7 @@ module
 public import BecknerOnofri.ReducedEnergyJointExpansion
 public import BecknerOnofri.DiagonalStationaryBranch
 public import BecknerOnofri.CriticalGraphCoercivity
+public import BecknerOnofri.V2.Reaudit.SobolevQuartic.RootBridge
 
 @[expose] public section
 
@@ -75,7 +76,7 @@ theorem branchEnergy_amplitude_expansion {d : ℕ} (hd : 12 ≤ d) :
         =O[𝓝 0] (fun t : ℝ => ‖t‖^6) := by
       convert! hm using 1 <;> (funext t; simp only [Real.norm_eq_abs]; ring)
     exact (hdiag.pow 6).add hm'
-  have he := ((physicalReducedEnergy_joint_quartic hd).comp_tendsto
+  have he := ((V2.Reaudit.SobolevQuartic.physicalReducedEnergy_joint_quartic_native hd).comp_tendsto
     (branch_coordinates_tendsto hd)).trans hright
   have ht : (fun t : ℝ => t^2) =O[𝓝 0] (fun t : ℝ => ‖t‖^2) := by
     exact (isBigO_refl (fun t : ℝ => t^2) (𝓝 0)).norm_right.congr_right
