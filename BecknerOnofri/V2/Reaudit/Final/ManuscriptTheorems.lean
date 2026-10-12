@@ -146,9 +146,24 @@ and shell-expansion bounds, and Proposition 4.9 (`prop:section4-first-order-coex
 compactness argument, as assembled in `theorem_1_2_route` (statement `V2.Eleven.theorem_1_2`) and
 `eleven_competitor_written_route`. -/
 theorem theorem_1_2_printed :
-    type_of% V2.Eleven.theorem_1_2 ∧ type_of% V2.Final.eleven_competitor_written :=
-  ⟨⟨theorem_1_2_route.1, ⟨theorem_1_2_route.2.1.1, spectral_pressure_gt_thirtieth_printed⟩,
-    theorem_1_2_route.2.2⟩, eleven_competitor_written_route⟩
+    type_of% V2.Eleven.theorem_1_2 ∧ type_of% V2.Final.eleven_competitor_written := by
+  have hv := prop41_route
+  have h49 := prop49_route
+  have hsm : SmoothOnTorus V2.Eleven.rhoStar.value := V2.Eleven.periodizedProfile_smooth_of_M_test
+  have h : type_of% V2.Eleven.theorem_1_2 :=
+    ⟨⟨V2.Eleven.rhoStar_value, V2.Eleven.finiteEntropy_of_value_eq _ V2.Eleven.rhoStar_value, hsm,
+        fun x => HighDim.Eleven.periodizedProfile_pos x,
+        ElevenBounds.torusEntropy_bound_printed _ V2.Eleven.rhoStar_value,
+        ElevenBounds.energy_bound_via_shells _ V2.Eleven.rhoStar_value⟩,
+      ⟨V2.Eleven.defect_spectral_eq_pressure, spectral_pressure_gt_thirtieth_printed⟩,
+      ⟨hv.1.1, hv.1.2, V2.Eleven.upper_lt_spectral.1, V2.Eleven.upper_lt_spectral.2⟩, h49.1,
+      h49.2.1, h49.2.2.1.2, h49.2.2.2.1.2⟩
+  refine ⟨h, ?_⟩
+  have hv := V2.Eleven.rhoStar_value
+  have hc := h.1
+  refine ⟨V2.Eleven.rhoStar, hv, hc.2.2.1, hc.2.2.2.1, hc.2.1, ?_, eleven_energy_gt_route _ hv⟩
+  rw [V2.Vocab.entropy_eq_toReal_torusEntropy _ hc.2.1]
+  exact hc.2.2.2.2.1
 
 /-- **Lemma `lem:section2-universal-obstructions`, all five assertions as printed** (with `0 ≤` and finiteness
 of the defect at the concentration coefficient): the pressure is infinite beyond `2d`, the defect is
