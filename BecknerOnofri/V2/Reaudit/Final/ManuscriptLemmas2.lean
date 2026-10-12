@@ -139,8 +139,8 @@ theorem prop_section2_basic_curve_geometry {d : ℕ} (hd : 0 < d) :
 open BecknerOnofri.V2.Reaudit.Obstruction in
 /-- **`lem:circle-rearrangement`** (row S011), all three assertions of the printed lemma: the Riesz
 inequality (`eq:circle-rearrangement`), `f ≤ g` a.e. `⇒ f* ≤ g*` a.e., and
-`‖f* - g*‖₁ ≤ ‖f - g‖₁`.  The order assertion is obtained from the polarization/compactness
-rearrangement `IsRearrangementLimit.mono`; the other two from `circle_rearrangement_printed`. -/
+`‖f* - g*‖₁ ≤ ‖f - g‖₁`.  All three come from `circle_rearrangement_printed`; the order assertion is the layer-cake argument
+`IsSymmDecrRearr.ae_le` (Step 2 of the printed proof). -/
 theorem lem_circle_rearrangement_printed_full {f g F G : Legacy.TorusEndpoint.Torus 1 → ℝ}
     (hf : Integrable f (Legacy.TorusEndpoint.torusMeasure 1)) (hg : Integrable g (Legacy.TorusEndpoint.torusMeasure 1))
     (hf0 : ∀ᵐ x ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ f x) (hg0 : ∀ᵐ x ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ g x)
@@ -154,8 +154,17 @@ theorem lem_circle_rearrangement_printed_full {f g F G : Legacy.TorusEndpoint.To
     (f ≤ᵐ[Legacy.TorusEndpoint.torusMeasure 1] g → F ≤ᵐ[Legacy.TorusEndpoint.torusMeasure 1] G) ∧
     (∫ x, |F x - G x| ∂Legacy.TorusEndpoint.torusMeasure 1) ≤ ∫ x, |f x - g x| ∂Legacy.TorusEndpoint.torusMeasure 1 := by
   have h := circle_rearrangement_printed hf hg hf0 hg0 hF hG q hq0 hqC hq
-  exact ⟨h.1, fun hfg => (hF.isRearrangementLimit hf).mono (hG.isRearrangementLimit hg) hf hg hfg,
-    h.2.2⟩
+  exact ⟨h.1, h.2.1, h.2.2⟩
+
+/-- **`lem:circle-rearrangement`**, Step 1 of the printed proof: the symmetric decreasing rearrangement of
+a nonnegative integrable function on the circle exists and is unique up to null sets. -/
+theorem circle_symmDecrRearr_exists_unique {f : Legacy.TorusEndpoint.Torus 1 → ℝ}
+    (hf : Integrable f (Legacy.TorusEndpoint.torusMeasure 1))
+    (hf0 : ∀ᵐ x ∂Legacy.TorusEndpoint.torusMeasure 1, 0 ≤ f x) :
+    (∃ F, Obstruction.IsSymmDecrRearr f F) ∧
+      ∀ F G, Obstruction.IsSymmDecrRearr f F → Obstruction.IsSymmDecrRearr f G →
+        F =ᵐ[Legacy.TorusEndpoint.torusMeasure 1] G :=
+  ⟨Obstruction.exists_symmDecrRearr hf hf0, fun _ _ hF hG => hF.ae_unique hG⟩
 
 /-- **`eq:circle-rearr-lipschitz`** (row S011, Step 4 of the printed proof): for Lipschitz `f, g` on the
 circle there are continuous `F, G`, equimeasurable with `f, g` and even and nonincreasing in the
