@@ -26,11 +26,11 @@ bodies = {
  'eleven_pressure_corner': F+'eleven_pressure_corner_route',
  'eleven_pressure_derivative_jump': F+'eleven_pressure_derivative_jump_route',
  'eleven_defect_corner': F+'eleven_defect_corner_route',
- 'high_dim_entropy_inequality': S+'high_dim_entropy_inequality_written d hd ρ',
- 'high_dim_entropy_eq_iff': S+'high_dim_entropy_eq_iff_written d hd ρ hρ',
- 'high_dim_beckner_onofri': S+'high_dim_beckner_onofri_written d hd u hu',
- 'high_dim_beckner_onofri_eq_iff': S+'high_dim_beckner_onofri_eq_iff_written d hd u hu',
- 'high_dim_thresholds': S+'high_dim_thresholds_written d hd',
+ 'high_dim_entropy_inequality': 'BecknerOnofri.V2.Reaudit.Final.high_dim_entropy_inequality_printed d hd ρ',
+ 'high_dim_entropy_eq_iff': '((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).1 ρ hρ).2',
+ 'high_dim_beckner_onofri': '⟨((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).1,\n    ((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).2.1⟩',
+ 'high_dim_beckner_onofri_eq_iff': '((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).2.2',
+ 'high_dim_thresholds': 'BecknerOnofri.V2.Reaudit.Final.high_dim_thresholds_printed d hd',
  'kappa_pos': 'BecknerOnofri.V2.Final.kappa_pos d hd',
  'high_dim_onset_branch': F+'Onset.high_dim_onset_branch_route d hd',
  'high_dim_pressure_onset': F+'Onset.high_dim_pressure_onset_route d hd',
@@ -39,7 +39,7 @@ bodies = {
 out = src
 # header
 out = out.replace('public import BecknerOnofri.Targets',
-  'public import BecknerOnofri.V2.Reaudit.Final.All')
+  'public import BecknerOnofri.V2.Reaudit.Final.All\npublic import BecknerOnofri.V2.Reaudit.Final.ManuscriptLemmas2')
 out = out.replace('The statements of `Challenge.lean`, proved from the development. Each theorem is a direct\nconsequence of a result of the library: `BecknerOnofri.Targets` collects the formal\ncounterparts of the paper\'s lemmas, propositions and theorems (see `CORRESPONDENCE.md`).',
   'The statements of `Challenge.lean`, proved from the route-aligned development of the second pass\n(`BecknerOnofri.V2.Reaudit`): each theorem is a direct consequence of a declaration whose proof follows the\nwritten route (low dimensions: `Reaudit.Mixtures`; dimension eleven: `Reaudit.Final.Section4`; `d ≥ 12`:\n`Reaudit.SpinChannel.WrittenEndpoint`).')
 for name, body in bodies.items():

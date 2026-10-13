@@ -5,11 +5,14 @@ public import BecknerOnofri.ThresholdReduction
 public import BecknerOnofri.RawAttainment
 public import Legacy.BecknerOnofri.SubcriticalPrimalDual
 public import BecknerOnofri.HeatEnergyLimit
+public import BecknerOnofri.V2.Reaudit.Obstruction.FirstShellPressure
 public import Mathlib.Topology.Instances.EReal.Lemmas
 
 @[expose] public section
 
-/-! Actual Gibbs comparison and strict positivity above the spectral threshold. -/
+/-! Actual Gibbs comparison and strict positivity above the spectral threshold (the latter is the
+first-shell proof of `lem:section2-universal-obstructions` (ii), imported from
+`V2.Reaudit.Obstruction.FirstShellPressure`). -/
 noncomputable section
 open MeasureTheory Filter
 open scoped ENNReal BigOperators Topology
@@ -59,17 +62,13 @@ theorem coefficientDefect_le_pressure {d : ℕ} (hd : 0 < d) {β : ℝ}
       norm_cast
     _ ≤ pressure d β := le_iSup_of_le (Bridge.rawDensity r) (le_iSup_of_le hr le_rfl)
 
+/-- Strict positivity of the pressure above the spectral threshold.  This is an alias of
+`V2.Reaudit.Obstruction.pressure_pos_of_spectralThreshold_lt`, the first-shell-density proof of
+part (ii) of `lem:section2-universal-obstructions`, which is the only proof of this statement in the
+development. -/
 theorem pressure_pos_of_spectral_lt {d : ℕ} (hd : 0 < d) {β : ℝ}
-    (hβ : spectralThreshold d < β) : 0 < pressure d β := by
-  have hσ := spectralThreshold_pos hd
-  have hβ0 : 0 < β := hσ.trans hβ
-  have hc : 0 < (2 * Real.pi) ^ d := by positivity
-  have hA : spectralThreshold d / (2 * β * (2 * Real.pi) ^ d) < spectralCoefficient d := by
-    unfold spectralCoefficient
-    apply (div_lt_div_iff₀ (by positivity) (by positivity)).mpr
-    nlinarith
-  exact (coefficientDefect_pos_of_lt_spectral hd hA).trans_le
-    (coefficientDefect_le_pressure hd hβ0)
+    (hβ : spectralThreshold d < β) : 0 < pressure d β :=
+  V2.Reaudit.Obstruction.pressure_pos_of_spectralThreshold_lt hd hβ
 
 theorem l2_density_le_coefficientDefect {d : ℕ} (hd : 0 < d) {A : ℝ}
     (hA : 0 < A) (ρ : Legacy.TorusEndpoint.ProbabilityDensity d)

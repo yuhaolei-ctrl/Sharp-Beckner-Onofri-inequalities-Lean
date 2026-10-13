@@ -6,6 +6,7 @@ Authors: Yuhao Lei, Matthew Rosenzweig
 module
 
 public import BecknerOnofri.V2.Reaudit.Final.All
+public import BecknerOnofri.V2.Reaudit.Final.ManuscriptLemmas2
 
 /-!
 # Solution: sharp Beckner–Onofri inequalities on the flat torus
@@ -13,7 +14,7 @@ public import BecknerOnofri.V2.Reaudit.Final.All
 The statements of `Challenge.lean`, proved from the route-aligned development of the second pass
 (`BecknerOnofri.V2.Reaudit`): each theorem is a direct consequence of a declaration whose proof follows the
 written route (low dimensions: `Reaudit.Mixtures`; dimension eleven: `Reaudit.Final.Section4`; `d ≥ 12`:
-`Reaudit.SpinChannel.WrittenEndpoint`).
+`Reaudit.Final.high_endpoint_printed`, the proof of `cor:section5-high-endpoint` as printed).
 The vocabulary (`BecknerOnofri.HighDim.pressure`, `spectralEnergy`, …) is the library's own;
 Comparator checks that it coincides with the definitions restated in `Challenge.lean`.
 -/
@@ -206,7 +207,7 @@ The sharp coefficient is the first-shell coefficient `A_s(d) = 1/(2(2π)^d)`,
 `Ent(ρ) ≥ (2π)^d/2 · ‖ρ‖²_{Ḣ^{-d/2}} = spectralEnergy ρ / 2`, with `Ent(ρ) = ∞` allowed. -/
 theorem high_dim_entropy_inequality (d : ℕ) (hd : 12 ≤ d) (ρ : ProbabilityDensity d) :
     ((1 / 2 : ℝ) : EReal) * (spectralEnergy ρ).toEReal ≤ extendedEntropy ρ :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_entropy_inequality_written d hd ρ
+  BecknerOnofri.V2.Reaudit.Final.high_dim_entropy_inequality_printed d hd ρ
 
 /-- **Theorem 1.3, equality in (eq:intro-high-dual).** For `d ≥ 12` and a finite-entropy density,
 `spectralEnergy ρ = 2 Ent(ρ)` if and only if `ρ ≡ 1`. -/
@@ -214,7 +215,7 @@ theorem high_dim_entropy_eq_iff (d : ℕ) (hd : 12 ≤ d)
     (ρ : ProbabilityDensity d) (hρ : ρ.FiniteEntropy) :
     spectralEnergy ρ = ENNReal.ofReal (2 * entropy ρ) ↔
       ρ.value =ᵐ[torusMeasure d] fun _ => 1 :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_entropy_eq_iff_written d hd ρ hρ
+  ((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).1 ρ hρ).2
 
 /-- **Theorem 1.3, (eq:intro-high-primal).** For `d ≥ 12` and every `u ∈ H^{d/2}(𝕋ᵈ)`, `e^{u-ū}` is
 integrable and `log ∫ e^{u - ū} dm_d ≤ A_s(d) ‖u‖²_{Ḣ^{d/2}}`. -/
@@ -222,14 +223,15 @@ theorem high_dim_beckner_onofri (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     Integrable (fun x => Real.exp (centered u x)) (torusMeasure d) ∧
       logPartition u ≤ ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_beckner_onofri_written d hd u hu
+  ⟨((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).1,
+    ((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).2.1⟩
 
 /-- **Theorem 1.3, equality in (eq:intro-high-primal).** Equality holds only for constant `u`. -/
 theorem high_dim_beckner_onofri_eq_iff (d : ℕ) (hd : 12 ≤ d)
     (u : Torus d → ℝ) (hu : InCriticalSobolev u) :
     logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
       ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_beckner_onofri_eq_iff_written d hd u hu
+  ((BecknerOnofri.V2.Reaudit.Final.high_endpoint_printed d hd).2.1 u hu).2.2
 
 /-- **Theorem 1.3, (eq:intro-high-threshold).** For `d ≥ 12`, `β_s(d)` is the largest coupling with
 zero pressure, `A_s(d)` is the least coefficient with zero defect, and therefore `β_gm(d) = β_s(d)`
@@ -239,7 +241,7 @@ theorem high_dim_thresholds (d : ℕ) (hd : 12 ≤ d) :
       IsLeast {A : ℝ | 0 < A ∧ coefficientDefect d A = 0} (spectralCoefficient d) ∧
       VariationalCurves.globalTransition d = spectralThreshold d ∧
       VariationalCurves.zeroDefectCoefficient d = spectralCoefficient d :=
-  BecknerOnofri.V2.Reaudit.SpinChannel.high_dim_thresholds_written d hd
+  BecknerOnofri.V2.Reaudit.Final.high_dim_thresholds_printed d hd
 
 /-- **(eq:intro-kappa).** `κ_d = -(2a_d + (d - 1) b_d) > 0` for every `d ≥ 12`. -/
 theorem kappa_pos (d : ℕ) (hd : 12 ≤ d) : 0 < kappa d :=

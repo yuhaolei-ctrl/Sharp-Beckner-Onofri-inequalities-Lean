@@ -7,6 +7,7 @@ module
 
 public import BecknerOnofri.V2.Final.All
 public import BecknerOnofri.V2.Reaudit.Final.All
+public import BecknerOnofri.V2.Reaudit.Final.ManuscriptLemmas2
 public import BecknerOnofri.V2.Assembly.All
 public import BecknerOnofri.V2.Eleven.All
 public import BecknerOnofri.V2.Transfer.WrittenTransfer
@@ -398,8 +399,7 @@ theorem cor_5_8 (d : ℕ) (hd : 12 ≤ d) :
         (logPartition u = ((spectralCoefficient d * potentialEnergy u : ℝ) : EReal) ↔
           ∃ c : ℝ, u =ᵐ[torusMeasure d] fun _ => c)) ∧
     VariationalCurves.globalTransition d = spectralThreshold d := by
-  have h := BecknerOnofri.V2.Final.Unconditional.high_endpoint d hd
-  exact ⟨fun ρ hρ => h.1 ρ hρ, h.2.1, h.2.2.2.1⟩
+  exact BecknerOnofri.V2.Reaudit.Final.cor_section5_high_endpoint_printed d hd
 
 /-- **Proposition 5.10 (`prop:section5-global-entropy-gap`).** Let `ρ` be a smooth strictly positive
 probability density on `𝕋¹²`, invariant under coordinate permutations and of the form
